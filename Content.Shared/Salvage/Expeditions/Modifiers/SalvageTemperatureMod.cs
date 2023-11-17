@@ -25,8 +25,8 @@ public sealed partial class SalvageTemperatureMod : IPrototype, IBiomeSpecificMo
     public float Cost { get; private set; } = 0f;
 
     /// <inheritdoc/>
-    [DataField]
-    public List<ProtoId<SalvageBiomeModPrototype>>? Biomes { get; private set; } = null;
+    [DataField("biomes", customTypeSerializer: typeof(PrototypeIdListSerializer<SalvageBiomeMod>))]
+    public List<string>? Biomes { get; private set; } = null;
 
     /// <summary>
     /// Temperature in the planets air mix.

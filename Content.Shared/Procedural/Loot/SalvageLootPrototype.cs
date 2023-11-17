@@ -5,7 +5,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Salvage;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Procedural.Loot;
 
@@ -21,6 +23,14 @@ public sealed partial class SalvageLootPrototype : IPrototype
     /// Should this loot always spawn if possible. Used for stuff such as ore.
     /// </summary>
     [DataField("guaranteed")] public bool Guaranteed;
+
+    [DataField("desc")] public string Description = string.Empty;
+
+    /// <summary>
+    /// Mission types this loot is not allowed to spawn for
+    /// </summary>
+    [DataField("blacklist")]
+    public List<SalvageMissionType> Blacklist = new();
 
     /// <summary>
     /// All of the loot rules

@@ -10,6 +10,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Procedural;
+using Content.Shared.Salvage;
 using Content.Shared.Salvage.Expeditions;
 using Content.Shared.Dataset;
 using Robust.Shared.Prototypes;
@@ -31,17 +32,40 @@ public sealed partial class SalvageSystem
         if (!data.Missions.TryGetValue(args.Index, out var missionparams))
             return;
 
-        var cdUid = Spawn(CoordinatesDisk, Transform(uid).Coordinates);
-        SpawnMission(missionparams, station.Value, cdUid);
+        // On Frontier, FTL travel is currently restricted to expeditions and such, and so we need to put this here
+        // until FTL changes for us in some way.
+        if (!TryComp<StationDataComponent>(station, out var stationData))
+            return;
+        if (_station.GetLargestGrid(stationData) is not {Valid : true} grid)
+            return;
+        if (!TryComp<MapGridComponent>(grid, out var gridComp))
+            return;
+
+        var xform = Transform(grid);
+        var bounds = xform.WorldMatrix.TransformBox(gridComp.LocalAABB).Enlarged(ShuttleFTLRange);
+        var bodyQuery = GetEntityQuery<PhysicsComponent>();
+        foreach (var other in _mapManager.FindGridsIntersecting(xform.MapID, bounds))
+        {
+            if (grid == other.Owner ||
+                !bodyQuery.TryGetComponent(other.Owner, out var body) ||
+                body.Mass < ShuttleFTLMassThreshold)
+            {
+                continue;
+            }
+
+            PlayDenySound(uid, component);
+            _popupSystem.PopupEntity(Loc.GetString("shuttle-ftl-proximity"), uid, PopupType.MediumCaution);
+            UpdateConsoles(data);
+            return;
+        }
+        // end of Frontier proximity check
+
+        SpawnMission(missionparams, station.Value);
 
         data.ActiveMission = args.Index;
-        var mission = GetMission(_prototypeManager.Index<SalvageDifficultyPrototype>(missionparams.Difficulty), missionparams.Seed);
+        var mission = GetMission(missionparams.MissionType, missionparams.Difficulty, missionparams.Seed);
         data.NextOffer = _timing.CurTime + mission.Duration + TimeSpan.FromSeconds(1);
-
-        _labelSystem.Label(cdUid, GetFTLName(_prototypeManager.Index(PlanetNames), missionparams.Seed));
-        _audio.PlayPvs(component.PrintSound, uid);
-
-        UpdateConsoles((station.Value, data));
+        UpdateConsoles(data);
     }
 
     private void OnSalvageConsoleInit(Entity<SalvageExpeditionConsoleComponent> console, ref ComponentInit args)
@@ -54,7 +78,7 @@ public sealed partial class SalvageSystem
         UpdateConsole(console);
     }
 
-    private void UpdateConsoles(Entity<SalvageExpeditionDataComponent> component)
+    private void UpdateConsoles(SalvageExpeditionDataComponent component)
     {
         var state = GetState(component);
 

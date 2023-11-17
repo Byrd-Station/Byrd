@@ -17,8 +17,8 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Salvage.Expeditions.Modifiers;
 
-[Prototype]
-public sealed partial class SalvageDungeonModPrototype : IPrototype, IBiomeSpecificMod
+[Prototype("salvageDungeonMod")]
+public sealed class SalvageDungeonMod : IPrototype, IBiomeSpecificMod
 {
     [IdDataField] public string ID { get; private set; } = default!;
 
@@ -29,8 +29,8 @@ public sealed partial class SalvageDungeonModPrototype : IPrototype, IBiomeSpeci
     public float Cost { get; private set; } = 0f;
 
     /// <inheridoc/>
-    [DataField]
-    public List<ProtoId<SalvageBiomeModPrototype>>? Biomes { get; private set; } = null;
+    [DataField("biomes", customTypeSerializer: typeof(PrototypeIdListSerializer<SalvageBiomeMod>))]
+    public List<string>? Biomes { get; private set; } = null;
 
     /// <summary>
     /// The config to use for spawning the dungeon.

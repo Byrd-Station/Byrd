@@ -34,22 +34,27 @@
 
 - type: salvageFaction
   id: Carps
-  desc: salvage-faction-carps
-  entries:
-    - proto: MobCarpDungeon
-    # These do too much damage for salvage, need nerfs
-    #- proto: MobCarpHolo
-    #  cost: 5
-    #  prob: 0.1
-    #- proto: MobCarpMagic
-    #  cost: 5
-    #  prob: 0.1
-    - proto: MobCarpRainbow # carp version of rouny...
-      cost: 3
-      prob: 0.05
-    - proto: MobDragonDungeon
-      cost: 10
-      prob: 0.02
+  groups:
+  - entries:
+    - id: MobCarpDungeon
+      amount: 1
+      maxAmount: 4
+  - entries:
+    - id: MobCarpMagic
+      amount: 1
+      maxAmount: 3
+    prob: 0.1
+#  - entries:
+#    - id: MobCarpHolo
+#      amount: 1
+#      maxAmount: 2
+#    prob: 0.25'
+  - entries:
+    - id: MobCarpRainbow # carp version of rouny...
+      amount: 1
+      maxAmount: 1
+    prob: 0.05
   configs:
     DefenseStructure: CarpStatue
+    Mining: Carps
     Megafauna: MobDragonDungeon

@@ -10,15 +10,21 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Salvage.Expeditions;
 
-[Prototype]
-public sealed partial class SalvageFactionPrototype : IPrototype
+[Prototype("salvageFaction")]
+public sealed class SalvageFactionPrototype : IPrototype, ISalvageMod
 {
     [IdDataField] public string ID { get; private set; } = default!;
 
     [DataField("desc")] public LocId Description { get; private set; } = string.Empty;
 
-    [ViewVariables(VVAccess.ReadWrite), DataField("entries", required: true)]
-    public List<SalvageMobEntry> MobGroups = new();
+    /// <summary>
+    /// Cost for difficulty modifiers.
+    /// </summary>
+    [DataField("cost")]
+    public float Cost { get; private set; } = 0f;
+
+    [ViewVariables(VVAccess.ReadWrite), DataField("groups", required: true)]
+    public List<SalvageMobGroup> MobGroups = default!;
 
     /// <summary>
     /// Miscellaneous data for factions.

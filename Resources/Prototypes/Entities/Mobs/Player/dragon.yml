@@ -397,7 +397,9 @@
   - type: Butcherable
     spawned:
     - id: FoodMeatDragon
-      amount: 1
+      amount: 3
+  - type: SalvageMobRestrictions
+  # half damage, spread evenly
   - type: MeleeWeapon
     damage:
       groups:
