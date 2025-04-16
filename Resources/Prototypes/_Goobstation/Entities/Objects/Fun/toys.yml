@@ -337,7 +337,75 @@
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
 
+## Self-Insert Squad
+## Modified by kurycovwolf 17 oct 2025 and cherry picked back into omu.
+
+- type: entity
+  parent: PlushieMoth
+  id: PlushieKnott
+  name: Knott plushie
+  description: A cute stuffed toy that resembles a blue moth. He was the first, not to be forgotten.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Fun/selfinsert.rsi
+    state: plushie_knott
+
+## knott started the whole crew plushie thing along with me, he deserved to be kept in.
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieKury
+  name: Kury plushie
+  description: You notice a small note on it's back.. it says.. "You should get out of my way."... You're filled with the power of the angry.. yet sad, yet edgy!.. yet kind, fuzzy boy, and the urge to use "surely" on each of your sentences and never give up..!
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Fun/selfinsert.rsi
+    state: plushie_kury
+
+
+
+- type: entity
+  parent: [ BasePlushie, BaseMajorContraband ]
+  id: PlushieByrrne
+  name: Byrrne plushie
+  description: Byrrne.. the name's familiar. A myth of an everchanging creature that used to work with Nanotrasen and was well known by CC. Until a cult formed around him, maybe some kind of fucked religion?.. Though of course, only Centcomm should be praised. He hasn't been seen around much, atleast not in his original form, even then, this is just a small portray of what he used to look like. You feel the urge to avoid it. There's something wrong with it.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Fun/selfinsert.rsi
+    state: plushie_byrrne
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/gib1.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PlushieByrrneGibbed:
+            min: 1
+            max: 1
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieByrrneGibbed # special gib mechanic
+  name: gibbed Byrrne plushie
+  suffix: gibbed
+  description: Perhaps it was for the best, although the feeling hasn't gone away. You're starting to hate it.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Fun/selfinsert.rsi
+    state: plushie_byrrne_gibbed
+
+
 ## Admin plushies go above the rest of the chuds.
+## So that goobmins can remove the crew plushies easier and keep theirs because theyre evil....... :(
 
 - type: entity
   parent: BasePlushie
@@ -405,12 +473,13 @@
           Quantity: 5
 
 ## Jvne goes here because she's cooler
+## Fucked with Jvne's description because im evil -k
 
 - type: entity
   parent: BasePlushie
   id: PlushieJvne
   name: jvne plushie
-  description: It's been a rough day...
+  description: Huh.. there's a label.. it says.. "Also try Kury's plushie!"... Ah.. this one's a ripoff, and it's also creased with a bloody "K" carved onto it's back. Disappointing. It probably shouldn't even be here.
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Fun/toys.rsi

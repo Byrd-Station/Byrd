@@ -118,6 +118,7 @@
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 IrisTheAmped <iristheamped@gmail.com>
 # SPDX-FileCopyrightText: 2025 OnsenCapy <101037138+OnsenCapy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Plyush <121322002+Plyushsune@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 RatherUncreative <RatherUncreativeName@proton.me>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
@@ -212,10 +213,29 @@
   components:
   - type: EntityTableContainerFill
     containers:
-      entity_storage: !type:NestedSelector
+      entity_storage:
+      - !type:NestedSelector
         tableId: AllPottedPlantsTable
         rolls: !type:ConstantNumberSelector
           value: 5
+      - !type:GroupSelector
+        children:
+        - id: PlushieBlackburn
+          weight: 0.35
+        - id: PlushieBlackburnKobliska
+          weight: 0.25
+        - id: PlushieBlackburnMatryoskya
+          weight: 0.25
+        - id: PlushieDesislavaBlackburn
+          weight: 0.15
+      - !type:GroupSelector # Self insert crew :-)
+        children:
+        - id: PlushieKnott
+          weight: 0.65
+        - id: PlushieKury
+          weight: 0.65
+        - id: PlushieByrrne
+
 
 - type: entity
   id: CrateFunPlushie
@@ -592,6 +612,18 @@
       - id: BoxDarts
         amount: 1
         prob: 0.05
+
+- type: entity
+  id: CrateFunSelfInsertPlushie # Self insert crate :-)
+  parent: CrateGenericSteel
+  name: crew plushie crate
+  description: A box full of cute plushies of beloved crewmembers.
+  components:
+  - type: StorageFill
+    contents:
+      - id: PlushieKnott
+      - id: PlushieKury
+      - id: PlushieByrrne
 
 - type: entity
   name: hydrated scurret
