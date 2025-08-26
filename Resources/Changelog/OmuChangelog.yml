@@ -7,7 +7,7 @@ Entries:
       message: Cyberpunk accent added to the accents section in traits.
   id: 1
   time: '2025-08-25T22:06:13.0000000+00:00'
-- author: CliveOcelot
+- author: Orion-416
   changes:
     - type: Add
       message: More Xenoborg content from upstream!
@@ -37,35 +37,31 @@ Entries:
       message: Removed Assistant Malus, be free!
   id: 4
   time: '2025-08-25T22:06:16.0000000+00:00'
-- author: Cygnis
+- author: Appenzaller
+  changes:
+    - type: Tweak
+      message: Added sec key to BSO's headset.
+  id: 5
+  time: '2025-08-25T22:06:18.0000000+00:00'
+- author: Cygnye
   changes:
     - type: Add
       message: Added the VC-8 revolver for the Captain.
     - type: Add
       message: Added a new revolver for Security Duty Weapon selector.
-    - type: Tweak
-      message: Made the VC-8 not the most OP thing in the universe.
-  id: 5
-  time: '2025-08-25T22:06:17.0000000+00:00'
-- author: Appenzaller
-  changes:
-    - type: Tweak
-      message: Added sec key to BSO's headset.
-  id: 6
-  time: '2025-08-25T22:06:18.0000000+00:00'
-- author: Cygnye
-  changes:
     - type: Add
       message: Added Veteran CMO Beret.
     - type: Add
       message: Added Veteran CMO Splashproof Jacket.
-  id: 7
+    - type: Tweak
+      message: Made the VC-8 not the most OP thing in the universe.
+  id: 6
   time: '2025-08-26T03:28:14.0000000+00:00'
 - author: Orion-416
   changes:
     - type: Fix
-      message: Fixed shadowkin's leg being transparent
-  id: 8
+      message: Fixed shadowkin's leg being transparent.
+  id: 7
   time: '2025-08-26T04:10:03.0000000+00:00'
 - author: Orion-416
   changes:
@@ -73,5 +69,11 @@ Entries:
       message: ERT now can be most species (Excluding Plasmamen and Yowie)
     - type: Tweak
       message: Re-enabled gingerbread (They were never fully disabled for some reason)
-  id: 9
+  id: 8
   time: '2025-08-26T04:12:02.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Added a Changelog!
+  id: 9
+  time: '2025-08-26T04:21:02.0000000+00:00'
