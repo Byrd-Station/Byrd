@@ -63,10 +63,10 @@ gs-balanceui-shop-footer = ⚠ Ahelp to use your token. Only 1 use per day.
 
 gs-balanceui-shop-token-label = Tokens
 gs-balanceui-shop-tittle-label = Titles
-# Omu, replace Goobcoin with Eggcoin
-gs-balanceui-shop-buy-token-antag = Buy an Antag Token - {$price} Egg Coins
-gs-balanceui-shop-buy-token-admin-abuse = Buy an Admin Abuse Token - {$price} Egg Coins
-gs-balanceui-shop-buy-token-hat = Buy a Hat Token - {$price} Egg Coins
+# Omu, replace Goobcoin with Eggs
+gs-balanceui-shop-buy-token-antag = Buy an Antag Token - {$price} Eggs
+gs-balanceui-shop-buy-token-admin-abuse = Buy an Admin Abuse Token - {$price} Eggs
+gs-balanceui-shop-buy-token-hat = Buy a Hat Token - {$price} Eggs
 
 gs-balanceui-shop-token-antag = High Tier Antag Token
 gs-balanceui-shop-token-admin-abuse = Admin Abuse Token
