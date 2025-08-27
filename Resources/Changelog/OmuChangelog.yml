@@ -83,3 +83,15 @@ Entries:
       message: All jetpacks can now be placed in the suitstorage slot
   id: 10
   time: '2025-08-26T04:30:59.0000000+00:00'
+- author: Diggy
+  changes:
+    - type: Add
+      message: >-
+        Added a toggle to belt items so you can wear them over your outer
+        clothing or under.
+    - type: Tweak
+      message: >-
+        Harpy, Rodentia, Vulpkanin, Plasmamen, Shadowkin sprites now show
+        backpacks under neck clothing items instead of above.
+  id: 11
+  time: '2025-08-27T06:58:22.0000000+00:00'
