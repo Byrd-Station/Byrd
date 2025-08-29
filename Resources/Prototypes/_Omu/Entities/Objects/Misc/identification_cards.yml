@@ -48,3 +48,21 @@
     - CentralCommand
     - NanotrasenRepresentative
     - BlueshieldOfficer
+
+- type: entity
+  parent: IDCardStandard
+  id: CentralCommandDireggtorIDCard
+  name: CentComm Direggtor ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idcentcom
+  - type: Item
+    heldPrefix: 
+  - type: IdCard
+    jobTitle: job-name-centcomm-direggtor
+    jobIcon: JobIconCentCommDireggtor
+  - type: PresetIdCard
+    job: CentralCommandDireggtor
+

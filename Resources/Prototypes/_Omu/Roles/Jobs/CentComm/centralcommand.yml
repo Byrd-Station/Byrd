@@ -38,3 +38,48 @@
   storage:
     back:
     - HandheldFaxCentCommIntern
+
+- type: job
+  id: CentralCommandDireggtor
+  name: job-name-centcomm-direggtor
+  description: job-description-centcomoff
+  playTimeTracker: JobCentCommDireggtor
+  setPreference: false
+  startingGear: CentcomDireggtorGear
+  icon: "JobIconCentCommDireggtor"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  requirements:
+  - !type:AgeRequirement
+    requiredAge: 18
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  - NanotrasenRepresentative
+  - BlueshieldOfficer
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant, DeathRattleImplantCentcomm ]
+
+- type: startingGear 
+  id: CentcomDireggtorGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficial
+    shoes: ClothingShoesBootsJackFilled 
+    head: ClothingHeadHatCentcomcap 
+    eyes: ClothingEyesGlassesCentComm 
+    gloves: ClothingHandsGlovesHeavyGoldenTrim 
+    back: ClothingBackpackSatchelLeather 
+    outerClothing: ClothingOuterArmorCentcommCarapace 
+    neck: ExecutiveIDCard 
+    id: CentCommDireggtorPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltHolsterFilledCentComm 
+    pocket1: BoxFolderCentCom 
+    # pocket2: PenCentcom - Already has one in the PDA. This is redundant.
+  storage:
+    back:
+    - HandheldFaxOfficial 
+    - BoxFolderCentComClipboard 
+    - DeterrentCaseFilled
