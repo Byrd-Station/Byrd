@@ -1,0 +1,6 @@
+- type: accessGroup
+  id: CentComm
+  tags:
+  - CentralCommand
+  - NanotrasenRepresentative
+  - BlueshieldOfficer
