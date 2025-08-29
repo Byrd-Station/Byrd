@@ -123,3 +123,19 @@ Entries:
         protection.
   id: 14
   time: '2025-08-29T13:26:23.0000000+00:00'
+- author: Cygnye
+  changes:
+    - type: Add
+      message: Brand new BSO Kimono! now with sleevies!!!
+    - type: Add
+      message: Inhand sprites for CMO gear.
+    - type: Fix
+      message: Fixed CMO Veteran Beret & Splashproof Jacket.
+  id: 15
+  time: '2025-08-29T16:43:35.0000000+00:00'
+- author: ShieldAcrados
+  changes:
+    - type: Tweak
+      message: Minor changes to the CC-557 centcomm shuttle.
+  id: 16
+  time: '2025-08-29T17:04:45.0000000+00:00'
