@@ -115,3 +115,11 @@ Entries:
       message: Changed mentions of goobcoin to EggCoin
   id: 13
   time: '2025-08-27T12:14:37.0000000+00:00'
+- author: Orion-416
+  changes:
+    - type: Add
+      message: >-
+        BSO now gets their own webbing with the syringe kit, with inbuilt blast
+        protection.
+  id: 14
+  time: '2025-08-29T13:26:23.0000000+00:00'
