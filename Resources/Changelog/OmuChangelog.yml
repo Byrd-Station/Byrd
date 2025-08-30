@@ -145,3 +145,47 @@ Entries:
       message: Added the Centcomm Direggtor
   id: 17
   time: '2025-08-30T02:41:10.0000000+00:00'
+- author: Cygnye
+  changes:
+    - type: Add
+      message: Logos!!!
+  id: 18
+  time: '2025-08-30T20:45:17.0000000+00:00'
+- author: Diggy
+  changes:
+    - type: Add
+      message: Added two uniforms and a jacket to Cargo Technicians.
+    - type: Add
+      message: Added two uniforms for Quartermaster.
+    - type: Add
+      message: Added more outer clothing to the Blueshield Officer.
+    - type: Add
+      message: Added two uniforms and a jacket for Paramedic.
+    - type: Add
+      message: Added a new jacket for Brigmedic.
+    - type: Add
+      message: >-
+        Added the parade uniform and new jackets for Head of Security and Head
+        of Personnel.
+    - type: Add
+      message: Added a new cloak and jacket to the Centdrobe.
+    - type: Add
+      message: Added a new cloak for the research director.
+    - type: Tweak
+      message: >-
+        Parade Voidsuit is noew available with the Voidsuit Selector for Head of
+        Security.
+  id: 19
+  time: '2025-08-30T20:50:31.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: A load of commits from upstream
+  id: 20
+  time: '2025-08-30T21:16:22.0000000+00:00'
+- author: Cygnye
+  changes:
+    - type: Add
+      message: Added R6 Revolving trench shotgun!
+  id: 21
+  time: '2025-08-30T21:59:37.0000000+00:00'
