@@ -56,6 +56,7 @@
       clothingVisuals:
         gloves:
         - state: equipped-HAND-sealed
+    - type: Insulated # Omu, Who removed the insulated from the parent...
 
 - type: entity
   parent: [ClothingModsuitHelmetStandard, ShowSecurityIcons]

@@ -173,6 +173,7 @@
     - /Audio/Magic/fireball.ogg
     - /Audio/Magic/forcewall.ogg
     - /Audio/Magic/knock.ogg
+    - /Audio/Machines/Nuke/nuke_alarm.ogg # Omu, let harpies make more sounds.
 
 - type: soundCollection
   id: HarpyBeeps

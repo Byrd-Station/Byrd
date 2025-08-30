@@ -1,0 +1,117 @@
+Name: Omulog
+Order: -2
+Entries:
+- author: Diggy0
+  changes:
+    - type: Add
+      message: Cyberpunk accent added to the accents section in traits.
+  id: 1
+  time: '2025-08-25T22:06:13.0000000+00:00'
+- author: Orion-416
+  changes:
+    - type: Add
+      message: More Xenoborg content from upstream!
+    - type: Tweak
+      message: Felinids return.
+    - type: Fix
+      message: Fixed modsuit helmet's lights, you can see again.
+    - type: Fix
+      message: Fixed CC modsuits not being insulated.
+  id: 2
+  time: '2025-08-25T22:06:14.0000000+00:00'
+- author: ShieldAcrados
+  changes:
+    - type: Add
+      message: Added a new Central Command Shuttle! The CC-557 "Angel"!
+    - type: Add
+      message: >-
+        Added a new Central Command Intern role, stamp, lanyard, and fax
+        machine!
+    - type: Tweak
+      message: You can now use Lanyards as IDs!
+  id: 3
+  time: '2025-08-25T22:06:15.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Remove
+      message: Removed Assistant Malus, be free!
+  id: 4
+  time: '2025-08-25T22:06:16.0000000+00:00'
+- author: Appenzaller
+  changes:
+    - type: Tweak
+      message: Added sec key to BSO's headset.
+  id: 5
+  time: '2025-08-25T22:06:18.0000000+00:00'
+- author: Cygnye
+  changes:
+    - type: Add
+      message: Added the VC-8 revolver for the Captain.
+    - type: Add
+      message: Added a new revolver for Security Duty Weapon selector.
+    - type: Add
+      message: Added Veteran CMO Beret.
+    - type: Add
+      message: Added Veteran CMO Splashproof Jacket.
+    - type: Tweak
+      message: Made the VC-8 not the most OP thing in the universe.
+  id: 6
+  time: '2025-08-26T03:28:14.0000000+00:00'
+- author: Orion-416
+  changes:
+    - type: Fix
+      message: Fixed shadowkin's leg being transparent.
+  id: 7
+  time: '2025-08-26T04:10:03.0000000+00:00'
+- author: Orion-416
+  changes:
+    - type: Tweak
+      message: ERT now can be most species (Excluding Plasmamen and Yowie)
+    - type: Tweak
+      message: Re-enabled gingerbread (They were never fully disabled for some reason)
+  id: 8
+  time: '2025-08-26T04:12:02.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Added a Changelog!
+  id: 9
+  time: '2025-08-26T04:21:02.0000000+00:00'
+- author: Orion-416
+  changes:
+    - type: Tweak
+      message: All jetpacks can now be placed in the suitstorage slot
+  id: 10
+  time: '2025-08-26T04:30:59.0000000+00:00'
+- author: Diggy
+  changes:
+    - type: Add
+      message: >-
+        Added a toggle to belt items so you can wear them over your outer
+        clothing or under.
+    - type: Tweak
+      message: >-
+        Harpy, Rodentia, Vulpkanin, Plasmamen, Shadowkin sprites now show
+        backpacks under neck clothing items instead of above.
+  id: 11
+  time: '2025-08-27T06:58:22.0000000+00:00'
+- author: Orion-416
+  changes:
+    - type: Add
+      message: >-
+        Gave harpy more emotes (Namely most of the IPC emotes, along with Weh
+        and Hew)
+    - type: Fix
+      message: Fixed certain harpy emotes
+  id: 12
+  time: '2025-08-27T12:13:08.0000000+00:00'
+- author: Orion-416
+  changes:
+    - type: Add
+      message: >-
+        Added a "antag round token", which allows you to select the main antag
+        for a round (Ex: nukeops)
+    - type: Tweak
+      message: Changed mentions of goobcoin to EggCoin
+  id: 13
+  time: '2025-08-27T12:14:37.0000000+00:00'

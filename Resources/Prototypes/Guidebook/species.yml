@@ -31,9 +31,8 @@
     - Moth
     - Reptilian
     - SlimePerson
-    # Goobstation
-    # - Felinid
-    - Gingerbread
+    - Felinid # Omu, Add back Felinid
+#    - Gingerbread # Omu, gingerbread shouldnt be in guidebook
     - Harpy
     - Vox
     - Vulpkanin
@@ -81,16 +80,15 @@
   name: species-name-slime
   text: "/ServerInfo/Guidebook/Mobs/SlimePerson.xml"
 
-# Goobstation
-#- type: guideEntry
-#  id: Felinid
-#  name: species-name-felinid
-#  text: "/ServerInfo/Guidebook/Mobs/Felinid.xml"
+- type: guideEntry # Omu, add back Felinid
+  id: Felinid
+  name: species-name-felinid
+  text: "/ServerInfo/Guidebook/Mobs/Felinid.xml"
 
-- type: guideEntry
-  id: Gingerbread
-  name: species-name-gingerbread
-  text: "/ServerInfo/Guidebook/Mobs/Gingerbread.xml"
+#- type: guideEntry
+#  id: Gingerbread
+#  name: species-name-gingerbread
+#  text: "/ServerInfo/Guidebook/Mobs/Gingerbread.xml"
 
 - type: guideEntry
   id: Harpy

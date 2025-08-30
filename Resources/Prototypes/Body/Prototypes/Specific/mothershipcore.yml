@@ -1,0 +1,36 @@
+- type: body
+  id: MothershipCoreBody
+  name: "core"
+  root: torso
+  slots:
+    torso:
+      part: TorsoBorg
+      connections:
+      - right arm 2
+      - right arm 1
+      - left arm 1
+      - left arm 2
+    left arm 1:
+      part: LeftArmBorg
+      connections: 
+      - left hand 1
+    left arm 2:
+      part: LeftArmBorg
+      connections: 
+      - left hand 2
+    right arm 1:
+      part: RightArmBorg
+      connections: 
+      - right hand 1
+    right arm 2:
+      part: RightArmBorg
+      connections: 
+      - right hand 2
+    left hand 1:
+      part: LeftHandHuman
+    left hand 2:
+      part: LeftHandHuman
+    right hand 1:
+      part: RightHandHuman
+    right hand 2:
+      part: RightHandHuman

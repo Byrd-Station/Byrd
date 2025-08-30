@@ -61,6 +61,7 @@
         - state: equipped-HAND-sealed
         - state: equipped-HAND-sealed-unshaded
           shader: unshaded
+    - type: Insulated # Omu, Who removed the insulated from the parent...
 
 - type: entity
   parent: [ClothingModsuitHelmetStandard, ShowSecurityIcons]
@@ -108,6 +109,8 @@
       clothingVisuals:
         head:
         - state: equipped-HEAD-sealed
+        - state: equipped-HEAD-sealed-unshaded # Omu, fix unshaded layer being missing
+          shader: unshaded
 
 - type: entity
   parent: ClothingModsuitChestplateStandard
