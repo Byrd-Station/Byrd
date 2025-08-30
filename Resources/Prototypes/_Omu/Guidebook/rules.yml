@@ -49,3 +49,38 @@
   ruleEntry: true
   priority: 7
   text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleSelfantag.xml"
+
+- type: guideEntry
+  id: RuleBigotry
+  name: guide-entry-rules-bigotry
+  ruleEntry: true
+  priority: 8
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleBigotry.xml"
+
+- type: guideEntry
+  id: RuleNSFW
+  name: guide-entry-rules-nsfw
+  ruleEntry: true
+  priority: 8
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleNSFW.xml"
+
+- type: guideEntry
+  id: RuleEnglish
+  name: guide-entry-rules-english
+  ruleEntry: true
+  priority: 9
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleEnglish.xml"
+
+- type: guideEntry
+  id: RuleHacker
+  name: guide-entry-rules-hacker
+  ruleEntry: true
+  priority: 10
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleHacker.xml"
+
+- type: guideEntry
+  id: RuleSkillIssue
+  name: guide-entry-rules-english
+  ruleEntry: true
+  priority: 11
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleSkillIssue.xml"
