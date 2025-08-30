@@ -189,3 +189,9 @@ Entries:
       message: Added R6 Revolving trench shotgun!
   id: 21
   time: '2025-08-30T21:59:37.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Remove
+      message: Removed Nuclear14 Assets
+  id: 22
+  time: '2025-08-30T22:51:40.0000000+00:00'
