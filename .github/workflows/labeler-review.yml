@@ -20,17 +20,17 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-    - uses: tspascoal/get-user-teams-membership@v3
-      id: checkUserMember
-      with:
-        username: ${{ github.actor }}
-        team: "maintainers"
-        GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
-    - if: "${{ (steps.checkUserMember.outputs.isTeamMember == 'true') && (contains(github.event.pull_request.labels.*.name, 'S: Needs Second Approval')) }}"
+#    - uses: tspascoal/get-user-teams-membership@v3
+#      id: checkUserMember
+#      with:
+#        username: ${{ github.actor }}
+#        team: "maintainers"
+#        GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+    - if: "${{ contains(github.event.pull_request.labels.*.name, 'S: Needs Second Approval') }}"
       uses: actions-ecosystem/action-add-labels@v1
       with:
         labels: "S: Approved"
-    - if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
+    - if: "${{ false == contains(github.event.pull_request.labels.*.name, 'S: Needs Second Approval') }}"
       uses: actions-ecosystem/action-add-labels@v1
       with:
         labels: "S: Needs Second Approval"
