@@ -6,3 +6,12 @@
   components:
   - type: Pda
     id: CentralCommandInternIDCard
+
+- type: entity
+  parent: CentcomPDA
+  id: CentCommDireggtorPDA
+  name: CentComm Direggtor's PDA
+  description: A standard-issue CentComm Direggtor PDA.
+  components:
+  - type: Pda
+    id: CentralCommandDireggtorIDCard
