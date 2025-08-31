@@ -1,12 +1,9 @@
 - type: guideEntry
   id: OmuRuleset
   name: guide-entry-rules
+  ruleEntry: true
   priority: 1
   text: "/ServerInfo/_Omu/Guidebook/ServerRules/OmuRules.xml"
-  children:
-  - RuleAdmins
-  - RuleDontBeADick
-  - RuleICKOCK
 
 - type: guideEntry
   id: RuleAdmins
