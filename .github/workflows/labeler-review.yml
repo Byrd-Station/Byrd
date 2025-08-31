@@ -14,19 +14,27 @@ on:
 jobs:
   add_label:
     # Change the repository name after you've made sure the team name is correct for your fork!
-    if: ${{ (github.repository == 'Goob-Station/Goob-Station') && (github.event.review.state == 'APPROVED') }}
+    if: ${{ (github.repository == 'ProjectOmu/OmuStation') && (github.event.review.state == 'APPROVED') }}
     permissions:
       contents: read
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-    - uses: tspascoal/get-user-teams-membership@v3
-      id: checkUserMember
-      with:
-        username: ${{ github.actor }}
-        team: "maintainers"
-        GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
-    - if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
+#    - uses: tspascoal/get-user-teams-membership@v3 #Omu, only maints can approve anyway, so this isnt needed.
+#      id: checkUserMember
+#      with:
+#        username: ${{ github.actor }}
+#        team: "maintainers"
+#        GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+    - if: "${{ contains(github.event.pull_request.labels.*.name, 'S: Needs Second Approval') }}"
       uses: actions-ecosystem/action-add-labels@v1
       with:
         labels: "S: Approved"
+    - if: "${{ contains(github.event.pull_request.labels.*.name, 'S: Needs Second Approval') }}"
+      uses: actions-ecosystem/action-remove-labels@v1
+      with:
+        labels: "S: Needs Second Approval"
+    - if: "${{ false == contains(github.event.pull_request.labels.*.name, 'S: Needs Second Approval') }}"
+      uses: actions-ecosystem/action-add-labels@v1
+      with:
+        labels: "S: Needs Second Approval"
