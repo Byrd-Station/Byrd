@@ -30,6 +30,10 @@ jobs:
       uses: actions-ecosystem/action-add-labels@v1
       with:
         labels: "S: Approved"
+    - if: "${{ contains(github.event.pull_request.labels.*.name, 'S: Needs Second Approval') }}"
+      uses: actions-ecosystem/action-remove-labels@v1
+      with:
+        labels: "S: Needs Second Approval"
     - if: "${{ false == contains(github.event.pull_request.labels.*.name, 'S: Needs Second Approval') }}"
       uses: actions-ecosystem/action-add-labels@v1
       with:
