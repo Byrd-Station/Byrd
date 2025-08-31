@@ -159,6 +159,8 @@
   - SpecialOperationsOfficer
   - Diplomat
   - GovernmentMan # Goobstation - End
+  - CentralCommandDireggtor # Omu Start
+  - CentCommIntern # Omu End
   editorHidden: true
   weight: 120
 
