@@ -99,6 +99,8 @@
       collection: Warble
     Wurble:
       collection: Wurble
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
     Mars: # Omu, fix harpy emotes
       collection: Mars
     Yawn: # Omu, fix harpy emotes
@@ -203,6 +205,8 @@
       collection: Wurble
     Mars:
       collection: Mars
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
     Yawn: # Omu, fix harpy emotes
       collection: MaleYawn
     Boop: # Omu, give harpy more emotes
@@ -269,6 +273,8 @@
       collection: FemaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
 
 - type: emoteSounds
   id: MaleVulpkanin
@@ -317,6 +323,8 @@
       collection: MaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
 
 - type: emoteSounds
   id: MobDog
@@ -451,3 +459,5 @@
       collection: Whistles
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
