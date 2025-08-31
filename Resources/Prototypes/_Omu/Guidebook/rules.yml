@@ -80,7 +80,7 @@
 
 - type: guideEntry
   id: RuleSkillIssue
-  name: guide-entry-rules-english
+  name: guide-entry-rules-skillissue
   ruleEntry: true
   priority: 11
   text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleSkillIssue.xml"
