@@ -72,5 +72,5 @@
     sprite: _Nuclear14/Structures/Decoration/torches.rsi
     normalState: wall_torch_lit
   - type: Construction
-    graph: WallTorch
-    node: WallTorch
+    graph: WallTorchN14
+    node: WallTorchN14
