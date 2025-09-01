@@ -7,9 +7,6 @@
   startNode: start
   targetNode: bed
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/bedsandchairs.rsi
-    state: bed
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -25,9 +22,6 @@
   startNode: start
   targetNode: bedwood
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/bedsandchairs.rsi
-    state: bed_wood
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -41,9 +35,6 @@
   startNode: start
   targetNode: medicalbed
   category: construction-category-furniture
-  icon:
-    sprite: Structures/Furniture/furniture.rsi
-    state: bed-MED
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -57,9 +48,6 @@
   startNode: start
   targetNode: bedroll
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/bedsandchairs.rsi
-    state: bedroll_unrolled
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -73,9 +61,6 @@
   startNode: start
   targetNode: N14ChairWood
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/bedsandchairs.rsi
-    state: wooden_chair
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -89,9 +74,6 @@
   startNode: start
   targetNode: N14ChairWood1
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
-    state: wood_chair
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -105,9 +87,6 @@
   startNode: start
   targetNode: N14ChairWoodPadded
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
-    state: wood_chair_padded
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -121,9 +100,6 @@
   startNode: start
   targetNode: N14ChairWoodSettler
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/bedsandchairs.rsi
-    state: wooden_chair_settler
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -137,9 +113,6 @@
   startNode: start
   targetNode: N14ChairStoolBarBlack
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/bedsandchairs.rsi
-    state: bar_black
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -153,9 +126,6 @@
   startNode: start
   targetNode: N14ChairStoolBarTan
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/bedsandchairs.rsi
-    state: bar_tan
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -169,9 +139,6 @@
   startNode: start
   targetNode: N14ChairStoolBarRed
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
-    state: barstool
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -185,9 +152,6 @@
   startNode: start
   targetNode: N14ChairArmchair
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
-    state: armchair
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -201,9 +165,6 @@
   startNode: start
   targetNode: N14ChairMetalGreen
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
-    state: metal_chair
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -217,9 +178,6 @@
   startNode: start
   targetNode: N14ChairMetalBlue
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
-    state: metal_chair_blue
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -233,9 +191,6 @@
   startNode: start
   targetNode: N14ChairMetalRed
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
-    state: metal_chair_red
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -249,9 +204,6 @@
   startNode: start
   targetNode: N14ChairOfficeRed
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
-    state: office_chair
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -265,9 +217,6 @@
   startNode: start
   targetNode: N14ChairOfficeBlue
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
-    state: office_chair_blue
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -281,9 +230,6 @@
   startNode: start
   targetNode: N14ChairOfficeGreen
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
-    state: office_chair_green
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -297,9 +243,6 @@
   startNode: start
   targetNode: N14ChairOfficeErgonomic
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
-    state: ergo_chair
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -313,9 +256,6 @@
   startNode: start
   targetNode: N14ChairMetalFolding
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
-    state: metal_chair_folding
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -329,9 +269,6 @@
   startNode: start
   targetNode: N14ChairPlastic
   category: construction-category-furniture
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
-    state: plastic_chair
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -352,9 +289,6 @@
   canBuildInImpassable: false
   hide: false
   canRotate: true
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/Tables/barcounter.rsi
-    state: full
   conditions:
     - !type:TileNotBlocked
 
@@ -369,9 +303,6 @@
   canBuildInImpassable: false
   hide: false
   canRotate: true
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/Tables/metalgrate.rsi
-    state: full
   conditions:
     - !type:TileNotBlocked
 
@@ -386,8 +317,5 @@
   canBuildInImpassable: false
   hide: false
   canRotate: true
-  icon:
-    sprite: _Nuclear14/Structures/Furniture/Tables/table_settler.rsi
-    state: full
   conditions:
     - !type:TileNotBlocked

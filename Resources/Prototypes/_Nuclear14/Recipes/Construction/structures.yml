@@ -4,9 +4,6 @@
   startNode: start
   targetNode: logWall
   category: construction-category-structures
-  icon:
-    sprite: _Nuclear14/Structures/Walls/nc14/woodlog.rsi
-    state: full
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: false
@@ -26,8 +23,5 @@
   placementMode: SnapgridCenter
   canBuildInImpassable: false
   hide: false
-  icon:
-    sprite: _Nuclear14/Structures/Doors/FalloutDoors/wooddoor.rsi
-    state: closed
   conditions:
     - !type:TileNotBlocked
