@@ -20,16 +20,16 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-#    - uses: tspascoal/get-user-teams-membership@v3 #Omu, only maints can approve anyway, so this isnt needed.
-#      id: checkUserMember
-#      with:
-#        username: ${{ github.actor }}
-#        team: "maintainers"
-#        GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
-    - if: "${{ contains(github.event.pull_request.labels.*.name, 'S: Needs Second Approval') }}"
-      uses: actions-ecosystem/action-add-labels@v1
-      with:
-        labels: "S: Approved"
+   # - uses: tspascoal/get-user-teams-membership@v3 #Omu, only maints can approve anyway, so this isnt needed.
+   #   id: checkUserMember
+   #   with:
+   #     username: ${{ github.actor }}
+   #     team: "maintainers"
+   #     GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+    # - if: "${{ contains(github.event.pull_request.labels.*.name, 'S: Needs Second Approval') }}"
+    #   uses: actions-ecosystem/action-add-labels@v1
+    #   with:
+    #     labels: "S: Approved"
     - if: "${{ contains(github.event.pull_request.labels.*.name, 'S: Needs Second Approval') }}"
       uses: actions-ecosystem/action-remove-labels@v1
       with:
