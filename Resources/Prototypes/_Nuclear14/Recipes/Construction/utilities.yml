@@ -1,11 +1,9 @@
 ﻿- type: construction
-  name: wall torch
   id: WallTorchN14
   graph: WallTorchN14
   startNode: start
   targetNode: WallTorchN14
   category: construction-category-utilities
-  description: A wooden stake on the wall you can light
   icon: { sprite: _Nuclear14/Structures/Decoration/torches.rsi, state: wall_torch_unlit }
   objectType: Structure
   placementMode: SnapgridCenter
