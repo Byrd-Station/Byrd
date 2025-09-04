@@ -145,3 +145,111 @@ Entries:
       message: Added the Centcomm Direggtor
   id: 17
   time: '2025-08-30T02:41:10.0000000+00:00'
+- author: Cygnye
+  changes:
+    - type: Add
+      message: Logos!!!
+  id: 18
+  time: '2025-08-30T20:45:17.0000000+00:00'
+- author: Diggy
+  changes:
+    - type: Add
+      message: Added two uniforms and a jacket to Cargo Technicians.
+    - type: Add
+      message: Added two uniforms for Quartermaster.
+    - type: Add
+      message: Added more outer clothing to the Blueshield Officer.
+    - type: Add
+      message: Added two uniforms and a jacket for Paramedic.
+    - type: Add
+      message: Added a new jacket for Brigmedic.
+    - type: Add
+      message: >-
+        Added the parade uniform and new jackets for Head of Security and Head
+        of Personnel.
+    - type: Add
+      message: Added a new cloak and jacket to the Centdrobe.
+    - type: Add
+      message: Added a new cloak for the research director.
+    - type: Tweak
+      message: >-
+        Parade Voidsuit is noew available with the Voidsuit Selector for Head of
+        Security.
+  id: 19
+  time: '2025-08-30T20:50:31.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: A load of commits from upstream
+  id: 20
+  time: '2025-08-30T21:16:22.0000000+00:00'
+- author: Cygnye
+  changes:
+    - type: Add
+      message: Added R6 Revolving trench shotgun!
+  id: 21
+  time: '2025-08-30T21:59:37.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Remove
+      message: Removed Nuclear14 Assets
+  id: 22
+  time: '2025-08-30T22:51:40.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: >-
+        Upstream merge up to
+        https://github.com/Goob-Station/Goob-Station/pull/3950 
+  id: 23
+  time: '2025-08-31T15:41:32.0000000+00:00'
+- author: ShieldAcrados
+  changes:
+    - type: Add
+      message: Added a new shuttle, the CC-800X "Archangel"!
+    - type: Add
+      message: Added a new Bluespace thruster! (3x power, 2x draw)
+  id: 24
+  time: '2025-08-31T20:31:06.0000000+00:00'
+- author: Yarinoi
+  changes:
+    - type: Remove
+      message: Deleted Barratry from the map pool.
+  id: 25
+  time: '2025-09-02T19:22:14.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Harpy can now Chitter, Squeak, and Flap
+  id: 26
+  time: '2025-09-02T21:38:08.0000000+00:00'
+- author: Cygnye
+  changes:
+    - type: Add
+      message: Director loadout!
+  id: 27
+  time: '2025-09-03T06:00:31.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Add
+      message: Most markings from ADT, along with two new hairstyles.
+    - type: Tweak
+      message: Some of the shadowkin overlays didn't have glow, now they do.
+  id: 28
+  time: '2025-09-03T23:34:42.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Turrets can now be set to whitelist CentComm IDs
+  id: 29
+  time: '2025-09-03T23:35:35.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: Adjusted Secret+ weightings, less chaos!
+    - type: Remove
+      message: Removed Revenant from spawning midround without Ninja.
+    - type: Remove
+      message: Removed Changeling and Heretics from midround spawn.
+  id: 30
+  time: '2025-09-03T23:50:10.0000000+00:00'

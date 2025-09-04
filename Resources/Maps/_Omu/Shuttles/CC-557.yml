@@ -1147,8 +1147,6 @@ entities:
       pos: -8.5,-6.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 1034
   - uid: 588
@@ -5628,8 +5626,6 @@ entities:
       pos: -9.5,-6.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 1034
     - type: AtmosPipeLayers
@@ -5809,8 +5805,6 @@ entities:
       pos: -7.5,-6.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 1034
     - type: AtmosPipeLayers
@@ -10317,8 +10311,6 @@ entities:
       pos: -6.5,21.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 1297
   - uid: 1295

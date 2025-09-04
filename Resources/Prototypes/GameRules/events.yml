@@ -176,6 +176,11 @@
     - id: MothroachSpawn # DeltaV
     - id: XenoVents # DeltaV
     - id: DerelictCyborgSyndicateSpawn # Goobstation - usually calm
+    - id: AncientXenoVentsEasy # Goobstation
+    - id: AncientXenoVentsMedium # Goobstation
+    - id: AncientXenoVentsHard # Goobstation
+    - id: AncientXenoVentsRogue # Goobstation
+    - id: MalignRiftSpawn # DeltaV
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -186,7 +191,7 @@
     - id: KingRatMigration
     - id: NinjaSpawn
     - id: ParadoxCloneSpawn
-    - id: RevenantSpawn
+    #- id: RevenantSpawn # removed from OMU events
     - id: SleeperAgents
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
@@ -195,6 +200,8 @@
     - id: LoneAbductorSpawn # Shitmed - Starlight Abductors
     - id: DuoAbductorSpawn # Shitmed - Starlight Abductors
     - id: BingleSpawn #Goobstation - Bingle
+    - id: SlaughterDemonMidround # Goobstation - Slaughter Demon
+    - id: XenomorphsInfestation # WD EDIT
 
 - type: entity
   id: BaseStationEvent
@@ -237,7 +244,7 @@
     weight: 8
     duration: 35
     chaos: # Goobstation
-      Anomaly: 100
+      Anomaly: 100 # OMU change - make it less chaotic
     eventType: Chaotic # Goobstation
   # Goobstation
   - type: GameRule
@@ -260,7 +267,7 @@
     weight: 8
     duration: 35
     chaos: # Goobstation
-      Anomaly: 40
+      Anomaly: 100 # Omu, chaos score increased from  40
     eventType: Chaotic # Goobstation
   - type: BluespaceArtifactRule
 
@@ -269,7 +276,7 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    weight: 2
+    weight: 4 # OMU change - make it more likely to balance out other anom chaos events
     reoccurrenceDelay: 5
     earliestStart: 1
     duration: 1
@@ -349,7 +356,7 @@
   id: DragonSpawn
   components:
   - type: StationEvent
-    weight: 3
+    weight: 2 # Omu, weight decreased from 3
     earliestStart: 45
     reoccurrenceDelay: 20
     minimumPlayers: 60
@@ -363,7 +370,7 @@
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 600
+    chaosScore: 800 # OMU change - make chaos cost higher
   - type: SpaceSpawnRule
     spawnDistance: 0
   - type: AntagSpawner
@@ -388,7 +395,7 @@
   id: NinjaSpawn
   components:
   - type: StationEvent
-    weight: 6
+    weight: 4 # OMU change - make ninja less likely
     duration: null
     earliestStart: 45
     reoccurrenceDelay: 20
@@ -402,7 +409,7 @@
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 300
+    chaosScore: 500 # OMU change - make chaos score cost higher
   - type: SpaceSpawnRule
   - type: AntagLoadProfileRule
     # Goobstation start
@@ -457,7 +464,7 @@
   id: ParadoxCloneSpawn
   components:
   - type: StationEvent
-    weight: 5
+    weight: 10 # OMU change - Make paradox more likely
     duration: null
     earliestStart: 20
     reoccurrenceDelay: 20
@@ -506,7 +513,7 @@
     weight: 3.5
     duration: 1
     earliestStart: 30
-    minimumPlayers: 20
+    minimumPlayers: 100 # OMU change - removes it from viable spawns (outside of ninja)
     chaos: # Goobstation
       Hostile: 20
       Friend: 20
@@ -827,18 +834,18 @@
   id: LoneOpsSpawn
   components:
   - type: StationEvent
-    earliestStart: 35
+    earliestStart: 60 # OMU change - make lone-ops spawn later
     weight: 5.5
     minimumPlayers: 20
     duration: 1
     chaos: # Goobstation
-      Hostile: 60
-      Medical: 75
-      Death: 100
+      Hostile: 80 # Omu, chaos score increased from 60
+      Medical: 90 # Omu, chaos score increased from 75
+      Death: 120 # OMU change, make chaos points more in line with the danger it poses
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
-    chaosScore: 700
+    chaosScore: 900 # OMU change - raises chaos cost
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
