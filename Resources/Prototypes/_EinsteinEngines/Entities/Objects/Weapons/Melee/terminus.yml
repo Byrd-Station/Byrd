@@ -64,3 +64,5 @@
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: Prying
+  - type: UseDelay # Omu, this means the crowbar function has a cooldown
+    delay: 0.9
