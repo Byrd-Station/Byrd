@@ -5,79 +5,76 @@
   priority: 1
   text: "/ServerInfo/_Omu/Guidebook/ServerRules/OmuRules.xml"
 
+## Core Rules
 - type: guideEntry
   id: RuleAdmins
   name: guide-entry-rules-admins
   ruleEntry: true
   priority: 2
-  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleAdmins.xml"
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC0Admins.xml"
 
 - type: guideEntry
   id: RuleDontBeADick
   name: guide-entry-rules-dick
   ruleEntry: true
   priority: 3
-  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleDick.xml"
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC1Dick.xml"
 
 - type: guideEntry
   id: RuleMetagame
   name: guide-entry-rules-metagame
   ruleEntry: true
   priority: 4
-  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleMetagame.xml"
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC2Metagame.xml"
 
 - type: guideEntry
   id: RuleICKOCK
   name: guide-entry-rules-ickock
   ruleEntry: true
   priority: 5
-  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleICKOCK.xml"
-
-- type: guideEntry
-  id: RuleRP
-  name: guide-entry-rules-roleplay
-  ruleEntry: true
-  priority: 6
-  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleRP.xml"
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC3ICKOCK.xml"
 
 - type: guideEntry
   id: RuleSelfantag
   name: guide-entry-rules-selfantag
   ruleEntry: true
   priority: 7
-  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleSelfantag.xml"
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC4Selfantag.xml"
 
 - type: guideEntry
   id: RuleBigotry
   name: guide-entry-rules-bigotry
   ruleEntry: true
   priority: 8
-  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleBigotry.xml"
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC5Bigotry.xml"
 
 - type: guideEntry
   id: RuleNSFW
   name: guide-entry-rules-nsfw
   ruleEntry: true
   priority: 8
-  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleNSFW.xml"
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC6NSFW.xml"
 
 - type: guideEntry
   id: RuleEnglish
   name: guide-entry-rules-english
   ruleEntry: true
   priority: 9
-  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleEnglish.xml"
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC7English.xml"
 
 - type: guideEntry
   id: RuleHacker
   name: guide-entry-rules-hacker
   ruleEntry: true
   priority: 10
-  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleHacker.xml"
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC8Hacker.xml"
 
 - type: guideEntry
   id: RuleSkillIssue
   name: guide-entry-rules-skillissue
   ruleEntry: true
   priority: 11
-  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleSkillIssue.xml"
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC9SkillIssue.xml"
+
+## Roleplay Rules
+

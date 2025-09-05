@@ -3,14 +3,14 @@
 
   This rule should be self self-explenatory. Any external tool or program used to gain an advantage or modify the client in some way that gives you an advantage is not allowed.
 
-  Additionally, don't abuse bugs to gain an unfair advantage over others.
-
-  Subframing is not concidered a bug as of now
   ## Precedents
 
-  - Don't use an external tool such as CheatEngine to give yourself an unfair advantage over other players.
+  - Don't use an external software to give yourself an unfair advantage over other players.
   - Don't modify your game client in a way that gives you an unfair advantage or for any malicious reasons.
   - Don't use macros, which are any scripts, programs, or in-built hardware features to automatically execute a series of inputs.
-  - Exceptions for external accessibility tools may be made. If you need to use them, please run them by an admin.
+  - Don't use a bug to make yourself invulnerable in combat or otherwise give yourself an unfair advantage.
+  - Don't intentionally lag or crash the server or other players.
+  - Exceptions for external accessibility tools may be considered. If you need to use them, please run them by an admin.
+
 
 </Document>
