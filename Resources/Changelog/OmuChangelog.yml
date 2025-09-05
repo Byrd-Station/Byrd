@@ -195,3 +195,19 @@ Entries:
       message: Removed Nuclear14 Assets
   id: 22
   time: '2025-08-30T22:51:40.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: >-
+        Upstream merge up to
+        https://github.com/Goob-Station/Goob-Station/pull/3950 
+  id: 23
+  time: '2025-08-31T15:41:32.0000000+00:00'
+- author: ShieldAcrados
+  changes:
+    - type: Add
+      message: Added a new shuttle, the CC-800X "Archangel"!
+    - type: Add
+      message: Added a new Bluespace thruster! (3x power, 2x draw)
+  id: 24
+  time: '2025-08-31T20:31:06.0000000+00:00'
