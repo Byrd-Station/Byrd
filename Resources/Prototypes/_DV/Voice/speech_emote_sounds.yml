@@ -121,6 +121,8 @@
       collection: IPCWhirrs
     Hew: # Omu, give harpy more emotes
       collection: Hew
+    Flap: # Omu, give harpy more emotes
+      path: /Audio/_Goobstation/Voice/Moth/moth_flap.ogg
 
 - type: emoteSounds
   id: SoundsHarpyMale
@@ -225,6 +227,8 @@
       collection: IPCWhirrs
     Hew: # Omu, give harpy more emotes
       collection: Hew
+    Flap: # Omu, give harpy more emotes
+      path: /Audio/_Goobstation/Voice/Moth/moth_flap.ogg
 
 - type: emoteSounds
   id: FemaleVulpkanin
@@ -461,3 +465,4 @@
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
+

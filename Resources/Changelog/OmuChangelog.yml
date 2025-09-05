@@ -211,3 +211,51 @@ Entries:
       message: Added a new Bluespace thruster! (3x power, 2x draw)
   id: 24
   time: '2025-08-31T20:31:06.0000000+00:00'
+- author: Yarinoi
+  changes:
+    - type: Remove
+      message: Deleted Barratry from the map pool.
+  id: 25
+  time: '2025-09-02T19:22:14.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Harpy can now Chitter, Squeak, and Flap
+  id: 26
+  time: '2025-09-02T21:38:08.0000000+00:00'
+- author: Cygnye
+  changes:
+    - type: Add
+      message: Director loadout!
+  id: 27
+  time: '2025-09-03T06:00:31.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Add
+      message: Most markings from ADT, along with two new hairstyles.
+    - type: Tweak
+      message: Some of the shadowkin overlays didn't have glow, now they do.
+  id: 28
+  time: '2025-09-03T23:34:42.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Turrets can now be set to whitelist CentComm IDs
+  id: 29
+  time: '2025-09-03T23:35:35.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: Adjusted Secret+ weightings, less chaos!
+    - type: Remove
+      message: Removed Revenant from spawning midround without Ninja.
+    - type: Remove
+      message: Removed Changeling and Heretics from midround spawn.
+  id: 30
+  time: '2025-09-03T23:50:10.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Add
+      message: Ported over 20 hairstyles from Impstation.
+  id: 31
+  time: '2025-09-04T17:31:09.0000000+00:00'
