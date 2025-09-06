@@ -78,3 +78,51 @@
 
 ## Roleplay Rules
 
+- type: guideEntry
+  id: RuleEffort
+  name: guide-entry-rules-effort
+  ruleEntry: true
+  priority: 12
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR1NoLRP.xml"
+
+- type: guideEntry
+  id: RuleEscalate
+  name: guide-entry-rules-esalate
+  ruleEntry: true
+  priority: 13
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR2Escalation.xml"
+
+- type: guideEntry
+  id: RuleNothingEverHappens
+  name: guide-entry-rules-nothingeverhappens
+  ruleEntry: true
+  priority: 13
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR3NothingEverHappens.xml"
+
+- type: guideEntry
+  id: RuleBehaviour
+  name: guide-entry-rules-behaviour
+  ruleEntry: true
+  priority: 14
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR4Behaviour.xml"
+
+- type: guideEntry
+  id: RuleMainCharacterSyndrome
+  name: guide-entry-rules-maincharactersyndrome
+  ruleEntry: true
+  priority: 15
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR5MCSyndrome.xml"
+
+- type: guideEntry
+  id: RuleMetafriend
+  name: guide-entry-rules-metafriend
+  ruleEntry: true
+  priority: 16
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR6Metafriend.xml"
+
+- type: guideEntry
+  id: RuleSiliconLaws
+  name: guide-entry-rules-siliconlaws
+  ruleEntry: true
+  priority: 17
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR7SiliconLaws.xml"
