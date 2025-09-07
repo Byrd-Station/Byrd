@@ -238,8 +238,8 @@ namespace Content.Server.Flash
                 if (used == null)
                     return;
 
-                _popup.PopupEntity(Loc.GetString("flash-component-user-head-rev",
-                        ("victim", Identity.Entity(target, EntityManager))), target);
+               // _popup.PopupEntity(Loc.GetString("flash-component-user-head-rev", // Omu, this shouldn't be enabled, as it is shown in a different system instead
+               //         ("victim", Identity.Entity(target, EntityManager))), target);
             }  // funkystation end
         }
 
