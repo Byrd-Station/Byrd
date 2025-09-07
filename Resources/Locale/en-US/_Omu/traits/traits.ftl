@@ -16,6 +16,15 @@ trait-claws-desc =
     or even hard plastic retractable claws incorpoated into a prosthetic limb.
     Your unarmed melee attacks deal Slashing damage instead of the standard damage type for your species.
     This has no effect on damage dealt with any form of armed melee.
+    
+trait-cybernetic-beast-name = Cybernetic Beasts
+trait-cybernetic-beast-desc =
+    Your parents were given a chance by Razzi RnT to give their child brand new cybernetics shortly after birth,
+    to beta-test them for the masses. As a result, you've been given an experimental visor which attaches to your face with a set of pogo-pins.
+    The visor affects the sound of your speech, and glows slightly. The main benefit (placeholder)
+    When worn, the visor interfaces with your digestive system to allow for faster digestion. However, a software bug
+    means that your body can reject nutriment at random, making you stick.
+    (other downsides list here)
 
 trait-moth-flight-name = True Flight
 trait-moth-flight-desc =

@@ -52,6 +52,20 @@
         - SlimePerson
 
 - type: trait
+  id: CyberneticBeast
+  name: trait-cybernetic-beast-name
+  description: trait-cybernetic-beast-desc
+  category: PhysicalTraits
+  components:
+  - type: CyberneticBeast
+  globalCost: 5
+  requirements:
+    - !type:SpeciesRequirement
+      species:
+        - Vulpkanin
+  traitGear: ClothingCyberneticBeastMantle
+
+- type: trait
   id: MothFlight
   name: trait-moth-flight-name
   description: trait-moth-flight-desc

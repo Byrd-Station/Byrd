@@ -1,0 +1,21 @@
+- type: entity
+  parent: [ClothingHeadBase]
+  id: ClothingCyberneticBeastMantle
+  name: beast's mantle
+  description: Placeholder text.
+  components:
+  - type: CyberneticMantle
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+  - type: PointLight # the glow is subtle. It's just enough to make the mantle visible in pitch black lighting, but won't help you see much.
+    radius: 1.25
+    energy: 0.25
+    offset: 0,-0.1
+    color: "#CCFFCC" # todo: make this correspond to the colour of the mantle's eyes
+    containerOccluded: true # this makes the mantle illuminate itself.
+  - type: ClothingTakesUpExtraSlots
+    slots:
+    - mask 
+    - eyes
