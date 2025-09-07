@@ -38,14 +38,14 @@
   id: RuleSelfantag
   name: guide-entry-rules-selfantag
   ruleEntry: true
-  priority: 7
+  priority: 6
   text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC4Selfantag.xml"
 
 - type: guideEntry
   id: RuleBigotry
   name: guide-entry-rules-bigotry
   ruleEntry: true
-  priority: 8
+  priority: 7
   text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC5Bigotry.xml"
 
 - type: guideEntry
@@ -96,33 +96,33 @@
   id: RuleNothingEverHappens
   name: guide-entry-rules-nothingeverhappens
   ruleEntry: true
-  priority: 13
+  priority: 14
   text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR3NothingEverHappens.xml"
 
 - type: guideEntry
   id: RuleBehaviour
   name: guide-entry-rules-behaviour
   ruleEntry: true
-  priority: 14
+  priority: 15
   text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR4Behaviour.xml"
 
 - type: guideEntry
   id: RuleMainCharacterSyndrome
   name: guide-entry-rules-maincharactersyndrome
   ruleEntry: true
-  priority: 15
+  priority: 16
   text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR5MCSyndrome.xml"
 
 - type: guideEntry
   id: RuleMetafriend
   name: guide-entry-rules-metafriend
   ruleEntry: true
-  priority: 16
+  priority: 17
   text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR6Metafriend.xml"
 
 - type: guideEntry
   id: RuleSiliconLaws
   name: guide-entry-rules-siliconlaws
   ruleEntry: true
-  priority: 17
+  priority: 18
   text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR7SiliconLaws.xml"
