@@ -259,3 +259,23 @@ Entries:
       message: Ported over 20 hairstyles from Impstation.
   id: 31
   time: '2025-09-04T17:31:09.0000000+00:00'
+- author: XWasHere
+  changes:
+    - type: Tweak
+      message: Tajara can now be any color.
+  id: 32
+  time: '2025-09-06T09:38:10.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Terminus is back to being Oni only.
+    - type: Tweak
+      message: Terminus can now function as a crowbar again
+  id: 33
+  time: '2025-09-06T17:44:21.0000000+00:00'
+- author: CometVoid
+  changes:
+    - type: Tweak
+      message: Rules have been changed and updated to better fit OmuStation!
+  id: 34
+  time: '2025-09-07T02:04:44.0000000+00:00'
