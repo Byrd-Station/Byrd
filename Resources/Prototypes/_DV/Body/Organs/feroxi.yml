@@ -42,8 +42,18 @@
     - state: lung-l
     - state: lung-r
   - type: Organ
-    Removable: False # Omu, make them actualy unremovable
+    intCap: 17 # Omu start
+    integrity: 17
+    integrityThresholds:
+      Normal: 17
+      Damaged: 9
+      Destroyed: 0
+    slotId: lungs
+    removable: False # Omu end, make them actualy unremovable
   - type: Lung
+  - type: Item # Omu
+    size: Small
+    heldPrefix: lungs
   - type: Metabolizer
     removeEmpty: true
     solutionOnBody: false
@@ -67,3 +77,8 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
+  - type: Tag # Omu
+    tags:
+      - Meat
+      - Organ
+      - Lungs
