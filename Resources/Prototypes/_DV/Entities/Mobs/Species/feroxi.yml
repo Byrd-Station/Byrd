@@ -96,13 +96,13 @@
     hydratedMetabolizer: Feroxi
     dehydratedMetabolizer: FeroxiDehydrated
     dehydrationThreshold: 150
-  - type: LanguageKnowledge # Einstein Engines - Languages
+  - type: LanguageKnowledge # The Den, give Feroxi their own language.
     speaks:
     - TauCetiBasic
-    - Moffic
+    - Nehina
     understands:
     - TauCetiBasic
-    - Moffic
+    - Nehina
 
 - type: entity
   parent: MobHumanDummy
