@@ -1,0 +1,16 @@
+- type: reagent
+  id: Stem-Cell-Activator
+  name: reagent-name-Stem-Cell-Activator
+  group: Medicine
+  desc: reagent-desc-Stem-Cell-Activator
+  physicalDesc: reagent-physical-desc-crisp
+  flavor: medicine
+  color: "#86caf7"
+  worksOnTheDead: true
+  metabolisms:
+    Medicine:
+      effects:
+        - !type:CureHollowed
+          conditions:
+            - !type:ReagentThreshold
+              min: 11

@@ -1,0 +1,12 @@
+- type: reaction
+  id: Stem-Cell-Activator
+  impact: Medium
+  reactants:
+    TableSalt:
+      amount: 1
+    Phalanximine:
+      amount: 1
+    Artiplates:
+      amount: 1
+  products:
+    Stem-Cell-Activator: 3
