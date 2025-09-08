@@ -40,6 +40,7 @@
 // SPDX-FileCopyrightText: 2024 TemporalOroboros <TemporalOroboros@gmail.com>
 // SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
 // SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
@@ -51,12 +52,8 @@
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
-// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Tim <timfalken@hotmail.com>
-// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
-// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -119,13 +116,13 @@ namespace Content.Server.Flash
             SubscribeLocalEvent<PermanentBlindnessComponent, FlashAttemptEvent>(OnPermanentBlindnessFlashAttempt);
             SubscribeLocalEvent<TemporaryBlindnessComponent, FlashAttemptEvent>(OnTemporaryBlindnessFlashAttempt);
         }
-        
+
         private void OnExamine(Entity<FlashImmunityComponent> ent, ref ExaminedEvent args)
 
         {
             args.PushMarkup(Loc.GetString("flash-protection"));
         }
-        
+
         private void OnFlashMeleeHit(EntityUid uid, FlashComponent comp, MeleeHitEvent args)
         {
             if (!args.IsHit ||
@@ -188,7 +185,8 @@ namespace Content.Server.Flash
             float slowTo,
             bool displayPopup = true,
             bool melee = false,
-            TimeSpan? stunDuration = null)
+            TimeSpan? stunDuration = null,
+            bool revFlash = false) // funkystation
         {
             // Goob edit start
             if (used == null
@@ -229,6 +227,20 @@ namespace Content.Server.Flash
                 _popup.PopupEntity(Loc.GetString("flash-component-user-blinds-you",
                     ("user", Identity.Entity(user.Value, EntityManager))), target, target);
             }
+
+            if (melee || revFlash)  // funkystation start
+            {
+                var ev = new AfterFlashedEvent(target, user, used);
+
+                if (user == null)
+                    return;
+
+                if (used == null)
+                    return;
+
+               // _popup.PopupEntity(Loc.GetString("flash-component-user-head-rev", // Omu, this shouldn't be enabled, as it is shown in a different system instead
+               //         ("victim", Identity.Entity(target, EntityManager))), target);
+            }  // funkystation end
         }
 
         public override void FlashArea(Entity<FlashComponent?> source, EntityUid? user, float range, float duration, float slowTo = 0.8f, bool displayPopup = false, float probability = 1f, SoundSpecifier? sound = null)
@@ -261,6 +273,35 @@ namespace Content.Server.Flash
 
             _audio.PlayPvs(sound, source, AudioParams.Default.WithVolume(1f).WithMaxDistance(3f));
         }
+
+        // funkystation start: copy and paste of above, cry about it
+        public void RevolutionaryFlashArea(Entity<FlashComponent?> source, EntityUid? user, float range, float duration, float slowTo = 0.8f, bool displayPopup = false, float probability = 1f, SoundSpecifier? sound = null)
+        {
+            var transform = Transform(source);
+            var mapPosition = _transform.GetMapCoordinates(transform);
+            var statusEffectsQuery = GetEntityQuery<StatusEffectsComponent>();
+            var damagedByFlashingQuery = GetEntityQuery<DamagedByFlashingComponent>();
+
+            foreach (var entity in _entityLookup.GetEntitiesInRange(transform.Coordinates, range))
+            {
+                if (!_random.Prob(probability))
+                    continue;
+
+                // Is the entity affected by the flash either through status effects or by taking damage?
+                if (!statusEffectsQuery.HasComponent(entity) && !damagedByFlashingQuery.HasComponent(entity))
+                    continue;
+
+                // Check for entites in view
+                // put damagedByFlashingComponent in the predicate because shadow anomalies block vision.
+                if (!_examine.InRangeUnOccluded(entity, mapPosition, range, predicate: (e) => damagedByFlashingQuery.HasComponent(e)))
+                    continue;
+
+                // They shouldn't have flash removed in between right?
+                Flash(entity, user, source, duration, slowTo, displayPopup, true, null, true);
+            }
+
+            _audio.PlayPvs(sound, source, AudioParams.Default.WithVolume(1f).WithMaxDistance(3f));
+        }  // funkystation end
 
         private void OnInventoryFlashAttempt(EntityUid uid, InventoryComponent component, FlashAttemptEvent args)
         {
@@ -309,4 +350,23 @@ namespace Content.Server.Flash
             Used = used;
         }
     }
+    // funkystation start
+    /// <summary>
+    ///     Called after a flash is used via melee on another person to check for rev conversion.
+    ///     Raised on the target hit by the flash, the user of the flash and the flash used.
+    /// </summary>
+    [ByRefEvent]
+    public readonly struct AfterFlashedEvent
+    {
+        public readonly EntityUid Target;
+        public readonly EntityUid? User;
+        public readonly EntityUid? Used;
+
+        public AfterFlashedEvent(EntityUid target, EntityUid? user, EntityUid? used)
+        {
+            Target = target;
+            User = user;
+            Used = used;
+        }
+    }  // funkystation end
 }
