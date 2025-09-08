@@ -12,7 +12,7 @@
   - type: AmmoCounter
   - type: Gun
     selectedMode: SemiAuto
-    fireRate: 1.5
+    fireRate: 1
     availableModes:
     - SemiAuto
     soundGunshot:
@@ -48,13 +48,13 @@
   - type: Clothing
     sprite: _Omu/Objects/Weapons/Guns/Revolvers/R6.rsi
   - type: Item
-    size: Small
+    size: Normal
     shape:
     - 0,0,2,1
   - type: AmmoCounter
   - type: Gun
     selectedMode: SemiAuto
-    fireRate: 3
+    fireRate: 2.5
     availableModes:
     - SemiAuto
     soundGunshot:
@@ -101,6 +101,7 @@
     whitelist:
       tags:
       - CartridgeLightRifle
+      - SpeedLoaderRifle
     proto: CartridgeLightRifle
     capacity: 8
     chambers: [ True, True, True, True, True, True, True, True ]

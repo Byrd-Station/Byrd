@@ -1,0 +1,13 @@
+- type: entity
+  id: StorePresetRevolutionaryUplink
+  components:
+  - type: Store
+    name: store-preset-name-revolutionary-uplink
+    categories:
+    - RevolutionaryUplinkDefault
+    currencyWhitelist:
+    - Telecrystal # Omu, replace revcoin with TC
+    balance:
+      Telecrystal: 0 # Omu, replace revcoin with TC
+    sales:
+      enabled: false

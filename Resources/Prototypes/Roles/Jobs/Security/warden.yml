@@ -141,9 +141,9 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 36000 #10 hrs
-#    - !type:SpeciesRequirement # Goob - None Felinid	
-#      inverted: true	
-#      species:	
+#    - !type:SpeciesRequirement # Goob - None Felinid
+#      inverted: true
+#      species:
 #      - Felinid #Omu, add back Felinid
   weight: 5
   startingGear: WardenGear
@@ -173,7 +173,7 @@
     eyes: ClothingEyesGlassesSecurity
     id: WardenPDA
     ears: ClothingHeadsetAltWarden # Goobstation
-    pocket1: WeaponPistolMk58
+    pocket1: OfficerGunCase #Omu
   storage:
     back:
     - Flash

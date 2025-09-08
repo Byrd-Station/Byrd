@@ -258,7 +258,7 @@
       - id: MysteryFigureBox
       - id: RubberChicken
       - id: FoodSnackLollypopWrappedMysteryNeutral # Goobstation - Lollypops!
-      - id: RevolutionaryManifesto # Einstein Engines - Revolutionary Manifesto
+#      - id: RevolutionaryManifesto # Einstein Engines - Revolutionary Manifesto # Omu, remove bookrevs
       # Cult
       - !type:AllSelector
         children:
