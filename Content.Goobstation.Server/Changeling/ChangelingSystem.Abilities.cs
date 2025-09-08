@@ -71,6 +71,7 @@ using Content.Shared.Traits.Assorted;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Shared.Actions.Components;
+using Content.Server.Body.Components
 
 namespace Content.Goobstation.Server.Changeling;
 
@@ -186,10 +187,13 @@ public sealed partial class ChangelingSystem
 
         PlayMeatySound(args.User, comp);
 
-        var dmg = new DamageSpecifier(_proto.Index(AbsorbedDamageGroup), 200);
+        var dmg = new DamageSpecifier(_proto.Index(AbsorbedDamageGroup), 170);
         _damage.TryChangeDamage(target, dmg, true, false, targetPart: TargetBodyPart.All); // Shitmed Change
+
+        TryComp<BloodstreamComponent>(target, out var blood);
         _blood.ChangeBloodReagent(target, "FerrochromicAcid");
         _blood.SpillAllSolutions(target);
+        _blood.ChangeBloodReagent(target, blood.BloodReagent); //OMU change, sets blood type back to initial blood so we don't get weird ferrochromic blood
 
         EnsureComp<AbsorbedComponent>(target);
         EnsureComp<UnrevivableComponent>(target);
