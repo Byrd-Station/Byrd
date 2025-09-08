@@ -42,6 +42,7 @@
     - state: lung-l
     - state: lung-r
   - type: Organ
+    Removable: False # Omu, make them actualy unremovable
   - type: Lung
   - type: Metabolizer
     removeEmpty: true
