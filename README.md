@@ -1,4 +1,4 @@
-<p align="center"> <img alt="Space Station 14" width="880" height="300" src="https://github.com/ProjectOmu/OmuStation/blob/master/Resources/Textures/Logo/logo.png" /></p>
+<p align="center"> <img alt="Space Station 14" width="1500" height="843" src="https://github.com/ProjectOmu/OmuStation/blob/master/Resources/Textures/Logo/logo.png" /></p>
 
 This is a fork from [Goob Station](https://github.com/Goob-Station/Goob-Station), a primary fork from [Space Station 14](https://github.com/space-wizards/space-station-14). To prevent people forking [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), a "content" pack is loaded by the client and server. This content pack contains everything needed to play the game on one specific server this is the content pack for Omu Station.
 
