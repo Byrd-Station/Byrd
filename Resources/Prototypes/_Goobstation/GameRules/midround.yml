@@ -13,6 +13,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# Midround Traitor
 - type: entity
   parent: Traitor
   id: TraitorMidround
@@ -51,7 +52,7 @@
     tags:
       - MidroundAntag
 
- Midround Changelings
+# Midround Changelings
 - type: entity
   parent: Changeling
   id: ChangelingMidround
@@ -91,7 +92,8 @@
   - type: Tag
     tags:
       - MidroundAntag
-      
+
+# Midround Heretic    
 - type: entity
   parent: Heretic
   id: HereticMidround
@@ -198,6 +200,7 @@
     tags:
       - MidroundAntag
 
+# Midround Blob
 - type: entity
   parent: BaseGameRule
   id: BlobMidround
