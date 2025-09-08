@@ -107,11 +107,16 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
 using FTLMapComponent = Content.Shared.Shuttles.Components.FTLMapComponent;
+using Content.Shared._Omu.Shuttles.Components;
 
 namespace Content.Server.Shuttles.Systems;
 
 public sealed partial class ShuttleSystem
 {
+    public EntityWhitelist CCWhitelist => new EntityWhitelist() // Omu, allow CC shuttles to FTL to CC
+    {
+        Components = ["CentCommShuttle", "EmergencyShuttle", "EscapePod"]
+    };
     /*
      * This is a way to move a shuttle from one location to another, via an intermediate map for fanciness.
      */
@@ -260,7 +265,7 @@ public sealed partial class ShuttleSystem
     /// </summary>
     public bool TryAddFTLDestination(MapId mapId, bool enabled, [NotNullWhen(true)] out FTLDestinationComponent? component)
     {
-        return TryAddFTLDestination(mapId, enabled, true, false, out component);
+        return TryAddFTLDestination(mapId, enabled, false, false, out component); // Omu, set requireDisk to false
     }
 
     public bool TryAddFTLDestination(MapId mapId, bool enabled, bool requireDisk, bool beaconsOnly, [NotNullWhen(true)] out FTLDestinationComponent? component)
@@ -272,12 +277,12 @@ public sealed partial class ShuttleSystem
             return false;
 
         component = EnsureComp<FTLDestinationComponent>(mapUid);
-
+        component.Whitelist = CCWhitelist; // Omu, allow CC shuttles to FTL to CC
         if (component.Enabled == enabled && component.RequireCoordinateDisk == requireDisk && component.BeaconsOnly == beaconsOnly)
             return true;
-
+        
         component.Enabled = enabled;
-        component.RequireCoordinateDisk = requireDisk;
+        component.RequireCoordinateDisk = false; // Omu, just set this to false, requireDisk;
         component.BeaconsOnly = beaconsOnly;
 
         _console.RefreshShuttleConsoles();

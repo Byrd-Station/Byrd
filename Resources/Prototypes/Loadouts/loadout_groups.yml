@@ -201,6 +201,32 @@
   - ClothingNeckGenderfluidPin
   - ClothingNeckTransPin
   - ClothingNeckAutismPin
+  # Omu start
+  - ClothingNeckCloakProgressPride
+  - ClothingNeckCloakTrans
+  - ClothingNeckCloakGenderfluid
+  - ClothingNeckCloakAro
+  - ClothingNeckCloakAce
+  - ClothingNeckCloakBi
+  - ClothingNeckCloakIntersex
+  - ClothingNeckCloakLesbian
+  - ClothingNeckCloakGay
+  - ClothingNeckCloakEnby
+  - ClothingNeckCloakPan
+  - ClothingNeckScarfStripedAce
+  - ClothingNeckScarfStripedAro
+  - ClothingNeckScarfStripedAroace
+  - ClothingNeckScarfStripedBiSexual
+  - ClothingNeckScarfStripedGay
+  - ClothingNeckScarfStripedInter
+  - ClothingNeckScarfStripedLesbian
+  - ClothingNeckScarfStripedPan
+  - ClothingNeckScarfStripedNonBinary
+  - ClothingNeckScarfStripedRainbow
+  - ClothingNeckScarfStripedTrans
+  - ClothingNeckScarfStripedGenderfluid
+  - ClothingNeckChameleonPride
+  # Omu end
   - CardBoxBlack # GoobStation
   - CardBoxNanotrasen # GoobStation
   - FoodSnackLollypopWrapped # Goobstation

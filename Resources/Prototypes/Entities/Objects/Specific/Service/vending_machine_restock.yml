@@ -237,6 +237,7 @@
     - ViroDrobeInventory
     - WinterDrobeInventory
     - CuraDrobeInventory
+    - PrideDrobeInventory # Omu, this should be able to be restocked
   - type: Sprite
     layers:
     - state: base

@@ -299,3 +299,41 @@ Entries:
         them.
   id: 36
   time: '2025-09-07T16:57:23.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added the ability for CentComm shuttles to FTL to CC.
+    - type: Add
+      message: Added a new pride mantle, and a progress pride cape
+    - type: Tweak
+      message: Pride scarfs and cloaks can now be gotten in the loadout
+    - type: Tweak
+      message: Pridevend can be restocked.
+  id: 37
+  time: '2025-09-07T20:36:31.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Remove
+      message: Removed 4th wall stuff from ion laws that was added by Goobstation
+    - type: Tweak
+      message: >-
+        Service borgs no longer under clown lawset, now they're running
+        crewsimov.
+  id: 38
+  time: '2025-09-07T20:56:41.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Added new MOTDs to the game! Check out the top of your game window!
+  id: 39
+  time: '2025-09-07T23:48:23.0000000+00:00'
+- author: MarkerWicker
+  changes:
+    - type: Tweak
+      message: The traits system has been reworked. Traits now have a points cost, shared across all trait categories.
+    - type: Tweak
+      message: Traits have been unselected during the rework, you will have to rebuild your character.
+    - type: Tweak
+      message: Traits can also have requirements; traits with unmet requirements will be greyed out, and requirements can be viewed by hovering your mouse over the trait.
+  id: 40
+  time: '2025-09-08T00:42:22.0000000+00:00'
