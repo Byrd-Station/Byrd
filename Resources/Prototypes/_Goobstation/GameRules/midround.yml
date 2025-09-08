@@ -51,45 +51,6 @@
     tags:
       - MidroundAntag
 
-
-#- type: entity
-#  parent: Traitor
-#  id: TraitorMidround
-#  components:
-#  - type: StationEvent
-#    earliestStart: 30
-#    weight: 3
-#    minimumPlayers: 40
-#    startAnnouncement: station-event-communication-interception
-#    startAudio:
-#      path: /Audio/Announcements/intercept.ogg
-#    duration: null
-#    occursDuringRoundEnd: false
-#    chaos:
-#      Hostile: 200
-#      Medical: 200
-#      Death: 200
-#    eventType: HostilesSpawn
-#  - type: GameRule
-#   chaosScore: 650
-# - type: AlertLevelInterceptionRule
-#  - type: AntagSelection
-#    selectionTime: PostPlayerSpawn
-#    definitions:
-#    - prefRoles: [ Traitor ]
-#      max: 3
-#      playerRatio: 10
-#      blacklist:
-#        components:
-#        - AntagImmune
-#        - CommandStaff
-#      lateJoinAdditional: true
-#      mindRoles:
-#      - MindRoleTraitor
-#  - type: Tag
-#    tags:
-#      - MidroundAntag
-
  Midround Changelings
 - type: entity
   parent: Changeling
