@@ -330,10 +330,41 @@ Entries:
 - author: MarkerWicker
   changes:
     - type: Tweak
-      message: The traits system has been reworked. Traits now have a points cost, shared across all trait categories.
+      message: >-
+        The traits system has been reworked. Traits now have a points cost,
+        shared across all trait categories.
     - type: Tweak
-      message: Traits have been unselected during the rework, you will have to rebuild your character.
+      message: >-
+        Traits have been unselected during the rework, you will have to rebuild
+        your character.
     - type: Tweak
-      message: Traits can also have requirements; traits with unmet requirements will be greyed out, and requirements can be viewed by hovering your mouse over the trait.
+      message: >-
+        Traits can also have requirements; traits with unmet requirements will
+        be greyed out, and requirements can be viewed by hovering your mouse
+        over the trait.
   id: 40
   time: '2025-09-08T00:42:22.0000000+00:00'
+- author: Cygnye
+  changes:
+    - type: Add
+      message: Added Weapon Selectors for Captain.
+    - type: Add
+      message: Added Weapon Selectors for ALL of security.
+    - type: Add
+      message: HoS CQC belt!
+    - type: Add
+      message: HoS relic blade!
+    - type: Tweak
+      message: Hos gets all their guns back!
+    - type: Tweak
+      message: Pre-Nerfed the handshake again
+    - type: Add
+      message: 'T8 is now selectable as a duty item, and has speedloaders. '
+    - type: Add
+      message: Terminus can be selected roundstart
+    - type: Add
+      message: Handshake is now apart of selectors
+    - type: Add
+      message: R6 is now apart of selectors
+  id: 41
+  time: '2025-09-08T12:48:47.0000000+00:00'
