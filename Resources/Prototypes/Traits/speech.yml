@@ -23,6 +23,7 @@
     - type: MothAccent
     - type: ReplacementAccent
       accent: dwarf
+  countsTowardsMaxTraits: false # Omustation - Don't count accents towards max traits
 
 # 1 Cost
 
@@ -34,6 +35,7 @@
   cost: 1
   components:
   - type: SouthernAccent
+  countsTowardsMaxTraits: false # Omustation - Don't count accents towards max traits
 
 - type: trait
   id: PirateAccent
@@ -43,6 +45,7 @@
   cost: 1
   components:
   - type: PirateAccent
+  countsTowardsMaxTraits: false # Omustation - Don't count accents towards max traits
 
 - type: trait
   id: CowboyAccent
@@ -53,6 +56,7 @@
   components:
   - type: ReplacementAccent
     accent: cowboy
+  countsTowardsMaxTraits: false # Omustation - Don't count accents towards max traits
 
 - type: trait
   id: GermanAccent
@@ -62,6 +66,7 @@
   cost: 1
   components:
   - type: GermanAccent
+  countsTowardsMaxTraits: false # Omustation - Don't count accents towards max traits
 
 - type: trait
   id: ItalianAccent
@@ -72,6 +77,7 @@
   components:
   - type: ReplacementAccent
     accent: italian
+  countsTowardsMaxTraits: false # Omustation - Don't count accents towards max traits
 
 - type: trait
   id: FrenchAccent
@@ -81,6 +87,7 @@
   cost: 1
   components:
   - type: FrenchAccent
+  countsTowardsMaxTraits: false # Omustation - Don't count accents towards max traits
 
 - type: trait
   id: SpanishAccent
@@ -90,6 +97,7 @@
   cost: 1
   components:
   - type: SpanishAccent
+  countsTowardsMaxTraits: false # Omustation - Don't count accents towards max traits
 
 - type: trait
   id: Liar
@@ -100,6 +108,7 @@
   components:
   - type: ReplacementAccent
     accent: liar
+  countsTowardsMaxTraits: false # Omustation - Don't count accents towards max traits
 
 # 2 Cost
 
@@ -115,6 +124,7 @@
     fourRandomProb: 0
     threeRandomProb: 0
     cutRandomProb: 0
+  countsTowardsMaxTraits: false # Omustation - Don't count accents towards max traits
 
 - type: trait
   id: FrontalLisp
@@ -124,3 +134,4 @@
   cost: 2
   components:
   - type: FrontalLisp
+  countsTowardsMaxTraits: false # Omustation - Don't count accents towards max traits

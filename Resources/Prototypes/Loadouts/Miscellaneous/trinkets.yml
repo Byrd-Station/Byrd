@@ -318,7 +318,6 @@
     - ClothingNeckGenderfluidPin
   groupBy: "pin"
 
-
 # Playing Cards (GoobStation)
 - type: loadout
   id: CardBoxBlack

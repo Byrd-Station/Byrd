@@ -219,3 +219,20 @@
   parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCMOLabCoat]
   id: ClothingOuterCMOLabCoatOpened
   name: chief medical officer's lab coat
+
+- type: entity
+  parent: [ ClothingOuterStorageFoldableBase, ClothingOuterCoatCentralCommandWinterADMEME, BaseCentcommContraband ]
+  id:  ClothingOuterCentcomLabcoat
+  name: Central Commander's Labcoat
+  description: Style, Performance, elegance, egg. Accept no compromise. Fur lined for maximum cozy, Bluespace rubber exterior for maximum performance.
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/OuterClothing/Coats/centcomlabcoat.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/OuterClothing/Coats/centcomlabcoat.rsi
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCentcomLabcoat]
+  id: ClothingOuterCentcomLabcoatOpened
+  name: Central Commander's Labcoat
+

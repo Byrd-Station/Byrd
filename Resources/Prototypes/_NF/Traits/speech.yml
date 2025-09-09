@@ -8,5 +8,6 @@
   cost: 1
   components:
     - type: StreetpunkAccent
+  countsTowardsMaxTraits: false # Omustation - Don't count accents towards max traits
 
 

@@ -100,7 +100,7 @@
   - type: StationEvent
     earliestStart: 20
     weight: 3
-    minimumPlayers: 30
+    minimumPlayers: 100 # OMU change - removes from valid event pool
     startAnnouncement: station-event-communication-interception
     startAudio:
       path: /Audio/Announcements/intercept.ogg
@@ -142,7 +142,7 @@
   - type: StationEvent
     earliestStart: 20
     weight: 3
-    minimumPlayers: 30
+    minimumPlayers: 100 # OMU change - removes from valid event pool
     maxOccurrences: 1
     duration: null
     occursDuringRoundEnd: false
@@ -207,7 +207,7 @@
   - type: StationEvent
     weight: 1.5
     earliestStart: 80
-    minimumPlayers: 30 # how is that 20 people when rat king is 30??? changed.
+    minimumPlayers: 100 # OMU change - removes from valid event pool
     duration: null
     maxOccurrences: 2
     chaos:
@@ -225,3 +225,4 @@
   - type: Tag
     tags:
       - MidroundAntag
+

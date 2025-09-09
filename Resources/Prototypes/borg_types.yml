@@ -256,7 +256,7 @@
   - BorgModuleHarvesting
   - BorgModuleLollypop # Goobstation
 
-  lawset: Clown # DeltaV: Custom lawset
+  lawset: Crewsimov # DeltaV: Custom lawset # Omu - Changed from Clown to Crewsimov since the chassis is made with tools for most of service, not just clowning.
 
   radioChannels:
   - Science

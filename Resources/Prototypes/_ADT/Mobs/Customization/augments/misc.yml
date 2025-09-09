@@ -1,0 +1,26 @@
+- type: marking
+  id: Malstrem
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Rodentia]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi
+    state: malstrem-base
+  - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi
+    state: malstrem-leds
+
+- type: marking
+  id: Beholder
+  bodyPart: Eyes
+  markingCategory: Head
+  speciesRestriction: [Human, Dwarf, Oni, SlimePerson, Arachnid, Tajaran, Rodentia]
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi
+    state: beholder-base
+  - sprite: _ADT/Mobs/Customization/augments/headaugs.rsi
+    state: beholder-eye
+
