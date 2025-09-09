@@ -102,6 +102,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.DeviceNetwork.Components;
+using Content.Shared._Omu.Shuttles.Components; // Omu, allow CC shuttles to FTL to CC
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -623,7 +624,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             QueueDel(grid);
             return;
         }
-
+        _ = EnsureComp<MapCentcommComponent>(map); // Omu, add marker component to CC
         if (!Exists(grid))
         {
             Log.Error($"Failed to set up centcomm grid!");
