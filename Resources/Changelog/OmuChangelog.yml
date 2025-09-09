@@ -368,3 +368,31 @@ Entries:
       message: R6 is now apart of selectors
   id: 41
   time: '2025-09-08T12:48:47.0000000+00:00'
+- author: MarkerWicker
+  changes:
+    - type: Tweak
+      message: Language Traits no longer take up max traits.
+    - type: Fix
+      message: >-
+        Fixed being able to select Foreigner and Foreigner Light at the same
+        time.
+  id: 42
+  time: '2025-09-08T23:36:13.0000000+00:00'
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Cryoxadone is stronger and has double effect on corpses
+    - type: Tweak
+      message: Necrosol is stronger and has double effect on corpses
+    - type: Tweak
+      message: Opporozidone is less expensive to make
+  id: 43
+  time: '2025-09-08T23:43:03.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Ported Feroxi from DeltaV
+    - type: Add
+      message: Ported Nehina (The language used by Feroxi) from The Den
+  id: 44
+  time: '2025-09-09T02:18:10.0000000+00:00'

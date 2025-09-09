@@ -351,8 +351,10 @@ namespace Content.Server.GameTicking
             foreach (var traitProtoId in character.TraitPreferences)
             {
                 var traitProto = _prototypeManager.Index(traitProtoId);
-                numSelectedTraits++;
                 traitPoints -= traitProto.GlobalCost;
+
+                if (traitProto.CountsTowardsMaxTraits)
+                    numSelectedTraits++;
 
                 // if the trait exists, and the character is not allowed to have it
                 if (traitProto != null &&

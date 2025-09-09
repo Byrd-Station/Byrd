@@ -11,6 +11,12 @@
   - type: ForeignerTrait
     cantUnderstand: false
     baseTranslator: TranslatorForeigner
+  countsTowardsMaxTraits: false # Omustation - Don't count languages towards max traits
+  requirements: # Omustation - Don't allow forigner and forigner light to be used at the same time
+    - !type:TraitsRequirement
+      traits:
+        - Foreigner
+      inverted: true
 
 - type: trait
   id: Foreigner
@@ -21,6 +27,7 @@
   components:
   - type: ForeignerTrait
     baseTranslator: TranslatorForeigner
+  countsTowardsMaxTraits: false # Omustation - Don't count languages towards max traits
 
 - type: trait
   id: SignLanguage
@@ -30,6 +37,7 @@
   cost: 1
   components:
   - type: LanguageSpeaker
+  countsTowardsMaxTraits: false # Omustation - Don't count languages towards max traits
   languagesSpoken:
     - Sign
   languagesUnderstood:
@@ -44,6 +52,7 @@
   cost: 1
   components:
   - type: LanguageSpeaker
+  countsTowardsMaxTraits: false # Omustation - Don't count languages towards max traits
   languagesSpoken:
     - SolCommon
   languagesUnderstood:
@@ -57,6 +66,7 @@
   cost: 1
   components:
   - type: LanguageSpeaker
+  countsTowardsMaxTraits: false # Omustation - Don't count languages towards max traits
   languagesSpoken:
     - Tradeband
   languagesUnderstood:
@@ -70,6 +80,7 @@
   cost: 1
   components:
   - type: LanguageSpeaker
+  countsTowardsMaxTraits: false # Omustation - Don't count languages towards max traits
   languagesSpoken:
     - Freespeak
   languagesUnderstood:
@@ -83,6 +94,7 @@
   cost: 1
   components:
   - type: LanguageSpeaker
+  countsTowardsMaxTraits: false # Omustation - Don't count languages towards max traits
   languagesSpoken:
     - Elyran
   languagesUnderstood:
@@ -110,6 +122,7 @@
   cost: 1
   components:
   - type: LanguageSpeaker
+  countsTowardsMaxTraits: false # Omustation - Don't count languages towards max traits
   languagesSpoken:
     - NovuNederic
   languagesUnderstood:

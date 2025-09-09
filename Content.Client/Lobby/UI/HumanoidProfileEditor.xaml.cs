@@ -759,8 +759,10 @@ namespace Content.Client.Lobby.UI
                 if (selector.Preference)
                 {
                     selectionCount += trait.Cost;
-                    _selectedTraitCount++;
                     _selectedTraitPointCount -= trait.GlobalCost;
+
+                    if (trait.CountsTowardsMaxTraits)
+                        _selectedTraitCount++;
                 }
 
                 // Make sure that the player meets the requirements to select this trait. If they don't the trait is locked.
@@ -783,14 +785,18 @@ namespace Content.Client.Lobby.UI
                     (_selectedTraitCount < _maxTraits || _maxTraits <= 0)) // make sure the player isn't selecting more traits than they're allowed
                     {
                         Profile = Profile?.WithTraitPreference(trait.ID, _prototypeManager);
-                        _selectedTraitCount++;
                         _selectedTraitPointCount -= trait.GlobalCost;
+
+                        if (trait.CountsTowardsMaxTraits)
+                            _selectedTraitCount++;
                     }
                     else
                     {
                         Profile = Profile?.WithoutTraitPreference(trait.ID, _prototypeManager);
-                        _selectedTraitCount--;
                         _selectedTraitPointCount += trait.GlobalCost;
+
+                        if (trait.CountsTowardsMaxTraits)
+                            _selectedTraitCount--;
                     }
 
                     SetDirty();
