@@ -177,7 +177,7 @@
           types:
             Heat: 0.1
         conditions:
-        - !type:HasComponentOnEquipmentCondition
+        - !type:HasComponentOnEquipmentCondition # omu edit - make suits protect slimes from water damage
           components:
           - type: PressureProtection
           invert: true
@@ -187,7 +187,7 @@
         messages: [ "slime-hurt-by-water-popup" ]
         probability: 0.25
         conditions:
-        - !type:HasComponentOnEquipmentCondition
+        - !type:HasComponentOnEquipmentCondition # omu edit - make suits protect slimes from water damage
           components:
           - type: PressureProtection
           invert: true
