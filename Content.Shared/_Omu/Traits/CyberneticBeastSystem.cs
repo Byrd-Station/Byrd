@@ -25,14 +25,14 @@ public sealed class CyberneticBeastSystem : EntitySystem
     /// </summary>
     private void OnSpeechSoundNeeded(Entity<CyberneticBeastComponent> ent, ref GetSpeechSoundEvent args)
     {
-        if (isWearingMantle(ent))
+        if (IsWearingMantle(ent))
             args.SpeechSoundProtoId = ent.Comp.SpeechSoundWhileWearingMantle;
     }
 
     /// <summary>
     ///     Whether the specified cybernetic beast is wearing a mantle.
     /// </summary>
-    private bool isWearingMantle(Entity<CyberneticBeastComponent> ent)
+    private bool IsWearingMantle(Entity<CyberneticBeastComponent> ent)
     {
         // if the passed entity has an inventory component, and in that inventory one item has a cybernetic mantle component, the player must be wearing a cybernetic mantle.
         if (EntityManager.TryGetComponent<InventoryComponent>(ent, out var inventoryComponent))

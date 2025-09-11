@@ -58,6 +58,8 @@
   category: PhysicalTraits
   components:
   - type: CyberneticBeast
+  - type: PermanentBlindness
+    blindness: 3 # Better than having the nearsighted trait.
   globalCost: 5
   requirements:
     - !type:SpeciesRequirement

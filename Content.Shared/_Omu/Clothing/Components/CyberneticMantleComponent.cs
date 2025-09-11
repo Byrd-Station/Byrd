@@ -13,6 +13,9 @@ namespace Content.Shared._Omu.Clothing.Components;
 public sealed partial class CyberneticMantleComponent : Component, IClothingSlots
 {
 
+    /// <summary>
+    ///     The mantle will relay an event to these inventory slots when equpped.
+    /// </summary>
     [DataField]
-    public SlotFlags Slots { get; set; } = SlotFlags.WITHOUT_POCKET;
+    public SlotFlags Slots { get; set; } = SlotFlags.HEAD;
 }

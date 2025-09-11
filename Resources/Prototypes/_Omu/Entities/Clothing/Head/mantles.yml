@@ -5,6 +5,18 @@
   description: Placeholder text.
   components:
   - type: CyberneticMantle
+  - type: ItemToggle
+    onUse: false
+    onActivate: false
+  - type: ComponentToggler
+    components:
+    - type: VisionCorrection
+      correctionPower: 16 # these ain't your granny's reading glasses 
+    - type: NightVision #todo: make this component actually work clientside without predicting it's addition to the mantle (because predicting it throws an exception)
+      isEquipment: true
+      color: "#CCFFCC" #todo: make this correspond to the colour of the beast's eyes
+    - type: FlashImmunity
+    - type: FlashSoundSuppression
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
   - type: Clothing
@@ -13,7 +25,7 @@
     radius: 1.25
     energy: 0.25
     offset: 0,-0.1
-    color: "#CCFFCC" # todo: make this correspond to the colour of the mantle's eyes
+    color: "#CCFFCC" # todo: make this correspond to the colour of the beast's eyes
     containerOccluded: true # this makes the mantle illuminate itself.
   - type: ClothingTakesUpExtraSlots
     slots:
