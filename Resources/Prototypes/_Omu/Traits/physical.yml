@@ -110,15 +110,15 @@
         - ClawsTrait
       inverted: true
 
-- type: trait
-  id: ThievingTrait
-  name: trait-thieving-name
-  description: trait-thieving-desc
-  category: PhysicalTraits
-  blacklist:
-    components:
-      - BorgChassis
-  components:
-    - type: Thieving
-      noiseLevel: 0 # "0" is small, per the PopupType enum
-  globalCost: 3
+#- type: trait
+#  id: ThievingTrait
+#  name: trait-thieving-name
+#  description: trait-thieving-desc
+#  category: PhysicalTraits
+#  blacklist:
+#    components:
+#      - BorgChassis
+#  components:
+#    - type: Thieving
+#      noiseLevel: 0 # "0" is small, per the PopupType enum
+#  globalCost: 3
