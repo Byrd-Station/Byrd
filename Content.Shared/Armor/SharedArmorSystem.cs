@@ -37,7 +37,7 @@ using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Systems;
-using Content.Shared.Localizations;
+using Content.Shared.Localizations; // omu
 
 namespace Content.Shared.Armor;
 
