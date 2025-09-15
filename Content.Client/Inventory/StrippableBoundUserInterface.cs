@@ -65,6 +65,7 @@ using Robust.Shared.Input;
 using Robust.Shared.Map;
 using static Content.Client.Inventory.ClientInventorySystem;
 using static Robust.Client.UserInterface.Control;
+using Content.Shared._Omu.Components; // Omu
 
 namespace Content.Client.Inventory
 {
@@ -274,7 +275,8 @@ namespace Content.Client.Inventory
 
             // If this is a full pocket, obscure the real entity
             // this does not work for modified clients because they are still sent the real entity
-            if (entity != null && _strippable.IsStripHidden(slotDef, _player.LocalEntity))
+            if (entity != null && _strippable.IsStripHidden(slotDef, _player.LocalEntity)
+                && !EntMan.HasComponent<IgnorePocketHidingComponent>(PlayerManager.LocalEntity)) // Omu edit - recreating EE thieving
                 entity = _virtualHiddenEntity;
 
             // Goobstation: Playing Cards are always obscured in strip menu.
