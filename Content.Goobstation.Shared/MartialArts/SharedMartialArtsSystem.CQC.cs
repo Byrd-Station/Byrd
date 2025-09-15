@@ -104,30 +104,30 @@ public partial class SharedMartialArtsSystem
         if (HasComp<ClothingComponent>(ent))
             return;
         //omu end
-        {
-            if (args.Handled)
-                return;
 
-            args.Handled = true;
+        if (args.Handled)
+            return;
 
-            if (!_netManager.IsServer)
-                return;
+        args.Handled = true;
 
-            if (!TryGrantMartialArt(args.User, comp))
-                return;
+        if (!_netManager.IsServer)
+            return;
 
-            var coords = Transform(args.User).Coordinates;
-            _audio.PlayPvs(comp.SoundOnUse, coords);
+        if (!TryGrantMartialArt(args.User, comp))
+            return;
 
-            if (comp.MultiUse)
-                return;
+        var coords = Transform(args.User).Coordinates;
+        _audio.PlayPvs(comp.SoundOnUse, coords);
 
-            QueueDel(ent);
-            if (comp.SpawnedProto == null)
-                return;
+        if (comp.MultiUse)
+            return;
 
-            Spawn(comp.SpawnedProto, coords);
-        }
+        QueueDel(ent);
+        if (comp.SpawnedProto == null)
+            return;
+
+        Spawn(comp.SpawnedProto, coords);
+
 
     }
 
