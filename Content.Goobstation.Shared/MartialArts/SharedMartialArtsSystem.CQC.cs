@@ -16,17 +16,18 @@
 
 using System.Linq;
 using Content.Goobstation.Common.MartialArts;
-using Content.Goobstation.Maths.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint; //omu
 using Content.Goobstation.Shared.MartialArts.Components;
 using Content.Goobstation.Shared.MartialArts.Events;
+using Content.Shared._Goobstation.Heretic.Components; //omu
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Body.Components;
-using Content.Shared.Clothing;
-using Content.Shared.Clothing.Components;
+using Content.Shared.Clothing; //omu
+using Content.Shared.Clothing.Components; //omu
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
@@ -35,7 +36,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Standing;
-using Content.Shared.Weapons.Melee;
+using Content.Shared.Weapons.Melee; //omu
 using Robust.Shared.Audio;
 using Robust.Shared.Utility;
 
@@ -55,9 +56,10 @@ public partial class SharedMartialArtsSystem
 
         SubscribeLocalEvent<GrantCqcComponent, UseInHandEvent>(OnGrantCQCUse);
         SubscribeLocalEvent<GrantCqcComponent, MapInitEvent>(OnMapInitEvent);
-
+        // omu start
         SubscribeLocalEvent<GrantCqcComponent, ClothingGotEquippedEvent>(OnWear);
         SubscribeLocalEvent<GrantCqcComponent, ClothingGotUnequippedEvent>(OnRemove);
+        // omu end
     }
 
     #region Generic Methods
@@ -97,10 +99,11 @@ public partial class SharedMartialArtsSystem
 
     private void OnGrantCQCUse(EntityUid ent, GrantMartialArtKnowledgeComponent comp, UseInHandEvent args)
     {
+        // omu start
         //Makes CQC check for clothes for CQC belt to function
         if (HasComp<ClothingComponent>(ent))
             return;
-        else
+        //omu end
         {
             if (args.Handled)
                 return;
@@ -185,6 +188,7 @@ public partial class SharedMartialArtsSystem
         }
     }
 
+    // omu start
     private void OnWear(EntityUid uid, GrantCqcComponent component, ref ClothingGotEquippedEvent args)
     {
         if (!_netManager.IsServer)
@@ -198,13 +202,14 @@ public partial class SharedMartialArtsSystem
     private void OnRemove(Entity<GrantCqcComponent> ent, ref ClothingGotUnequippedEvent args)
     {
         var user = args.Wearer;
-        if (!TryComp<MartialArtsKnowledgeComponent>(user, out var martialArtsKnowledge))
+        if (!TryComp<MartialArtsKnowledgeComponent>(user, out var martialArtsKnowledge)
+            || !TryComp<MeleeWeaponComponent>(user, out var meleeWeaponComponent))
             return;
 
         if (martialArtsKnowledge.MartialArtsForm != MartialArtsForms.CloseQuartersCombat)
             return;
 
-        if (!TryComp<MeleeWeaponComponent>(args.Wearer, out var meleeWeaponComponent))
+        if (martialArtsKnowledge.Removable == false)
             return;
 
         var originalDamage = new DamageSpecifier();
@@ -214,8 +219,9 @@ public partial class SharedMartialArtsSystem
 
         RemComp<MartialArtsKnowledgeComponent>(user);
         RemComp<CanPerformComboComponent>(user);
+        RemComp<RiposteeComponent>(user);
     }
-
+    // omu end
     #endregion
 
     #region Combo Methods
