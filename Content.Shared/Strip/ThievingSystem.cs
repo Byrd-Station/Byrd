@@ -41,7 +41,7 @@ public sealed partial class ThievingSystem : EntitySystem
 
     private void OnCompInit(Entity<ThievingComponent> entity, ref ComponentInit args)
     {
-        if (entity.Comp.Toggleable)
+        if (entity.Comp.Toggleable) // Omu edit - Thieving trait fixes
         {
             _alertsSystem.ShowAlert(entity, entity.Comp.StealthyAlertProtoId, 1);
         }
@@ -49,7 +49,7 @@ public sealed partial class ThievingSystem : EntitySystem
 
     private void OnCompRemoved(Entity<ThievingComponent> entity, ref ComponentRemove args)
     {
-        if (entity.Comp.Toggleable)
+        if (entity.Comp.Toggleable) // Omu edit - Thieving trait fixes
         {
             _alertsSystem.ClearAlert(entity, entity.Comp.StealthyAlertProtoId);
         }
