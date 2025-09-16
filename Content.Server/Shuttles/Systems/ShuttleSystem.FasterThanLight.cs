@@ -277,7 +277,8 @@ public sealed partial class ShuttleSystem
             return false;
 
         component = EnsureComp<FTLDestinationComponent>(mapUid);
-        component.Whitelist = CCWhitelist; // Omu, allow CC shuttles to FTL to CC
+        if (HasComp<MapCentcommComponent>(mapUid)) // Omu, CC whitelist should only be added to CC
+            component.Whitelist = CCWhitelist; // Omu, allow CC shuttles to FTL to CC
         if (component.Enabled == enabled && component.RequireCoordinateDisk == requireDisk && component.BeaconsOnly == beaconsOnly)
             return true;
         

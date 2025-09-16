@@ -230,7 +230,6 @@ namespace Content.Server.Flash
 
             if (melee || revFlash)  // funkystation start
             {
-                var ev = new AfterFlashedEvent(target, user, used);
 
                 if (user == null)
                     return;
@@ -238,9 +237,10 @@ namespace Content.Server.Flash
                 if (used == null)
                     return;
 
-               // _popup.PopupEntity(Loc.GetString("flash-component-user-head-rev", // Omu, this shouldn't be enabled, as it is shown in a different system instead
-               //         ("victim", Identity.Entity(target, EntityManager))), target);
-            }  // funkystation end
+                var ev = new AfterFlashedEvent(target, user, used);
+                RaiseLocalEvent(user.Value, ref ev);
+                RaiseLocalEvent(used.Value, ref ev);
+            } // funkystation end
         }
 
         public override void FlashArea(Entity<FlashComponent?> source, EntityUid? user, float range, float duration, float slowTo = 0.8f, bool displayPopup = false, float probability = 1f, SoundSpecifier? sound = null)
