@@ -32,7 +32,6 @@
     noRot: true
     drawdepth: Mobs
     layers:
-      layers:
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Groin" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
