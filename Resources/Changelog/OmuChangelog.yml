@@ -402,3 +402,39 @@ Entries:
       message: Fixed stations having the CC shuttle whitelist added to them.
   id: 45
   time: '2025-09-09T16:09:39.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Tweak
+      message: Raised marking numbers on all species.
+    - type: Tweak
+      message: Onis and IPCs can use gauze markings again.
+    - type: Tweak
+      message: Harpies can now have eyepatches or blindfolds in the markings section.
+  id: 46
+  time: '2025-09-09T19:54:43.0000000+00:00'
+- author: CometVoid
+  changes:
+    - type: Add
+      message: Added EORG and Shuttlebombing Rules.
+  id: 47
+  time: '2025-09-09T21:01:54.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Add
+      message: Added Glacier port from DV
+  id: 48
+  time: '2025-09-09T22:12:56.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: >-
+        Station Report now removes any [head] tags, instead of sending an
+        incorrectly formated message to discord.
+  id: 49
+  time: '2025-09-13T19:14:17.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed revs being unable to convert
+  id: 50
+  time: '2025-09-15T23:34:32.0000000+00:00'

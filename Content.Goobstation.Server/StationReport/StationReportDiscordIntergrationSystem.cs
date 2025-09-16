@@ -38,15 +38,15 @@ public sealed class StationReportDiscordIntergrationSystem : EntitySystem
         new(@"\[/?italic\]", @"_"),
         new(@"\[/?mono\]", @"__"),
         new(@">", @""),
-        new(@"\[h1\]", @"# "),
-        new(@"\[h2\]", @"## "),
-        new(@"\[h3\]", @"### "),
-        new(@"\[h4\]", @"-# "),
+        new(@"\[h1\]", @""), // Omu, make head be replaced with empty, was # 
+        new(@"\[h2\]", @""), // Omu, make head be replaced with empty, was ## 
+        new(@"\[h3\]", @""), // Omu, make head be replaced with empty, was ###
+        new(@"\[h4\]", @""), // Omu, make head be replaced with empty, was -# 
         new(@"\[/h[0-9]\]", @""),
-        new(@"\[head=1\]", @"# "),
-        new(@"\[head=2\]", @"## "),
-        new(@"\[head=3\]", @"### "),
-        new(@"\[head=4\]", @"-# "),
+        new(@"\[head=1\]", @""), // Omu, make head be replaced with empty, was # 
+        new(@"\[head=2\]", @""), // Omu, make head be replaced with empty, was ## 
+        new(@"\[head=3\]", @""), // Omu, make head be replaced with empty, was ### 
+        new(@"\[head=4\]", @""), // Omu, make head be replaced with empty, was -# 
         new(@"\[/head\]", @""),
         new(@"\[/?color(=[#0-9a-zA-Z]+)?\]", @"")
     };
