@@ -8,20 +8,25 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 <Document>
   # Resomi
-
   <Box>
-    <GuideEntityEmbed Entity="MobResomiDummy" Caption=""/>
+    <GuideEntityEmbed Entity="MobResomi" Caption=""/>
   </Box>
 
-  Resomi are a small avian-like species that hail from an icy world.
+  Resomi are a diminutive, avian-like species adapted to survival on their icy, ammonia-rich homeworld.
+  Standing much shorter than most sapients, their light bones and downy plumage grant them both agility and vulnerability.
+  Their bodies are built for the frozen wastes, but poorly suited to warmer climates, to the point hot temperatures become unbearable to them.
+  Despite this, they have made a name for themselves in NT-operated stations and across the galactic strata by sheer spite, having originally developed their own means of space travel.
 
-  Like most other non-human species, Resomi are capable of digesting raw meat and other uncooked animal proteins.
+  ## Diet
+  - Can eat raw meat.
 
-  As a result of the conditions of their home planet and ammonia-based blood, Resomi are immune to any cold damage and other effects.
-  Consequently, they find temperatures that most other species find comfortable to be unbearably hot, finding themselves suffering starting at just 30°C.
+  ## Benefits
+  - Due to their [color=yellow]small stature[/color], they can [color=#1e90ff]fit inside duffel bags[/color].
+  - Thanks to their [color=yellow]ammonia-based blood[/color] and frigid evolution, they are [color=#1e90ff]completely immune to Cold damage and cold-based effects[/color].
 
-  Along with their temperature tolerances, they take 30% more heat damage and 15% more brute damage.
-
-  Due to their small size, they can fit in duffelbags. They also weigh less, making it harder for them to pull other species. Their unarmed attack deals Slash damage.
-
+  ## Drawbacks
+  - Their [color=yellow]small stature[/color] makes them [color=#ec3a3a]take 15% more Brute, Slash and Piercing damage[/color].
+  - They [color=#ec3a3a]struggle to pull heavier species or objects[/color] due to their light weight.
+  - Their [color=yellow]ammonia-based[/color] physiology means they [color=#ec3a3a]begin suffering from Heat at just 47°C[/color] and [color=#ec3a3a]take 30% more Heat damage[/color].
+  - Their unarmed attacks rely on [color=yellow]talons[/color], dealing [color=#ec3a3a]Slashing damage[/color].
 </Document>

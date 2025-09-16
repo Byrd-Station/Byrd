@@ -5,34 +5,43 @@
     <GuideEntityEmbed Entity="MobPlasmaman" Caption=""/>
   </Box>
 
-  They breathe plasma, and oxygen is highly toxic to them when inhaled.
-  Being exposed to oxygen sets them on fire.
+  [color=#ffa500]Warning! This species is not recommended for new players due to their tendency to self-ignite![/color]
+
+
+  ## Mechanics
+
+  [color=#ffa500]They breathe plasma[/color], and [color=#ec3a3a]oxygen is highly toxic to them when inhaled.[/color]
+  Being exposed to oxygen [color=#ec3a3a][bold]sets them on fire.[/color][/bold]
 
   To prevent ignition, they wear sealed suits made up of an envirosuit (in the jumpsuit slot) and a [bold]spaceworthy[/bold] envirosuit helmet.
   Other suits like EVA suits, vacsuits, tacsuits and hardsuits will also seal them from oxygen exposure.
 
+  [color=#1e90ff]
   They don't experience hunger nor thirst.
   They don't have blood and cannot bleed out.
+  [/color]
 
-  Due to their skeleton body, they can consume Milk to gain a positive moodlet and slowly heal Brute, Heat, Shock, and Caustic damage.
-  They can also consume Plasma to gain a bigger positive moodlet and heal every damage type faster, except for Cellular damage.
+  Due to their skeleton body, they can consume [color=#1e90ff]Milk[/color] to gain a positive moodlet and slowly heal [color=#1e90ff]Brute[/color], [color=#1e90ff]Heat[/color], [color=#1e90ff]Shock[/color], and [color=#1e90ff]Caustic[/color] damage.
+  They can also consume [color=#8658fc]Plasma [/color]to gain a bigger positive moodlet and [color=#8658fc] heal every damage type faster[/color], except for Cellular damage.
 
   <Box>
     <GuideEntityEmbed Entity="DrinkCartonMilk" />
     <GuideEntityEmbed Entity="SheetPlasma1" />
   </Box>
 
-  They infuse their fists with plasma dust that combusts when they punch, dealing [color=orange]5 Heat[/color] and [color=red]2.25 Blunt[/color] damage. However, each successful punch deals [color=orange]1 Heat[/color] damage to their hands.
+  They infuse their [color=yellow]fists[/color] with plasma dust that combusts when they punch, dealing [color=orange]5 Heat[/color] and [color=red]2.25 Blunt[/color] damage. [bold]However[/bold], each successful punch deals [color=orange]1 Heat[/color] damage to their hands.
 
-  Plasmamen with the traits [bold]Claws[/bold], [bold]Talons[/bold] or [bold]Natural Weapons Removal[/bold] have less unarmed damage but don't take self-damage from unarmed attacks.
+  Plasmamen with the traits [color=yellow][bold]Claws[/bold][/color], [color=yellow][bold]Talons[/bold][/color] or [color=yellow][bold]Natural Weapons Removal[/bold][/color] have less unarmed damage but don't take self-damage from unarmed attacks.
 
-  They take [color=#1e90ff]25% less Piercing, 20% less Poison, and 15% less Slash damage[/color],
-  and are [color=#8658fc]immune to Radiation and Cold damage[/color],
-  but take [color=#ffa500]50% more Blunt and 50% more Heat damage[/color].
+  They take [color=#1e90ff]25% less Piercing[/color], [color=#1e90ff]20% less Poison[/color], and [color=#1e90ff]15% less Slash[/color],
+  and are [color=#8658fc]immune to Radiation and Cold[/color] damage,
+  but take [color=#ffa500]50% more Blunt[/color] and [color=#ffa500]50% more Heat[/color] damage.
 
   Due to their [color=#8658fc]Cold immunity[/color], they can live in cold environments without the need of a winter coat.
 
-  They have a slightly lower density than the average species. This results in weaknesses such as but not limited to: being slightly more vulnerable to being shoved, picked up, and thrown by Space Wind, and having a harder time pulling heavy objects.
+  They have a slightly [color=#ec3a3a]lower density than the average species[/color].
+  This results in weaknesses such as but not limited to: being slightly more [color=#ec3a3a]vulnerable to being shoved[/color], [color=#ec3a3a]picked up[/color],
+  and having a [color=#ec3a3a]harder time pulling heavy objects[/color].
 
   ## Equipment
   <Box>

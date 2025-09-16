@@ -17,4 +17,21 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   deal [color=#ec3a3a]blunt [/color]and [color=#ec3a3a]slash [/color] damage with their claws, and their fur
   insulates them from environment temperature at the cost of making them 15% more vulnerable to Heat damage.
 
+  ## Diet
+  - Can eat raw meat.
+
+  - Cannot eat things containing Theobromine, such as chocolate.
+
+  ## Benefits
+  - Possess an acute [color=yellow]sense of smell[/color], allowing them to [color=#1e90ff]track scents[/color].
+  - Attack with [color=yellow]claws[/color], dealing [color=#ec3a3a]Blunt[/color] and [color=#ec3a3a]Slash[/color] damage.
+
+  ## Drawbacks
+  - Their insulating fur makes them [color=#ec3a3a]15% more vulnerable to Heat damage[/color].
+  - They have [color=yellow]Deuteranopia[/color], seeing the world differently from most species.
+
+ ([color=#8658fc]This can be turned off in accessibility settings[/color].)
+
+  - [color=#ec3a3a]Cryogenics cannot be used to heal them[/color], as they cannot cool down enough to enter stasis.
 </Document>
+
