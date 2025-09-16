@@ -424,3 +424,17 @@ Entries:
       message: Added Glacier port from DV
   id: 48
   time: '2025-09-09T22:12:56.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: >-
+        Station Report now removes any [head] tags, instead of sending an
+        incorrectly formated message to discord.
+  id: 49
+  time: '2025-09-13T19:14:17.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed revs being unable to convert
+  id: 50
+  time: '2025-09-15T23:34:32.0000000+00:00'
