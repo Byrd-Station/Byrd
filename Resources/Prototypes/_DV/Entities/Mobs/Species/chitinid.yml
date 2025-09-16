@@ -136,6 +136,10 @@
     understands:
     - TauCetiBasic
     - Moffic
+  - type: ItemCougher  # OmuStation
+    item: Chitzite # OmuStation
+    action: ActionChitzite # OmuStation
+    coughPopup: chitzite-cough # OmuStation - Durk fully implements a bounty challenge ( IMPOSSIBLE )
 
 - type: entity
   parent: BaseSpeciesDummy
