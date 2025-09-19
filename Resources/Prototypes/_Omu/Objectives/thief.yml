@@ -1,0 +1,10 @@
+- type: entity
+  parent: BaseThiefStealObjective
+  id: CyberneticMantleStealObjective
+  components:
+  - type: CyberneticMantleExistsOnStationRequirement
+  - type: StealCondition
+    stealGroup: CyberneticMantles
+    verifyMapExistence: false # this is handled by one of the requirements instead. If this were true, it would only check to see whether a cybernetic mantle exists on the map at round start.
+  - type: Objective
+    difficulty: 1

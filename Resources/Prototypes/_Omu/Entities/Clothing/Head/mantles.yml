@@ -32,3 +32,5 @@
     slots:
     - mask 
     - eyes
+  - type: StealTarget
+    stealGroup: CyberneticMantles
