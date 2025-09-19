@@ -4,6 +4,7 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._Omu.Clothing.EntitySystems;
 
@@ -11,6 +12,7 @@ public sealed class CyberneticMantleSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly ItemToggleSystem _itemToggleSystem = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     public override void Initialize()
     {
@@ -31,7 +33,7 @@ public sealed class CyberneticMantleSystem : EntitySystem
         // if the compnent can be toggled, turn it on when worn by a Beast.
         if (TryComp<ItemToggleComponent>(ent, out var itemToggle))
             if (TryComp<CyberneticBeastComponent>(args.Equipee, out var _))
-                _itemToggleSystem.TrySetActive(new Entity<ItemToggleComponent?>(ent.Owner, itemToggle), true, args.Equipee, true); // throws an exception if predicted.
+                _itemToggleSystem.TrySetActive(new Entity<ItemToggleComponent?>(ent.Owner, itemToggle), true, args.Equipee, true);
 
     }
 
@@ -39,7 +41,8 @@ public sealed class CyberneticMantleSystem : EntitySystem
     {
         // if the compnent can be toggled, turn it off when unequipped.
         if (TryComp<ItemToggleComponent>(ent, out var itemToggle))
-            _itemToggleSystem.TrySetActive(new Entity<ItemToggleComponent?>(ent.Owner, itemToggle), false, args.Equipee, false);
+            if (_gameTiming.ApplyingState) // removing a component while resetting predicted entities will throw an exception, so don't do that.
+                _itemToggleSystem.TrySetActive(new Entity<ItemToggleComponent?>(ent.Owner, itemToggle), false, args.Equipee, false);
     }
 
 }
