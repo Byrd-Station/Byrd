@@ -238,8 +238,8 @@
   equipment: # Heavily goob edited
 #    eyes: ClothingEyesGlassesMed # Omu - Available in loadouts.
     id: BrigmedicPDA
-#    ears: ClothingHeadsetAltSecurityRegular #OMU. Also in loadouts
-#    belt: ClothingBeltMedicalEMTFilled #OMU. Also in loadouts
+#    ears: ClothingHeadsetAltSecurityRegular # Omu - Available in loadouts.
+#    belt: ClothingBeltMedicalEMTFilled # Omu - Available in loadouts.
     pocket1: WeaponDisabler
   storage:
     back:
