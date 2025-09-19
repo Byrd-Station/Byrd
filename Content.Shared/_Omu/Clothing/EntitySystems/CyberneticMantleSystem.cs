@@ -1,10 +1,14 @@
 using Content.Shared._Omu.Clothing.Components;
 using Content.Shared._Omu.Traits;
+using Content.Shared.Clothing.Components;
+using Content.Shared.Humanoid;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
+using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._Omu.Clothing.EntitySystems;
 
@@ -30,10 +34,24 @@ public sealed class CyberneticMantleSystem : EntitySystem
         if (args.Cancelled)
             return;
 
-        // if the compnent can be toggled, turn it on when worn by a Beast.
-        if (TryComp<ItemToggleComponent>(ent, out var itemToggle))
-            if (TryComp<CyberneticBeastComponent>(args.Equipee, out var _))
-                _itemToggleSystem.TrySetActive(new Entity<ItemToggleComponent?>(ent.Owner, itemToggle), true, args.Equipee, true);
+        // make sure that the person equipping the mantle is a cybernetic beast
+        if (TryComp<CyberneticBeastComponent>(args.EquipTarget, out var _))
+        {
+            // if the compnent can be toggled, turn it on when worn
+            if (TryComp<ItemToggleComponent>(ent, out var itemToggle))
+                _itemToggleSystem.TrySetActive(new Entity<ItemToggleComponent?>(ent.Owner, itemToggle), true, args.EquipTarget, true);
+
+            // get the appearance of the beast
+            if (TryComp<HumanoidAppearanceComponent>(args.EquipTarget, out var humanoidAppearance))
+            {
+                // set the eye colour of the mantle to the eye colour of the beast
+                if (TryComp<ClothingComponent>(ent, out var clothingComp))
+                    if (clothingComp.ClothingVisuals.TryGetValue("head", out var layerData))
+                        if (layerData.TryGetValue(1, out var eyesLayer))
+                            eyesLayer.Color = humanoidAppearance.EyeColor;
+
+            }
+        }
 
     }
 
