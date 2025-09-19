@@ -236,7 +236,7 @@
 - type: startingGear
   id: BrigmedicGear
   equipment: # Heavily goob edited
-#    eyes: ClothingEyesGlassesMed #OMU. Now in loadouts
+#    eyes: ClothingEyesGlassesMed # Omu - Available in loadouts.
     id: BrigmedicPDA
 #    ears: ClothingHeadsetAltSecurityRegular #OMU. Also in loadouts
 #    belt: ClothingBeltMedicalEMTFilled #OMU. Also in loadouts
