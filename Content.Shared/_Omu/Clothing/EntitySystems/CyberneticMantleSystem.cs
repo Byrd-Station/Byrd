@@ -17,6 +17,7 @@ public sealed class CyberneticMantleSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly ItemToggleSystem _itemToggleSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly SharedPointLightSystem _lightSystem = default!;
 
     public override void Initialize()
     {
@@ -44,12 +45,18 @@ public sealed class CyberneticMantleSystem : EntitySystem
             // get the appearance of the beast
             if (TryComp<HumanoidAppearanceComponent>(args.EquipTarget, out var humanoidAppearance))
             {
-                // set the eye colour of the mantle to the eye colour of the beast
+                // clamp the beast's eye color to a reasonable brightness; no tiders with stealth mantles allowed
+                humanoidAppearance.EyeColor.Deconstruct(out var eyeRed, out var eyeGreen, out var eyeBlue);
+                var eyeColor = new Color(Math.Clamp(eyeRed, ent.Comp.MinEyeColorLevel, 1.0f), Math.Clamp(eyeGreen, ent.Comp.MinEyeColorLevel, 1.0f), Math.Clamp(eyeBlue, ent.Comp.MinEyeColorLevel, 1.0f));
+
+                // set the eye colour of the mantle to the (clamped) eye colour of the beast
                 if (TryComp<ClothingComponent>(ent, out var clothingComp))
                     if (clothingComp.ClothingVisuals.TryGetValue("head", out var layerData))
                         if (layerData.TryGetValue(1, out var eyesLayer))
-                            eyesLayer.Color = humanoidAppearance.EyeColor;
+                            eyesLayer.Color = eyeColor;
 
+                // if this visor emits light, make that light take on the clamped eye colour of the beast
+                _lightSystem.SetColor(ent, eyeColor);
             }
         }
 

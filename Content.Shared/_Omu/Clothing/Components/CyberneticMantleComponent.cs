@@ -18,4 +18,12 @@ public sealed partial class CyberneticMantleComponent : Component, IClothingSlot
     /// </summary>
     [DataField]
     public SlotFlags Slots { get; set; } = SlotFlags.HEAD;
+
+    /// <summary>
+    ///     The minimum color level of the eyes on the visor.
+    ///     In effect, if a player has (for example) eyes with a red value of less than 1/2, and this value is set to 0.5f,
+    ///     the red level on the visor will be increased to 0.5 in order to prevent pure black visors from being abused.
+    /// </summary>
+    [DataField]
+    public float MinEyeColorLevel { get; set; } = 0.5f;
 }
