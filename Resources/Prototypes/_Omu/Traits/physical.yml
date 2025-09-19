@@ -126,3 +126,13 @@
       stripTimeReduction: 1
     - type: IgnorePocketHiding
   globalCost: 3
+
+- type: trait
+  id: Frisky
+  name: trait-frisky-name
+  description: trait-frisky-desc
+  category: PhysicalTraits
+  components:
+    - type: IgnorePocketHiding
+  globalCost: 2
+  
