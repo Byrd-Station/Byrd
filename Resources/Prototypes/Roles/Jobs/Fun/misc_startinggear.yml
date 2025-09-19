@@ -231,7 +231,7 @@
   inhand:
     - WeaponMeleeToolboxRobust
 
-#Brigmedic.
+#Brigmedic
 
 - type: startingGear
   id: BrigmedicGear
