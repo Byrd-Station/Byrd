@@ -41,4 +41,9 @@ trait-singer-desc =
 trait-thieving-name = Thieving
 trait-thieving-desc =
     You are deft with your hands, and talented at convincing people of their belongings.
-    You can steal items more quietly and quickly and can identify items in pockets.
+    You can steal items more quietly and quickly.
+
+trait-frisky-name = Frisky
+trait-frisky-desc =
+    You have a keen eye and a strong intuition for finding hidden valuables.
+    When you strip someone, you can identify items in their pockets.
