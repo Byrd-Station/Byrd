@@ -2,7 +2,7 @@
   parent: ClothingHeadBase
   id: ClothingCyberneticBeastMantle
   name: beast's mantle
-  description: Placeholder text.
+  description: The mantlepiece to sit atop a cybernetic beast. It comes equipped with features to assist the Beast's vision; but should it be taken away, it will leave a Beast crippled.
   components:
   - type: CyberneticMantle
   - type: ItemToggle
@@ -46,7 +46,7 @@
   id: ClothingCyberneticBeastMantleWork
   parent: ClothingCyberneticBeastMantle
   name: beast's work mantle
-  description: more placeholder text
+  description: A modified version of a cybernetic beast's mantle. This one comes with hookups for internals, and has extra seals for atmospheric protection.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -59,3 +59,23 @@
       - state: eyes
         shader: unshaded
   - type: BreathMask
+  - type: PressureProtection
+    highPressureMultiplier: 0.4 # not quite as good as some hardsuits, but close.
+    lowPressureMultiplier: 1000
+
+- type: entity
+  id: ClothingCyberneticBeastMantleWorkEngineering
+  parent: ClothingCyberneticBeastMantleWork
+  name: beast's engineering mantle
+  description: A modified version of a cybernetic beast's mantle. This one comes with hookups for internals, and has extra seals for atmospheric protection.
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-work-engineering
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-work-engineering
+      - state: eyes-work-engineering
+        shader: unshaded

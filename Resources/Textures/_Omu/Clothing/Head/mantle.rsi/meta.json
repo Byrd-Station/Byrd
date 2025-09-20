@@ -14,6 +14,9 @@
       "name": "icon-work"
     },
     {
+      "name": "icon-work-engineering"
+    },
+    {
       "name": "helmet",
       "directions": 4
     },
@@ -22,7 +25,15 @@
       "directions": 4
     },
     {
+      "name": "helmet-work-engineering",
+      "directions": 4
+    },
+    {
       "name": "eyes",
+      "directions": 4
+    },
+    {
+      "name": "eyes-work-engineering",
       "directions": 4
     }
   ]

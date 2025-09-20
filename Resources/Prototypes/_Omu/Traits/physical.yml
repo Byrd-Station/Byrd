@@ -63,10 +63,10 @@
   functions:
     - !type:TraitGiveEquipmentIfHasJobs # Certain jobs do just need access to internals, so we'll spawn them with a more advanced version of the mantle.
       jobEquipment:
-        AtmosphericTechnician: ClothingCyberneticBeastMantleWork
-        ChiefEngineer: ClothingCyberneticBeastMantleWork
-        StationEngineer: ClothingCyberneticBeastMantleWork
-        TechnicalAssistant: ClothingCyberneticBeastMantleWork
+        AtmosphericTechnician: ClothingCyberneticBeastMantleWorkEngineering
+        ChiefEngineer: ClothingCyberneticBeastMantleWorkEngineering
+        StationEngineer: ClothingCyberneticBeastMantleWorkEngineering
+        TechnicalAssistant: ClothingCyberneticBeastMantleWorkEngineering
         SalvageSpecialist: ClothingCyberneticBeastMantleWork
       equipmentUnmet: ClothingCyberneticBeastMantle
   globalCost: 5
