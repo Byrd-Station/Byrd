@@ -5,7 +5,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
-using Robust.Shared.GameObjects;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -18,6 +18,7 @@ public sealed class CyberneticMantleSystem : EntitySystem
     [Dependency] private readonly ItemToggleSystem _itemToggleSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly SharedPointLightSystem _lightSystem = default!;
+    [Dependency] private readonly INetManager _netManager = default!;
 
     public override void Initialize()
     {
@@ -28,11 +29,15 @@ public sealed class CyberneticMantleSystem : EntitySystem
     }
 
     /// <summary>
-    ///     A list of things to do while the mantle is equpped.
+    ///     A list of things to do when the mantle is equpped. Enables the mantle's ItemToggleComponent.
     /// </summary>
     private void OnBeingEquipped(Entity<CyberneticMantleComponent> ent, ref BeingEquippedAttemptEvent args)
     {
         if (args.Cancelled)
+            return;
+
+        // if the client is resetting predicted entities, trying to modify the components on the mantle will result in an exception. So don't do it.
+        if (_gameTiming.ApplyingState && _netManager.IsClient)
             return;
 
         // make sure that the person equipping the mantle is a cybernetic beast
@@ -50,10 +55,7 @@ public sealed class CyberneticMantleSystem : EntitySystem
                 var eyeColor = new Color(Math.Clamp(eyeRed, ent.Comp.MinEyeColorLevel, 1.0f), Math.Clamp(eyeGreen, ent.Comp.MinEyeColorLevel, 1.0f), Math.Clamp(eyeBlue, ent.Comp.MinEyeColorLevel, 1.0f));
 
                 // set the eye colour of the mantle to the (clamped) eye colour of the beast
-                if (TryComp<ClothingComponent>(ent, out var clothingComp))
-                    if (clothingComp.ClothingVisuals.TryGetValue("head", out var layerData))
-                        if (layerData.TryGetValue(1, out var eyesLayer))
-                            eyesLayer.Color = eyeColor;
+                SetEyeColor(ent, eyeColor);
 
                 // if this visor emits light, make that light take on the clamped eye colour of the beast
                 _lightSystem.SetColor(ent, eyeColor);
@@ -62,12 +64,29 @@ public sealed class CyberneticMantleSystem : EntitySystem
 
     }
 
+    /// <summary>
+    ///     A list of things to do when the mantle is unequipped. Disables the mantle's ItemToggleComponent.
+    /// </summary>>
     private void OnUnequipped(Entity<CyberneticMantleComponent> ent, ref GotUnequippedEvent args)
     {
+        // if the client is resetting predicted entities, trying to modify the components on the mantle will result in an exception. So don't do it.
+        if (_gameTiming.ApplyingState && _netManager.IsClient)
+            return;
+
         // if the compnent can be toggled, turn it off when unequipped.
         if (TryComp<ItemToggleComponent>(ent, out var itemToggle))
-            if (_gameTiming.ApplyingState) // removing a component while resetting predicted entities will throw an exception, so don't do that.
-                _itemToggleSystem.TrySetActive(new Entity<ItemToggleComponent?>(ent.Owner, itemToggle), false, args.Equipee, false);
+            _itemToggleSystem.TrySetActive(new Entity<ItemToggleComponent?>(ent.Owner, itemToggle), false, args.Equipee, true);
+    }
+
+    /// <summary>
+    ///     Sets the colour of the eyes-layer of the mantle to the specified colour.
+    /// </summary>
+    private void SetEyeColor(Entity<CyberneticMantleComponent> ent, Color color)
+    {
+        if (TryComp<ClothingComponent>(ent, out var clothingComp)
+            && clothingComp.ClothingVisuals.TryGetValue("head", out var layerData)
+            && layerData.TryGetValue(1, out var eyesLayer))
+            eyesLayer.Color = color;
     }
 
 }

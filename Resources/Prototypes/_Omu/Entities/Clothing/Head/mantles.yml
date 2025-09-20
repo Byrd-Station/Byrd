@@ -1,3 +1,29 @@
+# (READ THIS!) About ComponentToggler for mantles:
+#     The ComponentToggler component on each of these mantles is turned ON when the mantle is worn by a beast, and turned OFF when anybody unequips the mantle.
+# When you create a new mantle, which inherits from the base one, and you want to add a component to the component toggler, unfortunately you have to just
+# copy over the parent's ComponentToggler 1:1 into your new mantle. It results in a lot of duplicate markup. I hate it. But I don't know how I'd do it any better.
+#
+# (Extra reading) On Balance:
+#     The cybernetic beast trait is balanced around opportunity costs. That is to say, you gain some pretty nice benefits from wearing a mantle, but your mantle
+# can't do everything. You eventually will need to put on another helmet, or set of glasses, or facemask, and in order to do that, you must accept some downsides
+# in return. For instance, if you're a tider, your mantle provides you with some basic upsides: night vision, flash resistance, vision correction. However,
+# if the station is spaced, you will need to use internals, which you don't have. So you must take off the mantle and deal with being nearsighted
+# for the time being. As well, the mantle is large, at 3x4 inventory slots, meaning that in a worst-case emergency you may need to drop it entirely and come
+# back for it later.
+#     Some concessions have been made for certain jobs. A salvager will need to go out into space, so they get internals and pressure resistance. Same with an
+# atmos technician. As well, a doctor probably needs a medhud for their job. The key is to give the player ONLY what is necessary to complete their job. A
+# doctor probably doesn't need to be spaceproofed to do their job, at least until the station goes belly up, at which point they __should__ have to play around the 
+# opportunity cost of having a mantle.
+#
+# (Extra, Extra reading) On Balance, holistically:
+#    The "opportunity cost" style of balance came about as a result of some discussions in the OmuStation discord about trait balancing. One of the sentiments which
+# I observed, was that traits should have inherent downsides. If you make traits only-positive or only-negative, and rely on the trait points system to balance for
+# you, "meta" traits will VERY quickly emerge and dominate the playstyle of the server. However, if mostly-positive traits have a downside, or mostly-negative traits
+# have something desireable, then traits tend towards personal preference instead of optimal gameplay. It also allows for much more targeted balance: If the problem
+# with a trait is that people abuse it in combination with something else, you kind of have to gimp one trait or the other, and your only real way to do that is
+# via points cost. However, if a trait is both positive- and negative, you can alter those negatives in any which way you like.
+
+# The base mantle.
 - type: entity
   parent: ClothingHeadBase
   id: ClothingCyberneticBeastMantle
@@ -42,6 +68,7 @@
   - type: StealTarget
     stealGroup: CyberneticMantles
 
+# This mantle is inteded for people doing jobs that require internals. In particular, this mantle is a breath mask with pressure protection.
 - type: entity
   id: ClothingCyberneticBeastMantleWork
   parent: ClothingCyberneticBeastMantle
@@ -58,16 +85,25 @@
       - state: helmet-work
       - state: eyes
         shader: unshaded
-  - type: BreathMask
-  - type: PressureProtection
-    highPressureMultiplier: 0.4 # not quite as good as some hardsuits, but close.
-    lowPressureMultiplier: 1000
+  - type: ComponentToggler
+    components: # copied from the parent with some additions
+    - type: VisionCorrection
+      correctionPower: 16
+    - type: NightVision
+      isEquipment: true
+      color: "#CCFFCC"
+    - type: FlashImmunity
+    - type: FlashSoundSuppression
+    - type: BreathMask
+    - type: PressureProtection
+      highPressureMultiplier: 0.4
+      lowPressureMultiplier: 1000
 
+# resprite of the work mantle for job recognition.
 - type: entity
   id: ClothingCyberneticBeastMantleWorkEngineering
   parent: ClothingCyberneticBeastMantleWork
   name: beast's engineering mantle
-  description: A modified version of a cybernetic beast's mantle. This one comes with hookups for internals, and has extra seals for atmospheric protection.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
