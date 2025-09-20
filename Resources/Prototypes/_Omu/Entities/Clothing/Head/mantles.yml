@@ -67,6 +67,8 @@
     - eyes
   - type: StealTarget
     stealGroup: CyberneticMantles
+  - type: Item
+    size: Huge
 
 # This mantle is inteded for people doing jobs that require internals. In particular, this mantle is a breath mask with pressure protection.
 - type: entity
@@ -99,7 +101,7 @@
       highPressureMultiplier: 0.4
       lowPressureMultiplier: 1000
 
-# resprite of the work mantle for job recognition.
+# resprite of the work mantle for engineers.
 - type: entity
   id: ClothingCyberneticBeastMantleWorkEngineering
   parent: ClothingCyberneticBeastMantleWork
@@ -115,3 +117,83 @@
       - state: helmet-work-engineering
       - state: eyes-work-engineering
         shader: unshaded
+
+# resprite of the work mantle for salvagers in particular.
+- type: entity
+  id: ClothingCyberneticBeastMantleWorkSalvage
+  parent: ClothingCyberneticBeastMantleWork
+  name: beast's salvage mantle
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-work-engineering # todo: unique sprites
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-work-engineering # todo: unique sprites
+      - state: eyes-work-engineering # todo: unique sprites
+        shader: unshaded
+  - type: PointLight # salvagers get a light with fairly substantial range on their mantle. yes they already have night vision, but it might be nice for fellow salvagers (and is just kind of cool)
+    radius: 5
+    energy: 0.45 # lower energy, so that it's not too distracting outside of salvage operations.
+    offset: 0,0.2
+    color: "#CCFFCC"
+
+# resprite of the standard mantle with a sechud.
+- type: entity
+  id: ClothingCyberneticBeastMantleSecurity
+  parent: [ClothingCyberneticBeastMantle, BaseSecurityContraband]
+  name: beast's security mantle
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon # todo: unique sprites
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet # todo: unique sprites
+      - state: eyes # todo: unique sprites
+        shader: unshaded
+  - type: ComponentToggler # copied from the parent with some additions.
+    components:
+    - type: VisionCorrection
+      correctionPower: 16
+    - type: NightVision
+      isEquipment: true
+      color: "#CCFFCC"
+    - type: FlashImmunity
+    - type: FlashSoundSuppression
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+    - type: ShowContrabandDetails
+
+# resprite of the standard mantle with a medhud.
+- type: entity
+  id: ClothingCyberneticBeastMantleMedical
+  parent: ClothingCyberneticBeastMantle
+  name: beast's medical mantle
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon # todo: unique sprites
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet # todo: unique sprites
+      - state: eyes # todo: unique sprites
+        shader: unshaded
+  - type: ComponentToggler # copied from the parent with some additions.
+    components:
+    - type: VisionCorrection
+      correctionPower: 16
+    - type: NightVision
+      isEquipment: true
+      color: "#CCFFCC"
+    - type: FlashImmunity
+    - type: FlashSoundSuppression
+    - type: ShowHealthBars
+    - type: ShowHealthIcons
