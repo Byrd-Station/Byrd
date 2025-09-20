@@ -51,8 +51,9 @@ public sealed class CyberneticMantleSystem : EntitySystem
             if (TryComp<HumanoidAppearanceComponent>(args.EquipTarget, out var humanoidAppearance))
             {
                 // clamp the beast's eye color to a reasonable brightness; no tiders with stealth mantles allowed
-                humanoidAppearance.EyeColor.Deconstruct(out var eyeRed, out var eyeGreen, out var eyeBlue);
-                var eyeColor = new Color(Math.Clamp(eyeRed, ent.Comp.MinEyeColorLevel, 1.0f), Math.Clamp(eyeGreen, ent.Comp.MinEyeColorLevel, 1.0f), Math.Clamp(eyeBlue, ent.Comp.MinEyeColorLevel, 1.0f));
+                var eyeColorHsv = Color.ToHsv(humanoidAppearance.EyeColor);
+                eyeColorHsv.Z = Math.Clamp(eyeColorHsv.Z, ent.Comp.MinEyeColorLevel, 1.0f);
+                var eyeColor = Color.FromHsv(eyeColorHsv);
 
                 // set the eye colour of the mantle to the (clamped) eye colour of the beast
                 SetEyeColor(ent, eyeColor);
