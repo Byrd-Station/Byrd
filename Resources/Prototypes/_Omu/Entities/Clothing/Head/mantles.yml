@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingHeadBase]
+  parent: ClothingHeadBase
   id: ClothingCyberneticBeastMantle
   name: beast's mantle
   description: Placeholder text.
@@ -41,3 +41,21 @@
     - eyes
   - type: StealTarget
     stealGroup: CyberneticMantles
+
+- type: entity
+  id: ClothingCyberneticBeastMantleWork
+  parent: ClothingCyberneticBeastMantle
+  name: beast's work mantle
+  description: more placeholder text
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-work
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-work
+      - state: eyes
+        shader: unshaded
+  - type: BreathMask

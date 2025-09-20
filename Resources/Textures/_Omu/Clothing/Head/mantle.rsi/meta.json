@@ -11,7 +11,14 @@
       "name": "icon"
     },
     {
+      "name": "icon-work"
+    },
+    {
       "name": "helmet",
+      "directions": 4
+    },
+    {
+      "name": "helmet-work",
       "directions": 4
     },
     {

@@ -60,12 +60,20 @@
   - type: CyberneticBeast
   - type: PermanentBlindness
     blindness: 3 # Better than having the nearsighted trait.
+  functions:
+    - !type:TraitGiveEquipmentIfHasJobs # Certain jobs do just need access to internals, so we'll spawn them with a more advanced version of the mantle.
+      jobEquipment:
+        AtmosphericTechnician: ClothingCyberneticBeastMantleWork
+        ChiefEngineer: ClothingCyberneticBeastMantleWork
+        StationEngineer: ClothingCyberneticBeastMantleWork
+        TechnicalAssistant: ClothingCyberneticBeastMantleWork
+        SalvageSpecialist: ClothingCyberneticBeastMantleWork
+      equipmentUnmet: ClothingCyberneticBeastMantle
   globalCost: 5
   requirements:
     - !type:SpeciesRequirement
       species:
         - Vulpkanin
-  traitGear: ClothingCyberneticBeastMantle
 
 - type: trait
   id: MothFlight
