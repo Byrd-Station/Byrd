@@ -467,7 +467,7 @@
       NerveDamage: 0
 
 - type: entity
-  parent: ClothingEyesGlassesSecurity
+  parent: ClothingEyesGlassesSecurity # Omu 127 - Used to be ClothingEyesBase, see below
   id: ClothingEyesGlassesNoir
   name: noir-tech glasses
   description: A pair of glasses that simulate what the world looked like before the invention of color.
@@ -481,3 +481,8 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
+#  - type: IdentityBlocker # Omu edit - Noir glasses are already parented from sechuds now
+#    coverage: EYES
+#  - type: FlashImmunity
+#  - type: EyeProtection
+#    protectionTime: 5
