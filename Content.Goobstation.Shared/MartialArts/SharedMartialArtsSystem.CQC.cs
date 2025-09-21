@@ -99,7 +99,7 @@ public partial class SharedMartialArtsSystem
 
     private void OnGrantCQCUse(EntityUid ent, GrantMartialArtKnowledgeComponent comp, UseInHandEvent args)
     {
-        // omu start
+        // omu start, remove useless if statement
         //Makes CQC check for clothes for CQC belt to function
         if (HasComp<ClothingComponent>(ent))
             return;
