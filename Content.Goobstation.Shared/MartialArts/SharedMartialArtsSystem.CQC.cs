@@ -103,7 +103,6 @@ public partial class SharedMartialArtsSystem
         //Makes CQC check for clothes for CQC belt to function
         if (HasComp<ClothingComponent>(ent))
             return;
-        //omu end
 
         if (args.Handled)
             return;
