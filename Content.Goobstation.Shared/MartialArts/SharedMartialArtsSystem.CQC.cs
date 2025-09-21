@@ -126,6 +126,7 @@ public partial class SharedMartialArtsSystem
             return;
 
         Spawn(comp.SpawnedProto, coords);
+        // omu end
 
 
     }
