@@ -151,7 +151,7 @@
   desc: reagent-desc-birdfluconcentrate
   physicalDesc: reagent-physical-desc-veryfeathery
   flavor: stupid
-  color: "#58DCA8"
+  color: "#50ad91"
   metabolisms:
     Poison:
       metabolismRate: 0.25
@@ -175,7 +175,7 @@
   desc: reagent-desc-mothamphetamineconcentrate
   physicalDesc: reagent-physical-desc-pandemonicallyfuzzy
   flavor: mothsweetnsour
-  color: "#a592db"
+  color: "#857eb4"
   metabolisms:
     Poison:
       metabolismRate: 0.25
@@ -200,7 +200,7 @@
   desc: reagent-desc-marotineconcentrate
   physicalDesc: reagent-physical-desc-veryheadacheinducing
   flavor: inkyvoid
-  color: "#3065b0"
+  color: "#365f97"
   metabolisms:
     Poison:
       metabolismRate: 0.25
@@ -224,7 +224,7 @@
   desc: reagent-desc-methrilconcentrate
   physicalDesc: reagent-physical-desc-verygritty
   flavor: dwarfgrudge
-  color: "#EFBF04"
+  color: "#b79c25"
   metabolisms:
     Poison:
       metabolismRate: 0.25
