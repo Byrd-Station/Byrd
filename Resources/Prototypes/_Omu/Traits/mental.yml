@@ -1,0 +1,73 @@
+
+- type: trait
+  id: SurgeryTraining
+  name: trait-SurgeryTraining-name
+  description: trait-SurgeryTraining-desc
+  category: MentalTraits
+  components:
+  - type: SurgerySpeedModifier
+    speedModifier: 1.6
+  globalCost: 3
+  requirements:
+  - !type:JobRequirement
+    inverted: true
+    jobs:
+    - StationAI
+    - Borg
+    - MedicalIntern
+    - MedicalDoctor
+    - ChiefMedicalOfficer
+    - Brigmedic
+    - Paramedic
+  - !type:TraitsRequirement
+    inverted: true
+    traits:
+    - ExperiencedSurgeon
+    - SectorClassSurgeon
+
+- type: trait
+  id: ExperiencedSurgeon
+  name: trait-ExperiencedSurgeon-name
+  description: trait-ExperiencedSurgeon-desc
+  category: MentalTraits
+  components:
+  - type: SurgerySpeedModifier
+    speedModifier: 2.5
+  globalCost: 3
+  requirements:
+  - !type:JobRequirement
+    jobs:
+    - MedicalIntern
+    - MedicalDoctor
+    - Brigmedic
+    - Paramedic
+    #- SeniorPhysician #TODO Marty senior jobs
+  - !type:JobRequirement
+    inverted: true
+    jobs:
+    - StationAI
+    - Borg
+  - !type:TraitsRequirement
+    inverted: true
+    traits:
+    - SurgeryTraining
+    - SectorClassSurgeon
+
+- type: trait
+  id: SectorClassSurgeon #I mean fuck it. Might be extraordinarily powerful BUT Cmo's don't *need* it so its on them to take it.
+  name: trait-SectorClassSurgeon-name
+  description: trait-SectorClassSurgeon-desc
+  category: MentalTraits
+  components:
+  - type: SurgerySpeedModifier
+    speedModifier: 3.5
+  globalCost: 3
+  requirements:
+  - !type:JobRequirement
+    jobs:
+    - ChiefMedicalOfficer
+  - !type:TraitsRequirement
+    inverted: true
+    traits:
+    - SurgeryTraining
+    - ExperiencedSurgeon

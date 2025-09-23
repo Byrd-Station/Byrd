@@ -1,0 +1,159 @@
+
+# I'm putting anything that is a direct malus (debuff) in here. Feel free to either tag it as a physical trait or an actual disability.
+
+- type: trait
+  id: Redshirt
+  name: trait-redshirt-name
+  description: trait-redshirt-desc
+  category: PhysicalTraits
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  globalCost: -8
+
+- type: trait
+  id: SnailPaced
+  name: trait-snailpaced-name
+  description: trait-snailpaced-desc
+  category: PhysicalTraits
+  components:
+  - type: MovespeedModifier
+    walkSpeedModifier: 0.78
+    sprintSpeedModifier: 0.78
+  globalCost: -8
+
+- type: trait
+  id: OsteogenesisImperfecta
+  name: trait-osteogenesisimperfecta-name
+  description: trait-osteogenesisimperfecta-desc
+  category: PhysicalTraits
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Critical
+      200: Dead
+  globalCost: -6
+
+- type: trait
+  id: IPCOsteogenesisImperfecta # Defective chassis, defectivechassis
+  name: trait-ipcosteogenesisimperfecta-name
+  description: trait-ipcosteogenesisimperfecta-desc
+  category: PhysicalTraits
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      40: Dead # Holy shit, an IPC, quickly sneeze on them.
+      # I am uh, making it give 10 because holy fuck.
+  globalCost: -10
+
+- type: trait
+  id: ClumsyTrait
+  name: trait-clumsy-name
+  description: trait-clumsy-desc
+  category: PhysicalTraits
+  components:
+  - type: Clumsy
+  globalCost: -5
+
+- type: trait
+  id: Sluggish
+  name: trait-sluggish-name
+  description: trait-sluggish-desc
+  category: PhysicalTraits
+  components:
+  - type: MovespeedModifier
+    walkSpeedModifier: 0.84
+    sprintSpeedModifier: 0.84
+  globalCost: -5
+
+- type: trait
+  id: BadKnees
+  name: trait-badknees-name
+  description: trait-badknees-desc
+  category: PhysicalTraits
+  components:
+  - type: ClothingSlowOnDamageModifier
+    modifier: 1.4
+  - type: ModifyStandingUpTime
+    multiplier: 1.4
+  - type: ClimbingComponent
+  transitionRate: 10f
+  globalCost: -5
+
+- type: trait
+  id: GlassJaw
+  name: trait-GlassJaw-name
+  description: trait-GlassJaw-desc
+  category: PhysicalTraits
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      90: Critical
+      200: Dead
+  globalCost: -1
+
+- type: trait
+  id: Lethargy
+  name: trait-lethargy-name
+  description: trait-lethargy-desc
+  category: PhysicalTraits
+  components:
+  - type: Stamina
+    critThreshold: 85f
+    afterCritDecayMultiplier: 8f
+  -type: StaminaRegenerationComponent
+  regenerationRate: -0.5f
+  globalCost: -4
+
+- type: trait
+  id: Feeble
+  name: trait-feeble-name
+  description: trait-feeble-desc
+  category: PhysicalTraits
+  components:
+  - type: SlowOnDamage
+    speedModifierThresholds:
+    45: 0.7
+    65: 0.46
+  globalCost: -4
+
+- type: trait
+  id: WillToDie
+  name: trait-WillToDie-name
+  description: trait-WillToDie-desc
+  category: PhysicalTraits
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      185: Dead
+  globalCost: -1
+
+- type: trait
+  id: Uncloneable
+  name: trait-Uncloneable-name
+  description: trait-Uncloneable-desc
+  category: PhysicalTraits
+  components:
+  - type: Uncloneable
+  globalCost: -2 # Buffed slightly because cloning used to be WACK on EE but here it is foolproof so bigger deal to be uncloneable.
+  requirements:
+  - !type:JobRequirement # Fucked up isn't it? Being an IPC is a species but being a borg is a JOB
+    inverted: true       # When will this discrimination TRULY end.
+    jobs:
+    - StationAI
+    - Borg
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+#  - !type:LifepathRequirement #TODO Marty lifepaths
+#    inverted: true
+#    lifepaths:
+#    - Clone

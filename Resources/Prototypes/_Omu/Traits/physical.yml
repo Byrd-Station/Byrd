@@ -50,6 +50,61 @@
         - Moth
         - Plasmaman
         - SlimePerson
+    - !type:TraitsRequirement
+      traits:
+      - Talons
+      - Bite
+      - NaturalWeaponsRemoval
+      inverted: true
+
+- type: trait
+  id: Talons
+  name: trait-talons-name
+  description: trait-talons-desc
+  category: PhysicalTraits
+  functions:
+  - !type:TraitModifyUnarmed
+    hitSound:
+      collection: AlienClaw
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Piercing: 5
+  globalCost: 1
+  requirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species: # a list of species which don't have talons (inverted)
+    - Harpy
+    - Arachnid
+  - !type:TraitsRequirement
+    traits:
+    - ClawsTrait
+    - Bite
+    - NaturalWeaponsRemoval
+    inverted: true
+
+- type: trait
+  id: Bite
+  name: trait-Bite-name
+  description: trait-Bite-desc
+  category: PhysicalTraits
+  functions:
+  - !type:TraitModifyUnarmed
+    hitSound:
+      collection: FeroxiGnashes #I dont know why there isnt a default collection for bite either.
+    animation: WeaponArcBite
+    damage:
+      types:
+        Piercing: 5
+  globalCost: 1
+  requirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species: # a list of species which don't have big enough teeth or something. Mind you that arachnids do bite.
+    - Vulpkanin
+    - Arachnid
+    - Feroxi
 
 - type: trait
   id: MothFlight
@@ -122,3 +177,160 @@
     - type: Thieving
       noiseLevel: 0 # "0" is small, per the PopupType enum
   globalCost: 3
+
+- type: trait
+  id: Steadfast
+  name: trait-steadfast-name
+  description: trait-steadfast-desc
+  category: PhysicalTraits
+  components:
+  - type: SlowOnDamage
+    speedModifierThresholds:
+    70: 0.83
+    90: 0.7
+  globalCost: 3
+
+- type: trait
+  id: Spinnarette
+  name: trait-spinarette-name
+  description: trait-spinarette-desc
+  category: PhysicalTraits
+  components:
+  - type: Sericulture
+    action: ActionSericulture
+    productionLength: 2
+    entityProduced: MaterialWebSilk1
+    hungerCost: 1 # Should total to 25 total silk on full hunger
+  globalCost: 2
+  requirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - Arachnid
+
+- type: trait
+  id: TrapAvoider
+  name: trait-TrapAvoider-name
+  description: trait-TrapAvoider-desc
+  category: PhysicalTraits
+  components:
+  - type: StepTriggerImmune
+  globalCost: 2 # was 3, this is so specific though, so 2.
+  requirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - Felinid
+    - Tajaran
+    - Harpy
+
+- type: trait
+  id: ParkourTraining
+  name: trait-ParkourTraining-name
+  description: trait-ParkourTraining-desc
+  category: PhysicalTraits
+  components:
+  - type: ClimbDelayModifier # EE component
+    climbDelayMultiplier: 0.5
+  - type: ModifyStandingUpTime
+    multiplier: 0.7
+  - type: SpeedModifierContactsComponent
+    walkModifierEffectiveness: 0.5
+    sprintModifierEffectiveness: 0.5
+  - type: LayingDownComponent # Omu change. With sprinting and everything else, theres not much reason to parkour. Give em faster lay speed fuck it.
+    speedModify: 0.5f
+  globalCost: 5
+  requirements:
+  - !type:TraitsRequirement
+    inverted: true
+    traits:
+    - Sluggish
+    - SnailPaced
+    - BadKnees
+    - WheelchairBound
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - Diona
+
+- type: trait
+  id: Vigor
+  name: trait-Vigor-name
+  description: trait-Vigor-desc
+  category: PhysicalTraits
+  components:
+  - type: Stamina
+    critThreshold: 110f # not a staminamod because sprinting checks for those and fucks up your stamina drain.
+    decay: 5.6f # Also im hardcoding all this stuff instead of making a million components that modify things like in EE. Probably change at some point.
+    cooldown: 2.25f # hardcode
+  globalCost: 6
+  requirements:
+  - !type:JobRequirement # Fucked up isn't it? Being an IPC is a species but being a borg is a JOB
+    inverted: true       # When will this discrimination TRULY end.
+    jobs:
+    - StationAI
+    - Borg
+  - !type:TraitsRequirement
+    inverted: true
+    traits:
+    - Lethargy
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - Oni
+
+- type: trait #TODO MARTY TRAIT
+  id: Voracious
+  name: trait-Voracious-name
+  description: trait-Voracious-desc
+  category: PhysicalTraits
+  components:
+  globalCost: 1
+  requirements:
+  - !type:JobRequirement # Fucked up isn't it? Being an IPC is a species but being a borg is a JOB
+    inverted: true       # When will this discrimination TRULY end.
+    jobs:
+    - StationAI
+    - Borg
+  - !type:TraitsRequirement
+    inverted: true
+    traits:
+    - Lethargy
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - Vulpkanin
+
+- type: trait
+  id: WillToLive
+  name: trait-WillToLive-name
+  description: trait-WillToLive-desc
+  category: PhysicalTraits
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      210: Dead
+  globalCost: 1
+
+- type: trait
+  id: Tenacity
+  name: trait-Tenacity-name
+  description: trait-Tenacity-desc
+  category: PhysicalTraits
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      105: Critical
+      200: Dead
+  globalCost: 1
+  requirements:
+  - !type:JobRequirement
+    inverted: true
+    jobs:
+    - StationAI
+

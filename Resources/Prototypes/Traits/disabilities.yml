@@ -34,7 +34,7 @@
   name: trait-blindness-name
   description: trait-blindness-desc
   traitGear: WhiteCane
-  # category: Disabilities 
+  # category: Disabilities
   category: VisualTraits # Omustation - Remake EE Traits system - EE traits categories
   whitelist:
     components:
@@ -82,9 +82,9 @@
   globalCost: -2 # Omustation - Remake EE Traits system - global trait points cost
 
 - type: trait
-  id: Monochromancy
-  name: trait-monochromancy-name
-  description: trait-monochromancy-desc
+  id: Monochromacy
+  name: trait-monochromacy-name
+  description: trait-monochromacy-desc
   # category: Disabilities
   category: VisualTraits # Omustation - Remake EE Traits system - EE traits categories
   components:
@@ -118,7 +118,7 @@
       sounds:
         collection: Paracusia
   globalCost: -1 # Omustation - Remake EE Traits system - global trait points cost
-  
+
 - type: trait
   id: PainNumbness
   name: trait-painnumbness-name
@@ -128,169 +128,4 @@
   components:
   - type: PainNumbness
   globalCost: -2 # Omustation - Remake EE Traits system - global trait points cost
-
-- type: trait
-  id: Redshirt
-  name: trait-redshirt-name
-  description: trait-redshirt-desc
-  # category: Disabilities
-  category: PhysicalTraits # Omustation - Remake EE Traits system - EE traits categories
-  components:
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      100: Dead
-  globalCost: -8 # Omustation - Remake EE Traits system - global trait points cost
-
-- type: trait
-  id: SnailPaced
-  name: trait-snailpaced-name
-  description: trait-snailpaced-desc
-  # category: Disabilities
-  category: PhysicalTraits # Omustation - Remake EE Traits system - EE traits categories
-  components:
-  - type: MovespeedModifier
-    walkSpeedModifier: 0.78
-    sprintSpeedModifier: 0.78
-  globalCost: -8 # Omustation - Remake EE Traits system - global trait points cost
-
-- type: trait
-  id: OsteogenesisImperfecta
-  name: trait-osteogenesisimperfecta-name
-  description: trait-osteogenesisimperfecta-desc
-  # category: Disabilities
-  category: PhysicalTraits # Omustation - Remake EE Traits system - EE traits categories
-  components:
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      50: Critical
-      200: Dead # Probably unnecessary but eh fuck it safetynet
-  globalCost: -6 # Omustation - Remake EE Traits system - global trait points cost
-
-- type: trait
-  id: IPCOsteogenesisImperfecta # Defective chassis, defectivechassis
-  name: trait-ipcosteogenesisimperfecta-name
-  description: trait-ipcosteogenesisimperfecta-desc
-  # category: Disabilities
-  category: PhysicalTraits # Omustation - Remake EE Traits system - EE traits categories
-  components:
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      40: Dead # Holy shit, an IPC, quickly sneeze on them.
-               # I am uh, making it give 10 because holy fuck.
-  globalCost: -10 # Omustation - Remake EE Traits system - global trait points cost
-
-- type: trait
-  id: ClumsyTrait 
-  name: trait-clumsy-name
-  description: trait-clumsy-desc
-  # category: Disabilities
-  category: PhysicalTraits # Omustation - Remake EE Traits system - EE traits categories
-  components:
-  - type: Clumsy
-  globalCost: -5 # Omustation - Remake EE Traits system - global trait points cost
-
-- type: trait
-  id: Sluggish
-  name: trait-sluggish-name
-  description: trait-sluggish-desc
-  # category: Disabilities
-  category: PhysicalTraits # Omustation - Remake EE Traits system - EE traits categories
-  components:
-  - type: MovespeedModifier
-    walkSpeedModifier: 0.84
-    sprintSpeedModifier: 0.84
-  globalCost: -5 # Omustation - Remake EE Traits system - global trait points cost
-
-- type: trait
-  id: BadKnees
-  name: trait-badknees-name
-  description: trait-badknees-desc
-  # category: Disabilities
-  category: PhysicalTraits # Omustation - Remake EE Traits system - EE traits categories
-  components:
-  - type: ClothingSlowOnDamageModifier
-    modifier: 1.4
-  - type: ModifyStandingUpTime
-    multiplier: 1.4
-  - type: ClimbingComponent
-  transitionRate: 10f
-  globalCost: -5 # Omustation - Remake EE Traits system - global trait points cost
-
-- type: trait
-  id: GlassJaw
-  name: trait-GlassJaw-name
-  description: trait-GlassJaw-desc
-  # category: Disabilities
-  category: PhysicalTraits # Omustation - Remake EE Traits system - EE traits categories
-  components:
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      90: Critical
-      200: Dead # Probably unnecessary but eh fuck it safetynet
-  globalCost: -1 # Omustation - Remake EE Traits system - global trait points cost
-
-- type: trait
-  id: Lethargy
-  name: trait-lethargy-name
-  description: trait-lethargy-desc
-  # category: Disabilities
-  category: PhysicalTraits # Omustation - Remake EE Traits system - EE traits categories
-  components:
-  - type: Stamina
-    critThreshold: 85f
-    afterCritDecayMultiplier: 8f
-  -type: StaminaRegenerationComponent
-  regenerationRate: -0.5f
-  globalCost: -4 # Omustation - Remake EE Traits system - global trait points cost
-
-- type: trait
-  id: Feeble
-  name: trait-feeble-name
-  description: trait-feeble-desc
-  # category: Disabilities
-  category: PhysicalTraits # Omustation - Remake EE Traits system - EE traits categories
-  components:
-  - type: SlowOnDamage
-    speedModifierThresholds:
-    45: 0.7
-    65: 0.46
-  globalCost: -4 # Omustation - Remake EE Traits system - global trait points cost
-
-#dismove
-- type: trait
-  id: Steadfast
-  name: trait-steadfast-name
-  description: trait-steadfast-desc
-  # category: Disabilities
-  category: PhysicalTraits # Omustation - Remake EE Traits system - EE traits categories
-  components:
-  - type: SlowOnDamage
-    speedModifierThresholds:
-    70: 0.83
-    90: 0.7
-  globalCost: 3 # Omustation - Remake EE Traits system - global trait points cost
-
-#dismove
-- type: trait
-  id: Spinnarette
-  name: trait-spinarette-name
-  description: trait-spinarette-desc
-  # category: Disabilities
-  category: PhysicalTraits # Omustation - Remake EE Traits system - EE traits categories
-  components:
-  - type: Sericulture
-    action: ActionSericulture
-    productionLength: 2
-    entityProduced: MaterialWebSilk1
-    hungerCost: 4 # Should total to 25 total silk on full hunger # OMU - This used to be 1 on EE? wow.
-  globalCost: 2 # Omustation - Remake EE Traits system - global trait points cost
-  requirements:
-    - !type:SpeciesRequirement
-      inverted: true
-      species:
-        - Arachnid
 

@@ -53,6 +53,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._Omu.Traits.TraitComponents;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Climbing.Components;
@@ -279,6 +280,11 @@ public sealed partial class ClimbSystem : VirtualController
         RaiseLocalEvent(climbable, ref ev);
         if (ev.Cancelled)
             return false;
+
+        //Omu Start, climb speed modif. EE supercode.
+            if (user == entityToMove && TryComp<ClimbDelayModifierComponent>(user, out var delayModifier))
+                comp.ClimbDelay *= delayModifier.ClimbDelayMultiplier;
+        //Omu End.
 
         var args = new DoAfterArgs(EntityManager, user, comp.ClimbDelay, new ClimbDoAfterEvent(),
             entityToMove,
