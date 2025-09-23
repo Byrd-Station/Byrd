@@ -41,7 +41,7 @@
         - !type:ReagentThreshold
           min: 50
       - !type:AdjustReagent
-        reagent: Moffaine
+        reagent: Mothamphetamine
         amount: -40 # Prevents the bug that keeps demorphing and morphing a person keeping them in place when injected with way over the threshold for morphing, once demorphed by knocking into crit.
         conditions:
         - !type:ReagentThreshold
@@ -187,7 +187,7 @@
         - !type:ReagentThreshold
           min: 25
       - !type:AdjustReagent
-        reagent: MoffaineConcentrate
+        reagent: MothamphetamineConcentrate
         amount: -15 # Prevents the bug that keeps demorphing and morphing a person keeping them in place when injected with way over the threshold for morphing, once demorphed by knocking into crit.
         conditions:
         - !type:ReagentThreshold

@@ -110,5 +110,6 @@
     forced: true
     inventory: Transfer
     transferName: true
-    transferDamage: false
-    revertonDeath: false
+    transferDamage: true
+    revertOnDeath: false
+    revertOnCrit: false
