@@ -14,18 +14,32 @@
       "name": "icon-work"
     },
     {
-      "name": "icon-work-engineering"
+      "name": "icon-medical"
+    },
+    {
+      "name": "icon-salvage"
+    },
+    {
+      "name": "icon-security"
     },
     {
       "name": "helmet",
       "directions": 4
     },
     {
-      "name": "helmet-work",
+      "name": "helmet-engineering",
       "directions": 4
     },
     {
-      "name": "helmet-work-engineering",
+      "name": "helmet-medical",
+      "directions": 4
+    },
+    {
+      "name": "helmet-salvage",
+      "directions": 4
+    },
+    {
+      "name": "helmet-security",
       "directions": 4
     },
     {
@@ -33,7 +47,23 @@
       "directions": 4
     },
     {
-      "name": "eyes-work-engineering",
+      "name": "eyes-engineering",
+      "directions": 4
+    },
+    {
+      "name": "eyes-medical",
+      "directions": 4
+    },
+    {
+      "name": "eyes-salvage",
+      "directions": 4
+    },    
+    {
+      "name": "eyes-security",
+      "directions": 4
+    },
+    {
+      "name": "helmet-internals",
       "directions": 4
     }
   ]

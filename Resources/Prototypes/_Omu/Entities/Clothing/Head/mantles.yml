@@ -84,7 +84,8 @@
     sprite: _Omu/Clothing/Head/mantle.rsi
     clothingVisuals:
       head:
-      - state: helmet-work
+      - state: helmet
+      - state: helmet-internals
       - state: eyes
         shader: unshaded
   - type: ComponentToggler
@@ -107,15 +108,13 @@
   parent: ClothingCyberneticBeastMantleWork
   name: beast's engineering mantle
   components:
-  - type: Sprite
-    sprite: _Omu/Clothing/Head/mantle.rsi
-    state: icon-work-engineering
   - type: Clothing
     sprite: _Omu/Clothing/Head/mantle.rsi
     clothingVisuals:
       head:
-      - state: helmet-work-engineering
-      - state: eyes-work-engineering
+      - state: helmet-engineering
+      - state: helmet-internals
+      - state: eyes-engineering
         shader: unshaded
 
 # resprite of the work mantle for salvagers in particular.
@@ -126,13 +125,14 @@
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
-    state: icon-work-engineering # todo: unique sprites
+    state: icon-salvage
   - type: Clothing
     sprite: _Omu/Clothing/Head/mantle.rsi
     clothingVisuals:
       head:
-      - state: helmet-work-engineering # todo: unique sprites
-      - state: eyes-work-engineering # todo: unique sprites
+      - state: helmet-salvage
+      - state: helmet-internals
+      - state: eyes-salvage
         shader: unshaded
   - type: PointLight # salvagers get a light with fairly substantial range on their mantle. yes they already have night vision, but it might be nice for fellow salvagers (and is just kind of cool)
     radius: 5
@@ -148,13 +148,13 @@
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
-    state: icon # todo: unique sprites
+    state: icon-security
   - type: Clothing
     sprite: _Omu/Clothing/Head/mantle.rsi
     clothingVisuals:
       head:
-      - state: helmet # todo: unique sprites
-      - state: eyes # todo: unique sprites
+      - state: helmet-security
+      - state: eyes-security
         shader: unshaded
   - type: ComponentToggler # copied from the parent with some additions.
     components:
@@ -178,13 +178,13 @@
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
-    state: icon # todo: unique sprites
+    state: icon-medical
   - type: Clothing
     sprite: _Omu/Clothing/Head/mantle.rsi
     clothingVisuals:
       head:
-      - state: helmet # todo: unique sprites
-      - state: eyes # todo: unique sprites
+      - state: helmet-medical
+      - state: eyes-medical
         shader: unshaded
   - type: ComponentToggler # copied from the parent with some additions.
     components:

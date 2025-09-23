@@ -83,6 +83,8 @@
         MedicalIntern: ClothingCyberneticBeastMantleMedical
         Paramedic: ClothingCyberneticBeastMantleMedical
         Brigmedic: ClothingCyberneticBeastMantleMedical
+        # tossup of mantles for command.
+        BlueshieldOfficer: ClothingCyberneticBeastMantleSecurity
       equipmentUnmet: ClothingCyberneticBeastMantle
   globalCost: 5
   requirements:

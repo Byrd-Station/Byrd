@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared._Omu.Clothing.Components;
 using Content.Shared._Omu.Traits;
 using Content.Shared.Clothing.Components;
@@ -85,9 +86,8 @@ public sealed class CyberneticMantleSystem : EntitySystem
     private void SetEyeColor(Entity<CyberneticMantleComponent> ent, Color color)
     {
         if (TryComp<ClothingComponent>(ent, out var clothingComp)
-            && clothingComp.ClothingVisuals.TryGetValue("head", out var layerData)
-            && layerData.TryGetValue(1, out var eyesLayer))
-            eyesLayer.Color = color;
+            && clothingComp.ClothingVisuals.TryGetValue("head", out var layerData))
+            layerData.Last().Color = color;
     }
 
 }
