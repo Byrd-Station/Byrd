@@ -129,6 +129,7 @@ public static class ServerPackaging
         "Npgsql",
         "Microsoft",
         "Concentus",
+        "NetCord",
     };
 
     private static readonly List<string> ServerNotExtraAssemblies = new()

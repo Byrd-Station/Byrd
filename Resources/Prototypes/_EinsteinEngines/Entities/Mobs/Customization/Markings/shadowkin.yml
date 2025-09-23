@@ -535,8 +535,9 @@
   markingCategory: Overlay
   speciesRestriction: [Shadowkin]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
-      state: body_arrow
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
+    state: body_arrow
+  shader: unshaded
 
 - type: marking
   id: BodyShadekinBlackHole
@@ -544,8 +545,9 @@
   markingCategory: Overlay
   speciesRestriction: [Shadowkin]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
-      state: body_blackhole
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
+    state: body_blackhole
+  shader: unshaded
 
 - type: marking
   id: BodyShadekinBrace
@@ -553,8 +555,9 @@
   markingCategory: Overlay
   speciesRestriction: [Shadowkin]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
-      state: body_brace
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
+    state: body_brace
+  shader: unshaded
 
 - type: marking
   id: BodyShadekinBrawly
@@ -562,8 +565,9 @@
   markingCategory: Overlay
   speciesRestriction: [Shadowkin]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
-      state: body_brawly
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
+    state: body_brawly
+  shader: unshaded
 
 - type: marking
   id: BodyShadekinHeart
@@ -571,8 +575,9 @@
   markingCategory: Overlay
   speciesRestriction: [Shadowkin]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
-      state: body_heart
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
+    state: body_heart
+  shader: unshaded
 
 - type: marking
   id: BodyShadekinInk
@@ -580,8 +585,9 @@
   markingCategory: Overlay
   speciesRestriction: [Shadowkin]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
-      state: body_ink
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
+    state: body_ink
+  shader: unshaded
 
 - type: marking
   id: BodyShadekinInk2
@@ -589,8 +595,9 @@
   markingCategory: Overlay
   speciesRestriction: [Shadowkin]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
-      state: body_ink2
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
+    state: body_ink2
+  shader: unshaded
 
 - type: marking
   id: BodyShadekinInk3
@@ -598,8 +605,9 @@
   markingCategory: Overlay
   speciesRestriction: [Shadowkin]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
-      state: body_ink3
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
+    state: body_ink3
+  shader: unshaded
 
 - type: marking
   id: BodyShadekinInk4
@@ -607,8 +615,9 @@
   markingCategory: Overlay
   speciesRestriction: [Shadowkin]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
-      state: body_ink4
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
+    state: body_ink4
+  shader: unshaded
 
 - type: marking
   id: BodyShadekinInk5
@@ -616,8 +625,9 @@
   markingCategory: Overlay
   speciesRestriction: [Shadowkin]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
-      state: body_ink5
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
+    state: body_ink5
+  shader: unshaded
 
 - type: marking
   id: BodyShadekinInk6
@@ -625,8 +635,9 @@
   markingCategory: Overlay
   speciesRestriction: [Shadowkin]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
-      state: body_ink6
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
+    state: body_ink6
+  shader: unshaded
 
 - type: marking
   id: BodyShadekinInkAnim
@@ -634,8 +645,9 @@
   markingCategory: Overlay
   speciesRestriction: [Shadowkin]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
-      state: body_ink_anim
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
+    state: body_ink_anim
+  shader: unshaded
 
 - type: marking
   id: BodyShadekinLines
@@ -643,8 +655,9 @@
   markingCategory: Overlay
   speciesRestriction: [Shadowkin]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
-      state: body_lines
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
+    state: body_lines
+  shader: unshaded
 
 - type: marking
   id: BodyShadekinNeck
@@ -652,8 +665,9 @@
   markingCategory: Chest
   speciesRestriction: [Shadowkin]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
-      state: body_neck
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
+    state: body_neck
+  shader: unshaded
 
 - type: marking
   id: BodyShadekinShield
@@ -661,8 +675,9 @@
   markingCategory: Overlay
   speciesRestriction: [Shadowkin]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
-      state: body_shield
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
+    state: body_shield
+  shader: unshaded
 
 - type: marking
   id: BodyShadekinVacuum
@@ -670,8 +685,9 @@
   markingCategory: Overlay
   speciesRestriction: [Shadowkin]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
-      state: body_vacuum
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_overlay.rsi
+    state: body_vacuum
+  shader: unshaded
 
 - type: marking
   id: TailShadekinShorter
@@ -679,8 +695,8 @@
   markingCategory: Tail
   speciesRestriction: [Shadowkin]
   sprites:
-    - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
-      state: shadekin_shorter
+  - sprite: _ADT/Mobs/Customization/Shadekin/shadekin_tails_32x32.rsi
+    state: shadekin_shorter
 
 - type: marking
   id: TailShadekinShorterBrush

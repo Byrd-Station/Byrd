@@ -36,6 +36,7 @@ entities:
   entities:
   - uid: 1
     components:
+    - type: CentCommShuttle
     - type: MetaData
       name: CC-800X "Archangel"
     - type: Transform

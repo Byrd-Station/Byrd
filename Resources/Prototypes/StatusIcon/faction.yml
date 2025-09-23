@@ -112,7 +112,8 @@
   showTo:
     components:
       - ShowAntagIcons
-      - Revolutionary
+      - HeadRevolutionary # funkystation
+      - ShowRevolutionaryIcons # funkystation
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: Revolutionary

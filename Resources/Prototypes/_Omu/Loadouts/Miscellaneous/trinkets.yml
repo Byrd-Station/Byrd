@@ -1,0 +1,167 @@
+- type: loadout
+  id: ClothingNeckCloakProgressPride
+  storage:
+    back:
+    - ClothingNeckCloakProgressPride
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckCloakTrans
+  storage:
+    back:
+    - ClothingNeckCloakTrans
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckCloakGenderfluid
+  storage:
+    back:
+    - ClothingNeckCloakGenderfluid
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckCloakAro
+  storage:
+    back:
+    - ClothingNeckCloakAro
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckCloakAce
+  storage:
+    back:
+    - ClothingNeckCloakAce
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckCloakBi
+  storage:
+    back:
+    - ClothingNeckCloakBi
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckCloakIntersex
+  storage:
+    back:
+    - ClothingNeckCloakIntersex
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckCloakLesbian
+  storage:
+    back:
+    - ClothingNeckCloakLesbian
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckCloakGay
+  storage:
+    back:
+    - ClothingNeckCloakGay
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckCloakEnby
+  storage:
+    back:
+    - ClothingNeckCloakEnby
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckCloakPan
+  storage:
+    back:
+    - ClothingNeckCloakPan
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckScarfStripedAce
+  storage:
+    back:
+    - ClothingNeckScarfStripedAce
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckScarfStripedAro
+  storage:
+    back:
+    - ClothingNeckScarfStripedAro
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckScarfStripedAroace
+  storage:
+    back:
+    - ClothingNeckScarfStripedAroace
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckScarfStripedBiSexual
+  storage:
+    back:
+    - ClothingNeckScarfStripedBiSexual
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckScarfStripedGay
+  storage:
+    back:
+    - ClothingNeckScarfStripedGay
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckScarfStripedInter
+  storage:
+    back:
+    - ClothingNeckScarfStripedInter
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckScarfStripedLesbian
+  storage:
+    back:
+    - ClothingNeckScarfStripedLesbian
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckScarfStripedPan
+  storage:
+    back:
+    - ClothingNeckScarfStripedPan
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckScarfStripedNonBinary
+  storage:
+    back:
+    - ClothingNeckScarfStripedNonBinary
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckScarfStripedRainbow
+  storage:
+    back:
+    - ClothingNeckScarfStripedRainbow
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckScarfStripedTrans
+  storage:
+    back:
+    - ClothingNeckScarfStripedTrans
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckScarfStripedGenderfluid
+  storage:
+    back:
+    - ClothingNeckScarfStripedGenderfluid
+  groupBy: "pin"
+
+- type: loadout
+  id: ClothingNeckChameleonPride
+  storage:
+    back:
+    - ClothingNeckChameleonPride
+  groupBy: "pin"
