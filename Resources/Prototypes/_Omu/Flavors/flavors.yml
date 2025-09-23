@@ -1,0 +1,19 @@
+- type: flavor
+  id: stupid
+  flavorType: Base
+  description: flavor-stupid
+
+- type: flavor
+  id: mothsweetnsour
+  flavorType: Complex
+  description: flavor-complex-mothsweetnsour
+
+- type: flavor
+  id: inkyvoid
+  flavorType: Complex
+  description: flavor-complex-inkyvoid
+
+- type: flavor
+  id: dwarfgrudge
+  flavorType: Complex
+  description: flavor-complex-dwarfgrudge
