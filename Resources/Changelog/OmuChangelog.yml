@@ -418,3 +418,47 @@ Entries:
       message: Added EORG and Shuttlebombing Rules.
   id: 47
   time: '2025-09-09T21:01:54.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Add
+      message: Added Glacier port from DV
+  id: 48
+  time: '2025-09-09T22:12:56.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: >-
+        Station Report now removes any [head] tags, instead of sending an
+        incorrectly formated message to discord.
+  id: 49
+  time: '2025-09-13T19:14:17.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed revs being unable to convert
+  id: 50
+  time: '2025-09-15T23:34:32.0000000+00:00'
+- author: Topicranger
+  changes:
+    - type: Add
+      message: Added a new language icon for the interface!
+  id: 51
+  time: '2025-09-20T06:55:28.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Tweak
+      message: Armor Coverage is much more concise.
+  id: 52
+  time: '2025-09-20T13:57:50.0000000+00:00'
+- author: Thesia000
+  changes:
+    - type: Remove
+      message: temporarly removed glacier from the  map rotation
+  id: 53
+  time: '2025-09-21T19:48:36.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Add
+      message: Upstream was merged. Rejoice!
+  id: 54
+  time: '2025-09-24T01:26:27.0000000+00:00'
