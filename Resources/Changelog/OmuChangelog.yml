@@ -253,3 +253,224 @@ Entries:
       message: Removed Changeling and Heretics from midround spawn.
   id: 30
   time: '2025-09-03T23:50:10.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Add
+      message: Ported over 20 hairstyles from Impstation.
+  id: 31
+  time: '2025-09-04T17:31:09.0000000+00:00'
+- author: XWasHere
+  changes:
+    - type: Tweak
+      message: Tajara can now be any color.
+  id: 32
+  time: '2025-09-06T09:38:10.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Terminus is back to being Oni only.
+    - type: Tweak
+      message: Terminus can now function as a crowbar again
+  id: 33
+  time: '2025-09-06T17:44:21.0000000+00:00'
+- author: CometVoid
+  changes:
+    - type: Tweak
+      message: Rules have been changed and updated to better fit OmuStation!
+  id: 34
+  time: '2025-09-07T02:04:44.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Ported Funkystation's rev rework
+    - type: Add
+      message: Headrevs can now create and use revolutionary flashbangs
+    - type: Add
+      message: >-
+        Headrevs can now declare "Open Revolt", allowing normal revs to see each
+        other, and announcing the names of the headrevs.
+  id: 35
+  time: '2025-09-07T09:10:14.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: >-
+        Fixed flashes showing the headrev popup when it is not the headrev using
+        them.
+  id: 36
+  time: '2025-09-07T16:57:23.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added the ability for CentComm shuttles to FTL to CC.
+    - type: Add
+      message: Added a new pride mantle, and a progress pride cape
+    - type: Tweak
+      message: Pride scarfs and cloaks can now be gotten in the loadout
+    - type: Tweak
+      message: Pridevend can be restocked.
+  id: 37
+  time: '2025-09-07T20:36:31.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Remove
+      message: Removed 4th wall stuff from ion laws that was added by Goobstation
+    - type: Tweak
+      message: >-
+        Service borgs no longer under clown lawset, now they're running
+        crewsimov.
+  id: 38
+  time: '2025-09-07T20:56:41.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Added new MOTDs to the game! Check out the top of your game window!
+  id: 39
+  time: '2025-09-07T23:48:23.0000000+00:00'
+- author: MarkerWicker
+  changes:
+    - type: Tweak
+      message: >-
+        The traits system has been reworked. Traits now have a points cost,
+        shared across all trait categories.
+    - type: Tweak
+      message: >-
+        Traits have been unselected during the rework, you will have to rebuild
+        your character.
+    - type: Tweak
+      message: >-
+        Traits can also have requirements; traits with unmet requirements will
+        be greyed out, and requirements can be viewed by hovering your mouse
+        over the trait.
+  id: 40
+  time: '2025-09-08T00:42:22.0000000+00:00'
+- author: Cygnye
+  changes:
+    - type: Add
+      message: Added Weapon Selectors for Captain.
+    - type: Add
+      message: Added Weapon Selectors for ALL of security.
+    - type: Add
+      message: HoS CQC belt!
+    - type: Add
+      message: HoS relic blade!
+    - type: Tweak
+      message: Hos gets all their guns back!
+    - type: Tweak
+      message: Pre-Nerfed the handshake again
+    - type: Add
+      message: 'T8 is now selectable as a duty item, and has speedloaders. '
+    - type: Add
+      message: Terminus can be selected roundstart
+    - type: Add
+      message: Handshake is now apart of selectors
+    - type: Add
+      message: R6 is now apart of selectors
+  id: 41
+  time: '2025-09-08T12:48:47.0000000+00:00'
+- author: MarkerWicker
+  changes:
+    - type: Tweak
+      message: Language Traits no longer take up max traits.
+    - type: Fix
+      message: >-
+        Fixed being able to select Foreigner and Foreigner Light at the same
+        time.
+  id: 42
+  time: '2025-09-08T23:36:13.0000000+00:00'
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Cryoxadone is stronger and has double effect on corpses
+    - type: Tweak
+      message: Necrosol is stronger and has double effect on corpses
+    - type: Tweak
+      message: Opporozidone is less expensive to make
+  id: 43
+  time: '2025-09-08T23:43:03.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Ported Feroxi from DeltaV
+    - type: Add
+      message: Ported Nehina (The language used by Feroxi) from The Den
+  id: 44
+  time: '2025-09-09T02:18:10.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed stations having the CC shuttle whitelist added to them.
+  id: 45
+  time: '2025-09-09T16:09:39.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Tweak
+      message: Raised marking numbers on all species.
+    - type: Tweak
+      message: Onis and IPCs can use gauze markings again.
+    - type: Tweak
+      message: Harpies can now have eyepatches or blindfolds in the markings section.
+  id: 46
+  time: '2025-09-09T19:54:43.0000000+00:00'
+- author: CometVoid
+  changes:
+    - type: Add
+      message: Added EORG and Shuttlebombing Rules.
+  id: 47
+  time: '2025-09-09T21:01:54.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Add
+      message: Added Glacier port from DV
+  id: 48
+  time: '2025-09-09T22:12:56.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: >-
+        Station Report now removes any [head] tags, instead of sending an
+        incorrectly formated message to discord.
+  id: 49
+  time: '2025-09-13T19:14:17.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed revs being unable to convert
+  id: 50
+  time: '2025-09-15T23:34:32.0000000+00:00'
+- author: Topicranger
+  changes:
+    - type: Add
+      message: Added a new language icon for the interface!
+  id: 51
+  time: '2025-09-20T06:55:28.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Tweak
+      message: Armor Coverage is much more concise.
+  id: 52
+  time: '2025-09-20T13:57:50.0000000+00:00'
+- author: Thesia000
+  changes:
+    - type: Remove
+      message: temporarly removed glacier from the  map rotation
+  id: 53
+  time: '2025-09-21T19:48:36.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Add
+      message: Upstream was merged. Rejoice!
+  id: 54
+  time: '2025-09-24T01:26:27.0000000+00:00'
+- author: H3llo0
+  changes:
+    - type: Add
+      message: Added a slider the chef can cook!
+  id: 55
+  time: '2025-09-24T02:58:00.0000000+00:00'
+- author: Yarinoi
+  changes:
+    - type: Tweak
+      message: Detective's noir glasses now function as security glasses as well.
+  id: 56
+  time: '2025-09-25T06:21:07.0000000+00:00'

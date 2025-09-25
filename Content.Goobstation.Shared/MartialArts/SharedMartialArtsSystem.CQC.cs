@@ -16,6 +16,7 @@
 
 using System.Linq;
 using Content.Goobstation.Common.MartialArts;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Goobstation.Shared.MartialArts.Components;
 using Content.Goobstation.Shared.MartialArts.Events;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
@@ -24,6 +25,8 @@ using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Body.Components;
+using Content.Shared.Clothing;
+using Content.Shared.Clothing.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
@@ -32,6 +35,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Standing;
+using Content.Shared.Weapons.Melee;
 using Robust.Shared.Audio;
 using Robust.Shared.Utility;
 
@@ -51,6 +55,9 @@ public partial class SharedMartialArtsSystem
 
         SubscribeLocalEvent<GrantCqcComponent, UseInHandEvent>(OnGrantCQCUse);
         SubscribeLocalEvent<GrantCqcComponent, MapInitEvent>(OnMapInitEvent);
+
+        SubscribeLocalEvent<GrantCqcComponent, ClothingGotEquippedEvent>(OnWear);
+        SubscribeLocalEvent<GrantCqcComponent, ClothingGotUnequippedEvent>(OnRemove);
     }
 
     #region Generic Methods
@@ -90,27 +97,35 @@ public partial class SharedMartialArtsSystem
 
     private void OnGrantCQCUse(EntityUid ent, GrantMartialArtKnowledgeComponent comp, UseInHandEvent args)
     {
-        if (args.Handled)
+        //Makes CQC check for clothes for CQC belt to function
+        if (HasComp<ClothingComponent>(ent))
             return;
+        else
+        {
+            if (args.Handled)
+                return;
 
-        args.Handled = true;
+            args.Handled = true;
 
-        if (!_netManager.IsServer)
-            return;
+            if (!_netManager.IsServer)
+                return;
 
-        if (!TryGrantMartialArt(args.User, comp))
-            return;
+            if (!TryGrantMartialArt(args.User, comp))
+                return;
 
-        var coords = Transform(args.User).Coordinates;
-        _audio.PlayPvs(comp.SoundOnUse, coords);
-        if (comp.MultiUse)
-            return;
+            var coords = Transform(args.User).Coordinates;
+            _audio.PlayPvs(comp.SoundOnUse, coords);
 
-        QueueDel(ent);
-        if (comp.SpawnedProto == null)
-            return;
+            if (comp.MultiUse)
+                return;
 
-        Spawn(comp.SpawnedProto, coords);
+            QueueDel(ent);
+            if (comp.SpawnedProto == null)
+                return;
+
+            Spawn(comp.SpawnedProto, coords);
+        }
+
     }
 
     private void OnCQCAttackPerformed(Entity<MartialArtsKnowledgeComponent> ent, ref ComboAttackPerformedEvent args)
@@ -170,6 +185,37 @@ public partial class SharedMartialArtsSystem
         }
     }
 
+    private void OnWear(EntityUid uid, GrantCqcComponent component, ref ClothingGotEquippedEvent args)
+    {
+        if (!_netManager.IsServer)
+            return;
+
+        var user = args.Wearer;
+        TryGrantMartialArt(user, component);
+
+    }
+
+    private void OnRemove(Entity<GrantCqcComponent> ent, ref ClothingGotUnequippedEvent args)
+    {
+        var user = args.Wearer;
+        if (!TryComp<MartialArtsKnowledgeComponent>(user, out var martialArtsKnowledge))
+            return;
+
+        if (martialArtsKnowledge.MartialArtsForm != MartialArtsForms.CloseQuartersCombat)
+            return;
+
+        if (!TryComp<MeleeWeaponComponent>(args.Wearer, out var meleeWeaponComponent))
+            return;
+
+        var originalDamage = new DamageSpecifier();
+        originalDamage.DamageDict[martialArtsKnowledge.OriginalFistDamageType]
+            = FixedPoint2.New(martialArtsKnowledge.OriginalFistDamage);
+        meleeWeaponComponent.Damage = originalDamage;
+
+        RemComp<MartialArtsKnowledgeComponent>(user);
+        RemComp<CanPerformComboComponent>(user);
+    }
+
     #endregion
 
     #region Combo Methods
@@ -204,7 +250,7 @@ public partial class SharedMartialArtsSystem
         if (downed)
         {
             if (TryComp<StaminaComponent>(target, out var stamina) && stamina.Critical)
-                _status.TryAddStatusEffect<ForcedSleepingComponent>(target, "ForcedSleep", TimeSpan.FromSeconds(10), true);
+                _newStatus.TryAddStatusEffectDuration(target, "StatusEffectForcedSleeping", out _, TimeSpan.FromSeconds(10));
             DoDamage(ent, target, proto.DamageType, proto.ExtraDamage, out _, TargetBodyPart.Head);
             _stamina.TakeStaminaDamage(target, proto.StaminaDamage * 2 + 5, source: ent, applyResistances: true);
         }
@@ -248,11 +294,11 @@ public partial class SharedMartialArtsSystem
             return;
         if(!_hands.TryDrop(target, activeItem.Value))
             return;
-        if (!_hands.TryGetEmptyHand(ent, out var emptyHand))
+        if (!_hands.TryGetEmptyHand(ent.Owner, out var emptyHand))
             return;
         if(!_hands.TryPickup(ent, activeItem.Value, emptyHand))
             return;
-        _hands.SetActiveHand(ent, emptyHand);
+        _hands.SetActiveHand(ent.Owner, emptyHand);
     }
 
     private void OnCQCConsecutive(Entity<CanPerformComboComponent> ent, ref CqcConsecutivePerformedEvent args)

@@ -31,7 +31,18 @@
     ClothingNeckGenderfluidPin: 3
     ClothingNeckTransPin: 3
     ClothingNeckAutismPin: 3
-    ClothingNeckGoldAutismPin: 3 # somehow we don't have this one in goob so I'm commenting this out
+    ClothingNeckGoldAutismPin: 3
+    ClothingNeckCloakProgressPride: 3
+    ClothingNeckCloakTrans: 2
+    ClothingNeckCloakGenderfluid: 2
+    ClothingNeckCloakAro: 2
+    ClothingNeckCloakAce: 2
+    ClothingNeckCloakBi: 2
+    ClothingNeckCloakIntersex: 2
+    ClothingNeckCloakLesbian: 2
+    ClothingNeckCloakGay: 2
+    ClothingNeckCloakEnby: 2
+    ClothingNeckCloakPan: 2
     PlushieSharkBlue: 2
     PlushieSharkPink: 2
     PlushieSharkGrey: 2
@@ -46,13 +57,15 @@
     ClothingNeckScarfStripedNonBinary: 2
     ClothingNeckScarfStripedRainbow: 2
     ClothingNeckScarfStripedTrans: 2
+    ClothingNeckScarfStripedGenderfluid: 2
     ClothingHeadHatXmasCrown: 2
     BedsheetRainbow: 2
-    ClothingNeckHeadphones: 2
+    ClothingMultipleHeadphones: 2
     ClothingHeadHatFlowerWreath: 2
     ClothingUniformColorRainbow: 2
     ClothingUnderSocksCoder: 2
     ClothingUnderSocksBee: 2
+    ClothingNeckChameleonPride: 4 # Harmony unique pride mantles
   contrabandInventory:
     ClothingNeckScarfStripedLesbianLong: 2
     ClothingUniformJumpskirtColorRainbow: 2

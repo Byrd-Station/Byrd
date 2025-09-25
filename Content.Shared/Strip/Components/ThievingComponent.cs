@@ -9,6 +9,7 @@
 using Content.Shared.Alert;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Content.Shared.Popups; // Omustation - Remake EE Traits System - Thieving Trait
 
 namespace Content.Shared.Strip.Components;
 
@@ -43,6 +44,13 @@ public sealed partial class ThievingComponent : Component
     /// Get mogged.
     /// </summary>
     public override bool SendOnlyToOwner => true;
+
+    /// <summary>
+    /// (Omustation - Remake EE Traits System - Thieving Trait)
+    /// The size of the message which is sent to the person having their items taken from them.
+    /// </summary>
+    [DataField]
+    public PopupType NoiseLevel = PopupType.Large;
 }
 
 /// <summary>

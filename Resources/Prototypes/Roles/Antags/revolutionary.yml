@@ -34,6 +34,8 @@
   id: HeadRevGear
   storage:
     back:
-    - RevolutionaryManifesto # Einstein Engines - Revolutionary Manifesto
-    - EncryptionKeySyndie # Goobstation
-    - RevsFastDrawImplanter # Goobstation
+#    - RevolutionaryManifesto # Einstein Engines - Revolutionary Manifesto # Omu, remove bookrevs
+    #- EncryptionKeySyndie # Goobstation # Omu, headrev uplink
+    #- RevsFastDrawImplanter # Goobstation # Omu, headrev uplink
+    #- Flash # Omu, headrev uplink
+    - BaseUplinkRadioRevolutionary40RC

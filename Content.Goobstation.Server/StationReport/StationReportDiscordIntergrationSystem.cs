@@ -34,19 +34,27 @@ public sealed class StationReportDiscordIntergrationSystem : EntitySystem
 
     private static readonly TagReplacement[] _replacements =
     {
+        // Discord markdown replacements, these must happen BEFORE anything else!
+        new(@"\*", @"\*"), // Omu, escape * so it doesn't unintentionally bold stuff in Discord (this is intentionally double-escaped in the literal string for regex replacements)
+        new(@"_", @"\_"), // Omu, escape _ so it doesn't unintentionally italics stuff in Discord
+        new(@"~", @"\~"), // Omu, escape ~ so it doesn't unintentionally strikethrough stuff in Discord
+        new(@"`", @"\`"), // Omu, escape ` so it doesn't unintentionally codeblock stuff in Discord
+        new(@"#", @"\#"), // Omu, escape # so it doesn't unintentionally header stuff in Discord
+        new(@">", @"\>"), // Omu, escape > so it doesn't unintentionally quoteblock stuff in Discord
+        // End of Discord markdown replacements, other stuff can come AFTER this.
         new(@"\[/?bold\]", @"**"),
         new(@"\[/?italic\]", @"_"),
         new(@"\[/?mono\]", @"__"),
         new(@">", @""),
-        new(@"\[h1\]", @"# "),
-        new(@"\[h2\]", @"## "),
-        new(@"\[h3\]", @"### "),
-        new(@"\[h4\]", @"-# "),
+        new(@"\[h1\]", @""), // Omu, make head be replaced with empty, was # 
+        new(@"\[h2\]", @""), // Omu, make head be replaced with empty, was ## 
+        new(@"\[h3\]", @""), // Omu, make head be replaced with empty, was ###
+        new(@"\[h4\]", @""), // Omu, make head be replaced with empty, was -# 
         new(@"\[/h[0-9]\]", @""),
-        new(@"\[head=1\]", @"# "),
-        new(@"\[head=2\]", @"## "),
-        new(@"\[head=3\]", @"### "),
-        new(@"\[head=4\]", @"-# "),
+        new(@"\[head=1\]", @""), // Omu, make head be replaced with empty, was # 
+        new(@"\[head=2\]", @""), // Omu, make head be replaced with empty, was ## 
+        new(@"\[head=3\]", @""), // Omu, make head be replaced with empty, was ### 
+        new(@"\[head=4\]", @""), // Omu, make head be replaced with empty, was -# 
         new(@"\[/head\]", @""),
         new(@"\[/?color(=[#0-9a-zA-Z]+)?\]", @"")
     };

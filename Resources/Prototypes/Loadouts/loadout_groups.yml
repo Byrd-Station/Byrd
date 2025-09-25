@@ -124,6 +124,7 @@
 # SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
@@ -143,6 +144,7 @@
 # SPDX-FileCopyrightText: 2025 RadsammyT <32146976+RadsammyT@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 T <theo75cg@gmail.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 TurboTracker <130304754+TurboTrackerss14@users.noreply.github.com>
@@ -199,6 +201,32 @@
   - ClothingNeckGenderfluidPin
   - ClothingNeckTransPin
   - ClothingNeckAutismPin
+  # Omu start
+  - ClothingNeckCloakProgressPride
+  - ClothingNeckCloakTrans
+  - ClothingNeckCloakGenderfluid
+  - ClothingNeckCloakAro
+  - ClothingNeckCloakAce
+  - ClothingNeckCloakBi
+  - ClothingNeckCloakIntersex
+  - ClothingNeckCloakLesbian
+  - ClothingNeckCloakGay
+  - ClothingNeckCloakEnby
+  - ClothingNeckCloakPan
+  - ClothingNeckScarfStripedAce
+  - ClothingNeckScarfStripedAro
+  - ClothingNeckScarfStripedAroace
+  - ClothingNeckScarfStripedBiSexual
+  - ClothingNeckScarfStripedGay
+  - ClothingNeckScarfStripedInter
+  - ClothingNeckScarfStripedLesbian
+  - ClothingNeckScarfStripedPan
+  - ClothingNeckScarfStripedNonBinary
+  - ClothingNeckScarfStripedRainbow
+  - ClothingNeckScarfStripedTrans
+  - ClothingNeckScarfStripedGenderfluid
+  - ClothingNeckChameleonPride
+  # Omu end
   - CardBoxBlack # GoobStation
   - CardBoxNanotrasen # GoobStation
   - FoodSnackLollypopWrapped # Goobstation
@@ -268,6 +296,7 @@
   - EmergencyPlasma
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVapor # Delta-V
   - EmergencySilicon
 
 # nitrogen or oxygen tank, depending on what your species needs
@@ -278,6 +307,7 @@
   loadouts:
   - LoadoutSpeciesEVANitrogen
   - LoadoutSpeciesEVAOxygen
+  - LoadoutSpeciesEVAWaterVapor
 
 # vox get a nitrogen tank, other species get nothing
 - type: loadoutGroup
@@ -294,6 +324,7 @@
   loadouts:
   - LoadoutSpeciesPocketDoubleNitrogen
   - LoadoutSpeciesPocketDoubleOxygen
+  - LoadoutSpeciesPocketDoubleWaterVapor
 
 # Command
 - type: loadoutGroup
@@ -313,6 +344,7 @@
   - CaptainFormalSuit
   - CaptainFormalSkirt
   - CaptainJumpsuitMilitary # goob
+  - CaptainSummerShirt # also goob
 
 - type: loadoutGroup
   id: CaptainNeck
@@ -346,6 +378,7 @@
   minLimit: 0
   loadouts:
   - HoPHead
+  - HoPBeret
 
 - type: loadoutGroup
   id: HoPJumpsuit
@@ -358,6 +391,7 @@
   - HoPTurtleneckMale # OmuStation
   - HoPTurtleneckSkirtFemale # OmuStation
   - HoPJumpsuitMilitary # goob
+  - HoPSummerShirt # goob
 
 - type: loadoutGroup
   id: HoPNeck
@@ -601,6 +635,7 @@
   minLimit: 0
   loadouts:
   - JanitorHead
+  - JanitorHeadSenior # Goobstation
 
 - type: loadoutGroup
   id: JanitorJumpsuit
@@ -721,6 +756,7 @@
   - EmergencyPlasmaClown
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporClown # Delta-V
   - EmergencySilicon
 
 - type: loadoutGroup
@@ -782,6 +818,7 @@
   - EmergencyPlasmaMime
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporMime # Delta-V
   - EmergencySilicon
 
 - type: loadoutGroup
@@ -855,6 +892,7 @@
   - QuartermasterUniformSkirt # OmuStation
   - QuartermasterFormalSuit
   - QuartermasterMJ # goob
+  - QMSummerShirt # goob
 
 - type: loadoutGroup
   id: QuartermasterNeck
@@ -968,6 +1006,7 @@
   - ChiefEngineerTurtleneck
   - ChiefEngineerTurtleneckSkirt
   - ChiefEngineerMJ # goob
+  - CESummerShirt # goob
 
 - type: loadoutGroup
   id: ChiefEngineerNeck
@@ -1103,6 +1142,7 @@
   - EmergencyPlasmaExtended
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporExtended # Delta-V
   - EmergencySilicon
 
 # Science
@@ -1129,6 +1169,7 @@
   - ResearchDirectorJumpsuit
   - ResearchDirectorJumpskirt
   - ResearchDirectorMJ # goob
+  - RDSummerShirt # goob
 
 - type: loadoutGroup
   id: ResearchDirectorOuterClothing
@@ -1250,6 +1291,7 @@
   - HeadofSecurityFormalSkirt
   - HoSParadeUniformMale # Omu
   - HoSParadeUniformFemale # Omu
+  - HoSSummerShirt # goob
 
 - type: loadoutGroup
   id: HeadofSecurityNeck
@@ -1408,6 +1450,7 @@
   - EmergencyPlasmaSecurity
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporSecurity # Delta-V
   - EmergencySilicon
 
 - type: loadoutGroup
@@ -1635,6 +1678,7 @@
   - EmergencyPlasmaMedical
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporMedical # Delta-V
   - EmergencySilicon
 
 # Wildcards
@@ -1681,6 +1725,7 @@
   - EmergencyPlasmaSyndicate
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporSyndicate # Delta-V
   - EmergencySilicon
 
 - type: loadoutGroup
