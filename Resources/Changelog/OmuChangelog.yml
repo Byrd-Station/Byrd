@@ -438,3 +438,33 @@ Entries:
       message: Fixed revs being unable to convert
   id: 50
   time: '2025-09-15T23:34:32.0000000+00:00'
+- author: Topicranger
+  changes:
+    - type: Add
+      message: Added a new language icon for the interface!
+  id: 51
+  time: '2025-09-20T06:55:28.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Tweak
+      message: Armor Coverage is much more concise.
+  id: 52
+  time: '2025-09-20T13:57:50.0000000+00:00'
+- author: Thesia000
+  changes:
+    - type: Remove
+      message: temporarly removed glacier from the  map rotation
+  id: 53
+  time: '2025-09-21T19:48:36.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Add
+      message: Upstream was merged. Rejoice!
+  id: 54
+  time: '2025-09-24T01:26:27.0000000+00:00'
+- author: H3llo0
+  changes:
+    - type: Add
+      message: Added a slider the chef can cook!
+  id: 55
+  time: '2025-09-24T02:58:00.0000000+00:00'
