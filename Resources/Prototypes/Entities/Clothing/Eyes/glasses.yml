@@ -486,8 +486,3 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
-#  - type: IdentityBlocker # Omu edit - Noir glasses are already parented from sechuds now
-#    coverage: EYES
-#  - type: FlashImmunity
-#  - type: EyeProtection
-#    protectionTime: 5
