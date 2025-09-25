@@ -197,3 +197,62 @@
     - type: FlashSoundSuppression
     - type: ShowHealthBars
     - type: ShowHealthIcons
+
+# Mantle for the BSO, this one is a little weird:
+# We give the BSO all the huds they would normally get from their glasses, and we give them pressure protection, but NOT internals.
+# The BSO's job description (protect command) doesn't strictly speaking require going into space, but realistically the BSO probably
+# will have to. But I don't want to make the mantle a no-brainer item for the BSO to have. So, it gets pressure protection.
+# Pressure protection will reward spontaneous decision making (if I go out there NOW and save the captain quick, I'll get off scott free)
+# but it still makes extended trips into space unlikely without forcing the BSO to play around the balance of the trait.
+
+- type: entity
+  id: ClothingCyberneticBeastMantleBlueshieldOfficer
+  parent: [ClothingCyberneticBeastMantle, BaseCentcommContraband]
+  name: beast's BSO mantle
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-bso
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-bso
+      - state: eyes-bso
+        shader: unshaded
+  - type: ComponentToggler # copied from the parent with some additions.
+    components:
+    - type: VisionCorrection
+      correctionPower: 16
+    - type: NightVision
+      isEquipment: true
+      color: "#CCFFCC"
+    - type: FlashImmunity
+    - type: FlashSoundSuppression
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+    - type: ShowContrabandDetails
+    - type: ShowHealthBars
+    - type: ShowHealthIcons
+    - type: PressureProtection
+      highPressureMultiplier: 0.4
+      lowPressureMultiplier: 1000
+
+# Command members who need job specific mantles just get their job mantles.
+# Command members who don't get this. It's no better than the base mantle, but it looks schweet.
+- type: entity
+  parent: [ClothingCyberneticBeastMantle, BaseCommandContraband]
+  id: ClothingCyberneticBeastMantleCommand
+  name: beast's command mantle
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-command
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-command
+      - state: eyes-command
+        shader: unshaded

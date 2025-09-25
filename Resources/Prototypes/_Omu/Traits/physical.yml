@@ -65,26 +65,31 @@
       jobEquipment:
         # engineering mantle for engineers
         AtmosphericTechnician: ClothingCyberneticBeastMantleWorkEngineering
-        ChiefEngineer: ClothingCyberneticBeastMantleWorkEngineering
         StationEngineer: ClothingCyberneticBeastMantleWorkEngineering
         TechnicalAssistant: ClothingCyberneticBeastMantleWorkEngineering
         # salvage mantle for salvagers
         SalvageSpecialist: ClothingCyberneticBeastMantleWorkSalvage
         # sec mantle for secoffs
         Detective: ClothingCyberneticBeastMantleSecurity
-        HeadOfSecurity: ClothingCyberneticBeastMantleSecurity
         SecurityCadet: ClothingCyberneticBeastMantleSecurity
         SecurityOfficer: ClothingCyberneticBeastMantleSecurity
         Warden: ClothingCyberneticBeastMantleSecurity
         # med mantle for doctors (and brigmedic)
         Chemist: ClothingCyberneticBeastMantleMedical
-        ChiefMedicalOfficer: ClothingCyberneticBeastMantleMedical
         MedicalDoctor: ClothingCyberneticBeastMantleMedical
         MedicalIntern: ClothingCyberneticBeastMantleMedical
         Paramedic: ClothingCyberneticBeastMantleMedical
         Brigmedic: ClothingCyberneticBeastMantleMedical
         # tossup of mantles for command.
-        BlueshieldOfficer: ClothingCyberneticBeastMantleSecurity
+        BlueshieldOfficer: ClothingCyberneticBeastMantleBlueshieldOfficer
+        Captain: ClothingCyberneticBeastMantleCommand
+        ChiefEngineer: ClothingCyberneticBeastMantleWorkEngineering
+        ChiefMedicalOfficer: ClothingCyberneticBeastMantleMedical
+        HeadOfPersonnel: ClothingCyberneticBeastMantleCommand
+        HeadOfSecurity: ClothingCyberneticBeastMantleSecurity
+        Quartermaster: ClothingCyberneticBeastMantleCommand
+        ResearchDirector: ClothingCyberneticBeastMantleCommand
+      # If they have none of the specified jobs:
       equipmentUnmet: ClothingCyberneticBeastMantle
   globalCost: 5
   requirements:

@@ -14,6 +14,12 @@
       "name": "icon-work"
     },
     {
+      "name": "icon-bso"
+    },
+    {
+      "name": "icon-command"
+    },
+    {
       "name": "icon-medical"
     },
     {
@@ -24,6 +30,14 @@
     },
     {
       "name": "helmet",
+      "directions": 4
+    },
+    {
+      "name": "helmet-bso",
+      "directions": 4
+    },
+    {
+      "name": "helmet-command",
       "directions": 4
     },
     {
@@ -44,6 +58,14 @@
     },
     {
       "name": "eyes",
+      "directions": 4
+    },
+    {
+      "name": "eyes-bso",
+      "directions": 4
+    },
+    {
+      "name": "eyes-command",
       "directions": 4
     },
     {
