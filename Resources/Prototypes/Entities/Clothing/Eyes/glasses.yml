@@ -476,6 +476,11 @@
     sprite: Clothing/Eyes/Glasses/noir.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Glasses/sunglasses.rsi
+#  - type: IdentityBlocker # Omu edit - Noir glasses are already parented from sechuds now
+#    coverage: EYES
+#  - type: FlashImmunity
+#  - type: EyeProtection
+#    protectionTime: 5
   - type: NoirOverlay
   - type: Tag
     tags:
