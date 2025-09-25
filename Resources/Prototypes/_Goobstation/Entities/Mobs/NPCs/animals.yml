@@ -303,7 +303,6 @@
       - Ore
       - Telecrystal
 
-
 - type: entity
   name: space carp
   id: MobCarpSentient
