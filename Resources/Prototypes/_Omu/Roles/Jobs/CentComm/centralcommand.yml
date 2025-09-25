@@ -25,13 +25,13 @@
   id: CentcomInternGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitCentcomOfficial
-    shoes: ClothingShoesBootsJack 
-    head: ClothingHeadHatCentcomcap 
-    eyes: ClothingEyesGlassesCentComm 
-    gloves: ClothingHandsGlovesHeavyGoldenTrim 
-    back: ClothingBackpackSatchelLeather 
+    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatCentcomcap
+    eyes: ClothingEyesGlassesCentComm
+    gloves: ClothingHandsGlovesHeavyGoldenTrim
+    back: ClothingBackpackSatchelLeather
     belt: BoxFolderCentComClipboard
-    neck: ExecutiveInternIDCard 
+    neck: ExecutiveInternIDCard
     id: CentCommInternPDA
     ears: ClothingHeadsetAltCentCom
     pocket1: RubberStampCentcomIntern
@@ -51,7 +51,10 @@
   canBeAntag: false
   requirements:
   - !type:AgeRequirement
-    requiredAge: 18
+    requiredAge: 28
+  - !type:SpeciesRequirement
+    species:
+    - Harpy
   accessGroups:
   - AllAccess
   access:
@@ -62,24 +65,27 @@
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant, DeathRattleImplantCentcomm ]
 
-- type: startingGear 
+- type: startingGear
   id: CentcomDireggtorGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitCentcomOfficial
-    shoes: ClothingShoesBootsJackFilled 
-    head: ClothingHeadHatCentcomcap 
-    eyes: ClothingEyesGlassesCentComm 
-    gloves: ClothingHandsGlovesHeavyGoldenTrim 
-    back: ClothingBackpackSatchelLeather 
-    outerClothing: ClothingOuterArmorCentcommCarapace 
-    neck: ExecutiveIDCard 
+    head: ClothingHeadHatBeretCCBeregg
+    mask: ClothingMaskSterile
+    eyes: ClothingEyesGlassesCentComm
+    gloves: ClothingHandsGlovesHeavyGoldenTrim
+    back: ClothingModsuitCorporate
+    outerClothing: ClothingOuterCentcomLabcoat
+    neck: ClothingNeckMantleCCOMantle
     id: CentCommDireggtorPDA
     ears: ClothingHeadsetAltCentCom
-    belt: ClothingBeltHolsterFilledCentComm 
-    pocket1: BoxFolderCentCom 
-    # pocket2: PenCentcom - Already has one in the PDA. This is redundant.
+    belt: ClothingBeltHolsterFilledCentComm
+    pocket1: VulcanEightRevolver
+    pocket2: VulcanEightRevolver
   storage:
-    back:
-    - HandheldFaxOfficial 
-    - BoxFolderCentComClipboard 
-    - DeterrentCaseFilled
+   back:
+   - HandheldFaxOfficial
+   - BoxFolderCentComClipboard
+   - DeterrentCaseFilled
+   - BoxShotgunUranium
+   - CQCManual
+

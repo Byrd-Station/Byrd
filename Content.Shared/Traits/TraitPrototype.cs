@@ -88,6 +88,7 @@ public sealed partial class TraitPrototype : IPrototype
     [DataField]
     public ProtoId<TraitCategoryPrototype>? Category;
 
+    // begin Omustation - Remake EE Traits System
     /// <summary>
     ///     The number of trait points required for this trait.
     /// </summary>
@@ -102,13 +103,18 @@ public sealed partial class TraitPrototype : IPrototype
     public int GlobalCost = 0;
 
     /// <summary>
+    ///     Whether this trait will increment MaxTraits or not. 
+    ///     Useful for small traits, such as accents, which don't affect gameplay all that much and should be selectable at no cost.
+    /// </summary>
+    [DataField]
+    public bool CountsTowardsMaxTraits = true;
+
+    /// <summary>
     ///     Functions which should be called when this trait is added to a player.
     /// </summary>
-    /// <remarks>
-    ///     Omustation change.
-    /// </remarks>
     [DataField(serverOnly: true)]
     public HashSet<TraitFunction>? Functions;
+    // end Omustation - Remake EE Traits System
 
     // Einstein Engines - Language begin (remove this if trait system refactor)
     /// <summary>

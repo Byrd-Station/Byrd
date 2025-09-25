@@ -1,0 +1,32 @@
+- type: entity
+  parent: [BaseItem, StorePresetRevolutionaryUplink, BaseSyndicateContraband]
+  id: BaseUplinkRadioRevolutionary
+  name: revolutionary uplink
+  description: Suspiciously looking old radio...
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/communication.rsi
+    layers:
+    - state: radio
+  - type: Item
+    sprite: Objects/Devices/communication.rsi
+    heldPrefix: radio
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    balance:
+      Telecrystal: 0 # Omu, replace revcoin with TC
+
+- type: entity
+  parent: BaseUplinkRadioRevolutionary
+  id: BaseUplinkRadioRevolutionary40RC
+  suffix: 40 RC
+  components:
+  - type: Store
+    balance:
+      Telecrystal: 40 # Omu, replace revcoin with TC

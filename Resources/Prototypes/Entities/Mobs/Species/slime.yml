@@ -106,6 +106,9 @@
         type: StoreBoundUserInterface
       enum.HereticLivingHeartKey.Key: # goob edit - heretics
         type: LivingHeartMenuBoundUserInterface
+      enum.InstrumentUiKey.Key: # Omustation - Required to make the Singer trait work
+        type: InstrumentBoundUserInterface
+        requireInputValidation: false
   # to prevent bag open/honk spam
   - type: UseDelay
     delay: 0.5
@@ -172,12 +175,22 @@
         scaleByQuantity: true
         damage:
           types:
-            Heat: 0.1
+            Heat: 0.25 # goob edit
+        conditions:
+        - !type:HasComponentOnEquipmentCondition # goob edit - make suits protect slimes from water damage
+          components:
+          - type: PressureProtection
+          invert: true
       - !type:PopupMessage
         type: Local
         visualType: Large
         messages: [ "slime-hurt-by-water-popup" ]
         probability: 0.25
+        conditions:
+        - !type:HasComponentOnEquipmentCondition # goob edit - make suits protect slimes from water damage
+          components:
+          - type: PressureProtection
+          invert: true
   - type: Butcherable
     butcheringType: Spike
     spawned:

@@ -13,8 +13,8 @@
       - state: icon_manifesto
       - state: detail_bookmark
         color: "#aaaa24"
-    - type: RevolutionaryConverter
-      conversionDuration: 2
+#    - type: RevolutionaryConverter # Omu, remove bookrevs
+#      conversionDuration: 2
     - type: Tag
       tags:
         - Book
