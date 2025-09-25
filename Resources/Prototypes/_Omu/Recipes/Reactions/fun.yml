@@ -35,8 +35,10 @@
       amount: 1
     InsectBlood:
       amount: 2
+    Cognizine:
+      amount: 2
   products:
-    Cacaphonium: 10
+    Cacaphonium: 12
 
 - type: reaction
   id: Chitterzine
@@ -49,8 +51,10 @@
       amount: 1
     EnergyDrink:
       amount: 2
+    Cognizine:
+      amount: 2
   products:
-    Chitterzine: 10
+    Chitterzine: 12
 
 - type: reaction
   id: Marotine
