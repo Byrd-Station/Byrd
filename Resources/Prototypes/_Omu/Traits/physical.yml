@@ -96,6 +96,10 @@
     - !type:SpeciesRequirement
       species:
         - Vulpkanin
+    - !type:TraitsRequirement
+      traits:
+        - PoorVision
+      inverted: true
 
 - type: trait
   id: MothFlight

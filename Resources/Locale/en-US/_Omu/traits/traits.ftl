@@ -19,12 +19,9 @@ trait-claws-desc =
     
 trait-cybernetic-beast-name = Cybernetic Beasts
 trait-cybernetic-beast-desc =
-    Your parents were given a chance by Razzi RnT to give their child brand new cybernetics shortly after birth,
-    to beta-test them for the masses. As a result, you've been given an experimental visor which attaches to your face with a set of pogo-pins.
-    The visor affects the sound of your speech, and glows slightly. The main benefit (placeholder)
-    When worn, the visor interfaces with your digestive system to allow for faster digestion. However, a software bug
-    means that your body can reject nutriment at random, making you stick.
-    (other downsides list here)
+    You are nearsighted, but have a cybernetic visor, called a mantle, which corrects this.
+    The mantle also provides other benefits, such as night vision, but ONLY while worn by a cybernetic beast.
+    Read the guidebook entry under Species > Vulpkanin for more.
 
 trait-moth-flight-name = True Flight
 trait-moth-flight-desc =

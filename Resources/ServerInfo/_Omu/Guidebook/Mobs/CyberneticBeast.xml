@@ -3,11 +3,12 @@
 
   <Box>
 	  <GuideEntityEmbed Entity="ClothingCyberneticBeastMantle" Caption=""/>
-    <GuideEntityEmbed Entity="ClothingCyberneticBeastMantleWork" Caption=""/>
     <GuideEntityEmbed Entity="ClothingCyberneticBeastMantleWorkEngineering" Caption=""/>
     <GuideEntityEmbed Entity="ClothingCyberneticBeastMantleWorkSalvage" Caption=""/>
     <GuideEntityEmbed Entity="ClothingCyberneticBeastMantleSecurity" Caption=""/>
     <GuideEntityEmbed Entity="ClothingCyberneticBeastMantleMedical" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingCyberneticBeastMantleBlueshieldOfficer" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingCyberneticBeastMantleCommand" Caption=""/>
   </Box>
 
   Cybernetic beasts are a subset of vulpkanin. They have been augmented with a removable visor, or "mantle".
