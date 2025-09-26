@@ -402,7 +402,7 @@ namespace Content.Client.Lobby.UI
             };
 
             // begin Goobstation: port EE height/width sliders
-            #region Height and Width            
+            #region Height and Width
 
             UpdateHeightWidthSliders();
             UpdateDimensions(SliderUpdate.Both);
@@ -1244,10 +1244,22 @@ namespace Content.Client.Lobby.UI
                             OpenLoadout(job, loadout, roleLoadoutProto);
                         };
                     }
+                    // Omu start
+                    var jobTraitProfileCheckbox = new CheckBox()
+                    {
+                        Text = Loc.GetString("loadout-window"),
+                        HorizontalAlignment = HAlignment.Right,
+                        VerticalAlignment = VAlignment.Center,
+                        Margin = new Thickness(3f, 3f, 0f, 0f),
+                    };
+
+                    jobTraitProfileCheckbox.OnToggled += args =>
+
 
                     _jobPriorities.Add((job.ID, selector));
                     jobContainer.AddChild(selector);
                     jobContainer.AddChild(loadoutWindowBtn);
+                    jobContainer.AddChild(jobTraitProfileCheckbox);
                     category.AddChild(jobContainer);
                 }
             }

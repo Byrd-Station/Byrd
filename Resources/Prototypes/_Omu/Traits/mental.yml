@@ -9,7 +9,7 @@
     speedModifier: 1.6
   globalCost: 3
   requirements:
-  - !type:JobRequirement
+  - !type:CharacterJobRequirement
     inverted: true
     jobs:
     - StationAI
@@ -35,7 +35,7 @@
     speedModifier: 2.5
   globalCost: 3
   requirements:
-  - !type:JobRequirement
+  - !type:CharacterJobRequirement
     jobs:
     - MedicalIntern
     - MedicalDoctor
@@ -63,7 +63,7 @@
     speedModifier: 3.5
   globalCost: 3
   requirements:
-  - !type:JobRequirement
+  - !type:CharacterJobRequirement
     jobs:
     - ChiefMedicalOfficer
   - !type:TraitsRequirement

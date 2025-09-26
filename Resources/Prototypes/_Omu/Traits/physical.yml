@@ -186,8 +186,8 @@
   components:
   - type: SlowOnDamage
     speedModifierThresholds:
-    70: 0.83
-    90: 0.7
+      70: 0.83
+      90: 0.7
   globalCost: 3
 
 - type: trait
@@ -229,16 +229,16 @@
   name: trait-ParkourTraining-name
   description: trait-ParkourTraining-desc
   category: PhysicalTraits
-  components:
-  - type: ClimbDelayModifier # EE component
-    climbDelayMultiplier: 0.5
-  - type: ModifyStandingUpTime
-    multiplier: 0.7
-  - type: SpeedModifierContactsComponent
-    walkModifierEffectiveness: 0.5
-    sprintModifierEffectiveness: 0.5
-  - type: LayingDownComponent # Omu change. With sprinting and everything else, theres not much reason to parkour. Give em faster lay speed fuck it.
-    speedModify: 0.5f
+#  components:
+#  - type: ClimbDelayModifier # EE component
+#    climbDelayMultiplier: 0.5
+#  - type: ModifyStandingUpTime
+#    multiplier: 0.7
+#  - type: SpeedModifierContacts
+#    walkModifierEffectiveness: 0.5
+#    sprintModifierEffectiveness: 0.5
+#  - type: LayingDown # Omu change. With sprinting and everything else, theres not much reason to parkour. Give em faster lay speed fuck it.
+#    speedModify: 0.5
   globalCost: 5
   requirements:
   - !type:TraitsRequirement
@@ -260,13 +260,13 @@
   category: PhysicalTraits
   components:
   - type: Stamina
-    critThreshold: 110f # not a staminamod because sprinting checks for those and fucks up your stamina drain.
-    decay: 5.6f # Also im hardcoding all this stuff instead of making a million components that modify things like in EE. Probably change at some point.
-    cooldown: 2.25f # hardcode
+    critThreshold: 110 # not a staminamod because sprinting checks for those and fucks up your stamina drain.
+    decay: 5.6 # Also im hardcoding all this stuff instead of making a million components that modify things like in EE. Probably change at some point.
+    cooldown: 2.25 # hardcode
   globalCost: 6
   requirements:
-  - !type:JobRequirement # Fucked up isn't it? Being an IPC is a species but being a borg is a JOB
-    inverted: true       # When will this discrimination TRULY end.
+  - !type:CharacterJobRequirement # Fucked up isn't it? Being an IPC is a species but being a borg is a JOB
+    inverted: true                # When will this discrimination TRULY end.
     jobs:
     - StationAI
     - Borg
@@ -288,8 +288,8 @@
   components:
   globalCost: 1
   requirements:
-  - !type:JobRequirement # Fucked up isn't it? Being an IPC is a species but being a borg is a JOB
-    inverted: true       # When will this discrimination TRULY end.
+  - !type:CharacterJobRequirement # Fucked up isn't it? Being an IPC is a species but being a borg is a JOB
+    inverted: true                # When will this discrimination TRULY end.
     jobs:
     - StationAI
     - Borg
@@ -329,7 +329,7 @@
       200: Dead
   globalCost: 1
   requirements:
-  - !type:JobRequirement
+  - !type:CharacterJobRequirement
     inverted: true
     jobs:
     - StationAI
