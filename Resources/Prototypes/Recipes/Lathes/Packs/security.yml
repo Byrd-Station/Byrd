@@ -68,7 +68,7 @@
   - MagazineShotgunSlug
   - SpeedLoaderMagnum
   - SpeedLoaderMagnumEmpty
-  - ExplosivePayload
+  - ShrapnelPayload
 
 - type: latheRecipePack
   id: SecurityWeaponsStatic
