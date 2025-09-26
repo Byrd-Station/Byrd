@@ -132,7 +132,7 @@
     - /Audio/Lobby/every_light_is_blinking_at_once.ogg
     - /Audio/Lobby/atomicamnesiammx.ogg
     # Goobstation - Custom lobby music
-    - /Audio/Lobby/skubstep.ogg
+    # - /Audio/Lobby/skubstep.ogg # Omustation
     - /Audio/Lobby/sneedsfeedandseed.ogg
     - /Audio/Lobby/clownalwayswins.ogg
     - /Audio/Lobby/clownwmv.ogg
@@ -146,3 +146,6 @@
     - /Audio/Lobby/marhaba.ogg
     - /Audio/Lobby/the_future_soon.ogg
     - /Audio/Lobby/horn.ogg
+    # Omustation - Custom lobby music
+    - /Audio/Lobby/freesia.ogg
+    - /Audio/Lobby/divide my heart.ogg
