@@ -249,3 +249,13 @@
   license: "CC-BY-NC-SA-3.0"
   copyright: "The Future Soon by Jonathan Coulton"
   source: "https://www.youtube.com/watch?v=l5PEz3kGbp4"
+
+- files: ["freesia.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Freesia from the Guilty Gear Xrd -REVELATOR- OST. Converted from MP3 to OGG."
+  source: "https://downloads.khinsider.com/game-soundtracks/album/guilty-gear-xrd-revelator/1-04.%2520Freesia.mp3"
+
+- files: ["dividemyheart.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Divide My Heart from the Guilty Gear Xrd -REVELATOR- OST. Converted from MP3 to OGG."
+  source: "https://downloads.khinsider.com/game-soundtracks/album/guilty-gear-xrd-revelator/1-05.%2520Divide%2520My%2520Heart.mp3"
