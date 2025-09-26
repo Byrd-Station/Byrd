@@ -122,6 +122,7 @@
   id: ClothingCyberneticBeastMantleWorkSalvage
   parent: ClothingCyberneticBeastMantleWork
   name: beast's salvage mantle
+  description: A modified version of a cybernetic beast's mantle. This one has been jury-rigged to mount a flashlight on its snout.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -145,6 +146,7 @@
   id: ClothingCyberneticBeastMantleSecurity
   parent: [ClothingCyberneticBeastMantle, BaseSecurityContraband]
   name: beast's security mantle
+  description: A modified version of a cybernetic beast's mantle. This one comes with an included sechud.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -173,6 +175,7 @@
 # resprite of the standard mantle with a medhud.
 - type: entity
   id: ClothingCyberneticBeastMantleMedical
+  description: A modified version of a cybernetic beast's mantle. This one comes with an included medhud.
   parent: ClothingCyberneticBeastMantle
   name: beast's medical mantle
   components:
@@ -209,6 +212,7 @@
   id: ClothingCyberneticBeastMantleBlueshieldOfficer
   parent: [ClothingCyberneticBeastMantle, BaseCentcommContraband]
   name: beast's BSO mantle
+  description: A modified version of a cybernetic beast's mantle. This one comes with standard BSO huds, and seals for pressure protection.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
