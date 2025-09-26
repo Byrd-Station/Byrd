@@ -34,6 +34,14 @@ public sealed class StationReportDiscordIntergrationSystem : EntitySystem
 
     private static readonly TagReplacement[] _replacements =
     {
+        // Discord markdown replacements, these must happen BEFORE anything else!
+        new(@"\*", @"\*"), // Omu, escape * so it doesn't unintentionally bold stuff in Discord (this is intentionally double-escaped in the literal string for regex replacements)
+        new(@"_", @"\_"), // Omu, escape _ so it doesn't unintentionally italics stuff in Discord
+        new(@"~", @"\~"), // Omu, escape ~ so it doesn't unintentionally strikethrough stuff in Discord
+        new(@"`", @"\`"), // Omu, escape ` so it doesn't unintentionally codeblock stuff in Discord
+        new(@"#", @"\#"), // Omu, escape # so it doesn't unintentionally header stuff in Discord
+        new(@">", @"\>"), // Omu, escape > so it doesn't unintentionally quoteblock stuff in Discord
+        // End of Discord markdown replacements, other stuff can come AFTER this.
         new(@"\[/?bold\]", @"**"),
         new(@"\[/?italic\]", @"_"),
         new(@"\[/?mono\]", @"__"),

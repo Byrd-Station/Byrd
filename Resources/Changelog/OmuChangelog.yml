@@ -474,3 +474,11 @@ Entries:
       message: Detective's noir glasses now function as security glasses as well.
   id: 56
   time: '2025-09-25T06:21:07.0000000+00:00'
+- author: Timfa2112
+  changes:
+    - type: Fix
+      message: >-
+        Fixed station reports unintentionally making lines italic, bold,
+        underline or strikethrough.
+  id: 57
+  time: '2025-09-25T20:24:49.0000000+00:00'
