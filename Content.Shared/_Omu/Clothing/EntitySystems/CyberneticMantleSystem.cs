@@ -71,8 +71,8 @@ public sealed class CyberneticMantleSystem : EntitySystem
     /// </summary>>
     private void OnUnequipped(Entity<CyberneticMantleComponent> ent, ref GotUnequippedEvent args)
     {
-        // if the client is resetting predicted entities, trying to modify the components on the mantle will result in an exception. So don't do it.
-        if (_gameTiming.ApplyingState && _netManager.IsClient)
+        // if we try to predict this more than once it'll throw an exception about modifying components while resetting predicted entities.
+        if (!_gameTiming.IsFirstTimePredicted && _netManager.IsClient)
             return;
 
         // if the compnent can be toggled, turn it off when unequipped.
