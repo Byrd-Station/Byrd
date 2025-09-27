@@ -513,3 +513,19 @@ Entries:
         NanoTrasen™ Re-Education Camps for training.
   id: 61
   time: '2025-09-26T17:34:22.0000000+00:00'
+- author: Timfa2112
+  changes:
+    - type: Fix
+      message: Fixed [italics' being parsed correctly in the Discord Station Report
+  id: 62
+  time: '2025-09-26T20:47:45.0000000+00:00'
+- author: Timfa2112
+  changes:
+    - type: Fix
+      message: Fixed clowns being unable to use the Dislippler
+    - type: Fix
+      message: >-
+        Fixed [color] tags not being formatted properly in Discord Station
+        Reports
+  id: 63
+  time: '2025-09-27T00:55:22.0000000+00:00'
