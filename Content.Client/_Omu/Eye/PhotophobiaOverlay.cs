@@ -17,7 +17,7 @@ namespace Content.Client._Omu.Eye
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly IConfigurationManager _configManager = default!;
 
-        // public override bool RequestScreenTexture => true;
+        public override bool RequestScreenTexture => true;
         public override OverlaySpace Space => OverlaySpace.WorldSpace;
         private readonly ShaderInstance _photophobiaShader;
 
@@ -51,15 +51,15 @@ namespace Content.Client._Omu.Eye
 
         protected override void Draw(in OverlayDrawArgs args)
         {
-            //if (ScreenTexture == null)
-            //    return;
+            if (ScreenTexture == null)
+                return;
 
             var playerEntity = _playerManager.LocalSession?.AttachedEntity;
 
             var worldHandle = args.WorldHandle;
             var viewport = args.WorldBounds;
 
-            // _photophobiaShader.SetParameter("SCREEN_TEXTURE", ScreenTexture);
+            _photophobiaShader.SetParameter("SCREEN_TEXTURE", args.Viewport.RenderTarget.Texture);
             _photophobiaShader.SetParameter("LIGHT_TEXTURE", args.Viewport.LightRenderTarget.Texture);
 
             worldHandle.SetTransform(Matrix3x2.Identity);
