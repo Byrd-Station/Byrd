@@ -44,8 +44,13 @@ public sealed class StationReportDiscordIntergrationSystem : EntitySystem
         new(@"#", @"\#"), // Omu, escape # so it doesn't unintentionally header stuff in Discord
         new(@">", @"\>"), // Omu, escape > so it doesn't unintentionally quoteblock stuff in Discord
         // End of Discord markdown replacements, other stuff can come AFTER this.
+        // Omu: filter out empty tags
+		new(@"\[bold\] *\[/bold\]", @""),
+        new(@"\[italics\] *\[/italics\]", @""),
+        new(@"\[mono\] *\[/mono\]", @""),
+		//Omu: end empty tags
         new(@"\[/?bold\]", @"**"),
-        new(@"\[/?italic\]", @"_"),
+        new(@"\[/?italics\]", @"_"), // Omu, fix the 's' that was forgotten in 'italicS'
         new(@"\[/?mono\]", @"__"),
         // new(@">", @""), // Omu, was causing issues with > escaping in the Discord markdown block
         new(@"\[h1\]", @""), // Omu, make head be replaced with empty, was # 
@@ -58,7 +63,7 @@ public sealed class StationReportDiscordIntergrationSystem : EntitySystem
         new(@"\[head=3\]", @""), // Omu, make head be replaced with empty, was ### 
         new(@"\[head=4\]", @""), // Omu, make head be replaced with empty, was -# 
         new(@"\[/head\]", @""),
-        new(@"\[/?color(=[#0-9a-zA-Z]+)?\]", @"")
+        new(@"\[/?color=?([#0-9a-zA-Z]+)?\]", @"") // Omu, fix colour tag regex
     };
 
     private void OnStationReportReceived(StationReportEvent ev)
@@ -146,20 +151,17 @@ public sealed class StationReportDiscordIntergrationSystem : EntitySystem
         {
             var payload = new { content = chunk };
             var json = System.Text.Json.JsonSerializer.Serialize(payload);
-            using var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
     
             try
             {
-                using var response = await client.PostAsync(_webhookUrl, content);
+                var response = client.PostAsync(_webhookUrl, content).GetAwaiter().GetResult(); // await doesn't seem to work properly inside a foreach
                 response.EnsureSuccessStatusCode();
             }
             catch (Exception)
             {
                 // Optionally log
             }
-    
-            // Pause ~0.5s between posts (except after the last one) to ease up on a rate limit
-            await Task.Delay(500);
         }
     }
 
