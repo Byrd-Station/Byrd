@@ -137,6 +137,8 @@
     - RobotTalk
     toggleOnInteract: false
     showInfoOnExamine: false
+  - type: StealTarget
+    stealGroup: ClothingEyesHudSciDiag
 
 - type: entity
   parent: [ClothingEyesBase, ShowMedicalIcons, ClothingEyesGlassesSunglasses]

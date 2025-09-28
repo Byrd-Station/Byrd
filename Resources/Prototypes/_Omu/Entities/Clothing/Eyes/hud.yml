@@ -27,4 +27,5 @@
     - RobotTalk
     understood:
     - RobotTalk
-
+  - type: StealTarget
+    stealGroup: ClothingEyesHudSciDiag
