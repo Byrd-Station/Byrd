@@ -474,3 +474,72 @@ Entries:
       message: Detective's noir glasses now function as security glasses as well.
   id: 56
   time: '2025-09-25T06:21:07.0000000+00:00'
+- author: Timfa2112
+  changes:
+    - type: Fix
+      message: >-
+        Fixed station reports unintentionally making lines italic, bold,
+        underline or strikethrough.
+  id: 57
+  time: '2025-09-25T20:24:49.0000000+00:00'
+- author: Timfa2112
+  changes:
+    - type: Fix
+      message: >-
+        Fixed station reports over 2000 characters being blocked by Discord and
+        not showing up in the reports channel.
+  id: 58
+  time: '2025-09-26T17:29:59.0000000+00:00'
+- author: Timfa2112
+  changes:
+    - type: Fix
+      message: >-
+        Fixed double replacement of a > character in Station Reports in Discord,
+        causing the markdown to be messed up
+  id: 59
+  time: '2025-09-26T17:31:26.0000000+00:00'
+- author: Timfa2112
+  changes:
+    - type: Add
+      message: Added the Dislippler, a clown-only traitor uplink item.
+  id: 60
+  time: '2025-09-26T17:33:05.0000000+00:00'
+- author: Timfa2112
+  changes:
+    - type: Fix
+      message: >-
+        The Station Report is now only broadcast if the NTR actually filled in
+        the form. NTRs that don't fill in the reports will be sent to
+        NanoTrasen™ Re-Education Camps for training.
+  id: 61
+  time: '2025-09-26T17:34:22.0000000+00:00'
+- author: Timfa2112
+  changes:
+    - type: Fix
+      message: Fixed [italics' being parsed correctly in the Discord Station Report
+  id: 62
+  time: '2025-09-26T20:47:45.0000000+00:00'
+- author: Timfa2112
+  changes:
+    - type: Fix
+      message: Fixed clowns being unable to use the Dislippler
+    - type: Fix
+      message: >-
+        Fixed [color] tags not being formatted properly in Discord Station
+        Reports
+  id: 63
+  time: '2025-09-27T00:55:22.0000000+00:00'
+- author: Timfa2112
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the way messages are chunked in the station report. It works
+        properly this time, I swear. 
+  id: 64
+  time: '2025-09-27T17:55:30.0000000+00:00'
+- author: Mike32oz
+  changes:
+    - type: Tweak
+      message: 'Aghost Inventory bag '
+  id: 65
+  time: '2025-09-28T09:09:44.0000000+00:00'
