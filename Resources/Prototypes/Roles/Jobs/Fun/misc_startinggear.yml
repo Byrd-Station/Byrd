@@ -265,6 +265,10 @@
     - trayScanner
     - AccessConfiguratorUniversal
     - Multitool
+    - WelderExperimental # Omu Edit - More Admin Tools
+    - PowerDrill # Omu Edit - More Admin Tools
+    - GeigerCounter # Omu Edit - More Admin Tools
+    - JawsOfLife # Omu Edit - More Admin Tools
 
 #Gladiator with spear
 - type: startingGear
