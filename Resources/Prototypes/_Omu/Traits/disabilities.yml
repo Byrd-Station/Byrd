@@ -12,6 +12,17 @@
       0: Alive
       100: Dead
   globalCost: -8
+  requirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+  - !type:TraitsRequirement
+    traits:
+    - GlassJaw
+    - WillToDie
+    - WillToLive
+    inverted: true
 
 - type: trait
   id: SnailPaced
@@ -36,6 +47,13 @@
       50: Critical
       200: Dead
   globalCost: -6
+  requirements:
+  - !type:TraitsRequirement
+    inverted: true
+    traits:
+    - Redshirt
+    - GlassJaw
+    - WillToLive
 
 - type: trait
   id: IPCOsteogenesisImperfecta # Defective chassis, defectivechassis
@@ -49,6 +67,10 @@
       40: Dead # Holy shit, an IPC, quickly sneeze on them.
       # I am uh, making it give 10 because holy fuck.
   globalCost: -10
+  requiremets:
+  - !type:SpeciesRequirement
+    species:
+    - IPC
 
 - type: trait
   id: ClumsyTrait
@@ -86,8 +108,8 @@
 
 - type: trait
   id: GlassJaw
-  name: trait-GlassJaw-name
-  description: trait-GlassJaw-desc
+  name: trait-glassjaw-name
+  description: trait-glassjaw-desc
   category: PhysicalTraits
   components:
   - type: MobThresholds
@@ -96,6 +118,13 @@
       90: Critical
       200: Dead
   globalCost: -1
+  requirements:
+  - !type:TraitsRequirement
+    traits:
+    - Redshirt
+    - OsteogenesisImperfecta
+    - WillToLive
+    inverted: true
 
 - type: trait
   id: Lethargy
@@ -124,8 +153,8 @@
 
 - type: trait
   id: WillToDie
-  name: trait-WillToDie-name
-  description: trait-WillToDie-desc
+  name: trait-willtodie-name
+  description: trait-willtodie-desc
   category: PhysicalTraits
   components:
   - type: MobThresholds
@@ -134,11 +163,17 @@
       100: Critical
       185: Dead
   globalCost: -1
+  requirements:
+  - !type:TraitsRequirement
+    traits:
+    - Redshirt
+    - WillToLive
+    inverted: true
 
 - type: trait
   id: Uncloneable
-  name: trait-Uncloneable-name
-  description: trait-Uncloneable-desc
+  name: trait-uncloneable-name
+  description: trait-uncloneable-desc
   category: PhysicalTraits
   components:
   - type: Uncloneable

@@ -86,8 +86,8 @@
 
 - type: trait
   id: Bite
-  name: trait-Bite-name
-  description: trait-Bite-desc
+  name: trait-bite-name
+  description: trait-bite-desc
   category: PhysicalTraits
   functions:
   - !type:TraitModifyUnarmed
@@ -200,7 +200,7 @@
     action: ActionSericulture
     productionLength: 2
     entityProduced: MaterialWebSilk1
-    hungerCost: 1 # Should total to 25 total silk on full hunger
+    hungerCost: 4 # Should total to 25 total silk on full hunger
   globalCost: 2
   requirements:
   - !type:SpeciesRequirement
@@ -210,8 +210,8 @@
 
 - type: trait
   id: TrapAvoider
-  name: trait-TrapAvoider-name
-  description: trait-TrapAvoider-desc
+  name: trait-trapavoider-name
+  description: trait-trapavoider-desc
   category: PhysicalTraits
   components:
   - type: StepTriggerImmune
@@ -226,19 +226,19 @@
 
 - type: trait
   id: ParkourTraining
-  name: trait-ParkourTraining-name
-  description: trait-ParkourTraining-desc
+  name: trait-parkourtraining-name
+  description: trait-parkourtraining-desc
   category: PhysicalTraits
-#  components:
-#  - type: ClimbDelayModifier # EE component
-#    climbDelayMultiplier: 0.5
-#  - type: ModifyStandingUpTime
-#    multiplier: 0.7
-#  - type: SpeedModifierContacts
-#    walkModifierEffectiveness: 0.5
-#    sprintModifierEffectiveness: 0.5
-#  - type: LayingDown # Omu change. With sprinting and everything else, theres not much reason to parkour. Give em faster lay speed fuck it.
-#    speedModify: 0.5
+  components:
+  - type: ClimbDelayModifier # EE component
+    climbDelayMultiplier: 0.5
+  - type: ModifyStandingUpTime
+    multiplier: 0.7
+  - type: SpeedModifierContacts
+    walkModifierEffectiveness: 0.5
+    sprintModifierEffectiveness: 0.5
+  - type: LayingDown # Omu change. With sprinting and everything else, theres not much reason to parkour. Give em faster lay speed fuck it.
+    speedModify: 0.5
   globalCost: 5
   requirements:
   - !type:TraitsRequirement
@@ -318,8 +318,8 @@
 
 - type: trait
   id: Tenacity
-  name: trait-Tenacity-name
-  description: trait-Tenacity-desc
+  name: trait-tenacity-name
+  description: trait-tenacity-desc
   category: PhysicalTraits
   components:
   - type: MobThresholds
@@ -333,4 +333,3 @@
     inverted: true
     jobs:
     - StationAI
-

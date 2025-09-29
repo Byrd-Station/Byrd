@@ -8,7 +8,7 @@ namespace Content.Shared._Omu.Traits.TraitComponents;
 /// This is used for any trait that modifies climbing speed.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-public abstract partial class ClimbDelayModifierComponent : Component
+public sealed partial class ClimbDelayModifierComponent : Component
 {
 /// <summary>
 ///     What to multiply the climbing delay by.

@@ -52,13 +52,23 @@ trait-redshirt-desc =
     I look down in my red shirt."
     Reduces your threshold for death by 100 points.
 
-trait-osteogenesis-imperfecta-name = Osteogenesis Imperfecta
-trait-osteogenesis-imperfecta-desc =
+trait-uncloneable-name = Uncloneable
+trait-uncloneable-description = Cannot be cloned
+
+trait-feeble-name= Feeble
+trait-feeble-description =
+    Your body responds poorly to injuries, making damage affect your movement more severely.
+        For most species [color=gray](excluding IPC/Shadowkin)[/color], this trait modifies:
+        - [color=yellow]25%[/color] movement slow at [color=red]60[/color] damage ➔ [color=yellow]30%[/color] movement slow at [color=red]45[/color] damage
+        - [color=yellow]45%[/color] movement slow at [color=red]80[/color] damage ➔ [color=yellow]54%[/color] movement slow at [color=red]65[/color] damage
+
+trait-osteogenesisimperfecta-name = Osteogenesis Imperfecta
+trait-osteogenesisimperfecta-desc =
     Also known as "brittle bone disease", people with this genetic disorder have bones that are easily broken,
     often simply by moving. This trait reduces your threshold for critical injury by 50 points.
 
-trait-snail-paced-name = Snail-Paced
-trait-snail-paced-desc =
+trait-snailpaced-name = Snail-Paced
+trait-snailpaced-desc =
     You walk at a snail's pace, perhaps due to a medical condition, mobility impairment, or age.
     Your movement speed is decreased by [color=yellow]32%[/color].
 
@@ -72,8 +82,8 @@ trait-sluggish-desc =
     You navigate the world slower than others, perhaps due to a medical condition, inactivity, or age.
     Your movement speed is decreased by [color=yellow]16%[/color].
 
-trait-bad-knees-name = Bad Knees
-trait-bad-knees-desc =
+trait-badknees-name = Bad Knees
+trait-badknees-desc =
     Whether due to injury, age, or wear and tear, your knees aren't particularly strong or flexible.
     You climb structures like tables [color=yellow]50%[/color] slower.
     Slipping leaves you stunned for [color=yellow]40%[/color] longer. { -slippery-example }
@@ -101,16 +111,16 @@ trait-spinarette-desc =
     implanted right below the wrist, which absorbs bodily lipids to convert into all natural silk. A small opening
     in the palm allows the user to 'spin' this thread.
 
-trait-trap-avoider-name = Trap Avoider
-trait-trap-avoider-desc =
+trait-trapavoider-name = Trap Avoider
+trait-trapavoider-desc =
     You possess a preturnatural sense of traps, and will unconsciously avoid them. You will never trigger
     floor traps, such as land mines, tripwires, mouse traps(If you're small enough), etc.
 
 -terrain-example = [color=gray](e.g. plastic flaps, spider webs, slime puddles, kudzu)[/color]
 -slippery-example = [color=gray](e.g. banana peels, water puddles, soap, space lube)[/color]
 
-trait-parkour-training-name = Parkour Training
-trait-parkour-training-desc =
+trait-parkourtraining-name = Parkour Training
+trait-parkourtraining-desc =
     Whether as a hobby, lifestyle, or professional training, you are trained in the discipline of parkour.
     You climb structures like tables [color=yellow]50%[/color] faster.
     Slipping leaves you stunned for [color=yellow]30%[/color] shorter. { -slippery-example }
@@ -125,13 +135,13 @@ trait-talons-desc =
     Your unarmed melee attacks deal Piercing damage instead of the standard damage type for your species.
     This has no effect on damage dealt with any form of armed melee.
 
-trait-will-to-live-name = Will To Live
-trait-will-to-live-desc =
+trait-willtolive-name = Will To Live
+trait-willtolive-desc =
     You have an unusually strong "will to live", and will resist death more than others.
     Your damage threshold for becoming Dead is increased by 10 points.
 
-trait-will-to-die-name = Will To Die
-trait-will-to-die-desc =
+trait-willtodie-name = Will To Die
+trait-willtodie-desc =
     You have an unusually weak "will to live", and will succumb to injuries sooner than others.
     Your damage threshold for becoming Dead is decreased by 15 points.
 
@@ -140,8 +150,8 @@ trait-tenacity-desc =
     Whether it be through raw grit, willpower, or subtle bionic augmentations, you are hardier than others.
     Your damage threshold for becoming Critical is increased by 5 points.
 
-trait-glass-jaw-name = Glass Jaw
-trait-glass-jaw-desc =
+trait-glassjaw-name = Glass Jaw
+trait-glassjaw-desc =
     Your body is more fragile than others, resulting in a greater susceptibility to critical injuries
     Your damage threshold for becoming Critical is decreased by 10 points.
 
@@ -196,26 +206,26 @@ trait-bionic-pry-arm-desc =
 
 #IPC exclusive
 
-trait-ipc-eyes-security-name = I.P.C Eye Module: Sechud
-trait-ipc-eyes-security-desc =
+trait-ipceyessecurity-name = I.P.C Eye Module: Sechud
+trait-ipceyessecurity-desc =
     A module installed in IPCs that work for the security department and similar, this module is considered contraband and may be removed if the unit isn't working for the security department.
 
-trait-ipc-eyes-medical-name = I.P.C Eye Module: Medical
-trait-ipc-eyes-medical-desc =
+trait-ipceyesmedical-name = I.P.C Eye Module: Medical
+trait-ipceyesmedical-desc =
     Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution.
 
-trait-ipc-eyes-diagnostic-name = I.P.C Eye Module: Diagnostics
-trait-ipc-eyes-diagnostic-desc =
+trait-ipceyesdiagnostic-name = I.P.C Eye Module: Diagnostics
+trait-ipceyesdiagnostic-desc =
     Your eyes have been upgraded to include a built-in Diagnostic Hud and flare shielding, allowing you to track the condition of synthetic entities, and providing eye protection against welding arcs.
 
-trait-ipc-eyes-omni-name = I.P.C Eye Module: Premium Model
-trait-ipc-eyes-omni-desc =
+trait-ipceyesomni-name = I.P.C Eye Module: Premium Model
+trait-ipceyesomni-desc =
     This upgrade provides the combined benefits of a SecHud, MedHud, and a Diagnostics Module.
     Note that this module is considered Contraband for anyone not under the employ of station Security personel,
     and may be disabled by your employer before dispatch to the station.
 
-trait-ipc-eyes-light-amp-name = I.P.C Eye Module: Light Amplification
-trait-ipc-eyes-light-amp-desc =
+trait-ipceyeslight-amp-name = I.P.C Eye Module: Light Amplification
+trait-ipceyeslight-amp-desc =
     Your vision has been enhanced with a light amplifier module, enabling the user to toggle between standard sight and "Night Vision" mode.
 
 trait-ipc-eyes-thermo-name = I.P.C Eye Module: Thermographic Scanner
@@ -223,14 +233,14 @@ trait-ipc-eyes-thermo-desc =
     Your vision has been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
     biological life forms. It can even detect individuals through the walls of a station.
 
-trait-ipc-inefficient-cogitator-name = Inefficient Cogitator
-trait-ipc-inefficient-cogitator-desc =
+trait-ipcinefficient-cogitator-name = Inefficient Cogitator
+trait-ipcinefficient-cogitator-desc =
     Due to running with an outdated driver, your positronic brain consumes much more power than standard.
     Your power drain is increased by ~33% (1.5/s -> 2/s).
     (Note that this is exponentially worse for you with better power sources. A medium-capacity cell lasts you 6 mins instead of 8).
 
-trait-ipc-defective-chassis-name = Defective Chassis
-trait-ipc-defective-chassis-desc =
+trait-ipcdefectivechassis-name = Defective Chassis
+trait-ipcdefectivechassis-desc =
     Made from weaker materials, or corroded by age or damage, your body is much weaker than the standard for an IPC.
     This trait reduces your threshold for death by 60 points.
     (Just as the normal version, it halves the threshold. IPCs cannot be crit, so it instead makes you die 60 points sooner.)
@@ -238,18 +248,19 @@ trait-ipc-defective-chassis-desc =
 
 # Mental Traits or Knowledge-based.
 
-trait-SurgeryTraining-name = Surgery Training
-trait-SurgeryTraining-description =
+trait-surgerytraining-name = Surgery Training
+trait-surgerytraining-desc =
     At some point in your life you acquired the knowledge and experience necessary for performing surgery effectively.
-        This trait boosts your surgery speed to 1.6, and is intended for non-medical characters, as medical jobs already have faster surgery.
-        (This is slightly faster than a medical intern (1.5) but slower than a normal doctor (1.75))
+    This trait boosts your surgery speed to 1.6, and is intended for non-medical characters, as medical jobs already have faster surgery.
 
-trait-ExperiencedSurgeon-name = Experienced Surgeon
-trait-ExperiencedSurgeon-description =
+    (This is slightly faster than a medical intern (1.5) but slower than a normal doctor (1.75))
+
+trait-experiencedsurgeon-name = Experienced Surgeon
+trait-experiencedsurgeon-desc =
     Surgery is your specialty. You are faster than most at your craft.
-        This trait boosts your surgery speed to 2.5, which is the same as the innate boost CMO gets.
+    This trait boosts your surgery speed to 2.5, which is the same as the innate boost CMO gets.
 
-trait-SectorClassSurgeon-name = Sector Class Surgeon
-trait-SectorClassSurgeon-description =
+trait-sectorclasssurgeon-name = Sector Class Surgeon
+trait-sectorclasssurgeon-desc =
     Surgery is your Life, and PHD thesis. You are faster than anyone else on this station.
-        This trait boots your surgery even further to 3.5, You don't need this.
+    This trait boots your surgery even further to 3.5, You don't need this.

@@ -1,8 +1,8 @@
 
 - type: trait
   id: SurgeryTraining
-  name: trait-SurgeryTraining-name
-  description: trait-SurgeryTraining-desc
+  name: trait-surgerytraining-name
+  description: trait-surgerytraining-desc
   category: MentalTraits
   components:
   - type: SurgerySpeedModifier
@@ -27,8 +27,8 @@
 
 - type: trait
   id: ExperiencedSurgeon
-  name: trait-ExperiencedSurgeon-name
-  description: trait-ExperiencedSurgeon-desc
+  name: trait-experiencedsurgeon-name
+  description: trait-experiencedsurgeon-desc
   category: MentalTraits
   components:
   - type: SurgerySpeedModifier
@@ -55,8 +55,8 @@
 
 - type: trait
   id: SectorClassSurgeon #I mean fuck it. Might be extraordinarily powerful BUT Cmo's don't *need* it so its on them to take it.
-  name: trait-SectorClassSurgeon-name
-  description: trait-SectorClassSurgeon-desc
+  name: trait-sectorclasssurgeon-name
+  description: trait-sectorclasssurgeon-desc
   category: MentalTraits
   components:
   - type: SurgerySpeedModifier

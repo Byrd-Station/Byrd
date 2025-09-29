@@ -282,8 +282,11 @@ public sealed partial class ClimbSystem : VirtualController
             return false;
 
         //Omu Start, climb speed modif. EE supercode.
-            if (user == entityToMove && TryComp<ClimbDelayModifierComponent>(user, out var delayModifier))
-                comp.ClimbDelay *= delayModifier.ClimbDelayMultiplier;
+        var oldclimbdelay = comp.ClimbDelay;
+        if (user == entityToMove && TryComp<ClimbDelayModifierComponent>(user, out var delayModifier))
+        {
+            comp.ClimbDelay *= delayModifier.ClimbDelayMultiplier;
+        }
         //Omu End.
 
         var args = new DoAfterArgs(EntityManager, user, comp.ClimbDelay, new ClimbDoAfterEvent(),
@@ -295,6 +298,7 @@ public sealed partial class ClimbSystem : VirtualController
             BreakOnDamage = true,
             DuplicateCondition = DuplicateConditions.SameTool | DuplicateConditions.SameTarget
         };
+        comp.ClimbDelay = oldclimbdelay; // Omu
 
         _audio.PlayPredicted(comp.StartClimbSound, climbable, user);
         var success = _doAfterSystem.TryStartDoAfter(args, out id);
