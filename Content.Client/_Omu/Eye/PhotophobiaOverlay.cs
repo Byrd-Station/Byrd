@@ -2,8 +2,7 @@ using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
-using Content.Shared._Omu.Traits.Assorted;
-using Content.Shared.Eye.Blinding.Components;
+using Content.Shared._Omu.Traits;
 using Robust.Shared.Configuration;
 using System.Numerics;
 

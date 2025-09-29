@@ -1,5 +1,4 @@
 using Content.Shared._Omu.Traits;
-using Content.Shared._Omu.Traits.Assorted;
 using Content.Client._Omu.Eye;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
@@ -7,6 +6,9 @@ using Robust.Shared.Player;
 
 namespace Content.Client._Omu.Traits;
 
+/// <summary>
+///     Handles giving the player the photophobia shader / overlay.
+/// </summary>
 public sealed class PhotophobiaSystem : SharedPhotophobiaSystem
 {
 
