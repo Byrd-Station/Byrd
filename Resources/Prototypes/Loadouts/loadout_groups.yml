@@ -344,6 +344,7 @@
   - CaptainFormalSuit
   - CaptainFormalSkirt
   - CaptainJumpsuitMilitary # goob
+  - CaptainSummerShirt # also goob
 
 - type: loadoutGroup
   id: CaptainNeck
@@ -377,6 +378,7 @@
   minLimit: 0
   loadouts:
   - HoPHead
+  - HoPBeret
 
 - type: loadoutGroup
   id: HoPJumpsuit
@@ -389,6 +391,7 @@
   - HoPTurtleneckMale # OmuStation
   - HoPTurtleneckSkirtFemale # OmuStation
   - HoPJumpsuitMilitary # goob
+  - HoPSummerShirt # goob
 
 - type: loadoutGroup
   id: HoPNeck
@@ -889,6 +892,7 @@
   - QuartermasterUniformSkirt # OmuStation
   - QuartermasterFormalSuit
   - QuartermasterMJ # goob
+  - QMSummerShirt # goob
 
 - type: loadoutGroup
   id: QuartermasterNeck
@@ -1002,6 +1006,7 @@
   - ChiefEngineerTurtleneck
   - ChiefEngineerTurtleneckSkirt
   - ChiefEngineerMJ # goob
+  - CESummerShirt # goob
 
 - type: loadoutGroup
   id: ChiefEngineerNeck
@@ -1164,6 +1169,7 @@
   - ResearchDirectorJumpsuit
   - ResearchDirectorJumpskirt
   - ResearchDirectorMJ # goob
+  - RDSummerShirt # goob
 
 - type: loadoutGroup
   id: ResearchDirectorOuterClothing
@@ -1285,6 +1291,7 @@
   - HeadofSecurityFormalSkirt
   - HoSParadeUniformMale # Omu
   - HoSParadeUniformFemale # Omu
+  - HoSSummerShirt # goob
 
 - type: loadoutGroup
   id: HeadofSecurityNeck
