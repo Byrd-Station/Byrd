@@ -75,7 +75,7 @@ public abstract partial class SharedMartialArtsSystem
                 comp.SilencedTime = _timing.CurTime + TimeSpan.FromSeconds(moveComp.EffectTime);
                 break;
             case KravMagaMoves.LungPunch:
-                var ev = new KravMagaLungPunchEvent(hitEntity,moveComp.LungDamage);
+                var ev = new KravMagaLungPunchEvent(GetNetEntity(hitEntity), moveComp.LungDamage);
 
                 RaiseNetworkEvent(ev);
                 _stamina.TakeStaminaDamage(hitEntity, moveComp.StaminaDamage, applyResistances: true);
