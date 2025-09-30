@@ -3,18 +3,18 @@ using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Content.Shared._Omu.Traits;
-using Robust.Shared.Configuration;
 using System.Numerics;
 
 namespace Content.Client._Omu.Eye
 {
     public sealed class PhotophobiaOverlay : Overlay
     {
-        [Dependency] private readonly IClyde _clyde = default!;
         [Dependency] private readonly IEntityManager _entityManager = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-        [Dependency] private readonly IConfigurationManager _configManager = default!;
+
+        private const float Max_Strength_Multiplier = 1.25f; // So that an admin or particularly sneaky yamlmaxxer couldn't just, up the effect tenfold and flashbang somebody. The effect is decently strong as it is.
+        private const float Min_Strength_Multiplier = 0f;
 
         public override bool RequestScreenTexture => true;
         public override OverlaySpace Space => OverlaySpace.WorldSpace;
@@ -26,28 +26,6 @@ namespace Content.Client._Omu.Eye
             _photophobiaShader = _prototypeManager.Index<ShaderPrototype>("PhotophobiaShader").InstanceUnique();
         }
 
-        protected override bool BeforeDraw(in OverlayDrawArgs args)
-        {
-            if (!_entityManager.TryGetComponent(_playerManager.LocalSession?.AttachedEntity, out EyeComponent? eyeComp))
-                return false;
-
-            if (args.Viewport.Eye != eyeComp.Eye)
-                return false;
-
-            var playerEntity = _playerManager.LocalSession?.AttachedEntity;
-
-            if (playerEntity == null)
-                return false;
-
-            if (!_entityManager.TryGetComponent<PhotophobiaComponent>(playerEntity, out var blurComp))
-                return false;
-
-            // if (blurComp.Magnitude <= 0)
-            //    return false;
-
-            return true;
-        }
-
         protected override void Draw(in OverlayDrawArgs args)
         {
             if (ScreenTexture == null)
@@ -55,11 +33,19 @@ namespace Content.Client._Omu.Eye
 
             var playerEntity = _playerManager.LocalSession?.AttachedEntity;
 
+            if (playerEntity == null)
+                return;
+
+            // make sure the player actually has photophobia.
+            if (!_entityManager.TryGetComponent<PhotophobiaComponent>(playerEntity, out var blurComp))
+                return;
+
             var worldHandle = args.WorldHandle;
             var viewport = args.WorldBounds;
 
             _photophobiaShader.SetParameter("SCREEN_TEXTURE", args.Viewport.RenderTarget.Texture);
             _photophobiaShader.SetParameter("LIGHT_TEXTURE", args.Viewport.LightRenderTarget.Texture);
+            _photophobiaShader.SetParameter("effectStrength", Math.Clamp(blurComp.ShaderStrengthMultiplier, Min_Strength_Multiplier, Max_Strength_Multiplier));
 
             worldHandle.SetTransform(Matrix3x2.Identity);
             worldHandle.UseShader(_photophobiaShader);

@@ -24,8 +24,6 @@ public sealed class ItemToggleCastRaySystem : EntitySystem
     /// <summary>
     ///     Casts a ray when the item is toggled. Raises an event on all intersected entities which have the components specified by the ItemToggleCastRayComponent.
     /// </summary>
-    /// <param name="ent"></param>
-    /// <param name="args"></param>
     private void OnItemToggled(Entity<ItemToggleCastRayComponent> ent, ref ItemToggledEvent args)
     {
         if (!args.Activated)

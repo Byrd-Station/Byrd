@@ -1,4 +1,6 @@
 using Content.Shared._Omu.Traits;
+using Content.Shared.Flash.Components;
+using Content.Shared.Inventory.Events;
 using Content.Client._Omu.Eye;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
@@ -11,7 +13,6 @@ namespace Content.Client._Omu.Traits;
 /// </summary>
 public sealed class PhotophobiaSystem : SharedPhotophobiaSystem
 {
-
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
     private PhotophobiaOverlay _overlay = default!;
@@ -26,31 +27,62 @@ public sealed class PhotophobiaSystem : SharedPhotophobiaSystem
         SubscribeLocalEvent<PhotophobiaComponent, LocalPlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<PhotophobiaComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
 
+        SubscribeLocalEvent<FlashImmunityComponent, GotEquippedEvent>(OnSunglassesEquipped);
+        SubscribeLocalEvent<FlashImmunityComponent, GotUnequippedEvent>(OnSunglassesUnequipped);
+
         _overlay = new();
     }
 
-    private void OnPlayerAttached(EntityUid uid, PhotophobiaComponent component, LocalPlayerAttachedEvent args)
+    /// <summary>
+    ///     Enables the photophobia shader when the player is added to their body.
+    /// </summary>
+    private void OnPlayerAttached(Entity<PhotophobiaComponent> ent, ref LocalPlayerAttachedEvent args)
     {
         _overlayMan.AddOverlay(_overlay);
     }
 
-    private void OnPlayerDetached(EntityUid uid, PhotophobiaComponent component, LocalPlayerDetachedEvent args)
+    /// <summary>
+    ///     Disables the photophobia shader when the player is removed from their body.
+    /// </summary>
+    private void OnPlayerDetached(Entity<PhotophobiaComponent> ent, ref LocalPlayerDetachedEvent args)
     {
         _overlayMan.RemoveOverlay(_overlay);
     }
 
-    private void OnPhotophobiaInit(EntityUid uid, PhotophobiaComponent component, ComponentInit args)
+    /// <summary>
+    ///     Enables the photophobia shader when the player is given a photophobia component.
+    /// </summary>
+    private void OnPhotophobiaInit(Entity<PhotophobiaComponent> ent, ref ComponentInit args)
     {
-        if (_player.LocalEntity == uid)
+        if (_player.LocalEntity == ent.Owner)
             _overlayMan.AddOverlay(_overlay);
     }
 
-    private void OnPhotophobiaShutdown(EntityUid uid, PhotophobiaComponent component, ComponentShutdown args)
+    /// <summary>
+    ///     Disables the photophobia shader when the player's photophobia component is removed.
+    /// </summary>
+    private void OnPhotophobiaShutdown(Entity<PhotophobiaComponent> ent, ref ComponentShutdown args)
     {
-        if (_player.LocalEntity == uid)
+        if (_player.LocalEntity == ent.Owner)
         {
             _overlayMan.RemoveOverlay(_overlay);
         }
+    }
+
+    /// <summary>
+    ///     Disables the photophobia shader when sunglasses are worn.
+    /// </summary>
+    private void OnSunglassesEquipped(Entity<FlashImmunityComponent> ent, ref GotEquippedEvent args)
+    {
+        _overlayMan.RemoveOverlay(_overlay);
+    }
+
+    /// <summary>
+    ///     Reenables the photophobia shader when sunglasses are unequipped.
+    /// </summary>
+    private void OnSunglassesUnequipped(Entity<FlashImmunityComponent> ent, ref GotUnequippedEvent args)
+    {
+        _overlayMan.AddOverlay(_overlay);
     }
 
 }

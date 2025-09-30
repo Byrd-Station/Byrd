@@ -7,7 +7,7 @@ namespace Content.Shared._Omu.Item.ItemToggle.Components;
 public sealed partial class ItemToggleCastRayComponent : Component
 {
     /// <summary>
-    ///     Entities with the specified component type will recieve an ItemToggleRayHitEvent if they intersect with the ray casted by this entity.
+    ///     Entities with the specified component types will recieve an ItemToggleRayHitEvent if they intersect with the ray casted by this entity.
     /// </summary>
     [DataField(required: true)]
     public ComponentRegistry RaiseEventAt;
