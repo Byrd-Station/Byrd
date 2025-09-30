@@ -87,6 +87,15 @@
 
 - type: marking
   speciesRestriction: [ IPC ]
+  id: ScreenDot
+  bodyPart: Face
+  markingCategory: Face
+  sprites:
+    - sprite: _EinsteinEngines/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_dot
+
+- type: marking
+  speciesRestriction: [ IPC ]
   id: ScreenNature
   bodyPart: Face
   markingCategory: Face
