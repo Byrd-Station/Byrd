@@ -723,10 +723,9 @@ namespace Content.Client.Lobby.UI
             // setup the maxtraits and global trait points counters. These values will go up as selectors are (re)added to the UI.
             _selectedTraitCount = 0;
             _selectedTraitPointCount = _traitStartingPoints;
-            var selectionCount = 0;
 
-            // keep track of which categories have category-specific points, for later.
-            HashSet<TraitCategoryPrototype> categoriesWithPoints = new();
+            // keep track of which categories have category-specific points, and the points which those categories have.
+            Dictionary<TraitCategoryPrototype, int> categoriesWithPoints = new();
 
             foreach (var trait in traits)
             {
@@ -739,9 +738,9 @@ namespace Content.Client.Lobby.UI
                     continue;
 
                 // Take note of categories with their own points count, so we can add category-points text later.
-                if (category.MaxTraitPoints > 0)
+                if (category.MaxTraitPoints > 0 && !categoriesWithPoints.ContainsKey(category))
                 {
-                    categoriesWithPoints.Add(category);
+                    categoriesWithPoints.Add(category, 0);
                 }
 
                 // Create a selector for this trait, but don't display it just yet.
@@ -758,7 +757,7 @@ namespace Content.Client.Lobby.UI
                 // increment the trait count and points, if the user has the trait selected.
                 if (selector.Preference)
                 {
-                    selectionCount += trait.Cost;
+                    categoriesWithPoints[category] += trait.Cost;
                     _selectedTraitPointCount -= trait.GlobalCost;
 
                     if (trait.CountsTowardsMaxTraits)
@@ -808,12 +807,12 @@ namespace Content.Client.Lobby.UI
             }
 
             // each category with category-specific points recieves a label here.
-            foreach (var categoryWithPoints in categoriesWithPoints)
+            foreach (var (categoryWithPoints, categoryPoints) in categoriesWithPoints)
             {
                 // create the label
                 var categoryPointsText = new Label
                 {
-                    Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", selectionCount), ("max", categoryWithPoints.MaxTraitPoints!)), // we know MaxTraitPoints isn't null here because it needs to have value in order to add this category to categoriesWithPoints
+                    Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", categoryPoints), ("max", categoryWithPoints.MaxTraitPoints!)), // we know MaxTraitPoints isn't null here because it needs to have value in order to add this category to categoriesWithPoints
                     FontColorOverride = Color.LightGray
                 };
 
