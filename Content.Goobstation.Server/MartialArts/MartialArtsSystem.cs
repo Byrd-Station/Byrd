@@ -47,7 +47,8 @@ public sealed partial class MartialArtsSystem : SharedMartialArtsSystem
 
     private void OnLungPunch(Entity<KravMagaComponent> comp, ref KravMagaLungPunchEvent args)
     {
-        if (!_body.TryGetBodyOrganEntityComps<LungComponent>(args.Target, out var lungs))
+        var targetUid = GetEntity(args.Target);
+        if (!_body.TryGetBodyOrganEntityComps<LungComponent>(targetUid, out var lungs))
         {
             return;
         }
