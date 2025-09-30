@@ -29,6 +29,9 @@ public sealed partial class KravMagaActionComponent : Component
 
     [DataField]
     public int EffectTime;
+
+    [DataField]
+    public int LungDamage;
 }
 
 [RegisterComponent]

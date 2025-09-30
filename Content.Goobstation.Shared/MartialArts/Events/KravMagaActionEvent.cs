@@ -6,7 +6,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Shared.MartialArts.Components;
 using Content.Shared.Actions;
+using Robust.Shared.Serialization;
 
 namespace Content.Goobstation.Shared.MartialArts.Events;
 
@@ -15,4 +17,20 @@ namespace Content.Goobstation.Shared.MartialArts.Events;
 /// </summary>
 public sealed partial class KravMagaActionEvent : InstantActionEvent
 {
-}
+};
+
+/// <summary>
+/// This is for inflicting lung damage
+/// </summary>
+[Serializable, NetSerializable]
+public sealed partial class KravMagaLungPunchEvent : EntityEventArgs
+{
+    public EntityUid Target;
+    public int LungDamage;
+
+    public KravMagaLungPunchEvent(EntityUid target, int lungDamage)
+    {
+        this.Target = target;
+        this.LungDamage = lungDamage;
+    }
+};

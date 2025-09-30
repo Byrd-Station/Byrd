@@ -23,7 +23,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.Body.Components;
 
-[RegisterComponent, Access(typeof(LungSystem))]
+[RegisterComponent, Access(typeof(LungSystem), typeof(BodySystem))]
 public sealed partial class LungComponent : Component
 {
     [DataField]
