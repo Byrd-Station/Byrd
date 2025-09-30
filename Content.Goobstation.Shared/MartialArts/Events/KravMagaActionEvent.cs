@@ -35,11 +35,6 @@ public sealed partial class KravMagaLungPunchEvent : EntityEventArgs
     {
         Target = target;
         LungDamage = lungDamage;
-    public int LungDamage;
-
-    public KravMagaLungPunchEvent(EntityUid target, int lungDamage)
-    {
-        this.Target = target;
-        this.LungDamage = lungDamage;
     }
+
 };

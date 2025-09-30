@@ -18,6 +18,7 @@ using Content.Shared.Body.Organ;
 using Content.Server.Chat.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
+using Content.Shared.Body.Components;
 using Content.Shared.Chat;
 using Content.Shared.Damage;
 
@@ -37,7 +38,7 @@ public sealed partial class MartialArtsSystem : SharedMartialArtsSystem
     {
         base.Initialize();
         SubscribeLocalEvent<CanPerformComboComponent, SleepingCarpSaying>(OnSleepingCarpSaying);
-        SubscribeLocalEvent<KravMagaComponent, KravMagaLungPunchEvent>(OnLungPunch);
+        SubscribeLocalEvent<BodyComponent, KravMagaLungPunchEvent>(OnLungPunch);
     }
 
     private void OnSleepingCarpSaying(Entity<CanPerformComboComponent> ent, ref SleepingCarpSaying args)
@@ -45,7 +46,7 @@ public sealed partial class MartialArtsSystem : SharedMartialArtsSystem
         _chat.TrySendInGameICMessage(ent, Loc.GetString(args.Saying), InGameICChatType.Speak, false);
     }
 
-    private void OnLungPunch(Entity<KravMagaComponent> comp, ref KravMagaLungPunchEvent args)
+    private void OnLungPunch(Entity<BodyComponent> comp, ref KravMagaLungPunchEvent args)
     {
         var targetUid = GetEntity(args.Target);
         if (!_body.TryGetBodyOrganEntityComps<LungComponent>(targetUid, out var lungs))
@@ -54,7 +55,7 @@ public sealed partial class MartialArtsSystem : SharedMartialArtsSystem
         }
         // Cool, I have a list of lungs now! I should destroy each lung one by one, but skip the ones totally destroyed.
         // Get the stomach with the highest available solution volume
-        FixedPoint2 lowestAvailable = 0;
+        FixedPoint2 lowestAvailable = 100;
         Entity<LungComponent, OrganComponent>? lungToUse = null;
         foreach (var lung in lungs)
         {
@@ -76,6 +77,17 @@ public sealed partial class MartialArtsSystem : SharedMartialArtsSystem
             return;
 
         //_damagable.TryChangeDamage(lungToUse.Owner);
-        _trauma.TryCreateOrganDamageModifier(lungToUse.Value.Owner, args.LungDamage, comp.Owner, "Crunched", lungToUse.Value.Comp2);
+        if (!_trauma.TryChangeOrganDamageModifier(lungToUse.Value.Owner,
+                -args.LungDamage,
+                comp.Owner,
+                "Crunched",
+                lungToUse.Value.Comp2));
+        {
+            _trauma.TryCreateOrganDamageModifier(lungToUse.Value.Owner,
+                -args.LungDamage,
+                comp.Owner,
+                "Crunched",
+                lungToUse.Value.Comp2);
+        }
     }
 }
