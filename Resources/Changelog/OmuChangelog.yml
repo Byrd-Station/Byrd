@@ -543,3 +543,15 @@ Entries:
       message: 'Aghost Inventory bag '
   id: 65
   time: '2025-09-28T09:09:44.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Set up and added Patron Tiers, Benefits, and more! Check it out!
+  id: 66
+  time: '2025-09-28T21:57:27.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Heretics and Lings should spawn less on lower pop now.
+  id: 67
+  time: '2025-09-29T02:49:54.0000000+00:00'
