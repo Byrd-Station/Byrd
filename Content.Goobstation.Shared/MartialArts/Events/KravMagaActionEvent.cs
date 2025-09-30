@@ -25,7 +25,16 @@ public sealed partial class KravMagaActionEvent : InstantActionEvent
 [Serializable, NetSerializable]
 public sealed partial class KravMagaLungPunchEvent : EntityEventArgs
 {
-    public EntityUid Target;
+    [DataField("target")]
+    public NetEntity Target { get; }
+
+    [DataField("lungDamage")]
+    public int LungDamage { get; }
+
+    public KravMagaLungPunchEvent(NetEntity target, int lungDamage)
+    {
+        Target = target;
+        LungDamage = lungDamage;
     public int LungDamage;
 
     public KravMagaLungPunchEvent(EntityUid target, int lungDamage)
