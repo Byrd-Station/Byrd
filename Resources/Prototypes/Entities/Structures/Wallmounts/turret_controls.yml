@@ -187,12 +187,14 @@
     exemptAccessLevels:
     - BasicSilicon
     - Borg
-#  - type: DeployableTurretController # Omu, commenting this out means that the turret control can change its whitelist to allow other jobs.
-#    accessGroups:
-#    - Silicon
-#    accessLevels:
-#    - BasicSilicon
-#    - Borg
+  - type: DeployableTurretController 
+    accessGroups:
+    - Research # Omu, allow AI to whitelist RD
+    - Silicon
+    accessLevels:
+    - ResearchDirector # Omu, allow AI to whitelist RD
+    - BasicSilicon
+    - Borg
 
 - type: entity
   parent: WeaponEnergyTurretStationControlPanelBase
