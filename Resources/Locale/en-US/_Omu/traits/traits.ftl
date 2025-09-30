@@ -17,6 +17,12 @@ trait-claws-desc =
     Your unarmed melee attacks deal Slashing damage instead of the standard damage type for your species.
     This has no effect on damage dealt with any form of armed melee.
 
+trait-photophobia-name = Photophobia
+trait-photophobia-desc =
+    Your eyes are extremely sensitive to light.
+    Brighter areas will appear blown-out, and you will be flashed if somebody turns on their flashlight in your direction.
+    Pick this trait if you want to roleplay a mothperson as God intended.
+
 trait-moth-flight-name = True Flight
 trait-moth-flight-desc =
     Unlike other mothpeople, your body is light enough and your wings are strong enough to be able to fly under normal gravity.
