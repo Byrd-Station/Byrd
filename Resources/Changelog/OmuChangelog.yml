@@ -555,3 +555,33 @@ Entries:
       message: Heretics and Lings should spawn less on lower pop now.
   id: 67
   time: '2025-09-29T02:49:54.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Cosmic blank now has a hidden do-after.
+  id: 68
+  time: '2025-09-30T19:53:26.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: Removed the shrapnel grenade from syndie uplink.
+    - type: Tweak
+      message: >-
+        Changed the price of the shrapnel grenade from 4tc to 20tc in the nukie
+        uplink
+  id: 69
+  time: '2025-09-30T19:54:20.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Add
+      message: revolvers can now pistol-whip
+    - type: Tweak
+      message: >-
+        Bandolier's can now also store 8 Gauge shells ( used to be only 12 Gauge
+        )
+    - type: Fix
+      message: >-
+        Warden's duty case now has working fluff. Also fixes capitalization of
+        the other duty cases.
+  id: 70
+  time: '2025-09-30T19:55:20.0000000+00:00'
