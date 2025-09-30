@@ -69,7 +69,7 @@
         acts: [ "Destruction" ]
   - type: IntrinsicRadioTransmitter
     channels:
-    - Binary
+#    - Binary
     - Common
     - Science
     - CentCom
@@ -77,12 +77,16 @@
     - Command
   - type: ActiveRadio
     channels:
-    - Binary
+#    - Binary
     - Common
     - Science
     - CentCom
     - Security
     - Command
+  - type: CollectiveMind
+    defaultChannel: Binary
+    channels:
+    - Binary
   - type: ContainerFill
     containers:
       borg_brain:
