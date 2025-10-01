@@ -6,6 +6,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Goobstation.Shared.MartialArts.Components;
 using Content.Shared.Actions;
 using Content.Shared.Damage;
@@ -30,7 +31,7 @@ public sealed partial class KravMagaLungPunchEventOld : EntityEventArgs
     public NetEntity Target { get; }
 
     [DataField("lungDamage")]
-    public int LungDamage { get; }
+    public FixedPoint2 LungDamage { get; }
 
     public KravMagaLungPunchEventOld(NetEntity target, int lungDamage)
     {
@@ -41,4 +42,4 @@ public sealed partial class KravMagaLungPunchEventOld : EntityEventArgs
 };
 
 [ByRefEvent]
-public record struct KravMagaLungPunchEvent(NetEntity Target, DamageSpecifier LungDamage);
+public record struct KravMagaLungPunchEvent(NetEntity Target, FixedPoint2 LungDamage);

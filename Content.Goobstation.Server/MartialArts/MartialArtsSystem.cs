@@ -20,7 +20,7 @@ using Content.Shared._Shitmed.Medical.Surgery.Traumas;
 using Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
 using Content.Shared.Body.Components;
 using Content.Shared.Chat;
-using Content.Shared.Damage;
+//using Content.Shared.Damage;
 
 namespace Content.Goobstation.Server.MartialArts;
 
@@ -32,7 +32,7 @@ public sealed partial class MartialArtsSystem : SharedMartialArtsSystem
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly SharedBodySystem _body = default!;
     [Dependency] private readonly TraumaSystem _trauma = default!;
-    [Dependency] private readonly DamageableSystem _damagable = default!;
+    //[Dependency] private readonly DamageableSystem _damagable = default!;
 
     public override void Initialize()
     {
@@ -46,10 +46,10 @@ public sealed partial class MartialArtsSystem : SharedMartialArtsSystem
         _chat.TrySendInGameICMessage(ent, Loc.GetString(args.Saying), InGameICChatType.Speak, false);
     }
 
-    private void OnLungPunch(Entity<BodyComponent> comp, ref KravMagaLungPunchEvent args)
+    private void OnLungPunch(Entity<BodyComponent> ent, ref KravMagaLungPunchEvent args)
     {
         var targetUid = GetEntity(args.Target);
-        if (!_body.TryGetBodyOrganEntityComps<LungComponent>(targetUid, out var lungs))
+        if (!_body.TryGetBodyOrganEntityComps<LungComponent>(ent!, out var lungs))
         {
             return;
         }
@@ -59,7 +59,6 @@ public sealed partial class MartialArtsSystem : SharedMartialArtsSystem
         Entity<LungComponent, OrganComponent>? lungToUse = null;
         foreach (var lung in lungs)
         {
-            var owner = lung.Comp2.Body;
             //So... skip destroyed lungs, and then continuously compare each lung's max severy with the last worst.
 
             if ( lung.Comp2.OrganSeverity is OrganSeverity.Destroyed )
@@ -76,20 +75,19 @@ public sealed partial class MartialArtsSystem : SharedMartialArtsSystem
         if (lungToUse == null)
             return;
 
-
-        _damagable.TryChangeDamage(lungToUse.Value,args.LungDamage,true,true);
-        //_damagable.TryChangeDamage(lungToUse.Owner);
-        //if (!_trauma.TryChangeOrganDamageModifier(lungToUse.Value.Owner,
-        //        -args.LungDamage,
-        //        comp.Owner,
-        //        "Crunched",
-        //        lungToUse.Value.Comp2));
-        //{
-        //    _trauma.TryCreateOrganDamageModifier(lungToUse.Value.Owner,
-        //        -args.LungDamage,
-        //        comp.Owner,
-        //        "Crunched",
-        //        lungToUse.Value.Comp2);
-        //}
+        // This shit doesn't work because OrganDamage is not a damn damage type, it's a trauma *inflicted by* a damage type.
+        //_damagable.TryChangeDamage(lungToUse.Value,args.LungDamage,true,true);
+        if (!_trauma.TryChangeOrganDamageModifier(lungToUse.Value.Owner,
+                -1,
+                ent.Owner,
+                "Crunched",
+                lungToUse.Value.Comp2))
+        {
+            _trauma.TryCreateOrganDamageModifier(lungToUse.Value.Owner,
+                -1,
+                ent.Owner,
+                "Crunched",
+                lungToUse.Value.Comp2);
+        }
     }
 }

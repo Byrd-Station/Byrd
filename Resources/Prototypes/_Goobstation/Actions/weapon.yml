@@ -63,6 +63,4 @@
     name: Lung Punch
     staminaDamage: 40
     effectTime: 10
-    lungDamage:
-      types:
-        blunt: 20
+    lungDamage: 20

@@ -7,6 +7,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.MartialArts;
+using Content.Goobstation.Maths.FixedPoint;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Content.Shared.Damage;
@@ -32,7 +33,7 @@ public sealed partial class KravMagaActionComponent : Component
     public int EffectTime;
 
     [DataField]
-    public DamageSpecifier LungDamage;
+    public FixedPoint2 LungDamage;
 }
 
 [RegisterComponent]
