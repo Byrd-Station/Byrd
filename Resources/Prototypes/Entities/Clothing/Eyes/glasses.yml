@@ -200,7 +200,7 @@
     coverage: EYES
   - type: Tag
     tags:
-    - CorgiWearable
+    - PetWearable
     - WhitelistChameleon
 
 - type: entity
@@ -277,7 +277,7 @@
   - type: Tag
     tags:
     - HamsterWearable
-    - CorgiWearable
+    - PetWearable
     - WhitelistChameleon
   - type: IdentityBlocker
     coverage: EYES
@@ -294,7 +294,7 @@
   - type: Tag
     tags:
     - Sunglasses
-    - CorgiWearable
+    - PetWearable
     - HamsterWearable
     - WhitelistChameleon
 
@@ -317,7 +317,7 @@
   - type: Tag
     tags:
     - HamsterWearable
-    - CorgiWearable
+    - PetWearable
     - WhitelistChameleon
   - type: GuideHelp
     guides:
@@ -357,7 +357,7 @@
   - type: Tag
     tags:
     - HamsterWearable
-    - CorgiWearable
+    - PetWearable
     - WhitelistChameleon
   - type: IdentityBlocker
     coverage: EYES
@@ -446,7 +446,7 @@
         Glass: 125
     - type: Tag
       tags:
-      - CorgiWearable
+      - PetWearable
       - WhitelistChameleon
 
 - type: entity
@@ -479,7 +479,7 @@
       NerveDamage: 0
 
 - type: entity
-  parent: ClothingEyesBase
+  parent: ClothingEyesGlassesSecurity # Omu 127 - Used to be ClothingEyesBase, see below
   id: ClothingEyesGlassesNoir
   name: noir-tech glasses
   description: A pair of glasses that simulate what the world looked like before the invention of color.
@@ -488,11 +488,11 @@
     sprite: Clothing/Eyes/Glasses/noir.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Glasses/sunglasses.rsi
-  - type: IdentityBlocker
-    coverage: EYES
-  - type: FlashImmunity
-  - type: EyeProtection
-    protectionTime: 5
+#  - type: IdentityBlocker # Omu edit - Noir glasses are already parented from sechuds now
+#    coverage: EYES
+#  - type: FlashImmunity
+#  - type: EyeProtection
+#    protectionTime: 5
   - type: NoirOverlay
   - type: Tag
     tags:
