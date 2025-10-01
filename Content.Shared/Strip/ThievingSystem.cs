@@ -33,7 +33,7 @@ public sealed partial class ThievingSystem : EntitySystem
     private void OnBeforeStrip(EntityUid uid, ThievingComponent component, BeforeStripEvent args)
     {
         args.Stealth |= component.Stealthy;
-        if (args.Stealth)
+        if (args.Stealth || !component.Toggleable) // Omu edit - Thieving trait fixes
         {
             args.Additive -= component.StripTimeReduction;
         }
