@@ -30,7 +30,7 @@
     moduleWhitelist:
       tags:
       - BorgModuleGeneric
-      - BorgModuleSyndicate
+      - BorgModuleCentComm
   - type: FlashImmunity
   - type: MobThresholds # tankier
     thresholds:
@@ -113,6 +113,8 @@
     tags:
     - Borg
     - CentralCommand
+    - BlueshieldOfficer
+    - NanotrasenRepresentative
   - type: AccessReader
     access: [ [ "Command" ], [ "Research" ] ]
   - type: ShowJobIcons
@@ -235,6 +237,8 @@
     tags:
     - Borg
     - CentralCommand
+    - BlueshieldOfficer
+    - NanotrasenRepresentative
   - type: AccessReader
     access: [ [ "Command" ], [ "Research" ] ]
   - type: ShowJobIcons

@@ -44,7 +44,7 @@
     - ZiptieDispenser
     - JawsOfLife
     - SonicJackhammer
-    - JetpackBlueFilled
+    - JetpackXenoborg
   - type: BorgModuleIcon
     icon: { sprite: _Devilstation/Interface/Actions/actions_borg.rsi, state: ert-module }
 
@@ -68,6 +68,6 @@
     - Flash
     - JawsOfLife
     - SonicJackhammer
-    - JetpackBlackFilled
+    - JetpackXenoborg
   - type: BorgModuleIcon
     icon: { sprite: _Devilstation/Interface/Actions/actions_borg.rsi, state: ert-module } #im lazy
