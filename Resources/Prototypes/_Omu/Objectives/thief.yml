@@ -1,0 +1,10 @@
+﻿- type: entity                                      #Science subgroup
+  parent: BaseThiefStealObjective
+  id: ClothingEyesHudSciDiagStealObjective
+  components:
+  - type: NotJobRequirement
+    job: ResearchDirector
+  - type: StealCondition
+    stealGroup: ClothingEyesHudSciDiag
+  - type: Objective
+    difficulty: 0.7

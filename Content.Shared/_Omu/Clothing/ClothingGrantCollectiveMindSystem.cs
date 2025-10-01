@@ -1,19 +1,15 @@
-using Content.Goobstation.Shared.Clothing.Components;
+using Content.Shared._Omu.Clothing.Components;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory.Events;
-using Robust.Shared.Serialization.Manager;
 using Content.Shared._Starlight.CollectiveMind;
 
-namespace Content.Goobstation.Shared.Clothing.Systems;
+namespace Content.Shared._Omu.Clothing;
 
 /// <summary>
 /// Basically the same as <see cref="ClothingGrantingSystem"/>, but specifically to handle items granting access to hivemind channels like binary.
 /// </summary>
 public sealed class ClothingGrantCollectiveMindSystem : EntitySystem
 {
-    [Dependency] private readonly IComponentFactory _componentFactory = default!;
-    [Dependency] private readonly ISerializationManager _serializationManager = default!;
-
     public override void Initialize()
     {
         base.Initialize();

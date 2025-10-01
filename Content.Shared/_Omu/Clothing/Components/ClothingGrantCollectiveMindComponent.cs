@@ -1,7 +1,7 @@
 using Robust.Shared.Prototypes;
 using Content.Shared._Starlight.CollectiveMind;
 
-namespace Content.Goobstation.Shared.Clothing.Components
+namespace Content.Shared._Omu.Clothing.Components
 {
     [RegisterComponent]
     public sealed partial class ClothingGrantCollectiveMindComponent : Component
