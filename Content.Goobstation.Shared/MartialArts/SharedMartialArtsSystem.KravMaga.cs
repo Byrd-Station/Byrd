@@ -77,7 +77,7 @@ public abstract partial class SharedMartialArtsSystem
             case KravMagaMoves.LungPunch:
                 var ev = new KravMagaLungPunchEvent(GetNetEntity(hitEntity), moveComp.LungDamage);
 
-                RaiseLocalEvent(hitEntity,ev);
+                RaiseLocalEvent(hitEntity,ref ev);
                 _stamina.TakeStaminaDamage(hitEntity, moveComp.StaminaDamage, applyResistances: true);
                 var blockedBreathingComponent = EnsureComp<KravMagaBlockedBreathingComponent>(hitEntity);
                 blockedBreathingComponent.BlockedTime = _timing.CurTime + TimeSpan.FromSeconds(moveComp.EffectTime);

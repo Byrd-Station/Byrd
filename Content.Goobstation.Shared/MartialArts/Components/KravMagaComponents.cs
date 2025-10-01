@@ -9,6 +9,7 @@
 using Content.Goobstation.Common.MartialArts;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Content.Shared.Damage;
 
 namespace Content.Goobstation.Shared.MartialArts.Components;
 
@@ -31,7 +32,7 @@ public sealed partial class KravMagaActionComponent : Component
     public int EffectTime;
 
     [DataField]
-    public int LungDamage;
+    public DamageSpecifier LungDamage;
 }
 
 [RegisterComponent]

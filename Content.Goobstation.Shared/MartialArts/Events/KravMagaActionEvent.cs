@@ -8,6 +8,7 @@
 
 using Content.Goobstation.Shared.MartialArts.Components;
 using Content.Shared.Actions;
+using Content.Shared.Damage;
 using Robust.Shared.Serialization;
 
 namespace Content.Goobstation.Shared.MartialArts.Events;
@@ -23,7 +24,7 @@ public sealed partial class KravMagaActionEvent : InstantActionEvent
 /// This is for inflicting lung damage
 /// </summary>
 [Serializable, NetSerializable]
-public sealed partial class KravMagaLungPunchEvent : EntityEventArgs
+public sealed partial class KravMagaLungPunchEventOld : EntityEventArgs
 {
     [DataField("target")]
     public NetEntity Target { get; }
@@ -31,10 +32,13 @@ public sealed partial class KravMagaLungPunchEvent : EntityEventArgs
     [DataField("lungDamage")]
     public int LungDamage { get; }
 
-    public KravMagaLungPunchEvent(NetEntity target, int lungDamage)
+    public KravMagaLungPunchEventOld(NetEntity target, int lungDamage)
     {
         Target = target;
         LungDamage = lungDamage;
     }
 
 };
+
+[ByRefEvent]
+public record struct KravMagaLungPunchEvent(NetEntity Target, DamageSpecifier LungDamage);

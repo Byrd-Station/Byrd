@@ -76,18 +76,20 @@ public sealed partial class MartialArtsSystem : SharedMartialArtsSystem
         if (lungToUse == null)
             return;
 
+
+        _damagable.TryChangeDamage(lungToUse.Value,args.LungDamage,true,true);
         //_damagable.TryChangeDamage(lungToUse.Owner);
-        if (!_trauma.TryChangeOrganDamageModifier(lungToUse.Value.Owner,
-                -args.LungDamage,
-                comp.Owner,
-                "Crunched",
-                lungToUse.Value.Comp2));
-        {
-            _trauma.TryCreateOrganDamageModifier(lungToUse.Value.Owner,
-                -args.LungDamage,
-                comp.Owner,
-                "Crunched",
-                lungToUse.Value.Comp2);
-        }
+        //if (!_trauma.TryChangeOrganDamageModifier(lungToUse.Value.Owner,
+        //        -args.LungDamage,
+        //        comp.Owner,
+        //        "Crunched",
+        //        lungToUse.Value.Comp2));
+        //{
+        //    _trauma.TryCreateOrganDamageModifier(lungToUse.Value.Owner,
+        //        -args.LungDamage,
+        //        comp.Owner,
+        //        "Crunched",
+        //        lungToUse.Value.Comp2);
+        //}
     }
 }
