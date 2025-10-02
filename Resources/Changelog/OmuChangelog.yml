@@ -613,3 +613,11 @@ Entries:
         points across all categories.
   id: 73
   time: '2025-10-01T02:54:52.0000000+00:00'
+- author: MarkerWicker
+  changes:
+    - type: Fix
+      message: >-
+        Traits should work again, the previous bugfix broke them entirely. If
+        traits are still broken, contact marker4457 on Discord.
+  id: 74
+  time: '2025-10-01T17:08:38.0000000+00:00'
