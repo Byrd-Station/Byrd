@@ -96,9 +96,9 @@
   description: A set of security webbing with blue corpsman highlights.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Belt/corpsman.rsi
+    sprite: _DV/Clothing/Belt/corpsman.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Belt/corpsman.rsi
+    sprite: _DV/Clothing/Belt/corpsman.rsi
   - type: ExplosionResistance # Goobstation
     damageCoefficient: 0.5
   - type: Storage

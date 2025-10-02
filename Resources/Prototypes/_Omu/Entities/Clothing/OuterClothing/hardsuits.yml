@@ -6,9 +6,9 @@
   description: A purpose-built combat suit designed to allow its user greater mobility for superior support of friendly units in active combat zones.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/OuterClothing/Hardsuits/corpsman.rsi
+    sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/corpsman.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/OuterClothing/Hardsuits/corpsman.rsi
+    sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/corpsman.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000

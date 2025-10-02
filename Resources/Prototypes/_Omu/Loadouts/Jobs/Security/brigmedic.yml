@@ -63,4 +63,14 @@
   equipment:
     ears: ClothingHeadsetAltCorpsman
 
+- type: loadout
+  id: GlassesCorpsman
+  equipment:
+    eyes: ClothingEyesGlassesCorpsman
+
+- type: loadout
+  id: GlassesMedSec
+  equipment:
+    eyes: ClothingEyesGlassesMedSec
+
 

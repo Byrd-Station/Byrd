@@ -54,4 +54,12 @@
   - CorpsmanHeadset
   - CorpsmanAltHeadset
 
+- type: loadoutGroup
+  id: CorpsmanGlasses
+  name: loadout-group-corpsman-glasses
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - GlassesMedSec
+  - GlassesCorpsman
 

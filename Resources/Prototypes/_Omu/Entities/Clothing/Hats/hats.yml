@@ -50,8 +50,8 @@
   description: For style-conscious combat lifesavers and medical specialists alike.
   components:
   - type: Sprite
-    sprite: DeltaV/Clothing/Head/Hats/beret_corpsman.rsi
+    sprite: _DV/Clothing/Head/Hats/beret_corpsman.rsi
   - type: Clothing
-    sprite: DeltaV/Clothing/Head/Hats/beret_corpsman.rsi
+    sprite: _DV/Clothing/Head/Hats/beret_corpsman.rsi
 
 
