@@ -67,9 +67,16 @@
         conditions:
         - !type:OrganType
           type: Feroxi
+      - !type:Oxygenate # Imp - Thaven can breathe anything
+        conditions:
+        - !type:OrganType
+          type: Thaven
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:
+        - !type:OrganType # TheDen - Thaven don't do chemical reactions in their lungs
+          type: Thaven
+          shouldHave: false
         - !type:OrganType
           type: Vox
           shouldHave: false
@@ -221,6 +228,9 @@
         - !type:OrganType # Goobstation - Yowie
           type: Yowie
           shouldHave: false
+        - !type:OrganType # thaven breathe good
+          type: Thaven
+          shouldHave: false
         - !type:OrganType # EE - Plasmeme
           type: Plasmaman
           shouldHave: false
@@ -270,6 +280,9 @@
           - !type:OrganType
             type: Plasmaman
             shouldHave: false
+          - !type:OrganType # IMP - gds thaven   bhrathe goot.
+            type: Thaven
+            shouldHave: false
           - !type:ReagentThreshold
             min: 1.5
         clear: True
@@ -279,6 +292,10 @@
         conditions:
         - !type:OrganType
           type: Plasmaman
+      - !type:Oxygenate # Imp - Thaven can breathe anything
+        conditions:
+        - !type:OrganType
+          type: Thaven
       - !type:ModifyLungGas
         conditions:
         - !type:OrganType
@@ -355,6 +372,9 @@
       effects:
       - !type:HealthChange
         conditions:
+        - !type:OrganType # TheDen - Thaven can breathe it safely
+          type: Thaven
+          shouldHave: false
         - !type:OrganType # Shitmed - Cybernetic Organs
           type: Cybernetic
           shouldHave: false
@@ -364,10 +384,17 @@
           types:
             Radiation:
               1
+      - !type:Oxygenate # Imp - Thaven can breathe anything
+        conditions:
+        - !type:OrganType
+          type: Thaven
       # We need a metabolism effect on reagent removal
       - !type:AdjustAlert
         alertType: Toxins
         conditions:
+          - !type:OrganType # TheDen - Thaven can breathe it safely
+            type: Thaven
+            shouldHave: false
           - !type:ReagentThreshold
             min: 1.5
         clear: True
@@ -397,6 +424,10 @@
         conditions:
         - !type:OrganType
           type: Plant
+      - !type:Oxygenate # Imp - Thaven can breathe anything
+        conditions:
+        - !type:OrganType
+          type: Thaven
       - !type:HealthChange
         conditions:
         - !type:OrganType
@@ -404,6 +435,9 @@
           shouldHave: false
         - !type:OrganType
           type: Vox
+          shouldHave: false
+        - !type:OrganType # TheDen - Thaven can breathe it safely
+          type: Thaven
           shouldHave: false
         - !type:OrganType # Shitmed - Cybernetic Organs
           type: Cybernetic
@@ -418,6 +452,9 @@
         conditions:
         - !type:OrganType
           type: Plant
+          shouldHave: false
+        - !type:OrganType # TheDen - Thaven can breathe anything
+          type: Thaven
           shouldHave: false
         - !type:OrganType # Shitmed - Cybernetic Organs
           type: Cybernetic
@@ -458,6 +495,9 @@
         - !type:OrganType
           type: Plant
           shouldHave: false
+        - !type:OrganType # TheDen - Thaven can breathe anything
+          type: Thaven
+          shouldHave: false
         - !type:OrganType # Shitmed - Cybernetic Organs
           type: Cybernetic
           shouldHave: false
@@ -492,6 +532,10 @@
         conditions:
         - !type:OrganType
           type: Slime
+      - !type:Oxygenate # Imp - Thaven can breathe anything
+        conditions:
+        - !type:OrganType
+          type: Thaven
       - !type:Oxygenate # Shitmed - Cybernetic Organs
         conditions:
         - !type:OrganType
@@ -537,6 +581,10 @@
             Poison: 2
     Gas:
       effects:
+      - !type:Oxygenate # Imp - Thaven can breathe anything
+        conditions:
+        - !type:OrganType
+          type: Thaven
       - !type:Emote
         conditions:
         - !type:ReagentThreshold
@@ -545,6 +593,9 @@
           max: 0.5
         - !type:OrganType
           type: Slime
+          shouldHave: false
+        - !type:OrganType # TheDen - Thaven can breathe it safely
+          type: Thaven
           shouldHave: false
         - !type:OrganType # Shitmed - Cybernetic Organs
           type: Cybernetic
@@ -563,6 +614,9 @@
         - !type:OrganType # Shitmed - Cybernetic Organs
           type: Cybernetic
           shouldHave: false
+        - !type:OrganType # TheDen - Thaven can breathe it safely
+          type: Thaven
+          shouldHave: false
         - !type:BloodReagentThreshold #  Assmos - /tg/ gases
           reagent: NitrosylPlasmide
           max: 0.1
@@ -577,6 +631,9 @@
           min: 1
         - !type:OrganType
           type: Slime
+          shouldHave: false
+        - !type:OrganType # TheDen - Thaven can breathe it safely
+          type: Thaven
           shouldHave: false
         - !type:OrganType # Shitmed - Cybernetic Organs
           type: Cybernetic
@@ -600,6 +657,9 @@
         - !type:OrganType
           type: Slime
           shouldHave: false
+        - !type:OrganType # TheDen - Thaven can breathe it safely
+          type: Thaven
+          shouldHave: false
         - !type:OrganType # Shitmed - Cybernetic Organs
           type: Cybernetic
           shouldHave: false
@@ -622,6 +682,9 @@
           min: 3.5
         - !type:OrganType
           type: Slime
+          shouldHave: false
+        - !type:OrganType # TheDen - Thaven can breathe it safely
+          type: Thaven
           shouldHave: false
         ignoreResistances: true
         damage:
@@ -672,6 +735,10 @@
           min: 1
     Gas:
       effects:
+      - !type:Oxygenate # Imp - Thaven can breathe anything
+        conditions:
+        - !type:OrganType
+          type: Thaven
       - !type:HealthChange
         conditions:
         - !type:OrganType # Goobstation - Yowie
@@ -695,6 +762,9 @@
         - !type:ReagentThreshold
           reagent: Frezon
           min: 0.5
+        - !type:OrganType # TheDen - Thaven can breathe it safely, but it still gets them high
+          type: Thaven
+          shouldHave: false
         scaleByQuantity: true
         ignoreResistances: true
         damage:

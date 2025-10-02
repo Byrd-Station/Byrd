@@ -249,6 +249,7 @@
     - AmmoniaBlood
     - ZombieBlood
     - BlackBlood # Goobstation
+    - ShimmeringBlood # gds
 
 - type: xenoArchTrigger
   id: TriggerThrow
