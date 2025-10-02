@@ -49,3 +49,4 @@ motd-48 = Is that an egg on your face, or part of your eye?
 motd-49 = The white weaves down as if you cry.
 motd-50 = The shell itself is the reason why.
 motd-51 = Well, there is a server here.
+motd-52 = Hottest MRP Slopfork in town!
