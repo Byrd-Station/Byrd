@@ -32,7 +32,7 @@ public sealed class ClothingGrantCollectiveMindSystem : EntitySystem
             mind.Channels.Add(channel);
         }
 
-        if (comp.defaultChannel is null)
+        if (mind.DefaultChannel is null)
         {
             mind.DefaultChannel = comp.defaultChannel;
         }
