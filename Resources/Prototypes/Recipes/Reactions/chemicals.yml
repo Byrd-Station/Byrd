@@ -574,3 +574,18 @@
       amount: 1
   products:
     ArtifactGlue: 2
+
+# Omu - Admeme, TemuViro
+- type: reaction
+  id: CE235Synthesis
+  impact: Medium
+  minTemp: 350  # Requires some heat to catalyze
+  reactants:
+    SpaceGlue:
+      amount: 1
+    DexalinPlus:
+      amount: 1
+    Dylovene:
+      amount: 1
+  products:
+    CE235: 3  # 1 from each component

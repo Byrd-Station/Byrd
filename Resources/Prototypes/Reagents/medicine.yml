@@ -1816,3 +1816,20 @@
       - !type:AdjustReagent
         reagent: MindbreakerToxin
         amount: -3.0
+
+# Omu - Admeme, TemuViro
+- type: reagent
+  id: CE235
+  name: CE-235
+  group: Medicine
+  desc: Central Command told us to try this, will this work? we don't know.
+  physicalDesc: A thick, white and sticky liquid that smells like burned glue.
+  flavor: glue
+  color: "#BAD3E8"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:GenericStatusEffect
+        key: CE235Cure
+        component: TemuViroComponent
+        IsCured: true
