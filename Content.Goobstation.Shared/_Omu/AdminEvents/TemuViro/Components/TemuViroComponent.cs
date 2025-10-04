@@ -2,10 +2,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Robust.Shared.Serialization;
+using Robust.Shared.GameStates;
 
 namespace Content.Goobstation.Shared._Omu.AdminEvents.TemuViro.Components;
-[RegisterComponent, Serializable, NetSerializable, AutoGenerateComponentState]
+[RegisterComponent, AutoGenerateComponentState, NetworkedComponent]
 
 public sealed partial class TemuViroComponent : Component
 {
@@ -56,24 +56,6 @@ public sealed partial class TemuViroComponent : Component
     /// </summary>
     [DataField]
     public int MaxPoisonDamagePerEffect { get; set; } = 5;
-
-    /// <summary>
-    /// Maximum drunkenness intensity at max poison damage.
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadOnly)]
-    public float MaxDrunkenness = 5f;
-
-    /// <summary>
-    /// Current drunkenness effect value.
-    /// </summary>
-    [ViewVariables]
-    public float CurrentDrunkenness => Math.Clamp(
-        PoisonDamage / MaxPoisonDamage * MaxDrunkenness,
-        0f,
-        MaxDrunkenness
-    );
-
-
 
     #region Networked stuff
     /// <summary>

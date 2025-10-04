@@ -1,5 +1,6 @@
 using Content.Goobstation.Shared._Omu.AdminEvents.TemuViro;
 using Content.Goobstation.Shared._Omu.AdminEvents.TemuViro.Components;
+using Content.Goobstation.Shared._Omu.AdminEvents.TemuViro.Events;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Database;
@@ -24,6 +25,7 @@ public sealed class TemuViroSystem : SharedTemuViroSystem
         base.Initialize();
         SubscribeLocalEvent<TemuViroComponent, SolutionContainerChangedEvent>(OnSolutionChanged);
         SubscribeLocalEvent<TemuViroComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<TemuViroComponent, OnVomitEvent>(OnVomit);
     }
 
     private void OnMapInit(EntityUid uid, TemuViroComponent component, MapInitEvent args)
@@ -70,19 +72,36 @@ public sealed class TemuViroSystem : SharedTemuViroSystem
         if (component.CureProgress >= component.CureAmountNeeded)
         {
             // Show popup after 5 seconds
-            Timer.Spawn(TimeSpan.FromSeconds(5), () =>
-            {
-                if (!EntityManager.EntityExists(uid))
-                    return;
-                // Admin Log
-                _adminLogManager.Add(LogType.AdminMessage,
-                    LogImpact.Medium,
-                    $"{ToPrettyString(uid)} has been cured of Temu Virus");
+            Timer.Spawn(TimeSpan.FromSeconds(5),
+                () =>
+                {
+                    if (!EntityManager.EntityExists(uid))
+                        return;
+                    // Admin Log
+                    _adminLogManager.Add(LogType.AdminMessage,
+                        LogImpact.Medium,
+                        $"{ToPrettyString(uid)} has been cured of Temu Virus");
 
-                component.IsCured = true;
-                _popupSystem.PopupEntity("You feel better.", uid, PopupType.Medium);
-            });
+                    component.IsCured = true;
+                    _popupSystem.PopupEntity("You feel better.", uid, PopupType.Medium);
+                });
         }
+    }
+    #endregion
+
+    #region Vomit
+    private void OnVomit(Entity<TemuViroComponent> entity, ref OnVomitEvent args)
+    {
+        var target = GetEntity(args.Entity);
+        
+        if (!TryComp<TemuViroComponent>(target, out var comp) || 
+            comp.IsCured || 
+            !_mobStateSystem.IsAlive(target))
+        {
+            return;
+        }
+
+        _vomitSystem.Vomit(target, 5f, 1f);
     }
     #endregion
 }

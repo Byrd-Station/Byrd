@@ -1,4 +1,5 @@
 using Content.Goobstation.Shared._Omu.AdminEvents.TemuViro.Components;
+using Content.Goobstation.Shared._Omu.AdminEvents.TemuViro.Events;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Popups;
@@ -58,7 +59,16 @@ public abstract class SharedTemuViroSystem : EntitySystem
             {
                 // Apply effects & Popup
                 ApplyPoisonDamage(uid, comp);
-                _popupSystem.PopupEntity("You feel nauseous", uid, PopupType.Medium);
+                _popupSystem.PopupEntity("You feel nauseous", uid, PopupType.MediumCaution);
+
+                // Vomit
+                var netEntity = GetNetEntity(uid);
+                var vomitEvent = new OnVomitEvent(netEntity);
+                Timer.Spawn(TimeSpan.FromSeconds(5),
+                    () =>
+                    {
+                        RaiseLocalEvent(uid, ref vomitEvent);
+                    });
             }
             SetNextEffectTime(uid, comp);
         }
