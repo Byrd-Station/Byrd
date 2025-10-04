@@ -175,6 +175,16 @@
       multiplier: 0
     - type: ModifyDelayedKnockdown
       cancel: true
+    - type: ClothingGrantComponent
+      component:
+      - type: SupermatterImmune
+      # tesla immunity too
+      - type: EventHorizonIgnore
+        horizonWhitelist:
+          tags:
+          - Tesla
+      # can touch containment fields safely
+      - type: ContainmentFieldIgnore
 
 - type: entity
   parent: ClothingModsuitBootsStandard
