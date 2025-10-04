@@ -2,22 +2,21 @@ using System.Linq;
 using Content.Shared._Omu.Clothing.Components;
 using Content.Shared._Omu.Traits;
 using Content.Shared.Clothing.Components;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
 using Robust.Shared.Network;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using Robust.Shared.Utility;
 
 namespace Content.Shared._Omu.Clothing.EntitySystems;
 
 public sealed class CyberneticMantleSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly ItemToggleSystem _itemToggleSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly SharedPointLightSystem _lightSystem = default!;
     [Dependency] private readonly INetManager _netManager = default!;
 
@@ -27,6 +26,7 @@ public sealed class CyberneticMantleSystem : EntitySystem
 
         SubscribeLocalEvent<CyberneticMantleComponent, BeingEquippedAttemptEvent>(OnBeingEquipped, after: [typeof(ClothingTakesUpExtraSlotsSystem)]);
         SubscribeLocalEvent<CyberneticMantleComponent, GotUnequippedEvent>(OnUnequipped);
+        SubscribeLocalEvent<CyberneticMantleComponent, AboutToEnterToggleableClothingContainerEvent>(OnToggleClothing);
     }
 
     /// <summary>
@@ -88,6 +88,17 @@ public sealed class CyberneticMantleSystem : EntitySystem
         if (TryComp<ClothingComponent>(ent, out var clothingComp)
             && clothingComp.ClothingVisuals.TryGetValue("head", out var layerData))
             layerData.Last().Color = color;
+    }
+
+    /// <summary>
+    ///     Tries to place the cybernetic mantle into the player's hands, if a piece of clothing is about to be toggled which would go over the mantle.
+    /// </summary>
+    /// <remarks>
+    ///     We don't want the mantle to go under the clothing for one reason: It's too convenient. Don't need to think about storing your mantle somewhere when the toggleable clothing does it for you.
+    /// </remarks>
+    private void OnToggleClothing(Entity<CyberneticMantleComponent> ent, ref AboutToEnterToggleableClothingContainerEvent args)
+    {
+        _handsSystem.PickupOrDrop(args.ClothingParent, ent);
     }
 
 }

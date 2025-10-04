@@ -48,6 +48,14 @@ public sealed class ClothingTakesUpExtraSlotsSystem : EntitySystem
         // spawn a virtual item in each of the slots blocked by this garment.
         foreach (var slot in ent.Comp.Slots)
         {
+            // If the slot is taken up, drop the item which is currently in that slot.
+            // This check exists to fix a modsuit bug, where you could enable the modsuit, equip an item in a slot which should otherwise be blocked, and then turn off the modsuit, resulting in you wearing an item in a slot which should be blocked.
+            if (_inventorySystem.TryGetSlotEntity(args.Equipee, slot, out var _))
+            {
+                _inventorySystem.DropSlotContents(args.Equipee, slot);
+            }
+
+            // if the slot is clear, spawn a virtual item.
             _virtualItemSystem.TrySpawnVirtualItemInInventory(ent, args.Equipee, slot, true);
         }
     }
