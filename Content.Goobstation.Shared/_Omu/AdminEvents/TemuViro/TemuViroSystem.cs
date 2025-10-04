@@ -56,7 +56,9 @@ public abstract class SharedTemuViroSystem : EntitySystem
             comp.RandomChance = Random.Shared.NextDouble();
             if (comp.RandomChance < 50f)
             {
+                // Apply effects & Popup
                 ApplyPoisonDamage(uid, comp);
+                _popupSystem.PopupEntity("You feel nauseous", uid, PopupType.Medium);
             }
             SetNextEffectTime(uid, comp);
         }

@@ -69,20 +69,18 @@ public sealed class TemuViroSystem : SharedTemuViroSystem
         // Check if cured
         if (component.CureProgress >= component.CureAmountNeeded)
         {
-            component.IsCured = true;
-
-            // Admin Log
-            _adminLogManager.Add(LogType.AdminMessage,
-                LogImpact.Medium,
-                $"{ToPrettyString(uid)} has been cured of Temu Virus");
-
             // Show popup after 5 seconds
             Timer.Spawn(TimeSpan.FromSeconds(5), () =>
             {
-                if (EntityManager.EntityExists(uid))
-                {
-                    _popupSystem.PopupEntity("You feel better.", uid, PopupType.Medium);
-                }
+                if (!EntityManager.EntityExists(uid))
+                    return;
+                // Admin Log
+                _adminLogManager.Add(LogType.AdminMessage,
+                    LogImpact.Medium,
+                    $"{ToPrettyString(uid)} has been cured of Temu Virus");
+
+                component.IsCured = true;
+                _popupSystem.PopupEntity("You feel better.", uid, PopupType.Medium);
             });
         }
     }
