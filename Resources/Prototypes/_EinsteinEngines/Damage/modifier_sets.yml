@@ -24,6 +24,7 @@
     Ion: 0.8
   ignoreArmorPierceFlags: All
 
+# begin Omu - shadowkin take less brute and heat now, but take 40% more radiation
 - type: damageModifierSet
   id: Shadowkin
   coefficients:
@@ -33,6 +34,7 @@
     Asphyxiation: 0.50
     Radiation: 1.4
   ignoreArmorPierceFlags: All # Goobstation
+# end Omu
 
 - type: damageModifierSet
   id: Plasmaman
