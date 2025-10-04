@@ -273,7 +273,7 @@
   description: uplink-shrapnel-grenade-desc
   productEntity: GrenadeShrapnel
   cost:
-    Telecrystal: 4
+    Telecrystal: 20 # Omu, raise price from 4 to 20, this grenade 3 shots deathsquad, it should not be 4tc.
   categories:
   - UplinkExplosives
   conditions:
