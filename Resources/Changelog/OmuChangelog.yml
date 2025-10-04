@@ -585,3 +585,45 @@ Entries:
         the other duty cases.
   id: 70
   time: '2025-09-30T19:55:20.0000000+00:00'
+- author: MarkerWicker
+  changes:
+    - type: Add
+      message: >-
+        Introduced the Photophobia trait. Players with photophobia will see the
+        world a little bit brighter, and will be flashed if a flashlight is
+        toggled in their direction.
+  id: 71
+  time: '2025-10-01T01:45:47.0000000+00:00'
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Thieving trait no longer hides popups
+    - type: Add
+      message: >-
+        Characters can take the Frisky trait which allows them to see pockets in
+        the strip menu
+  id: 72
+  time: '2025-10-01T02:48:48.0000000+00:00'
+- author: MarkerWicker
+  changes:
+    - type: Fix
+      message: >-
+        Trait-categories with category-specific points now correctly show the
+        points taken in that category, rather than the sum of category-specific
+        points across all categories.
+  id: 73
+  time: '2025-10-01T02:54:52.0000000+00:00'
+- author: MarkerWicker
+  changes:
+    - type: Fix
+      message: >-
+        Traits should work again, the previous bugfix broke them entirely. If
+        traits are still broken, contact marker4457 on Discord.
+  id: 74
+  time: '2025-10-01T17:08:38.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed SecretPlus failing to select antags properly
+  id: 75
+  time: '2025-10-02T18:39:21.0000000+00:00'
