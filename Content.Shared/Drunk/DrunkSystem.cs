@@ -28,8 +28,8 @@ public abstract class SharedDrunkSystem : EntitySystem
 
     [Dependency] private readonly StatusEffectsSystem _statusEffectsSystem = default!;
     [Dependency] private readonly SharedSlurredSystem _slurredSystem = default!;
-    [Dependency] private readonly IGameTiming _timing = default!; // Goob - needed to calculate remaining status time. 
-    [Dependency] private readonly IConfigurationManager _cfg = default!; // Goob - used to get the CVar setting. 
+    [Dependency] private readonly IGameTiming _timing = default!; // Goob - needed to calculate remaining status time.
+    [Dependency] private readonly IConfigurationManager _cfg = default!; // Goob - used to get the CVar setting.
 
     public void TryApplyDrunkenness(EntityUid uid, float boozePower, bool applySlur = true,
         StatusEffectsComponent? status = null)
@@ -76,4 +76,43 @@ public abstract class SharedDrunkSystem : EntitySystem
         _statusEffectsSystem.TryRemoveTime(uid, DrunkKey, TimeSpan.FromSeconds(timeRemoved));
     }
 
+    /// <summary>
+    /// Directly sets the drunk effect strength
+    /// </summary>
+    /// <param name="uid">The entity to apply the effect to</param>
+    /// <param name="strength">The strength of the drunk effect (0-100). Set to 0 to remove the effect.</param>
+    public void SetDrunkeness(EntityUid uid, float strength, StatusEffectsComponent? status = null)
+    {
+        if (!Resolve(uid, ref status, false))
+            return;
+
+        if (strength <= 0)
+        {
+            // Remove the effect if strength is 0 or negative
+            _statusEffectsSystem.TryRemoveStatusEffect(uid, DrunkKey);
+            return;
+        }
+
+        // Add or update the status effect with the component
+        if (_statusEffectsSystem.TryAddStatusEffect<DrunkComponent>(
+            uid,
+            DrunkKey,
+            TimeSpan.FromMinutes(500f), // Duration is irrelevant as we control the effect through the component
+            true,
+            status))
+        {
+            // If we successfully added the status effect, get the component and set the strength
+            if (TryComp<DrunkComponent>(uid, out var drunkComponent))
+            {
+                drunkComponent.Strength = strength;
+                Dirty(uid, drunkComponent);
+            }
+        }
+        // If the effect already exists, update its strength
+        else if (TryComp<DrunkComponent>(uid, out var existingDrunk))
+        {
+            existingDrunk.Strength = strength;
+            Dirty(uid, existingDrunk);
+        }
+    }
 }

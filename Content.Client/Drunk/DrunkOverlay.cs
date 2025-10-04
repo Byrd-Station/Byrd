@@ -35,8 +35,9 @@ public sealed class DrunkOverlay : Overlay
 
     public float CurrentBoozePower = 0.0f;
 
-    private const float VisualThreshold = 10.0f;
-    private const float PowerDivisor = 250.0f;
+    // Visual effect parameters
+    private const float VisualThreshold = 0f; // Start showing effect immediately at any strength
+    private const float PowerDivisor = 100.0f; // Scale to 0-1 range for the shader
 
     private float _visualScale = 0;
 

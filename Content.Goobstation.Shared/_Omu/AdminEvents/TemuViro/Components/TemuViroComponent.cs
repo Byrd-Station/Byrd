@@ -26,12 +26,6 @@ public sealed partial class TemuViroComponent : Component
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public TimeSpan MaxEffectTime = TimeSpan.FromSeconds(5);
-    /// <summary>
-    /// The actual calculated time when the effect will be applied.
-    /// This is set when the component is added to an entity.
-    /// </summary>
-    [DataField]
-    public TimeSpan EffectTime { get; set; }
 
     /// <summary>
     /// Current amount of poison damage accumulated.
@@ -73,7 +67,7 @@ public sealed partial class TemuViroComponent : Component
     /// <summary>
     /// Total amount of cure chemical needed to be cured.
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public float CureAmountNeeded { get; set; } = 5;
 
     /// <summary>
@@ -81,5 +75,24 @@ public sealed partial class TemuViroComponent : Component
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
     public bool IsCured { get; set; }
+
+    #endregion
+
+    #region Timers
+    // Vomit _gameTiming.CurTime
+    [DataField]
+    public TimeSpan NextVomitTime { get; set; }
+
+    // Cured _gameTiming.CurTime
+    [DataField]
+    public TimeSpan OnCuredTime { get; set; }
+
+    /// <summary>
+    /// The actual calculated time when the effect will be applied.
+    /// This is set when the component is added to an entity.
+    /// </summary>
+    [DataField]
+    public TimeSpan EffectTime { get; set; }
+
     #endregion
 }

@@ -18,6 +18,8 @@ public sealed class TemuViroSystem : SharedTemuViroSystem
     [Dependency] private readonly ISharedAdminLogManager _adminLogManager = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly VomitSystem _vomitSystem = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
+
 
 
     public override void Initialize()
@@ -71,20 +73,29 @@ public sealed class TemuViroSystem : SharedTemuViroSystem
         // Check if cured
         if (component.CureProgress >= component.CureAmountNeeded)
         {
-            // Show popup after 5 seconds
-            Timer.Spawn(TimeSpan.FromSeconds(5),
-                () =>
-                {
-                    if (!EntityManager.EntityExists(uid))
-                        return;
-                    // Admin Log
-                    _adminLogManager.Add(LogType.AdminMessage,
-                        LogImpact.Medium,
-                        $"{ToPrettyString(uid)} has been cured of Temu Virus");
+            if (!EntityManager.EntityExists(uid))
+                return;
 
-                    component.IsCured = true;
-                    _popupSystem.PopupEntity("You feel better.", uid, PopupType.Medium);
-                });
+            // Admin Log
+            _adminLogManager.Add(LogType.AdminMessage,
+                LogImpact.Medium,
+                $"{ToPrettyString(uid)} has been cured of Temu Virus");
+
+            component.IsCured = true;
+
+            // Send OnCuredEvent to Shared
+            if (component.OnCuredTime == TimeSpan.Zero)
+            {
+                component.OnCuredTime = _gameTiming.CurTime + TimeSpan.FromSeconds(5f);
+                return;
+            }
+
+            if (component.OnCuredTime <= _gameTiming.CurTime)
+            {
+                var netEntity = GetNetEntity(uid);
+                var ev = new OnCuredEvent(netEntity, true);
+                RaiseLocalEvent(uid, ref ev);
+            }
         }
     }
     #endregion
@@ -93,9 +104,9 @@ public sealed class TemuViroSystem : SharedTemuViroSystem
     private void OnVomit(Entity<TemuViroComponent> entity, ref OnVomitEvent args)
     {
         var target = GetEntity(args.Entity);
-        
-        if (!TryComp<TemuViroComponent>(target, out var comp) || 
-            comp.IsCured || 
+
+        if (!TryComp<TemuViroComponent>(target, out var comp) ||
+            comp.IsCured ||
             !_mobStateSystem.IsAlive(target))
         {
             return;

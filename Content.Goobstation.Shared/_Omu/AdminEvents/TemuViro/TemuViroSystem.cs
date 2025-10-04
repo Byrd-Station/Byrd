@@ -2,7 +2,10 @@ using Content.Goobstation.Shared._Omu.AdminEvents.TemuViro.Components;
 using Content.Goobstation.Shared._Omu.AdminEvents.TemuViro.Events;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Drunk;
 using Content.Shared.Popups;
+using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -15,11 +18,13 @@ public abstract class SharedTemuViroSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly SharedDrunkSystem _drunkSystem = default!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<TemuViroComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<TemuViroComponent, OnCuredEvent>(OnCured);
     }
 
     private void OnStartup(EntityUid uid, TemuViroComponent component, ComponentStartup args)
@@ -49,7 +54,6 @@ public abstract class SharedTemuViroSystem : EntitySystem
         {
             if (comp.IsCured)
                 continue;
-
             if (_gameTiming.CurTime < comp.EffectTime)
                 continue;
 
@@ -61,19 +65,28 @@ public abstract class SharedTemuViroSystem : EntitySystem
                 ApplyPoisonDamage(uid, comp);
                 _popupSystem.PopupEntity("You feel nauseous", uid, PopupType.MediumCaution);
 
+                // Drunk
+                ApplyDrunkEffect(uid, comp);
+
                 // Vomit
-                var netEntity = GetNetEntity(uid);
-                var vomitEvent = new OnVomitEvent(netEntity);
-                Timer.Spawn(TimeSpan.FromSeconds(5),
-                    () =>
+                if (comp.NextVomitTime == TimeSpan.Zero)
+                {
+                    comp.NextVomitTime = _gameTiming.CurTime + TimeSpan.FromSeconds(5f);
+                    return;
+                }
+                    if (_gameTiming.CurTime >= comp.NextVomitTime)
                     {
+                        var netEntity = GetNetEntity(uid);
+                        var vomitEvent = new OnVomitEvent(netEntity);
                         RaiseLocalEvent(uid, ref vomitEvent);
-                    });
+                        comp.NextVomitTime = TimeSpan.Zero;
+                    }
             }
             SetNextEffectTime(uid, comp);
         }
     }
 
+    #region Poision
     private void ApplyPoisonDamage(EntityUid uid, TemuViroComponent comp)
     {
         if (comp.PoisonDamage >= comp.MaxPoisonDamage)
@@ -89,4 +102,26 @@ public abstract class SharedTemuViroSystem : EntitySystem
             comp.PoisonDamage += damage;
         }
     }
+    #endregion
+
+    #region Drunk
+    private void ApplyDrunkEffect(EntityUid uid, TemuViroComponent comp)
+    {
+        TryComp<StatusEffectsComponent>(uid, out var status);
+
+        // Calculate drunk strength based on poison damage (0-45 damage maps to 0-100 strength)
+        float drunkStrength = Math.Clamp(comp.PoisonDamage / 45f * 100f, 0f, 100f);
+        _drunkSystem.SetDrunkeness(uid, drunkStrength, status);
+    }
+
+    #endregion
+
+    #region Cured Event
+    // This gets called by the server when we have set Cured to true
+    // This avoid thread timeout issues
+    private void OnCured(EntityUid uid, TemuViroComponent comp, OnCuredEvent args)
+    {
+        _popupSystem.PopupEntity("You feel better.", uid, PopupType.Medium);
+    }
+    #endregion
 }
