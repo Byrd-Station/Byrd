@@ -7,6 +7,15 @@
   description: alerts-broken-bones-desc
 
 - type: alert
+  id: FaultyHeart
+  icons:
+  - sprite: /Textures/_Shitmed/Interface/Alerts/alerts.rsi
+    state: faultyheart
+  name: alerts-faulty-heart-name
+  description: alerts-faulty-heart-desc
+
+
+- type: alert
   id: AugmentBattery
   category: Battery
   clickEvent: !type:AugmentBatteryAlertEvent
