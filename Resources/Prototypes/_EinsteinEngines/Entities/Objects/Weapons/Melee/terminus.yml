@@ -15,6 +15,10 @@
   id: Terminus
   description: An advanced melee weapon crafted specifically for an oni. It is also capable of firing a spread of disabler shots from its tip.
   components:
+  - type: RestrictedMelee # Omu, its made for Oni, so only Oni can use it.
+    whitelist:
+      tags:
+        - Oni
   - type: Sprite
     sprite: _EinsteinEngines/Objects/Weapons/Melee/terminus.rsi
     state: icon
@@ -54,3 +58,11 @@
     - 0,0,4,2
   - type: DisarmMalus
     malus: 0.75
+  - type: Tool # Omu, it should be able to pry doors, it used to on EE, and it should be able to here as well.
+    qualities:
+      - Prying
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: Prying
+  - type: UseDelay # Omu, this means the crowbar function has a cooldown
+    delay: 0.9

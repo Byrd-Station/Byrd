@@ -1,0 +1,1 @@
+stack-revcoin = RevCoin

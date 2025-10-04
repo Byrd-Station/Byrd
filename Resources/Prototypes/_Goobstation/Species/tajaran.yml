@@ -18,7 +18,7 @@
   sprites: MobTajaranSprites
   markingLimits: MobTajaranMarkingLimits
   dollPrototype: MobTajaranDummy
-  skinColoration: AnimalFur
+  skinColoration: Hues # Omustation Edit - Tajara can be any color
   maleFirstNames: NamesTajaranFirst
   femaleFirstNames: NamesTajaranFirst
   lastNames: NamesTajaranLast
@@ -64,28 +64,28 @@
       points: 1
       required: false
     RightLeg:
-      points: 2
+      points: 8 # Omu Edit - "Uncapped Customizations"
       required: false
     RightFoot:
-      points: 2
+      points: 8 # Omu Edit - "Uncapped Customizations"
       required: false
     LeftLeg:
-      points: 2
+      points: 8 # Omu Edit - "Uncapped Customizations"
       required: false
     LeftFoot:
-      points: 2
+      points: 8 # Omu Edit - "Uncapped Customizations"
       required: false
     RightArm:
-      points: 2
+      points: 8 # Omu Edit - "Uncapped Customizations"
       required: false
     RightHand:
-      points: 3
+      points: 8 # Omu Edit - "Uncapped Customizations"
       required: false
     LeftArm:
-      points: 2
+      points: 8 # Omu Edit - "Uncapped Customizations"
       required: false
     LeftHand:
-      points: 3
+      points: 8 # Omu Edit - "Uncapped Customizations"
       required: false
 
 - type: speciesBaseSprites

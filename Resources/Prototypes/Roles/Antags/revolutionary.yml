@@ -18,7 +18,8 @@
   setPreference: true
   objective: roles-antag-rev-head-objective
   requirements:
-    - !type:OverallPlaytimeRequirement
+  - !type:DepartmentTimeRequirement # was  - !type:OverallPlaytimeRequirement, Goob change
+      department: Command 
       time: 36000 # 10h
   guides: [ Revolutionaries ]
 
@@ -34,6 +35,8 @@
   id: HeadRevGear
   storage:
     back:
-    - RevolutionaryManifesto # Einstein Engines - Revolutionary Manifesto
-    - EncryptionKeySyndie # Goobstation
-    - RevsFastDrawImplanter # Goobstation
+#    - RevolutionaryManifesto # Einstein Engines - Revolutionary Manifesto # Omu, remove bookrevs
+    #- EncryptionKeySyndie # Goobstation # Omu, headrev uplink
+    #- RevsFastDrawImplanter # Goobstation # Omu, headrev uplink
+    #- Flash # Omu, headrev uplink
+    - BaseUplinkRadioRevolutionary40RC

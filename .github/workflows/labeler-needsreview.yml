@@ -19,4 +19,4 @@ jobs:
         labels: "S: Needs Review"
     - uses: actions-ecosystem/action-remove-labels@v1
       with:
-        labels: "S: Awaiting Changes"
+        labels: "S: Needs Changes"

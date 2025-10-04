@@ -19,14 +19,16 @@ roles-antag-rev-head-objective = Your objective is to take over the station by c
 
 head-rev-role-greeting =
     You are a Head Revolutionary.
-    You are tasked with removing all of Command from station via death, exilement or imprisonment.
-    The Syndicate has sponsored you with a manifesto that persuades the crew to your side.
-    Beware, this won't work on Security or Command - their loyalty is unwavering.
+    You are tasked with removing all of Command from station via conversion, death, exilement or imprisonment.
+    The Syndicate has sponsored you with an uplink, and the ability to convert with flashes.
+    Beware, this won't work on Mindshielded crew - their loyalty is unwavering.
     Viva la revolución!
 
 head-rev-briefing =
-    Use the manifesto to convert people to your cause.
-    Get rid of all heads to take over the station.
+    Use flashes to convert people to your cause.
+    Eliminate all heads of staff, and secure the station.
+    You have been graciously sponsored with an uplink from
+    Cybersun, in-coordination with the Syndicate.
 
 head-rev-break-mindshield = The Mindshield neutralized hypnotic powers, but its functionality has been compromised!
 
@@ -56,11 +58,13 @@ rev-no-heads = There were no Head Revolutionaries to be selected. Can't start a 
 
 rev-won = The Head Revs survived and successfully seized control of the station.
 
-rev-lost = Command survived and neutralized all of the Head Revs.
+rev-lost = Command survived and neutralized all of the Head Revs. Major revolutionary defeat.
 
-rev-stalemate = All of the Head Revs and Command died. It's a draw.
+rev-stalemate = All of the Head Revs and Command died. It's a major loss on all sides.
 
-rev-reverse-stalemate = Both Command and Head Revs survived.
+rev-reverse-stalemate = Both Command and Head Revs survived. It's a draw.
+
+rev-total-victory = All of Command and Head Revs survived, with all of Command being converted.
 
 rev-headrev-count = {$initialCount ->
     [one] There was one Head Revolutionary:
@@ -85,3 +89,7 @@ rev-deconverted-text =
 
     You are no longer a revolutionary, so be nice.
 rev-deconverted-confirm = Confirm
+
+rev-headrev-must-return = The Revolution is leaderless. We must return to the station within a minute!
+rev-headrev-returned = A Head Revolutionary has returned to the station, the Revolution continues!
+rev-headrev-abandoned = You have disgraced the revolution by abandoning your station. The Revolution is over.
