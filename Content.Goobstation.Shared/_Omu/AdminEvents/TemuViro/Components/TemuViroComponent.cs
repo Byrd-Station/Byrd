@@ -19,13 +19,13 @@ public sealed partial class TemuViroComponent : Component
     /// The minimum time at which the status effect can be applied to the player.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadOnly)]
-    public TimeSpan MinEffectTime = TimeSpan.FromSeconds(1);
+    public TimeSpan MinEffectTime = TimeSpan.FromSeconds(30);
 
     /// <summary>
     /// The maximum time at which the status effect can be applied to the player.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadOnly)]
-    public TimeSpan MaxEffectTime = TimeSpan.FromSeconds(5);
+    public TimeSpan MaxEffectTime = TimeSpan.FromSeconds(60);
 
     /// <summary>
     /// Current amount of poison damage accumulated.
