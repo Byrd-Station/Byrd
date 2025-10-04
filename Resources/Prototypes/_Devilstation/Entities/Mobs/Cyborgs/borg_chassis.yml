@@ -30,6 +30,7 @@
     moduleWhitelist:
       tags:
       - BorgModuleGeneric
+      - BorgModuleEngineering
       - BorgModuleCentComm
   - type: FlashImmunity
   - type: MobThresholds # tankier
@@ -69,20 +70,26 @@
         acts: [ "Destruction" ]
   - type: IntrinsicRadioTransmitter
     channels:
-#    - Binary
     - Common
-    - Science
-    - CentCom
-    - Security
     - Command
+    - CentCom
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
   - type: ActiveRadio
     channels:
-#    - Binary
     - Common
-    - Science
-    - CentCom
-    - Security
     - Command
+    - CentCom
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
   - type: CollectiveMind
     defaultChannel: Binary
     channels:
@@ -93,6 +100,7 @@
       - MMIFilled
       borg_module:
       - BorgModuleERT
+      - BorgModuleAdvancedTool
   - type: ItemSlots
     slots:
       cell_slot:
@@ -116,8 +124,9 @@
     - BlueshieldOfficer
     - NanotrasenRepresentative
   - type: AccessReader
-    access: [ [ "Command" ], [ "Research" ] ]
+    access: [["CentralCommand"]]
   - type: ShowJobIcons
+  - type: Stripping
 
 - type: entity
   id: BorgChassisDeathsquad
@@ -154,6 +163,7 @@
     moduleWhitelist:
       tags:
       - BorgModuleGeneric
+      - BorgModuleEngineering
       - BorgModuleCentComm
   - type: FlashImmunity
   - type: MobThresholds # tankier
@@ -193,20 +203,26 @@
         acts: [ "Destruction" ]
   - type: IntrinsicRadioTransmitter
     channels:
-#    - Binary
     - Common
-    - Science
-    - CentCom
-    - Security
     - Command
+    - CentCom
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
   - type: ActiveRadio
     channels:
-#    - Binary
     - Common
-    - Science
-    - CentCom
-    - Security
     - Command
+    - CentCom
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
   - type: CollectiveMind
     defaultChannel: Binary
     channels:
@@ -217,11 +233,12 @@
       - MMIFilled
       borg_module:
       - BorgModuleCommando
+      - BorgModuleAdvancedTool
   - type: ItemSlots
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellMicroreactor
+        startingItem: PowerCellAntiqueProto
   - type: SiliconLawProvider
     laws: CentCommLawset
   - type: RandomMetadata
@@ -240,5 +257,6 @@
     - BlueshieldOfficer
     - NanotrasenRepresentative
   - type: AccessReader
-    access: [ [ "Command" ], [ "Research" ] ]
+    access: [["CentralCommand"]]
   - type: ShowJobIcons
+  - type: Stripping

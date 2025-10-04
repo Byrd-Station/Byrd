@@ -39,7 +39,7 @@
     moduleId: EmergencyResponse
     items:
     - WeaponPulsePistol
-    - Flash
+    - HyperFlash
     - StunBatonBorg
     - ZiptieDispenser
     - JawsOfLife
@@ -65,7 +65,7 @@
     items:
     - WeaponPulseRifleCyborg
     - PhoronSabre
-    - Flash
+    - HyperFlash
     - JawsOfLife
     - SonicJackhammer
     - JetpackXenoborg
