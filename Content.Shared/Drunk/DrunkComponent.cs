@@ -3,14 +3,15 @@
 // SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
 // SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 RichardBlonski <48651647+RichardBlonski@users.noreply.github.com>
 //
 // SPDX-License-Identifier: MIT
 
 using Robust.Shared.GameStates;
-using Robust.Shared.Serialization;
 
 namespace Content.Shared.Drunk;
 
+// Omu Station
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class DrunkComponent : Component
 {

@@ -9,6 +9,7 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Steve <marlumpy@gmail.com>
+// SPDX-FileCopyrightText: 2025 RichardBlonski <48651647+RichardBlonski@users.noreply.github.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -78,6 +79,7 @@ public abstract class SharedDrunkSystem : EntitySystem
 
     /// <summary>
     /// Directly sets the drunk effect strength
+    /// Omu Station
     /// </summary>
     /// <param name="uid">The entity to apply the effect to</param>
     /// <param name="strength">The strength of the drunk effect (0-100). Set to 0 to remove the effect.</param>

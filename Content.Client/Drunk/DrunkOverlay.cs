@@ -6,6 +6,7 @@
 // SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
 // SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 RichardBlonski <48651647+RichardBlonski@users.noreply.github.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -36,6 +37,7 @@ public sealed class DrunkOverlay : Overlay
     public float CurrentBoozePower = 0.0f;
 
     // Visual effect parameters
+    // Omu Station
     private const float VisualThreshold = 0f; // Start showing effect immediately at any strength
     private const float PowerDivisor = 100.0f; // Scale to 0-1 range for the shader
 

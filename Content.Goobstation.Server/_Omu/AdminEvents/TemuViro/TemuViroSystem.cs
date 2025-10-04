@@ -1,12 +1,13 @@
+// SPDX-FileCopyrightText: 2025 RichardBlonski <48651647+RichardBlonski@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Shared._Omu.AdminEvents.TemuViro;
 using Content.Goobstation.Shared._Omu.AdminEvents.TemuViro.Components;
 using Content.Goobstation.Shared._Omu.AdminEvents.TemuViro.Events;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Database;
-using Content.Shared.Mobs.Components;
-using Content.Shared.Popups;
-using Robust.Shared.Timing;
 using Content.Server.Medical;
 using Content.Shared.Mobs.Systems;
 
@@ -14,11 +15,9 @@ namespace Content.Goobstation.Server._Omu.AdminEvents.TemuViro;
 
 public sealed class TemuViroSystem : SharedTemuViroSystem
 {
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogManager = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly VomitSystem _vomitSystem = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
 
 
 
@@ -83,19 +82,9 @@ public sealed class TemuViroSystem : SharedTemuViroSystem
 
             component.IsCured = true;
 
-            // Send OnCuredEvent to Shared
-            if (component.OnCuredTime == TimeSpan.Zero)
-            {
-                component.OnCuredTime = _gameTiming.CurTime + TimeSpan.FromSeconds(5f);
-                return;
-            }
-
-            if (component.OnCuredTime <= _gameTiming.CurTime)
-            {
-                var netEntity = GetNetEntity(uid);
-                var ev = new OnCuredEvent(netEntity, true);
-                RaiseLocalEvent(uid, ref ev);
-            }
+            var netEntity = GetNetEntity(uid);
+            var ev = new OnCuredEvent(netEntity, true);
+            RaiseLocalEvent(uid, ref ev);
         }
     }
     #endregion

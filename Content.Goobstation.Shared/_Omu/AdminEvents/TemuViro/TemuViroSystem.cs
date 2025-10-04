@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 RichardBlonski <48651647+RichardBlonski@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Shared._Omu.AdminEvents.TemuViro.Components;
 using Content.Goobstation.Shared._Omu.AdminEvents.TemuViro.Events;
 using Content.Shared.Damage;
@@ -5,7 +9,6 @@ using Content.Shared.Damage.Prototypes;
 using Content.Shared.Drunk;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
-using Content.Shared.StatusEffectNew.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -118,10 +121,10 @@ public abstract class SharedTemuViroSystem : EntitySystem
 
     #region Cured Event
     // This gets called by the server when we have set Cured to true
-    // This avoid thread timeout issues
     private void OnCured(EntityUid uid, TemuViroComponent comp, OnCuredEvent args)
     {
         _popupSystem.PopupEntity("You feel better.", uid, PopupType.Medium);
+        _drunkSystem.TryRemoveDrunkenness(uid);
     }
     #endregion
 }
