@@ -233,9 +233,11 @@
     - type: Loadout
       prototypes: [ DeathSquadGear ]
       roleLoadout: [ RoleSurvivalEVA ]
-    - type: LoadoutSpecies # Goob
+    - type: LoadoutSpecies # Omu
       speciesSlotOverride: # Can't wear shoes, give magboot gloves
         Harpy:
+          gloves: ClothingHandsGlovesDeathsquadGyroUnremoveable
+        Diona:
           gloves: ClothingHandsGlovesDeathsquadGyroUnremoveable
     - type: RandomMetadata
       nameSegments:
@@ -283,9 +285,11 @@
     - type: Loadout
       prototypes: [ ERTLeaderGear ]
       roleLoadout: [ RoleSurvivalExtended ]
-    - type: LoadoutSpecies # Goob
+    - type: LoadoutSpecies # Omu
       speciesSlotOverride: # Can't wear shoes, give magboot gloves
         Harpy:
+          gloves: ClothingHandsGlovesEmergencyResponseTeam
+        Diona:
           gloves: ClothingHandsGlovesEmergencyResponseTeam
     - type: AutoImplant
       implants: [ FreedomImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant, DeathRattleImplantCentcomm ] # Goobstation
