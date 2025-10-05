@@ -1,7 +1,7 @@
 ﻿- type: entity
   id: BorgChassisERT
   parent: BaseBorgChassisNotIonStormable
-  name: ERT cyborg
+  name: ERT Cyborg
   description: A military-grade module produced in-house by Nanotrasen, the NT Combat module is purpose-built for the extermination of powerful threats alongside their ERT compatriots.
   components:
   - type: BorgTransponder
@@ -260,3 +260,37 @@
     access: [["CentralCommand"]]
   - type: ShowJobIcons
   - type: Stripping
+
+- type: entity
+  id: PlayerBorgCombatGhostRole
+  parent: BorgChassisCombat
+  suffix: Ghost role
+  components:
+  - type: GhostRole
+    name: ghost-role-information-centcomm-cyborg-combat-name
+    description: ghost-role-information-centcomm-cyborg-combat-description
+    rules: ghost-role-information-higher-standard-silicon-rules
+    raffle:
+      settings: default
+    requirements:
+    - !type:RoleTimeRequirement
+      role: JobBorg
+      time: 3600 #1 hour
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  id: PlayerBorgDeathsquadGhostRole
+  parent: BorgChassisDeathsquad
+  suffix: Ghost role
+  components:
+  - type: GhostRole
+    name: ghost-role-information-centcomm-cyborg-commando-name
+    description: ghost-role-information-centcomm-cyborg-commando-description
+    rules: ghost-role-information-higher-standard-silicon-rules
+    raffle:
+      settings: default
+    requirements:
+    - !type:RoleTimeRequirement
+      role: JobBorg
+      time: 3600 #1 hour
+  - type: GhostTakeoverAvailable
