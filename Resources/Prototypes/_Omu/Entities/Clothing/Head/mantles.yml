@@ -251,7 +251,14 @@
     - type: ShowJobIcons
     - type: ShowMindShieldIcons
     - type: ShowHealthBars
+      damageContainers:
+      - Biological
+      - Inorganic
+      - Silicon
+      - SiliconRadiation # Goobstation - Make IPCs take radiation
     - type: ShowHealthIcons
+      damageContainers:
+      - Biological
     - type: BreathMask
     - type: PressureProtection
       highPressureMultiplier: 0.4
