@@ -117,6 +117,29 @@
       - state: eyes-engineering
         shader: unshaded
 
+# variant of the engineering mantle for atmosians. Mostly because the burn chamber is a thing.
+- type: entity
+  id: ClothingCyberneticBeastMantleWorkAtmospherics
+  parent: ClothingCyberneticBeastMantleWorkEngineering
+  name: beast's atmospheric mantle
+  components:
+  - type: ComponentToggler
+    components: # copied from the parent with some additions
+    - type: VisionCorrection
+      correctionPower: 16
+    - type: NightVision
+      isEquipment: true
+      color: "#CCFFCC"
+    - type: FlashImmunity
+    - type: FlashSoundSuppression
+    - type: BreathMask
+    - type: PressureProtection
+      highPressureMultiplier: 0.4
+      lowPressureMultiplier: 1000
+    - type: TemperatureProtection
+      heatingCoefficient: 0.01
+      coolingCoefficient: 0.2
+
 # resprite of the work mantle for salvagers in particular.
 - type: entity
   id: ClothingCyberneticBeastMantleWorkSalvage
