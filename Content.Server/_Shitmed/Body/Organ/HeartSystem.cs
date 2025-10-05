@@ -9,6 +9,7 @@ using Content.Shared.Body.Systems;
 using Content.Shared._Shitmed.Body.Organ;
 using Content.Server._Shitmed.DelayedDeath;
 using Content.Shared.Alert;
+using Content.Shared.Body.Organ;
 
 namespace Content.Server._Shitmed.Body.Organ;
 
@@ -25,8 +26,8 @@ public sealed class HeartSystem : EntitySystem
 
         SubscribeLocalEvent<HeartComponent, OrganAddedToBodyEvent>(HandleAddition);
         SubscribeLocalEvent<HeartComponent, OrganRemovedFromBodyEvent>(HandleRemoval);
-        SubscribeLocalEvent<HeartComponent, OrganDisabledEvent>(OnOrganDisabled);
-        SubscribeLocalEvent<HeartComponent, OrganEnabledEvent>(OnOrganEnabled);
+        SubscribeLocalEvent<OrganComponent, OrganDisabledEvent>(OnOrganDisabled);
+        SubscribeLocalEvent<OrganComponent, OrganEnabledEvent>(OnOrganEnabled);
     }
 
     private void HandleRemoval(EntityUid uid, HeartComponent _, ref OrganRemovedFromBodyEvent args)
@@ -44,7 +45,11 @@ public sealed class HeartSystem : EntitySystem
         if (TerminatingOrDeleted(uid) || TerminatingOrDeleted(args.Body))
             return;
 
-        if (_bodySystem.TryGetBodyOrganEntityComps<BrainComponent>(args.Body, out var _))
+        // Lets make sure the brain is present and the heart inserted is functioning
+        // TODO: If ever we have something with multiple brains and braindamage is implemented this needs to be changed.
+        if (_bodySystem.TryGetBodyOrganEntityComps<BrainComponent>(args.Body, out var _)
+            && TryComp<OrganComponent>(args.Part, out var skibidi)
+            && skibidi.Enabled)
         {
             RemComp<DelayedDeathComponent>(args.Body);
             _alert.ClearAlert(args.Body, _faultyHeartAlertId);
@@ -52,20 +57,23 @@ public sealed class HeartSystem : EntitySystem
     }
 
     // Heartfailure time
-    private void OnOrganDisabled(Entity<HeartComponent> ent, ref OrganDisabledEvent args)
+    private void OnOrganDisabled(Entity<OrganComponent> ent, ref OrganDisabledEvent args)
     {
-        var deth = EnsureComp<DelayedDeathComponent>(args.Organ.Owner);
+        if (ent.Comp.Body is null)
+            return; //We don't care about the alert or dethComp is the heart is lying on the floor.
+        var deth = EnsureComp<DelayedDeathComponent>(ent.Comp.Body.Value);
         deth.FromHeartFailure = true;
-        _alert.ShowAlert(args.Organ.Owner, _faultyHeartAlertId);
+        _alert.ShowAlert(ent.Comp.Body.Value, _faultyHeartAlertId);
     }
 
-    private void OnOrganEnabled(Entity<HeartComponent> ent, ref OrganEnabledEvent args)
+    private void OnOrganEnabled(Entity<OrganComponent> ent, ref OrganEnabledEvent args)
     {
-        if (TryComp<DelayedDeathComponent>(args.Organ.Owner, out var death)
+        if (ent.Comp.Body is not null
+            && TryComp<DelayedDeathComponent>(ent.Comp.Body.Value, out var death)
             && death.FromHeartFailure)
         {
-            RemComp<DelayedDeathComponent>(args.Organ.Owner);
-            _alert.ClearAlert(args.Organ.Owner, _faultyHeartAlertId);
+            RemComp<DelayedDeathComponent>(ent.Comp.Body.Value);
+            _alert.ClearAlert(ent.Comp.Body.Value, _faultyHeartAlertId);
         }
     }
     // Shitmed-End

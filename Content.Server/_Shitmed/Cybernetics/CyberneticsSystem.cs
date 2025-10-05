@@ -40,12 +40,12 @@ internal sealed class CyberneticsSystem : EntitySystem
             if (HasComp<OrganComponent>(cyberEnt))
             {
                 var disableEvent = new OrganEnableChangedEvent(false);
-                RaiseLocalEvent(cyberEnt, ref disableEvent);
+                RaiseLocalEvent(cyberEnt.Owner, ref disableEvent);
             }
             else if (TryComp(cyberEnt, out BodyPartComponent? part))
             {
                 var disableEvent = new BodyPartEnableChangedEvent(false);
-                RaiseLocalEvent(cyberEnt, ref disableEvent);
+                RaiseLocalEvent(cyberEnt.Owner, ref disableEvent);
 
                 if (TryComp(cyberEnt, out DamageableComponent? damageable)
                     && part.Body is not null)

@@ -363,24 +363,21 @@ public partial class SharedBodySystem
             return;
 
         // I hate having to hardcode these checks so much.
-        if (HasComp<EyesComponent>(organEnt))
-        {
-            var ev = new OrganEnabledEvent(organEnt);
-            RaiseLocalEvent(organEnt, ref ev);
-        }
+        // Gluesniffer didn't explain: Every organ needs their interaction with being disabled hardcoded.
+        // Currently handled: EyesComponent, HeartComponent
+        var ev = new OrganEnabledEvent(organEnt);
+        RaiseLocalEvent(organEnt, ref ev);
+
     }
 
-    private void DisableOrgan(Entity<OrganComponent> organEnt)
+    protected void DisableOrgan(Entity<OrganComponent> organEnt)
     {
         if (!TryComp(organEnt.Comp.Body, out BodyComponent? body))
             return;
 
         // I hate having to hardcode these checks so much.
-        if (HasComp<EyesComponent>(organEnt))
-        {
-            var ev = new OrganDisabledEvent(organEnt);
-            RaiseLocalEvent(organEnt, ref ev);
-        }
+        var ev = new OrganDisabledEvent(organEnt);
+        RaiseLocalEvent(organEnt, ref ev);
     }
 
     /// <summary>
