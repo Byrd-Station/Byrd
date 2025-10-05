@@ -26,8 +26,8 @@ public sealed class HeartSystem : EntitySystem
 
         SubscribeLocalEvent<HeartComponent, OrganAddedToBodyEvent>(HandleAddition);
         SubscribeLocalEvent<HeartComponent, OrganRemovedFromBodyEvent>(HandleRemoval);
-        SubscribeLocalEvent<OrganComponent, OrganDisabledEvent>(OnOrganDisabled);
-        SubscribeLocalEvent<OrganComponent, OrganEnabledEvent>(OnOrganEnabled);
+        SubscribeLocalEvent<HeartComponent, OrganDisabledEvent>(OnOrganDisabled);
+        SubscribeLocalEvent<HeartComponent, OrganEnabledEvent>(OnOrganEnabled);
     }
 
     private void HandleRemoval(EntityUid uid, HeartComponent _, ref OrganRemovedFromBodyEvent args)
@@ -57,23 +57,29 @@ public sealed class HeartSystem : EntitySystem
     }
 
     // Heartfailure time
-    private void OnOrganDisabled(Entity<OrganComponent> ent, ref OrganDisabledEvent args)
+    private void OnOrganDisabled(EntityUid uid, HeartComponent comp, ref OrganDisabledEvent args)
     {
-        if (ent.Comp.Body is null)
+        if (!TryComp<OrganComponent>(uid, out var organ) || organ.Body is null)
             return; //We don't care about the alert or dethComp is the heart is lying on the floor.
-        var deth = EnsureComp<DelayedDeathComponent>(ent.Comp.Body.Value);
+        var deth = EnsureComp<DelayedDeathComponent>(organ.Body.Value);
         deth.FromHeartFailure = true;
-        _alert.ShowAlert(ent.Comp.Body.Value, _faultyHeartAlertId);
+        _alert.ShowAlert(organ.Body.Value, _faultyHeartAlertId);
     }
 
-    private void OnOrganEnabled(Entity<OrganComponent> ent, ref OrganEnabledEvent args)
+    /// <summary>
+    /// Deals with the heart failure alert, and if <see cref="DelayedDeathComponent"/> was caused by the heart failure, removing it.
+    /// </summary>
+    private void OnOrganEnabled(EntityUid uid, HeartComponent comp, ref OrganEnabledEvent args)
     {
-        if (ent.Comp.Body is not null
-            && TryComp<DelayedDeathComponent>(ent.Comp.Body.Value, out var death)
-            && death.FromHeartFailure)
+        // This probably looks messy
+        if (!TryComp<OrganComponent>(uid, out var organ)
+            || organ.Body is null
+            || !TryComp<DelayedDeathComponent>(organ.Body.Value, out var death))
+            return;
         {
-            RemComp<DelayedDeathComponent>(ent.Comp.Body.Value);
-            _alert.ClearAlert(ent.Comp.Body.Value, _faultyHeartAlertId);
+            if (death.FromHeartFailure)
+                RemComp<DelayedDeathComponent>(organ.Body.Value);
+            _alert.ClearAlert(organ.Body.Value, _faultyHeartAlertId);
         }
     }
     // Shitmed-End
