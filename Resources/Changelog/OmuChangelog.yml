@@ -645,3 +645,11 @@ Entries:
         comes with opportunity costs, and may be a target for stealing.
   id: 77
   time: '2025-10-05T15:02:53.0000000+00:00'
+- author: capsflern
+  changes:
+    - type: Tweak
+      message: >-
+        shadowkin brute damage has been reduced from 25% to 15%, burn 40%
+        vulnerability has been replaced with radiation
+  id: 78
+  time: '2025-10-05T15:16:05.0000000+00:00'
