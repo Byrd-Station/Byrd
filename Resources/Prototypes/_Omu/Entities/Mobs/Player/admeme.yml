@@ -5,27 +5,27 @@
   - Kobold
   - Abductor
   - Yowie
-  - IPC
-  - Diona
-  - Harpy
-  - Vox # Pasha
-  - Tajaran # Specism.
-  - Resomi # Sprites look shit on them.
-  - Oni # Same as above, plus it fucks over ERTs.
+#  - IPC
+#  - Diona
+#  - Harpy
+#  - Vox
+#  - Tajaran 
+#  - Resomi
+#  - Oni 
   - Gingerbread # Soecusn
   - Plasmaman # They just burn to death.
-  - Reptilian
-  - Moth
-  - Shadowkin # One flash is all it takes...
-  - Arachnid
-  - Vulpkanin
+#  - Reptilian
+#  - Moth
+#  - Shadowkin
+#  - Arachnid
+#  - Vulpkanin
 #  - Rodentia
-  - SlimePerson
-  - Dwarf
-  - Human
-  - Chitinid
-  - Feroxi
-  - Felinid
+#  - SlimePerson
+#  - Dwarf
+#  - Human
+#  - Chitinid
+#  - Feroxi
+#  - Felinid
   components:
   - type: RandomHumanoidAppearance
     randomizeName: false
