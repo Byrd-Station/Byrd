@@ -158,6 +158,14 @@ public sealed class RespiratorSystem : EntitySystem
             && pullable.GrabStage == GrabStage.Suffocate)
             return false;
 
+        // Shitmed start - If your lungs are caved in you can't breathe.
+        foreach (var ent in _bodySystem.GetBodyOrganEntityComps<LungComponent>(uid))
+        {
+            if (ent.Comp2.Enabled)
+                break;
+            return false;
+        } // Shitmed end
+
         return !HasComp<KravMagaBlockedBreathingComponent>(uid);
     }
     // Goobstation end
