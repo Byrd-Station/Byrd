@@ -4,3 +4,10 @@
   sprite:
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon
+
+- type: stealTargetGroup
+  id: ClothingEyesHudSciDiag
+  name: steal-target-groups-scidiag-eyewear
+  sprite:
+    sprite: _Omu/Clothing/Eyes/scidiagglasses.rsi
+    state: icon
