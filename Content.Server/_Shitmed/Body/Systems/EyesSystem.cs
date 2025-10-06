@@ -61,7 +61,7 @@ namespace Content.Server._Shitmed.Body.Systems
                 || organ.OrganIntegrity <= 0)
                 return;
 
-            _blindableSystem.SetEyeDamage((organ.Body.Value, blindable), (int) organ.OrganIntegrity);
+            _blindableSystem.SetEyeDamage((organ.Body.Value, blindable), (int) organ.IntegrityCap - (int) organ.OrganIntegrity);
         }
 
         private void OnOrganEnabled(EntityUid uid, EyesComponent component, OrganEnabledEvent args)
