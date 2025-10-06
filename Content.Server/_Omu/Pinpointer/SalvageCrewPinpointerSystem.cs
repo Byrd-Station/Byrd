@@ -1,11 +1,11 @@
 using System.Linq;
 using Content.Server.Chat.Systems;
-using Content.Shared._Omu.Pinpointer;
 using Content.Shared.Access.Components;
 using Content.Shared.Chat;
 using Content.Shared.Examine;
 using Content.Shared.Pinpointer;
 using Robust.Server.GameObjects;
+using Robust.Shared.Timing;
 
 namespace Content.Server._Omu.Pinpointer;
 
@@ -16,6 +16,7 @@ public sealed class SalvageCrewPinpointerSystem : EntitySystem
 {
     [Dependency] private readonly ChatSystem _speech = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
     /// <inheritdoc/>
     public override void Initialize()
     {
@@ -29,12 +30,19 @@ public sealed class SalvageCrewPinpointerSystem : EntitySystem
         var query = EntityQueryEnumerator<PinpointerComponent, SalvageCrewPinpointerComponent>();
         while (query.MoveNext(out var uid, out var pin, out var salv))
         {
-            if (pin.Targets.Count < 1)
+            if (salv.NextCheck == TimeSpan.Zero)
+            {
+                salv.NextCheck = _gameTiming.CurTime + salv.CheckInterval;
                 continue;
-            if (salv.NextCheck >= DateTime.Now)
+            }
+
+            if (_gameTiming.CurTime < salv.NextCheck)
                 continue;
 
-            salv.NextCheck =  DateTime.Now + salv.CheckInterval;
+            if (pin.Targets.Count < 1)
+                continue;
+
+            salv.NextCheck = _gameTiming.CurTime + salv.CheckInterval;
             if (salv.PreviousPositionWorld == _transform.GetWorldPosition(pin.Targets.First()) ||
                 salv.PreviousPositionTileLocal == _transform.GetGridOrMapTilePosition(pin.Targets.First()))
             {

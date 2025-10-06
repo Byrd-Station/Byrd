@@ -163,7 +163,7 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
         EntityWhitelist? blacklist)
     {
         _xformQuery.Resolve(ent, ref ent.Comp, false);
-        var pinpointerComponent = EntityManager.GetComponent<PinpointerComponent>(ent.Owner);
+        var pinpointerComponent = EntityManager.GetComponent<PinpointerComponent>(ent.Owner); //Omu
 
         if (ent.Comp == null)
             return null;
@@ -201,7 +201,7 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
 
                 if (pinpointerComponent.RespectsCrossMaps && compXform.MapID != mapId)
                 {
-                    l.TryAdd(-1, otherUid); // Indicate a cross-map distance. FML.
+                    l.TryAdd(-1, otherUid); // Omu: Indicate a cross-map distance. FML.
                 }
                 var dist = (_transform.GetWorldPosition(compXform) - worldPos).LengthSquared();
                 l.TryAdd(dist, otherUid);
@@ -343,8 +343,6 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
     private Distance CalculateDistance(Vector2 vec, PinpointerComponent pinpointer)
     {
         var dist = vec.Length();
-        if (dist == -1) // Omu: Needed for Cross-Map entities.
-            return Distance.Unknown;
         if (dist <= pinpointer.ReachedDistance)
             return Distance.Reached;
         else if (dist <= pinpointer.CloseDistance)

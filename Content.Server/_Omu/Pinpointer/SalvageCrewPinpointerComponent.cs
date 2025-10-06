@@ -1,14 +1,11 @@
 using System.Numerics;
-using Content.Server._Omu.Pinpointer;
-using Robust.Shared.GameStates;
 
-namespace Content.Shared._Omu.Pinpointer;
+namespace Content.Server._Omu.Pinpointer;
 
 /// <summary>
 /// Handles non-movement alerts of salvage crew pinpointers.
 /// </summary>
 [RegisterComponent]
-[Access(typeof(SalvageCrewPinpointerSystem))]
 public sealed partial class SalvageCrewPinpointerComponent : Component
 {
     /// <summary>
@@ -20,12 +17,13 @@ public sealed partial class SalvageCrewPinpointerComponent : Component
     /// <summary>
     /// Exactly when the next movement check is ran
     /// </summary>
-    public DateTime NextCheck = DateTime.Now;
+    public TimeSpan NextCheck { get; set; }
 
     /// <summary>
     /// How many checks has the target failed in a row?
     /// </summary>
-    public int FailedChecks = 0;
+    [DataField]
+    public int FailedChecks { get; set; }
 
     public Vector2 PreviousPositionWorld = Vector2.Zero;
 
