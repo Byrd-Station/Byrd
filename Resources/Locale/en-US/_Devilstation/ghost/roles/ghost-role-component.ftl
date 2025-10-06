@@ -1,7 +1,7 @@
-﻿ghost-role-information-centcomm-cyborg-combat-name = Combat Cyborg
+﻿ghost-role-information-centcomm-cyborg-ert-name = Emergency Response Team Cyborg
 ghost-role-information-centcomm-cyborg-commando-name = Commando Cyborg
 
-ghost-role-information-centcomm-cyborg-combat-description = A Emergency Response Team needs more manpower. You, a combat-specialized chassis, will help them.
+ghost-role-information-centcomm-cyborg-ert-description = A Emergency Response Team needs more manpower. You, a combat-specialized chassis, will help them.
 ghost-role-information-centcomm-cyborg-commando-description = A Deathsquad needs more manpower. You, a top-of-the-line chassis, will help them.
 
 ghost-role-information-higher-standard-silicon-rules = You are a [color={role-type-silicon-color}][bold]{role-type-silicon-name}[/bold][/color]. Obey your laws. You are a {role-type-free-agent-name} if you are not currently bound by any laws.

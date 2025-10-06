@@ -2,7 +2,7 @@
   id: BorgChassisERT
   parent: BaseBorgChassisNotIonStormable
   name: ERT Cyborg
-  description: A military-grade module produced in-house by Nanotrasen, the NT Combat module is purpose-built for the extermination of powerful threats alongside their ERT compatriots.
+  description: A military-grade man-machine hybrid that's produced in-house by Nanotrasen, this chassis is purpose-built for the extermination of powerful threats alongside their ERT compatriots.
   components:
   - type: BorgTransponder
     name: ert cyborg
@@ -262,13 +262,13 @@
   - type: Stripping
 
 - type: entity
-  id: PlayerBorgCombatGhostRole
-  parent: BorgChassisCombat
+  id: PlayerBorgErtGhostRole
+  parent: BorgChassisErt
   suffix: Ghost role
   components:
   - type: GhostRole
-    name: ghost-role-information-centcomm-cyborg-combat-name
-    description: ghost-role-information-centcomm-cyborg-combat-description
+    name: ghost-role-information-centcomm-cyborg-ert-name
+    description: ghost-role-information-ert-cyborg-ert-description
     rules: ghost-role-information-higher-standard-silicon-rules
     raffle:
       settings: default
