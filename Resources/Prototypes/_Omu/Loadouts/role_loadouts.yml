@@ -1,0 +1,17 @@
+- type: roleLoadout
+  id: JobTransitPrisoner
+  canCustomizeName: true
+  groups:
+  - GroupTankHarness
+  - PrisonerJumpsuits
+  - PrisonerOuterClothing
+  - PrisonerShoes
+  - CommonBackpack
+  - Glasses
+  - Survival
+  - Trinkets
+  - Animals
+  - GroupSpeciesBreathTool
+  - PrisonerEnvirohelm
+  - PrisonerEnvirosuit
+  - PrisonerEnvirogloves
