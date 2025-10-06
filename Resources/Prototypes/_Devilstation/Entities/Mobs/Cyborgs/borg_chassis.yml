@@ -1,7 +1,7 @@
 ﻿- type: entity
-  id: BorgChassisERT
+  id: BorgChassisErt
   parent: BaseBorgChassisNotIonStormable
-  name: ERT Cyborg
+  name: Emergency Response Team Cyborg
   description: A military-grade man-machine hybrid that's produced in-house by Nanotrasen, this chassis is purpose-built for the extermination of powerful threats alongside their ERT compatriots.
   components:
   - type: BorgTransponder
