@@ -32,7 +32,7 @@
 - type: gameMap
   id: Saltern
   mapName: 'Saltern'
-  mapPath: /Maps/_Goobstation/saltern.yml # Goobstation - use custom saltern
+  mapPath: /Maps/_Omu/saltern.yml # Omu - Prisoner role mapping
   minPlayers: 0
   maxPlayers: 35
   fallback: true
@@ -85,6 +85,7 @@
             SecurityOfficer: [ 4, 4 ]
             SecurityCadet: [ 4, 4 ]
             Brigmedic: [ 1, 1 ]
+            TransitPrisoner: [1, 1] # Omu - Prisoner role
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 1, 3 ]

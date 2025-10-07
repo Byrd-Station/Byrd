@@ -36,7 +36,7 @@
 - type: gameMap
   id: Marathon
   mapName: 'Marathon Station'
-  mapPath: /Maps/_Goobstation/marathon.yml # Goobstation
+  mapPath: /Maps/_Omu/marathon.yml # Omu - Prisoner role mapping
   minPlayers: 35
   maxPlayers: 70
   stations:
@@ -88,6 +88,7 @@
             SecurityCadet: [ 4, 4 ]
             Lawyer: [ 2, 2 ]
             Brigmedic: [ 1, 1 ]
+            TransitPrisoner: [3, 3] # Omu - Prisoner role
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
