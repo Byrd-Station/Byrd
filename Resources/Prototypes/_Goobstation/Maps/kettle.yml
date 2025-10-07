@@ -36,7 +36,7 @@
 - type: gameMap
   id: Kettle
   mapName: 'Kettle'
-  mapPath: /Maps/_Goobstation/kettle.yml
+  mapPath: /Maps/_Omu/kettle.yml # Omu - Prisoner role mapping
   minPlayers: 35
   stations:
     Kettle:
@@ -88,6 +88,7 @@
             SecurityOfficer: [ 4, 6 ]
             SecurityCadet: [ 8, 8 ]
             Brigmedic: [ 1, 1 ]
+            TransitPrisoner: [3, 3] # Omu - Prisoner role
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 6, 6 ]

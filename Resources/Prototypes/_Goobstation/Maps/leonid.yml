@@ -41,7 +41,7 @@
 - type: gameMap
   id: Leonid
   mapName: 'Leonid Station'
-  mapPath: /Maps/_Goobstation/leonid.yml
+  mapPath: /Maps/_Omu/leonid.yml # Omu - Prisoner role mapping
   minPlayers: 35
   stations:
     Leonid:
@@ -93,6 +93,7 @@
             SecurityCadet: [ 6, 6 ]
             Lawyer: [ 3, 3 ]
             Brigmedic: [ 1, 1 ]
+            TransitPrisoner: [3, 3] # Omu - Prisoner role
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 6, 6 ]
