@@ -83,7 +83,7 @@
         # tossup of mantles for command.
         BlueshieldOfficer: ClothingCyberneticBeastMantleBlueshieldOfficer
         Captain: ClothingCyberneticBeastMantleCommand
-        ChiefEngineer: ClothingCyberneticBeastMantleWorkEngineering
+        ChiefEngineer: ClothingCyberneticBeastMantleWorkAtmospherics
         ChiefMedicalOfficer: ClothingCyberneticBeastMantleMedical
         HeadOfPersonnel: ClothingCyberneticBeastMantleCommand
         HeadOfSecurity: ClothingCyberneticBeastMantleSecurity
