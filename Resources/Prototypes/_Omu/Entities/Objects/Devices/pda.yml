@@ -19,7 +19,7 @@
 - type: entity
   parent: ClearPDA
   id: TransitPrisonerPDA
-  name: Prisoner PDA #TODO: Decide whether to keep the name as clear PDA or Prisoner PDA
+  name: Prisoner PDA
   description: 99 and 44/100ths percent pure plastic.
   components:
   - type: Pda

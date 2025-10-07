@@ -80,12 +80,9 @@
   - type: Access
     tags:
     - GenpopEnter
-  - type: GenpopIdCard
   - type: IdCard
-    jobTitle: job-name-prisoner
+    jobTitle: job-name-transit-prisoner
     jobIcon: JobIconPrisoner
-  - type: ExpireIdCard
-    permanent: true
   - type: Tag
     tags:
     - DoorBumpOpener

@@ -3,6 +3,7 @@
   name: job-name-transit-prisoner
   description: job-description-transit-prisoner
   playTimeTracker: JobTransitPrisoner
+  OverrideConsoleVisibility: true
   requirements:
   - !type:DepartmentTimeRequirement
     department: Security
@@ -29,4 +30,4 @@
   job: TransitPrisoner
   equipment:
     jumpsuit: ClothingUniformJumpsuitPrisoner
-    id: ClearPDA
+    id: TransitPrisonerPDA

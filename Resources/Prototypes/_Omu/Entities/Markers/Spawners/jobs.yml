@@ -1,5 +1,5 @@
 - type: entity
-  id: SpawnPointTransitPrisoner
+  id: SpawnPointPrisoner
   parent: SpawnPointJobBase
   name: transitprisoner
   components:
