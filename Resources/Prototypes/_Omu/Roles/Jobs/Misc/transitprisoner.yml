@@ -12,7 +12,8 @@
   icon: "JobIconPrisoner"
   supervisors: job-supervisors-security
   canBeAntag: false
-  goobcoins: 0 # same as assistant
+  goobcoins: 10 # 1/3 Cadet
+  weight: -10
   access: 
   - GenpopEnter
   special:
