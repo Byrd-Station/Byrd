@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/07/2025 20:03:43
-  entityCount: 29862
+  time: 10/08/2025 01:24:24
+  entityCount: 29861
 maps:
 - 1
 grids:
@@ -13224,7 +13224,7 @@ entities:
       pos: 0.5,48.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -35448.156
+      secondsUntilStateChange: -36433.047
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13924,7 +13924,7 @@ entities:
       pos: -3.5,-35.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -637093.06
+      secondsUntilStateChange: -638077.94
       state: Opening
   - uid: 422
     components:
@@ -89611,32 +89611,6 @@ entities:
     - type: Transform
       pos: -16.324766,5.808292
       parent: 2
-- proto: DropPodspawner
-  entities:
-  - uid: 21829
-    components:
-    - type: Transform
-      pos: 42.814255,-16.18
-      parent: 2
-    - type: Storage
-      storedItems:
-        21830:
-          position: 0,0
-          _rotation: South
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 21830
-        clowncar_container: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-    - type: TwoStageTrigger
-      triggered: True
-      triggerDelay: 70
 - proto: DVSmartFridgeMedical
   entities:
   - uid: 18109
@@ -93081,7 +93055,7 @@ entities:
       pos: -1.5,-16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3872.6052
+      secondsUntilStateChange: -4857.4946
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -138634,8 +138608,15 @@ entities:
   - uid: 21830
     components:
     - type: Transform
-      parent: 21829
+      pos: 49.715614,-15.875376
+      parent: 2
     - type: Paper
+      stampState: paper_stamp-centcom
+      stampedBy:
+      - stampedColor: '#006600FF'
+        stampedName: stamp-component-stamped-name-centcom
+      - stampedColor: '#2F4F4FFF'
+        stampedName: DO NOT DISREGARD
       content: >2-
                                       [color=#1b487e]╔══════════════════╗
                                       ║███░███░░░░██░░░░░║
@@ -138649,12 +138630,10 @@ entities:
 
         ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 
-        Any and all transit prisoners will be delivered directly to the station, not the proper off-station "Exile". According to our highly-sophisticated research, most crew, including members of security, almost never thoroughly checks the crew manifest. By dropping them off within your department, we hope that you will realize that you have prisoners to take care of.
+        Any and all transit prisoners will be delivered directly to the station, not the proper off-station "Exile". According to our highly-sophisticated research, the vast majority of station personnel, including members of security, almost never thoroughly check the crew manifest. By dropping them off within your department, we hope you'll immediately realize that you have prisoners to take care of.
 
 
-        The shuttle's right there. [color=#c51814][bold]GET TO DRIVING![/bold][/color]
-    - type: Physics
-      canCollide: False
+        The transport shuttle is right there. [color=#c51814][bold]NOW GET TO DRIVING![/bold][/color]
   - uid: 27779
     components:
     - type: Transform
@@ -157565,20 +157544,20 @@ entities:
     - type: Transform
       pos: 13.5,-7.5
       parent: 22618
-  - uid: 21831
+  - uid: 21829
     components:
     - type: Transform
-      pos: 44.5,-20.5
+      pos: 53.5,-20.5
       parent: 2
-  - uid: 21833
+  - uid: 21831
     components:
     - type: Transform
       pos: 45.5,-20.5
       parent: 2
-  - uid: 21834
+  - uid: 21833
     components:
     - type: Transform
-      pos: 46.5,-20.5
+      pos: 49.5,-20.5
       parent: 2
 - proto: SpawnPointPsychologist
   entities:
@@ -186603,7 +186582,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -60797.17
+      secondsUntilStateChange: -61782.062
       state: Opening
     - type: Airlock
       autoClose: False
@@ -187957,7 +187936,7 @@ entities:
       pos: 24.5,2.5
       parent: 22618
     - type: Door
-      secondsUntilStateChange: -415224.56
+      secondsUntilStateChange: -416209.44
       state: Opening
   - uid: 29025
     components:
@@ -187966,7 +187945,7 @@ entities:
       pos: -46.5,28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -69180.94
+      secondsUntilStateChange: -70165.83
       state: Opening
 - proto: WoodenBench
   entities:
