@@ -31,7 +31,7 @@
 - type: gameMap
   id: OriginHighPop
   mapName: 'Origin'
-  mapPath: /Maps/_Omu/origin.yml # Omu - Prisoner role mapping
+  mapPath: /Maps/_Goobstation/origin.yml
   minPlayers: 85
   stations:
     Origin:
@@ -85,7 +85,6 @@
             SecurityCadet: [ -1, -1 ]
             Lawyer: [ 3, 3 ]
             Brigmedic: [ 1, 1 ]
-            TransitPrisoner: [3, 4] # Omu - Prisoner role
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 8, 8 ]

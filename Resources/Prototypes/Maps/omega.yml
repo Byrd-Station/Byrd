@@ -32,7 +32,7 @@
 - type: gameMap
   id: Omega
   mapName: 'Omega'
-  mapPath: /Maps/_Omu/omega.yml # Omu - Prisoner role mapping
+  mapPath: /Maps/_Goobstation/omega.yml # Goobstation
   minPlayers: 7
   maxPlayers: 35
   stations:
@@ -83,7 +83,6 @@
             SecurityCadet: [ 2, 2 ]
             Lawyer: [ 1, 1 ]
             Brigmedic: [ 1, 1 ]
-            TransitPrisoner: [1, 2] # Omu - Prisoner role
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 2, 2 ]

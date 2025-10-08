@@ -10,7 +10,7 @@
 - type: gameMap
   id: Submarine
   mapName: 'Submarine'
-  mapPath: /Maps/_Omu/submarine.yml # Omu - Prisoner role mapping
+  mapPath: /Maps/_Goobstation/submarine.yml
   minPlayers: 60
   stations:
     Submarine:
@@ -51,7 +51,6 @@
             SecurityCadet: [ 1, 4 ]
             Warden: [ 1, 1 ]
             Brigmedic: [ 1, 1 ]
-            TransitPrisoner: [3, 4] # Omu - Prisoner role
           #service
             Bartender: [ 2, 3 ]
             Botanist: [ 2, 5 ]

@@ -93,7 +93,7 @@
 - type: gameMap
   id: Loop
   mapName: 'Loop Station'
-  mapPath: /Maps/_Omu/loop.yml # Omu - Prisoner role mapping
+  mapPath: /Maps/_Goobstation/loop.yml
   minPlayers: 35
   maxPlayers: 70
   stations:
@@ -146,7 +146,6 @@
             SecurityCadet: [ 4, 4 ]
             Lawyer: [ 2, 2 ]
             Brigmedic: [ 1, 1 ]
-            TransitPrisoner: [3, 3] # Omu - Prisoner role
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
