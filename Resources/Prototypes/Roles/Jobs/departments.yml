@@ -230,6 +230,7 @@
   - Detective
   - Warden
   - Brigmedic # Goob
+  - TransitPrisoner # Omu
 
 - type: department
   id: Science
