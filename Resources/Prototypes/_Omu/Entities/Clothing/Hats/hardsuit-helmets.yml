@@ -49,7 +49,7 @@
         Piercing: 0.8
         Heat: 0.3
         Radiation: 0.3
-        Caustic: 0.6
+        Caustic: 0.4
   - type: EyeProtection
 
 

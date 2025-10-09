@@ -51,7 +51,7 @@
         Piercing: 0.80
         Heat: 0.3
         Radiation: 0.3
-        Caustic: 0.5
+        Caustic: 0.3
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
