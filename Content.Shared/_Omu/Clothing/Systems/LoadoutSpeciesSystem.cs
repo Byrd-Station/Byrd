@@ -3,13 +3,13 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Shared.Clothing.Components;
+using Content.Shared._Omu.Clothing.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Roles;
 using Content.Shared.Station;
 using Content.Shared.Inventory;
 
-namespace Content.Goobstation.Shared.Clothing.Systems;
+namespace Content.Shared._Omu.Clothing.Systems;
 public sealed class LoadoutSpeciesSystem : EntitySystem
 {
     [Dependency] private readonly SharedStationSpawningSystem _station = default!;

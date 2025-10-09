@@ -6,7 +6,7 @@
 using Content.Shared.Roles;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-namespace Content.Goobstation.Shared.Clothing.Components;
+namespace Content.Shared._Omu.Clothing.Components;
 /// <summary>
 /// Requires LoadoutComponent, replaces starting gear or specific slots with different ones depending on species.
 /// </summary>
