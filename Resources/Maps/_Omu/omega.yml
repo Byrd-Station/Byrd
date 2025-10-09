@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/07/2025 18:04:41
-  entityCount: 13936
+  time: 10/09/2025 22:47:00
+  entityCount: 13934
 maps:
 - 1
 grids:
@@ -73641,14 +73641,6 @@ entities:
     - type: Transform
       pos: -42.5,0.5
       parent: 2
-- proto: SpaceVillainArcadeFilled
-  entities:
-  - uid: 13516
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -28.5,27.5
-      parent: 2
 - proto: SpawnMechRipley
   entities:
   - uid: 11036
@@ -74078,6 +74070,11 @@ entities:
       parent: 2
 - proto: SpawnPointPrisoner
   entities:
+  - uid: 13516
+    components:
+    - type: Transform
+      pos: -26.5,31.5
+      parent: 2
   - uid: 13933
     components:
     - type: Transform
@@ -74087,11 +74084,6 @@ entities:
     components:
     - type: Transform
       pos: -25.5,28.5
-      parent: 2
-  - uid: 13935
-    components:
-    - type: Transform
-      pos: -27.5,30.5
       parent: 2
 - proto: SpawnPointQuartermaster
   entities:
@@ -74217,12 +74209,6 @@ entities:
     components:
     - type: Transform
       pos: -33.5,15.5
-      parent: 2
-  - uid: 13546
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -28.5,28.5
       parent: 2
   - uid: 13786
     components:
