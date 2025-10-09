@@ -293,7 +293,7 @@ SpawnPointForensicMantis: null
 SpawnPointLocationMidRoundAntag: null
 SpawnPointMartialArtist: null
 SpawnPointMedicalBorg: null
-SpawnPointPrisoner: null
+#SpawnPointPrisoner: null # Omu
 SpawnPointPrisonGuard: null
 SpeedLoaderSpecialPractice: null
 SuitStorageCorpsman: null
