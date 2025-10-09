@@ -14,8 +14,6 @@
     startAnnouncement: station-event-deathsquad-enroute
     startAudio:
       collection: DSMusic #Omu
-      params:
-        loop: true
     reoccurrenceDelay: 30
     duration: null
     maxOccurrences: 1
