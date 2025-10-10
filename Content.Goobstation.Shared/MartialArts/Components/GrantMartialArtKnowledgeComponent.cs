@@ -36,6 +36,9 @@ public abstract partial class GrantMartialArtKnowledgeComponent : Component
 
     [DataField]
     public SoundSpecifier? SoundOnUse = new SoundPathSpecifier("/Audio/Effects/fire.ogg", AudioParams.Default.WithVolume(10));
+
+    [DataField] // Omu Edit - Cooks and Syndie can have their CQC superiority
+    public bool CanAutoRiposte = false;
 }
 
 [RegisterComponent]

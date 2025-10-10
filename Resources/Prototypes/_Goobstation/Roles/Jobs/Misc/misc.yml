@@ -118,6 +118,7 @@
     - type: GrantCqc
       startingStage: Hard
       isBlocked: false
+      canAutoRiposte: true
     - type: NpcFactionMember
       factions:
       - Syndicate

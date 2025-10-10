@@ -502,11 +502,13 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
                 EnsureComp<NinjutsuSneakAttackComponent>(user);
                 break;
             case MartialArtsForms.CloseQuartersCombat:
-                // Omustation edit. Do not grant riposte with CQC. Remove comments to reenable - the event still fires so other shit doesnt fuck up though.
 
                  var thisVariableIsNeverUsedButIfIdontAssignAvariableToAnEventMyIdEcomplainsSoHereYouGo =
                     new CanDoCQCEvent();
-                /*
+
+                if (!comp.CanAutoRiposte) // Omustation edit. Do not grant riposte with to everyone with CQC
+                    break;
+
                 var riposte = EnsureComp<RiposteeComponent>(user);
                 riposte.Data.TryAdd("CQC",
                     new(0.1f,
@@ -521,7 +523,6 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
                     null,
                     null,
                     new CanDoCQCEvent()));
-                    */ // Omustation edit end.
                 break;
         }
 

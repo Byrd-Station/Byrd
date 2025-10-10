@@ -102,6 +102,7 @@
       - type: GrantCqc
         startingStage: Hard
         isBlocked: true
+        canAutoRiposte: true
   - !type:AddImplantSpecial # Chefs speak space italian
     implants: [ SpaceItalianTranslatorImplant ]
 
