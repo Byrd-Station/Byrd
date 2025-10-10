@@ -133,39 +133,39 @@
   # Goobrules start.
 
 - type: guideEntry
-  id: RuleGoobBSO
+  id: RuleBSO
   name: guide-entry-rules-r12 #we can probably leave the ftls unchanged but yeah if you touch anything make an omu one.
   ruleEntry: true
   priority: 19
-  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR8GoobBSO.xml" # <- Goob name!! Remove if changing significantly.
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR8BSO.xml"
 
 - type: guideEntry
-  id: RuleGoobNTR
+  id: RuleNTR
   name: guide-entry-rules-r13
   ruleEntry: true
   priority: 20
-  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR9GoobNTR.xml"
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR9NTR.xml"
 
 - type: guideEntry
-  id: RuleGoobNLR
+  id: RuleNLR
   name: guide-entry-rules-r14
   ruleEntry: true
   priority: 21
-  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR10GoobNLR.xml"
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR10NLR.xml"
 
 - type: guideEntry
-  id: RuleGoobBadGuys
+  id: RuleBadGuys
   name: guide-entry-rules-r7
   ruleEntry: true
   priority: 22
-  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR11GoobCriminal.xml"
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR11Criminal.xml"
 
 - type: guideEntry
-  id: RuleGoobValidhunt
+  id: RuleValidhunt
   name: guide-entry-rules-r5
   ruleEntry: true
   priority: 23
-  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR12GoobValidhunt.xml"
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR12Validhunt.xml"
 
   # Goobrules end
 
