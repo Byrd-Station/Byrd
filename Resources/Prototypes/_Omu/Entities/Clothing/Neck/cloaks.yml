@@ -19,3 +19,26 @@
     sprite: _Omu/Clothing/Neck/Cloaks/rdcloak.rsi
   - type: StealTarget
     stealGroup: HeadCloak
+
+- type: entity
+  parent: [ClothingNeckBase, BaseWardenContraband]
+  id: ClothingNeckWardenParryCloak
+  name: parrying cloak
+  description: A red cloak with an integrated scabbard, reinforced with bullet-resistant nanoweave.
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Neck/Cloaks/parryingcloak.rsi
+  - type: Reflect
+    reflectProb: 0.3
+    spread: 360
+  - type: ItemSlots
+    slots:
+      item:
+        name: Rapier
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - WardenRapier
