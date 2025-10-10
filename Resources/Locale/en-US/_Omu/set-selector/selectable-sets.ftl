@@ -4,7 +4,6 @@ selectable-set-headofsecurity-paradevoidsuit-desc =
     Comes integrated with a AI Operated stim injector.
     Usually reserved for special occasions.
 
-
 selectable-set-paramedic-cybersunhardsuit-name = CSI-122M "Xiézhù" hardsuit
 selectable-set-paramedic-cybersunhardsuit-desc =
     The odd one out of the Cybersun Hardsuits, meant to be lightweight but less armored.
@@ -12,7 +11,6 @@ selectable-set-paramedic-cybersunhardsuit-desc =
 selectable-set-warden-eshotty-name = Energy Shotgun
 selectable-set-warden-eshotty-description =
     The classic. A tool that can quickly swap from stun straight to lethal.
-
 
 selectable-set-warden-r6-name = R6 Trench Gun
 selectable-set-warden-r6-description =
