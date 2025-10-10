@@ -9,10 +9,6 @@ selectable-set-paramedic-cybersunhardsuit-name = CSI-122M "Xiézhù" hardsuit
 selectable-set-paramedic-cybersunhardsuit-desc =
     The odd one out of the Cybersun Hardsuits, meant to be lightweight but less armored.
 
-selectable-set-eshotty-r6-name = Energy Shotgun
-selectable-set-eshotty-r6-desc =
-    The classic tool for quickly swapping straight to lethal.
-
 selectable-set-warden-eshotty-name = Energy Shotgun
 selectable-set-warden-eshotty-description =
     The classic. A tool that can quickly swap from stun straight to lethal.
