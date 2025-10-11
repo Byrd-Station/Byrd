@@ -1,0 +1,17 @@
+- type: Tag
+  id: ModsuitModuleHead
+
+- type: Tag
+  id: ModsuitModuleChest
+
+- type: Tag
+  id: ModsuitModuleHands
+
+- type: Tag
+  id: ModsuitModuleFeet
+
+- type: Tag
+  id: ModsuitModuleControl
+
+- type: Tag
+  id: ModsuitModuleGeneric

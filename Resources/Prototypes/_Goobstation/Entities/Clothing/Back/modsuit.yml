@@ -45,6 +45,7 @@
         ents: []
       toggleable-clothing: !type:Container
       cell_slot: !type:ContainerSlot
+      module_slot: !type:ContainerSlot # Omu, modsuit modules
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
@@ -72,9 +73,15 @@
         whitelist:
           components:
             - PowerCell
+      module_slot: # Omu start, modsuit modules
+        name: sealable-clothing-module-name-one
+        whitelist:
+          tags:
+            - ModsuitModuleControl # Omu end
   - type: ItemSlotsRequirePanel
     slots:
       cell_slot: true
+      module_slot: true # Omu, modsuit modules
   - type: PowerCellDraw
     drawRate: 0.8 # Sealed draw rate
     useRate: 4 # Draw rate for sealing
@@ -95,6 +102,8 @@
   - type: ClothingSpeedModifier
     sprintModifier: 0.95
     walkModifier: 0.95
+  - type: ModsuitModuleSlot # Omu, modsuit modules
+    ModuleSlotId: module_slot
 
 - type: entity
   parent: ClothingModsuitStandard
