@@ -721,3 +721,18 @@ Entries:
         focus on that fukken disk!
   id: 85
   time: '2025-10-11T17:20:05.0000000+00:00'
+- author: MarkerWicker
+  changes:
+    - type: Tweak
+      message: >-
+        Cybernetic mantles have been improved for Engineers and Atmosians. In
+        return, all "sealed" mantle variants need to be taken off in order for
+        the wearer to eat.
+    - type: Fix
+      message: Cybernetic mantle eye colours now show up as the same for each player.
+    - type: Fix
+      message: The cybernetic beast trait is now transferred to clones of a character.
+    - type: Fix
+      message: Virtual items no longer show up when a character is examined.
+  id: 86
+  time: '2025-10-11T17:29:34.0000000+00:00'
