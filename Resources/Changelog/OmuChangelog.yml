@@ -736,3 +736,11 @@ Entries:
       message: Virtual items no longer show up when a character is examined.
   id: 86
   time: '2025-10-11T17:29:34.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added back the 40mm beanbags and slug shell for sec.
+    - type: Add
+      message: Added back recipes for 8 gauge lever action mags.
+  id: 87
+  time: '2025-10-11T18:00:33.0000000+00:00'
