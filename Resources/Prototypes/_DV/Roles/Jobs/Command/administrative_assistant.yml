@@ -31,3 +31,15 @@
   storage:
     back:
     - Flash
+
+# Omu Station Reqs
+- type: chameleonOutfit
+  id: AdminAssistantChameleonOutfit
+  job: AdministrativeAssistant
+  hasMindShield: true
+  equipment:
+    eyes: ClothingEyesGlasses
+    mask: ClothingMaskGas
+    neck: ClothingNeckScarfStripedGreen
+    outerClothing: ClothingOuterWinterColorGreen
+    gloves: ClothingHandsGlovesColorBlack
