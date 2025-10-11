@@ -24,11 +24,11 @@
   name: medhud modsuit module
   components:
   - type: Sprite
-    state: med-hud-module
+    state: medhud_visor
   - type: Icon
-    state: med-hud-module
+    state: medhud_visor
   - type: ModsuitModule
-    OnAdd:
+    onAdd:
     - type: ShowHealthBars
       damageContainers:
       - Biological

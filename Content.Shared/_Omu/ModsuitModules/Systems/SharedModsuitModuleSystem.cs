@@ -64,47 +64,36 @@ public abstract class SharedModsuitModuleSystem : EntitySystem
         }
     }
 
-    private void OnModuleInserted(EntityUid uid, ModsuitModuleSlotComponent component, EntInsertedIntoContainerMessage args)
+    private void OnModuleInserted(EntityUid uid, ModsuitModuleSlotComponent component, ItemSlotInsertAttemptEvent args)
     {
         if (!component.Initialized)
             return;
 
-        if (args.Container.ID != component.ModuleSlotId)
+        if (args.Slot.ID != component.ModuleSlotId)
             return;
 
         //RaiseLocalEvent(uid, new ModsuitModuleChangedEvent(false), false);
-        AddComponents(uid, args.Entity.Components.ModsuitModuleComponent.OnAdd);
+
+        TryComp<ModsuitModuleComponent>(args.Item, out var comp);
+        if (comp != null && comp.OnAdd != null)
+        {
+            AddComponents(uid, comp.OnAdd);
+        }
+
     }
 
-    protected virtual void OnModuleRemoved(EntityUid uid, ModsuitModuleSlotComponent component, EntRemovedFromContainerMessage args)
+    protected virtual void OnModuleRemoved(EntityUid uid, ModsuitModuleSlotComponent component, ItemSlotEjectAttemptEvent args)
     {
-        if (args.Container.ID != component.ModuleSlotId)
+        if (args.Slot.ID != component.ModuleSlotId)
             return;
 
         //RaiseLocalEvent(uid, new ModsuitModuleChangedEvent(true), false);
-        RemoveComponents(uid, args.Entity.Components.ModsuitModuleComponent.OnAdd);
-    }
-    //
-    /// <summary>
-    /// Returns whether the entity has a slotted battery and <see cref="PowerCellDrawComponent.UseRate"/> charge.
-    /// </summary>
-    /// <param name="uid"></param>
-    /// <param name="battery"></param>
-    /// <param name="cell"></param>
-    /// <param name="user">Popup to this user with the relevant detail if specified.</param>
-    ///public abstract bool HasActivatableCharge(
-    ///    EntityUid uid,
-    ///    PowerCellDrawComponent? battery = null,
-    ///    PowerCellSlotComponent? cell = null,
-    ///    EntityUid? user = null);
-    ///
-    /// <summary>
-    /// Whether the power cell has any power at all for the draw rate.
-    /// </summary>
-    ///public abstract bool HasDrawCharge(
-    ///    EntityUid uid,
-    ///    PowerCellDrawComponent? battery = null,
-    ///    PowerCellSlotComponent? cell = null,
-    ///    EntityUid? user = null);
 
+        TryComp<ModsuitModuleComponent>(args.Item, out var comp);
+        if (comp != null && comp.OnAdd != null)
+        {
+            RemoveComponents(uid, comp.OnAdd);
+        }
+
+    }
 }
