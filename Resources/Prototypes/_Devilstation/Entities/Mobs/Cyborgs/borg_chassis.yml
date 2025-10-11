@@ -268,7 +268,7 @@
   components:
   - type: GhostRole
     name: ghost-role-information-centcomm-cyborg-ert-name
-    description: ghost-role-information-ert-cyborg-ert-description
+    description: ghost-role-information-centcomm-cyborg-ert-description
     rules: ghost-role-information-higher-standard-silicon-rules
     raffle:
       settings: default
