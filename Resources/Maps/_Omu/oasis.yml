@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/08/2025 01:24:24
-  entityCount: 29861
+  time: 10/11/2025 21:41:16
+  entityCount: 29863
 maps:
 - 1
 grids:
@@ -13224,7 +13224,7 @@ entities:
       pos: 0.5,48.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -36433.047
+      secondsUntilStateChange: -36549.86
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13924,7 +13924,7 @@ entities:
       pos: -3.5,-35.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -638077.94
+      secondsUntilStateChange: -638194.75
       state: Opening
   - uid: 422
     components:
@@ -93055,7 +93055,7 @@ entities:
       pos: -1.5,-16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4857.4946
+      secondsUntilStateChange: -4974.305
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -135976,6 +135976,13 @@ entities:
         29822:
         - - Pressed
           - Toggle
+- proto: LockerAdministrativeAssistantFilled
+  entities:
+  - uid: 21834
+    components:
+    - type: Transform
+      pos: 22.5,18.5
+      parent: 2
 - proto: LockerAtmosphericsFilled
   entities:
   - uid: 15631
@@ -156966,6 +156973,13 @@ entities:
     components:
     - type: Transform
       pos: -14.5,-38.5
+      parent: 2
+- proto: SpawnPointAdminAssistant
+  entities:
+  - uid: 21836
+    components:
+    - type: Transform
+      pos: 22.5,17.5
       parent: 2
 - proto: SpawnPointAtmos
   entities:
@@ -186582,7 +186596,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -61782.062
+      secondsUntilStateChange: -61898.875
       state: Opening
     - type: Airlock
       autoClose: False
@@ -187936,7 +187950,7 @@ entities:
       pos: 24.5,2.5
       parent: 22618
     - type: Door
-      secondsUntilStateChange: -416209.44
+      secondsUntilStateChange: -416326.25
       state: Opening
   - uid: 29025
     components:
@@ -187945,7 +187959,7 @@ entities:
       pos: -46.5,28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -70165.83
+      secondsUntilStateChange: -70282.64
       state: Opening
 - proto: WoodenBench
   entities:

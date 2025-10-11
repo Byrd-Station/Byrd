@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/07/2025 17:59:37
-  entityCount: 27673
+  time: 10/11/2025 21:39:07
+  entityCount: 27675
 maps:
 - 1
 grids:
@@ -11365,7 +11365,7 @@ entities:
       pos: -42.5,29.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -19492.54
+      secondsUntilStateChange: -19562.969
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 2
@@ -121782,6 +121782,13 @@ entities:
         532:
         - - Pressed
           - Open
+- proto: LockerAdministrativeAssistantFilled
+  entities:
+  - uid: 27675
+    components:
+    - type: Transform
+      pos: -3.5,-3.5
+      parent: 2
 - proto: LockerAtmosphericsFilled
   entities:
   - uid: 18020
@@ -142823,6 +142830,13 @@ entities:
     components:
     - type: Transform
       pos: -21.5,-22.5
+      parent: 2
+- proto: SpawnPointAdminAssistant
+  entities:
+  - uid: 27674
+    components:
+    - type: Transform
+      pos: -4.5,-5.5
       parent: 2
 - proto: SpawnPointAtmos
   entities:

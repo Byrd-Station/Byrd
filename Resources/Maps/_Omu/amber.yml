@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/09/2025 22:00:15
-  entityCount: 23527
+  time: 10/11/2025 21:04:23
+  entityCount: 23529
 maps:
 - 1
 grids:
@@ -12815,7 +12815,8 @@ entities:
           -7,-13:
             0: 45294
           -6,-12:
-            0: 53759
+            0: 53727
+            8: 32
           -6,-11:
             0: 65533
           -6,-10:
@@ -14990,6 +14991,25 @@ entities:
           - 0
           - 0
           - 6666.982
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.14975
+          moles:
+          - 20.078888
+          - 75.53487
+          - 0
+          - 0
           - 0
           - 0
           - 0
@@ -19121,7 +19141,7 @@ entities:
       pos: -25.5,-25.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -1592.4158
+      secondsUntilStateChange: -1798.1733
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -66715,6 +66735,28 @@ entities:
     - type: Transform
       pos: -22.5,-46.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
   - uid: 17597
     components:
     - type: Transform
@@ -78249,7 +78291,7 @@ entities:
     - type: Transform
       pos: 31.391466,-35.205338
       parent: 2
-- proto: FoodDonutJellySlugcat
+- proto: FoodDonutJellyScurret
   entities:
   - uid: 3759
     components:
@@ -111122,6 +111164,13 @@ entities:
         4890:
         - - Pressed
           - Toggle
+- proto: LockerAdministrativeAssistantFilled
+  entities:
+  - uid: 21796
+    components:
+    - type: Transform
+      pos: -28.5,-48.5
+      parent: 2
 - proto: LockerAtmosphericsFilledHardsuit
   entities:
   - uid: 1929
@@ -129864,6 +129913,13 @@ entities:
     components:
     - type: Transform
       pos: -37.5,-38.5
+      parent: 2
+- proto: SpawnPointAdminAssistant
+  entities:
+  - uid: 21890
+    components:
+    - type: Transform
+      pos: -29.5,-47.5
       parent: 2
 - proto: SpawnPointAtmos
   entities:

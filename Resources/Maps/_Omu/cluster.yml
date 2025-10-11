@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/07/2025 18:31:27
-  entityCount: 12867
+  time: 10/11/2025 21:17:57
+  entityCount: 12868
 maps:
 - 1
 grids:
@@ -36985,7 +36985,7 @@ entities:
     - type: Transform
       pos: 2.6014228,3.2195196
       parent: 2
-- proto: FoodDonutJellySlugcat
+- proto: FoodDonutJellyScurret
   entities:
   - uid: 5615
     components:
@@ -57177,6 +57177,13 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
+- proto: LockerAdministrativeAssistantFilled
+  entities:
+  - uid: 8949
+    components:
+    - type: Transform
+      pos: -11.5,31.5
+      parent: 2
 - proto: LockerAtmosphericsFilled
   entities:
   - uid: 8472
@@ -60146,11 +60153,6 @@ entities:
     components:
     - type: Transform
       pos: 3.5,50.5
-      parent: 2
-  - uid: 8949
-    components:
-    - type: Transform
-      pos: -11.5,31.5
       parent: 2
   - uid: 8950
     components:
@@ -68389,6 +68391,13 @@ entities:
     components:
     - type: Transform
       pos: -12.5,13.5
+      parent: 2
+- proto: SpawnPointAdminAssistant
+  entities:
+  - uid: 12868
+    components:
+    - type: Transform
+      pos: -10.5,28.5
       parent: 2
 - proto: SpawnPointAtmos
   entities:

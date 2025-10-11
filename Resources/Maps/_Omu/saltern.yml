@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/07/2025 18:26:17
-  entityCount: 12222
+  time: 10/11/2025 21:50:51
+  entityCount: 12223
 maps:
 - 1
 grids:
@@ -35046,7 +35046,7 @@ entities:
       pos: 40.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3319.6492
+      secondsUntilStateChange: -3392.6685
       state: Closing
   - uid: 5654
     components:
@@ -35445,7 +35445,7 @@ entities:
     - type: Transform
       pos: -2.214967,7.851863
       parent: 2
-- proto: FoodDonutJellySlugcat
+- proto: FoodDonutJellyScurret
   entities:
   - uid: 5721
     components:
@@ -51787,6 +51787,13 @@ entities:
         264:
         - - Pressed
           - Toggle
+- proto: LockerAdministrativeAssistantFilled
+  entities:
+  - uid: 8355
+    components:
+    - type: Transform
+      pos: 0.5,26.5
+      parent: 2
 - proto: LockerAtmosphericsFilledHardsuit
   entities:
   - uid: 8023
@@ -54000,14 +54007,6 @@ entities:
     components:
     - type: Transform
       pos: 12.5,1.5
-      parent: 2
-    - type: ContainerContainer
-      containers:
-        stash: !type:ContainerSlot {}
-  - uid: 8355
-    components:
-    - type: Transform
-      pos: 0.5,26.5
       parent: 2
     - type: ContainerContainer
       containers:
@@ -61365,6 +61364,13 @@ entities:
     components:
     - type: Transform
       pos: 17.5,-0.5
+      parent: 2
+- proto: SpawnPointAdminAssistant
+  entities:
+  - uid: 9625
+    components:
+    - type: Transform
+      pos: -0.5,24.5
       parent: 2
 - proto: SpawnPointAtmos
   entities:

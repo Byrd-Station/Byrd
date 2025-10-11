@@ -1133,7 +1133,7 @@ SpawnPointCargoAssistant: SpawnPointCargoTechnician
 SignLastIdiot: null
 EpistemicsTechFab: ScienceTechFab
 LockableButtonRobotics: null
-LockerAdministrativeAssistantFilled: UniqueLockerNanorepFilled
+# LockerAdministrativeAssistantFilled: UniqueLockerNanorepFilled # Omu
 
 # 2025-10-09
 FoodDonutJellySlugcat: FoodDonutJellyScurret

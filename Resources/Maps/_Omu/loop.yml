@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/07/2025 17:24:04
-  entityCount: 18023
+  time: 10/11/2025 21:36:00
+  entityCount: 18025
 maps:
 - 1
 grids:
@@ -77896,6 +77896,13 @@ entities:
         14720:
         - - Pressed
           - Toggle
+- proto: LockerAdministrativeAssistantFilled
+  entities:
+  - uid: 18024
+    components:
+    - type: Transform
+      pos: -26.5,73.5
+      parent: 2
 - proto: LockerAtmosphericsFilled
   entities:
   - uid: 11648
@@ -93667,6 +93674,13 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -41.5,30.5
+      parent: 2
+- proto: SpawnPointAdminAssistant
+  entities:
+  - uid: 18025
+    components:
+    - type: Transform
+      pos: -24.5,72.5
       parent: 2
 - proto: SpawnPointAtmos
   entities:
