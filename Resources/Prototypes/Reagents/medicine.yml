@@ -57,7 +57,6 @@
 # SPDX-FileCopyrightText: 2024 Gotimanga <127038462+Gotimanga@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
 # SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2024 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Skye <57879983+Rainbeon@users.noreply.github.com>
@@ -74,13 +73,23 @@
 # SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Alzore <140123969+Blackern5000@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 FrostRibbon <107171544+FrostRibbon@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 OnyxTheBrave <131422822+OnyxTheBrave@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
 # SPDX-FileCopyrightText: 2025 RedMush1 <88719613+RedMush1@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 RedMush1 <axmetvaliev1@gmail.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Samuka-C <47865393+Samuka-C@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
@@ -180,9 +189,8 @@
         key: Jitter
         time: 3.0
         type: Remove
-      - !type:GenericStatusEffect
-        key: Drowsiness
-        component: Drowsiness
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
         time: 1.5
         type: Add
         refresh: false
@@ -324,8 +332,33 @@
           damage:
             groups: # Goobstation - Cryo rebalance
               Airloss: -3
-              Brute: -3
-              Burn: -3
+              Brute: -4.5 # Omu changes start
+              Burn: -6
+        - !type:HealthChange # Double effect on corpses
+          conditions:
+          - !type:Temperature
+            max: 213.0
+          - !type:MobStateCondition
+            mobstate: Dead
+          scaleByTemperature:
+            min: 100.0
+            max: 213.0
+            scale: 1.6
+          damage:
+            groups:
+              Airloss: -3
+              Brute: -4.5
+              Burn: -6
+        - !type:ModifyBloodLevel
+          conditions:
+          - !type:Temperature
+            max: 213.0
+          amount: 8
+        - !type:ModifyBleedAmount
+          conditions:
+          - !type:Temperature
+            max: 213.0
+          amount: -1
 
 - type: reagent
   id: Doxarubixadone
@@ -943,7 +976,16 @@
     Drink:
       effects:
         - !type:SatiateThirst
+          conditions: # DeltaV nerf of saline for Feroxi
+          - !type:OrganType
+            type: Feroxi
+            shouldHave: false
           factor: 6
+        - !type:SatiateThirst # DeltaV nerf of saline for Feroxi
+          conditions:
+          - !type:OrganType
+            type: Feroxi
+          factor: 2
         - !type:ModifyBloodLevel
           amount: 12 # Goobstation - buffed by two times due to shitmed changes
 
@@ -1018,8 +1060,8 @@
         key: KnockedDown
         time: 3.0
         type: Remove
-      - !type:GenericStatusEffect
-        key: SeeingRainbows
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
         time: 15.0
         type: Remove
 
@@ -1195,8 +1237,8 @@
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
-      - !type:GenericStatusEffect
-        key: Drowsiness
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
         time: 10
         type: Remove
       - !type:ResetNarcolepsy
@@ -1220,8 +1262,8 @@
   metabolisms:
     Medicine:
       effects:
-      - !type:GenericStatusEffect
-        key: Drowsiness
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
         time: 10
         type: Remove
       - !type:ResetNarcolepsy
@@ -1412,15 +1454,15 @@
       methods: [ Touch ]
       effects:
       - !type:ExtinguishReaction
-    Acidic:
-      methods: [ Touch ]
-      effects:
-      - !type:HealthChange
-        scaleByQuantity: true
-        ignoreResistances: false
-        damage:
-          types:
-            Holy: 2
+#    Acidic:  # Goobstation - Removing holy water damage on touch pending rework.
+#      methods: [ Touch ]
+#      effects:
+#      - !type:HealthChange
+#        scaleByQuantity: true
+#        ignoreResistances: false
+#        damage:
+#          types:
+#            Holy: 0.7
   plantMetabolism:
   - !type:PlantAdjustWater
     amount: 1
@@ -1561,11 +1603,6 @@
   metabolisms:
     Medicine:
       effects:
-        - !type:ModifyBloodLevel # Goobstation - Cryo rebalance
-          conditions:
-          - !type:Temperature
-            max: 213.0
-          amount: 10
         - !type:HealthChange
           conditions:
           - !type:Temperature
@@ -1576,10 +1613,36 @@
             scale: 1.6
           damage: # Goobstation - Cryo rebalance
             groups:
-              Airloss: -10.0
-              Brute: -5.0
-              Burn: -5.0
+              Airloss: -5.0 # Omu changes start
+              Brute: -7.5
+              Burn: -10
               Toxin: -5.0
+        - !type:HealthChange # Double effect on corpses
+          conditions:
+          - !type:Temperature
+            max: 213.0
+          - !type:MobStateCondition
+            mobstate: Dead
+          scaleByTemperature:
+            min: 100.0
+            max: 213.0
+            scale: 1.6
+          damage:
+            groups:
+              Airloss: -5.0
+              Brute: -7.5
+              Burn: -10
+              Toxin: -5.0
+        - !type:ModifyBloodLevel # Goobstation - Cryo rebalance (Omu - moved this for formatting)
+          conditions:
+          - !type:Temperature
+            max: 213.0
+          amount: 10
+        - !type:ModifyBleedAmount
+          conditions:
+          - !type:Temperature
+            max: 213.0
+          amount: -1.5 # Omu changes end
 
 - type: reagent
   id : Aloxadone
@@ -1648,12 +1711,11 @@
         damage:
           types:
             Poison: 2
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
         conditions:
         - !type:ReagentThreshold
           min: 30
-        key: SeeingRainbows
-        component: SeeingRainbows
         type: Add
         time: 8
         refresh: false
@@ -1717,9 +1779,8 @@
         emote: Yawn
         showInChat: true
         probability: 0.1
-      - !type:GenericStatusEffect
-        key: Drowsiness
-        component: Drowsiness
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
         time: 4
         type: Add
         refresh: false
@@ -1727,8 +1788,8 @@
         key: Jitter
         time: 4.0
         type: Remove
-      - !type:GenericStatusEffect
-        key: SeeingRainbows
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
         time: 10.0
         type: Remove
       - !type:AdjustReagent

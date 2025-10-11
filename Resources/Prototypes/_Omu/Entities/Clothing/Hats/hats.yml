@@ -14,3 +14,32 @@
     - Recyclable
     - HamsterWearable
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadHatBeretRND
+  id: ClothingHeadHatBeretCCBeregg
+  name: Sector Commanders Beregg
+  description: A Fur lined rubber beret to protect one's egg from even the most thorough of scramblings.
+  suffix: ADMEME
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Hats/CCberegg.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Hats/CCberegg.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+  - type: Armor
+    coverage:
+    - Head
+    modifiers:
+      coefficients:
+        Blunt: 0.20
+        Slash: 0.20
+        Piercing: 0.20
+        Heat: 0.20
+        Radiation: 0.20
+

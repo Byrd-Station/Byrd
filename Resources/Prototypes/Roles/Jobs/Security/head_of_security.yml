@@ -151,9 +151,9 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 36000 # 10 hrs
-#    - !type:SpeciesRequirement # Goob - None Felinid	
-#      inverted: true	
-#      species:	
+#    - !type:SpeciesRequirement # Goob - None Felinid
+#      inverted: true
+#      species:
 #      - Felinid #Omu, add back Felinid
   #  - !type:StyleRequirement
   #    styles:
@@ -192,7 +192,7 @@
     id: HoSPDA
     #gloves: ClothingHandsGlovesCombat - Goobstation, moved to loadouts
     ears: ClothingHeadsetAltSecurity
-    pocket1: WeaponPistolMk58
+    pocket1: OfficerGunCase #Omu
   storage:
     back:
     - Flash

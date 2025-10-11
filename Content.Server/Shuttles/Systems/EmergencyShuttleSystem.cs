@@ -72,6 +72,7 @@ using Content.Server.Administration.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.Communications;
 using Content.Server.DeviceNetwork.Systems;
+using Content.Server.Explosion.EntitySystems;
 using Content.Server.GameTicking.Events;
 using Content.Server.Pinpointer;
 using Content.Server.Popups;
@@ -86,6 +87,7 @@ using Content.Shared.Access.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.DeviceNetwork;
+using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.GameTicking;
 using Content.Shared.Localizations;
 using Content.Shared.Shuttles.Components;
@@ -98,10 +100,12 @@ using Robust.Shared.Configuration;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Shared.DeviceNetwork.Components;
+using Content.Shared._Omu.Shuttles.Components; // Omu, allow CC shuttles to FTL to CC
 
 namespace Content.Server.Shuttles.Systems;
 
@@ -133,13 +137,13 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private readonly ExplosionSystem _explosion = default!; // Goob edit
 
     private const float ShuttleSpawnBuffer = 1f;
 
     private bool _emergencyShuttleEnabled;
 
-    [ValidatePrototypeId<TagPrototype>]
-    private const string DockTag = "DockEmergency";
+    private static readonly ProtoId<TagPrototype> DockTag = "DockEmergency";
 
     public override void Initialize()
     {
@@ -492,6 +496,24 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     /// </remarks>
     public void DockEmergencyShuttle()
     {
+        // funky station
+        // fires an event that the emergency shuttle is trying to dock.
+        var query = AllEntityQuery<StationEmergencyShuttleComponent>();
+
+        var ev = new ShuttleDockAttemptEvent();
+        RaiseLocalEvent(ref ev); // 💔
+
+        if (ev.Cancelled)
+        {
+            while (query.MoveNext(out var uid, out _))
+            {
+                _chatSystem.DispatchStationAnnouncement(uid, ev.CancelMessage, Loc.GetString("Station"), false);
+            }
+
+            _roundEnd.CancelRoundEndCountdown(null, false, false);
+            return;
+        }
+
         if (EmergencyShuttleArrived)
             return;
 
@@ -503,8 +525,6 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
 
         ConsoleAccumulator = _configManager.GetCVar(CCVars.EmergencyShuttleDockTime);
         EmergencyShuttleArrived = true;
-
-        var query = AllEntityQuery<StationEmergencyShuttleComponent>();
 
         var dockResults = new List<ShuttleDockResult>();
 
@@ -607,7 +627,7 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             QueueDel(grid);
             return;
         }
-
+        _ = EnsureComp<MapCentcommComponent>(map); // Omu, add marker component to CC
         if (!Exists(grid))
         {
             Log.Error($"Failed to set up centcomm grid!");
@@ -791,4 +811,12 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
         /// </summary>
         GoodLuck,
     }
+}
+
+// funky station
+[ByRefEvent]
+public record struct ShuttleDockAttemptEvent()
+{
+    public bool Cancelled = false;
+    public string CancelMessage = string.Empty;
 }

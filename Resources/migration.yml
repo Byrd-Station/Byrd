@@ -134,6 +134,7 @@
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 # SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+# SPDX-FileCopyrightText: 2025 korczoczek <danielkorczok+git@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # This is a basic dictionary that maps old entity prototype ids to new ids. This only works for entity prototypes, and
@@ -178,8 +179,8 @@ BenchPewRight: null
 BenchSofaCorpLeft: null
 BenchSofaCorpMiddle: null
 BenchSofaCorpRight: null
-BenchSofaLeft: null
-BenchSofaRight: null
+#BenchSofaLeft: null #Omu
+#BenchSofaRight: null #Omu
 BenchSteelLeft: null
 BenchSteelMiddle: null
 BenchSteelRight: null
@@ -225,7 +226,7 @@ GunSafeAdjutantShotgun: null
 GunSafeEnergyGunMini: null
 GunSafeVulcanRifle: null
 HatSpawner: null
-KitchenDeepFryer: null
+#KitchenDeepFryer: null #Omu
 KvassTankFull: null
 LockerForensicMantisFilled: null
 LunchboxSecurityFilledRandom: null
@@ -236,7 +237,7 @@ PaintingMothBigCatch: null
 PaintingSpoon: null
 PlushieMothMusician: null
 PlushieMothRandom: null
-PosterContrabandBreadLies: null
+PosterContrabandBreadLies: null #Omu
 PosterContrabandGotWood: null
 PosterContrabandSafetyMothSyndie: null
 PosterContrabandSaucerNumberOne: null
@@ -258,11 +259,11 @@ PosterLegitSafetyMothFires: null
 PosterLegitSafetyMothGlimmer: null
 PosterLegitSafetyMothPills: null
 PosterLegitSafetyMothPoisoning: null
-PosterLegitShoukou: null
+#PosterLegitShoukou: null #omu
 PoweredLightBlueInterior: null
-PoweredLightColoredRed: null
-PoweredSmallLightMaintenance: null
-PoweredSmallLightMaintenanceRed: null
+PoweredLightColoredRed: null #omu
+PoweredSmallLightMaintenance: null #omu
+PoweredSmallLightMaintenanceRed: null #omu
 RandomAmmoBox: null
 RandomAnimalSpawner: null
 RandomBoards: null
@@ -276,11 +277,11 @@ SecBreachingHammer: null
 Shinai: null
 ShockCollar: null
 shuttle_manipulator: null
-SignConspiracyBoard: null
+#SignConspiracyBoard: null #omu
 SignDirectionalLogistics: null
 SignDirectionalMail: null
 SignDojo: null
-SignLastIdiot: null
+#SignLastIdiot: null #omu
 SignSec: null
 SophicScribe: null
 SpaceCashLuckyBill: null
@@ -293,7 +294,7 @@ SpawnPointForensicMantis: null
 SpawnPointLocationMidRoundAntag: null
 SpawnPointMartialArtist: null
 SpawnPointMedicalBorg: null
-SpawnPointPrisoner: null
+#SpawnPointPrisoner: null # Omu
 SpawnPointPrisonGuard: null
 SpeedLoaderSpecialPractice: null
 SuitStorageCorpsman: null
@@ -406,8 +407,8 @@ SpeedLoaderPistolHighVelocity: SpeedLoaderPistol
 # 2023-08-07
 #If the name is anything to go off of, these are presumably just CEV-Eris versions of the snow rock (which we already have.)
 #They are practically never used in this way however, so they're migrated to the basic rock type.
-MountainRock: AsteroidRock
-MountainRockMining: AsteroidRockMining
+#MountainRock: AsteroidRock #OMU! DO NOT CHANGE TO ASTEROID ROCK
+#MountainRockMining: AsteroidRockMining #OMU! DO NOT CHANGE TO ASTEROID ROCK
 
 # 2023-08-08
 WindowTintedDirectional: WindowFrostedDirectional
@@ -1050,3 +1051,89 @@ BarSignEmprahAlignTile: BarSignEmprah
 BarSignSpacebucksAlignTile: BarSignSpacebucks
 BarSignMaltroachAlignTile: BarSignMaltroach
 BarSignWhiskeyEchoesAlignTile: BarSignWhiskeyEchoes
+
+# 2025-06-21
+ClothingNeckHeadphones: ClothingMultipleHeadphones
+
+# 2025-09-01 - Omu
+LightBulbMaintenanceRed: DimLightBulb
+BookSalvageEpistemicsRandom: null
+ClothingHeadAreopagite: null
+ClothingHeadHelmetInsulated: null
+ClothingHeadHoodBrown: null
+ClothingHeadTechPriest: null
+ClothingOuterChiefJustice: null
+ClothingOuterCoatHyenhSweater: null
+ClothingOuterCoatLettermanRed: null
+ClothingOuterRobeBrown: null
+ClothingOuterRobeTechPriest: null
+ClothingOuterSuitAreopagite: null
+ClothingOuterWinterCoatMantis: null
+ClothingOuterWinterMystagogue: null
+ClothingUniformJumpskirtNurse: null
+ClothingUniformJumpsuitPrisonGuard: null
+ClothingUniformRat: null
+ComputerCargoOrdersJustice: null
+ComputerShuttleMiningGlacier: ComputerCargoOrdersService
+DefaultStationBeaconChiefJustice: null
+DefaultStationBeaconJustice: null
+DefaultStationBeaconProber: null
+DefaultStationBeaconProsecutor: null
+GasPipeSensorControlNitrogen: GasPipeSensor
+GasPipeSensorControlOverpressure: GasPipeSensor
+GasPipeSensorControlOxygen: GasPipeSensor
+GavelBlock: null
+HandgunSafeSpawner: GunSafePistolMk58
+HolopadCargoMail: HolopadCargoFront
+HolopadEpistemicsMantis: HolopadScienceRobotics
+HolopadEpistemicsOracle: HolopadScienceAnomaly
+HolopadJusticeCJ: null
+HolopadJusticeClerk: null
+HolopadJusticeProsecutor: null
+HolopadSecurityCorpsman: HolopadSecurityBrig
+LockerChiefJusticeFilled: null
+LockerClerkFilled: null
+LockerParamedicFilledHardsuit: LockerParamedicFilled
+LockerPsychologistFilled: null
+LockerSurgeonFilled: LockerMedicalFilled
+LogisticsTechFab: CargoTechFab
+OilJarCorn: null
+RailingCornerSmallDeltaV: null
+RailingDeltaV: null
+RifleSafeSpawner: GunSafeRifleLecter
+SalvageSeedSpawnerLow: null
+SecureCabinetCE: null
+SecureCabinetEpistemics: null
+SecureCabinetHoP: null
+SecureCabinetHoS: null
+SecureCabinetLogistics: null
+SecureCabinetPsychologist: null
+SentientSmileCore: SpawnMobSmile
+ShotgunSafeSpawner: GunSafeShotgunKammerer
+SignConspiracyBoard: null
+SpawnMobJusticePet: null
+SpawnMobSecLaikaOrShiva: SpawnMobSecDogLaika
+SpawnPointAdminAssistant: null
+SpawnPointChiefJustice: null
+SpawnPointClerk: null
+SpawnPointProsecutor: null
+SpawnPointRoboticist: SpawnPointScientist
+SpawnPointSecurityBorg: null
+SpawnPointSurgeon: SpawnPointMedicalDoctor
+SuitStorageSecDeltaV: SuitStorageSec
+SuperweaponSafeSpawner: WeaponLauncherRocket
+TrialTimer: null
+UniformJabroni: null
+WarpPointCourt: null
+WeaponTurretAI: ChristmasTinselBlue1
+WindoorSecureClerkLocked: WindoorSecure
+WarpPointEngineering: null
+SpawnMobCMOPetSilvia: null
+SpawnPointCargoAssistant: SpawnPointCargoTechnician
+SignLastIdiot: null
+EpistemicsTechFab: ScienceTechFab
+LockableButtonRobotics: null
+LockerAdministrativeAssistantFilled: UniqueLockerNanorepFilled
+
+# 2025-10-09
+FoodDonutJellySlugcat: FoodDonutJellyScurret

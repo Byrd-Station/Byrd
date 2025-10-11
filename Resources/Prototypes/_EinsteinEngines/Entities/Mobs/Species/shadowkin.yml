@@ -149,10 +149,12 @@
       - map: ["enum.HumanoidVisualLayers.LArm"]
       - map: ["enum.HumanoidVisualLayers.RLeg"]
       - map: ["enum.HumanoidVisualLayers.LLeg"]
-#      shader: StencilClear
-#      sprite: Mobs/Species/Human/parts.rsi
-#      state: l_leg
-#        shader: StencilMask # Omu, StencilMask seems to make the leg invisible?
+      - map: [ "enum.HumanoidVisualLayers.Underwear" ] # Omu 109
+      - map: [ "enum.HumanoidVisualLayers.Undershirt" ] # Omu 109
+      - shader: StencilClear
+        sprite: Mobs/Species/Human/parts.rsi
+        state: l_leg
+      - shader: StencilMask
       - map: ["enum.HumanoidVisualLayers.StencilMask"]
         sprite: Mobs/Customization/masking_helpers.rsi
         state: full
@@ -179,7 +181,7 @@
       - map: [ "belt" ] # Omu - Moved belt to render under OuterClothing to have it be similar with how the base drawdepth is.
       - map: ["outerClothing"]
       - map: ["eyes"]
-      - map: [ "beltalt" ] # Omu 
+      - map: [ "beltalt" ] # Omu
       - map: ["back"]
       - map: ["neck"] # Omu - Moved this to render above backpacks because it felt weird seeing duffels above the cloaks and mantles? Easy thing to revert anyway.
       - map: [ "enum.HumanoidVisualLayers.Face" ]
@@ -249,9 +251,9 @@
         - map: ["enum.HumanoidVisualLayers.LArm"]
         - map: ["enum.HumanoidVisualLayers.RLeg"]
         - map: ["enum.HumanoidVisualLayers.LLeg"]
-#     - shader: StencilClear
-#      sprite: Mobs/Species/Human/parts.rsi
-#      state: l_leg
+        - shader: StencilClear
+          sprite: Mobs/Species/Human/parts.rsi
+          state: l_leg
         - shader: StencilMask
           map: ["enum.HumanoidVisualLayers.StencilMask"]
           sprite: Mobs/Customization/masking_helpers.rsi

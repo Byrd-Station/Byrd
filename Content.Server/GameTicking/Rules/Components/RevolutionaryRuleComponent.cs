@@ -16,6 +16,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.GameTicking.Rules.Components;
 
@@ -41,10 +42,46 @@ public sealed partial class RevolutionaryRuleComponent : Component
     /// The time it takes after the last head is killed for the shuttle to arrive.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public TimeSpan ShuttleCallTime = TimeSpan.FromMinutes(5);
+    public TimeSpan ShuttleCallTime = TimeSpan.FromMinutes(3);  // funkystation, was 5 minutes
 
     // goob edit start
     [DataField] public bool HasAnnouncementPlayed = false;
     [DataField] public bool HasRevAnnouncementPlayed = false;
     // gobo edit end
+
+    // funky station start
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan? RevVictoryEndTime;
+
+    // funky station
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan RevVictoryEndDelay = TimeSpan.FromMinutes(2);
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan? RevLoseTime;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan OffStationTimer = TimeSpan.FromMinutes(1);
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool RevLossTimerActive = false;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool RevForceLose = false;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public int StartingBalance = 40;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public EntProtoId UplinkStoreId = "StorePresetRevolutionaryUplink";
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public EntProtoId UplinkCurrencyId = "Telecrystal"; // Omu, replace revcoin with TC
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool OpenRevoltDeclared = false;
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool OpenRevoltAnnouncementPending = false;
+     // funkystation end
 }
