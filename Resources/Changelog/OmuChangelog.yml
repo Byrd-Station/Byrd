@@ -704,3 +704,20 @@ Entries:
       message: Removed Styptic Stimulator implants from ERT/DS
   id: 84
   time: '2025-10-11T17:18:16.0000000+00:00'
+- author: Fat-Engineer-Gaming
+  changes:
+    - type: Add
+      message: >-
+        ERT-Type Cyborgs have been added to Nanotrasens Emergency Response
+        Teams!
+    - type: Add
+      message: >-
+        |REDACTED|-Type Cyborgs have been added to Nanotrasens |REDACTED|
+        Reserves!
+    - type: Tweak
+      message: >-
+        Syndicate Cyborgs are now held to higher standards, atleast, that's what
+        the ghost role raffle says. Quit finding loopholes in your laws and
+        focus on that fukken disk!
+  id: 85
+  time: '2025-10-11T17:20:05.0000000+00:00'
