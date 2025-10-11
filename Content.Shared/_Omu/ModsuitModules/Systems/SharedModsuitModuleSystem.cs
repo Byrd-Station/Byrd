@@ -19,8 +19,8 @@ public abstract class SharedModsuitModuleSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ModsuitModuleSlotComponent, EntInsertedIntoContainerMessage>(OnModuleInserted);
-        SubscribeLocalEvent<ModsuitModuleSlotComponent, EntRemovedFromContainerMessage>(OnModuleRemoved);
+        SubscribeLocalEvent<ModsuitModuleSlotComponent, ItemSlotInsertAttemptEvent>(OnModuleInserted);
+        SubscribeLocalEvent<ModsuitModuleSlotComponent, ItemSlotEjectAttemptEvent>(OnModuleRemoved);
         SubscribeLocalEvent<ModsuitModuleSlotComponent, ContainerIsInsertingAttemptEvent>(OnModuleInsertAttempt);
     }
     private void AddComponents(EntityUid modsuit,
@@ -72,13 +72,8 @@ public abstract class SharedModsuitModuleSystem : EntitySystem
         if (args.Container.ID != component.ModuleSlotId)
             return;
 
-        foreach (var contained in args.Container.ContainedEntities)
-        {
-            //var ent = GetNetEntity(contained);
-            AddComponents(uid, contained<ModsuitModuleComponent>.OnAdd);
-        }
-
         //RaiseLocalEvent(uid, new ModsuitModuleChangedEvent(false), false);
+        AddComponents(uid, args.Entity.Components.ModsuitModuleComponent.OnAdd);
     }
 
     protected virtual void OnModuleRemoved(EntityUid uid, ModsuitModuleSlotComponent component, EntRemovedFromContainerMessage args)
@@ -86,13 +81,8 @@ public abstract class SharedModsuitModuleSystem : EntitySystem
         if (args.Container.ID != component.ModuleSlotId)
             return;
 
-        foreach (var contained in args.Container.ContainedEntities)
-        {
-            //var ent = GetNetEntity(contained);
-            RemoveComponents(uid, contained<ModsuitModuleComponent>.OnAdd);
-        }
-
         //RaiseLocalEvent(uid, new ModsuitModuleChangedEvent(true), false);
+        RemoveComponents(uid, args.Entity.Components.ModsuitModuleComponent.OnAdd);
     }
     //
     /// <summary>
