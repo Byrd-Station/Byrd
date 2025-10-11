@@ -440,6 +440,7 @@
     emagStaticPacks:
     - SecurityWeaponsStatic
     - SecurityAmmoStatic
+    - SecurityAmmoStaticOmu # Omu
     # Goobstation
     - SecurityWeaponsStaticGoob
     - SecurityAmmoStaticGoob
@@ -764,6 +765,7 @@
     - GrenadeTriggersStatic
     - SecurityWeaponsStaticGoob
     - SecurityWeaponsNonEmaggableStaticGoob
+    - SecurityAmmoStaticOmu # Omu
     dynamicPacks:
     - SalvageSecurityBoards
     - SalvageSecurityWeapons
@@ -823,6 +825,7 @@
       - SecurityAmmoStatic
       # Goobstation Packs
       - SecurityAmmoStaticGoob
+      - SecurityAmmoStaticOmu # Omu
     - type: EmagLatheRecipes # Goobstation Packs
       emagStaticPacks:
       - SyndicateAmmoLightStatic
