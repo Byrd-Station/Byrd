@@ -53,7 +53,10 @@ public abstract class SharedModsuitModuleSystem : EntitySystem
     private void OnModuleInsertAttempt(EntityUid uid, ModsuitModuleSlotComponent component, ContainerIsInsertingAttemptEvent args)
     {
         if (!component.Initialized)
+        {
+            args.Cancel();
             return;
+        }
 
         if (args.Container.ID != component.ModuleSlotId)
             return;
@@ -67,7 +70,10 @@ public abstract class SharedModsuitModuleSystem : EntitySystem
     private void OnModuleInserted(EntityUid uid, ModsuitModuleSlotComponent component, ItemSlotInsertAttemptEvent args)
     {
         if (!component.Initialized)
+        {
+            args.Cancelled = true;
             return;
+        }
 
         if (args.Slot.ID != component.ModuleSlotId)
             return;
