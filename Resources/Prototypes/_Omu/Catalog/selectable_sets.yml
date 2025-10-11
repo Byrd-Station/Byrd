@@ -9,6 +9,16 @@
   - ClothingOuterHardsuitHeadOfSecurityExperimental
 
 - type: selectableSet
+  id: HardsuitSelectorCybersunParamedHardsuit
+  name: selectable-set-paramedic-cybersunhardsuit-name
+  description: selectable-set-paramedic-cybersunhardsuit-desc
+  sprite:
+    sprite: _Omu/Clothing/OuterClothing/Hardsuits/cybersunparamedhardsuit.rsi
+    state: icon
+  content:
+  - ClothingOuterHardsuitCybersunParamedic
+
+- type: selectableSet
   id: HosCQCSet
   name: selectable-set-hos-belt-name
   description: selectable-set-hos-belt-description
