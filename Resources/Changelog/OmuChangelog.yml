@@ -661,3 +661,21 @@ Entries:
       message: Feroxi, IPCs, Tajaran, and Shadowkin can now wear undergarments.
   id: 79
   time: '2025-10-06T16:13:47.0000000+00:00'
+- author: Lenny
+  changes:
+    - type: Add
+      message: Added the prisoner role. Security beware! (Not mapped yet, but soon:tm:)
+  id: 80
+  time: '2025-10-09T00:42:11.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: Removed DuoAbductors from roundstart, as the rule does not work.
+  id: 81
+  time: '2025-10-09T00:44:33.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Remove
+      message: CQC No longer grants Riposte ability.
+  id: 82
+  time: '2025-10-09T15:27:20.0000000+00:00'
