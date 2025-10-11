@@ -757,8 +757,12 @@ namespace Content.Client.Lobby.UI
                 // increment the trait count and points, if the user has the trait selected.
                 if (selector.Preference)
                 {
-                    categoriesWithPoints[category] += trait.Cost;
                     _selectedTraitPointCount -= trait.GlobalCost;
+
+                    if (categoriesWithPoints.ContainsKey(category))
+                    {
+                        categoriesWithPoints[category] += trait.Cost;
+                    }
 
                     if (trait.CountsTowardsMaxTraits)
                         _selectedTraitCount++;
