@@ -696,3 +696,11 @@ Entries:
       message: The paramed hardsuit's light has a further reach.
   id: 83
   time: '2025-10-11T07:53:13.0000000+00:00'
+- author: Appenzaller
+  changes:
+    - type: Add
+      message: 3 new deathsquad music themes
+    - type: Tweak
+      message: Removed Styptic Stimulator implants from ERT/DS
+  id: 84
+  time: '2025-10-11T17:18:16.0000000+00:00'
