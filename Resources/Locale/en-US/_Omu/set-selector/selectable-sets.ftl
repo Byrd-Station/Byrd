@@ -55,7 +55,7 @@ selectable-set-irelander-description =
     The ender of troubles.
     Smashes through walls with ease.
 
-selectable-set-warden-rapier-name = Rapier and parrying cloak
+selectable-set-warden-rapier-name = Cloak and Rapier
 selectable-set-warden-rapier-description =
     An elegant weapon for the cultured warden,
     or the warden who prefers to get their hands dirty.

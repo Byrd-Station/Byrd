@@ -80,3 +80,6 @@
   - type: StealTarget
     stealGroup: WeaponEnergyShotgun
   - type: DisarmMalus
+  - type: Reflect
+    reflectProb: 0.3
+    spread: 30

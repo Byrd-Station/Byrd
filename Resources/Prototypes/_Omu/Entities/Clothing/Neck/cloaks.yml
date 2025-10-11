@@ -23,14 +23,11 @@
 - type: entity
   parent: [ClothingNeckBase, BaseWardenContraband]
   id: ClothingNeckWardenParryCloak
-  name: parrying cloak
-  description: A red cloak with an integrated scabbard, reinforced with bullet-resistant nanoweave.
+  name: warden's dueling cloak
+  description: A red cloak with an integrated scabbard, useful for dramatically swishing at prisoners.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Neck/Cloaks/parryingcloak.rsi
-  - type: Reflect
-    reflectProb: 0.3
-    spread: 360
   - type: ItemSlots
     slots:
       item:
