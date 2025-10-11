@@ -744,3 +744,9 @@ Entries:
       message: Added back recipes for 8 gauge lever action mags.
   id: 87
   time: '2025-10-11T18:00:33.0000000+00:00'
+- author: CerberusWolfie, Radezolid, AppleSmithWorks
+  changes:
+    - type: Add
+      message: Added Administrative Assistant (not mapped yet).
+  id: 88
+  time: '2025-10-11T20:27:57.0000000+00:00'

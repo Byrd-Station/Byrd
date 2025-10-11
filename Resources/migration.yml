@@ -1113,7 +1113,7 @@ ShotgunSafeSpawner: GunSafeShotgunKammerer
 SignConspiracyBoard: null
 SpawnMobJusticePet: null
 SpawnMobSecLaikaOrShiva: SpawnMobSecDogLaika
-SpawnPointAdminAssistant: null
+SpawnPointAdminAssistant: SpawnPointAdminAssistant
 SpawnPointChiefJustice: null
 SpawnPointClerk: null
 SpawnPointProsecutor: null
