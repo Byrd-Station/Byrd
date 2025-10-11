@@ -679,3 +679,20 @@ Entries:
       message: CQC No longer grants Riposte ability.
   id: 82
   time: '2025-10-09T15:27:20.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Add
+      message: >-
+        3 Cybersun related jumpsuits added to medical, one exclusive to
+        paramedics, red nitrile gloves are now available for med, new hardsuit
+        for paramedics to select.
+    - type: Add
+      message: >-
+        New hardsuit in the uplink for 30 TC, the "Guānlián" hardsuit offers
+        general resistance agaisnt enviromental hazards, but little agaisnt
+        physical damage like blunt, slash, or piercing, along with total
+        protection agaisn't zombification.
+    - type: Tweak
+      message: The paramed hardsuit's light has a further reach.
+  id: 83
+  time: '2025-10-11T07:53:13.0000000+00:00'
