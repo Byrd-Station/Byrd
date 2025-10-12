@@ -34,6 +34,7 @@
   - MindShield
   - MimePowers
   - SpaceNinja
+  - Thieving
   # accents
   - Accentless
   - BackwardsAccent
@@ -75,6 +76,9 @@
   - LanguageKnowledge
   - ForeignerTrait
   # Einstein Engines - Language end
+  # Omustation
+  - CyberneticBeast
+  # end Omustation
   blacklist:
     components:
     - AttachedClothing # helmets, which are part of the suit
