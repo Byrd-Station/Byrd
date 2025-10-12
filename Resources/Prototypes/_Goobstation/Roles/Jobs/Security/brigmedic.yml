@@ -27,6 +27,7 @@
   - Service
   - External
   - Cryogenics
+  - Medical # omu edit - make brigmed less useless
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
