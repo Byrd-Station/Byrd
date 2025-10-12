@@ -101,7 +101,7 @@
     spawned:
     - id: FoodMeatLizard
       amount: 7
-  #- type: LizardAccent # DeltaV - replaced with language accent
+  - type: LizardAccent
   - type: Speech
     speechSounds: Lizard
     speechVerb: Reptilian
