@@ -26,8 +26,8 @@
   - type: LoadMapRule
     preloadedGrid: AsakimSmall
   # Begin DeltaV Additions
-  - type: PrecognitionResult
-    message: psionic-power-precognition-asakim-spawn-result-message
+  #- type: PrecognitionResult # Omu, this doesn't exist here.
+  #  message: psionic-power-precognition-asakim-spawn-result-message
   - type: AntagSpawner
     prototype: MobAsakim
   - type: AntagRandomObjectives
