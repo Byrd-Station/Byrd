@@ -758,3 +758,12 @@ Entries:
         rotation except Reach.
   id: 89
   time: '2025-10-12T03:10:47.0000000+00:00'
+- author: Kirisune
+  changes:
+    - type: Tweak
+      message: >-
+        Changed RD hardsuit stats so it becomes viable again while bringing back
+        its old sprite and changing its name and description to reference Omu
+        lore.
+  id: 90
+  time: '2025-10-12T10:47:01.0000000+00:00'
