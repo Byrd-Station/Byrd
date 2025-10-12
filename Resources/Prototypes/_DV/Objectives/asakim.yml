@@ -30,7 +30,7 @@
   - type: TargetObjective
     title: objective-condition-asakim-terminate-title
   - type: PickRandomPerson
-    onlyChoosableJobs: true
+#    onlyChoosableJobs: true
 #  - type: RerollAfterCompletion # Omu, we don't have this at the moment.
 #    rerollObjectivePrototype: AsakimKillObjective
 #    rerollObjectiveMessage: objective-condition-asakim-terminate-reroll-message
