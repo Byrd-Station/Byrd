@@ -38,10 +38,10 @@
     - Syndicate
   - type: SurgerySpeedModifier
     speedModifier: 1.5
-  #- type: IntrinsicRadioReceiver # DeltaV - unused
-  #- type: IntrinsicRadioTransmitter
-  #  channels:
-  #  - Remnants
-  #- type: ActiveRadio
-  #  channels:
-  #  - Remnants
+  - type: IntrinsicRadioReceiver # DeltaV - unused
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Remnants
+  - type: ActiveRadio
+    channels:
+    - Remnants
