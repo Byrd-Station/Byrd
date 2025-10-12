@@ -1133,7 +1133,7 @@ SpawnPointCargoAssistant: SpawnPointCargoTechnician
 SignLastIdiot: null
 EpistemicsTechFab: ScienceTechFab
 LockableButtonRobotics: null
-LockerAdministrativeAssistantFilled: UniqueLockerNanorepFilled
+# LockerAdministrativeAssistantFilled: UniqueLockerNanorepFilled # Administrative Assistant is real now. This was just converting their lockers to NTR ones.
 
 # 2025-10-09
 FoodDonutJellySlugcat: FoodDonutJellyScurret

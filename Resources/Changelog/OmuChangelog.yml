@@ -750,3 +750,11 @@ Entries:
       message: Added Administrative Assistant (not mapped yet).
   id: 88
   time: '2025-10-11T20:27:57.0000000+00:00'
+- author: Lenny
+  changes:
+    - type: Add
+      message: >-
+        Mapped Prisoners and Administrative Assistants to every map in current
+        rotation except Reach.
+  id: 89
+  time: '2025-10-12T03:10:47.0000000+00:00'
