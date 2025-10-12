@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseCyberneticEyes
+  parent: BasicCyberneticEyes
   id: OrganAsakimEyes
   name: asakim eyes
   components:

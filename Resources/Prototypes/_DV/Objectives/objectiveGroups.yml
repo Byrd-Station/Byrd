@@ -2,7 +2,7 @@
 - type: weightedRandom
   id: AsakimObjectiveGroup
   weights:
-    AsakimObjectiveGroupKill: 1
+#    AsakimObjectiveGroupKill: 1 # Omu
     AsakimObjectiveGroupTheft: 1
     AsakimObjectiveGroupInfiltrate: 1
     AsakimObjectiveGroupInterrogate: 1

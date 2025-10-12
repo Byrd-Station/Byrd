@@ -120,15 +120,20 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
-    lifetime: 0.4
+    lifetime: 0.2 # imp
   - type: Sprite
     drawdepth: BelowMobs
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
-      state: muzzle_bullet
+      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi # imp
+      state: kinetic # imp
   - type: EffectVisuals
+  - type: PointLight
+    enabled: true
+    color: "#ffa223" # imp
+    radius: 1.4 # imp
+    energy: 5.0 # imp
   - type: Tag
     tags:
       - HideContextMenu
@@ -139,28 +144,38 @@
   id: MuzzleFlashEffectOmnilaser
   categories: [ HideSpawnMenu ]
   components:
+  - type: PointLight
+    enabled: true
+    color: "#0ab8c4" # imp
+    radius: 1.4 # imp
+    energy: 5.0 # imp
   - type: Sprite
     drawdepth: BelowMobs
     offset: 0.15, 0
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-      state: omnilaser_flash
+      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi # imp
+      state: energystun # imp
 
 - type: entity
   parent: MuzzleFlashEffect
   id: MuzzleFlashEffectHeavyLaser
   categories: [ HideSpawnMenu ]
   components:
+  - type: PointLight
+    enabled: true
+    color: "#d63b28" # imp
+    radius: 1.4 # imp
+    energy: 5.0 # imp
   - type: Sprite
     drawdepth: BelowMobs
     offset: 0.15, 0
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-      state: heavylaser_flash
+      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi # imp
+      state: energy # imp
 
 # One bullet to bring them all into the darkness and bind them
 - type: entity

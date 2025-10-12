@@ -82,8 +82,6 @@
         - MobLayer
   - type: Sprite
     scale: 1.2, 1.2
-  - type: PlayerToolModifier
-    pryTimeMultiplier: 0.7
   - type: BonusMeleeDamage
     damageModifierSet:
       coefficients:
@@ -206,8 +204,6 @@
   #  - Asakim
   #  # WWDP-Edit-End
   # Begin DeltaV Additions
-  - type: SyllableObfuscationAccent # unintelligable language
-    accent: draconian
   - type: BlockWriting # can't speak common can't write common. better get an AAC tablet
   # End DeltaV Additions
 

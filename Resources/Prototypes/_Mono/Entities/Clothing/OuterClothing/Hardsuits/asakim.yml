@@ -36,6 +36,12 @@
   - type: StaticPrice
     price: 50000
   - type: Armor
+    traumaDeductions: # prevents traumas at all (kinda)
+      Dismemberment: 1
+      OrganDamage: 1
+      BoneDamage: 1
+      VeinsDamage: 1
+      NerveDamage: 1
     modifiers:
       coefficients:
         Blunt: 0.5 # DeltaV - was 0.35
@@ -51,10 +57,9 @@
     sprintModifier: 1
   - type: HeldSpeedModifier
   - type: ToggleableClothing # Goobstation - Modsuits change - Mono - this is a solution for helmet attachment/cover to not fit on hardsuits
-    requiredSlot: outerclothing
-    #blockUnequipWhenAttached: false # DeltaV - doesn't exist here
-    #replaceCurrentClothing: true # DeltaV - doesn't exist here
-    clothingPrototype: ClothingHelmetHardsuitAsakim # DeltaV - simplified ToggleableClothing
+    clothingPrototypes:
+      head:
+        ClothingHelmetHardsuitAsakim # DeltaV - simplified ToggleableClothing
   #- type: PirateBountyItem # DeltaV - no way we have this
   #  id: ClothingOuterHardsuitTacsuit
   - type: StaminaResistance # DeltaV - different comp name
@@ -62,15 +67,19 @@
   - type: DamageOnUnequip # DeltaV
     unequipDamage:
       types:
-        Blunt: 20 
+        Blunt: 20
         Slash: 30
         Piercing: 40
     unequipSound: "/Audio/_DV/Effects/breakingbones.ogg"
     screamOnUnequip: true
+  - type: ModifyDelayedKnockdown # Omu
+    delayDelta: 3
+    knockdownTimeDelta: -3
 
 - type: entity
   parent: ClothingOuterHardsuitAsakim
   id: ClothingOuterHardsuitAsakimUnremoveable
+  name: combat harness
   description: An advanced combat harness. Incredibly rare, and practically alien in technology compared to modern hardsuits. Once equipped, the armor binds itself with the wearer and cannot be removed without external release. This one is fully binded to a warrior, and will take a long time to remove. # DeltaV - no fracture
   suffix: 120 stripDelay
   components:

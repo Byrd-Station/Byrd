@@ -30,13 +30,13 @@
         Quantity: 10
 
 - type: entity
-  id: TorsoAsakim
-  name: "asakim torso"
-  parent: [PartAsakim, BaseTorso]
+  id: ChestAsakim
+  name: "asakim chest"
+  parent: [PartAsakim, BaseChest]
   components:
   - type: Sprite
     sprite: _Mono/Mobs/Species/Asakim/parts.rsi
-    state: "torso_m"
+    state: "chest_m"
   - type: Extractable
     juiceSolution:
       reagents:
@@ -44,6 +44,22 @@
         Quantity: 10
       - ReagentId: Blood
         Quantity: 20
+
+- type: entity # Omu start
+  id: GroinAsakim
+  name: "asakim groin"
+  parent: [PartAsakim, BaseGroin]
+  components:
+  - type: Sprite
+    sprite: _Mono/Mobs/Species/Asakim/parts.rsi
+    state: "groin_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 20 # Omu end
 
 - type: entity
   id: HeadAsakim

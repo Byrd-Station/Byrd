@@ -15,7 +15,7 @@
     shoes: ClothingShoesBootsMagAsakim
     #pocket1: CrowbarPocket # DeltaV - fake
     pocket2: DoubleEmergencyOxygenTankFilled # DeltaV - filled instead of empty
-    belt: ClothingBeltSecurityWebbing # DeltaV - use our webbing
+    belt: ClothingBeltMilitaryWebbingAsakim # Omu
     suitStorage: OxygenTankFilled
   inhand:
   - WeaponRifleAsakimAutopulser
@@ -24,7 +24,7 @@
     back: # DeltaV - reorganized to fit
     #- RadioHandheldNF # DeltaV - fake
     - DoubleEmergencyOxygenTankFilled
-    - BoxSurvival # DeltaV
+    - BoxSurvivalSlotsEngineering # Omu
     - JetpackMiniFilled
     - MedkitCombatFilled
     - MedkitCombatFilled

@@ -31,9 +31,9 @@
     title: objective-condition-asakim-terminate-title
   - type: PickRandomPerson
     onlyChoosableJobs: true
-  - type: RerollAfterCompletion
-    rerollObjectivePrototype: AsakimKillObjective
-    rerollObjectiveMessage: objective-condition-asakim-terminate-reroll-message
+#  - type: RerollAfterCompletion # Omu, we don't have this at the moment.
+#    rerollObjectivePrototype: AsakimKillObjective
+#    rerollObjectiveMessage: objective-condition-asakim-terminate-reroll-message
 
 - type: entity
   parent: [BaseAsakimObjective, BaseSurviveObjective]

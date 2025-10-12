@@ -86,3 +86,18 @@
     - CQC
   - type: StealTarget
     stealGroup: WeaponSecHeadSword
+
+- type: entity
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase]
+  id: ClothingBeltMilitaryWebbingAsakim
+  name: chest rig
+  description: Ideal for storing everything from ammo to weapons and combat essentials.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/militarywebbing.rsi
+  - type: Clothing
+    sprite: Clothing/Belt/militarywebbing.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+  - type: StaticPrice
+    price: 500

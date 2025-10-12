@@ -9,29 +9,34 @@
 - type: body
   name: "asakim"
   id: Asakim
-  root: torso
+  root: chest
   slots:
     head:
       part: HeadAsakim
       connections:
-      - torso
+      - chest
       organs:
         brain: OrganHumanBrain
         eyes: OrganAsakimEyes # DeltaV
-    torso:
-      part: TorsoAsakim
+    chest:
+      part: ChestAsakim
       organs:
         heart: OrganAnimalHeart
         lungs: OrganHumanLungs
+      connections:
+      - groin
+      - right arm
+      - left arm
+      - head # Shitmed
+    groin:
+      part: GroinAsakim
+      connections:
+      - right leg
+      - left leg
+      organs:
         stomach: OrganReptilianStomach
         liver: OrganAnimalLiver
         kidneys: OrganHumanKidneys
-      connections:
-      - right arm
-      - left arm
-      - right leg
-      - left leg
-      - head # Shitmed
     right arm:
       part: RightArmAsakim
       connections:
