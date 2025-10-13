@@ -220,7 +220,6 @@ var originalDamage = new DamageSpecifier(); // Omu
         RemComp<CanPerformComboComponent>(user);
         RemComp<RiposteeComponent>(user); // Omu
     }
-    // omu end
     #endregion
 
     #region Combo Methods
