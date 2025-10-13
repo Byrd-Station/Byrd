@@ -218,7 +218,7 @@ var originalDamage = new DamageSpecifier(); // Omu
 
         RemComp<MartialArtsKnowledgeComponent>(user);
         RemComp<CanPerformComboComponent>(user);
-        RemComp<RiposteeComponent>(user);
+        RemComp<RiposteeComponent>(user); // Omu
     }
     // omu end
     #endregion
