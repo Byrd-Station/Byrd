@@ -1,8 +1,8 @@
 ﻿- files: ["babusqueak.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Always Make Poor Choices, tadpoles plushcorp LLC, bunnygirlHyacinth"
-  # source: "my mouth" - this makes the check fail lmao . anyways bunnygirlHyacinth here, i spent 20 minutes recording this sound in my room
+  source: "https://github.com/PoorChoices-NT-Official" # "my mouth" - bot doesnt like this, this is the next best bit
 - files: ["babuthrow.ogg"]
   license: "CC-BY-SA-3.0"
   copyright: "Always Make Poor Choices, tadpoles plushcorp LLC, bunnygirlHyacinth"
-  # source: "my mouth"
+  source: "https://github.com/PoorChoices-NT-Official"
