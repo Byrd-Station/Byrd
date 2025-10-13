@@ -151,5 +151,5 @@
   moodName: thaven-mood-circus-name
   moodDesc: thaven-mood-circus-desc
   conflicts:
-  - Clownfan
+  #- Clownfan
   - Coulrophobia

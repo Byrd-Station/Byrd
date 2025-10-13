@@ -28,7 +28,7 @@
 - type: entity
   id: ChestThaven
   name: "thaven chest"
-  parent: [PartHuman, BaseChest]
+  parent: [PartThaven, BaseChest]
   components:
   - type: Sprite
     sprite: _DEN/Mobs/Species/Thaven/parts.rsi # gds added
@@ -44,7 +44,7 @@
 - type: entity
   id: GroinThaven
   name: "thaven groin"
-  parent: [PartHuman, BaseGroin]
+  parent: [PartThaven, BaseGroin]
   components:
   - type: Sprite
     sprite: _DEN/Mobs/Species/Thaven/parts.rsi # gds added

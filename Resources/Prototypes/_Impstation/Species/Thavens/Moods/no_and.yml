@@ -253,5 +253,5 @@
   moodName: thaven-mood-coulrophobia-name
   moodDesc: thaven-mood-coulrophobia-desc
   conflicts:
-  - Clownfan
+  #- Clownfan
   - Circus

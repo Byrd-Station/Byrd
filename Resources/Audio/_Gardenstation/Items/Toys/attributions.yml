@@ -1,8 +1,8 @@
-﻿- files: ["babusqueak.ogg"]
-  license: "CC-by-BABU-W.A.U"
+- files: ["babusqueak.ogg"]
+  license: "CC-BY-SA-3.0"
   copyright: "Always Make Poor Choices, tadpoles plushcorp LLC, bunnygirlHyacinth"
-  source: "my mouth"
+  source: "https://github.com/PoorChoices-NT-Official" # - bot doesnt like this, this is the next best bit
 - files: ["babuthrow.ogg"]
-  license: "CC-by-BABU-W.A.U"
+  license: "CC-BY-SA-3.0"
   copyright: "Always Make Poor Choices, tadpoles plushcorp LLC, bunnygirlHyacinth"
-  source: "my mouth"
+  source: "https://github.com/PoorChoices-NT-Official"

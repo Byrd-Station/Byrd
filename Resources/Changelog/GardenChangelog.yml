@@ -28,3 +28,12 @@ Entries:
   id: 3
   time: '2025-10-10'
   url: https://github.com/Gardenstation/VerdantAviary/pull/13
+- author: bunnygirlHyacinth
+  changes:
+  - type: tweak
+    message: tweaked reagent effects on thaven shimmerblood to work properly now
+  - type: tweak
+    message: thaven kelp cocktail sprites tweaked
+  id: 4
+  time: '2025-10-13'
+  url: https://github.com/Gardenstation/VerdantAviary/pull/16
