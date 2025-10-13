@@ -208,7 +208,7 @@ public partial class SharedMartialArtsSystem
         if (martialArtsKnowledge.MartialArtsForm != MartialArtsForms.CloseQuartersCombat)
             return;
 
-        if (martialArtsKnowledge.Removable == false)
+var originalDamage = new DamageSpecifier(); // Omu
             return;
 
         var originalDamage = new DamageSpecifier();
