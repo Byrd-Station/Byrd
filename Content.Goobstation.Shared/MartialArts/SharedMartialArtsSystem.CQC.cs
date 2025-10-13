@@ -188,7 +188,6 @@ public partial class SharedMartialArtsSystem
         }
     }
 
-    // omu start
     private void OnWear(EntityUid uid, GrantCqcComponent component, ref ClothingGotEquippedEvent args)
     {
         if (!_netManager.IsServer)
