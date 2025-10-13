@@ -24,11 +24,10 @@
       effects:
       - !type:SatiateThirst
         factor: 2
-      - !type:GenericStatusEffect
-        key: SeeingRainbows
-        component: SeeingRainbows
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
         type: Add
-        time: 5
+        time: 10
         refresh: false
   plantMetabolism:
   - !type:PlantAdjustNutrition
