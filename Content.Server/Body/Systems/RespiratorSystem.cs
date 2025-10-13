@@ -74,6 +74,7 @@
 // SPDX-FileCopyrightText: 2025 thebiggestbruh <199992874+thebiggestbruh@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 thebiggestbruh <marcus2008stoke@gmail.com>
 // SPDX-FileCopyrightText: 2025 āda <ss.adasts@gmail.com>
+// SPDX-FileCopyrightText: 2025 ThanosDeGraf <richardgirgindontstop@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -158,13 +159,13 @@ public sealed class RespiratorSystem : EntitySystem
             && pullable.GrabStage == GrabStage.Suffocate)
             return false;
 
-        // Shitmed start - If your lungs are caved in you can't breathe.
+        // Omu start - If your lungs are caved in you can't breathe.
         foreach (var ent in _bodySystem.GetBodyOrganEntityComps<LungComponent>(uid))
         {
             if (ent.Comp2.Enabled)
                 break;
             return false;
-        } // Shitmed end
+        } // Omu end
 
         return !HasComp<KravMagaBlockedBreathingComponent>(uid);
     }

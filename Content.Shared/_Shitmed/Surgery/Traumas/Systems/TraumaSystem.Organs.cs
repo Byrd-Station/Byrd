@@ -7,7 +7,7 @@ using Content.Shared.Body.Organ;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.Popups;
-using Content.Shared.Rejuvenate;
+using Content.Shared.Rejuvenate; // Omu
 using Robust.Shared.Audio;
 
 namespace Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
@@ -127,7 +127,7 @@ public partial class TraumaSystem
 
     #region Public API
 
-    //
+    // Omu Start
     /// <summary>
     /// Let this be the defacto way of applying damage to organIntegrity.
     /// </summary>
@@ -148,7 +148,8 @@ public partial class TraumaSystem
         if (severity == 0
             || !Resolve(uid, ref organ))
             return false;
-
+        // As I am obfuscating cumbersome methods here
+#pragma warning disable CS0618
         if (!TryCreateOrganDamageModifier(uid, severity, effectOwner, identifier, organ))
         {
             if (!TryChangeOrganDamageModifier(uid, severity, effectOwner, identifier, organ))
@@ -156,8 +157,9 @@ public partial class TraumaSystem
         }
         return true;
     }
-
+#pragma warning restore CS0618
     [Obsolete("In most cases, use TryMakeOrganDamageModifier() instead")]
+    // Omu End
     public bool TryCreateOrganDamageModifier(EntityUid uid,
         FixedPoint2 severity,
         EntityUid effectOwner,
@@ -192,7 +194,7 @@ public partial class TraumaSystem
         return true;
     }
 
-    [Obsolete("In most cases, use TryMakeOrganDamageModifier() instead")]
+    [Obsolete("In most cases, use TryMakeOrganDamageModifier() instead")] // Omu
     public bool TryChangeOrganDamageModifier(EntityUid uid,
         FixedPoint2 change,
         EntityUid effectOwner,
@@ -239,7 +241,7 @@ public partial class TraumaSystem
         var oldIntegrity = organ.OrganIntegrity;
 
         if (organ.IntegrityModifiers.Count > 0)
-            organ.OrganIntegrity = organ.IntegrityCap - FixedPoint2.Clamp(organ.IntegrityModifiers
+            organ.OrganIntegrity = organ.IntegrityCap - FixedPoint2.Clamp(organ.IntegrityModifiers // Omu
                 .Aggregate(FixedPoint2.Zero, (current, modifier) => current + modifier.Value),
                 0,
                 organ.IntegrityCap);

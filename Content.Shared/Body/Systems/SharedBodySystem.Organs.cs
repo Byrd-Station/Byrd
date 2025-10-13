@@ -79,6 +79,7 @@
 // SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+// SPDX-FileCopyrightText: 2025 ThanosDeGraf <richardgirgindontstop@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -363,21 +364,21 @@ public partial class SharedBodySystem
             return;
 
         // I hate having to hardcode these checks so much.
-        // Gluesniffer didn't explain: Every organ needs their interaction with being disabled hardcoded.
-        // Currently handled: EyesComponent, HeartComponent
+        // Omu Start - Gluesniffer didn't explain: Every organ needs their interaction with being disabled hardcoded.
+        // Currently handled: EyesComponent, HeartComponent, LungComponent
         var ev = new OrganEnabledEvent(organEnt);
         RaiseLocalEvent(organEnt, ref ev);
-
+        // Omu End
     }
 
-    protected void DisableOrgan(Entity<OrganComponent> organEnt)
+    protected void DisableOrgan(Entity<OrganComponent> organEnt) // Omu
     {
         if (!TryComp(organEnt.Comp.Body, out BodyComponent? body))
             return;
 
         // I hate having to hardcode these checks so much.
-        var ev = new OrganDisabledEvent(organEnt);
-        RaiseLocalEvent(organEnt, ref ev);
+        var ev = new OrganDisabledEvent(organEnt); // Omu - Yea, I get you.
+        RaiseLocalEvent(organEnt, ref ev); // Omu
     }
 
     /// <summary>
