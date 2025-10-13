@@ -11,10 +11,8 @@
   maleFirstNames: NamesThaven
   femaleFirstNames: NamesThaven
   naming: First
-  customName: true
   minAge: 18
   youngAge: 50
-  middleAge: 135
   oldAge: 260
   maxAge: 360 # pre-contact thavens?? idk
   averageHeight: 188 # Thaven sprites are roughly 4" taller than standard humanoid sprites, this makes their height values display accurately
