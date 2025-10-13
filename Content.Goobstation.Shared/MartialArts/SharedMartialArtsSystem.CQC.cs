@@ -11,6 +11,7 @@
 // SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 // SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+// SPDX-FileCopyrightText: 2025 RichardBlonski <48651647+RichardBlonski@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -201,14 +202,17 @@ public partial class SharedMartialArtsSystem
     private void OnRemove(Entity<GrantCqcComponent> ent, ref ClothingGotUnequippedEvent args)
     {
         var user = args.Wearer;
+
+        // Omu Station
+        // Don't proceed if the user has non-removable Martial Arts knowledge
+        if (HasManualCqcKnowledge(user))
+            return;
+
         if (!TryComp<MartialArtsKnowledgeComponent>(user, out var martialArtsKnowledge)
             || !TryComp<MeleeWeaponComponent>(user, out var meleeWeaponComponent)) // Omu
             return;
 
         if (martialArtsKnowledge.MartialArtsForm != MartialArtsForms.CloseQuartersCombat)
-            return;
-
-var originalDamage = new DamageSpecifier(); // Omu
             return;
 
         var originalDamage = new DamageSpecifier();
@@ -319,4 +323,18 @@ var originalDamage = new DamageSpecifier(); // Omu
     }
 
     #endregion
+
+    /// Omu Station
+    /// <summary>
+    /// Checks if the user has Martial Arts knowledge that is non-removable (Such as CQC Old Manual).
+    /// </summary>
+    /// <param name="user">The user to check</param>
+    /// <returns>True if the user has non removeable martial arts knowledge, false otherwise</returns>
+    private bool HasManualCqcKnowledge(EntityUid user)
+
+    {
+        return TryComp<MartialArtsKnowledgeComponent>(user, out var martialArtsKnowledge) &&
+               !martialArtsKnowledge.Removable;
+    }
+
 }
