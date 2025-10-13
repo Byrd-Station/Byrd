@@ -57,8 +57,8 @@
       collection: HarpyBeeps
     Rev:
       collection: HarpyRevs
-#    Click:
-#      collection: HarpyClicks
+    Click:
+      collection: HarpyClicks
     Chitter:
       collection: HarpyChitter
     Squeak:
@@ -101,6 +101,28 @@
       collection: Wurble
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
+    Mars: # Omu, fix harpy emotes
+      collection: Mars
+    Yawn: # Omu, fix harpy emotes
+      collection: FemaleYawn
+    Boop: # Omu, give harpy more emotes
+      path: /Audio/_EinsteinEngines/Voice/IPC/beep_500.ogg
+    Buzz: # Omu, give harpy more emotes
+      path: /Audio/Machines/buzz-sigh.ogg
+    Chime: # Omu, give harpy more emotes
+      path: /Audio/Effects/Cargo/ping.ogg
+    Buzz-Two: # Omu, give harpy more emotes
+      path: /Audio/Machines/buzz-two.ogg
+    Ping: # Omu, give harpy more emotes
+      path: /Audio/Effects/beep1.ogg
+      params: # to prevent it from being definitively read by players as "OH SHIT A GRENADE"
+        variation: 0.125
+    Whirr: # Omu, give harpy more emotes
+      collection: IPCWhirrs
+    Hew: # Omu, give harpy more emotes
+      collection: Hew
+    Flap: # Omu, give harpy more emotes
+      path: /Audio/_Goobstation/Voice/Moth/moth_flap.ogg
 
 - type: emoteSounds
   id: SoundsHarpyMale
@@ -141,8 +163,8 @@
       collection: HarpyBeeps
     Rev:
       collection: HarpyRevs
-#    Click:
-#      collection: HarpyClicks
+    Click:
+      collection: HarpyClicks
     Chitter:
       collection: HarpyChitter
     Squeak:
@@ -187,6 +209,26 @@
       collection: Mars
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
+    Yawn: # Omu, fix harpy emotes
+      collection: MaleYawn
+    Boop: # Omu, give harpy more emotes
+      path: /Audio/_EinsteinEngines/Voice/IPC/beep_500.ogg
+    Buzz: # Omu, give harpy more emotes
+      path: /Audio/Machines/buzz-sigh.ogg
+    Chime: # Omu, give harpy more emotes
+      path: /Audio/Effects/Cargo/ping.ogg
+    Buzz-Two: # Omu, give harpy more emotes
+      path: /Audio/Machines/buzz-two.ogg
+    Ping: # Omu, give harpy more emotes
+      path: /Audio/Effects/beep1.ogg
+      params: # to prevent it from being definitively read by players as "OH SHIT A GRENADE"
+        variation: 0.125
+    Whirr: # Omu, give harpy more emotes
+      collection: IPCWhirrs
+    Hew: # Omu, give harpy more emotes
+      collection: Hew
+    Flap: # Omu, give harpy more emotes
+      path: /Audio/_Goobstation/Voice/Moth/moth_flap.ogg
 
 - type: emoteSounds
   id: FemaleVulpkanin
@@ -343,6 +385,8 @@
       collection: MaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
 
 - type: emoteSounds
   id: FemaleRodentia
@@ -381,6 +425,8 @@
       collection: FemaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
 
 - type: emoteSounds
   id: UnisexChitinid
@@ -419,6 +465,90 @@
       collection: MaleSigh
     Whistle:
       collection: Whistles
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
+
+- type: emoteSounds
+  id: FemaleFeroxi
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: FemaleScreams
+    Laugh:
+      collection: FemaleLaugh
+    Sneeze:
+      collection: FemaleSneezes
+    Cough:
+      collection: FemaleCoughs
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: CluwneHorn
+    Sigh:
+      collection: FemaleSigh
+    Crying:
+      collection: FemaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Hiss:
+      path: /Audio/Animals/snake_hiss.ogg
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: MothDeathGasp
+    Gnash:
+      collection: FeroxiGnashes
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Surprised: # Goob
+      path: /Audio/_Goobstation/Voice/surprised.ogg
+
+- type: emoteSounds
+  id: MaleFeroxi
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: MaleScreams
+    Laugh:
+      collection: MaleLaugh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Hiss:
+      path: /Audio/Animals/snake_hiss.ogg
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MothDeathGasp
+    Gnash:
+      collection: FeroxiGnashes
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
     Surprised: # Goob

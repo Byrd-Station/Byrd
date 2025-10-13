@@ -106,6 +106,9 @@ using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Player;
+using Content.Shared.Coordinates;
+using Content.Shared.Revolutionary;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Explosion.EntitySystems
@@ -202,7 +205,7 @@ namespace Content.Server.Explosion.EntitySystems
             SubscribeLocalEvent<SoundOnTriggerComponent, TriggerEvent>(OnSoundTrigger);
             SubscribeLocalEvent<ShockOnTriggerComponent, TriggerEvent>(HandleShockTrigger);
             SubscribeLocalEvent<RattleComponent, TriggerEvent>(HandleRattleTrigger);
-
+            SubscribeLocalEvent<RevolutionaryFlashOnTriggerComponent, TriggerEvent>(HandleRevolutionaryFlashTrigger); // funkystation
             SubscribeLocalEvent<TriggerWhitelistComponent, BeforeTriggerEvent>(HandleWhitelist);
         }
 
@@ -286,6 +289,12 @@ namespace Content.Server.Explosion.EntitySystems
         {
             _flashSystem.FlashArea(uid, args.User, component.Range, component.Duration, probability: component.Probability);
             args.Handled = true;
+        }
+
+        // funkystation - no other clear way to do this
+        private void HandleRevolutionaryFlashTrigger(EntityUid uid, RevolutionaryFlashOnTriggerComponent comp, TriggerEvent args)
+        {
+            _flashSystem.RevolutionaryFlashArea(uid, args.User, comp.Range, comp.Duration, probability: comp.Probability); // Omu Duration is now a timespan
         }
 
         private void HandleDeleteTrigger(EntityUid uid, DeleteOnTriggerComponent component, TriggerEvent args)

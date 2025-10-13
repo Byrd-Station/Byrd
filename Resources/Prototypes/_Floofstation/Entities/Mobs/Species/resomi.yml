@@ -250,6 +250,7 @@
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+    - map: [ "belt" ]                             # Above leg
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
     - map: [ "enum.HumanoidVisualLayers.LHand" ]  # Hands below jumpsuit since its bigger-than-usual sprite and this allows jumpsuits to have better-looking sleeves
@@ -265,7 +266,7 @@
     - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "outerClothing" ]
-    - map: [ "belt" ] #Goobedit - Belts over outerwear
+    - map: [ "beltalt" ] # Omu
     - map: [ "eyes" ]
     - map: [ "id" ]
     - map: [ "back" ]
@@ -373,6 +374,7 @@
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+    - map: [ "belt" ]                             # Above leg
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
     - map: [ "enum.HumanoidVisualLayers.LHand" ]  # Hands below jumpsuit since its bigger-than-usual sprite and this allows jumpsuits to have better-looking sleeves
@@ -388,7 +390,6 @@
     - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "outerClothing" ]
-    - map: [ "belt" ] #Goobedit - Belts over outerwear
     - map: [ "eyes" ]
     - map: [ "id" ]
     - map: [ "back" ]

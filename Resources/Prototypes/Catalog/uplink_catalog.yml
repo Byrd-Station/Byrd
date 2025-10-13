@@ -613,20 +613,20 @@
       - NukeOpsUplink
 
 
-- type: listing
-  id: UplinkGrenadeShrapnel
-  name: uplink-shrapnel-grenade-name
-  description: uplink-shrapnel-grenade-desc
-  productEntity: GrenadeShrapnel
-  cost:
-    Telecrystal: 8 # goob
-  categories:
-  - UplinkExplosives
-  conditions: # Goob, two times cheaper for nukies
-  - !type:StoreWhitelistCondition
-    blacklist:
-      tags:
-      - NukeOpsUplink
+#- type: listing # Omu, This thing 3 shots deathsquad, this should not be in the uplink.
+#  id: UplinkGrenadeShrapnel
+#  name: uplink-shrapnel-grenade-name
+#  description: uplink-shrapnel-grenade-desc
+#  productEntity: GrenadeShrapnel
+#  cost:
+#    Telecrystal: 8 # goob
+#  categories:
+#  - UplinkExplosives
+#  conditions: # Goob, two times cheaper for nukies
+#  - !type:StoreWhitelistCondition
+#    blacklist:
+#      tags:
+#      - NukeOpsUplink
 
 
 - type: listing

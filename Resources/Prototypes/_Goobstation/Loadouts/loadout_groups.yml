@@ -996,6 +996,10 @@
   - BlueshieldOfficerInnerBlueshieldSuit
   - BlueshieldOfficerInnerBlueshieldSkirt
   - BlueshieldOfficerInnerBlueshieldShirt
+  - BlueshieldOfficerTurtleneck # OmuStation Addon  
+  - BlueshieldOfficerTurtleneckSkirt # OmuStation Addon
+  - BlackBlueshieldOfficerTurtleneck # OmuStation Addon  
+  - BlackBlueshieldOfficerTurtleneckSkirt # OmuStation Addon
 
 - type: loadoutGroup
   id: BlueshieldOfficerOuter
@@ -1005,6 +1009,10 @@
   - BlueshieldOfficerOuterBlueshieldArmoredJacket
   - BlueshieldOfficerOuterBlueshieldCowboyVest
   - BlueshieldOfficerOuterWinterBlueshield
+  - BSOArmoredCoat # EE
+  - BSOMarineVest # EE
+  - BSOArmoredVest # EE
+  - BlueshieldOfficerOuterKimonoBlueshield
 
 - type: loadoutGroup
   id: BlueshieldOfficerNeck
@@ -1012,6 +1020,7 @@
   minLimit: 0
   loadouts:
   - BlueshieldOfficerOuterBlueshieldMantle
+  - BlueshieldOfficerOuterBlueshieldMantleBlack # Omu
 
 - type: loadoutGroup
   id: BlueshieldOfficerMask
@@ -1341,6 +1350,7 @@
   name: loadout-group-brigmedic-outer
   loadouts:
   - BrigmedicAMG
+  - BrigmedRedJacket # OmuStation
   - ArmorVest
   - ArmorVestSlim
   - SecurityOfficerWintercoat

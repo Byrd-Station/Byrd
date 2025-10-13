@@ -810,6 +810,7 @@
     whitelist:
       tags:
         - ShellShotgun
+        - ShellShotgunHeavy #Omustation edit
     capacity: 14
 
 - type: entity

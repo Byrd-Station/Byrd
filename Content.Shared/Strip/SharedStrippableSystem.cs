@@ -290,9 +290,7 @@ public abstract class SharedStrippableSystem : EntitySystem
             _popupSystem.PopupEntity(Loc.GetString("strippable-component-alert-owner-insert",
                                                         ("user", Identity.Entity(user, EntityManager)),
                                                         ("item", _handsSystem.GetActiveItem((user, user.Comp))!.Value)),
-                                                        target,
-                                                        target,
-                                                        PopupType.Large);
+                                                      target, target,GetThievingNoiseLevelOrLarge(user)); // Omustation - Remake EE Traits System - Thieving Trait - popup size is now based on ThievingComponent
         }
 
         var prefix = stealth ? "stealthily " : "";
@@ -383,15 +381,13 @@ public abstract class SharedStrippableSystem : EntitySystem
         if (!stealth)
         {
             if (IsStripHidden(slotDef, user))
-                _popupSystem.PopupEntity(Loc.GetString("strippable-component-alert-owner-hidden", ("slot", slot)), target, target, PopupType.Large);
+                _popupSystem.PopupEntity(Loc.GetString("strippable-component-alert-owner-hidden", ("slot", slot)), target, target, GetThievingNoiseLevelOrLarge(user)); // Omustation - Remake EE Traits System - Thieving Trait - popup size is now based on ThievingComponent
             else
             {
                 _popupSystem.PopupEntity(Loc.GetString("strippable-component-alert-owner",
                                                             ("user", Identity.Entity(user, EntityManager)),
                                                             ("item", item)),
-                                                            target,
-                                                            target,
-                                                            PopupType.Large);
+                                                        target, target, GetThievingNoiseLevelOrLarge(user)); // Omustation - Remake EE Traits System - Thieving Trait - popup size is now based on ThievingComponent
 
             }
         }
@@ -496,9 +492,7 @@ public abstract class SharedStrippableSystem : EntitySystem
             _popupSystem.PopupEntity(Loc.GetString("strippable-component-alert-owner-insert-hand",
                                                         ("user", Identity.Entity(user, EntityManager)),
                                                         ("item", _handsSystem.GetActiveItem(user)!.Value)),
-                                                        target,
-                                                        target,
-                                                        PopupType.Large);
+                                                    target, target, GetThievingNoiseLevelOrLarge(user)); // Omustation - Remake EE Traits System - Thieving Trait - popup size is now based on ThievingComponent
 
         }
 
@@ -781,5 +775,14 @@ public abstract class SharedStrippableSystem : EntitySystem
             return true;
 
         return !HasComp<BypassInteractionChecksComponent>(viewer);
+    }
+
+    /// <summary>
+    /// (Omustation - Remake EE Traits System - Thieving Trait)
+    /// Tries to get the user's thieving component, and returns its NoiseLevel. If a thieving component wasn't found, returns Large.
+    /// </summary>
+    private PopupType GetThievingNoiseLevelOrLarge(EntityUid user)
+    {
+        return TryComp<ThievingComponent>(user, out var thieving) ? thieving.NoiseLevel : PopupType.Large;
     }
 }

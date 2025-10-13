@@ -37,6 +37,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Linq;
 using Content.Goobstation.Common.Flash;
+using Content.Shared.Mobs.Components; // Goobstation
 
 namespace Content.Shared.Flash;
 
@@ -54,6 +55,7 @@ public abstract class SharedFlashSystem : EntitySystem
     [Dependency] private readonly StatusEffectsSystem _statusEffectsSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
+    [Dependency] private readonly IRobustRandom _random = default!; // Omu - Required for funkyrevs
 
     private EntityQuery<StatusEffectsComponent> _statusEffectsQuery;
     private EntityQuery<DamagedByFlashingComponent> _damagedByFlashingQuery;
@@ -169,7 +171,8 @@ public abstract class SharedFlashSystem : EntitySystem
         float slowTo,
         bool displayPopup = true,
         bool melee = false,
-        TimeSpan? stunDuration = null)
+        TimeSpan? stunDuration = null,
+        bool revFlash = false) // funkystation // Moved to shared to keep up with upstream - Omu
     {
         // Goob edit start
         if (used == null
@@ -205,13 +208,17 @@ public abstract class SharedFlashSystem : EntitySystem
                 ("user", Identity.Entity(user.Value, EntityManager))), target, target);
         }
 
-        var ev = new AfterFlashedEvent(target, user, used, melee);
-        RaiseLocalEvent(target, ref ev);
+        if (melee || revFlash) // funkystation start
+        {
+            var ev = new AfterFlashedEvent(target, user, used, melee);
+            RaiseLocalEvent(target, ref ev);
 
-        if (user != null)
-            RaiseLocalEvent(user.Value, ref ev);
-        if (used != null)
-            RaiseLocalEvent(used.Value, ref ev);
+            if (user != null)
+                RaiseLocalEvent(user.Value, ref ev);
+            if (used != null)
+                RaiseLocalEvent(used.Value, ref ev);
+
+        }  // funkystation end
     }
 
     /// <summary>
@@ -256,6 +263,36 @@ public abstract class SharedFlashSystem : EntitySystem
         _audio.PlayPredicted(sound, source, user, AudioParams.Default.WithVolume(1f).WithMaxDistance(3f));
     }
 
+    // funkystation start: copy and paste of above, cry about it // Moved to shared to keep up with upstream - Omu
+    public void RevolutionaryFlashArea(Entity<FlashComponent?> source, EntityUid? user, float range, TimeSpan flashDuration, float slowTo = 0.8f, bool displayPopup = false, float probability = 1f, SoundSpecifier? sound = null) // Omu float duration -> TimeSpan flashDuration
+    {
+        var transform = Transform(source);
+        var mapPosition = _transform.GetMapCoordinates(transform);
+        var statusEffectsQuery = GetEntityQuery<StatusEffectsComponent>();
+        var damagedByFlashingQuery = GetEntityQuery<DamagedByFlashingComponent>();
+
+        foreach (var entity in _entityLookup.GetEntitiesInRange(transform.Coordinates, range))
+        {
+            if (!_random.Prob(probability))
+                continue;
+
+            // Is the entity affected by the flash either through status effects or by taking damage?
+            if (!statusEffectsQuery.HasComponent(entity) && !damagedByFlashingQuery.HasComponent(entity))
+                continue;
+
+            // Check for entites in view
+            // put damagedByFlashingComponent in the predicate because shadow anomalies block vision.
+            if (!_examine.InRangeUnOccluded(entity, mapPosition, range, predicate: (e) => damagedByFlashingQuery.HasComponent(e)))
+                continue;
+
+            // They shouldn't have flash removed in between right?
+            Flash(entity, user, source, flashDuration, slowTo, displayPopup, true, null, true); //Omu see above
+
+        }
+
+        _audio.PlayPvs(sound, source, AudioParams.Default.WithVolume(1f).WithMaxDistance(3f));
+    }  // funkystation end
+
     // Handle the flash visuals
     // TODO: Replace this with something like sprite flick once that exists to get rid of the update loop.
     public override void Update(float frameTime)
@@ -295,6 +332,9 @@ public abstract class SharedFlashSystem : EntitySystem
 
     private void OnExamine(Entity<FlashImmunityComponent> ent, ref ExaminedEvent args)
     {
+        if (HasComp<MobStateComponent>(args.Examined)) // Goobstation - dont add exmained value to mobs whit flash protection
+            return;
+
         args.PushMarkup(Loc.GetString("flash-protection"));
     }
 }

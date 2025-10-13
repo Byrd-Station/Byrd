@@ -11,10 +11,10 @@
 # SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 # SPDX-FileCopyrightText: 2025 Orion-416 <cliveocelot@gmail.com>
 # SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
+# SPDX-FileCopyrightText: 2025 PAFFhassoocks <asukalangleydanielle@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 TurboTracker <130304754+TurboTrackerss14@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 #
@@ -392,7 +392,7 @@
     sprite: _Goobstation/Objects/Weapons/Melee/blueshield_knife.rsi
     state: icon
   content:
-    - ClothingBeltMilitaryWebbingBSOFilled
+    - ClothingBeltMilitaryWebbingBSOFilled # Omu - BSO Webbing Vest
 
 # Blueshield hardsuits
 

@@ -100,7 +100,7 @@
   - type: StationEvent
     earliestStart: 20
     weight: 3
-    minimumPlayers: 30
+    minimumPlayers: 100 # OMU change - removes from valid event pool
     startAnnouncement: station-event-communication-interception
     startAudio:
       path: /Audio/Announcements/intercept.ogg
@@ -142,7 +142,7 @@
   - type: StationEvent
     earliestStart: 20
     weight: 3
-    minimumPlayers: 30
+    minimumPlayers: 100 # OMU change - removes from valid event pool
     maxOccurrences: 1
     duration: null
     occursDuringRoundEnd: false
@@ -205,11 +205,11 @@
   id: BlobMidround
   components:
   - type: StationEvent
-    weight: 1
-    earliestStart: 45
-    minimumPlayers: 50
+    weight: 1.5       #omu
+    earliestStart: 80 #omu
+    minimumPlayers: 100 # OMU change - removes from valid event pool
     duration: null
-    maxOccurrences: 1
+    maxOccurrences: 2 #omu
     chaos:
       Hostile: 400
       Medical: 400

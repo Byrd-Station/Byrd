@@ -210,9 +210,10 @@
     - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "eyes" ]
+    - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
-    - map: [ "belt" ] #Goobedit - Belts over outerwear
+    - map: [ "beltalt" ] # Omu
     - map: [ "back" ]
     - map: [ "enum.HumanoidVisualLayers.Face" ]
     - map: [ "neck" ]

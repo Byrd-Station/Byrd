@@ -124,6 +124,7 @@
 # SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
@@ -200,6 +201,32 @@
   - ClothingNeckGenderfluidPin
   - ClothingNeckTransPin
   - ClothingNeckAutismPin
+  # Omu start
+  - ClothingNeckCloakProgressPride
+  - ClothingNeckCloakTrans
+  - ClothingNeckCloakGenderfluid
+  - ClothingNeckCloakAro
+  - ClothingNeckCloakAce
+  - ClothingNeckCloakBi
+  - ClothingNeckCloakIntersex
+  - ClothingNeckCloakLesbian
+  - ClothingNeckCloakGay
+  - ClothingNeckCloakEnby
+  - ClothingNeckCloakPan
+  - ClothingNeckScarfStripedAce
+  - ClothingNeckScarfStripedAro
+  - ClothingNeckScarfStripedAroace
+  - ClothingNeckScarfStripedBiSexual
+  - ClothingNeckScarfStripedGay
+  - ClothingNeckScarfStripedInter
+  - ClothingNeckScarfStripedLesbian
+  - ClothingNeckScarfStripedPan
+  - ClothingNeckScarfStripedNonBinary
+  - ClothingNeckScarfStripedRainbow
+  - ClothingNeckScarfStripedTrans
+  - ClothingNeckScarfStripedGenderfluid
+  - ClothingNeckChameleonPride
+  # Omu end
   - CardBoxBlack # GoobStation
   - CardBoxNanotrasen # GoobStation
   - FoodSnackLollypopWrapped # Goobstation
@@ -269,6 +296,7 @@
   - EmergencyPlasma
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVapor # Delta-V
   - EmergencySilicon
 
 # nitrogen or oxygen tank, depending on what your species needs
@@ -279,6 +307,7 @@
   loadouts:
   - LoadoutSpeciesEVANitrogen
   - LoadoutSpeciesEVAOxygen
+  - LoadoutSpeciesEVAWaterVapor
 
 # vox get a nitrogen tank, other species get nothing
 - type: loadoutGroup
@@ -295,6 +324,7 @@
   loadouts:
   - LoadoutSpeciesPocketDoubleNitrogen
   - LoadoutSpeciesPocketDoubleOxygen
+  - LoadoutSpeciesPocketDoubleWaterVapor
 
 # Command
 - type: loadoutGroup
@@ -355,6 +385,10 @@
   loadouts:
   - HoPJumpsuit
   - HoPJumpskirt
+  - HoPParadeUniformMale # OmuStation
+  - HoPParadeUniformFemale # OmuStation
+  - HoPTurtleneckMale # OmuStation
+  - HoPTurtleneckSkirtFemale # OmuStation
   - HoPJumpsuitMilitary # goob
   - HoPSummerShirt # goob
 
@@ -382,6 +416,9 @@
   minLimit: 0
   loadouts:
   - HoPWintercoat
+  - ClothingFormalHoPCoat # Omu
+  - ClothingFormalHoPJacket # Omu
+  - ClothingFormalHoPDress # Omu
 
 # Civilian
 - type: loadoutGroup
@@ -718,6 +755,7 @@
   - EmergencyPlasmaClown
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporClown # Delta-V
   - EmergencySilicon
 
 - type: loadoutGroup
@@ -779,6 +817,7 @@
   - EmergencyPlasmaMime
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporMime # Delta-V
   - EmergencySilicon
 
 - type: loadoutGroup
@@ -848,6 +887,8 @@
   - QuartermasterJumpskirt
   - QuartermasterTurtleneck
   - QuartermasterTurtleneckSkirt
+  - QuartermasterUniform # OmuStation
+  - QuartermasterUniformSkirt # OmuStation
   - QuartermasterFormalSuit
   - QuartermasterMJ # goob
   - QMSummerShirt # goob
@@ -888,6 +929,12 @@
   loadouts:
   - CargoTechnicianJumpsuit
   - CargoTechnicianJumpskirt
+  # OmuStation Start
+  - CargoTechnicianSweater
+  - CargoTechnicianSweaterSkirt
+  - CargoTechnicianShortPantsIfuckinghateyouifyouwearthisbtw
+  - CargoTechnicianShortSkirtsInsteadofPants
+  # OmuStation End
   - CargoTechnicianJumpsuitMail # Goob/DeltaV - Mail
   - CargoTechnicianJumpskirtMail # Goob/DeltaV - Mail
   - CargoTechMJ # goob
@@ -907,6 +954,7 @@
   minLimit: 0
   loadouts:
   - CargoTechnicianWintercoat
+  - CargoTechnicianJacket # OmuStation
   - CargoTechnicianWintercoatMail # Goob/DeltaV - Mail
 
 - type: loadoutGroup
@@ -1093,6 +1141,7 @@
   - EmergencyPlasmaExtended
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporExtended # Delta-V
   - EmergencySilicon
 
 # Science
@@ -1110,6 +1159,7 @@
   loadouts:
   - ResearchDirectorMantle
   - ResearchDirectorCloak
+  - ResearchDirectorDecoratedCloak
 
 - type: loadoutGroup
   id: ResearchDirectorJumpsuit
@@ -1127,6 +1177,7 @@
   loadouts:
   - ResearchDirectorLabCoat
   - ResearchDirectorWintercoat
+  - LongScienceCoat # OmuStation
 
 - type: loadoutGroup
   id: ResearchDirectorShoes
@@ -1182,6 +1233,7 @@
   - ScienceWintercoat
   - RoboticistLabCoat
   - RoboticistWintercoat
+  - LongScienceCoat # OmuStation
   - SeniorResearcherLabCoat
 
 - type: loadoutGroup
@@ -1236,6 +1288,8 @@
   - HeadofSecurityTurtleneckSkirt
   - HeadofSecurityFormalSuit
   - HeadofSecurityFormalSkirt
+  - HoSParadeUniformMale # Omu
+  - HoSParadeUniformFemale # Omu
   - HoSSummerShirt # goob
 
 - type: loadoutGroup
@@ -1253,6 +1307,7 @@
   loadouts:
   - HeadofSecurityCoat
   - HeadofSecurityWinterCoat
+  - ClothingHOSWinterJacket # OmuStation
   - HeadofSecurityGreatCoat # Goobstation
   - HeadofSecurityVestWeb # Goobstation
 
@@ -1300,6 +1355,7 @@
   - SeniorOfficerJumpsuit
   - SeniorOfficerJumpskirt
   - TrooperUniform
+  - BlackRedUniform # OmuStation Addon
 
 - type: loadoutGroup
   id: SecurityBackpack
@@ -1393,6 +1449,7 @@
   - EmergencyPlasmaSecurity
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporSecurity # Delta-V
   - EmergencySilicon
 
 - type: loadoutGroup
@@ -1411,6 +1468,7 @@
   - ChiefMedicalOfficerBeret
   - CMOMedicalHeadMirror
   - ChemistUshanka # Goobstation
+  - CMOVetBeret #Omu
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerJumpsuit
@@ -1429,6 +1487,7 @@
   loadouts:
   - ChiefMedicalOfficerLabCoat
   - ChiefMedicalOfficerWintercoat
+  - CMOVetLabCoat #Omu
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerNeck
@@ -1470,6 +1529,8 @@
   - MedicalGreenScrubs
   - MedicalPurpleScrubs
   - MedicMJ # goob
+  - CybersunMedicalJumpsuit # Omu
+  - CybersunMedicalJumpskirt # Omu
 
 - type: loadoutGroup
   id: MedicalDoctorOuterClothing
@@ -1478,6 +1539,7 @@
   loadouts:
   - RegularLabCoat
   - MedicalDoctorWintercoat
+  - ClothingLabcoatLong # OmuStation
   - SeniorPhysicianLabCoat
 
 - type: loadoutGroup
@@ -1510,6 +1572,7 @@
   loadouts:
   - LatexGloves
   - NitrileGloves
+  - CybersunNitrileGloves # Omu
 
 - type: loadoutGroup
   id: MedicalMask
@@ -1544,6 +1607,7 @@
   - RegularLabCoat
   - ChemistLabCoat
   - ChemistWintercoat
+  - ChemLabcoatLong # OmuStation
   - SeniorPhysicianLabCoat # Goobstation
 
 - type: loadoutGroup
@@ -1561,6 +1625,7 @@
   minLimit: 0
   loadouts:
   - ParamedicHead
+  - ParamedicCapCybersun # Omu
   - SeniorPhysicianBeret # Goobstation
 
 - type: loadoutGroup
@@ -1569,9 +1634,14 @@
   loadouts:
   - ParamedicJumpsuit
   - ParamedicJumpskirt
+  - ParamedUniformBlueSkirt # OmuStation
+  - ParamedUniformBlue # OmuStation
   - SeniorPhysicianJumpsuit # Goobstation
   - SeniorPhysicianJumpskirt # Goobstation
   - ParamedMJ # goob
+  - CybersunMedicalJumpsuit # Omu
+  - CybersunMedicalJumpskirt # Omu
+  - ParamedUniformCybersun # Omu
 
 - type: loadoutGroup
   id: ParamedicOuterClothing
@@ -1580,6 +1650,7 @@
   loadouts:
   - ParamedicWindbreaker
   - ParamedicWintercoat
+  - ClothingJacketParamedBlue # OmuStation
   - ParamedicDavidsJacket # Goobstation
   - SeniorPhysicianLabCoat # Goobstation
 
@@ -1613,6 +1684,7 @@
   - EmergencyPlasmaMedical
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporMedical # Delta-V
   - EmergencySilicon
 
 # Wildcards
@@ -1659,6 +1731,7 @@
   - EmergencyPlasmaSyndicate
   - LoadoutSpeciesVoxNitrogen
   - LoadoutSpeciesPlasma # Goobstation
+  - EmergencyWaterVaporSyndicate # Delta-V
   - EmergencySilicon
 
 - type: loadoutGroup

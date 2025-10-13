@@ -127,6 +127,8 @@
         - map: ["enum.HumanoidVisualLayers.LArm"]
         - map: ["enum.HumanoidVisualLayers.RLeg"]
         - map: ["enum.HumanoidVisualLayers.LLeg"]
+        - map: [ "enum.HumanoidVisualLayers.Underwear" ] # Omu 109
+        - map: [ "enum.HumanoidVisualLayers.Undershirt" ] # Omu 109
         - shader: StencilClear
           sprite: Mobs/Species/Human/parts.rsi
           state: l_leg
@@ -152,9 +154,10 @@
         - map: ["gloves"]
         - map: ["shoes"]
         - map: ["ears"]
+        - map: [ "belt" ] # Omu - Moved belt to render under OuterClothing to have it be similar with how the base drawdepth is.
         - map: ["outerClothing"]
         - map: ["eyes"]
-        - map: ["belt"]
+        - map: ["beltalt"] # Omu
         - map: ["neck"]
         - map: ["back"]
         - map: [ "enum.HumanoidVisualLayers.Face" ]

@@ -147,6 +147,9 @@
       Plastic: 25
       Steel: 25
       Glass: 25
+  - type: ItemToggleCastRay # Omustation - Photophobia trait
+    raiseEventAt: 
+    - type: Photophobia
 
 - type: entity
   name: seclite

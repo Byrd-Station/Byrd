@@ -291,7 +291,7 @@
       - Mouse
   - type: VentCrawler # goobstation - Ventcrawl
   - type: Devourer
-    devourAction: ActionDevourLootbug
+    structureDevourTime: 3
     foodPreferenceWhitelist:
       tags:
       - Ingot
@@ -311,8 +311,6 @@
       - Steel
       - Ore
       - Telecrystal
-  - type: MobPrice
-    price: 500
 
 - type: entity
   name: space carp

@@ -1,0 +1,8 @@
+- type: playTimeTracker
+  id: JobCentCommIntern
+
+- type: playTimeTracker
+  id: JobCentCommDireggtor
+
+- type: playTimeTracker
+  id: JobTransitPrisoner

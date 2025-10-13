@@ -1,0 +1,179 @@
+- type: guideEntry
+  id: OmuRuleset
+  name: guide-entry-rules
+  priority: 1
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/OmuRules.xml"
+  children:
+  - Conditions
+
+## Core Rules
+- type: guideEntry
+  id: RuleAdmins
+  name: guide-entry-rules-admins
+  ruleEntry: true
+  priority: 2
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC0Admins.xml"
+
+- type: guideEntry
+  id: RuleDontBeADick
+  name: guide-entry-rules-dick
+  ruleEntry: true
+  priority: 3
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC1Dick.xml"
+
+- type: guideEntry
+  id: RuleMetagame
+  name: guide-entry-rules-metagame
+  ruleEntry: true
+  priority: 4
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC2Metagame.xml"
+
+- type: guideEntry
+  id: RuleICKOCK
+  name: guide-entry-rules-ickock
+  ruleEntry: true
+  priority: 5
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC3ICKOCK.xml"
+
+- type: guideEntry
+  id: RuleSelfantag
+  name: guide-entry-rules-selfantag
+  ruleEntry: true
+  priority: 6
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC4Selfantag.xml"
+
+- type: guideEntry
+  id: RuleBigotry
+  name: guide-entry-rules-bigotry
+  ruleEntry: true
+  priority: 7
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC5Bigotry.xml"
+
+- type: guideEntry
+  id: RuleNSFW
+  name: guide-entry-rules-nsfw
+  ruleEntry: true
+  priority: 8
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC6NSFW.xml"
+
+- type: guideEntry
+  id: RuleEnglish
+  name: guide-entry-rules-english
+  ruleEntry: true
+  priority: 9
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC7English.xml"
+
+- type: guideEntry
+  id: RuleHacker
+  name: guide-entry-rules-hacker
+  ruleEntry: true
+  priority: 10
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC8Hacker.xml"
+
+- type: guideEntry
+  id: RuleSkillIssue
+  name: guide-entry-rules-skillissue
+  ruleEntry: true
+  priority: 11
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC9SkillIssue.xml"
+
+- type: guideEntry
+  id: RuleEORG
+  name: guide-entry-rules-eorg
+  ruleEntry: true
+  priority: 12
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/CoreRules/RuleC10EORG.xml"
+
+## Roleplay Rules
+
+- type: guideEntry
+  id: RuleEffort
+  name: guide-entry-rules-effort
+  ruleEntry: true
+  priority: 13
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR1NoLRP.xml"
+
+- type: guideEntry
+  id: RuleEscalate
+  name: guide-entry-rules-esalate
+  ruleEntry: true
+  priority: 14
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR2Escalation.xml"
+
+- type: guideEntry
+  id: RuleNothingEverHappens
+  name: guide-entry-rules-nothingeverhappens
+  ruleEntry: true
+  priority: 15
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR3NothingEverHappens.xml"
+
+- type: guideEntry
+  id: RuleBehaviour
+  name: guide-entry-rules-behaviour
+  ruleEntry: true
+  priority: 16
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR4Behaviour.xml"
+
+- type: guideEntry
+  id: RuleMainCharacterSyndrome
+  name: guide-entry-rules-maincharactersyndrome
+  ruleEntry: true
+  priority: 17
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR5MCSyndrome.xml"
+
+- type: guideEntry
+  id: RuleMetafriend
+  name: guide-entry-rules-metafriend
+  ruleEntry: true
+  priority: 18
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR6Metafriend.xml"
+
+  # Readding some upstream rules that are sensible but because it'd be a mess to comment priorities and numbers im moving em here under new IDs.
+  # If you make any rule changes to these take them out of the goob section and make a new xml in an omu directory.
+  # Goobrules start.
+
+- type: guideEntry
+  id: RuleBSO
+  name: guide-entry-rules-r12 #we can probably leave the ftls unchanged but yeah if you touch anything make an omu one.
+  ruleEntry: true
+  priority: 19
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR8BSO.xml"
+
+- type: guideEntry
+  id: RuleNTR
+  name: guide-entry-rules-r13
+  ruleEntry: true
+  priority: 20
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR9NTR.xml"
+
+- type: guideEntry
+  id: RuleNLR
+  name: guide-entry-rules-r14
+  ruleEntry: true
+  priority: 21
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR10NLR.xml"
+
+- type: guideEntry
+  id: RuleBadGuys
+  name: guide-entry-rules-r7
+  ruleEntry: true
+  priority: 22
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR11Criminal.xml"
+
+- type: guideEntry
+  id: RuleValidhunt
+  name: guide-entry-rules-r5
+  ruleEntry: true
+  priority: 23
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/RoleplayRules/RuleR12Validhunt.xml"
+
+  # Goobrules end
+
+##Silicon rules
+
+- type: guideEntry
+  id: RuleSiliconLaws
+  name: guide-entry-rules-siliconlaws
+  ruleEntry: true
+  priority: 24
+  text: "/ServerInfo/_Omu/Guidebook/ServerRules/SiliconRules/RuleSiliconLaws.xml"

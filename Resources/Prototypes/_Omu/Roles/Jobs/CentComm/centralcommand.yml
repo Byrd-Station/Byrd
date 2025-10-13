@@ -1,0 +1,91 @@
+- type: job
+  id: CentCommIntern
+  name: job-name-centcomm-intern
+  description: job-description-inspector
+  playTimeTracker: JobCentCommIntern
+  setPreference: false
+  startingGear: CentcomInternGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  requirements:
+  - !type:AgeRequirement
+    requiredAge: 18
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  - NanotrasenRepresentative
+  - BlueshieldOfficer
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant ]
+
+- type: startingGear
+  id: CentcomInternGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficial
+    shoes: ClothingShoesBootsJack
+    head: ClothingHeadHatCentcomcap
+    eyes: ClothingEyesGlassesCentComm
+    gloves: ClothingHandsGlovesHeavyGoldenTrim
+    back: ClothingBackpackSatchelLeather
+    belt: BoxFolderCentComClipboard
+    neck: ExecutiveInternIDCard
+    id: CentCommInternPDA
+    ears: ClothingHeadsetAltCentCom
+    pocket1: RubberStampCentcomIntern
+  storage:
+    back:
+    - HandheldFaxCentCommIntern
+
+- type: job
+  id: CentralCommandDireggtor
+  name: job-name-centcomm-direggtor
+  description: job-description-centcomoff
+  playTimeTracker: JobCentCommDireggtor
+  setPreference: false
+  startingGear: CentcomDireggtorGear
+  icon: "JobIconCentCommDireggtor"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  requirements:
+  - !type:AgeRequirement
+    requiredAge: 28
+  - !type:SpeciesRequirement
+    species:
+    - Harpy
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  - NanotrasenRepresentative
+  - BlueshieldOfficer
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant, DeathRattleImplantCentcomm ]
+
+- type: startingGear
+  id: CentcomDireggtorGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficial
+    head: ClothingHeadHatBeretCCBeregg
+    mask: ClothingMaskSterile
+    eyes: ClothingEyesGlassesCentComm
+    gloves: ClothingHandsGlovesHeavyGoldenTrim
+    back: ClothingModsuitCorporate
+    outerClothing: ClothingOuterCentcomLabcoat
+    neck: ClothingNeckMantleCCOMantle
+    id: CentCommDireggtorPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltHolsterFilledCentComm
+    pocket1: VulcanEightRevolver
+    pocket2: VulcanEightRevolver
+  storage:
+   back:
+   - HandheldFaxOfficial
+   - BoxFolderCentComClipboard
+   - DeterrentCaseFilled
+   - BoxShotgunUranium
+   - CQCManual
+
