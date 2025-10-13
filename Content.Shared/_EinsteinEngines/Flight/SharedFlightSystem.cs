@@ -126,8 +126,7 @@ public abstract class SharedFlightSystem : EntitySystem
             _damageable.TryChangeDamage(uid, component.FailDamageSpecifier);
 
         //Omu Edit Start - Paraplegic Harpies
-        if (!component.On
-            && TryComp(uid, out LegsParalyzedComponent? _))
+        if (!component.On && TryComp(uid, out LegsParalyzedComponent? _))
             _standing.Down(uid,dropHeldItems:false);
         //Omu Edit End
 
