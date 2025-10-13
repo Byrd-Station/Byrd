@@ -52,7 +52,7 @@ public sealed partial class MartialArtsKnowledgeComponent : GrabStagesOverrideCo
 
     //omu start
     [DataField]
-    public bool Removable = true;
+    public bool Removable = false;
     //omu end
 }
 
