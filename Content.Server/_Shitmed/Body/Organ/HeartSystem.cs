@@ -48,8 +48,8 @@ public sealed class HeartSystem : EntitySystem
         // Lets make sure the brain is present and the heart inserted is functioning
         // TODO: If ever we have something with multiple brains and braindamage is implemented this needs to be changed.
         if (_bodySystem.TryGetBodyOrganEntityComps<BrainComponent>(args.Body, out var _)
-            && TryComp<OrganComponent>(args.Part, out var skibidi)
-            && skibidi.Enabled)
+            && TryComp<OrganComponent>(args.Part, out var organ)
+            && organ.Enabled)
         {
             RemComp<DelayedDeathComponent>(args.Body);
             _alert.ClearAlert(args.Body, _faultyHeartAlertId);
