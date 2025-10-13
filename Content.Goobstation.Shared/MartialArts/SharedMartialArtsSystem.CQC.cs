@@ -202,7 +202,7 @@ public partial class SharedMartialArtsSystem
     {
         var user = args.Wearer;
         if (!TryComp<MartialArtsKnowledgeComponent>(user, out var martialArtsKnowledge)
-            || !TryComp<MeleeWeaponComponent>(user, out var meleeWeaponComponent))
+            || !TryComp<MeleeWeaponComponent>(user, out var meleeWeaponComponent)) // Omu
             return;
 
         if (martialArtsKnowledge.MartialArtsForm != MartialArtsForms.CloseQuartersCombat)
