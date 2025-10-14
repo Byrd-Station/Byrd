@@ -36,7 +36,7 @@
     table:
       id: MobFloorGoblin
 
-# Omu Edit
+# Omu Edit - Disabled Hellgoose, it's unbalanced, provides no RP and simply RR you, unless you meta-game it
 #- type: entity
 #  parent: BaseGameRule
 #  id: HellGooseSpawn
