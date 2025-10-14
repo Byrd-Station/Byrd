@@ -177,7 +177,7 @@
     - id: DerelictCyborgSyndicateSpawn # Goobstation - usually calm
     - id: MalignRiftSpawn # DeltaV
     - id: FloorGoblinSpawn # Goobstation
-    # - id: HellGooseSpawn # Goobstation # Omu Edit - No.
+    # - id: HellGooseSpawn # Goobstation # Omu Edit - Disabled Hellgoose, it's unbalanced, provides no RP and simply RR you, unless you meta-game it
 
 - type: entityTable
   id: BasicAntagEventsTable
