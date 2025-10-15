@@ -1,4 +1,8 @@
-﻿#ported from imp with some changes from the den version of thavens
+# SPDX-FileCopyrightText: 2025 bunnygirlHyacinth <xxst4rf11m00nb700db4nnyxx@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+#ported from imp with some changes from the den version of thavens
 - type: entity
   id: BaseThavenOrgan
   parent: BaseItem

@@ -1,4 +1,8 @@
-﻿- type: reagent # can't parent it to blood because anybody should be able to drink it, the flesh/organs are the toxic parts (fugu moment) -- thanks den
+# SPDX-FileCopyrightText: 2025 bunnygirlHyacinth <xxst4rf11m00nb700db4nnyxx@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: reagent # can't parent it to blood because anybody should be able to drink it, the flesh/organs are the toxic parts (fugu moment) -- thanks den
   id: ShimmeringBlood
   name: reagent-name-shimmering-blood
   group: Biological

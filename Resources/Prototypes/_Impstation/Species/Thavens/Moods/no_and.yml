@@ -1,4 +1,8 @@
-﻿# "No, and" moods will discourage players from certain behaviors and objects.
+# SPDX-FileCopyrightText: 2025 bunnygirlHyacinth <xxst4rf11m00nb700db4nnyxx@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# "No, and" moods will discourage players from certain behaviors and objects.
 
 # Make sure to add new moods to this dataset or they will not be selected!!!!!!
 - type: dataset
