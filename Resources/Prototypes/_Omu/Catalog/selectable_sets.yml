@@ -141,3 +141,37 @@
     state: icon
   content:
   - ClothingNeckWardenParryCloakFilled
+
+# ERT
+
+- type: selectableSet
+  id: ERTShotgunSet
+  name: selectable-set-ert-shotgun-name
+  description: selectable-set-ert-shotgun-description
+  sprite: 
+    sprite: _Goobstation/Objects/Weapons/Guns/Lever/combatshotgun.rsi
+    state: icon
+  content:
+  - WeaponShotgunCombatCentComm
+  - MagazineBoxShotgunHighCaliber
+  - MagazineBoxShotgunHighCaliber
+  - WeaponPistolAnacondaCentComm
+
+- type: selectableSet
+  id: ERTSMGSet
+  name: selectable-set-ert-smg-name
+  description: selectable-set-ert-smg-description
+  sprite:
+    sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
+    state: icon
+  content:
+  - WeaponSubMachineGunC20rCentComm
+  - MagazinePistolSubMachineGun
+  - MagazinePistolSubMachineGun
+  - MagazinePistolSubMachineGun
+  - MagazinePistolSubMachineGun
+  - BlueShieldShieldMarginallyLessEvilFilled
+  - BoxFlashbang
+  - BoxStinger
+  - BoxTearGas
+  - BoxHandcuff
