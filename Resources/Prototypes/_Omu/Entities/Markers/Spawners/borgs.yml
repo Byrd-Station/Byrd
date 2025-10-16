@@ -10,10 +10,10 @@
         state: ert
   - type: ConditionalSpawner
     prototypes:
-      -   id: PlayerBorgErtGhostRole
+      - id: PlayerBorgErtGhostRole
 
 - type: entity
-  name: ERT Borg Spawner
+  name: DeathSquad Borg Spawner
   id: SpawnBorgDeathsquadGhostrole
   parent: MarkerBase
   components:
@@ -24,4 +24,4 @@
         state: commando
   - type: ConditionalSpawner
     prototypes:
-      -   id: PlayerBorgDeathsquadGhostRole
+      - id: PlayerBorgDeathsquadGhostRole
