@@ -58,7 +58,6 @@
     components:
       - SecurityStaff
       - CommandStaff
-      - BlueshieldOfficer
   components:
     - type: SocialAnxiety
   globalCost: -4 #omu i suppose. ive not tedted. If this comment is still here assume i havent tested.
