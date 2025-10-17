@@ -54,6 +54,11 @@
   description: trait-social-anxiety-disc
   #category: Disabilities #omu commentout
   category: PhysicalTraits #omu
+  blacklist:
+    components:
+      - SecurityStaff
+      - CommandStaff
+      - BlueShieldOfficer
   components:
     - type: SocialAnxiety
   globalCost: -4 #omu i suppose. ive not tedted. If this comment is still here assume i havent tested.
