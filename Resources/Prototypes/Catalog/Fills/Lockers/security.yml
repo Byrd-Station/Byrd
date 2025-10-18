@@ -130,6 +130,7 @@
     - id: Wrench # Goobstation
     - id: ContrabandDetectorFlatpack # Goobstation
     - id: BoxEncryptionKeyPrisoner #Delta-V
+    - id: BoxPrisonerHeadset # Einstein Engines
 
 - type: entityTable
   id: FillLockerWardenHarduit
