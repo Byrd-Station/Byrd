@@ -29,6 +29,12 @@
   artist: peripc
 
 - type: lobbyBackground
+  id: howitfeelstodualwield
+  background: /Textures/_Omu/LobbyScreens/how-it-feels-to-dual-wield.webp
+  name: How it Feels to Dual Wield
+  artist: IsaacScoutProto
+
+- type: lobbyBackground
   id: kinsci
   background: /Textures/_Omu/LobbyScreens/kinsci.webp
   name: Kinsci
