@@ -421,7 +421,7 @@
 - type: selectableSet
   id: ERTBallisticsSet
   name: selectable-set-ert-ballistic-name
-  description: tgygbhnjm 
+  description: selectable-set-ert-ballistic-description
   sprite:
     sprite: _Goobstation/Objects/Weapons/Guns/Rifles/annie.rsi
     state: base
