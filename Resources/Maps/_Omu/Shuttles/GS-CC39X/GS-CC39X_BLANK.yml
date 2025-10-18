@@ -2402,7 +2402,7 @@ entities:
       pos: 4.5,8.5
       parent: 1
     - type: PowerSupplier
-      supplyRate: 25000
+      supplyRate: 75000
 - proto: GravityGeneratorMini
   entities:
   - uid: 312
