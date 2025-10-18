@@ -129,6 +129,7 @@
     - id: Multitool # Goobstation
     - id: Wrench # Goobstation
     - id: ContrabandDetectorFlatpack # Goobstation
+    - id: BoxEncryptionKeyPrisoner #Delta-V
 
 - type: entityTable
   id: FillLockerWardenHarduit
