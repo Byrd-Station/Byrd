@@ -33,7 +33,7 @@
     duration: 1
     maxOccurrences: 1
   - type: LoadMapRule
-    preloadedGrid: RetortShuttleCBURN
+    preloadedGrid: SaviorShuttleCBURN # Omu - ERT Rework.
 
 # ERT
 
@@ -48,7 +48,7 @@
     duration: 1
     maxOccurrences: 1
   - type: LoadMapRule
-    preloadedGrid: RetortShuttleAssault
+    preloadedGrid: SaviorShuttleSec # Omu - ERT Rework
 
 - type: entity
   parent: BaseUnknownShuttleRule
@@ -61,7 +61,7 @@
     duration: 1
     maxOccurrences: 1
   - type: LoadMapRule
-    preloadedGrid: RetortShuttleMedical
+    preloadedGrid: SaviorShuttleMed # Omu - ERT Rework
 
 - type: entity
   parent: BaseUnknownShuttleRule
@@ -74,7 +74,7 @@
     duration: 1
     maxOccurrences: 1
   - type: LoadMapRule
-    preloadedGrid: RetortShuttleEngineering
+    preloadedGrid: SaviorShuttleEng # Omu - ERT Rework
 
 - type: entity
   parent: BaseUnknownShuttleRule
@@ -87,7 +87,7 @@
     duration: 1
     maxOccurrences: 1
   - type: LoadMapRule
-    preloadedGrid: RetortShuttleJanitorial
+    preloadedGrid: RetortShuttleJanitorial # No Savior for you.
 
 - type: entity
   parent: BaseUnknownShuttleRule
@@ -100,6 +100,6 @@
     duration: 1
     maxOccurrences: 1
   - type: LoadMapRule
-    preloadedGrid: RetortShuttleChaplain
+    preloadedGrid: SaviorShuttleChap # Omu - ERT Rework
 
 
