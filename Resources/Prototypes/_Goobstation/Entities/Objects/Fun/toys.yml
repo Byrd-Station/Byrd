@@ -379,9 +379,6 @@
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
-  - type: EmitSoundOnCollide
-    sound:
-      path: /Audio/_Goobstation/Weapons/Guns/Gunshots/laser_smg.ogg
     thresholds:
     - trigger:
         !type:DamageTrigger
@@ -392,6 +389,10 @@
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/_Goobstation/Misc/scary_horn2.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/_Goobstation/Weapons/Guns/Gunshots/laser_smg.ogg
+
 
 
 
