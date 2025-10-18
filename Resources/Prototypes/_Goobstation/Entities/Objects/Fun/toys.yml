@@ -401,7 +401,8 @@
   parent: [ BasePlushie, BaseMajorContraband ]
   id: PlushieByrrne
   name: Byrrne plushie
-  description: Byrrne.. the name's familiar. A myth of an everchanging creature that used to work with Nanotrasen and was well known by CC. Until a cult formed around him, maybe some kind of fucked religion?.. Though of course, only Centcomm should be praised. He hasn't been seen around much, atleast not in his original form, even then, this is just a small portray of what he used to look like. You feel the urge to avoid it. There's something wrong with it.
+  description: The plushie feels heavy and dangerous, it might hurt.
+   Though Byrrne.. the name's familiar. A myth of an everchanging creature that used to work with Nanotrasen and was well known by CC. Until a cult formed around him, maybe some kind of fucked religion?.. Though of course, only Centcomm should be praised. He hasn't been seen around much, atleast not in his original form, even then, this is just a small portray of what he used to look like. You feel the urge to avoid it. There's something wrong with it.
   components:
   - type: Sprite
     sprite: _Goobstation/Objects/Fun/selfinsert.rsi
@@ -417,6 +418,7 @@
     damage:
       types:
         Blunt: 6
+        Structural: 8
     soundHit:
       path: /Audio/_Floofstation/Voice/Avali/avali_2.ogg
     soundNoDamage:
