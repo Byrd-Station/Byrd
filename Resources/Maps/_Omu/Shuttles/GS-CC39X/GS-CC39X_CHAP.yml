@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/18/2025 01:59:24
-  entityCount: 602
+  time: 10/18/2025 20:30:32
+  entityCount: 601
 maps: []
 grids:
 - 1
@@ -562,34 +562,6 @@ entities:
     components:
     - type: Transform
       pos: -3.5,-0.5
-      parent: 1
-- proto: BenchPewLeft
-  entities:
-  - uid: 566
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 3.5,2.5
-      parent: 1
-  - uid: 585
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 3.5,3.5
-      parent: 1
-- proto: BenchPewRight
-  entities:
-  - uid: 560
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,3.5
-      parent: 1
-  - uid: 579
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,2.5
       parent: 1
 - proto: BlastDoor
   entities:
@@ -1561,6 +1533,32 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -0.5,16.5
+      parent: 1
+- proto: Chair
+  entities:
+  - uid: 523
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 4.5,2.5
+      parent: 1
+  - uid: 560
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 4.5,3.5
+      parent: 1
+  - uid: 566
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 3.5,3.5
+      parent: 1
+  - uid: 579
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 3.5,2.5
       parent: 1
 - proto: ChairPilotSeat
   entities:
@@ -2541,7 +2539,7 @@ entities:
       pos: 4.5,8.5
       parent: 1
     - type: PowerSupplier
-      supplyRate: 75000
+      supplyRate: 100000
 - proto: GravityGeneratorMini
   entities:
   - uid: 312
@@ -4413,15 +4411,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 3.5,15.5
       parent: 1
-- proto: WarpPointBeacon
-  entities:
-  - uid: 523
-    components:
-    - type: Transform
-      pos: 0.5,8.5
-      parent: 1
-    - type: WarpPoint
-      location: GS-CC39X "Savior"
 - proto: WeaponEnergyTurretCentComm
   entities:
   - uid: 16

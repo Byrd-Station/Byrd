@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/18/2025 04:01:17
-  entityCount: 720
+  time: 10/18/2025 20:28:36
+  entityCount: 718
 maps: []
 grids:
 - 1
@@ -207,7 +207,6 @@ entities:
             38: 1,-4
             39: 0,-4
             40: -1,-4
-            96: 3,5
         - node:
             color: '#FFFFFFFF'
             id: WarnLineS
@@ -238,14 +237,9 @@ entities:
             81: 3,2
         - node:
             color: '#FFFFFFFF'
-            id: disk
-          decals:
-            97: 3,5
-        - node:
-            color: '#FFFFFFFF'
             id: end
           decals:
-            88: 3,6
+            98: 3,5
         - node:
             color: '#FF8000FF'
             id: radiation
@@ -3113,7 +3107,7 @@ entities:
       pos: 4.5,8.5
       parent: 1
     - type: PowerSupplier
-      supplyRate: 75000
+      supplyRate: 100000
 - proto: GravityGeneratorMini
   entities:
   - uid: 312
@@ -4533,7 +4527,7 @@ entities:
     - type: MetaData
       name: CBURN Nuclear Protocol
     - type: Transform
-      pos: 4.4621544,5.676233
+      pos: 3.509826,6.6122866
       parent: 1
     - type: Paper
       stampState: paper_stamp-centcom
@@ -4598,7 +4592,7 @@ entities:
 
           If you must stay behind, make peace with your gods. Nanotrasen will honor your memory. You signed up for this, [italic][color=#ac3a0d]The Devil's In The Details.[/color][/italic]
     - type: EmitSoundOnCollide
-      nextSound: -10474.0561926
+      nextSound: -10474.0561925
     - type: SolutionContainerManager
       solutions: null
       containers:
@@ -5231,6 +5225,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -1.5,3.5
       parent: 1
+  - uid: 523
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 3.5,6.5
+      parent: 1
   - uid: 524
     components:
     - type: Transform
@@ -5240,18 +5240,6 @@ entities:
     components:
     - type: Transform
       pos: 1.5,15.5
-      parent: 1
-  - uid: 563
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,6.5
-      parent: 1
-  - uid: 564
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,5.5
       parent: 1
   - uid: 692
     components:
@@ -5932,15 +5920,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 3.5,15.5
       parent: 1
-- proto: WarpPointBeacon
-  entities:
-  - uid: 523
-    components:
-    - type: Transform
-      pos: 0.5,8.5
-      parent: 1
-    - type: WarpPoint
-      location: GS-CC39X "Savior"
 - proto: WeaponEnergyTurretCentComm
   entities:
   - uid: 16

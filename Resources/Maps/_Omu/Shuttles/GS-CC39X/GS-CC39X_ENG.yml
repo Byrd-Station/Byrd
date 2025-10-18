@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/18/2025 02:57:12
-  entityCount: 606
+  time: 10/18/2025 20:31:27
+  entityCount: 605
 maps: []
 grids:
 - 1
@@ -2560,7 +2560,7 @@ entities:
       pos: 4.5,8.5
       parent: 1
     - type: PowerSupplier
-      supplyRate: 75000
+      supplyRate: 100000
 - proto: GravityGeneratorMini
   entities:
   - uid: 312
@@ -3187,7 +3187,7 @@ entities:
         stampedName: stamp-component-stamped-name-centcom
       content: "[color=#1b67a5]░██░░░░██░║\r[italic][color=#D3D3D3] TOP SECRET [/color][/italic]\n░███░░░██░║\r[italic][color=#ac3a0d]Nanotrasen. The Devil's in the details.[/color][/italic]\n░██░██░██░║\r\n░██░░░███░║[head=2][italic] I. A. D [/italic][/head]\r\n▀▄▀▄▀▄▀ ▄▀▄[/color] [italic] Nanotrasen Internal Affairs Department[/italic]\r\n\r\n[head=2] ERT-ENG Mission Briefing [/head]\r\n[color=#1b67a5 ]▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬[/color]\r\n[italic] Courtesy of : Mnwaar Nuuwaam, Central Command Officer. [/italic]\r\n\r\n[head=3][head=2]1. [/head]Mission Objective[/head]\r\n[italic][color=#D3D3D3] Primary Target[/color][/italic]\r\n\n[bold][color=Orange]Stabilize[/color][/bold] or [bold][color=Red]Terminate[/color][/bold]\rany unstable engines on station.\n════════════════════════════════════\r\n\r\n[head=3][head=2]2. [/head]Secondary Objective[/head]\r\n[italic][color=#D3D3D3]  Secondary Target[/color][/italic]\r\n\n[bold][color=Orange]Stabilize[/color][/bold] station Power and Atmospherics. This may include patching spaced areas.\n\n════════════════════════════════════\r\n\r\n[head=3][head=2]3. [/head]Additional Information[/head]\r\n[italic][color=#D3D3D3] Other Information [/color][/italic]\r\n\r\nYour shuttle has long range FTL capability and can return to CentComm if needed. Your shuttle has the gear needed to eliminate and pacify nearly any threat on station.\n\n[bold][color=Orange]ENG SPECIFIC:[/color][/bold]\n    Your Specialized Operations Module contains a substantial ammount of gear, including a [bold]Clarke mech[/bold] for EVAs, as well as mech tools. Make use of your [bold]increased cyborg escort[/bold], as they all come equipped with engineering modules.\n\n[head=3]Do not let the shuttle get stolen.[/head]\n[head=3]Do not abandon the shuttle either.[/head]\n\n════════════════════════════════════\r\n \r\n \r\n [bold] Thank you for your co-operation. Nanotrasen sends its regards. [/bold]\r\n\n[head=3] Please make radio contact with Central Command as soon as possible to verify special objectives or Rules Of Engagement.[/head]\n\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\r\n\r\n\n"
     - type: EmitSoundOnCollide
-      nextSound: -622.1661095
+      nextSound: -622.1661094
     - type: SolutionContainerManager
       solutions: null
       containers:
@@ -4457,15 +4457,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 3.5,15.5
       parent: 1
-- proto: WarpPointBeacon
-  entities:
-  - uid: 523
-    components:
-    - type: Transform
-      pos: 0.5,8.5
-      parent: 1
-    - type: WarpPoint
-      location: GS-CC39X "Savior"
 - proto: WeaponEnergyTurretCentComm
   entities:
   - uid: 16

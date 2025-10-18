@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/17/2025 03:46:12
-  entityCount: 573
+  time: 10/18/2025 20:34:01
+  entityCount: 572
 maps: []
 grids:
 - 1
@@ -2509,7 +2509,7 @@ entities:
       pos: 4.5,8.5
       parent: 1
     - type: PowerSupplier
-      supplyRate: 75000
+      supplyRate: 100000
 - proto: GravityGeneratorMini
   entities:
   - uid: 312
@@ -4187,15 +4187,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 3.5,15.5
       parent: 1
-- proto: WarpPointBeacon
-  entities:
-  - uid: 523
-    components:
-    - type: Transform
-      pos: 0.5,8.5
-      parent: 1
-    - type: WarpPoint
-      location: GS-CC39X "Savior"
 - proto: WeaponEnergyTurretCentComm
   entities:
   - uid: 16
