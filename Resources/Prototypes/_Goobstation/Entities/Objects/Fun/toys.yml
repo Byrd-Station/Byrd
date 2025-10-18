@@ -382,13 +382,13 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 10
+        damage: 70
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
       - !type:PlaySoundBehavior
         sound:
-          path: /Audio/_Goobstation/Misc/scary_horn2.ogg
+          path: /Audio/Effects/gib2.ogg
   - type: EmitSoundOnCollide
     sound:
       path: /Audio/_Goobstation/Weapons/Guns/Gunshots/laser_smg.ogg
@@ -416,7 +416,7 @@
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 3
+        Blunt: 6
     soundHit:
       path: /Audio/_Floofstation/Voice/Avali/avali_2.ogg
     soundNoDamage:
@@ -427,7 +427,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 50
+        damage: 120
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -477,7 +477,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 120
+        damage: 39
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
@@ -486,7 +486,16 @@
           path: /Audio/_Floofstation/Voice/Avali/avali_scream.ogg
       - !type:PlaySoundBehavior
         sound:
-          path: /Audio/_Goobstation/Misc/scary_horn2.ogg
+          path: /Audio/Effects/adminhelp.ogg
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/adminhelp.ogg
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Voice/Human/cry_male_4.ogg
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Floofstation/Voice/Avali/avali_scream.ogg
 
 
 ## Admin plushies go above the rest of the chuds.
