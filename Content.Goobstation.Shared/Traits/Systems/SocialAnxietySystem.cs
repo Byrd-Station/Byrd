@@ -16,7 +16,11 @@ public sealed partial class SocialAnxietySystem : EntitySystem
     [Dependency] private SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedStunSystem _stunSystem = default!;
 
-    private readonly ProtoId<InteractionVerbPrototype> _prototypeHug = "Hug";
+    public ProtoId<InteractionVerbPrototype>[] PrototypeHug { get; } =
+    [
+        "Hug",
+        "Pet",
+    ];
 
     public override void Initialize()
     {
@@ -38,12 +42,21 @@ public sealed partial class SocialAnxietySystem : EntitySystem
         // because I don't think absolute EE supercode allows us to do it normally.
         if (!TryComp<SocialAnxietyComponent>(args.Target, out var component))
             return;
-        if (!args.Target.HasValue && args.VerbPrototype != _prototypeHug)
+        if (!args.Target.HasValue)
             return;
-        var uid = args.Target.Value;
-        _standingSystem.Down(uid);
-        _stunSystem.TryStun(uid, TimeSpan.FromSeconds(component.DownedTime), true);
-        var mobName = Identity.Name(uid, EntityManager);
-        _popupSystem.PopupEntity(Loc.GetString("social-anxiety-hugged", ("user", mobName)), uid, PopupType.MediumCaution);
+
+        foreach (var prototype in PrototypeHug)
+        {
+            if (args.VerbPrototype != prototype)
+                continue;
+            var uid = args.Target.Value;
+            _standingSystem.Down(uid);
+            _stunSystem.TryStun(uid, TimeSpan.FromSeconds(component.DownedTime), true);
+            var mobName = Identity.Name(uid, EntityManager);
+            _popupSystem.PopupEntity(Loc.GetString("social-anxiety-hugged", ("user", mobName)),
+                uid,
+                PopupType.MediumCaution);
+        }
+
     }
 }
