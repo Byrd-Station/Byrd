@@ -773,3 +773,33 @@ Entries:
       message: The warden can now select a lunging rapier as their duty weapon
   id: 91
   time: '2025-10-12T15:02:44.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Added Prison Channel for prisoners.
+    - type: Tweak
+      message: >-
+        Set Security Encryption Key to have Prisoner Channel (all Security
+        personnel have it now).
+  id: 92
+  time: '2025-10-19T00:14:59.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Tweak
+      message: Transit Prisoner has been raised to 2 job slots on Saltern.
+    - type: Tweak
+      message: Transit Prisoner has been limited to 2 job slots on most maps.
+    - type: Tweak
+      message: >-
+        Transit Prisoner has been limited to 3 job slots on Oasis, FlandHighPop,
+        and Submarine.
+  id: 93
+  time: '2025-10-19T00:15:36.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Remove
+      message: Removed Revolutionary from Secret Classic and Secret Plus.
+    - type: Tweak
+      message: Revolutionary is now Admin-Only Spawn.
+  id: 94
+  time: '2025-10-19T00:15:59.0000000+00:00'

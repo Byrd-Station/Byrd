@@ -129,6 +129,9 @@
     - id: Multitool # Goobstation
     - id: Wrench # Goobstation
     - id: ContrabandDetectorFlatpack # Goobstation
+    - id: BoxEncryptionKeyPrisoner #Delta-V
+    - id: BoxPrisonerHeadset # Einstein Engines
+    - id: SecurityMegaphone # goob - loudspeakers
 
 - type: entityTable
   id: FillLockerWardenHarduit
