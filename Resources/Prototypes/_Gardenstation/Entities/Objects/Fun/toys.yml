@@ -2,7 +2,7 @@
   parent: BasePlushie
   id: PlushieChoicesTadpole
   name: Thaven tadpole plush
-  description: A marketable plushie of a thaven tadpole. It smells like the ocean.
+  description: A marketable plushie of a certain thaven tadpole. It smells like the ocean.
   components:
   - type: Sprite
     sprite: _Gardenstation/Objects/Fun/Toys.rsi
