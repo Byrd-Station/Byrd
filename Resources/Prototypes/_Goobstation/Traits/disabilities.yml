@@ -54,7 +54,10 @@
   description: trait-social-anxiety-disc
   #category: Disabilities #omu commentout
   category: PhysicalTraits #omu
-  blacklist:
+  blacklist: # Omu Station
+    components:
+      - SecurityStaff
+      - CommandStaff
     components:
       - SecurityStaff
       - CommandStaff
