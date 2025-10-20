@@ -321,6 +321,7 @@
         acts: [ "Destruction" ]
   - type: ApcPowerReceiver
     powerLoad: 1000
+    needsPower: false
   - type: StationAiCore
   - type: StationAiVision
   - type: InteractionOutline
@@ -349,7 +350,6 @@
     listeningRange: 0
     speakerVolume: Speak
     unlistedNumber: true
-    requiresPower: false
   - type: Holopad
   - type: StationAiWhitelist
   - type: UserInterface
@@ -521,7 +521,7 @@
     - type: GhostRole
       name: ghost-role-information-syndicate-cyborg-assault-name
       description: ghost-role-information-syndicate-cyborg-description
-      rules: ghost-role-information-silicon-rules
+      rules: ghost-role-information-higher-standard-silicon-rules
       raffle:
         settings: default
     - type: GhostTakeoverAvailable
@@ -554,7 +554,7 @@
     - type: GhostRole
       name: ghost-role-information-syndicate-cyborg-saboteur-name
       description: ghost-role-information-syndicate-cyborg-description
-      rules: ghost-role-information-silicon-rules
+      rules: ghost-role-information-higher-standard-silicon-rules
       raffle:
         settings: default
     - type: GhostTakeoverAvailable

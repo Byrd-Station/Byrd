@@ -121,10 +121,29 @@
   - type: EmitSoundOnDrop
     sound:
       collection: RevolversDrop
+  - type: RestrictGunshotsByUserTag # Goobstation
+    doesntContain:
+    - Oni
+    messages:
+    - oni-cannot-shoot-guns-1
+    - oni-cannot-shoot-guns-2
+    - oni-cannot-shoot-guns-3
   - type: EmitSoundOnLand
     sound:
       collection: RevolversDrop
   # Goobstation edit end
+  # Omustation edit start
+  - type: AltFireMelee
+    attackType: Heavy
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 8 # pistol whip
+    angle: 0
+    wideAnimationRotation: 90 # -90 if it takes bayonets (hits with muzzle) 90 if not (hits with butt)
+    soundHit:
+      collection: MetalThud
+  # Omustation edit end
 
 - type: entity
   name: Deckard
