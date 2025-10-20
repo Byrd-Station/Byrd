@@ -305,7 +305,9 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         {
             var trait = _prototypeManager.Index(traitProto);
             traitPoints -= trait.GlobalCost;
-            numTraits++;
+
+            if (trait.CountsTowardsMaxTraits)
+                numTraits++;
 
             // if the saved profile will have unmet requirements, take note of it
             if (!_requirements.CheckTraitRequirements(trait, EditedProfile, out var unmetRequirements))

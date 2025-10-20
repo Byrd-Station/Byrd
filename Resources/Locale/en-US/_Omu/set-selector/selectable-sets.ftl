@@ -4,13 +4,17 @@ selectable-set-headofsecurity-paradevoidsuit-desc =
     Comes integrated with a AI Operated stim injector.
     Usually reserved for special occasions.
 
-selectable-set-eshotty-r6-name = Energy Shotgun
-selectable-set-eshotty-r6-desc =
-    The classic tool for quickly swapping straight to lethal.
+selectable-set-paramedic-cybersunhardsuit-name = CSI-122M "Xiézhù" hardsuit
+selectable-set-paramedic-cybersunhardsuit-desc =
+    The odd one out of the Cybersun Hardsuits, meant to be lightweight but less armored.
 
-selectable-set-warden-r6-name = R6 Trenchgun
-selectable-set-warden-r6-desc =
-    The simpler solution in armory defense.
+selectable-set-warden-eshotty-name = Energy Shotgun
+selectable-set-warden-eshotty-description =
+    The classic. A tool that can quickly swap from stun straight to lethal.
+
+selectable-set-warden-r6-name = R6 Trench Gun
+selectable-set-warden-r6-description =
+    The simpler solution in armory defense. The brig is your domain.
 
 selectable-set-hos-belt-name = Qua Nar'Vulna
 selectable-set-hos-belt-description =
@@ -54,3 +58,8 @@ selectable-set-irelander-description =
     An ancient copper blade,
     The ender of troubles.
     Smashes through walls with ease.
+
+selectable-set-warden-rapier-name = Cloak and Rapier
+selectable-set-warden-rapier-description =
+    An elegant weapon for the cultured warden,
+    or the warden who prefers to get their hands dirty.

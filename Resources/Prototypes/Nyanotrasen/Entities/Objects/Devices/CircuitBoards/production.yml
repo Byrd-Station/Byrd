@@ -1,0 +1,14 @@
+- type: entity
+  id: DeepFryerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: deep fryer machine board
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: KitchenDeepFryer
+    stackRequirements:
+      Steel: 4
+      Glass: 2
+      Cable: 4
+      Manipulator: 2

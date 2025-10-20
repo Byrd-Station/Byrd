@@ -62,7 +62,6 @@
   - type: Hunger
   - type: Thirst
   - type: Sericulture
-    action: ActionSericulture
     productionLength: 2
     entityProduced: MaterialWebSilk1
     hungerCost: 4 # Should total to 25 total silk on full hunger
@@ -177,6 +176,7 @@
         visible: false
   - type: Inventory
     templateId: arachnid
+    speciesId: arachnid #Goobedit - Fix Arachnid specific textures
   - type: IgnoreSpiderWeb # Goobstation
 
 - type: entity

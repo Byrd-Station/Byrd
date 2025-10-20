@@ -601,7 +601,7 @@
   id: Opporozidone
   minTemp: 400 #Maybe if a method of reducing reagent temp exists one day, this could be -50
   reactants:
-    Cognizine:
+    Acetone: # Omu edit - bring back EE recipe
       amount: 1
     Plasma:
       amount: 2

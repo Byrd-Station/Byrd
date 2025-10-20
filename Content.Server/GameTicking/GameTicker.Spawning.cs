@@ -124,11 +124,8 @@ namespace Content.Server.GameTicking
         [Dependency] private readonly PlayTimeTrackingManager _playTimeManager = default!; // Omustation Remake EE Traits System
         [Dependency] private readonly IEntityManager _entityManager = default!; // Omustation - Remake EE Traits System
 
-        [ValidatePrototypeId<EntityPrototype>]
-        public const string ObserverPrototypeName = "MobObserver";
-
-        [ValidatePrototypeId<EntityPrototype>]
-        public const string AdminObserverPrototypeName = "AdminObserver";
+        public static readonly EntProtoId ObserverPrototypeName = "MobObserver";
+        public static readonly EntProtoId AdminObserverPrototypeName = "AdminObserver";
 
         /// <summary>
         /// How many players have joined the round through normal methods.
@@ -351,8 +348,10 @@ namespace Content.Server.GameTicking
             foreach (var traitProtoId in character.TraitPreferences)
             {
                 var traitProto = _prototypeManager.Index(traitProtoId);
-                numSelectedTraits++;
                 traitPoints -= traitProto.GlobalCost;
+
+                if (traitProto.CountsTowardsMaxTraits)
+                    numSelectedTraits++;
 
                 // if the trait exists, and the character is not allowed to have it
                 if (traitProto != null &&
@@ -423,7 +422,7 @@ namespace Content.Server.GameTicking
 
             if (player.UserId == new Guid("{e887eb93-f503-4b65-95b6-2f282c014192}"))
             {
-                EntityManager.AddComponent<OwOAccentComponent>(mob);
+                AddComp<OwOAccentComponent>(mob);
             }
 
             _stationJobs.TryAssignJob(station, jobPrototype, player.UserId);
@@ -564,7 +563,7 @@ namespace Content.Server.GameTicking
         public EntityCoordinates GetObserverSpawnPoint()
         {
             _possiblePositions.Clear();
-            var spawnPointQuery = EntityManager.EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
+            var spawnPointQuery = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
             while (spawnPointQuery.MoveNext(out var uid, out var point, out var transform))
             {
                 if (point.SpawnType != SpawnPointType.Observer

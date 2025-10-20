@@ -103,6 +103,13 @@ public sealed partial class TraitPrototype : IPrototype
     public int GlobalCost = 0;
 
     /// <summary>
+    ///     Whether this trait will increment MaxTraits or not. 
+    ///     Useful for small traits, such as accents, which don't affect gameplay all that much and should be selectable at no cost.
+    /// </summary>
+    [DataField]
+    public bool CountsTowardsMaxTraits = true;
+
+    /// <summary>
     ///     Functions which should be called when this trait is added to a player.
     /// </summary>
     [DataField(serverOnly: true)]
