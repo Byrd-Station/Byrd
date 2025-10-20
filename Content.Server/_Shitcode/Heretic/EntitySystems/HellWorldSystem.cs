@@ -21,6 +21,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using System.Collections.Immutable;
+using Content.Shared.Body.Components;
 
 //this is kind of badly named since we're doing infinite archives stuff now but i dont feel like changing it :)
 
