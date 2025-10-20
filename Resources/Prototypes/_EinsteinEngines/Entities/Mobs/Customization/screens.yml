@@ -85,7 +85,7 @@
       state: ipc_screen_monoeye
 
 
-- type: marking
+- type: marking # Omu Edit
   speciesRestriction: [ IPC ]
   id: ScreenDot
   bodyPart: Face
