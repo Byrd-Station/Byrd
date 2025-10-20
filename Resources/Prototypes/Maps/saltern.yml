@@ -86,7 +86,7 @@
             SecurityOfficer: [ 4, 4 ]
             SecurityCadet: [ 4, 4 ]
             Brigmedic: [ 1, 1 ]
-            TransitPrisoner: [1, 1] # Omu - Prisoner role
+            TransitPrisoner: [1, 2] # Omu - Prisoner role
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 1, 3 ]
