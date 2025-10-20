@@ -11,7 +11,7 @@
   id: ChestBackstabbed
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
     state: backstabbed
@@ -20,7 +20,7 @@
   id: ChestCutHere
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   coloring:
     default:
       type:
@@ -34,7 +34,7 @@
   id: ChestHeavyTattoos
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   coloring:
     default:
       type:
@@ -52,7 +52,7 @@
   id: ChestNecklace
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   coloring:
     default:
       type:
@@ -66,7 +66,7 @@
   id: ChestStar
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
     state: star
@@ -93,7 +93,7 @@
   id: HumanoidAbs
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   followSkinColor: true
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
@@ -103,7 +103,7 @@
   id: ProstheticShoulderL
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   coloring:
     default:
       type:
@@ -117,7 +117,7 @@
   id: ProstheticShoulderR
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   coloring:
     default:
       type:
@@ -131,7 +131,7 @@
   id: TattooAnchor
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   coloring:
     default:
       type:
@@ -145,7 +145,7 @@
   id: TattooCode1
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   coloring:
     default:
       type:
@@ -159,7 +159,7 @@
   id: TattooCode2
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   coloring:
     default:
       type:
@@ -173,7 +173,7 @@
   id: TattooCode3
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   coloring:
     default:
       type:
@@ -187,7 +187,7 @@
   id: TattooDragon
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
     state: dragontattoo1
@@ -198,7 +198,7 @@
   id: TorsoIncision
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   sprites:
   - sprite: _Impstation/Mobs/Customization/Humanoid/chest.rsi
     state: incision
@@ -207,7 +207,7 @@
   id: TattooVinesHumanoid
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   coloring:
     default:
       type:
@@ -251,7 +251,7 @@
   id: ProstheticUpperTorso
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi]
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] 
   coloring:
     default:
       type:
@@ -269,7 +269,7 @@
   id: ProstheticLowerTorso
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi]
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] 
   coloring:
     default:
       type:
@@ -291,7 +291,7 @@
   id: ProstheticUpperTorsoM
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi]
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth]
   coloring:
     default:
       type:
@@ -309,7 +309,7 @@
   id: ProstheticLowerTorsoM
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi]
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth]
   coloring:
     default:
       type:
@@ -472,7 +472,7 @@
   id: ProstheticJaw
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi]
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth]
   coloring:
     default:
       type:
@@ -506,7 +506,7 @@
   id: ArmDollJointsTattooRight
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   coloring:
     default:
       type:
@@ -520,7 +520,7 @@
   id: ArmHeavyTattoosRight
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   coloring:
     default:
       type:
@@ -559,7 +559,7 @@
   id: TattooCode4
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   followSkinColor: false
   forcedColoring: false
   coloring:
@@ -575,7 +575,7 @@
   id: TattooCode5
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   followSkinColor: false
   forcedColoring: false
   coloring:
@@ -591,7 +591,7 @@
   id: TattooHeartR
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   followSkinColor: false
   forcedColoring: false
   coloring:
@@ -621,7 +621,7 @@
 - type: marking
   id: ArmProstheticRight2
   bodyPart: RArm
-  markingCategory: Arms
+  markingCategory: RightArm
   speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi]
   coloring:
     default:
@@ -640,7 +640,7 @@
   id: ArmDollJointsTattooLeft
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   coloring:
     default:
       type:
@@ -654,7 +654,7 @@
   id: ArmHeavyTattoosLeft
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   coloring:
     default:
       type:
@@ -693,7 +693,7 @@
   id: TattooHeartL
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi] #Omu - Feroxi
+  speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi, Moth] #Omu - Feroxi and Moth
   followSkinColor: false
   forcedColoring: false
   coloring:
@@ -723,7 +723,7 @@
 - type: marking
   id: ArmProstheticLeft2
   bodyPart: LArm
-  markingCategory: Arms
+  markingCategory: LeftArm
   speciesRestriction: [Human, Dwarf, Oni, Reptilian, SlimePerson, Arachnid, Tajaran, Shadowkin, Vulpkanin, Rodentia, Feroxi]
   coloring:
     default:
