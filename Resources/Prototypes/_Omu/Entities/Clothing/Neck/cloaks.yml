@@ -21,7 +21,7 @@
     stealGroup: HeadCloak
 
 - type: entity
-  parent: [ClothingNeckBase, BaseWardenContraband]
+  parent: [ClothingNeckBase, BaseWardenContraband, ClothingSlotBase]
   id: ClothingNeckWardenParryCloak
   name: warden's dueling cloak
   description: A red cloak with an integrated scabbard, useful for dramatically swishing at prisoners.
