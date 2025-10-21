@@ -817,3 +817,31 @@ Entries:
       message: Removed old lobby arts and Goob-specific lobby arts.
   id: 96
   time: '2025-10-20T01:09:43.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Upstream fix for RCD and some Woundmed
+    - type: Remove
+      message: The Geese have been put down in Upstream.
+  id: 97
+  time: '2025-10-21T02:07:33.0000000+00:00'
+- author: jellygato
+  changes:
+    - type: Fix
+      message: Adjusted some YAML comments to fit YAML formatting best practices.
+  id: 98
+  time: '2025-10-21T02:09:03.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: 'Fixed Irelander using the incorrect damage type when wielded '
+  id: 99
+  time: '2025-10-21T04:37:13.0000000+00:00'
+- author: RadsammyT
+  changes:
+    - type: Add
+      message: A new IPC Screen has been added.
+    - type: Add
+      message: Dot.
+  id: 100
+  time: '2025-10-21T04:37:53.0000000+00:00'
