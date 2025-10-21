@@ -817,3 +817,11 @@ Entries:
       message: Removed old lobby arts and Goob-specific lobby arts.
   id: 96
   time: '2025-10-20T01:09:43.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Upstream fix for RCD and some Woundmed
+    - type: Remove
+      message: The Geese have been put down in Upstream.
+  id: 97
+  time: '2025-10-21T02:07:33.0000000+00:00'

@@ -446,7 +446,6 @@
     - SecurityAmmoStatic
     - SecurityAmmoStaticOmu # Omu
     # Goobstation
-    - SecurityWeaponsStaticGoob
     - SecurityAmmoStaticGoob
     - SyndicateAmmoLightStatic
     - ScienceExplosives
@@ -767,7 +766,6 @@
     - PowerCellsStatic
     - ScienceExplosives
     - GrenadeTriggersStatic
-    - SecurityWeaponsStaticGoob
     - SecurityWeaponsNonEmaggableStaticGoob
     - SecurityAmmoStaticOmu # Omu
     dynamicPacks:
