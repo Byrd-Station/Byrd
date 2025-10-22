@@ -13,7 +13,7 @@
   supervisors: job-supervisors-security
   canBeAntag: false
   goobcoins: 10 # 1/3 Cadet
-  access: 
+  access:
   - GenpopEnter
   special:
   - !type:AddImplantSpecial
@@ -22,7 +22,7 @@
 - type: startingGear
   id: TransitPrisonerGear
   equipment:
-    ears: ClothingHeadsetGrey
+    ears: ClothingHeadsetPrison # Delta-V
     id: TransitPrisonerPDA
 
 - type: chameleonOutfit

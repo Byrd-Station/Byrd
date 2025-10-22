@@ -195,6 +195,7 @@
       shader: unshaded
   - type: Physics
     bodyType: Dynamic
+    bodyStatus: InAir
     linearDamping: 0
     angularDamping: 0
   - type: Fixtures
@@ -476,6 +477,7 @@
     - EmitterBolt
   - type: TimedDespawn
     lifetime: 3
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   name: watcher bolt
@@ -674,6 +676,7 @@
     intensitySlope: 3
     totalIntensity: 150
     maxTileBreak: 1
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   id: BulletCharge
@@ -769,7 +772,7 @@
   - type: Reflective
     reflective:
     - Energy
-
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   parent: AnomalousParticleDelta
@@ -782,6 +785,7 @@
     stabilityPerDestabilizingHit: 0.08
     healthPerWeakeningeHit: -0.1
     stabilityPerWeakeningeHit: -0.2
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   parent: AnomalousParticleDelta
@@ -800,6 +804,7 @@
       shader: unshaded
   - type: AnomalousParticle
     particleType: Epsilon
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   parent: AnomalousParticleEpsilon
@@ -812,6 +817,7 @@
     stabilityPerDestabilizingHit: 0.08
     healthPerWeakeningeHit: -0.1
     stabilityPerWeakeningeHit: -0.2
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   parent: AnomalousParticleDelta
@@ -830,6 +836,7 @@
       shader: unshaded
   - type: AnomalousParticle
     particleType: Zeta
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   parent: AnomalousParticleZeta
@@ -842,6 +849,7 @@
     stabilityPerDestabilizingHit: 0.08
     healthPerWeakeningeHit: -0.1
     stabilityPerWeakeningeHit: -0.2
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   parent: AnomalousParticleDelta
@@ -871,6 +879,7 @@
     damage:
       types:
         Heat: 20
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   parent: AnomalousParticleDelta
@@ -889,6 +898,7 @@
       shader: unshaded
   - type: AnomalousParticle
     particleType: Sigma
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   parent: AnomalousParticleSigma
@@ -898,6 +908,7 @@
   components:
   - type: AnomalousParticle
     particleType: Sigma
+  - type: SmartLinkBlacklist  # Goobstation
 
 # Launcher projectiles (grenade / rocket)
 - type: entity
@@ -921,6 +932,7 @@
     radius: 3.5
     color: orange
     energy: 0.5
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   id: BulletWeakRocket
@@ -943,6 +955,7 @@
     radius: 3.5
     color: orange
     energy: 0.5
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   id: BulletGrenadeBaton
@@ -964,6 +977,7 @@
   - type: StaminaDamageOnCollide
     damage: 80
     overtime: 50 # Goobstation
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   id: BulletGrenadeBlast
@@ -981,6 +995,7 @@
     totalIntensity: 150 # a ~2 tile radius
     intensitySlope: 5
     maxIntensity: 10
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   id: BulletGrenadeFlash
@@ -1001,6 +1016,7 @@
   - type: DeleteOnTrigger
   - type: Flashbang # Goobstation
     minProtectionRange: 7 # Can't stun/knockdown people wearing any ear protection
+  - type: SmartLinkBlacklist  # Goobstation
 
 # This is supposed to spawn shrapnel and stuff so uhh... TODO?
 - type: entity
@@ -1019,6 +1035,7 @@
     totalIntensity: 175 # about a ~6 tile radius
     intensitySlope: 1
     maxIntensity: 10
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   parent: BaseBulletTrigger
@@ -1049,6 +1066,7 @@
     intensitySlope: 1
     maxIntensity: 0.01
     tileBreakScale: 0.01
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   id: BulletGrenadeEMP
@@ -1070,6 +1088,7 @@
     radius: 3.5
     color: blue
     energy: 0.5
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   id: BulletCap
@@ -1086,6 +1105,7 @@
     damage:
       types:
         Piercing: 0
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   id: BulletAcid
@@ -1103,6 +1123,7 @@
     - state: xeno_toxic
   - type: Ammo
     muzzleFlash: null
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   id: BulletWaterShot
@@ -1146,6 +1167,7 @@
     transferAmountPercentage: 1
   - type: Appearance
   - type: VaporVisuals
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   id: BulletHivebot
@@ -1179,6 +1201,7 @@
     radius: 1
     color: orange
     energy: 0.5
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   id: GrapplingHook
@@ -1214,6 +1237,7 @@
         - Impassable
         - HighImpassable
   - type: GrapplingProjectile
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   name : disabler bolt smg
@@ -1367,6 +1391,7 @@
     - HideContextMenu
   - type: Ammo # Goobstation
     muzzleFlash: null
+  - type: SmartLinkBlacklist  # Goobstation
 
 - type: entity
   name: laser bolt
