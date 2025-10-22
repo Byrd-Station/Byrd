@@ -255,6 +255,7 @@
   - WhiteCane
   - TapeRecorder
   # End DeltaV Additions
+  - BarberScissors # OmuStation
 
 - type: loadoutGroup
   id: Glasses
