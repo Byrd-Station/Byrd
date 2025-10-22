@@ -226,6 +226,7 @@
   - ClothingNeckScarfStripedTrans
   - ClothingNeckScarfStripedGenderfluid
   - ClothingNeckChameleonPride
+  - BarberScissors
   # Omu end
   - CardBoxBlack # GoobStation
   - CardBoxNanotrasen # GoobStation
@@ -255,7 +256,6 @@
   - WhiteCane
   - TapeRecorder
   # End DeltaV Additions
-  - BarberScissors # OmuStation
 
 - type: loadoutGroup
   id: Glasses
