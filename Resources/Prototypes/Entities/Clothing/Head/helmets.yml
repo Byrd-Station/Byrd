@@ -376,10 +376,12 @@
     - Head
     modifiers:
       coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.8
-        Heat: 0.8
+        Blunt: 0.65 # Omu 0.8 -> 0.65
+        Slash: 0.6 # Omu - 0.8 -> 0.6
+        Piercing: 0.3 # Omu 0.8 -> 0.3 - Get on the ninja's range :Godo:
+        Heat: 0.6 # Omu 0.8 -> 0.6
+        Cold: 0.6 # Omu 
+        Radiation: 0.7 # Omu - Radiation protection for no reason at all:tm:
 
 #Knight Helmet
 - type: entity

@@ -316,10 +316,12 @@
     - Other
     modifiers:
       coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.8
-        Heat: 0.8
+        Blunt: 0.65 # Omu 0.8 -> 0.65
+        Slash: 0.6 # Omu - 0.8 -> 0.6
+        Piercing: 0.3 # Omu 0.8 -> 0.3 - Get on the ninja's range :Godo:
+        Heat: 0.6 # Omu 0.8 -> 0.6
+        Cold: 0.6 # Omu 
+        Radiation: 0.7 # Omu - Radiation protection for no reason at all:tm:
   # phase cloak
   - type: ToggleClothing
     action: ActionTogglePhaseCloak
@@ -328,10 +330,13 @@
     parent: true
     components:
     - type: Stealth
-      maxVisibility: 0.2 # Goob edit
+      maxVisibility: 0.8 # Omu
       hadOutline: true
+    - type: StealthOnMove
+      passiveVisibilityRate: -0.5
+      movementVisibilityRate: 0.6
   - type: PowerCellDraw
-    drawRate: 3.6 # 100 seconds on the default cell # Goob edit
+    drawRate: 1.8 # Omu: 3.6 -> 1.6 - Originally 100 seconds in the average cell, 200 now.
   - type: ToggleCellDraw
   # throwing star ability
   - type: ItemCreator
