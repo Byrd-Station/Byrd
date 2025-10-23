@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/23/2025 00:57:14
-  entityCount: 18547
+  time: 10/23/2025 01:19:09
+  entityCount: 18589
 maps:
 - 1
 grids:
@@ -31061,6 +31061,111 @@ entities:
     - type: Transform
       pos: -33.5,33.5
       parent: 2
+  - uid: 18561
+    components:
+    - type: Transform
+      pos: -15.5,48.5
+      parent: 2
+  - uid: 18562
+    components:
+    - type: Transform
+      pos: -14.5,48.5
+      parent: 2
+  - uid: 18563
+    components:
+    - type: Transform
+      pos: -13.5,48.5
+      parent: 2
+  - uid: 18564
+    components:
+    - type: Transform
+      pos: -12.5,48.5
+      parent: 2
+  - uid: 18565
+    components:
+    - type: Transform
+      pos: -11.5,48.5
+      parent: 2
+  - uid: 18566
+    components:
+    - type: Transform
+      pos: -11.5,49.5
+      parent: 2
+  - uid: 18567
+    components:
+    - type: Transform
+      pos: -11.5,50.5
+      parent: 2
+  - uid: 18568
+    components:
+    - type: Transform
+      pos: -12.5,50.5
+      parent: 2
+  - uid: 18569
+    components:
+    - type: Transform
+      pos: -13.5,50.5
+      parent: 2
+  - uid: 18570
+    components:
+    - type: Transform
+      pos: -14.5,50.5
+      parent: 2
+  - uid: 18571
+    components:
+    - type: Transform
+      pos: -15.5,50.5
+      parent: 2
+  - uid: 18572
+    components:
+    - type: Transform
+      pos: -15.5,52.5
+      parent: 2
+  - uid: 18573
+    components:
+    - type: Transform
+      pos: -14.5,52.5
+      parent: 2
+  - uid: 18574
+    components:
+    - type: Transform
+      pos: -13.5,52.5
+      parent: 2
+  - uid: 18575
+    components:
+    - type: Transform
+      pos: -12.5,52.5
+      parent: 2
+  - uid: 18577
+    components:
+    - type: Transform
+      pos: 7.5,56.5
+      parent: 2
+  - uid: 18578
+    components:
+    - type: Transform
+      pos: 6.5,56.5
+      parent: 2
+  - uid: 18579
+    components:
+    - type: Transform
+      pos: 5.5,56.5
+      parent: 2
+  - uid: 18580
+    components:
+    - type: Transform
+      pos: 4.5,56.5
+      parent: 2
+  - uid: 18581
+    components:
+    - type: Transform
+      pos: 3.5,56.5
+      parent: 2
+  - uid: 18582
+    components:
+    - type: Transform
+      pos: 3.5,55.5
+      parent: 2
 - proto: CableApcStack
   entities:
   - uid: 3519
@@ -50028,7 +50133,7 @@ entities:
       pos: -2.5,48.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -7449.0767
+      secondsUntilStateChange: -7636.9385
       state: Closing
   - uid: 7046
     components:
@@ -95339,6 +95444,100 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 41.5,60.5
       parent: 2
+  - uid: 18553
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 29.5,-19.5
+      parent: 2
+  - uid: 18554
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 37.5,-17.5
+      parent: 2
+  - uid: 18555
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -10.5,56.5
+      parent: 2
+  - uid: 18556
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -13.5,53.5
+      parent: 2
+  - uid: 18557
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -13.5,49.5
+      parent: 2
+  - uid: 18558
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -16.5,50.5
+      parent: 2
+  - uid: 18559
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -16.5,52.5
+      parent: 2
+  - uid: 18560
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -16.5,48.5
+      parent: 2
+  - uid: 18576
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 4.5,54.5
+      parent: 2
+  - uid: 18583
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 24.5,35.5
+      parent: 2
+  - uid: 18584
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 33.5,21.5
+      parent: 2
+  - uid: 18585
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 10.5,6.5
+      parent: 2
+  - uid: 18586
+    components:
+    - type: Transform
+      pos: 27.5,12.5
+      parent: 2
+  - uid: 18587
+    components:
+    - type: Transform
+      pos: 46.5,29.5
+      parent: 2
+  - uid: 18588
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 51.5,26.5
+      parent: 2
+  - uid: 18589
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 58.5,26.5
+      parent: 2
 - proto: PoweredlightEmpty
   entities:
   - uid: 13998
@@ -95377,6 +95576,30 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 14.5,17.5
+      parent: 2
+  - uid: 18548
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 7.5,15.5
+      parent: 2
+  - uid: 18549
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 5.5,15.5
+      parent: 2
+  - uid: 18550
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 23.5,5.5
+      parent: 2
+  - uid: 18551
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 33.5,4.5
       parent: 2
 - proto: PoweredLightPostSmall
   entities:
@@ -95535,6 +95758,12 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -55.5,15.5
+      parent: 2
+  - uid: 18552
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 32.5,-7.5
       parent: 2
 - proto: PoweredLightPostSmallRed
   entities:
