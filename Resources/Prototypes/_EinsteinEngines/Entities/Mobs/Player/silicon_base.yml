@@ -127,6 +127,8 @@
         - map: ["enum.HumanoidVisualLayers.LArm"]
         - map: ["enum.HumanoidVisualLayers.RLeg"]
         - map: ["enum.HumanoidVisualLayers.LLeg"]
+        - map: [ "enum.HumanoidVisualLayers.Underwear" ] # Omu 109
+        - map: [ "enum.HumanoidVisualLayers.Undershirt" ] # Omu 109
         - shader: StencilClear
           sprite: Mobs/Species/Human/parts.rsi
           state: l_leg
@@ -218,6 +220,7 @@
         - CanPilot
         - FootstepSound
         - DoorBumpOpener
+        - IPCDrinkBlacklist # Goobstation - Energycrit: Don't let self antagging IPCs steal power from other battery powered species.
     - type: Hands
     - type: Inventory
       templateId: human
