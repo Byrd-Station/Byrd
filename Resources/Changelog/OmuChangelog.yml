@@ -902,3 +902,9 @@ Entries:
         belts.
   id: 107
   time: '2025-10-21T05:40:48.0000000+00:00'
+- author: Thesia000
+  changes:
+    - type: Add
+      message: Glacier for testing purposes, admin only for now
+  id: 108
+  time: '2025-10-23T22:32:55.0000000+00:00'
