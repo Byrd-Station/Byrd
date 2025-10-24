@@ -95,6 +95,7 @@ using Robust.Shared.Containers;
 using Content.Shared.Damage;
 using Content.Shared._Shitmed.BodyEffects;
 using Content.Shared._Shitmed.Body.Organ;
+using Content.Shared._White.Xenomorphs.Plasma.Components; // Omu - Xenos have a special organ to provide plasma, which we do not want to disable.
 
 namespace Content.Shared.Body.Systems;
 
@@ -358,7 +359,7 @@ public partial class SharedBodySystem
         Dirty(organEnt, organEnt.Comp);
     }
 
-    private void EnableOrgan(Entity<OrganComponent> organEnt)
+    private void EnableOrgan(Entity<OrganComponent> organEnt) // Omu
     {
         if (!TryComp(organEnt.Comp.Body, out BodyComponent? body))
             return;
@@ -366,17 +367,18 @@ public partial class SharedBodySystem
         // I hate having to hardcode these checks so much.
         // Omu Start - Gluesniffer didn't explain: Every organ needs their interaction with being disabled hardcoded.
         // Currently handled: EyesComponent, HeartComponent, LungComponent
-        var ev = new OrganEnabledEvent(organEnt);
-        RaiseLocalEvent(organEnt, ref ev);
-        // Omu End
+        if (HasComp<PlasmaVesselComponent>(organEnt)) { return; } // Omu
+        var ev = new OrganEnabledEvent(organEnt); // Omu - Yea, I get you.
+        RaiseLocalEvent(organEnt, ref ev); // Omu
     }
 
-    protected void DisableOrgan(Entity<OrganComponent> organEnt) // Omu
+    private void DisableOrgan(Entity<OrganComponent> organEnt) // Omu
     {
         if (!TryComp(organEnt.Comp.Body, out BodyComponent? body))
             return;
 
         // I hate having to hardcode these checks so much.
+        if (HasComp<PlasmaVesselComponent>(organEnt)) { return; } // Omu - Do not disable Plasma providing organ
         var ev = new OrganDisabledEvent(organEnt); // Omu - Yea, I get you.
         RaiseLocalEvent(organEnt, ref ev); // Omu
     }
