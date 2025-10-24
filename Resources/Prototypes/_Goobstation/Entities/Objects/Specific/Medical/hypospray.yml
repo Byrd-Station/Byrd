@@ -469,7 +469,7 @@
   - type: SolutionContainerManager
     solutions:
       pen:
-        maxVol: 20
+        maxVol: 10
         reagents:
         - ReagentId: AmbuzolPlus
           Quantity: 5
