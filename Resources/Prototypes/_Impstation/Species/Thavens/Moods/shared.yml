@@ -22,6 +22,7 @@
   - Delicacy
   - Holiday
   - Circus
+  - ThavenOnlyCrew
 
 # Fashion Is Critical: Thaven pay close attention to appearances, and regard one's fashion choices as an indication of their character.
 - type: thavenMood
@@ -153,3 +154,9 @@
   conflicts:
   #- Clownfan
   - Coulrophobia
+
+# NT is not accommodating enough to thaven, you must fight in the court of law for your rights
+- type: thavenMood
+  id: ThavenOnlyCrew
+  moodName: thaven-mood-thaven-only-crew-name
+  moodDesc: thaven-mood-thaven-only-crew-desc

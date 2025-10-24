@@ -47,12 +47,12 @@
 #        amount: 0.375 # TheDen - Vampiric additions end
     Narcotic:
       effects:
-      - !type:ModifyStatusEffect
+      - !type:ModifyStatusEffect # gds fixed this
         effectProto: StatusEffectSeeingRainbow
         type: Add
         time: 5
         refresh: false
-      - !type:PopupMessage
+      - !type:PopupMessage # gds added this
         type: Local
         messages:
         - generic-reagent-effect-kelp-drooling
@@ -79,7 +79,7 @@
         conditions:
         - !type:ReagentThreshold
           min: 20
-        probability: 0.05
+        probability: 0.05 # gds- end
     Medicine:
       effects:
       - !type:HealthChange
