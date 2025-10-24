@@ -529,6 +529,7 @@ public abstract partial class SharedMartialArtsSystem : EntitySystem
         //martialArtsKnowledgeComponent.StartingStage = martialArtsPrototype.StartingStage;
         LoadCombos(martialArtsPrototype.RoundstartCombos, canPerformComboComponent);
         martialArtsKnowledgeComponent.Blocked = false;
+        martialArtsKnowledgeComponent.Removable = comp.IsRemovable; //omu
 
         if (meleeWeaponComponent.Damage.DamageDict.Count != 0)
         {

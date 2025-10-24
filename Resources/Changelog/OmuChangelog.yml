@@ -825,3 +825,86 @@ Entries:
       message: The Geese have been put down in Upstream.
   id: 97
   time: '2025-10-21T02:07:33.0000000+00:00'
+- author: jellygato
+  changes:
+    - type: Fix
+      message: Adjusted some YAML comments to fit YAML formatting best practices.
+  id: 98
+  time: '2025-10-21T02:09:03.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: 'Fixed Irelander using the incorrect damage type when wielded '
+  id: 99
+  time: '2025-10-21T04:37:13.0000000+00:00'
+- author: RadsammyT
+  changes:
+    - type: Add
+      message: A new IPC Screen has been added.
+    - type: Add
+      message: Dot.
+  id: 100
+  time: '2025-10-21T04:37:53.0000000+00:00'
+- author: Sarahon
+  changes:
+    - type: Tweak
+      message: Blacklist sec, bso and command from anxiety
+  id: 101
+  time: '2025-10-21T04:39:05.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Allowed AI to set whitelists on their turrets properly.
+  id: 102
+  time: '2025-10-21T04:41:02.0000000+00:00'
+- author: Cygnye
+  changes:
+    - type: Add
+      message: Added six pack marking to Harpy.
+  id: 103
+  time: '2025-10-21T04:46:05.0000000+00:00'
+- author: Fish-Fork
+  changes:
+    - type: Add
+      message: Added the ability for Clownspiders to inject Crapotoxin on bite.
+  id: 104
+  time: '2025-10-21T04:46:15.0000000+00:00'
+- author: MarkerWicker
+  changes:
+    - type: Tweak
+      message: >-
+        Cybernetic mantles no longer come with flash protection for jobs where
+        it is not required.
+    - type: Tweak
+      message: >-
+        Cybernetic mantles also now always provide armour and pressure
+        protection to the wearer, regardless of whether the mantle is worn by a
+        cybernetic beast or not. This should hopefully make the behaviour of the
+        mantle more predictable for anybody who isn't intimately familiar with
+        the trait.
+  id: 105
+  time: '2025-10-21T05:16:15.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Tweak
+      message: >-
+        Initial Antag and Chaos scores in Medium Plus rounds now consistently
+        scale based on the number of ready players.
+  id: 106
+  time: '2025-10-21T05:25:37.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: Removing Martial arts belts will remove the automatic parrying.
+    - type: Fix
+      message: >-
+        Learned Martial Arts will not be forgotten when removing martial arts
+        belts.
+  id: 107
+  time: '2025-10-21T05:40:48.0000000+00:00'
+- author: Thesia000
+  changes:
+    - type: Add
+      message: Glacier for testing purposes, admin only for now
+  id: 108
+  time: '2025-10-23T22:32:55.0000000+00:00'
