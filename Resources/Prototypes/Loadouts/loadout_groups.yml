@@ -1291,6 +1291,10 @@
   - HoSParadeUniformMale # Omu
   - HoSParadeUniformFemale # Omu
   - HoSSummerShirt # goob
+  - HeadofSecurityBlueSuitDV # Omu
+  - HeadofSecurityBlueSkirtDV # Omu
+  - HeadofSecurityGreySuitDV # Omu
+  - HeadofSecurityGreySkirtDV # Omu
 
 - type: loadoutGroup
   id: HeadofSecurityNeck
@@ -1325,6 +1329,10 @@
   loadouts:
   - WardenJumpsuit
   - WardenJumpskirt
+  - WardenJumpsuitBlueDV # Omu
+  - WardenJumpskirtBlueDV # Omu
+  - WardenJumpsuitGreyDV # Omu
+  - WardenJumpskirtGreyDV # Omu
 
 - type: loadoutGroup
   id: WardenOuterClothing
@@ -1356,6 +1364,10 @@
   - SeniorOfficerJumpskirt
   - TrooperUniform
   - BlackRedUniform # OmuStation Addon
+  - SecurityJumpsuitBlueDV # Omu
+  - SecurityJumpskirtBlueDV # Omu
+  - SecurityJumpsuitGreyDV # Omu
+  - SecurityJumpskirtGreyDV # Omu
 
 - type: loadoutGroup
   id: SecurityBackpack
