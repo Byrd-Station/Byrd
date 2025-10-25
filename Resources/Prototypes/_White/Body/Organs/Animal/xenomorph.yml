@@ -28,6 +28,7 @@
   - type: Tag
     tags:
     - Meat
+    - Xenomorph
 
 - type: entity
   parent: [BaseXenomorphOrgan, OrganHumanBrain]

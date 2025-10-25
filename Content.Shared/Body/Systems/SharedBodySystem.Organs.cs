@@ -95,13 +95,17 @@ using Robust.Shared.Containers;
 using Content.Shared.Damage;
 using Content.Shared._Shitmed.BodyEffects;
 using Content.Shared._Shitmed.Body.Organ;
-using Content.Shared._White.Xenomorphs.Plasma.Components; // Omu - Xenos have a special organ to provide plasma, which we do not want to disable.
+using Content.Shared.Tag;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Body.Systems;
 
 public partial class SharedBodySystem
 {
     // Shitmed Change Start
+    [Dependency]  private readonly TagSystem _tag = default!;
+
+    private static readonly ProtoId<TagPrototype> XenomorphTagPrototype = "Xenomorph";
 
     private void InitializeOrgans()
     {
@@ -365,22 +369,23 @@ public partial class SharedBodySystem
             return;
 
         // I hate having to hardcode these checks so much.
-        // Omu Start - Gluesniffer didn't explain: Every organ needs their interaction with being disabled hardcoded.
+        // Omu Edit Start - Gluesniffer didn't explain: Every organ needs their interaction with being disabled hardcoded.
         // Currently handled: EyesComponent, HeartComponent, LungComponent
-        if (HasComp<PlasmaVesselComponent>(organEnt)) { return; } // Omu
-        var ev = new OrganEnabledEvent(organEnt); // Omu - Yea, I get you.
-        RaiseLocalEvent(organEnt, ref ev); // Omu
+        if (!_tag.HasTag(organEnt, XenomorphTagPrototype)) //Excluding any and all BaseXenomorphOrgan's.
+        {
+            var ev = new OrganEnabledEvent(organEnt);
+            RaiseLocalEvent(organEnt, ref ev); // Omu
+        }
     }
 
-    private void DisableOrgan(Entity<OrganComponent> organEnt) // Omu
+    private void DisableOrgan(Entity<OrganComponent> organEnt)
     {
-        if (!TryComp(organEnt.Comp.Body, out BodyComponent? body))
-            return;
-
+        if (!_tag.HasTag(organEnt, XenomorphTagPrototype))
+        {
         // I hate having to hardcode these checks so much.
-        if (HasComp<PlasmaVesselComponent>(organEnt)) { return; } // Omu - Do not disable Plasma providing organ
-        var ev = new OrganDisabledEvent(organEnt); // Omu - Yea, I get you.
-        RaiseLocalEvent(organEnt, ref ev); // Omu
+        var ev = new OrganDisabledEvent(organEnt);
+        RaiseLocalEvent(organEnt, ref ev);
+        } // Omu Edit End
     }
 
     /// <summary>
