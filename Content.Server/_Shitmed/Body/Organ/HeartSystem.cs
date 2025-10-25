@@ -53,7 +53,7 @@ public sealed class HeartSystem : EntitySystem
             && TryComp<OrganComponent>(args.Part, out var organ)
             && organ.Enabled)
         {
-            RemComp<DelayedDeathComponent>(args.Body);
+            RemCompDeferred<DelayedDeathComponent>(args.Body);
             _alert.ClearAlert(args.Body, _faultyHeartAlertId);
         }
     }
@@ -61,11 +61,14 @@ public sealed class HeartSystem : EntitySystem
     // Heartfailure time
     private void OnOrganDisabled(EntityUid uid, HeartComponent comp, ref OrganDisabledEvent args)
     {
-        if (!TryComp<OrganComponent>(uid, out var organ) || organ.Body is null)
-            return; //We don't care about the alert or dethComp is the heart is lying on the floor.
-        var deth = EnsureComp<DelayedDeathComponent>(organ.Body.Value);
-        deth.FromHeartFailure = true;
-        _alert.ShowAlert(organ.Body.Value, _faultyHeartAlertId);
+        //We don't care about the alert or dethComp is the heart is lying on the floor.
+        if (TryComp<OrganComponent>(uid, out var organ)
+            && organ.Body is not null)
+        {
+            var deth = EnsureComp<DelayedDeathComponent>(organ.Body.Value);
+            deth.FromHeartFailure = true;
+            _alert.ShowAlert(organ.Body.Value, _faultyHeartAlertId);
+        }
     }
 
     /// <summary>
@@ -74,13 +77,12 @@ public sealed class HeartSystem : EntitySystem
     private void OnOrganEnabled(EntityUid uid, HeartComponent comp, ref OrganEnabledEvent args)
     {
         // This probably looks messy
-        if (!TryComp<OrganComponent>(uid, out var organ)
-            || organ.Body is null
-            || !TryComp<DelayedDeathComponent>(organ.Body.Value, out var death))
-            return;
+        if (TryComp<OrganComponent>(uid, out var organ)
+            && organ.Body is not null
+            && TryComp<DelayedDeathComponent>(organ.Body.Value, out var death))
         {
             if (death.FromHeartFailure)
-                RemComp<DelayedDeathComponent>(organ.Body.Value);
+                RemCompDeferred<DelayedDeathComponent>(organ.Body.Value);
             _alert.ClearAlert(organ.Body.Value, _faultyHeartAlertId);
         }
         //Omu Edit End
