@@ -95,17 +95,17 @@ using Robust.Shared.Containers;
 using Content.Shared.Damage;
 using Content.Shared._Shitmed.BodyEffects;
 using Content.Shared._Shitmed.Body.Organ;
-using Content.Shared.Tag;
-using Robust.Shared.Prototypes;
+using Content.Shared.Tag; // Omu Edit
+using Robust.Shared.Prototypes; // Omu Edit
 
 namespace Content.Shared.Body.Systems;
 
 public partial class SharedBodySystem
 {
     // Shitmed Change Start
-    [Dependency]  private readonly TagSystem _tag = default!;
+    [Dependency]  private readonly TagSystem _tag = default!; // Omu Edit
 
-    private static readonly ProtoId<TagPrototype> XenomorphTagPrototype = "Xenomorph";
+    private static readonly ProtoId<TagPrototype> XenomorphTagPrototype = "Xenomorph"; // Omu Edit
 
     private void InitializeOrgans()
     {
