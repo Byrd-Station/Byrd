@@ -86,7 +86,7 @@
 
 - type: entity
   name: The Wind of the Steppes
-  parent: [BaseItem]
+  parent: [BaseItem, BaseGrandTheftContraband]
   id: HosOniBlade
   description: As the winds of the highlands cut through the lands, and wear them to dust, so does our peoples blade.
   components:
