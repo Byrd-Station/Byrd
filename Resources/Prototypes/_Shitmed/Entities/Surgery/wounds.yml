@@ -82,7 +82,7 @@
     mangledMultipliers:
       BoneDamage: 0.75
   - type: PainInflicter
-    multiplier: 0.67
+    multiplier: 0.35
   - type: BleedInflicter
     severityThreshold: 9
     scalingSpeed: 0.5
