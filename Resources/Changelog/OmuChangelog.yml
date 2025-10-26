@@ -908,3 +908,17 @@ Entries:
       message: Glacier for testing purposes, admin only for now
   id: 108
   time: '2025-10-23T22:32:55.0000000+00:00'
+- author: ShieldAcrados
+  changes:
+    - type: Add
+      message: Brand new ERT shuttle and 5 Variants!
+    - type: Add
+      message: 2 New ERT Loadouts!
+    - type: Add
+      message: ERT Borg Spawners!
+    - type: Tweak
+      message: Nerfed Pulse Carbine
+    - type: Tweak
+      message: Changed Announcement text for several ERT.
+  id: 109
+  time: '2025-10-26T21:31:07.0000000+00:00'
