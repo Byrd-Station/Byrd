@@ -556,11 +556,11 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: HitscanBatteryAmmoProvider
-    proto: LightPulse # Omu - ERT Rework, takes damage down from over 100 to 75-ish DPS
+    proto: Pulse 
     fireCost: 200
   - type: AmmoSelector # Goobstation - Start
     prototypes:
-    - LightPulse # Omu - ERT Rework, takes damage down from over 100 to 75-ish DPS
+    - Pulse
     - StunPulse
   - type: UserInterface
     interfaces:
