@@ -64,5 +64,7 @@
     possibleSets:
     - ERTBallisticsSet
     - ERTPulseSet
+    - ERTShotgunSet # Omu - ERT Rework
+    - ERTSMGSet # Omu - ERT Rework
     maxSelectedSets: 1
 

@@ -331,6 +331,13 @@
       shader: unshaded
   - type: Item
     sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
+  - type: RestrictGunshotsByUserTag # Goobstation
+    doesntContain:
+    - Oni
+    messages:
+    - oni-cannot-shoot-guns-1
+    - oni-cannot-shoot-guns-2
+    - oni-cannot-shoot-guns-3
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -354,6 +361,13 @@
     - state: mag-unshaded-4
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
+  - type: RestrictGunshotsByUserTag # Goobstation
+    doesntContain:
+    - Oni
+    messages:
+    - oni-cannot-shoot-guns-1
+    - oni-cannot-shoot-guns-2
+    - oni-cannot-shoot-guns-3
   - type: HitscanBatteryAmmoProvider
     proto: RedMediumLaser
     fireCost: 62.5
@@ -377,6 +391,13 @@
     - state: mag-unshaded-4
       map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
+  - type: RestrictGunshotsByUserTag # Goobstation
+    doesntContain:
+    - Oni
+    messages:
+    - oni-cannot-shoot-guns-1
+    - oni-cannot-shoot-guns-2
+    - oni-cannot-shoot-guns-3
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -535,11 +556,11 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: HitscanBatteryAmmoProvider
-    proto: Pulse
+    proto: LightPulse # Omu - ERT Rework, takes damage down from over 100 to 75-ish DPS
     fireCost: 200
   - type: AmmoSelector # Goobstation - Start
     prototypes:
-    - Pulse
+    - LightPulse # Omu - ERT Rework, takes damage down from over 100 to 75-ish DPS
     - StunPulse
   - type: UserInterface
     interfaces:
@@ -719,6 +740,13 @@
     steps: 5
     zeroVisible: true
   - type: Appearance
+  - type: RestrictGunshotsByUserTag # Goobstation
+    doesntContain:
+    - Oni
+    messages:
+    - oni-cannot-shoot-guns-1
+    - oni-cannot-shoot-guns-2
+    - oni-cannot-shoot-guns-3
   # Goobstation
   - type: Tag
     tags:
@@ -954,6 +982,13 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 30
+  - type: RestrictGunshotsByUserTag # Goobstation
+    doesntContain:
+    - Oni
+    messages:
+    - oni-cannot-shoot-guns-1
+    - oni-cannot-shoot-guns-2
+    - oni-cannot-shoot-guns-3
   - type: MagazineVisuals
     magState: mag
     steps: 5
