@@ -63,3 +63,21 @@ selectable-set-warden-rapier-name = Cloak and Rapier
 selectable-set-warden-rapier-description =
     An elegant weapon for the cultured warden,
     or the warden who prefers to get their hands dirty.
+
+# ERT
+
+selectable-set-ert-shotgun-name = Breacher Set
+selectable-set-ert-shotgun-description =
+    Who would've guessed, a shotgun works well in the "tight"
+    halls of a space station. Or maybe it's Just 8 gauge.
+    Includes: An 8 Gauge Combat Shotgun with 2 boxes,
+    and the Anaconda, an ammo-regenerating pistol.
+
+selectable-set-ert-smg-name = Lighter Usage of Intervention Gear Initiative (L.U.I.G.I.) Set
+selectable-set-ert-smg-description =
+    This set came straight out of the Public Relations department.
+    Instead of focusing on a heavy primary weapon, you're given
+    a lighter SMG to focus on a more "proportional" and "ethical" response.
+    In exchange for power, you get a far more flexible set of gear.
+    Includes: An SMG chambered in .35 Auto, 4x Spare Magazines, a disabler,
+    The Greatshield, and SEVERAL boxes of nonlethal gear.
