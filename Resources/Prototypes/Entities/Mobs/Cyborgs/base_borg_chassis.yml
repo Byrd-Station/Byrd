@@ -441,9 +441,23 @@
     speaks:
     - TauCetiBasic
     - RobotTalk
+    - Elyran # Omustation start - Borgs and the AI should speak all common languages.
+    - Freespeak
+    - NovuNederic
+    - SolCommon
+    - TauCetiBasic
+    - Tradeband
+    - Sign # Omustation end
     understands:
     - TauCetiBasic
     - RobotTalk
+    - Elyran # Omustation start - Borgs and the AI should speak all common languages.
+    - Freespeak
+    - NovuNederic
+    - SolCommon
+    - TauCetiBasic
+    - Tradeband
+    - Sign # Omustation end
   - type: ProtectedFromStepTriggers
   - type: DamageOnInteractProtection
     damageProtection:

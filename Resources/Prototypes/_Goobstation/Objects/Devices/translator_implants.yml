@@ -114,3 +114,28 @@
     - SpaceItalian
     spoken:
     - SpaceItalian
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: StationAiCommonLanguagesTranslatorImplant
+  name: common languages translator implant
+  description: An implant giving the ability to understand and speak common languages.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+      - Elyran
+      - Freespeak
+      - NovuNederic
+      - SolCommon
+      - TauCetiBasic
+      - Tradeband
+      - Sign
+    spoken:
+      - Elyran
+      - Freespeak
+      - NovuNederic
+      - SolCommon
+      - TauCetiBasic
+      - Tradeband
+      - Sign

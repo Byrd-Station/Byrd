@@ -46,6 +46,9 @@
   jobEntity: StationAiBrain
   jobPreviewEntity: PlayerStationAiPreview
   applyTraits: false
+  special: # Omustation start - Borgs and the AI should speak all common languages.
+  - !type:AddImplantSpecial
+    implants: [ StationAiCommonLanguagesTranslatorImplant ] # Omustation end
 
 - type: job
   id: Borg
