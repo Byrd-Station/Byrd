@@ -445,6 +445,7 @@
     - SecurityWeaponsStatic
     - SecurityAmmoStatic
     - SecurityAmmoStaticOmu # Omu
+    - SecurityWeaponsStaticOmu # Omu - unmaldening of goob pr
     # Goobstation
     - SecurityAmmoStaticGoob
     - SyndicateAmmoLightStatic
@@ -768,6 +769,7 @@
     - GrenadeTriggersStatic
     - SecurityWeaponsNonEmaggableStaticGoob
     - SecurityAmmoStaticOmu # Omu
+    - SecurityWeaponsStaticOmu # Omu - unmaldening of goob pr
     dynamicPacks:
     - SalvageSecurityBoards
     - SalvageSecurityWeapons

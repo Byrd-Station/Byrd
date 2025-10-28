@@ -1377,6 +1377,7 @@
   loadouts:
   - SecurityBelt
   - SecurityWebbing
+  - SecurityJudoBelt # Goobstation - Martial Arts | Omustation -  bringing back removed items from a goob PR
 
 - type: loadoutGroup
   id: SecurityOuterClothing

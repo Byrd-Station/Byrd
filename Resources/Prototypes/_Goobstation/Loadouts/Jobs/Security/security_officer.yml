@@ -49,3 +49,20 @@
   - !type:SpeciesLoadoutEffect # Goobstation - EE Plasmeme Change.
     species:
     - Plasmaman
+
+- type: loadout # Omustation start - bringing back removed items from a goob mald PR
+  id: SecurityJudoBelt
+  equipment:
+    belt: ClothingBeltCorporateJudoFilled
+
+- type: loadout
+  id: SecurityMeleePolyBaton
+  storage:
+    back:
+    - PolymerBaton
+
+- type: loadout
+  id: SecurityMeleeSpear
+  storage:
+    back:
+    - SpearTelescopic # Omustation end

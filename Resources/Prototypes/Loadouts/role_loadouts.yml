@@ -653,8 +653,10 @@
   - DetectiveNeck
   - DetectiveJumpsuit
   - SecurityBackpack
+  - SecurityMelee # Omustation
   - DetectiveOuterClothing
   - SecurityShoes
+  - SecurityBelt # Omustation (if they prefer their holster its in their locker :P)
   - SurvivalSecurity
   - Trinkets
   - SecurityStar

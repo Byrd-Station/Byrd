@@ -3,3 +3,9 @@
   recipes:
   - MagazineShotgunLeverRifleEmpty
   - MagazineShotgunLeverRifle
+
+- type: latheRecipePack
+  id: SecurityWeaponsStaticOmu # This is the goob pack that was mald removed, bringing it back per bounty
+  recipes:
+  - PolymerBaton
+  - SpearTelescopic
