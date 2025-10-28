@@ -124,7 +124,7 @@
     size: Huge #should be ok at this size
     storedRotation: 45
   - type: DisarmMalus
-    malus: 0.50
+    malus: 0.50 # maybe too much, also might not matter at because in melee range you die
   - type: Tool
     qualities:
     - Prying
