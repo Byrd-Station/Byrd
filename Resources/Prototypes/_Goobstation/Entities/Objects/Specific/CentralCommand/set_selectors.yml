@@ -65,7 +65,7 @@
     - ERTBallisticsSet
     - ERTPulseSet
     - ERTShotgunSet # Omu - ERT Rework
-    - ERTLightEnergySet
+    - ERTLightEnergySet # Omu - ERT Hotfix
     - ERTSMGSet # Omu - ERT Rework
     maxSelectedSets: 1
 
