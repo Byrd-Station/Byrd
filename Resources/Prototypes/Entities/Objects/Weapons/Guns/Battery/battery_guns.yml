@@ -557,7 +557,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: HitscanBatteryAmmoProvider
     proto: Pulse 
-    fireCost: 200
+    fireCost: 100 # Omu - ERT Hotfix
   - type: AmmoSelector # Goobstation - Start
     prototypes:
     - Pulse
@@ -572,8 +572,8 @@
     verbText: mode-select-verb-text
     key: enum.AmmoSelectorUiKey.Key # Goobstation - End
   - type: Battery
-    maxCharge: 5000
-    startingCharge: 5000
+    maxCharge: 2500 # Omu - ERT Hotfix 
+    startingCharge: 2500 # Omu - ERT Hotfix
   # Goobstation
   - type: Tag
     tags:
