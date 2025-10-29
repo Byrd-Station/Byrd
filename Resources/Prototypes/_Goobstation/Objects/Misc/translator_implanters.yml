@@ -40,7 +40,7 @@
   - type: Implanter
     implant: SpaceItalianTranslatorImplant
 
-# Basically all common languages for the station ai to have, both to understand and speak
+# Basically all common languages for the station ai to have, both to understand and speak, minus sign, which they just understand.
 - type: entity
   id: StationAiCommonLanguagesTranslatorImplant
   parent: [ BaseTranslatorImplanter ]
