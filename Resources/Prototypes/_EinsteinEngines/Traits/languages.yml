@@ -147,7 +147,7 @@
 #         - Azaziba
 
 - type: trait
-  id: Polyglot
+  id: Polyglot # Omu
   name: trait-language-polyglot-name
   description: trait-language-polyglot-desc
   category: LanguageTraits
