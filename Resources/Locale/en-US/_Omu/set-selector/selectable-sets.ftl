@@ -64,7 +64,14 @@ selectable-set-warden-rapier-description =
     An elegant weapon for the cultured warden,
     or the warden who prefers to get their hands dirty.
 
+selectable-set-hosoniblade-name = The Wind of the Steppes
+selectable-set-hosoniblade-description =
+    A titanic relic, wieldable only by Oni's.
+    This blades immense size makes it a force to be reconed with,
+    Able to cut down most in seconds.
+
 # ERT
+# TO-DO, rename all of these to be Super Mario related and hopefully avoid a cease and desist from nintendo
 
 selectable-set-ert-shotgun-name = Breacher Set
 selectable-set-ert-shotgun-description =
@@ -79,5 +86,12 @@ selectable-set-ert-smg-description =
     Instead of focusing on a heavy primary weapon, you're given
     a lighter SMG to focus on a more "proportional" and "ethical" response.
     In exchange for power, you get a far more flexible set of gear.
-    Includes: An SMG chambered in .35 Auto, 4x Spare Magazines, a disabler,
+    Includes: An SMG chambered in .35 Auto, 4x Spare Magazines,
     The Greatshield, and SEVERAL boxes of nonlethal gear.
+
+selectable-set-ert-light-energy-name = Multiple-Amplitude Radiological Intervention Ordinance (M.A.R.I.O.) Set
+selectable-set-ert-light-energy-description = 
+    While less powerful than the Pulse set, the CR-9 comes with
+    self-recharging magazines that reduce your reliance on working power
+    infrastructure and recharging stations.
+    INCLUDES: The CR-9, Several magazines for it, and the EG-4
