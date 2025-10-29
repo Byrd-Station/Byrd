@@ -56,3 +56,8 @@ trait-language-azaziba-name = Sinta'Azaziba
 trait-language-azaziba-desc =
     A language of Moghes consisting of a combination of spoken word and gesticulation.
     While waning since Moghes entered the galactic stage - it enjoys popular use by Unathi that never fell to the Hegemony's cultural dominance.
+
+trait-language-polyglot-name = Polyglot
+trait-language-polyglot-desc = 
+    You are someone who has mastered several languages originally foreign to you.
+    You are capable of understanding and using more languages than the average person.
