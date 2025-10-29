@@ -59,3 +59,12 @@ trait-frisky-name = Frisky
 trait-frisky-desc =
     You have a keen eye and a strong intuition for finding hidden valuables.
     When you strip someone, you can identify items in their pockets.
+
+trait-sharp-teeth-name = Sharp Teeth
+trait-sharp-teeth-desc =
+    You were born with or have had your teeth modified to be sharper, and your jaws, stronger.
+    These could come from gene modifications, a genetic legacy,
+    or even custom made implants designed to turn teeth into tiny knives.
+    Your unarmed melee attacks deal Piercing damage instead of the standard damage type for your species.
+    (Note for harpies: If you do take the trait the only things that change are the visuals and sound. You already do 5 piercing damage.)
+    This has no effect on damage dealt with any form of armed melee.
