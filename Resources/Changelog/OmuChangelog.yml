@@ -938,3 +938,11 @@ Entries:
       message: Made Pulse Carbine not take 20,000,000 years to recharge
   id: 111
   time: '2025-10-28T02:01:44.0000000+00:00'
+- author: Cygnye
+  changes:
+    - type: Add
+      message: Added a glaive for Oni HoS
+    - type: Tweak
+      message: attempted to fix the irelander but its already fixed
+  id: 112
+  time: '2025-10-29T10:32:28.0000000+00:00'
