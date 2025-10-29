@@ -42,9 +42,9 @@
 
 # Basically all common languages for the station ai to have, both to understand and speak, minus sign, which they just understand.
 - type: entity
-  id: StationAiCommonLanguagesTranslatorImplant
+  id: StationAiTranslatorImplant
   parent: [ BaseTranslatorImplanter ]
   suffix: Station AI Common Languages
   components:
   - type: Implanter
-    implant: StationAiCommonLanguagesTranslatorImplant
+    implant: StationAiTranslatorImplant

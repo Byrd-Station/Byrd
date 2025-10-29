@@ -48,7 +48,7 @@
   applyTraits: false
   special: # Omustation start - Borgs and the AI should speak all common languages.
   - !type:AddImplantSpecial
-    implants: [ StationAiCommonLanguagesTranslatorImplant ] # Omustation end
+    implants: [ StationAiTranslatorImplant ] # Omustation end
 
 - type: job
   id: Borg
