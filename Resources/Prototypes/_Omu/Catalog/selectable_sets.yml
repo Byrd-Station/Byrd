@@ -142,6 +142,16 @@
   content:
   - ClothingNeckWardenParryCloakFilled
 
+- type: selectableSet
+  id: HosOniGlaiveSet
+  name: selectable-set-hosoniblade-name
+  description: selectable-set-hosoniblade-description
+  sprite:
+    sprite: _Omu/Objects/Weapons/Melee/oniglaive.rsi
+    state: base
+  content:
+  - HosOniBlade
+
 # ERT
 
 - type: selectableSet
