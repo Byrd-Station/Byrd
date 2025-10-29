@@ -164,17 +164,16 @@ selectable-set-blueshield-modsuit-description =
 
 # ERT
 
-selectable-set-ert-ballistic-name = ballistics set
+selectable-set-ert-ballistic-name = Ballistics Set
 selectable-set-ert-ballistic-description =
     Reliable, efficient, and compact. The Annies got your back.
     Includes: .30 caliber rifle, the Annie.
     Spare magazines for it, and an N1984.
 
-selectable-set-ert-pulse-name = pulse set
+selectable-set-ert-pulse-name = Energy Set
 selectable-set-ert-pulse-description =
-    Running out of ammo is the worst thing that could happen
-    in a firefight.
-    Includes: A modified pulse carbine.
+    Running won't save them when your rounds go at lightspeed.
+    Includes: A pulse carbine.
     EG-4 revolver, pulse cells.
 
 # Voidsuit selectors
