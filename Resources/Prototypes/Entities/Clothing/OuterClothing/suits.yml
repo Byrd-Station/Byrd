@@ -335,6 +335,7 @@
     - type: StealthOnMove
       passiveVisibilityRate: -0.5
       movementVisibilityRate: 0.6
+      thermalsImmune: true # Goobstation
   - type: PowerCellDraw
     drawRate: 1.8 # Omu: 3.6 -> 1.6 - Originally 100 seconds in the average cell, 200 now.
   - type: ToggleCellDraw
