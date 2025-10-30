@@ -64,6 +64,12 @@ selectable-set-warden-rapier-description =
     An elegant weapon for the cultured warden,
     or the warden who prefers to get their hands dirty.
 
+selectable-set-hosoniblade-name = The Wind of the Steppes
+selectable-set-hosoniblade-description =
+    A titanic relic, wieldable only by Oni's.
+    This blades immense size makes it a force to be reconed with,
+    Able to cut down most in seconds.
+
 # ERT
 # TO-DO, rename all of these to be Super Mario related and hopefully avoid a cease and desist from nintendo
 
@@ -88,5 +94,5 @@ selectable-set-ert-light-energy-description =
     While less powerful than the Pulse set, the CR-9 comes with
     self-recharging magazines that reduce your reliance on working power
     infrastructure and recharging stations.
-    Includes a CR-9 energy rifle, an EG-4 revolver,
+    Includes a CR-9 energy rifle, an EG-4 energy revolver,
     and 3 self-recharging magazines for each.
