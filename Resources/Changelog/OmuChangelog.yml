@@ -952,3 +952,15 @@ Entries:
       message: Goobstation Upstream from 21/Oct till 27/Oct
   id: 113
   time: '2025-10-29T22:42:02.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Fix
+      message: Harpies with the 'Wheelchair Bound' trait can fly again. Chirp!
+  id: 114
+  time: '2025-10-30T15:18:32.0000000+00:00'
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Many item names and descriptions have been tweaked for grammar
+  id: 115
+  time: '2025-10-30T18:50:39.0000000+00:00'

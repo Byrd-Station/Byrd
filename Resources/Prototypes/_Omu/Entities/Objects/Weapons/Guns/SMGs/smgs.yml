@@ -1,7 +1,7 @@
 - type: entity
   id: WeaponSubMachineGunC20rCentComm
   parent: WeaponSubMachineGunC20r
-  description: A classic and widespread submachine gun. One of the first homegrown Waffle Corp. designs, it remains in service today. Feeds from .35 SMG magazines. A NanoTrasen Logo is stamped on the frame.
+  description: A classic and widespread submachine gun. One of the first homegrown Waffle Corp. designs, it remains in service today. Feeds from .35 SMG magazines. A Nanotrasen Logo is stamped on the frame.
   suffix: CentComm
   components:
     - type: Contraband
