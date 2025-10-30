@@ -1,7 +1,7 @@
 - type: entity
   parent: IDCardStandard
   id: CentralCommandInternIDCard
-  name: centcomm intern ID card
+  name: CentComm intern ID card
   components:
   - type: Sprite
     layers:
@@ -52,7 +52,7 @@
 - type: entity
   parent: IDCardStandard
   id: CentralCommandDireggtorIDCard
-  name: centcomm direggtor ID card
+  name: CentComm direggtor ID card
   components:
   - type: Sprite
     layers:
