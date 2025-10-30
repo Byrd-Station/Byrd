@@ -69,6 +69,7 @@
   - BlueshieldOfficer
   - Service
   - Hydroponics
+  - Chemistry
   - Cargo
   special:
   - !type:AddImplantSpecial
