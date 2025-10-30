@@ -469,7 +469,7 @@
   - type: SolutionContainerManager
     solutions:
       pen:
-        maxVol: 20 #Omu - ERT Rework, Solstice you're an idiot
+        maxVol: 20
         reagents:
         - ReagentId: AmbuzolPlus
           Quantity: 5
