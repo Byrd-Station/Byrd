@@ -71,7 +71,7 @@
     storedRotation: -45
   - type: MeleeDash
     emoteOnDash: null
-    maxDashLength: 2
+    length: 2
   - type: UseDelay
     delay: 1.5
   - type: Tag
