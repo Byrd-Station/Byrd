@@ -41,7 +41,7 @@ selectable-set-t8-description =
 
 selectable-set-terminus-name = DT-8 "Terminus"
 selectable-set-terminus-description =
-    A weapon exclusively for oni, this weapon
+    A weapon exclusively for oni, this greataxe
     can fire a burst of disabler bolts on command.
 
 selectable-set-antiquelaser-name = Antique Laser Pistol
@@ -56,7 +56,7 @@ selectable-set-vc8-description =
 selectable-set-irelander-name = O'Connaburr, the Irelander
 selectable-set-irelander-description =
     An ancient copper blade,
-    The ender of troubles.
+    the ender of troubles.
     Smashes through walls with ease.
 
 selectable-set-warden-rapier-name = Cloak and Rapier
@@ -66,9 +66,9 @@ selectable-set-warden-rapier-description =
 
 selectable-set-hosoniblade-name = The Wind of the Steppes
 selectable-set-hosoniblade-description =
-    A titanic relic, wieldable only by Oni's.
-    This blades immense size makes it a force to be reconed with,
-    Able to cut down most in seconds.
+    A titanic relic, wieldable only by oni.
+    This blade's immense size makes it a force to be reckoned with,
+    able to cut down any foe in seconds.
 
 # ERT
 # TO-DO, rename all of these to be Super Mario related and hopefully avoid a cease and desist from nintendo
