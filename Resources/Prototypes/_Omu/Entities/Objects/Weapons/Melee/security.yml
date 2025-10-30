@@ -2,7 +2,7 @@
   name: o'ConnahBurr, the Irelander
   parent: [BaseItem, BaseSecurityContraband]
   id: HosIreLander
-  description: An antique blade, its said that this blade was weilded to end a great trouble. It is made from ancient Copper.
+  description: An antique copper greatsword, said to have once been wielded to end a great trouble.
   components:
   - type: Sprite
     sprite: _Omu/Objects/Weapons/Melee/irelander.rsi
