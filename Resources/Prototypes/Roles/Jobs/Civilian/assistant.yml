@@ -86,12 +86,7 @@
   startingGear: PassengerGear
   icon: "JobIconPassenger"
   supervisors: job-supervisors-everyone
-  goobcoins: 0 #Goob content
-#  special:
-#  - !type:PlaytimeDegrade # MisandryBox - tider main syndrome #Omu - GREYTIDE RISE UP
-#    since: 600
-#    until: 24600
-#    disarmMalus: true
+  goobcoins: 20 #Goob content
   access:
   - Maintenance
 

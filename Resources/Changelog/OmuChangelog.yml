@@ -928,3 +928,33 @@ Entries:
       message: Made the ahelp introduction message less intimidating
   id: 110
   time: '2025-10-27T11:42:41.0000000+00:00'
+- author: ShieldAcrados
+  changes:
+    - type: Add
+      message: Added a new ERT energy weapon and selectable set!
+    - type: Tweak
+      message: Reverted Pulse Carbine nerf
+    - type: Tweak
+      message: Made Pulse Carbine not take 20,000,000 years to recharge
+  id: 111
+  time: '2025-10-28T02:01:44.0000000+00:00'
+- author: Cygnye
+  changes:
+    - type: Add
+      message: Added a glaive for Oni HoS
+    - type: Tweak
+      message: attempted to fix the irelander but its already fixed
+  id: 112
+  time: '2025-10-29T10:32:28.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: Goobstation Upstream from 21/Oct till 27/Oct
+  id: 113
+  time: '2025-10-29T22:42:02.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Fix
+      message: Harpies with the 'Wheelchair Bound' trait can fly again. Chirp!
+  id: 114
+  time: '2025-10-30T15:18:32.0000000+00:00'
