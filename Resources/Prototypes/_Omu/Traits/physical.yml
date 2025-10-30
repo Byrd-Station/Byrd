@@ -186,7 +186,7 @@
   globalCost: 2
 
 - type: trait
-  id: SmallShit
+  id: SmallShit # Stuff Shadowkin and Harpies into a bag
   name: trait-small-shit-name
   description: trait-small-shit-desc
   category: PhysicalTraits
@@ -203,10 +203,10 @@
   - !type:SpeciesRequirement
     inverted: true
     species:
-    - Felinid # These already have this feature by default.
+    - Felinid # These species already have this feature by default.
     - Tajaran
     - Resomi
     - Rodentia
-  - !type:WeightRequirement # fat fucks are too heavy for uppies
+  - !type:WeightRequirement # too heavy for uppies
     minimumWeight: 40
     inverted: true

@@ -60,7 +60,7 @@ trait-frisky-desc =
     You have a keen eye and a strong intuition for finding hidden valuables.
     When you strip someone, you can identify items in their pockets.
 
-trait-small-shit-name = A Small little Shoit
+trait-small-shit-name = Very Smol
 trait-small-shit-desc =
     You are tiny. So teeny tiny it makes you incredibly puntable to everyone around you.
-    As an upside, you are small enough to snuggly fit in large containers like duffle bags.
+    On the bright side, you are small enough to snugly fit inside large containers like duffle bags.
