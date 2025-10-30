@@ -50,7 +50,7 @@ public sealed partial class FaceHuggerComponent : Component
 
     // Goobstation start
     [DataField]
-    public string SleepChem = "AlienSedative";
+    public string SleepChem = "Nocturine"; //Omu - End the torment nexus
 
     [DataField]
     public float SleepChemAmount = 10f;
