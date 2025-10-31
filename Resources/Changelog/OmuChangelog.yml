@@ -964,3 +964,9 @@ Entries:
       message: Many item names and descriptions have been tweaked for grammar
   id: 115
   time: '2025-10-30T18:50:39.0000000+00:00'
+- author: Tofi-Dev
+  changes:
+    - type: Add
+      message: Added barber scissors as a selectable trinket in the loadout.
+  id: 116
+  time: '2025-10-31T14:35:06.0000000+00:00'
