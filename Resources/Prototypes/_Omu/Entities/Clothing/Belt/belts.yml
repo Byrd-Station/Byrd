@@ -47,7 +47,7 @@
   parent: ClothingBeltSecurity
   id: ClothingBeltHOSCQC
   name: Qua Nar'Vulna
-  description: A Relic belt of an ancient art, This belt gives its weilder terrifying power
+  description: A ceremonial belt of an ancient martial art that gives its wearer terrifying power.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Belt/clothingbelthoscqc.rsi

@@ -1,5 +1,5 @@
 - type: entity
-  name: CentComm Intern handheld fax
+  name: CentComm intern handheld fax
   parent: HandheldFax
   id: HandheldFaxCentCommIntern
   suffix: CentComm Intern
