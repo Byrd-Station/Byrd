@@ -1,8 +1,8 @@
 - type: entity
-  name: o'ConnahBurr, the Irelander
+  name: O'Connaburr, the Irelander
   parent: [BaseItem, BaseSecurityContraband]
   id: HosIreLander
-  description: An antique blade, its said that this blade was weilded to end a great trouble. It is made from ancient Copper.
+  description: An antique copper greatsword, said to have once been wielded to end a great trouble.
   components:
   - type: Sprite
     sprite: _Omu/Objects/Weapons/Melee/irelander.rsi
@@ -88,7 +88,7 @@
   name: The Wind of the Steppes
   parent: [BaseItem, BaseGrandTheftContraband]
   id: HosOniBlade
-  description: As the winds of the highlands cut through the lands, and wear them to dust, so does our peoples blade.
+  description: As the winds of the highlands cut through the lands and wear them to dust, so too does our people's blade.
   components:
   - type: RestrictedMelee # Omu, its made for Oni, so only Oni can use it.
     whitelist:
