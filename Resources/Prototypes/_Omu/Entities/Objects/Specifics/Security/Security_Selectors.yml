@@ -73,7 +73,7 @@
 
 - type: entity
   id: CaptainGunCase
-  name: captain's weapon case
+  name: captain's duty case
   description: A case, used to securely store your duty weapon of choice.
   parent: [ BaseItem, BaseSetSelector, BaseCommandContraband ]
   components:
