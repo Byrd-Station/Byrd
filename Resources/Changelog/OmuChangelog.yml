@@ -970,3 +970,9 @@ Entries:
       message: Added barber scissors as a selectable trinket in the loadout.
   id: 116
   time: '2025-10-31T14:35:06.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Upstream for IPC, Wraith, and Woundmed/Pain Fixes.
+  id: 117
+  time: '2025-10-31T19:52:02.0000000+00:00'
