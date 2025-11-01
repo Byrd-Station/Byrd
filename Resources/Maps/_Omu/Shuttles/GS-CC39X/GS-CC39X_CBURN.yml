@@ -3452,6 +3452,7 @@ entities:
       pos: 2.5,-0.5
       parent: 1
     - type: EntityStorage
+      capacity: 50
       air:
         volume: 200
         immutable: False
