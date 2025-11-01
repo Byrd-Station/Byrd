@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/31/2025 16:26:11
-  entityCount: 571
+  time: 11/01/2025 10:05:40
+  entityCount: 570
 maps: []
 grids:
 - 1
@@ -648,11 +648,6 @@ entities:
       parent: 1
 - proto: BorgCharger
   entities:
-  - uid: 134
-    components:
-    - type: Transform
-      pos: -3.5,4.5
-      parent: 1
   - uid: 251
     components:
     - type: Transform
