@@ -32,6 +32,7 @@
     - HosJusticeSet
     - HosCQCSet
     - HosIrelanderSet
+    - HosOniGlaiveSet
     maxSelectedSets: 1
   - type: StealTarget
     stealGroup: WeaponSecHeadSword
@@ -72,7 +73,7 @@
 
 - type: entity
   id: CaptainGunCase
-  name: captain's weapon case
+  name: captain's duty case
   description: A case, used to securely store your duty weapon of choice.
   parent: [ BaseItem, BaseSetSelector, BaseCommandContraband ]
   components:
