@@ -1196,8 +1196,8 @@
   name: loadout-group-scientist-head
   minLimit: 0
   loadouts:
-  - RoboticistCap
-  - SkullBandana
+  #- RoboticistCap
+  #- SkullBandana
   - ScientificBeret
 
 - type: loadoutGroup
@@ -1213,8 +1213,8 @@
   loadouts:
   - ScientistJumpsuit
   - ScientistJumpskirt
-  - RoboticistJumpsuit
-  - RoboticistJumpskirt
+  #- RoboticistJumpsuit
+  #- RoboticistJumpskirt
   - SeniorResearcherJumpsuit
   - SeniorResearcherJumpskirt
   - ResearchMJ # goob
