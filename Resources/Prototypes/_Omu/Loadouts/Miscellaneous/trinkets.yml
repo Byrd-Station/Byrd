@@ -165,3 +165,10 @@
     back:
     - ClothingNeckChameleonPride
   groupBy: "pin"
+
+
+- type: loadout
+  id: BarberScissors
+  storage:
+    back:
+    - BarberScissors
