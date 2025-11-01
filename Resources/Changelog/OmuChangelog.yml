@@ -976,3 +976,9 @@ Entries:
       message: Upstream for IPC, Wraith, and Woundmed/Pain Fixes.
   id: 117
   time: '2025-10-31T19:52:02.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Remove
+      message: Disabled Wraith from spawning naturally.
+  id: 118
+  time: '2025-11-01T18:14:31.0000000+00:00'
