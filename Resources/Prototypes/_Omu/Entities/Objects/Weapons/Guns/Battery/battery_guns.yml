@@ -1,8 +1,8 @@
 - type: entity
-  name: CR-9 Advanced Energy Rifle
+  name: CR-9 advanced energy rifle
   parent: [ BaseWeaponCustomCell, BaseGunWieldable, BaseCentcommContraband ]
   id: WeaponAdvancedEnergyRifle
-  description: An independently produced modification of the CR-2 Rifle, firing faster and looking sleeker, designed to take advanced energy magazines, but compatible with regular mags too.
+  description: An independently produced modification of the CR-2 rifle, firing faster and looking sleeker. Compatible with both standard and advanced laser rifle magazines.
   components:
   - type: Sprite
     sprite: _Omu/Objects/Weapons/Guns/Battery/ert_energy_rifle.rsi
