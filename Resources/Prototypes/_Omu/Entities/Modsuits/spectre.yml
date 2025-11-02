@@ -111,6 +111,13 @@
         - state: equipped-HEAD-sealed
     - type: SpeechSoundsReplacer
       speechSounds: Chrono
+    - type: ShowHealthBars
+      damageContainers:
+      - Biological
+      - Inorganic
+    - type: ShowHungerIcons
+    - type: ShowThirstIcons
+    - type: ShowSyndicateIcons
 
 - type: entity
   parent: ClothingModsuitChestplateStandard
