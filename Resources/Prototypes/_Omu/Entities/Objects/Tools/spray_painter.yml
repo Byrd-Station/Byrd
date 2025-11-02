@@ -1,0 +1,15 @@
+- type: entity
+  parent: SprayPainter
+  id: SprayPainterExperimental
+  name: experimental spray painter
+  description: A modified Spray Painter that can tap into a pocket of Bluespace, and will recharge passively.
+  components:
+  - type: Sprite
+    sprite: _Omu/Objects/Tools/experimental_spray_painter.rsi
+    state: experimental_spray_painter
+  - type: Item
+    sprite: _Omu/Objects/Tools/experimental_spray_painter.rsi
+  - type: AutoRecharge
+    rechargeDuration: 3
+  - type: StaticPrice
+    price: 100
