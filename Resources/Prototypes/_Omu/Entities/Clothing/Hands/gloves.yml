@@ -63,7 +63,7 @@
   - type: Sprite
     sprite: _Omu/Clothing/Hands/Gloves/emergencyresponseteam.rsi
   - type: Clothing
-    sprite: _Goobstation/Clothing/Hands/Gloves/emergencyresponseteam.rsi
+    sprite: _Omu/Clothing/Hands/Gloves/emergencyresponseteam.rsi
     slots: [gloves]
   - type: Item
     sprite: _Omu/Clothing/Hands/Gloves/emergencyresponseteam.rsi
