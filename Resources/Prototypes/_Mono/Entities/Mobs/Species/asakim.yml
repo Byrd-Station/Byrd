@@ -207,6 +207,13 @@
   # Begin DeltaV Additions
   - type: BlockWriting # can't speak common can't write common. better get an AAC tablet
   # End DeltaV Additions
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - ReptilianEmotes
 
 - type: entity
   save: false
