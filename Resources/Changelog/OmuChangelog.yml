@@ -982,3 +982,15 @@ Entries:
       message: Disabled Wraith from spawning naturally.
   id: 118
   time: '2025-11-01T18:14:31.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: >-
+        Added a new midround, Asakim, they are new to this sector, treat them
+        nice, and they may do the same.
+    - type: Tweak
+      message: >-
+        Changed the muzzle flash and projectile sprites for most weapons to ones
+        from Imp.
+  id: 119
+  time: '2025-11-02T09:09:02.0000000+00:00'
