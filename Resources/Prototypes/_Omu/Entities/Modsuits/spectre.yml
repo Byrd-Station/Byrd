@@ -60,7 +60,7 @@
     - type: Insulated # Omu, Who removed the insulated from the parent...
 
 - type: entity
-  parent: [ClothingModsuitHelmetStandard, ClothingEyesHudOmni]
+  parent: [ClothingModsuitHelmetStandard, ShowSecurityIcons, ShowMedicalIcons]
   id: ClothingModsuitHelmetSpectre
   name: Spectre modsuit helmet # Goob edit
   description: A state-of-the-art helmet designed by NanoTrasen for the Spectre modsuit. It includes a built-in HUD.
