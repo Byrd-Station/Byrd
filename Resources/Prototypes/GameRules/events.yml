@@ -186,7 +186,7 @@
     - id: DragonSpawn
     - id: KingRatMigration
     - id: NinjaSpawn
-    - id: ParadoxCloneSpawn
+    #- id: ParadoxCloneSpawn # Omu - Removed till rework, more explanation on the corresponding PR.
     #- id: RevenantSpawn  # GoobStation - removed till rework
     - id: SleeperAgents
     - id: ZombieOutbreak
