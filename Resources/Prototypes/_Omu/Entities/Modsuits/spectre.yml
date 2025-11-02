@@ -98,6 +98,12 @@
       protectionRange: 0
     - type: PointLight
       color: "#EDFEFF"
+      enabled: false
+      radius: 15
+      energy: 3
+      mask: /Textures/Effects/LightMasks/cone.png
+      autoRot: true
+      netsync: false
     - type: SealableClothingVisuals
       spriteLayer: sealed
       clothingVisuals:
