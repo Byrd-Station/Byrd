@@ -11,7 +11,7 @@
     Dragon: 1
     # Revenant: 1 # Goob - Removed in favor of LoneOperative
     SlaughterDemon: 1
-    Wraith: 1
+    # Wraith: 1 # OMU - Unbalanced & shit to deal with
     LoneOperative: 1 # Goobstation
 
 - type: ninjaHackingThreat
@@ -30,12 +30,11 @@
   announcement: terror-lone-operative
   rule: LoneOpsSpawn
 
-# Enable once testing is done
+# OMU - Wraith Disabled Again...
 #- type: ninjaHackingThreat
 #  id: Wraith
 #  announcement: terror-wraith
 #  rule: WraithMidround
-# Goobstation - end
 
 #- type: ninjaHackingThreat
 #  id: Revenant
