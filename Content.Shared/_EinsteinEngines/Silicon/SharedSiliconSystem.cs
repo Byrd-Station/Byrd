@@ -26,16 +26,14 @@ public sealed class SharedSiliconChargeSystem : EntitySystem
         SubscribeLocalEvent<SiliconComponent, ComponentInit>(OnSiliconInit);
         SubscribeLocalEvent<SiliconComponent, SiliconChargeStateUpdateEvent>(OnSiliconChargeStateUpdate);
         SubscribeLocalEvent<SiliconComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovespeed);
-        // Monolith - IPC Rework
-        /*
+        // Omustation Start - Free them
         SubscribeLocalEvent<SiliconComponent, ItemSlotInsertAttemptEvent>(OnItemSlotInsertAttempt);
         SubscribeLocalEvent<SiliconComponent, ItemSlotEjectAttemptEvent>(OnItemSlotEjectAttempt);
-        */
+        // Omustation End
         SubscribeLocalEvent<SiliconComponent, TryingToSleepEvent>(OnTryingToSleep);
     }
 
-    // Monolith - IPC Rework
-    /*
+    // Omustation Start - Free them
     private void OnItemSlotInsertAttempt(EntityUid uid, SiliconComponent component, ref ItemSlotInsertAttemptEvent args)
     {
         if (args.Cancelled
@@ -57,7 +55,7 @@ public sealed class SharedSiliconChargeSystem : EntitySystem
 
         args.Cancelled = true;
     }
-    */
+    // Omustation End - Free them
 
     private void OnSiliconInit(EntityUid uid, SiliconComponent component, ComponentInit args)
     {
