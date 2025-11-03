@@ -248,7 +248,7 @@
   - type: MovementSpeedModifier
     acceleration: 10
     friction: 10
-    baseSprintSpeed: 4.5
+    baseSprintSpeed: 4.5 # Omu edit
     baseWalkSpeed: 2.5
   - type: StaticPrice
     price: 175
