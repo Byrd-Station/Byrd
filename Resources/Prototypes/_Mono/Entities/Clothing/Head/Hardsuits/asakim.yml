@@ -10,7 +10,7 @@
   parent: [ClothingHeadHardsuitBase, ShowMedicalIcons] # DeltaV - no contraband
   id: ClothingHelmetHardsuitAsakim
   name: kasature-pattern combat harness helmet
-  description: Part of an advanced pre-fracture combat harness, the lens glow in the dark.
+  description: Part of an advanced combat harness, a suite of sensors and predictive algorithms provide real-time data on vital signs and heat signatures of others.
   components:
   - type: Sprite
     sprite: _Mono/Clothing/Head/Hardsuits/asakim.rsi
