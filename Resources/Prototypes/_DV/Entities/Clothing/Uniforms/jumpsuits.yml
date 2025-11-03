@@ -10,6 +10,17 @@
     sprite: _DV/Clothing/Uniforms/Jumpsuit/admin_assistant.rsi
 
 - type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitAsakim
+  name: combat jumpsuit
+  description: A comfortable and flexible jumpsuit, designed to be worn under a hardsuit.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/ninja.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/ninja.rsi
+
+- type: entity
   parent: [ClothingUniformBase, BaseSecurityContraband]
   id: ClothingUniformJumpsuitWardenBlueDV
   name: blue warden's jumpsuit

@@ -50,7 +50,7 @@
   parent: ClothingUniformJumpsuitBlueshieldOfficer
   id: ClothingUniformBlueShieldOfficerTurtleneckSkirt
   name: blueshield officer turtleskirt
-  description: Turtleneck with a skirt worn by Blueshield Officers, CC tag removed because it was too itchy.
+  description: A turtleneck with a skirt worn by Blueshield Officers, CC tag removed because it was too itchy.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Uniforms/Jumpskirt/blueshieldturtleskirt.rsi
@@ -61,7 +61,7 @@
   parent: ClothingUniformJumpsuitBlueshieldOfficer
   id: ClothingUniformBlackBlueShieldOfficerTurtleneckSkirt
   name: black blueshield officer turtleskirt
-  description: black turtleneck with a skirt worn by Blueshield Officers, CC tag removed because it was too itchy.
+  description: A black turtleneck with a skirt worn by Blueshield Officers, CC tag removed because it was too itchy.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Uniforms/Jumpskirt/blackblueshieldturtleskirt.rsi
@@ -94,7 +94,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformCybersunMedicalJumpskirt
   name: cybersun medical jumpskirt
-  description: Sterile jumpskirt worn by Cybersun Industries field medics for protection against biological hazards.
+  description: A sterile jumpskirt worn by Cybersun Industries field medics for protection against biological hazards.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Uniforms/Jumpskirt/cybersunmedicaljumpskirt.rsi
