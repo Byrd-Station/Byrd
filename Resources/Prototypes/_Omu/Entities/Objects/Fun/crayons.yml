@@ -1,0 +1,13 @@
+﻿- type: entity
+  parent: CrayonRainbow
+  id: CrayonInfinite
+  name: bluespace crayon
+  components:
+  - type: Sprite
+    state: blue
+  - type: Item
+    heldPrefix: rainbow
+  - type: Crayon
+    color: Red
+    selectableColor: true
+    infinite: true

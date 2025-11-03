@@ -728,6 +728,26 @@ public sealed partial class AdminVerbSystem
                 Message = string.Join(": ", maidenName, Loc.GetString("admin-smite-maid-description"))
             };
             args.Verbs.Add(maiden);
+
+            var bunnyName = Loc.GetString("admin-smite-bunny-name").ToLowerInvariant(); // Omu - Bunny Smite
+            Verb bunny = new()
+            {
+                Text = bunnyName,
+                Category = VerbCategory.Smite,
+                Icon = new SpriteSpecifier.Rsi(new ("/Textures/_Omu/Clothing/Uniforms/Costume/bunny.rsi"), "icon"),
+                Act = () =>
+                {
+                    _outfit.SetOutfit(args.Target, "BunnySuitSmiteGear", (_, clothing) =>
+                    {
+                        if (HasComp<ClothingComponent>(clothing))
+                            EnsureComp<UnremoveableComponent>(clothing);
+                        EnsureComp<ClumsyComponent>(args.Target);
+                    });
+                },
+                Impact = LogImpact.Extreme,
+                Message = string.Join(": ", bunnyName, Loc.GetString("admin-smite-bunny-description"))
+            };
+            args.Verbs.Add(bunny);
         }
 
         var angerPointingArrowsName = Loc.GetString("admin-smite-anger-pointing-arrows-name").ToLowerInvariant();

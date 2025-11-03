@@ -117,6 +117,11 @@
     ClothingHeadSanabi: 1 # Goobstation
     ClothingNeckCloakSanabi: 1 # Goobstation
     ClothingCostumeGingerbreadHead: 1 #goob
+    ClothingHeadHatBunnyHeadband: 2 # omu
+    ClothingCostumeBunnySuit: 2 # omu
+    ClothingNecktieBunny: 2 # omu
+    ClothingOuterTailcoat: 2 # omu
+    ClothingShoesHeels: 2 # omu
   contrabandInventory:
     ClothingHeadHatRichard: 1
     ClothingShoesBling: 1

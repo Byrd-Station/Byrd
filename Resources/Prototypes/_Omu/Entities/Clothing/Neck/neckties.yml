@@ -1,0 +1,22 @@
+﻿- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNecktieBunny
+  name: bowtie collar
+  description: A fancy tie that includes a collar. Looking snazzy.
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Neck/Neckties/bunnytie.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Neck/Neckties/bunnytie.rsi
+
+
+- type: entity
+  parent: [ClothingNeckBase, BaseSyndicateContraband]
+  id: ClothingNecktieSyndieBunny
+  name: blood-red bowtie collar
+  description: A fancy tie that includes a red collar. Looking sinister.
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Neck/Neckties/bunnytiesyndicate.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Neck/Neckties/bunnytiesyndicate.rsi
