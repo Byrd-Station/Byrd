@@ -244,7 +244,7 @@
       collection: BikeHorn
       params:
         variation: 0.125
-    renderOver: South, SouthEast, SouthWest, East, West #Omu edit - Testing with smoother overlay transitions
+    renderOver: South, SouthEast, SouthWest, NorthWest, North, East, West # Omu edit - Going diagonally up looks weird, so it has more directions.
   - type: MovementSpeedModifier
     acceleration: 10
     friction: 10
