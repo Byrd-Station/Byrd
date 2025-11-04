@@ -1,7 +1,7 @@
 - type: entity
   id: WeaponShotgunCombatCentComm
   parent: WeaponShotgunCombat
-  description: An old design with a beefier shell intended to repell boarding parties; this time, you are the boarding party. A NanoTrasen Logo is stamped on the barrel.
+  description: An old design with a beefier shell intended to repel boarding parties; this time, you are the boarding party. A Nanotrasen logo is stamped on the barrel.
   suffix: CentComm
   components:
   - type: Contraband
