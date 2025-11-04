@@ -11,10 +11,12 @@
       "name": "experimental_spray_painter"
   },
   {
-      "name": "inhand-right"
+      "name": "inhand-right",
+      "directions": 4
   },
 	{
-      "name": "inhand-left"
+      "name": "inhand-left",
+       "directions": 4
     }
   ]
 }

@@ -7,3 +7,6 @@ uplink-dislippler-desc = Standard-issue security disabler on Honk! Co. stations.
 
 uplink-bunny-suit-name = Syndicate Bunny Suit
 uplink-bunny-suit-desc = A box containing a bunny suit and tailcoat. Due to a catastrophic typo we recieved a specialized syndicate bunny suit instead of a battle suit.
+
+uplink-doodle-rift-name = Doodle-Rift Bundle
+uplink-doodle-rift-desc = A crate containing the two things needed to unleash a horde of doodles to the station. Use with extreme caution.

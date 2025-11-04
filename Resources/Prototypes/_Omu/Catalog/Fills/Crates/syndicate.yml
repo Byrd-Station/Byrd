@@ -1,0 +1,13 @@
+﻿- type: entity
+  id: CrateDoodleriftBundle
+  suffix: Filled
+  parent: CrateSyndicate
+  name: Doodle-rift bundle
+  description: Contains everything needed to let out a army of stick figures.
+  components:
+  - type: StorageFill
+    contents:
+    - id: PaperDoodleriftManual
+    - id: Multitool
+    - id: PlushieNuke
+    - id: DoodleriftFlatpack

@@ -35,3 +35,14 @@
   categories:
   - UplinkWearables
 
+- type: listing
+  id: UplinkDoodleRift
+  name: uplink-doodle-rift-name
+  description: uplink-doodle-rift-desc
+  icon: { sprite: /Textures/_Omu/Structures/doodlerift.rsi, state: doodlerift }
+  productEntity: CrateDoodleriftBundle
+  cost:
+    Telecrystal: 65
+  categories:
+  - UplinkDisruption
+

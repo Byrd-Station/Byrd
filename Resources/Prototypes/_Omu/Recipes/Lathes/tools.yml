@@ -1,0 +1,17 @@
+﻿- type: latheRecipe
+  parent: BaseToolRecipe
+  id: SprayPainterExperimental
+  result: SprayPainterExperimental
+  completetime: 5
+  materials:
+    Steel: 800
+    Gold: 200
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: CrayonBluespace
+  result: CrayonBluespace
+  completetime: 5
+  materials:
+    Steel: 800
+    Gold: 200

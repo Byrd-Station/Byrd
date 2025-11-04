@@ -1,0 +1,8 @@
+﻿- type: entity
+  parent: BaseFlatpack
+  id: DoodleriftFlatpack
+  name: Doodlerift Flatpack
+  description: A flatpack used for containing a Doodlerift. How does this even work?
+  components:
+  - type: Flatpack
+    entity: DoodleRiftSpawn

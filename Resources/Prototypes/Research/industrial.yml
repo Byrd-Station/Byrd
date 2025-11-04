@@ -298,6 +298,8 @@
     - JawsOfLife
     - BorgModuleAdvancedTool
     - SignallerAdvanced # Moved from explosives research
+    - SprayPainterExperimental # Omu!
+    - CrayonBluespace # Omu!
   # Goobstation R&D Console rework start
   position: 2,-5
   technologyPrerequisites:

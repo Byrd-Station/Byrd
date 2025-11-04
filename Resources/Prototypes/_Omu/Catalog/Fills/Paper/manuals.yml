@@ -1,0 +1,8 @@
+﻿- type: entity
+  id: PaperDoodleriftManual
+  name: doodle rift manual
+  description: The single sheet of instructions that came in the kit.
+  parent: Paper
+  components:
+  - type: Paper
+    content: book-text-doodle-rift-guide

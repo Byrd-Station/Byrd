@@ -1,12 +1,14 @@
 ﻿- type: entity
-  parent: CrayonRainbow
-  id: CrayonInfinite
+  parent: Crayon
+  id: CrayonBluespace
   name: bluespace crayon
+  description: A modified Crayon with a infinite supply of ink.
   components:
   - type: Sprite
-    state: blue
+    sprite: _Omu/Objects/Fun/bluespace_crayon.rsi
+    state: bluespace_crayon
   - type: Item
-    heldPrefix: rainbow
+    sprite: _Omu/Objects/Fun/bluespace_crayon.rsi
   - type: Crayon
     color: Red
     selectableColor: true

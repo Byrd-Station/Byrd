@@ -1,0 +1,76 @@
+﻿- type: entity
+  id: DoodleRiftSpawn
+  name: ???
+  suffix: Doodle Rift
+  description: Something is about to form!
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Fixtures
+  - type: Sprite
+    layers:
+    - sprite: _Omu/Structures/doodlerift.rsi
+      state: spawning
+      shader: unshaded
+  - type: TimedDespawn
+    lifetime: 30
+  - type: SpawnOnDespawn
+    prototype: DoodleRift
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Clickable
+
+- type: entity
+  id: DoodleRift
+  name: doodle rift
+  description: It's making... something? Your instincts tell you to destroy it, and quickly.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Fixtures
+  - type: Sprite
+    layers:
+    - sprite: _Omu/Structures/doodlerift.rsi
+      state: doodlerift
+      shader: unshaded
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Weapons/Guns/Gunshots/rocket_launcher.ogg
+  - type: Timer
+  - type: TimedSpawner
+    prototypes:
+    - MobStickman
+    intervalSeconds: 30
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 1
+  - type: Clickable
