@@ -994,3 +994,15 @@ Entries:
         from Imp.
   id: 119
   time: '2025-11-02T09:09:02.0000000+00:00'
+- author: GNUtopia
+  changes:
+    - type: Fix
+      message: The Brigmedic now spawns with a duty case instead of a mk58.
+  id: 120
+  time: '2025-11-02T20:00:38.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: Removed Rat King's ability to ventcrawl
+  id: 121
+  time: '2025-11-02T20:01:13.0000000+00:00'
