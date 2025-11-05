@@ -1501,6 +1501,7 @@
   loadouts:
   - ChiefMedicalOfficerCloak
   - ChiefMedicalOfficerMantle
+  - ChiefMedicalOfficerDecoratedCloak # Omu
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerShoes
