@@ -1,0 +1,9 @@
+﻿- type: listing
+  id: SideObjectiveTest
+  name: uplink-rifle-mosin-name
+  description: uplink-rifle-mosin-desc
+  productEntity: WeaponSniperMosin
+  cost:
+    ThreatLevel: 0
+  categories:
+  - SideObjective

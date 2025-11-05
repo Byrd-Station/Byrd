@@ -1,0 +1,38 @@
+﻿- type: entity
+  name: threat level
+  parent: [BaseItem, BaseSyndicateContraband]
+  id: ThreatLevel
+  suffix: 100 TL
+  description: If you're seeing this, either it's from a admin or I fucked up somehow, if it's the second, make an issue on the github please.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Syndicate/telecrystal.rsi
+    state: telecrystal
+  - type: Item
+    sprite: Objects/Specific/Syndicate/telecrystal.rsi
+    size: Tiny
+  - type: Stack
+    count: 100
+    stackType: Telecrystal
+  - type: UserInterface
+    interfaces:
+      enum.StackCustomSplitUiKey.Key:
+        type: StackCustomSplitBoundUserInterface
+  - type: StaticPrice
+    price: 0
+  - type: StackPrice
+    price: 1000
+  - type: Currency
+    price:
+      ThreatLevel: 1
+  - type: Tag
+    tags:
+    - Telecrystal
+
+- type: entity
+  parent: ThreatLevel
+  id: ThreatLevel1
+  suffix: 1 TL
+  components:
+  - type: Stack
+    count: 1

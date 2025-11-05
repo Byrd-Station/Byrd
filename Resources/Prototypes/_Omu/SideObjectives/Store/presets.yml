@@ -1,0 +1,12 @@
+﻿- type: entity
+  id: StorePresetSideObjective
+  abstract: true
+  components:
+  - type: Store
+    name: store-preset-name-uplink
+    categories:
+    - SideObjective
+    currencyWhitelist:
+    - ThreatLevel
+    balance:
+      ThreatLevel: 0
