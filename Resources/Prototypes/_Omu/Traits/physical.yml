@@ -168,6 +168,8 @@
   blacklist:
     components:
       - BorgChassis
+      - SecurityStaff
+      - CommandStaff
   components:
     - type: Thieving
       noiseLevel: 0 # "0" is small, per the PopupType enum
@@ -184,4 +186,8 @@
   components:
     - type: IgnorePocketHiding
   globalCost: 2
+  blacklist: # Omu Station
+    components:
+      - SecurityStaff
+      - CommandStaff
   
