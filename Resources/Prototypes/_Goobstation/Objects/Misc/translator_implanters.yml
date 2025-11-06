@@ -39,12 +39,3 @@
   components:
   - type: Implanter
     implant: SpaceItalianTranslatorImplant
-
-# Basically all common languages for the station ai to have, both to understand and speak, minus sign, which they just understand.
-- type: entity
-  id: StationAiCommonLanguagesTranslatorImplanter
-  parent: [ BaseTranslatorImplanter ]
-  suffix: Station AI Common Languages
-  components:
-  - type: Implanter
-    implant: StationAiCommonLanguagesTranslatorImplant
