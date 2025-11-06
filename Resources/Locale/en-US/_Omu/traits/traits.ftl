@@ -54,8 +54,10 @@ trait-thieving-name = Thieving
 trait-thieving-desc =
     You are deft with your hands, and talented at convincing people of their belongings.
     You can steal items more quietly and quickly.
+    Members of security and command will usually lose their ability to do this.
 
 trait-frisky-name = Frisky
 trait-frisky-desc =
     You have a keen eye and a strong intuition for finding hidden valuables.
     When you strip someone, you can identify items in their pockets.
+    Members of security and command will usually lose their ability to do this.
