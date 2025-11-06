@@ -1502,6 +1502,7 @@
   - ChiefMedicalOfficerCloak
   - ChiefMedicalOfficerMantle
   - ChiefMedicalOfficerDecoratedCloak # Omu
+  - ChiefMedicalOfficerModernMantle # Omu
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerShoes
