@@ -1006,3 +1006,35 @@ Entries:
       message: Removed Rat King's ability to ventcrawl
   id: 121
   time: '2025-11-02T20:01:13.0000000+00:00'
+- author: Diggy
+  changes:
+    - type: Tweak
+      message: Asakim gear has recovered their original naming from Monolith.
+    - type: Tweak
+      message: Asakim can now weh and yip.
+    - type: Tweak
+      message: >-
+        Asakim helmet lights now glow in the dark, helmet's description has been
+        updated with this, speech sounds will get changed when you put on the
+        helmet as well.
+    - type: Tweak
+      message: Asakim magboots now make the stomping sound that DeltaV removed.
+    - type: Tweak
+      message: >-
+        Asakim harness's description has been included to point out it's
+        function.
+    - type: Tweak
+      message: >-
+        Asakim now have access to a freedom implanter and a nutriment pump
+        implanter.
+  id: 122
+  time: '2025-11-05T19:20:37.0000000+00:00'
+- author: Evil Tuerk
+  changes:
+    - type: Tweak
+      message: >-
+        Cybernetic Hearts and Lungs now get disabled by EMPs correctly. You can
+        fix a stopped cyber heart by using a defibrillator, and airloss from
+        stopped cyberlungs with dexalin.
+  id: 123
+  time: '2025-11-05T20:11:51.0000000+00:00'
