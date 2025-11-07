@@ -12,8 +12,16 @@
       "name": "equipped-HELMET",
       "directions": 4
     },
+	{
+      "name": "equipped-HELMET-glow",
+      "directions": 4
+    },
     {
       "name": "equipped-HELMET-asakim",
+      "directions": 4
+    },
+	{
+      "name": "equipped-HELMET-glow-asakim",
       "directions": 4
     },
     {

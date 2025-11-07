@@ -129,6 +129,7 @@
 # SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
 # SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+# SPDX-FileCopyrightText: 2025 ThanosDeGraf <richardgirgindontstop@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -156,6 +157,7 @@
   - alertType: Stun
   - alertType: KnockedDown # goobstation
   - alertType: BrokenBones # Shitmed Change
+  - alertType: FaultyHeart # Omu - Shitmed change.
   - category: Breathing # Vox gang not calling this oxygen
   - category: Pressure
   - alertType: Bleed
