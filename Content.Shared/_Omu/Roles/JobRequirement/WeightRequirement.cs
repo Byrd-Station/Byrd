@@ -44,7 +44,7 @@ public sealed partial class WeightRequirement : JobRequirement
         }
 
         // "fix1" is used for all collisions except for getting set on fire iirc.
-        var avg = (Profile.Width + Profile.Height) / 2;
+        var avg = (profile.Width + profile.Height) / 2;
         var radius = fixture.Fixtures["fix1"].Shape.Radius; 
         var density = fixture.Fixtures["fix1"].Density;
         var weight = MathF.Round(MathF.PI * MathF.Pow(radius * avg, 2) * density);
