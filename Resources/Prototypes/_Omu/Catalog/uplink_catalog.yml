@@ -25,17 +25,6 @@
     - Clown
 
 - type: listing
-  id: UplinkBunnySuit
-  name: uplink-bunny-suit-name
-  description: uplink-bunny-suit-desc
-  icon: { sprite: /Textures/_Omu/Clothing/Uniforms/Costume/syndiebunny.rsi, state: icon }
-  productEntity: ClothingBackpackDuffelSyndicateFilledBunny
-  cost:
-    Telecrystal: 40
-  categories:
-  - UplinkWearables
-
-- type: listing
   id: UplinkDoodleRift
   name: uplink-doodle-rift-name
   description: uplink-doodle-rift-desc
