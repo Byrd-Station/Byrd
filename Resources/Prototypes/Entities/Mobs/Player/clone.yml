@@ -79,6 +79,15 @@
   # Omustation
   - CyberneticBeast
   # end Omustation
+  # Gardenstation
+  # Physical
+  - CrawlUnderObjects
+  - PseudoItem
+  # Gardentstation end
+  # Impstation
+  # Accents
+  - NoContractionsAccent
+  # Impstation end
   blacklist:
     components:
     - AttachedClothing # helmets, which are part of the suit
