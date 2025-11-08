@@ -1,8 +1,0 @@
-﻿- type: startingGear
-  id: BunnySuitSmiteGear
-  equipment:
-    jumpsuit: ClothingCostumeBunnySuit
-    id: CluwnePDA
-    head: ClothingHeadHatBunnyHeadband
-    ears: ClothingHeadsetService
-    shoes: ClothingShoesHeels
