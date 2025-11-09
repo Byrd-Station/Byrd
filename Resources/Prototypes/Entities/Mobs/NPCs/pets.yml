@@ -1142,7 +1142,11 @@
   - type: MovementIgnoreGravity
   - type: SpeedModifiedByContactModifier
     walkModifierEffectiveness: 0
-    sprintModifierEffectiveness: 0 # Omu end
+    sprintModifierEffectiveness: 0
+  - type: BreathingImmunity
+  - type: PressureImmunity
+  - type: SpecialLowTempImmunity
+  - type: SpecialHighTempImmunity # Omu end
 
 - type: entity
   name: Pun Pun
