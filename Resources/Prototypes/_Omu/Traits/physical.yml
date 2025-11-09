@@ -211,3 +211,7 @@
   - !type:WeightRequirement # too heavy for uppies
     minimumWeight: 40
     inverted: true
+  - !type:TraitsRequirement # Gardenstation
+    traits:
+      - LitheTrait # Both give duffel hiding, so you shouldn't be able to take both
+    inverted: true
