@@ -894,6 +894,13 @@
   id: MobSpiderShiva
   description: The first defender of the station.
   components:
+  - type: GhostRole # DeltaV
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-shiva-name
+    description: ghost-role-information-shiva-description
+  - type: GhostTakeoverAvailable # DeltaV
   - type: InteractionPopup
     successChance: 0.5 # spider is mean
     interactSuccessString: petting-success-tarantula
@@ -939,7 +946,7 @@
     damage:
       types:
         Piercing: 8
-        Poison: 8
+        Poison: 2 # Omu, Sleep poison instead of die poison
   - type: Spider
     spawnsWebsAsNonPlayer: false
   - type: Grammar
@@ -954,6 +961,25 @@
     - FootstepSound
   - type: StealTarget
     stealGroup: AnimalShiva
+  - type: SolutionContainerManager # Omu start
+    solutions:
+      melee:
+        maxVol: 12
+  - type: SolutionRegeneration
+    solution: melee
+    generated:
+      reagents:
+      - ReagentId: Nocturine
+        Quantity: 0.1
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 3
+  - type: Access
+    tags:
+    - Security
+    - Brig
+  - type: Puller
+    needsHands: false # Omu end
   - type: LanguageKnowledge # Einstein Engines - Language
     speaks:
     - Xeno
@@ -1024,7 +1050,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      200: Dead
+      100000000000000000: Dead # Omu, bring back Smile immortality.
+  - type: CanEscapeInventory
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepSlime
@@ -1041,6 +1068,8 @@
         BaseUnshaded: aslime-_3
       Dead:
         Base: rainbow_baby_slime_dead
+  - type: StaminaDamageResistance # Omu, bring back Smile immortality.
+    coefficient: 0
   - type: Butcherable
     spawned:
     - id: FoodMeatSlime
@@ -1055,17 +1084,36 @@
         Bloodloss:
           -0.8
   - type: Temperature
-    heatDamageThreshold: 800
-    coldDamageThreshold: 0
+    heatDamageThreshold: 100000000000 # Omu, bring back Smile immortality.
+    coldDamageThreshold: -10000000000 # Omu, bring back Smile immortality.
+  - type: Damageable # Omu start
+    damageContainer: Biological
+    damageModifierSet: Smile
+  - type: SupermatterImmune
+  - type: Puller
+    needsHands: false
   - type: MeleeWeapon
     damage:
       types:
-        Blunt: 1
-        Caustic: 1
+        Blunt: 0
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 10
+  - type: SolutionRegeneration
+    solution: melee
+    generated:
+      reagents:
+      - ReagentId: Omnizine
+        Quantity: 0.05
+  - type: NoSlip
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 0.1 # Omu end
   - type: MultiHandedItem
   - type: Item
     sprite: Mobs/Pets/Smile/smile.rsi
-    size: Huge
+    size: Ginormous # Omu
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-slime
   - type: MobPrice
@@ -1080,12 +1128,21 @@
       proper: true
       gender: female
   - type: LanguageSpeaker # Einstein Engines - Language (might not have it on base mob, so reassuring here)
+  - type: UniversalLanguageSpeaker # Omu, bring back old smile.
   - type: LanguageKnowledge # Einstein Engines - Language
     speaks:
     - Bubblish # I am not giving them universal like EE. They are a slime, they can do slime speak.
     understands:
     - Bubblish
     - TauCetiBasic
+  - type: SlowOnDamage # Omu start
+    speedModifierThresholds:
+      1000000000: 1
+  - type: ZombieImmune
+  - type: MovementIgnoreGravity
+  - type: SpeedModifiedByContactModifier
+    walkModifierEffectiveness: 0
+    sprintModifierEffectiveness: 0 # Omu end
 
 - type: entity
   name: Pun Pun

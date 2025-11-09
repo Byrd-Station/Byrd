@@ -47,3 +47,17 @@
     Poison: 0.8
     Radiation: 0
     Bloodloss: 0.0 # Immune to weapons that directly deal bloodloss damage
+
+- type: damageModifierSet
+  id: Smile
+  coefficients:
+    Blunt: 0
+    Slash: 0
+    Piercing: 0
+    Heat: 0
+    Shock: 0
+    Cold: 0
+    Bloodloss: 0
+    Poison: 0
+    Radiation: 0
+    Cellular: 0
