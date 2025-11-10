@@ -147,10 +147,13 @@
       time: 9000 #2.5 hrs - Omu Edit, knowing how to use the tools is important
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 36000 #10 hours - Omu Edit
+      time: 18000 #5 hrs
+    - !type:RoleTimeRequirement
+      role: JobBrigmedic # Omu edit, added Brigmedic requirement
+      time: 18000 # 5 hrs
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 72000 #20 hours - Omu Edit
+      time: 108000 #30 hours - Omu Edit
 #    - !type:SpeciesRequirement # Goob - None Felinid
 #      inverted: true
 #      species:
