@@ -138,13 +138,16 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobChemist
-      time: 18000 #5 hrs - Omu Edit
+      time: 18000 #5 hrs - Omu Edit start
+    - !type:RoleTimeRequirement
+      role: JobParamedic
+      time: 18000 #5 hours
     - !type:RoleTimeRequirement
       role: JobMedicalDoctor
-      time: 36000 #10 hours - Omu Edit
+      time: 36000 #10 hours
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 72000 #20 hours - Omu Edit
+      time: 90000 #25 hours - Omu edit end
 #    - !type:SpeciesRequirement # Goob - None Felinid
 #      inverted: true
 #      species:
