@@ -141,16 +141,16 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobWarden
-      time: 3600 #1 hr
+      time: 18000 #5 hrs - Omu Edit: Suffer like I did.
     - !type:RoleTimeRequirement
       role: JobDetective
-      time: 3600 #1 hr, knowing how to use the tools is important
+      time: 9000 #2.5 hrs - Omu Edit, knowing how to use the tools is important
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 18000 #5 hrs
+      time: 36000 #10 hours - Omu Edit
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 36000 # 10 hrs
+      time: 72000 #20 hours - Omu Edit
 #    - !type:SpeciesRequirement # Goob - None Felinid
 #      inverted: true
 #      species:
