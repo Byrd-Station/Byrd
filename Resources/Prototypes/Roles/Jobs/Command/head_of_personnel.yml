@@ -151,7 +151,7 @@
       time: 9000 # 2.5 hrs
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 45000 # 12.5 hours
+      time: 45000 # 12.5 hours # Omu edit
 #    - !type:SpeciesRequirement # Goob - None Felinid
 #      inverted: true
 #      species:
