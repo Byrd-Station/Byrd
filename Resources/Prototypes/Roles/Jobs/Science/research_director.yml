@@ -138,6 +138,9 @@
   playTimeTracker: JobResearchDirector
   requirements:
   - !type:RoleTimeRequirement
+    role: JobBorg
+    time: 18000 #5 hrs - Omu Edit
+  - !type:RoleTimeRequirement
     role: JobScientist
     time: 36000 #10 hours - Omu Edit
   - !type:DepartmentTimeRequirement
