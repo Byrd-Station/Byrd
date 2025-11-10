@@ -136,13 +136,13 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobAtmosphericTechnician
-      time: 18000 #5 hrs - Omu Edit
+      time: 54000 #15 hours - Omu Edit: This is the only role where you'd realistically learn how to do CE things like TEGs, atmos or SMs.
     - !type:RoleTimeRequirement
       role: JobStationEngineer
-      time: 36000 #10 hours - Omu Edit
+      time: 18000 #5 hours - Omu Edit
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 72000 #20 hours - Omu Edit
+      time: 108000 #30 hours - Omu Edit
 #    - !type:SpeciesRequirement # Goob - None Felinid
 #      inverted: true
 #      species:
