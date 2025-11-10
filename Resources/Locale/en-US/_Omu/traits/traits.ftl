@@ -16,7 +16,7 @@ trait-claws-desc =
     or even hard plastic retractable claws incorpoated into a prosthetic limb.
     Your unarmed melee attacks deal Slashing damage instead of the standard damage type for your species.
     This has no effect on damage dealt with any form of armed melee.
-    
+
 trait-cybernetic-beast-name = Cybernetic Beasts
 trait-cybernetic-beast-desc =
     You are nearsighted, but have a cybernetic visor, called a mantle, which corrects this.
@@ -59,3 +59,8 @@ trait-frisky-name = Frisky
 trait-frisky-desc =
     You have a keen eye and a strong intuition for finding hidden valuables.
     When you strip someone, you can identify items in their pockets.
+
+trait-small-shit-name = Very Smol
+trait-small-shit-desc =
+    You are tiny. So teeny tiny it makes you incredibly puntable to everyone around you.
+    On the bright side, you are small enough to snugly fit inside large containers like duffle bags.

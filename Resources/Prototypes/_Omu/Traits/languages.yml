@@ -1,0 +1,8 @@
+- type: trait
+  id: Polyglot
+  name: trait-language-polyglot-name
+  description: trait-language-polyglot-desc
+  category: LanguageTraits
+  cost: -1
+  functions:
+  globalCost: 1
