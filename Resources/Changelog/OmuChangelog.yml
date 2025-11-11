@@ -976,3 +976,151 @@ Entries:
       message: Upstream for IPC, Wraith, and Woundmed/Pain Fixes.
   id: 117
   time: '2025-10-31T19:52:02.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Remove
+      message: Disabled Wraith from spawning naturally.
+  id: 118
+  time: '2025-11-01T18:14:31.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: >-
+        Added a new midround, Asakim, they are new to this sector, treat them
+        nice, and they may do the same.
+    - type: Tweak
+      message: >-
+        Changed the muzzle flash and projectile sprites for most weapons to ones
+        from Imp.
+  id: 119
+  time: '2025-11-02T09:09:02.0000000+00:00'
+- author: GNUtopia
+  changes:
+    - type: Fix
+      message: The Brigmedic now spawns with a duty case instead of a mk58.
+  id: 120
+  time: '2025-11-02T20:00:38.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: Removed Rat King's ability to ventcrawl
+  id: 121
+  time: '2025-11-02T20:01:13.0000000+00:00'
+- author: Diggy
+  changes:
+    - type: Tweak
+      message: Asakim gear has recovered their original naming from Monolith.
+    - type: Tweak
+      message: Asakim can now weh and yip.
+    - type: Tweak
+      message: >-
+        Asakim helmet lights now glow in the dark, helmet's description has been
+        updated with this, speech sounds will get changed when you put on the
+        helmet as well.
+    - type: Tweak
+      message: Asakim magboots now make the stomping sound that DeltaV removed.
+    - type: Tweak
+      message: >-
+        Asakim harness's description has been included to point out it's
+        function.
+    - type: Tweak
+      message: >-
+        Asakim now have access to a freedom implanter and a nutriment pump
+        implanter.
+  id: 122
+  time: '2025-11-05T19:20:37.0000000+00:00'
+- author: Evil Tuerk
+  changes:
+    - type: Tweak
+      message: >-
+        Cybernetic Hearts and Lungs now get disabled by EMPs correctly. You can
+        fix a stopped cyber heart by using a defibrillator, and airloss from
+        stopped cyberlungs with dexalin.
+  id: 123
+  time: '2025-11-05T20:11:51.0000000+00:00'
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added a cooler decorated cloak for the CMO to have, available in CMO's
+        loadout with the same 20hr requirement the mantle has. Credits to
+        phantasai on github for the sprites!
+    - type: Add
+      message: >-
+        Added the modern CMO mantle, a modernised version of the old mantle.
+        Available in CMO's loadout with the same 20hr requirement the old mantle
+        has. Credits to phantasai on github for the sprites!
+  id: 124
+  time: '2025-11-08T08:25:42.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Tweak
+      message: >-
+        Weight calculations have been adjusted to what EE used to do. Expect
+        more realistic weights, but also wider ranges.
+    - type: Tweak
+      message: >-
+        Before, Harpies went from 24kg to 28kg. Now it goes from 14kg to 53kg
+        (lighter than Ian to as heavy as a piano). Humans are 70kg on average,
+        but can go from 48kg to 98kg.
+  id: 125
+  time: '2025-11-08T08:26:31.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Tweak
+      message: >-
+        Wheelchairs should look a little less weird when going in some
+        directions.
+    - type: Tweak
+      message: >-
+        Wheelchairs are a teeny bit faster on the pedal, still slower than
+        running. Base 'walking' speed unaffected to maintain scenic walks around
+        the station~
+  id: 126
+  time: '2025-11-08T08:27:06.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Add
+      message: >-
+        Added a new physical trait locked behind a weight requirement called
+        "Very Smol". Stuff all of kinsci in a duffelbag of holding!
+  id: 127
+  time: '2025-11-08T08:29:59.0000000+00:00'
+- author: Kirisune
+  changes:
+    - type: Add
+      message: New outfits for security officers, warden and HoS
+    - type: Tweak
+      message: Cleaned up security loadout screen
+  id: 128
+  time: '2025-11-08T08:31:20.0000000+00:00'
+- author: RadsammyT
+  changes:
+    - type: Add
+      message: >-
+        Salvage have been given their own pinpointers because they keep dying so
+        fucking much. They can be found in their respective salvage lockers.
+        They only lock onto an individual salvage ID, are used for
+        search-and-rescue operations, and reports on movement inactivity.
+  id: 129
+  time: '2025-11-08T08:45:44.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed trait weight requirement so it uses the correct calculation
+  id: 130
+  time: '2025-11-08T17:41:10.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: Goob Upstream from 31 Oct till 7 Nov, read Changelogs in-game!
+  id: 131
+  time: '2025-11-08T23:47:02.0000000+00:00'
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added the Polyglot trait, which at the cost of one of your trait slots
+        and GLOBAL points, gives you one LANGUAGE trait point!
+  id: 132
+  time: '2025-11-08T23:51:34.0000000+00:00'
