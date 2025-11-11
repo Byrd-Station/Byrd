@@ -64,10 +64,10 @@
   description: job-description-intern
   playTimeTracker: JobMedicalIntern
   requirements:
-    #- !type:DepartmentTimeRequirement # Omu edit start: The amount of people that are easily savable but still rot alone is insane.
+    #- !type:DepartmentTimeRequirement # Omu edit start -  Sometimes you haven't played a department in a while :shrug:
     #  department: Medical
     #  time: 36000 #10 hours - Omu Edit
-    #  inverted: true # stop playing intern if you're good at med! # Omu edit end
+    #  inverted: true # stop playing intern if you're good at med! # Omu edit end - no
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine
