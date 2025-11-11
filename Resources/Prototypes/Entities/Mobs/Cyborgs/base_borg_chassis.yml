@@ -441,16 +441,10 @@
     speaks:
     - TauCetiBasic
     - RobotTalk
-    - Elyran # Omustation start - Borgs and the AI should speak all common languages, minus sign, which they should just understand.
-    - Freespeak
-    - NovuNederic
-    - SolCommon
-    - TauCetiBasic
-    - Tradeband # Omustation end
     understands:
     - TauCetiBasic
     - RobotTalk
-    - Elyran # Omustation start - Borgs and the AI should speak all common languages, minus sign, which they should just understand.
+    - Elyran # Omustation start - Borgs and the AI should speak all common languages, minus sign, which they should just understand. (Correction, for now borgs only understand the langs)
     - Freespeak
     - NovuNederic
     - SolCommon
