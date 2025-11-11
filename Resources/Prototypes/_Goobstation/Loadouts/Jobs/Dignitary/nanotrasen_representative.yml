@@ -80,6 +80,16 @@
 # SPDX-FileCopyrightText: 2025 shityaml <unalterableness@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: loadoutEffectGroup #Omu - framework for playtime rewards
+  id: SeniorNanotrasenRepresentative
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobNanotrasenRepresentative
+      time: 187200
+
 #hat
 - type: loadout
   id: NanotrasenRepresentativeBowler
@@ -133,6 +143,15 @@
   equipment:
     neck: ClothingNeckScarfStripedCentcom
 
+# Mask
+- type: loadout #Omu
+  id: NanotrasenRepresentativerMaskLollypop
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorNanotrasenRepresentative
+  equipment:
+    mask: FoodSnackLollypopCentcomm
+
 # Backpacks
 - type: loadout
   id: NanotrasenRepresentativeBackpack
@@ -159,12 +178,28 @@
   id: NanotrasenRepresentativeJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitNanotrasenRepresentative
+  groupBy: "jumpsuit" #Omu
 
 
 - type: loadout
   id: NanotrasenRepresentativeJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtNanotrasenRepresentative
+  groupBy: "jumpskirt" #Omu
+
+
+- type: loadout #Omu
+  id: CCAgentJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomAgent
+  groupBy: "jumpsuit"
+
+
+- type: loadout #Omu
+  id: CCAgentJumpskirt
+  equipment:
+    jumpsuit: CentcomAgentSkirt
+  groupBy: "jumpskirt"
 
 
 - type: loadout

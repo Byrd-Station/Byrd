@@ -165,6 +165,7 @@ loadout-group-ntr-envirohelm = Nanotrasen Representative envirohelm
 loadout-group-ntr-envirosuit = Nanotrasen Representative envirosuit
 loadout-group-ntr-envirogloves = Nanotrasen Representative envirogloves
 loadout-group-ntr-gloves = Nanotrasen Representative gloves
+loadout-group-ntr-mask = Nanotrasen Representative mask
 
 # Blueshield Officer
 loadout-group-bso-envirohelm = Blueshield Officer envirohelm

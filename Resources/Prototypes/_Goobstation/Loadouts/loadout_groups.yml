@@ -907,6 +907,13 @@
   loadouts:
   - ClothingNeckScarfStripedCentcom
 
+- type: loadoutGroup #Omu
+  id: NanotrasenRepresentativerMask
+  name: loadout-group-ntr-mask
+  minLimit: 0
+  loadouts:
+  - NanotrasenRepresentativerMaskLollypop
+
 - type: loadoutGroup
   id: NanotrasenRepresentativeBackpack
   name: loadout-group-ntr-backpack
@@ -922,6 +929,8 @@
   loadouts:
   - NanotrasenRepresentativeJumpsuit
   - NanotrasenRepresentativeJumpskirt
+  - CCAgentJumpsuit #Omu
+  - CCAgentJumpskirt #Omu
 
 - type: loadoutGroup
   id: NanotrasenRepresentativeBelt
@@ -996,9 +1005,9 @@
   - BlueshieldOfficerInnerBlueshieldSuit
   - BlueshieldOfficerInnerBlueshieldSkirt
   - BlueshieldOfficerInnerBlueshieldShirt
-  - BlueshieldOfficerTurtleneck # OmuStation Addon  
+  - BlueshieldOfficerTurtleneck # OmuStation Addon
   - BlueshieldOfficerTurtleneckSkirt # OmuStation Addon
-  - BlackBlueshieldOfficerTurtleneck # OmuStation Addon  
+  - BlackBlueshieldOfficerTurtleneck # OmuStation Addon
   - BlackBlueshieldOfficerTurtleneckSkirt # OmuStation Addon
 
 - type: loadoutGroup
