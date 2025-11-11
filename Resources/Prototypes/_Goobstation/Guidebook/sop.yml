@@ -98,6 +98,7 @@
   text: "/ServerInfo/_Goobstation/Guidebook/SoP/Jobs/Cargo/CargoSOP.xml"
   children:
   - CargoTech SOP
+  - Courier SOP #Omu
   - SalvageSpecialist SOP
 
 - type: guideEntry

@@ -1,0 +1,40 @@
+﻿# Head
+- type: loadout
+  id: CourierHead
+  equipment:
+    head: ClothingHeadHatCargosoft
+
+
+# Jumpsuit
+- type: loadout
+  id: CourierJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCargo
+
+
+- type: loadout
+  id: CourierJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCargo
+
+# Back
+- type: loadout
+  id: CourierBackpack
+  equipment:
+    back: ClothingBackpackCargo
+
+- type: loadout
+  id: CourierSatchel
+  equipment:
+    back: ClothingBackpackSatchelCargo
+
+- type: loadout
+  id: CourierDuffel
+  equipment:
+    back: ClothingBackpackDuffelCargo
+
+# OuterClothing
+- type: loadout
+  id: CourierWintercoat
+  equipment:
+    outerClothing: ClothingOuterWinterCargo

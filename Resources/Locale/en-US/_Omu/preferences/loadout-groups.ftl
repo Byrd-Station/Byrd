@@ -8,3 +8,12 @@ loadout-group-prisoner-shoes = Prisoner shoes
 loadout-group-prisoner-envirohelm = Prisoner envirohelm
 loadout-group-prisoner-envirosuit = Prisoner envirosuit
 loadout-group-prisoner-envirogloves = Prisoner envirogloves
+
+# Courier
+loadout-group-courier-head = Courier head
+loadout-group-courier-jumpsuit = Courier jumpsuit
+loadout-group-courier-backpack = Courier backpack
+loadout-group-courier-outerclothing = Courier outer clothing
+loadout-group-courier-gloves = Courier gloves
+loadout-group-courier-shoes = Courier shoes
+loadout-group-courier-id = Courier ID

@@ -1,0 +1,5 @@
+﻿# Courier SOP Entry
+- type: guideEntry
+  id: Courier SOP
+  name: guide-entry-sop-courier
+  text: "/ServerInfo/_Omu/Guidebook/SoP/Jobs/Cargo/CourierSOP.xml"

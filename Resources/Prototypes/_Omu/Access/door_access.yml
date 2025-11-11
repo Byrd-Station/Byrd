@@ -1,0 +1,8 @@
+﻿# Courier!
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsCourier
+  suffix: Courier, Locked
+  components:
+  - type: AccessReader
+    access: [["Courier"]]

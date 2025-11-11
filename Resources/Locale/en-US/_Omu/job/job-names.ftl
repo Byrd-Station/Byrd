@@ -4,3 +4,5 @@ job-name-centcomm-intern = CentComm Intern
 job-name-centcomm-direggtor = Centcomm Direggtor
 # Security Misc
 job-name-transit-prisoner = Transit Prisoner
+# Cargo Jobs
+job-name-courier = Courier

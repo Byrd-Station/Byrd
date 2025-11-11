@@ -6,3 +6,6 @@
 
 - type: playTimeTracker
   id: JobTransitPrisoner
+
+- type: playTimeTracker
+  id: JobCourier

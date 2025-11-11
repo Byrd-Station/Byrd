@@ -108,7 +108,7 @@
       board: [ DoorElectronicsAllService ]
   - type: Wires
     layoutId: AirlockService
-    
+
 #Robo
 - type: entity
   parent: AirlockRobotics
@@ -119,4 +119,3 @@
     containers:
       board: [ DoorElectronicsRobotics ]
 # Xenomorph locked
-

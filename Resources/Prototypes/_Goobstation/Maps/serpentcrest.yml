@@ -63,6 +63,7 @@
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 4, 4 ]
+            Courier: [ 3, 4 ] # Omu - Courier role
             CargoTechnician: [ 5, 5 ]
             #civilian
             Passenger: [ -1, -1 ]

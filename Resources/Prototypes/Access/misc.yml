@@ -49,6 +49,7 @@
   - GenpopEnter
   - GenpopLeave
   - Robotics #Goob
+  - Courier #Omu
 
 - type: accessGroup
   id: General

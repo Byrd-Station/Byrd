@@ -8,7 +8,7 @@
   loadouts:
   - ResearchDirectorScienceGlasses
   - ResearchDirectorScienceHud
- 
+
 # Transit Prisoner
 
 - type: loadoutGroup
@@ -63,3 +63,91 @@
   loadouts:
   - PrisonerEnviroglovesBlack
   - PrisonerEnviroglovesWhite
+
+# Courier
+
+- type: loadoutGroup
+  id: CourierHead
+  name: loadout-group-courier-head
+  minLimit: 0
+  loadouts:
+  - CargoTechnicianHeadMail
+  - CargoTechnicianHead
+
+- type: loadoutGroup
+  id: CourierJumpsuit
+  name: loadout-group-courier-jumpsuit
+  loadouts:
+  - CargoTechnicianJumpsuitMail
+  - CargoTechnicianJumpskirtMail
+  - CargoTechnicianJumpsuit
+  - CargoTechnicianJumpskirt
+  - CargoTechnicianSweater
+  - CargoTechnicianSweaterSkirt
+  - CargoTechnicianShortPantsIfuckinghateyouifyouwearthisbtw
+  - CargoTechnicianShortSkirtsInsteadofPants
+  - CargoTechMJ
+
+- type: loadoutGroup
+  id: CourierBackpack
+  name: loadout-group-courier-backpack
+  loadouts:
+  - CourierMessenger
+  - CargoTechnicianMessenger
+  - CargoTechnicianBackpack
+  - CargoTechnicianSatchel
+  - CargoTechnicianDuffel
+
+- type: loadoutGroup
+  id: CourierOuterClothing
+  name: loadout-group-courier-outerclothing
+  minLimit: 0
+  loadouts:
+  - CargoTechnicianWintercoatMail
+  - CargoTechnicianWintercoat
+  - CargoTechnicianJacket
+
+- type: loadoutGroup
+  id: CourierShoes
+  name: loadout-group-courier-shoes
+  loadouts:
+  - BrownShoes
+  - BlackShoes
+  - CargoWinterBoots
+
+- type: loadoutGroup
+  id: CourierPDA
+  name: loadout-group-courier-id
+  loadouts:
+  - CourierPDA
+  - CourierPDAAlt
+  - CargoPDA
+
+# Plasma Mail Man
+
+- type: loadoutGroup
+  id: CourierEnvirohelm
+  name: loadout-group-cargo-technician-envirohelm
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - MailCarrierEnvirohelm
+  - CargoTechnicianEnvirohelm
+
+- type: loadoutGroup
+  id: CourierEnvirosuit
+  name: loadout-group-cargo-technician-envirosuit
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - MailCarrierEnvirosuit
+  - CargoTechnicianEnvirosuit
+
+- type: loadoutGroup
+  id: CourierEnvirogloves
+  name: loadout-group-cargo-technician-envirogloves
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - WhiteEnvirogloves
+  - CargoTechnicianEnvirogloves

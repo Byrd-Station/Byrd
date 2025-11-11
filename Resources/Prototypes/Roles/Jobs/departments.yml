@@ -108,6 +108,7 @@
   - CargoTechnician
   - Quartermaster
   - SalvageSpecialist
+  - Courier # Omu
 
 - type: department
   id: Civilian
