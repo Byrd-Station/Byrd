@@ -124,7 +124,6 @@
   - CargoPDA
 
 # Plasma Mail Man
-
 - type: loadoutGroup
   id: CourierEnvirohelm
   name: loadout-group-cargo-technician-envirohelm

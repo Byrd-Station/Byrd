@@ -36,22 +36,6 @@
     species:
     - Plasmaman
 
-# PDA
-- type: loadout
-  id: CourierPDA
-  equipment:
-    id: CourierPDA
-
-- type: loadout
-  id: CourierPDAAlt
-  equipment:
-    id: CourierPDAAlt
-
-- type: loadout
-  id: CargoPDA
-  equipment:
-    id: CargoPDA
-
 #Plasmaman
 - type: loadout
   id: CargoTechnicianEnvirohelm
