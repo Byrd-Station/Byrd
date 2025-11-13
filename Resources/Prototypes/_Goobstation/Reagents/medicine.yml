@@ -1508,7 +1508,7 @@
       metabolismRate: 0.05
       effects:
       - !type:ReduceRotting
-        seconds: 1
+        seconds: 6
         conditions:
         - !type:MobStateCondition
           mobstate: Dead
