@@ -3,3 +3,6 @@
 
 - type: Tag
   id: AdvancedEnergyMagAmmo
+
+- type: Tag
+  id: Blackbox

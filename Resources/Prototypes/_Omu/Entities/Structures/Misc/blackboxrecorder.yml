@@ -1,0 +1,55 @@
+﻿- type: entity
+  name: blackbox recorder
+  parent: [ BaseMachinePowered, BaseItemCabinet ]
+  id: BlackBoxRecorder
+  description: The holder of the Blackbox, used to tell what happened in the event of a station crisis. It's reinforced with Plastitanium.
+  components:
+  - type: BlackBoxRecorder
+  - type: Sprite
+    sprite: _Omu/Structures/recorder.rsi
+    state: recorder
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -9
+    range: 5
+    enabled: false
+    sound:
+      path: /Audio/Ambience/Objects/server_fans.ogg
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 750
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ChangeConstructionNodeBehavior
+        node: machineFrame
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: ItemSlots
+    slots:
+      ItemCabinet:
+        ejectOnInteract: true
+        whitelist:
+          tags:
+          - Blackbox
+  - type: Lock
+  - type: AccessReader
+    access: [ [ "Command" ] ]
+  - type: Clickable
+  - type: InteractionOutline

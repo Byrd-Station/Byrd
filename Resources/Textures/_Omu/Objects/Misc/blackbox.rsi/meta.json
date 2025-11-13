@@ -1,0 +1,64 @@
+﻿{
+  "version": 5,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from TG-Station at https://github.com/tgstation/tgstation/blob/master/icons/obj/machines/telecomms.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    	{
+          "name": "inhand-right",
+          "directions": 4,
+          "delays": [
+              [
+                  0.5,
+                  0.5
+              ],
+              [
+                  0.5,
+                  0.5
+              ],
+              [
+                  0.5,
+                  0.5
+              ],
+              [
+                  0.5,
+                  0.5
+              ]
+          ]
+      },
+      {
+          "name": "inhand-left",
+          "directions": 4,
+          "delays": [
+              [
+                  0.5,
+                  0.5
+              ],
+              [
+                  0.5,
+                  0.5
+              ],
+              [
+                  0.5,
+                  0.5
+              ],
+              [
+                  0.5,
+                  0.5
+              ]
+          ]
+      },
+      {
+          "name": "icon",
+          "delays": [
+          [
+                  0.4,
+                  0.4
+          ]
+        ]
+      }
+  ]
+}
