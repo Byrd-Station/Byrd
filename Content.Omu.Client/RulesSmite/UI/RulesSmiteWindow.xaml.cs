@@ -47,6 +47,9 @@ public sealed partial class RulesSmiteWindow : FancyWindow
 
     public override void Close()
     {
+        if (!IsOpen)
+            return;
+
         // You didn't say the magic word!
         if (_timeLeft > 0)
             return;
