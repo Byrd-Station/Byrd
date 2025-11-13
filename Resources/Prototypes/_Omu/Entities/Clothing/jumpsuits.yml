@@ -66,6 +66,18 @@
 
 - type: entity
   parent: ClothingUniformBase
+  id: ClothingUniformMailCarrierLong
+  name: mail carrier's uniform
+  suffix: long
+  description: Friendly blue overall and white shirt. The mail always arrives!
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Uniforms/Jumpsuit/mailcarrier.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Uniforms/Jumpsuit/mailcarrier.rsi
+
+- type: entity
+  parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCourier
   name: courier's uniform
   description: Makes you feel like a wanderer...
