@@ -8,8 +8,8 @@
 - type: entity
   parent: ClothingOuterHardsuitBase # DeltaV - no contraband
   id: ClothingOuterHardsuitAsakim
-  name: combat harness # DeltaV - simple name
-  description: An advanced combat harness. Incredibly rare, and practically alien in technology compared to modern hardsuits. Once equipped, the armor binds itself with the wearer and cannot be removed without external release. # DeltaV - no fracture
+  name: kasature-pattern combat harness
+  description: An advanced combat harness, alien in design compared to the modern hardsuit. Once equipped, the armor binds itself with the wearer and cannot be removed without external release. # Omu - Pretty similar to Mono's but removing the fracture mention.
   suffix: SelfUnremovable
   components:
   - type: Sprite
@@ -79,8 +79,8 @@
 - type: entity
   parent: ClothingOuterHardsuitAsakim
   id: ClothingOuterHardsuitAsakimUnremoveable
-  name: combat harness
-  description: An advanced combat harness. Incredibly rare, and practically alien in technology compared to modern hardsuits. Once equipped, the armor binds itself with the wearer and cannot be removed without external release. This one is fully binded to a warrior, and will take a long time to remove. # DeltaV - no fracture
+  name: kasature-pattern combat harness
+  description: An advanced combat harness, alien in design compared to the modern tacsuit. Once equipped, the armor binds itself with the wearer and cannot be removed without external release. # Omu - Pretty similar to Mono's but removing the fracture mention.
   suffix: 120 stripDelay
   components:
   - type: Clothing
