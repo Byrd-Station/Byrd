@@ -66,6 +66,17 @@
 
 - type: entity
   parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCourier
+  name: courier's uniform
+  description: Makes you feel like a wanderer...
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Uniforms/Jumpsuit/courier.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Uniforms/Jumpsuit/courier.rsi
+
+- type: entity
+  parent: ClothingUniformBase
   id: ClothingUniformJumpsuitParamedUniform
   name: paramedic uniform
   description: It's made of a special fiber that provides minor protection against caustic hazards. It has a dark blue cross on the chest denoting that the wearer is a trained paramedic.
