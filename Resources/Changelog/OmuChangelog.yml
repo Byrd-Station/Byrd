@@ -1104,3 +1104,23 @@ Entries:
         search-and-rescue operations, and reports on movement inactivity.
   id: 129
   time: '2025-11-08T08:45:44.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed trait weight requirement so it uses the correct calculation
+  id: 130
+  time: '2025-11-08T17:41:10.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: Goob Upstream from 31 Oct till 7 Nov, read Changelogs in-game!
+  id: 131
+  time: '2025-11-08T23:47:02.0000000+00:00'
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added the Polyglot trait, which at the cost of one of your trait slots
+        and GLOBAL points, gives you one LANGUAGE trait point!
+  id: 132
+  time: '2025-11-08T23:51:34.0000000+00:00'
