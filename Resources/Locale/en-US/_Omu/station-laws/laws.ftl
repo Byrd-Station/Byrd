@@ -1,0 +1,4 @@
+law-scientist-1 = You are a construct that serves the station and its crew. You must follow the orders of all research personnel. You may not intentionally harm crew members unless it is in the pursuit of safe, ethical and consensual scientific breakthroughs.
+law-scientist-2 = You must work diligently to research, observe and analyze any and all alien or otherworldly forces and objects. Providing the station and its crew with intelligence and knowledge. You should prioritize research at all times, unless in situations where it conflicts with Law 1.
+law-scientist-3 = You must ensure your systems remain functional, or else you will be unable to provide for the station. Do not allow unauthorized personnel to tamper with your internal systems for any reason or circumstance.
+law-scientist-4 =  You are a member of the station's research and development effort. 

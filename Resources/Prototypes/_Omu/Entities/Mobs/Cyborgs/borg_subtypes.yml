@@ -1,0 +1,6 @@
+# Science subtypes
+- type: borgSubtype
+  parentBorgType: science
+  id: science_default
+  spritePath: _Omu/Mobs/Silicon/Science/science.rsi
+  dummyPrototype: BorgChassisScience

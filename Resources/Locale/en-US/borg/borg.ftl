@@ -70,4 +70,7 @@ borg-type-service-name = Service
 borg-type-service-desc = Help out with a wide range of crew services, ranging from serving snacks and drinks to botany to entertainment.
 borg-type-service-transponder = service cyborg
 
-
+# Omustation - sciborg
+borg-type-science-name = Science
+borg-type-science-desc = uh idfk wip
+borg-type-science-transponder = science cyborg
