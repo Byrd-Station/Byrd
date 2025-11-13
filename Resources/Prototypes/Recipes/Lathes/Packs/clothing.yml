@@ -25,6 +25,11 @@
   - ClothingUniformJumpsuitQMTurtleneck
   - ClothingUniformJumpskirtQMTurtleneck
   - ClothingUniformJumpsuitQMFormal
+  # Omu start: Courier
+  - ClothingUniformCourier
+  - ClothingUniformCourierLong
+  - ClothingUniformSkirtCourier
+  - ClothingOuterCourierDuster
 
 - type: latheRecipePack
   id: ClothingCommand

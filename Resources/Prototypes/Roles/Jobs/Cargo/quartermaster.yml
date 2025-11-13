@@ -139,9 +139,9 @@
     - !type:DepartmentTimeRequirement
       department: Cargo
       time: 36000 #10 hours
-#    - !type:SpeciesRequirement # Goob - None Felinid	
-#      inverted: true	
-#      species:	
+#    - !type:SpeciesRequirement # Goob - None Felinid
+#      inverted: true
+#      species:
 #      - Felinid #Omu, add back Felinid
   weight: 10
   startingGear: QuartermasterGear
@@ -152,6 +152,7 @@
   goobcoins: 40 #Goob content
   access:
   - Cargo
+  - Courier # Omu
   - Salvage
   - Quartermaster
   - Maintenance

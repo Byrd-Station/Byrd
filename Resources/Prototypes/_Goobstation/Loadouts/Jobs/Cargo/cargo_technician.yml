@@ -3,7 +3,6 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-
 # Head
 - type: loadout
   id: CargoTechnicianHeadMail
@@ -15,17 +14,20 @@
   id: CargoTechnicianJumpsuitMail
   equipment:
     jumpsuit: ClothingUniformMailCarrier
+  groupBy: "jumpsuit" #Omu - loadout cleanup
 
 - type: loadout
   id: CargoTechnicianJumpskirtMail
   equipment:
     jumpsuit: ClothingUniformSkirtMailCarrier
+  groupBy: "jumpskirt" #Omu - loadout cleanup
 
 # OuterClothing
 - type: loadout
   id: CargoTechnicianWintercoatMail
   equipment:
     outerClothing: ClothingOuterWinterCoatMail
+  groupBy: "wintercoat" #Omu - loadout cleanup
 
 - type: loadout
   id: CargoTechnicianEnvirosuit

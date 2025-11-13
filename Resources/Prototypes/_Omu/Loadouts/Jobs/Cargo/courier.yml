@@ -2,42 +2,53 @@
 - type: loadout
   id: CourierHead
   equipment:
-    head: ClothingHeadHatCargosoft
+    head: ClothingHeadCourier
 
+- type: loadout
+  id: CourierHeadFlipped
+  equipment:
+    head: ClothingHeadCourierFlipped
 
 # Jumpsuit
 - type: loadout
   id: CourierJumpsuit
   equipment:
-    jumpsuit: ClothingUniformJumpsuitCargo
+    jumpsuit: ClothingUniformCourierLong
+  groupBy: "jumpsuit"
 
 - type: loadout
   id: CourierJumpskirt
   equipment:
-    jumpsuit: ClothingUniformJumpskirtCargo
+    jumpsuit: ClothingUniformSkirtCourier
+  groupBy: "jumpskirt"
+
+- type: loadout
+  id: CourierJumpsuitLong
+  equipment:
+    jumpsuit: ClothingUniformCourierLong
+  groupBy: "jumpsuit"
 
 # Back
 - type: loadout
-  id: CourierBackpack
+  id: MailCarrierMessenger
   equipment:
-    back: ClothingBackpackCargo
-
-- type: loadout
-  id: CourierSatchel
-  equipment:
-    back: ClothingBackpackSatchelCargo
-
-- type: loadout
-  id: CourierDuffel
-  equipment:
-    back: ClothingBackpackDuffelCargo
+    back: ClothingBackpackMessengerMailman
+  groupBy: "messenger"
 
 - type: loadout
   id: CourierMessenger
   equipment:
-    back: ClothingBackpackMessengerMailman
+    back: ClothingBackpackMessengerCourier
+  groupBy: "messenger"
+
+
 
 # OuterClothing
+- type: loadout
+  id: CourierWintercoat
+  equipment:
+    outerClothing: ClothingOuterWinterCargo
+
 - type: loadout
   id: CourierWintercoat
   equipment:
@@ -58,3 +69,31 @@
   id: CargoPDA
   equipment:
     id: CargoPDA
+
+#Plasmaman Drip
+- type: loadout
+  id: CourierEnvirohelm
+  equipment:
+    head: ClothingHeadEnvirohelmCourier
+  effects:
+  - !type:SpeciesLoadoutEffect # Goobstation - EE Plasmeme Change.
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: CourierEnvirosuit
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitCourier
+  effects:
+  - !type:SpeciesLoadoutEffect # Goobstation - EE Plasmeme Change.
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: CourierEnvirogloves
+  equipment:
+    gloves: ClothingHandsGlovesEnviroglovesCourier
+  effects:
+  - !type:SpeciesLoadoutEffect # Goobstation - EE Plasmeme Change.
+    species:
+    - Plasmaman

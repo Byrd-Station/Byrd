@@ -71,6 +71,8 @@
   name: loadout-group-courier-head
   minLimit: 0
   loadouts:
+  - CourierHead
+  - CourierHeadFlipped
   - CargoTechnicianHeadMail
   - CargoTechnicianHead
 
@@ -78,6 +80,9 @@
   id: CourierJumpsuit
   name: loadout-group-courier-jumpsuit
   loadouts:
+  - CourierJumpsuit
+  - CourierJumpskirt
+  - CourierJumpsuitLong
   - CargoTechnicianJumpsuitMail
   - CargoTechnicianJumpskirtMail
   - CargoTechnicianJumpsuit
@@ -92,11 +97,12 @@
   id: CourierBackpack
   name: loadout-group-courier-backpack
   loadouts:
-  - CourierMessenger
-  - CargoTechnicianMessenger
   - CargoTechnicianBackpack
   - CargoTechnicianSatchel
   - CargoTechnicianDuffel
+  - CourierMessenger
+  - CargoTechnicianMessenger
+  - MailCarrierMessenger
 
 - type: loadoutGroup
   id: CourierOuterClothing
@@ -119,8 +125,8 @@
   id: CourierPDA
   name: loadout-group-courier-id
   loadouts:
-  - CourierPDA
   - CourierPDAAlt
+  - CourierPDA
   - CargoPDA
 
 # Plasma Mail Man
@@ -130,6 +136,7 @@
   minLimit: 1
   maxLimit: 1
   loadouts:
+  - CourierEnvirohelm
   - MailCarrierEnvirohelm
   - CargoTechnicianEnvirohelm
 
@@ -139,6 +146,7 @@
   minLimit: 1
   maxLimit: 1
   loadouts:
+  - CourierEnvirosuit
   - MailCarrierEnvirosuit
   - CargoTechnicianEnvirosuit
 
@@ -148,5 +156,6 @@
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - WhiteEnvirogloves
+  - CourierEnvirogloves
   - CargoTechnicianEnvirogloves
+  - WhiteEnvirogloves

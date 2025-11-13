@@ -8,7 +8,7 @@
   - !type:DepartmentTimeRequirement
     department: Cargo
     time: 9000 # = 2.5 hours
-  startingGear: CourierGear
+  startingGear: CourierGear #FIXME: CourierGear later since altTitles will be a thing, SO FIX AAAAAAAAAAAAAAAAAAAA
   icon: "JobIconCourier"
   supervisors: job-supervisors-qm
   canBeAntag: true
@@ -27,10 +27,22 @@
     ears: ClothingHeadsetCargo
     pocket1: AppraisalTool
     pocket2: MailMetricsCartridge
-    head: ClothingHeadMailCarrier
+    # head: ClothingHeadMailCarrier
 
 - type: startingGear
-  id: CourierGearPlasmaman
+  id: MailCarrierGear #This is basically because with the deltaV drip, there's courier style and then mail carrier style.
+  equipment:
+    id: CourierPDAAlt
+    ears: ClothingHeadsetCargo
+    pocket1: AppraisalTool
+    pocket2: MailMetricsCartridge
+    head: ClothingHeadMailCarrier
+    jumpsuit: ClothingUniformMailCarrier
+    gloves: ClothingHandsGlovesColorWhite
+    shoes: ClothingShoesColorBrown
+
+- type: startingGear
+  id: MailCarrierGearPlasmaman
   equipment:
     id: CourierPDA
     ears: ClothingHeadsetCargo

@@ -78,9 +78,10 @@
 
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitCourier
+  id: ClothingUniformCourierLong
   name: courier's uniform
-  description: Makes you feel like a wanderer...
+  description: Makes you feel like a wanderer, plus your legs are safe from bug bites.
+  suffix: long
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Uniforms/Jumpsuit/courier.rsi
