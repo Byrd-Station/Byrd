@@ -1,0 +1,22 @@
+﻿- type: entity
+  name: the blackbox
+  parent: [BaseItem, BaseGrandTheftContraband]
+  id: BlackBox
+  description: A strange relic, capable of recording data on extradimensional vertices. It lives inside the blackbox recorder for safe keeping.
+  components:
+  - type: BlackBox
+  - type: Sprite
+    sprite: _Omu/Objects/Misc/blackbox.rsi
+    state: icon
+  - type: StaticPrice
+    price: 2000
+  - type: CargoSellBlacklist
+  - type: ArrivalsBlacklist
+  - type: WarpPoint
+    follow: true
+    location: the blackbox
+  - type: Tag
+    tags:
+    - HighRiskItem
+    - Blackbox
+  - type: SupermatterImmune

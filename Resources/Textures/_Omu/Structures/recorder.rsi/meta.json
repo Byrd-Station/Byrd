@@ -1,0 +1,36 @@
+﻿{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from TG-Station at https://github.com/tgstation/tgstation/blob/master/icons/obj/machines/telecomms.dmi",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+      {
+        "name": "recorder",
+        "delays":[
+             [
+                  0.1,
+                  0.1,
+                  0.1,
+                  0.1,
+                  0.1,
+                  0.1,
+                  0.1
+             ]
+         ]
+      },
+      {
+          "name": "recorder_b",
+          "delays":[
+              [
+                  3,
+                  0.1,
+                  0.1,
+                  0.1
+              ]
+          ]
+      }
+  ]
+}
