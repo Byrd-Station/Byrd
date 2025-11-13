@@ -19,3 +19,69 @@
     sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/ninja.rsi
   - type: Clothing
     sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/ninja.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband]
+  id: ClothingUniformJumpsuitWardenBlueDV
+  name: blue warden's jumpsuit
+  description: A cool blue shirt with ice-white markings and warden's epaulettes.
+  components:
+    - type: Sprite
+      sprite: _DV/Clothing/Uniforms/Jumpsuit/warden_blue.rsi
+    - type: Clothing
+      sprite: _DV/Clothing/Uniforms/Jumpsuit/warden_blue.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband]
+  id: ClothingUniformJumpsuitWardenGreyDV
+  name: grey warden's jumpsuit
+  description: Charcoal pants, a grey shirt, and white warden's markings and epaulettes.
+  components:
+    - type: Sprite
+      sprite: _DV/Clothing/Uniforms/Jumpsuit/warden_grey.rsi
+    - type: Clothing
+      sprite: _DV/Clothing/Uniforms/Jumpsuit/warden_grey.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingUniformJumpsuitHoSBlueDV
+  name: head of security's blue jumpsuit
+  description: A blue Station Security shirt with charcoal trousers. Features gold emblems and commander's epaulettes.
+  components:
+    - type: Sprite
+      sprite: _DV/Clothing/Uniforms/Jumpsuit/hos_blue.rsi
+    - type: Clothing
+      sprite: _DV/Clothing/Uniforms/Jumpsuit/hos_blue.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband]
+  id: ClothingUniformJumpsuitHoSGreyDV
+  name: head of security's grey jumpsuit
+  description: A grey Station Security shirt with charcoal trousers. Stands out with red highlights, gold emblems, and commander's epaulettes.
+  components:
+    - type: Sprite
+      sprite: _DV/Clothing/Uniforms/Jumpsuit/hos_grey.rsi
+    - type: Clothing
+      sprite: _DV/Clothing/Uniforms/Jumpsuit/hos_grey.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband]
+  id: ClothingUniformJumpsuitSecBlueDV
+  name: blue security jumpsuit
+  description: A cool blue shirt over charcoal trousers, for the calm and collected security officer.
+  components:
+    - type: Sprite
+      sprite: _DV/Clothing/Uniforms/Jumpsuit/security_blue.rsi
+    - type: Clothing
+      sprite: _DV/Clothing/Uniforms/Jumpsuit/security_blue.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband]
+  id: ClothingUniformJumpsuitSecGreyDV
+  name: grey security jumpsuit
+  description: A light grey shirt with bright red highlights, for dedicated and responsive security officers.
+  components:
+    - type: Sprite
+      sprite: _DV/Clothing/Uniforms/Jumpsuit/security_grey.rsi
+    - type: Clothing
+      sprite: _DV/Clothing/Uniforms/Jumpsuit/security_grey.rsi

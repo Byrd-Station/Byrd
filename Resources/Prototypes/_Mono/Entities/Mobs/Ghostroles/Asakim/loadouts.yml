@@ -31,7 +31,8 @@
     - MedkitCombatFilled
     #- SyringeCaseAltFilled # DeltaV - fake
     #- StorageImplanter # DeltaV - implanters too OP they already have insane stamina resist
-    #- FreedomImplanter # DeltaV
+    - FreedomImplanter # Omu - DeltaV didn't give em the freedom implanter, unsure why.
+    - NutrimentImplanter # Omu - Something something gene modded lizards shouldn't get hungy
     belt: # DeltaV - reordered for better fit
     #- HandHeldMassScannerBorg # DeltaV - redundant, their helmet is a mass scanner
     #- PowerDrill # DeltaV - less gamer loot, replaced with below

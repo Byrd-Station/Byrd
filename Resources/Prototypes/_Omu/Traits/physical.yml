@@ -184,4 +184,29 @@
   components:
     - type: IgnorePocketHiding
   globalCost: 2
-  
+
+- type: trait
+  id: SmallShit # Stuff Shadowkin and Harpies into a bag
+  name: trait-small-shit-name
+  description: trait-small-shit-desc
+  category: PhysicalTraits
+  components:
+  - type: PseudoItem
+    storedOffset: 0,17
+    shape:
+    - 0,0,1,4
+    - 0,2,3,4
+    - 4,0,5,4
+    size: Huge
+  globalCost: 3
+  requirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - Felinid # These species already have this feature by default.
+    - Tajaran
+    - Resomi
+    - Rodentia
+  - !type:WeightRequirement # too heavy for uppies
+    minimumWeight: 40
+    inverted: true

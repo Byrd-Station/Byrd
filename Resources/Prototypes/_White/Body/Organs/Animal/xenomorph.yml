@@ -28,6 +28,7 @@
   - type: Tag
     tags:
     - Meat
+    - Xenomorph # Omu Edit
 
 - type: entity
   parent: [BaseXenomorphOrgan, OrganHumanBrain]
