@@ -106,6 +106,7 @@
     - Heretic
     - BlobGameMode
     - LoneAbductorSpawn
+    - Xenoborgs
     - KesslerSyndromeScheduler
     - Wizard
     - RampingStationEventScheduler
@@ -133,6 +134,7 @@
     - BlobGameMode
     - LoneAbductorSpawn
     - Wizard
+    - Xenoborgs
     - BasicStationEventScheduler
     - KesslerSyndromeScheduler
     - MeteorSwarmMildScheduler # Goob Edit
@@ -276,6 +278,38 @@
   - DummyNonAntagChance
   - Revolutionary
   - SubGamemodesRule
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: Xenoborgs
+  alias:
+    - xenoborgs
+  name: xenoborgs-title
+  description: xenoborgs-description
+  showInVote: false
+  rules:
+  - Xenoborgs
+  - DummyNonAntagChance
+  - SubGamemodesRuleNoXenoborg # no two motherships
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: Xenoborgs
+  alias:
+    - xenoborgs
+  name: xenoborgs-title
+  description: xenoborgs-description
+  showInVote: false
+  rules:
+  - Xenoborgs
+  - DummyNonAntagChance
+  - SubGamemodesRuleNoXenoborg # no two motherships
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler

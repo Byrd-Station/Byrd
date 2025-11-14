@@ -1444,7 +1444,7 @@
   id: SalvageExperiment
 
 # Omu Station
-- type: Tag 
+- type: Tag
   id: SalvagePinpointer
 
 - type: Tag
@@ -1776,4 +1776,11 @@
 
 - type: Tag
   id: XenoborgModuleStealth
+
+- type: Tag
+  id: MothershipCoreGhostrole # spawn whitelist : SpawnPointGhostRoleMothershipCore
+
+- type: Tag
+  id: MothershipModule # Cyborg module category for evil xenoborg core
+
 # ALPHABETICAL
