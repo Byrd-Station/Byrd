@@ -13,7 +13,7 @@
 - type: entity
   id: SpawnPointCourier
   parent: SpawnPointJobBase
-  name: SpawnPointCourier
+  name: courier
   components:
   - type: SpawnPoint
     job_id: Courier

@@ -42,18 +42,26 @@
     shoes: ClothingShoesColorBrown
 
 - type: startingGear
-  id: MailCarrierGearPlasmaman
+  id: CourierGearPlasmaman
+  parent: CourierGear
   equipment:
-    id: CourierPDA
-    ears: ClothingHeadsetCargo
-    pocket1: AppraisalTool
-    pocket2: MailMetricsCartridge
-    head: ClothingHeadEnvirohelmMailCarrier
-    jumpsuit: ClothingUniformEnvirosuitMailCarrier
-    gloves: ClothingHandsGlovesEnviroglovesWhite
+    id: CourierPDAAlt
+    head: ClothingHeadEnvirohelmCourier
+    jumpsuit: ClothingUniformEnvirosuitCourier
+    gloves: ClothingHandsGlovesEnviroglovesCourier
     shoes: ClothingShoesColorBrown
     outerClothing: ClothingOuterVestTank
     suitstorage: DoubleEmergencyPlasmaTankFilled
+
+- type: startingGear
+  id: MailCarrierGearPlasmaman
+  parent: CourierGearPlasmaman
+  equipment:
+    id: CourierPDA
+    head: ClothingHeadEnvirohelmMailCarrier
+    jumpsuit: ClothingUniformEnvirosuitMailCarrier
+    gloves: ClothingHandsGlovesEnviroglovesWhite
+    shoes: ClothingShoesColorBlue
 
 - type: chameleonOutfit
   id: CourierChameleonOutfit

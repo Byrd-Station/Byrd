@@ -194,7 +194,7 @@ BoxMaintenanceLightbulb: BoxLightMixed
 BoxPDAPrisoner: BoxPDA
 ClothingBeltMartialBlack: null
 ClothingCostumeArcDress: null
-ClothingHeadCourier: null
+#ClothingHeadCourier: null # Omu
 ClothingHeadHatFedoraBlack: null
 ClothingHeadHatFedoraChoc: null
 ClothingHeadHatFezMantis: null
@@ -202,7 +202,7 @@ ClothingHeadPrisonGuard: null
 ClothingUniformMartialGi: null
 ClothingUniformTShirtKhakiPants: null
 ComputerShipyard: null
-CourierBag: null
+#CourierBag: null # Omu
 CryogenicSleepUnitSpawnerPrisoner: null
 DefaultStationBeaconBoxing: null
 DefaultStationBeaconCameraServerRoom: null
@@ -289,7 +289,7 @@ SpareIdCabinetFilled: null
 SpawnMobArcticFoxSiobhan: null
 SpawnMobFerret: null
 SpawnMobMothroach: null
-SpawnPointCourier: null
+#SpawnPointCourier: null # Omu
 SpawnPointForensicMantis: null
 SpawnPointLocationMidRoundAntag: null
 SpawnPointMartialArtist: null
@@ -305,7 +305,7 @@ ToyRenault: null
 ToySiobhan: null
 VendingMachineBoozeUnlocked: null
 VendingMachineBoxingDrobe: null
-VendingMachineCourierDrobe: null
+#VendingMachineCourierDrobe: null # Omu
 VendingMachineMNKDrobe: null
 VendingMachineRepDrobe: null
 WallPaper: null
