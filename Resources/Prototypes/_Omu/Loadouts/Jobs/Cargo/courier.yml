@@ -41,18 +41,11 @@
     back: ClothingBackpackMessengerCourier
   groupBy: "messenger"
 
-
-
 # OuterClothing
-- type: loadout
-  id: CourierWintercoat
-  equipment:
-    outerClothing: ClothingOuterWinterCargo
-
-- type: loadout
-  id: CourierWintercoat
-  equipment:
-    outerClothing: ClothingOuterWinterCargo
+#- type: loadout
+#  id: CourierWintercoat - Unused and needs renaming
+#  equipment:
+#    outerClothing: ClothingOuterWinterCargo
 
 # PDA
 - type: loadout
