@@ -3,8 +3,10 @@
   id: SalvageJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtSalvageSpecialist
+  groupBy: "jumpskirt" # Omu
 
 - type: loadout
   id: SalvageJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
+  groupBy: "jumpsuit" # Omu
