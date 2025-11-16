@@ -75,3 +75,14 @@
     - type: Clothing
       sprite: _DV/Clothing/Uniforms/Jumpskirt/security_grey.rsi
 
+# Salvage uniform
+
+- type: entity
+  parent: ClothingUniformJumpsuitSalvageSpecialist
+  id: ClothingUniformJumpskirtSalvageSpecialist
+  name: salvage specialist's jumpskirt
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/explorer.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/explorer.rsi
