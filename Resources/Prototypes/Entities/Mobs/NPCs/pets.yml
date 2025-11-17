@@ -1068,8 +1068,6 @@
         BaseUnshaded: aslime-_3
       Dead:
         Base: rainbow_baby_slime_dead
-  - type: StaminaDamageResistance # Omu, bring back Smile immortality.
-    coefficient: 0
   - type: Butcherable
     spawned:
     - id: FoodMeatSlime
