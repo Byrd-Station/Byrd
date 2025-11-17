@@ -1,0 +1,14 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+               xmlns:info="clr-namespace:Content.Client.Info;assembly=Content.Client"
+               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls;assembly=Content.Client"
+               Title="{Loc 'ui-rulessmite-title'}"
+               SetSize="800 600"
+               MinSize="800 600">
+    <BoxContainer Orientation="Vertical" Margin="8" VerticalExpand="True" HorizontalExpand="True">
+        <info:RulesControl VerticalExpand="True" HorizontalExpand="True"/>
+        <BoxContainer Orientation="Horizontal">
+            <Label Name="Countdown" HorizontalExpand="True"/>
+            <Button Name="AcceptButton" Text="{Loc 'ui-rulessmite-accept'}" Disabled="True" HorizontalAlignment="Right"/>
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>
