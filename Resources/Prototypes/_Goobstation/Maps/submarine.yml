@@ -77,7 +77,7 @@
             Borg: [ 3, 3 ]
           #supply
             CargoTechnician: [ 3, 5 ]
-            Courier: [ 3, 4 ] # Omu - Courier role
+            #Courier: [ 3, 4 ] # Omu - Courier role
             SalvageSpecialist: [ 7, 7 ]
             Quartermaster: [ 1, 1 ]
 
