@@ -1076,8 +1076,6 @@
       amount: 1
     - id: MaterialSmileExtract
       amount: 1
-  - type: Damageable
-    damageModifierSet: SlimePet
   - type: Bloodstream
     bloodlossHealDamage:
       types:
