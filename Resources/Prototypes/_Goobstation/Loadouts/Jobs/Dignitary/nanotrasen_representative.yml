@@ -80,6 +80,8 @@
 # SPDX-FileCopyrightText: 2025 shityaml <unalterableness@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
+
+
 #hat
 - type: loadout
   id: NanotrasenRepresentativeBowler
@@ -159,12 +161,14 @@
   id: NanotrasenRepresentativeJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitNanotrasenRepresentative
+  groupBy: "jumpsuit" #Omu
 
 
 - type: loadout
   id: NanotrasenRepresentativeJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtNanotrasenRepresentative
+  groupBy: "jumpskirt" #Omu
 
 
 - type: loadout
