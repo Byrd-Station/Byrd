@@ -907,13 +907,6 @@
   loadouts:
   - ClothingNeckScarfStripedCentcom
 
-- type: loadoutGroup #Omu
-  id: NanotrasenRepresentativerMask
-  name: loadout-group-ntr-mask
-  minLimit: 0
-  loadouts:
-  - NanotrasenRepresentativerMaskLollypop
-
 - type: loadoutGroup
   id: NanotrasenRepresentativeBackpack
   name: loadout-group-ntr-backpack
