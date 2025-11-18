@@ -1149,3 +1149,9 @@ Entries:
         to throw gang signs with.
   id: 135
   time: '2025-11-14T07:00:43.0000000+00:00'
+- author: XWASHERE
+  changes:
+    - type: Add
+      message: rules smite
+  id: 136
+  time: '2025-11-17T18:06:06.0000000+00:00'
