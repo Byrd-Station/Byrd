@@ -1050,7 +1050,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100000000000000000: Dead # Omu, bring back Smile immortality.
+      300: Dead # Omu, Make smile a bit more tanky
   - type: CanEscapeInventory
   - type: FootstepModifier
     footstepSoundCollection:
