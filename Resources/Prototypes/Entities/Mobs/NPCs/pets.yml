@@ -1136,9 +1136,6 @@
       1000000000: 1
   - type: ZombieImmune
   - type: MovementIgnoreGravity
-  - type: SpeedModifiedByContactModifier
-    walkModifierEffectiveness: 0
-    sprintModifierEffectiveness: 0
   - type: BreathingImmunity
   - type: PressureImmunity
   - type: SpecialLowTempImmunity
