@@ -1139,7 +1139,7 @@
   - type: PressureImmunity
   - type: SpecialLowTempImmunity
   - type: ExplosionResistance
-     damageCoefficient: 0.3 # Omu end
+      damageCoefficient: 0.3 # Omu end
 
 - type: entity
   name: Pun Pun
