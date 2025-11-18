@@ -1080,8 +1080,8 @@
         Bloodloss:
           -0.8
   - type: Temperature
-    heatDamageThreshold: 100000000000 # Omu, bring back Smile immortality.
-    coldDamageThreshold: -10000000000 # Omu, bring back Smile immortality.
+    heatDamageThreshold: 1000 # Omu, make smile a bit more tanky.
+    coldDamageThreshold: -200 # Omu, make smile spaceproof.
   - type: Damageable # Omu start
     damageContainer: Biological
     damageModifierSet: Smile
@@ -1124,7 +1124,6 @@
       proper: true
       gender: female
   - type: LanguageSpeaker # Einstein Engines - Language (might not have it on base mob, so reassuring here)
-  - type: UniversalLanguageSpeaker # Omu, bring back old smile.
   - type: LanguageKnowledge # Einstein Engines - Language
     speaks:
     - Bubblish # I am not giving them universal like EE. They are a slime, they can do slime speak.
@@ -1133,13 +1132,14 @@
     - TauCetiBasic
   - type: SlowOnDamage # Omu start
     speedModifierThresholds:
-      1000000000: 1
+      150: 1
   - type: ZombieImmune
   - type: MovementIgnoreGravity
   - type: BreathingImmunity
   - type: PressureImmunity
   - type: SpecialLowTempImmunity
-  - type: SpecialHighTempImmunity # Omu end
+  - type: ExplosionResistance
+     damageCoefficient: 0.3 # Omu end
 
 - type: entity
   name: Pun Pun
