@@ -173,6 +173,8 @@
   components:
   - type: FaxMachine
     name: "Nanotrasen Representative"
+  - type: Item #Omu
+    size: Large #Omu
   - type: Sprite
     sprite: _Goobstation/Objects/Tools/handheld_fax.rsi
     drawdepth: SmallObjects

@@ -1155,3 +1155,17 @@ Entries:
       message: rules smite
   id: 136
   time: '2025-11-17T18:06:06.0000000+00:00'
+- author: Kirisune
+  changes:
+    - type: Add
+      message: A new uniform for NTR
+    - type: Add
+      message: CC business card in to executive briefcase
+    - type: Add
+      message: >-
+        Multitool to NTR's locker. You can finally start on your tasks shift
+        start instead of looking for a multitool.
+    - type: Tweak
+      message: NTR handheld fax squished from 4x4 to 4x2
+  id: 137
+  time: '2025-11-18T17:33:02.0000000+00:00'
