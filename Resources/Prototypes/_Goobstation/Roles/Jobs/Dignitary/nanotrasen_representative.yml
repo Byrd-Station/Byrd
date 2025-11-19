@@ -165,7 +165,7 @@
     ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesHeavyGoldenTrim
     jumpsuit: ClothingUniformJumpsuitNanotrasenRepresentative
-   #id: NanotrasenRepresentativePDA - Omustation, moved to loadouts
+   #id: NanotrasenRepresentativePDA - Omu, moved to loadouts
     back: ClothingBackpackCentcomm
     shoes: ClothingShoesBootsLaceup
     head: ClothingHeadHatTophat
