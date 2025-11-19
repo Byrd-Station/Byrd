@@ -200,7 +200,7 @@
   id: HoPGear
   equipment:
     shoes: ClothingShoesColorBrown
-    #id: HoPPDA - OmuStation, moved to loadouts
+    #id: HoPPDA - Omu, moved to loadouts
     #gloves: ClothingHandsGlovesHop
     ears: ClothingHeadsetAltCommand
     belt: BoxFolderClipboard
