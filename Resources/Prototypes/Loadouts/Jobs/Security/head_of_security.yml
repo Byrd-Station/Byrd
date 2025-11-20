@@ -132,6 +132,34 @@
   groupBy: "jumpskirt"
 
 
+- type: loadout #Omu - DeltaV port
+  id: HeadofSecurityBlueSuitDV
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoSBlueDV
+  groupBy: "jumpsuit"
+
+
+- type: loadout #Omu - DeltaV port
+  id: HeadofSecurityBlueSkirtDV
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtHoSBlueDV
+  groupBy: "jumpskirt"
+
+
+- type: loadout #Omu - DeltaV port
+  id: HeadofSecurityGreySuitDV
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoSGreyDV
+  groupBy: "jumpsuit"
+
+
+- type: loadout #Omu - DeltaV port
+  id: HeadofSecurityGreySkirtDV
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtHoSGreyDV
+  groupBy: "jumpskirt"
+
+
 # Head
 - type: loadout
   id: HeadofSecurityHead
