@@ -143,7 +143,7 @@
       time: 9000 #2.5 hours - knowing how to use the tools is important
     - !type:RoleTimeRequirement
       role: JobBrigmedic #added Brigmedic requirement
-      time: 9000 #2.5 hours
+      time: 2h # around two full shifts
     - !type:DepartmentTimeRequirement
       department: Security
       time: 54000 #15 hours - Omu edit end: Earn your thankless spot.
