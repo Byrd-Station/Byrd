@@ -6,6 +6,7 @@ using Content.Shared.InteractionVerbs.Events;
 using Content.Shared.Standing;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Shared.Traits.Systems;
@@ -13,8 +14,9 @@ namespace Content.Goobstation.Shared.Traits.Systems;
 public sealed partial class SocialAnxietySystem : EntitySystem
 {
     [Dependency] private readonly StandingStateSystem _standingSystem = default!;
-    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedStunSystem _stunSystem = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     public ProtoId<InteractionVerbPrototype>[] PrototypeHug { get; } =
     [
@@ -33,12 +35,13 @@ public sealed partial class SocialAnxietySystem : EntitySystem
         _standingSystem.Down(uid);
         _stunSystem.TryStun(uid, TimeSpan.FromSeconds(component.DownedTime), true);
         var mobName = Identity.Name(uid, EntityManager);
-        _popupSystem.PopupEntity(Loc.GetString("social-anxiety-hugged", ("user", mobName)), uid, PopupType.MediumCaution);
+        if(_net.IsServer)
+            _popupSystem.PopupEntity(Loc.GetString("social-anxiety-hugged", ("user", mobName)), uid, PopupType.MediumCaution);
     }
 
     private void OnVerbHug(InteractionVerbDoAfterEvent args)
     {
-        // we HAVE to subscribe to every InteractionVerbDoAfterEven that fires.
+        // we HAVE to subscribe to every InteractionVerbDoAfterEvent that fires.
         // because I don't think absolute EE supercode allows us to do it normally.
         if (!TryComp<SocialAnxietyComponent>(args.Target, out var component))
             return;
@@ -53,9 +56,14 @@ public sealed partial class SocialAnxietySystem : EntitySystem
             _standingSystem.Down(uid);
             _stunSystem.TryStun(uid, TimeSpan.FromSeconds(component.DownedTime), true);
             var mobName = Identity.Name(uid, EntityManager);
-            _popupSystem.PopupEntity(Loc.GetString("social-anxiety-hugged", ("user", mobName)),
-                uid,
-                PopupType.MediumCaution);
+            if(_net.IsServer)
+            {
+                _popupSystem.PopupEntity(Loc.GetString("social-anxiety-hugged", ("user", mobName)),
+                    uid,
+                    PopupType.MediumCaution);
+            }
+
+            break;
         }
 
     }
