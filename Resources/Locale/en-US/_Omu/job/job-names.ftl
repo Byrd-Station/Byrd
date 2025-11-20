@@ -5,4 +5,5 @@ job-name-centcomm-direggtor = Centcomm Direggtor
 # Security Misc
 job-name-transit-prisoner = Transit Prisoner
 # Cargo Jobs
+JobCourier = Courier #Playtime tracker
 job-name-courier = Courier

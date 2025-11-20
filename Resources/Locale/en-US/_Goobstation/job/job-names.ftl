@@ -53,4 +53,3 @@ JobConquest = Conquest
 JobInspector = Central Command Auditor
 JobMercenaryCaptain = Mercenary Captain
 JobRoboticist = Roboticist
-JobCourier = Courier
