@@ -8,7 +8,7 @@
   loadouts:
   - ResearchDirectorScienceGlasses
   - ResearchDirectorScienceHud
- 
+
 # Transit Prisoner
 
 - type: loadoutGroup
@@ -63,3 +63,14 @@
   loadouts:
   - PrisonerEnviroglovesBlack
   - PrisonerEnviroglovesWhite
+
+# NTR
+
+- type: loadoutGroup
+  id: NanotrasenRepresentativerMask
+  name: loadout-group-ntr-mask
+  minLimit: 0
+  loadouts:
+  - NanotrasenRepresentativerMaskLollypop
+
+

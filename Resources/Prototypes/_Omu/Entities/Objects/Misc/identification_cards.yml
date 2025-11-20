@@ -1,7 +1,7 @@
 - type: entity
   parent: IDCardStandard
   id: CentralCommandInternIDCard
-  name: CentComm Intern ID card
+  name: CentComm intern ID card
   components:
   - type: Sprite
     layers:
@@ -52,14 +52,14 @@
 - type: entity
   parent: IDCardStandard
   id: CentralCommandDireggtorIDCard
-  name: CentComm Direggtor ID card
+  name: CentComm direggtor ID card
   components:
   - type: Sprite
     layers:
     - state: centcom
     - state: idcentcom
   - type: Item
-    heldPrefix: 
+    heldPrefix:
   - type: IdCard
     jobTitle: job-name-centcomm-direggtor
     jobIcon: JobIconCentCommDireggtor
@@ -69,7 +69,7 @@
 - type: entity
   parent: IDCardStandard
   id: PrisonerIDCardPerma
-  name: Transit prisoner ID card
+  name: transit prisoner ID card
   description: A generically printed ID card for scummy prisoners.
   components:
   - type: Sprite

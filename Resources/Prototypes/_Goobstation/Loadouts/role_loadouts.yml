@@ -96,6 +96,7 @@
   - NanotrasenRepresentativeJumpsuit
   - NanotrasenRepresentativeBackpack
   - NanotrasenRepresentativeNeck
+  - NanotrasenRepresentativerMask #Omu
   - NanotrasenRepresentativeShoes
   - NanotrasenRepresentativeBelt
   - Glasses
@@ -155,6 +156,27 @@
   - SurvivalSyndicate
   - GroupHonkopsMask
   - GroupPocketTankDouble
+
+- type: roleLoadout
+  id: JobRoboticist
+  groups:
+  - GroupTankHarness
+  - ScientistHead
+  - ScientistNeck
+  - ScientistJumpsuit
+  - ScientistBackpack
+  - ScientistOuterClothing
+  - ScientistGloves
+  - ScientistShoes
+  - ScientistPDA
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+  # Plasmaman
+  - ScientistEnvirohelm
+  - ScientistEnvirosuit
+  - ScientistEnvirogloves
 
 - type: roleLoadout
   id: JobBrigmedic
