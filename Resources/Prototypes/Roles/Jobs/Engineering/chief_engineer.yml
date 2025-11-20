@@ -142,7 +142,7 @@
       time: 18000 #5 hours - Omu Edit
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 108000 #30 hours - Omu Edit
+      time: 40h #Omu Edit around 20 full shifts
 #    - !type:SpeciesRequirement # Goob - None Felinid
 #      inverted: true
 #      species:
