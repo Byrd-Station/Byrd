@@ -5,7 +5,7 @@
   playTimeTracker: JobAdminAssistant
   requirements:
   - !type:OverallPlaytimeRequirement # DeltaV - Playtime requirement
-    time: 144000 # 40 hours - Omu edit start
+    time: 20h # Omu start - around 10 full shifts
   - !type:DepartmentTimeRequirement
     department: Engineering
     time: 18000 #5 hours - Omu edit
