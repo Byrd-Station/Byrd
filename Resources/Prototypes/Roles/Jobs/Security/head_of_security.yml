@@ -150,7 +150,7 @@
       time: 18000 #5 hrs
     - !type:RoleTimeRequirement
       role: JobBrigmedic # Omu edit, added Brigmedic requirement
-      time: 18000 # 5 hrs
+      time: 2h # around 2 full shifts (BrigMed is a single role)
     - !type:DepartmentTimeRequirement
       department: Security
       time: 108000 #30 hours - Omu Edit
