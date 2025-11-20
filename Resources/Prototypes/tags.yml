@@ -1070,6 +1070,9 @@
   id: Lime
 
 - type: Tag
+  id: LoneOpsUplink # Goob
+
+- type: Tag
   id: Machete
 
 - type: Tag
@@ -1439,6 +1442,10 @@
 
 - type: Tag
   id: SalvageExperiment
+
+# Omu Station
+- type: Tag 
+  id: SalvagePinpointer
 
 - type: Tag
   id: SalvageScrap

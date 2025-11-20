@@ -1,8 +1,8 @@
 - type: entity
   parent: CentcomPDA
   id: CentCommInternPDA
-  name: CentComm Intern's PDA
-  description: A standard-issue CentComm Intern PDA.
+  name: CentComm intern PDA
+  description: A standard-issue CentComm intern PDA.
   components:
   - type: Pda
     id: CentralCommandInternIDCard
@@ -10,8 +10,8 @@
 - type: entity
   parent: CentcomPDA
   id: CentCommDireggtorPDA
-  name: CentComm Direggtor's PDA
-  description: A standard-issue CentComm Direggtor PDA.
+  name: CentComm direggtor PDA
+  description: A grade-A PDA. Smells like protein.
   components:
   - type: Pda
     id: CentralCommandDireggtorIDCard
@@ -19,7 +19,7 @@
 - type: entity
   parent: ClearPDA
   id: TransitPrisonerPDA
-  name: Prisoner PDA
+  name: prisoner PDA
   description: 99 and 44/100ths percent pure plastic.
   components:
   - type: Pda

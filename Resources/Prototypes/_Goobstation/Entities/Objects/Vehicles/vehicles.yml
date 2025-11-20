@@ -81,7 +81,7 @@
     baseAcceleration: 8
     baseFriction: 0.2 # wheels dont stop instantly
     baseSprintSpeed: 8.5
-    baseWalkSpeed: 4.5 # default walking speed 
+    baseWalkSpeed: 4.5 # default walking speed
   - type: ItemSlots
     slots:
       key_slot:
@@ -244,11 +244,11 @@
       collection: BikeHorn
       params:
         variation: 0.125
-    renderOver: North, NorthEast, NorthWest
+    renderOver: South, SouthEast, SouthWest, NorthWest, North, East, West # Omu edit - Going diagonally up looks weird, so it has more directions.
   - type: MovementSpeedModifier
     acceleration: 10
     friction: 10
-    baseSprintSpeed: 3.5
+    baseSprintSpeed: 4.5 # Omu edit
     baseWalkSpeed: 2.5
   - type: StaticPrice
     price: 175
