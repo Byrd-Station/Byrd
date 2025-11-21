@@ -1,6 +1,6 @@
 ﻿- type: entity
   parent: BaseMagazineBoxHighCaliber
-  id: MagazineBoxAntiTankCaliber
+  id: MagazineBoxAntiTank
   name: ammunition box (20x138mm anti-tank)
   components:
   - type: BallisticAmmoProvider
