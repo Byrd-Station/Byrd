@@ -922,6 +922,8 @@
   loadouts:
   - NanotrasenRepresentativeJumpsuit
   - NanotrasenRepresentativeJumpskirt
+  - CCAgentJumpsuit #Omu
+  - CCAgentJumpskirt #Omu
 
 - type: loadoutGroup
   id: NanotrasenRepresentativeBelt
@@ -996,9 +998,9 @@
   - BlueshieldOfficerInnerBlueshieldSuit
   - BlueshieldOfficerInnerBlueshieldSkirt
   - BlueshieldOfficerInnerBlueshieldShirt
-  - BlueshieldOfficerTurtleneck # OmuStation Addon  
+  - BlueshieldOfficerTurtleneck # OmuStation Addon
   - BlueshieldOfficerTurtleneckSkirt # OmuStation Addon
-  - BlackBlueshieldOfficerTurtleneck # OmuStation Addon  
+  - BlackBlueshieldOfficerTurtleneck # OmuStation Addon
   - BlackBlueshieldOfficerTurtleneckSkirt # OmuStation Addon
 
 - type: loadoutGroup
