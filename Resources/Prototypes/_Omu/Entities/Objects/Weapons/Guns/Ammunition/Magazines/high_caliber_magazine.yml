@@ -40,7 +40,7 @@
 
 - type: entity
   id: BaseMagazineAntiTank
-  name: "lathi magazine (20x138mm caliber)"
+  name: "lahti magazine (20x138mm caliber)"
   parent: [ BaseItem, BaseSyndicateContraband ]
   abstract: true
   components:
@@ -75,7 +75,7 @@
 
 - type: entity
   id: MagazineAntiTankEmpty
-  name: "lathi magazine (20x138mm empty)"
+  name: "lahti magazine (20x138mm empty)"
   parent: BaseMagazineAntiTank
   components:
   - type: BallisticAmmoProvider
@@ -83,7 +83,7 @@
 
 - type: entity
   id: MagazineAntiTank
-  name: "lathi magazine (20x138mm anti-tank)"
+  name: "lahti magazine (20x138mm anti-tank)"
   parent: BaseMagazineAntiTank
   components:
   - type: BallisticAmmoProvider
