@@ -1,0 +1,90 @@
+# SPDX-FileCopyrightText:
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [ BaseCartridge, BaseMajorContraband ]
+  id: CartridgeAntiTank
+  name: "cartridge (20x138mm anti-tank)"
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - CartridgeAntiTank
+  - type: CartridgeAmmo
+    proto: BulletAntiTank
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/large_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 40
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  id: BulletAntiTank
+  name: "bullet (20x138mm anti-tank)"
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 250
+      armorPenetration: 0.75
+    penetrationThreshold: 100
+  - type: StaminaDamageOnCollide
+    damage: 200
+
+- type: entity
+  id: BaseMagazineAntiTank
+  name: "lathi magazine (20x138mm caliber)"
+  parent: [ BaseItem, BaseSyndicateContraband ]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - MagazineAntiTank
+  - type: Item
+    size: Small
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+      - CartridgeAntiTank
+    proto: CartridgeAntiTank
+    capacity: 5
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _Omu/Objects/Weapons/Guns/Ammunition/Magazine/heavy_sniper_rifle_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+    ZeroNoAmmo: true
+  - type: Appearance
+
+- type: entity
+  id: MagazineAntiTankEmpty
+  name: "lathi magazine (20x138mm empty)"
+  parent: BaseMagazineAntiTank
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+
+- type: entity
+  id: MagazineAntiTank
+  name: "lathi magazine (20x138mm anti-tank)"
+  parent: BaseMagazineAntiTank
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeAntiTank
