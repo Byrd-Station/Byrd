@@ -3,3 +3,8 @@
 
 - type: Tag
   id: AdvancedEnergyMagAmmo
+
+- type: Tag
+  id: CartridgeAntiTank
+- type: Tag
+  id: MagazineAntiTank

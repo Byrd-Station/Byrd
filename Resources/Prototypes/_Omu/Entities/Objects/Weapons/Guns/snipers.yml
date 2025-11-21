@@ -1,0 +1,68 @@
+﻿- type: entity
+  name: Lahti
+  parent: [BaseWeaponSniperMagazine, BaseGunWieldable, BaseSyndicateContraband]
+  id: WeaponSniperAntiTankRifle
+  description: You could have used a Hristov. What is wrong with you. Uses 20mm anti-tank ammo.
+  components:
+  - type: RestrictedMelee # Omu, its made for Oni, so only Oni can use it.
+    whitelist:
+      tags:
+      - Oni
+  - type: RestrictGunshotsByUserTag
+    doesntContain: []
+    contains:
+    - Oni
+    messages:
+    - "This thing weighs more than me!"
+  - type: Sprite
+    sprite: _Omu/Objects/Weapons/Guns/Snipers/lahti.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Omu/Objects/Weapons/Guns/Snipers/lahti.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 0.4
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+    #autoCycle: false
+    #resetOnHandSelected: false # Omu - Fatass gun
+  - type: ItemSlots # Omu - I heard you like cannons, so we put more cannon in your cannon for more cannon per cannon
+    slots:
+      gun_magazine:
+        #name: Magazine
+        startingItem: MagazineAntiTank
+        #insertSound: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
+        #ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineAntiTank
+        #whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        #name: Chamber
+        startingItem: CartridgeAntiTank
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeAntiTank
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.25
+    sprintModifier: 0.25
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 10 # Goobstation - Sniper rifles buff
+    pvsIncrease: 0.1 # Goobstation - Sniper rifles buff
+  - type: StaticPrice
+    price: 6000
