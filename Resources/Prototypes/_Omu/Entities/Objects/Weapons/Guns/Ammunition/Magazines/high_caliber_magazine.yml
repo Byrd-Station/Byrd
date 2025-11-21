@@ -70,7 +70,7 @@
     magState: mag
     steps: 6
     zeroVisible: false
-    ZeroNoAmmo: true
+    zeroNoAmmo: true
   - type: Appearance
 
 - type: entity
