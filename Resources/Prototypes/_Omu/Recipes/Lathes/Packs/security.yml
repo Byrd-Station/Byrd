@@ -3,3 +3,10 @@
   recipes:
   - MagazineShotgunLeverRifleEmpty
   - MagazineShotgunLeverRifle
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineBoxAntiTank
+  result: MagazineBoxAntiTank
+  materials:
+    Steel: 1200

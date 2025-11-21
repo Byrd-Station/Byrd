@@ -30,6 +30,7 @@
   - MagazineHighCaliber
   - MagazineBoxHighCaliber
   - MagazineBoxAntiMateriel
+  - MagazineBoxAntiTank # Omu - Lahti box
 
 - type: latheRecipePack
   id: LatheMiscStatic

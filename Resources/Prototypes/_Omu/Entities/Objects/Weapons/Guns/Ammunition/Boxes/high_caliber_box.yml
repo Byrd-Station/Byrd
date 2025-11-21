@@ -1,0 +1,11 @@
+﻿- type: entity
+  parent: BaseMagazineBoxHighCaliber
+  id: MagazineBoxAntiTankCaliber
+  name: ammunition box (20x138mm anti-tank)
+  components:
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgeAntiTank
+    capacity: 15
+    proto: CartridgeAntiTank
