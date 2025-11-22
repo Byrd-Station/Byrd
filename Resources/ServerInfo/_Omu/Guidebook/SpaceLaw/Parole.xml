@@ -1,0 +1,26 @@
+﻿<!--
+SPDX-FileCopyrightText: 2025 Tuerk <richardgirgindontstop@gmail.com>
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # Parole
+
+  Parole may be given out to prisoners alongside a sentence with a second, shorter time. Once this time has run out and confirmed by the [color=#ba292c]Warden[/color], they may leave the brig while their sentences run concurrently. A prisoner on parole is still subject to
+
+  Eligibility for parole:
+
+  - [bolditalic]If someone is an EOC, OR has committed a capital crime, then parole is only allowed if authorized by the Judge or Captain.[/bolditalic] They should not authorize this unless it is a serious emergency and the parolee is expected to help deal with the emergency. For example, a non-violent syndicate engineer may be paroled to help fight a blob.
+  - For all other prisoners, [color=#1b67a5]Captain[/color]/[color=#ba292c]HoS[/color]/[color=#ba292c]Warden[/color] may authorize parole at their discretion. They are advised to consider how severe the prisoner's crimes are, how co-operative they have been with security, and whether or not they are expected to commit any further crimes.
+
+  Process for paroling a prisoner:
+
+  - [bolditalic]Parolee must be given a tracking implant, set to "parole" status in sec records, and informed that they are on parole (along with the charge)[/bolditalic], before they are released on parole.
+  - Parolees who are EOC or who committed a capital crime, must additionally be stripped of all belongings prior to release. They may be issued a new basic jumpsuit, shoes, radio, and civilian-access ID.
+  - After release, parolee is to be kept under supervision, and watched for any sign of further criminal acts. This can be done by co-workers, and/or security.
+
+  If the parolee commits a crime while on parole:
+
+  - If the new crime is a capital crime, or they are an EOC, they are to be immediately executed on capture.
+  - Otherwise, for any lesser crime, they're to be re-sentenced for BOTH the original crime they were paroled for, AND the new crime, with times stacking. They're also disqualified from any further parole for the rest of the shift.
+</Document>

@@ -191,3 +191,9 @@
   priority: 7
   text: "/ServerInfo/_Omu/Guidebook/SpaceLaw/ImplantationProcedures.xml"
 
+- type: guideEntry
+  id: SpaceLawParole
+  name: guide-entry-rules-sl-parole
+  priority: 8
+  text: "/ServerInfo/_Omu/Guidebook/SpaceLaw/Parole.xml"
+
