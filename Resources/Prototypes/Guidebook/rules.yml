@@ -400,6 +400,8 @@
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
   children:
   - SpaceLawCrimeList
+  - SpaceLawPrisonerRights # Omu
+  - SpaceLawImplantationProcedures # Omu
 
 - type: guideEntry
   id: SpaceLawCrimeList

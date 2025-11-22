@@ -177,3 +177,17 @@
   ruleEntry: true
   priority: 24
   text: "/ServerInfo/_Omu/Guidebook/ServerRules/SiliconRules/RuleSiliconLaws.xml"
+
+##Space Law
+- type: guideEntry
+  id: SpaceLawPrisonerRights
+  name: guide-entry-rules-sl-prisoner-rights
+  priority: 6
+  text: "/ServerInfo/_Omu/Guidebook/SpaceLaw/PrisonerRights.xml"
+
+- type: guideEntry
+  id: SpaceLawImplantationProcedures
+  name: guide-entry-rules-sl-implantation-procedures
+  priority: 7
+  text: "/ServerInfo/_Omu/Guidebook/SpaceLaw/ImplantationProcedures.xml"
+
