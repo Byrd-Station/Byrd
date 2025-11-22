@@ -1,6 +1,6 @@
 
 - type: entity
-  parent: [ClothingNeckBase, BaseCommandContraband]
+  parent: [ClothingNeckBase, BaseCentcommContraband]
   id: ClothingNeckCloakBsoElite
   name: Elite Blueshield Officer's cloak
   description: An elite Blueshield Officer's cloak crafted from the latest composite glowing fabric. Any true BlueShield is not afraid of shining in the dark!

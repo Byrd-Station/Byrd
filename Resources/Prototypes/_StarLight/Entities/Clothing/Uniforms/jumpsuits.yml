@@ -30,7 +30,7 @@
       allowInventory: true
 
 - type: entity #Omu - Starlight Port
-  parent: [ClothingUniformBase, BaseCommandContraband]
+  parent: [ClothingUniformBase, BaseCentcommContraband]
   id: ClothingUniformJumpsuitEliteBlueShield
   name: Elite Blueshield Officer's Suit
   description: Suit of an Elite Blueshield. To reach such a level, you must have protected command from a [REDACTED] threat.
@@ -41,7 +41,7 @@
     sprite: _Starlight/Clothing/Uniforms/Jumpsuit/eliteblueshield.rsi
 
 - type: entity #Omu - Starlight Port
-  parent: [ClothingUniformBase, BaseCommandContraband]
+  parent: [ClothingUniformBase, BaseCentCommtraband]
   id: ClothingUniformJumpsuitBlueShieldCaptain
   name: blueshield officer's shirt
   description: A classic suit in theme with a blueshield.
