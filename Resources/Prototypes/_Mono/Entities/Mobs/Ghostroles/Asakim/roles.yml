@@ -48,3 +48,4 @@
   - type: ActiveRadio
     channels:
     - Remnants
+  - type: TranslatorImplantBlocker # Omu

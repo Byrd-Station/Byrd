@@ -94,6 +94,7 @@
       - type: Sanitized
       - type: SurgerySpeedModifier
         speedModifier: 1.5
+      - type: TranslatorImplantBlocker # Omu, no translators for abductors.
       mindRoles:
       - MindRoleLoneAbductor
 
@@ -191,6 +192,7 @@
       - type: Sanitized
       - type: SurgerySpeedModifier
         speedModifier: 1.5
+      - type: TranslatorImplantBlocker # Omu, no translators for abductors.
       mindRoles:
       - MindRoleAbductorScientist
     - spawnerPrototype: AbductorAgentSpawner
@@ -237,5 +239,6 @@
           - FootstepSound
           - DoorBumpOpener
       - type: AbductorScientist # Should be removed when we have proper teleportation system
+      - type: TranslatorImplantBlocker # Omu, no translators for abductors.
       mindRoles:
       - MindRoleAbductorAgent
