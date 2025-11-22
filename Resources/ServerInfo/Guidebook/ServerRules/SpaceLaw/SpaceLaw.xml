@@ -13,7 +13,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   # Space Law
   Omu Station operates under abbreviated space law. All crew, passengers, and visitors aboard the station are expected to know and follow these laws.
 
-  - [color=red][bold]Head of Security[/bold][/color] and especially [color=red][bold]Warden[/bold][/color] should be very familiar with space law.
+  - [color=#ba292c][bold]Head of Security[/bold][/color] and especially [color=#ba292c][bold]Warden[/bold][/color] should be very familiar with space law.
   - Security players should strive to fully comprehend Space Law.
   - Security players cannot use contraband not assigned to them unless there is a station ending threat, inspect an item to see its legality.
   - [bold]Ignoring or misuse of Space Law may be subject to punishment under incompetence. Do not play security if you do not plan to follow the rules[/bold]
@@ -24,7 +24,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   [color=gray][bold]Visitors[/bold][/color]: Peaceful non-crew personnel with authorized access, such as traders, diplomats, and approved guests who temporarily board the station or its shuttles. Hostile foreigners and entities are not Visitors, and do not enjoy the protections of Space Law.
 
-  The station, shuttles, trade station, arrivals, equipment, materials, and any other entity constructed with materials provided by Nanotrasen or its employees, are the property of Nanotrasen. [color=blue][bold]Central Command (CentCom)[/bold][/color] is Nanotrasen's organizational structure that has jurisdiction over of the operations of Nanotrasen property and personnel in the Omu Sector.
+  The station, shuttles, trade station, arrivals, equipment, materials, and any other entity constructed with materials provided by Nanotrasen or its employees, are the property of Nanotrasen. [color=#1b67a5][bold]Central Command (CentCom)[/bold][/color] is Nanotrasen's organizational structure that has jurisdiction over of the operations of Nanotrasen property and personnel in the Omu Sector.
 
   Private shuttles—those not owned by Nanotrasen—fall outside this jurisdiction. Visitor shuttles are explicitly private, and unwarranted searches constitute Secure Trespass unless:
 
@@ -51,7 +51,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - Blood testing is a procedure that can be used to determine if a person is a [textlink="Changeling" link="Changelings"]. Blood testing may only be forced when there has been confirmation of changelings existence on the station.
 
   ## Sentencing
-  - All sentencing is to be handled by the Warden, if no Warden is available the HoS is to take over that duty, if there's no HoS it falls onto the highest ranking command member.
+  - All sentencing is to be handled by the [color=#ba292c]Warden[/color], if they are not available the [color=#ba292c]HoS[/color] is to take over that duty. If there's no [color=#ba292c]HoS[/color] it falls onto the highest ranking [color=#1b67a5]command[/color] member.
 
   - Use common sense and humanity when issuing punishments. You should not always seek out the highest punishment you can, you don't have to always give the maximum time or always look to demote someone. Always take in account the severity and only charge for what is needed for someone to learn their lesson.
 
@@ -78,7 +78,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - Advise and assist Security in the sentencing of prisoners.
   - Act as legal consultants to the accused.
 
-  The Judge acts as the highest legal authority on the station. The Judge ensures all trials, civil and criminal, are performed according to the Legal Standard Operating Procedures and that any preparations for a safe and efficient trial are carried out. Should the Judge be unavailable, a neutral, impartial member of the crew should be appointed by the Captain to serve in that capacity. To perform their duties, the Judge may:
+  The Judge acts as the highest legal authority on the station. The Judge ensures all trials, civil and criminal, are performed according to the Legal Standard Operating Procedures and that any preparations for a safe and efficient trial are carried out.
+
+  [bolditalic]Should the Judge be unavailable, a neutral, impartial member of the crew should be appointed by the [color=#1b67a5]Captain[/color] to serve in that capacity.[/bolditalic] To perform their duties, the Judge may:
 
   - Remove, enhance, or otherwise change sentences for prisoners as they see fit.
   - Charge individuals with contempt(Failure to Comply) or Perjury during a Trial or during the preparation of a Trial as necessary.
@@ -89,7 +91,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - Any changes require documentation with clear reasoning be sent to Central Command.
 
   # Execution
-  - [bold]All executions are to be confirmed and overseen by the Captain. Exceptions to this rule exist. A prisoner may request a specific execution method, if reasonable. Otherwise the most humane method is prefered. Refer to Standard Operating Procedure to further understand any guidelines applied to execution.[/bold]
+  - [bold]All executions are to be confirmed and overseen by the [color=#1b67a5]Captain[/color]. Exceptions to this rule exist. A prisoner may request a specific execution method, if reasonable. Otherwise the most humane method is prefered. Refer to Standard Operating Procedure to further understand any guidelines applied to execution.[/bold]
 
   # Exceptions
   - [bold]If a changeling is discovered they are kill on sight.[/bold]
