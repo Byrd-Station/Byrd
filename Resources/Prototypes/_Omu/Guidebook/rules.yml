@@ -197,3 +197,9 @@
   priority: 8
   text: "/ServerInfo/_Omu/Guidebook/SpaceLaw/Parole.xml"
 
+- type: guideEntry
+  id: SpaceLawEscape
+  name: guide-entry-rules-sl-escape-and-vandalism
+  priority: 9
+  text: "/ServerInfo/_Omu/Guidebook/SpaceLaw/EscapeAndVandalism.xml"
+

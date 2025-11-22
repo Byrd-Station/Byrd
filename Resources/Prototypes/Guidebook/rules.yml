@@ -403,6 +403,7 @@
   - SpaceLawPrisonerRights # Omu
   - SpaceLawImplantationProcedures # Omu
   - SpaceLawParole # Omu
+  - SpaceLawEscape # Omu
 
 - type: guideEntry
   id: SpaceLawCrimeList

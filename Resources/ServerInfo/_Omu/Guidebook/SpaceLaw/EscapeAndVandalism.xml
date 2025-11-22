@@ -1,0 +1,129 @@
+﻿<!--
+SPDX-FileCopyrightText: 2025 Tuerk <richardgirgindontstop@gmail.com>
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # Prisoner Escape & Vandalism
+
+  Prisoners who escape, attempt to escape, or destroy station property during their confinement face additional punishments:
+
+  <Table Columns="4">
+
+    <ColorBox Color="#040404">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Prisoner
+        Status
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#040404">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        P-01
+        In-Cell Vandalism
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#040404">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        P-02
+        Attempted Escape
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#040404">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        P-03
+        Escape
+      </Box>
+    </ColorBox>
+
+
+    <ColorBox Color="#494949">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Temporary
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Reset Timer
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Reset Timer +/- Isolation (Discretionary)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Reset Timer + 10 Minutes + Isolation
+      </Box>
+    </ColorBox>
+
+
+    <ColorBox Color="#494949">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Center" Margin="2">
+        Permanent
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Isolation
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Isolation
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Re-Detained + Isolation, Executed, or KoS (Discretionary)
+      </Box>
+    </ColorBox>
+
+
+    <ColorBox Color="#494949">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
+        Isolation
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Straightjacket
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Straightjacket or Execution (Discretionary)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Re-Detained, Executed, or KoS (Discretionary)
+      </Box>
+    </ColorBox>
+  </Table>
+
+  ### In detail:
+  [bold]P-01 - Vandalism:[/bold] Prisoners destroying station property non-essential to confinement. Examples include:
+
+  - Breaking lights and furniture.
+  - Damaging or destroying equipment in confinement.
+
+  [bold]P-02 - Attempted Escape:[/bold] Prisoners attempting to escape confinement. Examples include:
+
+  - Breaking or damaging cell windows and walls.
+  - Attacking an officer inside a cell.
+  - Conspiring with another party to assist with an escape.
+
+  [bold]P-03 - Escape:[/bold] Prisoners leaving or escaping their confinement area without permission from security. Examples include:
+
+  - A prisoner leaving or escaping their cell while the timer is running.
+  - A prisoner escaping custody while being moved.
+
+  The punishment for these offenses depends on the status of the Prisoner. The status of the prisoner is always either, Temporary, Permanent, or Isolation.
+
+  - [bold]Temporary:[/bold] A temporary prisoner is one who has received a sentence that is less than permanent confinement. They may be upgraded to Isolation status due to violations of P-01, P-02, or P-03.
+
+  - [bold]Permanent:[/bold] A permanent prisoner is one who has received a sentence of permanent confinement or is awaiting trial for Capital Punishment. They may be upgraded to Isolation due to violations of P-01, P-02, or P-03.
+
+  - [bold]Isolation:[/bold] An isolation prisoner is a temporary or permanent prisoner whose actions have resulted in them being placed in solitary confinement. They will serve out the remainder of their sentence in isolation, at the discretion of Security.
+</Document>
