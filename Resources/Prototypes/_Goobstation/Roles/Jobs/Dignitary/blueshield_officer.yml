@@ -91,7 +91,7 @@
   storage:
     back:
     - Flash
-    - ClothingMaskGasBSO
+    - ClothingMaskGasBSO #Omu - Replaced the security gas mask with Blue SWAT from Starlight
     - CombatKnife
 
 - type: chameleonOutfit
@@ -100,7 +100,7 @@
   equipment:
     head: ClothingHeadHatBeretEliteNavyOfficer
     eyes: ClothingEyesGlassesBSO
-    mask: ClothingMaskGasBSO
+    mask: ClothingMaskGasBSO #Omu - Blue SWAT gas mask ported from Starlight
     ears: ClothingHeadsetAltBlueshield
     outerClothing: ClothingBlueshieldArmourVest
     neck: ClothingNeckMantleBlueshield
