@@ -22,7 +22,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBlueshieldOfficer
-      time: 180000 #50h - Omu - Why was it 52??
+      time: 187200 #52h - nothing ever happens
 
 # Hats
 - type: loadout
