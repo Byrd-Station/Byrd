@@ -33,19 +33,37 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   A crime onboard the shuttle has been visibly witnessed or reported.
   A warrant has been authorized.
 
+  ## Search and Seizure
+
+  [bold]Personnel Search[/bold]
+
+  [italic]This text is abridged. Consult your station's Standards of Operation for [textlink="Searches" link="Searches SOP"] for further details.[/italic]
+
+  A personnel search involves inspecting an individual’s backpack, hands, coat, belt, and pockets for contraband or restricted items. If such items are found, officers should confiscate them and may escalate the search into detainment. All legal items must be returned after the search.
+  - During [color=green]Green Alert[/color], personnel searches require probable cause or a warrant, and crew members may legally refuse a search. If contraband or restricted items are in plain sight, officers may conduct a full personnel search, up to and including detainment.
+  - During [color=blue]Blue Alert[/color] or higher, all personnel searches are authorized without requiring consent. Refusal of a legal search may be charged as Failure to Comply.
+
+  [bold]Departmental Search[/bold]
+
+  A departmental search is a thorough sweep of an entire department for contraband, including lockers, storage containers, and personnel. These searches require a warrant signed by the department head or highest-ranking command staff.
+
   ## Prisoner Rights
 
-  See chapter [textlink="Prisoner's Rights" link="SpaceLawPrisonerRights"].
+  Prisoners who are protected under Space Law have certain rights applied to them to provide humane treatment. The [color=#ba292c]Warden[/color] is to ensure all these conditions are met or face punishment in accordance to Space Law. If the [color=#ba292c]Warden[/color] is not available, the duty falls on the [color=#ba292c]Head of Security[/color], then the [color=#1b67a5]Captain[/color].
 
-  ## Searches
+  [italic]See chapter [textlink="Prisoner's Rights" link="SpaceLawPrisonerRights"] for how prisoners are abord NT property are to be treated.[/italic]
 
-  - A personnel search is a seizure of the objects in a person's backpack, hands, coat, belt, pockets, and hat. If any contraband is found during a search the officer may choose to further the search into a detainment or simply confiscate the restricted items. After the search is conducted all legal items are to be returned to the person.
+  ## Parole Procedures
 
-  - A crewmate may legally decline any search conducted without a warrant while the alert level is green. Should be noted that if the alert level is blue or above all personnel searches are legal and no longer require a warrant.
+  Parole may be given out to prisoners alongside a sentence with a second, shorter time. Once this time has run out and confirmed by the [color=#ba292c]Warden[/color], they may leave the brig while their sentences run concurrently. A prisoner on parole is still subject to
+
+  [italic]See chapter [textlink="Parole Procedures" link="SpaceLawParole"] for how to maximise station productivity by paroling prisoners.[/italic]
 
   ## Implantation Procedures
 
-  See chapter [textlink="Implantation Procedures" link="SpaceLawImplantationProcedures"].
+  Prisoners may undergo implantation or implant removal, so long as it's within reason. Implantation must not extend a detainee’s sentence unless explicitly permitted. Former inmates can be required to undergo implantation procedures if the circumstances during their confinement warranted it. Any implant not listed below may still be applied with reasonable justification or voluntary consent.
+
+  [italic]See chapter [textlink="Implantation Procedures" link="SpaceLawImplantationProcedures"] for how to handle implants and their removal from prisoners.[/italic]
 
   ## Blood testing
   - Blood testing is a procedure that can be used to determine if a person is a [textlink="Changeling" link="Changelings"]. Blood testing may only be forced when there has been confirmation of changelings existence on the station.
@@ -59,6 +77,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   ## Crime Stacking
 
+  [italic]See the [textlink="Crime Directory" link="SpaceLawCrimeList"] for category codes.[/italic]
+
   "Crime Stacking", or the procedure for charging someone with multiple crimes simultaneously, is required when someone violates multiple Laws. Crime Stacking involves:
   - Adding the timers for each crime the accused committed. Only the highest relevant crime in a category code (last two digits) should be used.
   - Crimes with the same category code cannot be charged together. e.g: 1-02, 2-02, 3-02 do not stack.
@@ -68,7 +88,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     - [italic]1-04 - Petty Theft[/italic]
     - [italic]1-05 - Vandalism[/italic]
     - [italic]1-06 - Trespass[/italic]
-        - [italic]See the [textlink="Crime Directory" link="SpaceLawCrimeList"] for category codes.[/italic]
 
   ## Legal Representation and Trials
 
