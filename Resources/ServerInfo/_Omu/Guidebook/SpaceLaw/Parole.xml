@@ -6,7 +6,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 <Document>
   # Parole
 
-  Parole may be given out to prisoners alongside a sentence with a second, shorter time. Once this time has run out and confirmed by the [color=#ba292c]Warden[/color], they may leave the brig while their sentences run concurrently. A prisoner on parole is still subject to
+  Parole may be given out to prisoners alongside a sentence with a second, shorter time. Once this time has run out and confirmed by the [color=#ba292c]Warden[/color], they may leave the brig while their sentences run concurrently. A prisoner on parole is still subject to special restrictions.
 
   Eligibility for parole:
 
