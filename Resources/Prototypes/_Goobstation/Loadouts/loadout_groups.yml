@@ -981,7 +981,7 @@
   - BlueshieldOfficerBeret
   - BlueshieldOfficerHeadCowboy
   - BlueshieldOfficerGoidaHelmet
-  - BlueshieldOfficerBeretElite
+  - BlueshieldOfficerBeretElite # Omustation
 
 - type: loadoutGroup
   id: BlueshieldOfficerBackpack
