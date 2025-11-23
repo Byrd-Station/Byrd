@@ -353,3 +353,24 @@
   frequency: 0.7
   soundCollection:
     collection: Aviu4Bark
+
+# Fisher
+- type: soundCollection
+  id: fisherBark
+  files:
+    - /Audio/_Goobstation/Voice/Barks/Fisher/A.wav
+    - /Audio/_Goobstation/Voice/Barks/Fisher/E.wav
+    - /Audio/_Goobstation/Voice/Barks/Fisher/I.wav
+    - /Audio/_Goobstation/Voice/Barks/Fisher/O.wav
+    - /Audio/_Goobstation/Voice/Barks/Fisher/U.wav
+    - /Audio/_Goobstation/Voice/Barks/Fisher/Y.wav
+
+- type: bark
+  id: webfisher
+  name: Fisher
+  volume: 1
+  frequency: 0.6
+  minPitch: 0.9
+  maxPitch: 1.1
+  soundcollection:
+    collection: fisherBark
