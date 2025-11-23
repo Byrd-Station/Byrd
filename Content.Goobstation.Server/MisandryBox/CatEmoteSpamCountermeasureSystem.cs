@@ -112,7 +112,7 @@ public sealed class CatEmoteSpamCountermeasureSystem : EntitySystem
 
         {
             args.Handled = true;
-            Log.Debug($"Stfu Entity {ent.Owner.Id}.");
+            Log.Debug($"Prevented Entity {ent.Owner.Id} from emoting.");
         }
         // Omu edit end
         if (args.Emote.Category is EmoteCategory.Vocal or EmoteCategory.Farts && args.Voluntary)
@@ -173,7 +173,7 @@ public sealed class CatEmoteSpamCountermeasureSystem : EntitySystem
     private void Smite(EntityUid uid, bool? killOverride = null)
     {
         _statusEffectNew.TrySetStatusEffectDuration(uid, MuteEffect, MuteDuration); // Omu edit start
-        Log.Debug($"Entity {uid.Id} has been muted!");
+        Log.Debug($"Entity {uid.Id} has been muted for {MuteDuration.Seconds} seconds.");
         //_thunderstrike.Smite(uid, kill: killOverride ?? DrasticMeasures); // Omu edit end
     }
 }
