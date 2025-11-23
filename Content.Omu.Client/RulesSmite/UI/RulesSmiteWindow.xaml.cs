@@ -47,16 +47,12 @@ public sealed partial class RulesSmiteWindow : FancyWindow
 
     public override void Close()
     {
-        if (!IsOpen)
-            return;
+        base.Close();
 
-        // You didn't say the magic word!
-        if (_timeLeft > 0)
+        if (!IsOpen || _timeLeft > 0)
             return;
 
         _clyde.OnWindowResized -= OnWindowResized;
-
-        base.Close();
     }
 
     protected override void FrameUpdate(FrameEventArgs args)
