@@ -35,7 +35,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCargoMascot
   name: cargo mascot's uniform
-  description: A cargo-brown top striking pants to deliver smiles and mail!
+  description: A cargo-brown top and striking pants to deliver smiles and mail!
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Uniforms/Jumpskirt/cargomascot.rsi
