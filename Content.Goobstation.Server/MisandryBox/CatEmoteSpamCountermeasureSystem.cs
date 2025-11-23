@@ -8,6 +8,9 @@ using Content.Goobstation.Shared.MisandryBox.Smites;
 using Content.Server.Chat.Systems;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Speech;
+using Content.Shared.StatusEffectNew;
+using Content.Shared.StatusEffectNew.Components;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Goobstation.Server.MisandryBox;
@@ -17,6 +20,7 @@ public sealed class CatEmoteSpamCountermeasureSystem : EntitySystem
 {
     [Dependency] private readonly ThunderstrikeSystem _thunderstrike = default!;
     [Dependency] private readonly IRobustRandom _rand = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffectNew = default!;
 
     private const float ClearInterval = 20.0f;
     private const float PitchModulo = 0.08f;
@@ -51,6 +55,10 @@ public sealed class CatEmoteSpamCountermeasureSystem : EntitySystem
     private float _timeSinceLastClear = 0f;
 
     private float _timeSinceLastRefresh = 0f;
+
+    //Omu - We are kinder gods... I think.
+    public static readonly EntProtoId MuteEffect= "StatusEffectEmoteMuted";
+    public static readonly TimeSpan MuteDuration = TimeSpan.FromSeconds(10f);
 
     public override void Initialize()
     {
@@ -91,6 +99,18 @@ public sealed class CatEmoteSpamCountermeasureSystem : EntitySystem
 
     private void OnEmoteEvent(Entity<SpeechComponent> ent, ref EmoteEvent args)
     {
+        // Omu edit start
+        if (args.Handled)
+            return;
+
+        if (_statusEffectNew.HasEffectComp<EmoteMutedStatusEffectComponent>(ent.Owner)
+            && args.Emote.Category.HasFlag(EmoteCategory.Vocal)) //still leaves the text so it looks like they are pantomiming a laugh
+
+        {
+            args.Handled = true;
+            Log.Debug($"Stfu Entity {ent.Owner.Id}.");
+        }
+        // Omu edit end
         if (args.Emote.Category is EmoteCategory.Vocal or EmoteCategory.Farts && args.Voluntary)
             Add(ent.Owner);
     }
@@ -125,9 +145,11 @@ public sealed class CatEmoteSpamCountermeasureSystem : EntitySystem
         // This is ground control to major tom
         var steps = count - soft;
         // By default, this is 8% per step over. 10 over soft threshold is 80%.
-        var chance = steps*_postSoftThresholdProbability;
+        var chance = steps * _postSoftThresholdProbability; // Omu bugfix - _rand.Prob() throws an error for non-Int values
 
-        if (_rand.Prob(chance))
+        if (chance >= 1)
+            Smite(uid,false);
+        else if (_rand.Prob(chance))
             Smite(uid, false);
     }
 
@@ -146,6 +168,13 @@ public sealed class CatEmoteSpamCountermeasureSystem : EntitySystem
     /// <param name="killOverride">Optional override for the kill parameter. If null, uses DrasticMeasures</param>
     private void Smite(EntityUid uid, bool? killOverride = null)
     {
-        _thunderstrike.Smite(uid, kill: killOverride ?? DrasticMeasures); // Omu
+        _statusEffectNew.TrySetStatusEffectDuration(uid, MuteEffect, MuteDuration); // Omu edit start
+        Log.Debug($"Entity {uid.Id} has been muted!");
+        //_thunderstrike.Smite(uid, kill: killOverride ?? DrasticMeasures); // Omu edit end
     }
 }
+/// <summary>
+/// Prevents emoting. Use only in conjunction with <see cref="StatusEffectComponent"/>, on the status effect entity.
+/// </summary>
+[RegisterComponent]
+public sealed partial class EmoteMutedStatusEffectComponent : Component;
