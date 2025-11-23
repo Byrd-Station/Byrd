@@ -1,0 +1,4 @@
+- files: ["A.wav", "E.wav", "I.wav", "O.wav", "U.wav", "Y.wav"]
+  license: "CC-BY"
+  copyright: "Webfishing player voice by @monostb"
+  source: "Webfishing, monostb on twitter"
