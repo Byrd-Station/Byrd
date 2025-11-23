@@ -8,10 +8,12 @@ using Content.Goobstation.Shared.MisandryBox.Smites;
 using Content.Server.Chat.Systems;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Speech;
+using Robust.Shared.Random;
+
+// Omu
 using Content.Shared.StatusEffectNew;
 using Content.Shared.StatusEffectNew.Components;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 
 namespace Content.Goobstation.Server.MisandryBox;
 
@@ -20,6 +22,8 @@ public sealed class CatEmoteSpamCountermeasureSystem : EntitySystem
 {
     [Dependency] private readonly ThunderstrikeSystem _thunderstrike = default!;
     [Dependency] private readonly IRobustRandom _rand = default!;
+
+    // Omu
     [Dependency] private readonly StatusEffectsSystem _statusEffectNew = default!;
 
     private const float ClearInterval = 20.0f;
@@ -27,10 +31,10 @@ public sealed class CatEmoteSpamCountermeasureSystem : EntitySystem
     private const int LowerBound = 2; // Shoo away any shits with server vv from killing everyone on 1 emote
 
     [ViewVariables(VVAccess.ReadWrite)]
-    private int _hardEmoteThreshold = 10;
+    private int _hardEmoteThreshold = 10; // Omu
 
     [ViewVariables(VVAccess.ReadWrite)]
-    private int _softThresholdVariance = 5;
+    private int _softThresholdVariance = 5; // Omu
 
     [ViewVariables(VVAccess.ReadWrite)]
     private float _postSoftThresholdProbability = 0.16f;
@@ -145,9 +149,9 @@ public sealed class CatEmoteSpamCountermeasureSystem : EntitySystem
         // This is ground control to major tom
         var steps = count - soft;
         // By default, this is 8% per step over. 10 over soft threshold is 80%.
-        var chance = steps * _postSoftThresholdProbability; // Omu bugfix - _rand.Prob() throws an error for non-Int values
+        var chance = steps*_postSoftThresholdProbability;
 
-        if (chance >= 1)
+        if (chance >= 1) // Omu edit - got unhandled exceptions from chance going above 1.
             Smite(uid,false);
         else if (_rand.Prob(chance))
             Smite(uid, false);
@@ -176,5 +180,6 @@ public sealed class CatEmoteSpamCountermeasureSystem : EntitySystem
 /// <summary>
 /// Prevents emoting. Use only in conjunction with <see cref="StatusEffectComponent"/>, on the status effect entity.
 /// </summary>
+/// <remarks> Omu - We using the new Entity System raagh</remarks>
 [RegisterComponent]
 public sealed partial class EmoteMutedStatusEffectComponent : Component;
