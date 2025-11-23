@@ -72,7 +72,7 @@ public sealed class PassiveDamageSystem : EntitySystem
                     else
                     {
                         _damageable.TryChangeDamage(uid, comp.Damage, true, false, damage, targetPart: TargetBodyPart.All, splitDamage: comp.SplitBehavior); // Shitmed Change
-                    }
+                    } // Omu end
         }
     }
 }
