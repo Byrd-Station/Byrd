@@ -378,10 +378,10 @@
       coefficients:
         Blunt: 0.7 # Omu 0.8 -> 0.7
         Slash: 0.7 # Omu - 0.8 -> 0.7
-        Piercing: 0.3 # Omu 0.8 -> 0.3 - Get on the ninja's range :Godo:
+        Piercing: 0.5 # Omu 0.8 -> 0.5 50% Reduc, Brought a sword to a gun fight.
         Heat: 0.6 # Omu 0.8 -> 0.6
         Cold: 0.6 # Omu 
-        Radiation: 0.7 # Omu - Radiation protection for no reason at all:tm:
+        Radiation: 0.7 # Omu - Radiation protection (Singlu)
 
 #Knight Helmet
 - type: entity
