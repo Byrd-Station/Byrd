@@ -1169,3 +1169,36 @@ Entries:
       message: NTR handheld fax squished from 4x4 to 4x2
   id: 137
   time: '2025-11-18T17:33:02.0000000+00:00'
+- author: GNUtopia
+  changes:
+    - type: Fix
+      message: >-
+        Duty weapons and selector cases are now properly classified as
+        contraband
+  id: 138
+  time: '2025-11-21T18:28:29.0000000+00:00'
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added the Sharp Teeth trait, which at the cost of ONE of your trait
+        points (and slots) replaces your unarmed melee with the arachnid bite!
+        This changes the visual, sound, and also the damage to 5 pierce!
+  id: 139
+  time: '2025-11-21T18:40:40.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: >-
+        Added Goob Upstream from 7 Nov till 23 Nov (Check In-game change-logs!)
+        :egg: 
+  id: 140
+  time: '2025-11-23T14:22:32.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added back Slimepeople's passive regen.
+    - type: Fix
+      message: Fixed PassiveDamage so that it works properly with woundmed.
+  id: 141
+  time: '2025-11-23T19:13:22.0000000+00:00'
