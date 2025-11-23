@@ -27,13 +27,13 @@ public sealed class CatEmoteSpamCountermeasureSystem : EntitySystem
     private const int LowerBound = 2; // Shoo away any shits with server vv from killing everyone on 1 emote
 
     [ViewVariables(VVAccess.ReadWrite)]
-    private int _hardEmoteThreshold = 20;
+    private int _hardEmoteThreshold = 10;
 
     [ViewVariables(VVAccess.ReadWrite)]
-    private int _softThresholdVariance = 10;
+    private int _softThresholdVariance = 5;
 
     [ViewVariables(VVAccess.ReadWrite)]
-    private float _postSoftThresholdProbability = 0.08f;
+    private float _postSoftThresholdProbability = 0.16f;
 
     [ViewVariables(VVAccess.ReadWrite)]
     private float _softThresholdRefreshCooldown = 34f;
