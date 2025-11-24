@@ -7,7 +7,8 @@ SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.githu
 SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 
 SPDX-License-Identifier: AGPL-3.0-or-later
--->
+
+Deprecated, replaced by The Khese Muus iteration of Oni, from Gardenstation - maus.
 
 <Document>
   # Onis
@@ -34,3 +35,4 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - Sources of holy damage are their bane, and will injure them greatly
 
 </Document>
+--> 

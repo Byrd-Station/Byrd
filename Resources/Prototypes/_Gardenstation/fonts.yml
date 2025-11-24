@@ -1,0 +1,11 @@
+- type: font # khesespeak 
+  id: Padauk
+  path: /Fonts/_Gardenstation/Padauk/Padauk.ttf
+
+- type: font # khesespeak bold
+  id: PadaukBold
+  path: /Fonts/_Gardenstation/Padauk/PadaukBold.ttf
+
+- type: font # khesespeak common
+  id: TobinTax
+  path: /Fonts/_Gardenstation/TobinTax.otf
