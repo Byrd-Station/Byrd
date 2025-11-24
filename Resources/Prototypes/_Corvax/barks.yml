@@ -354,23 +354,23 @@
   soundCollection:
     collection: Aviu4Bark
 
-# Fisher
+# raincall
 - type: soundCollection
-  id: fisherBark
+  id: ogreBark
   files:
-    - /Audio/_Omu/Voice/Barks/Fisher/A.wav
-    - /Audio/_Omu/Voice/Barks/Fisher/E.wav
-    - /Audio/_Omu/Voice/Barks/Fisher/I.wav
-    - /Audio/_Omu/Voice/Barks/Fisher/O.wav
-    - /Audio/_Omu/Voice/Barks/Fisher/U.wav
-    - /Audio/_Omu/Voice/Barks/Fisher/Y.wav
+    - /Audio/_Omu/Voice/Barks/Ogre/ogre1.ogg
+    - /Audio/_Omu/Voice/Barks/Ogre/ogre2.ogg
+    - /Audio/_Omu/Voice/Barks/Ogre/ogre3.ogg
+    - /Audio/_Omu/Voice/Barks/Ogre/ogre4.ogg
+    - /Audio/_Omu/Voice/Barks/Ogre/ogre5.ogg
+    - /Audio/_Omu/Voice/Barks/Ogre/ogre6.ogg
 
 - type: bark
-  id: Fisher
-  name: Fisher
+  id: Ogre
+  name: Ogre
   volume: 1
   frequency: 0.6
-  minPitch: 0.9
-  maxPitch: 1.1
+  minPitch: 0.8
+  maxPitch: 1
   soundCollection:
-    collection: fisherBark
+   collection: ogreBark
