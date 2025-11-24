@@ -13,6 +13,7 @@
     SlaughterDemon: 1
     # Wraith: 1 # OMU - Unbalanced & shit to deal with
     LoneOperative: 1 # Goobstation
+    #TODO When Slasher is ready Slasher: 1 # Goobstation
 
 - type: ninjaHackingThreat
   id: Dragon
@@ -35,6 +36,12 @@
 #  id: Wraith
 #  announcement: terror-wraith
 #  rule: WraithMidround
+
+# TODO When Slasher is ready
+#- type: ninjaHackingThreat
+#  id: Slasher
+#  announcement: terror-slasher
+#  rule: SlasherSpawn
 
 #- type: ninjaHackingThreat
 #  id: Revenant
