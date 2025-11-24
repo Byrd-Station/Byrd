@@ -89,3 +89,13 @@
     state: icon
   content:
   - ClothingBackpackDuffelSalvageConscription
+
+- type: thiefBackpackSet
+  id: MiningConcussiveGauntlets
+  name: mining-voucher-concussivegauntlets-name
+  description: mining-voucher-concussivegauntlets-description
+  sprite:
+    sprite: _Mono/Clothing/Hands/Gloves/concussive_gauntlets.rsi
+    state: icon
+  content:
+  - ClothingHandsConcussiveGauntlets
