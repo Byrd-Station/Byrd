@@ -374,3 +374,22 @@
   maxPitch: 1
   soundCollection:
    collection: ogreBark
+
+- type: soundCollection
+  id: menacingbark
+  files:
+    - /Audio/_Omu/Voice/Barks/menacingvoice/menacingvoiceA.ogg
+    - /Audio/_Omu/Voice/Barks/menacingvoice/menacingvoiceE.ogg
+    - /Audio/_Omu/Voice/Barks/menacingvoice/menacingvoiceI.ogg
+    - /Audio/_Omu/Voice/Barks/menacingvoice/menacingvoiceO.ogg
+    - /Audio/_Omu/Voice/Barks/menacingvoice/menacingvoiceU.ogg
+    - /Audio/_Omu/Voice/Barks/menacingvoice/menacingvoiceY.ogg
+
+- type: bark
+  id: menacingvoice
+  name: Menacing
+  volume: 1
+  frequency 0.7
+  soundCollection:
+   collection: menacingbark
+  
