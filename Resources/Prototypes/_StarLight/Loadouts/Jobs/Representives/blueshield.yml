@@ -40,3 +40,12 @@
     proto: SeniorBlueshieldOfficer
   equipment:
     head: ClothingHeadHatBeretBlueShieldElite
+
+- type: loadout #Omu - Starlight repurposing
+  id: BeltBlueshieldEliteFilled
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorBlueshieldOfficer
+  equipment:
+    belt: ClothingBeltBlueshieldEliteFilled
+
