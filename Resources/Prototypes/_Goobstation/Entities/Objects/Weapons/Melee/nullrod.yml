@@ -239,7 +239,7 @@
         Slash: 20
     UntrainedUseString: nullrod-arrythmicknife-untrained-usage-popup
   - type: Item
-    size: Huge
+    size: Normal #Omu - size change
     sprite: _ShitChap/Objects/Weapons/Nullrod/arrythmic.rsi
   - type: Sprite
     sprite: _ShitChap/Objects/Weapons/Nullrod/arrythmic.rsi
