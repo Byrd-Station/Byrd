@@ -1214,3 +1214,11 @@ Entries:
       message: Squished chaplain's arrythmic knife to a more reasonable size.
   id: 143
   time: '2025-11-24T20:33:11.0000000+00:00'
+- author: Sarahon
+  changes:
+    - type: Tweak
+      message: >-
+        Sec no longer use space animal organs for the memes(Command should
+        follow space law)
+  id: 144
+  time: '2025-11-25T20:48:04.0000000+00:00'
