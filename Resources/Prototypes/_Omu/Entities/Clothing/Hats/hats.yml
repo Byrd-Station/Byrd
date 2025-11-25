@@ -2,7 +2,7 @@
   parent: [ ClothingHeadHatBeretRND, BaseCommandContraband ]
   id: ClothingHeadHatBeretVeteranCMO
   name: chief medical officer's veteran beret
-  description: A Fur lined rubber beret, designed to survive even the most inevitable of chemistry mishaps.
+  description: A fur-lined rubber beret, designed to survive even the most explosive of chemistry mishaps.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Hats/beret_veteran_cmo.rsi
@@ -18,8 +18,8 @@
 - type: entity
   parent: ClothingHeadHatBeretRND
   id: ClothingHeadHatBeretCCBeregg
-  name: Sector Commanders Beregg
-  description: A Fur lined rubber beret to protect one's egg from even the most thorough of scramblings.
+  name: sector commander's beregg
+  description: A fur-lined rubber beret to protect one's egg from even the most thorough of scramblings.
   suffix: ADMEME
   components:
   - type: Sprite

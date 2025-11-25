@@ -219,6 +219,18 @@
     jumpsuit: ClothingUniformJumpsuitJacketMonkey
     id: PunPunIDCard
 
+- type: startingGear
+  id: MobPollyGear
+  equipment:
+    ears: ClothingHeadsetEngineering
+
+# Emotional Support Scurret
+
+- type: startingGear
+  id: EmotionalSupportScurretGear
+  equipment:
+    id: ScurretPDA
+
 # DeathMatch Gear
 
 - type: startingGear
@@ -236,11 +248,12 @@
 - type: startingGear
   id: BrigmedicGear
   equipment: # Heavily goob edited
-#    eyes: ClothingEyesGlassesMed # Omu - Available in loadouts.
+    eyes: ClothingEyesGlassesMedSec
     id: BrigmedicPDA
-#    ears: ClothingHeadsetAltSecurityRegular # Omu - Available in loadouts.
-#    belt: ClothingBeltMedicalEMTFilled # Omu - Available in loadouts.
-    pocket1: WeaponDisabler
+    ears: ClothingHeadsetBrigmedic # EE parity like i was told to do
+    belt: ClothingBeltMedicalEMTFilled
+    pocket1: OfficerGunCase # Omu
+    pocket2: WeaponDisabler # Goob
   storage:
     back:
     - Flash
@@ -250,7 +263,7 @@
 - type: startingGear
   id: MobAghostGear
   equipment:
-    back: ClothingBackpackSatchelHolding
+    back: ClothingBackpackSatchelAdmin
     id: AdminPDA
   storage:
     back:
@@ -258,6 +271,10 @@
     - trayScanner
     - AccessConfiguratorUniversal
     - Multitool
+    - WelderExperimental # Omu Edit - More Admin Tools
+    - PowerDrill # Omu Edit - More Admin Tools
+    - GeigerCounter # Omu Edit - More Admin Tools
+    - JawsOfLife # Omu Edit - More Admin Tools
 
 #Gladiator with spear
 - type: startingGear

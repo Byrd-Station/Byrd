@@ -576,7 +576,7 @@
       flare:
       - Flare
       tank:
-      - ExtendedEmergencyPlasmaTankFilled
+      - EmergencyPlasmaTankFilled
       mask:
       - ClothingMaskBreath
       emergencypen:
@@ -602,7 +602,7 @@
       flare:
       - Flare
       tank:
-      - ExtendedEmergencyPlasmaTankFilled
+      - EmergencyPlasmaTankFilled
       mask:
       - ClothingMaskGasSecurity
       emergencypen:
@@ -678,7 +678,7 @@
       flare:
       - Flare
       tank:
-      - ExtendedEmergencyPlasmaTankFilled
+      - EmergencyPlasmaTankFilled
       mask:
       - ClothingMaskGasSyndicate
       emergencypen:

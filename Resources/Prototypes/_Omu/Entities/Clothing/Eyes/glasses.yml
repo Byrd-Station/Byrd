@@ -1,12 +1,10 @@
-- type: entity
-  parent: [ClothingEyesGlassesSecurity, ShowSecurityIcons, ShowMedicalIcons, BaseSecurityContraband]
-  id: ClothingEyesGlassesCorpsman
-  name: corpsman glasses
-  description: Security glasses designed for the Corpsman for medical and security needs. Now with a cool blue hue!
+﻿- type: entity
+  parent: [ClothingEyesHudSciDiag, ClothingEyesGlassesSunglasses]
+  id: ClothingEyesGlassesSciDiag
+  name: silicon-interfacing glasses
+  description: A state-of-the-art heads-up display combining both diagnostic information and silicon communication capabilities. Grants access to RobotTalk and the binary network. Say hi to your station AI!
   components:
   - type: Sprite
-    sprite: _DV/Clothing/Eyes/Glasses/corpsglasses.rsi
+    sprite: _Omu/Clothing/Eyes/scidiagglasses.rsi
   - type: Clothing
-    sprite: _DV/Clothing/Eyes/Glasses/corpsglasses.rsi
-
-
+    sprite: _Omu/Clothing/Eyes/scidiagglasses.rsi

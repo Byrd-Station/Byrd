@@ -160,6 +160,7 @@
     - id: GasLeak
     - id: GreytideVirus
     - id: IonStorm # its calm like 90% of the time smh
+    - id: JobDistributionError
     - id: KudzuGrowth
     - id: MassHallucinations
     - id: MimicVendorRule
@@ -175,10 +176,8 @@
     - id: TidemindDevelop # Goobstation - Tidemind
     - id: MothroachSpawn # DeltaV
     - id: DerelictCyborgSyndicateSpawn # Goobstation - usually calm
-    - id: AncientXenoVentsEasy # Goobstation
-    - id: AncientXenoVentsMedium # Goobstation
-    - id: AncientXenoVentsHard # Goobstation
     - id: MalignRiftSpawn # DeltaV
+    - id: FloorGoblinMidRound # Goobstation
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -189,8 +188,11 @@
     - id: KingRatMigration
     - id: NinjaSpawn
     - id: ParadoxCloneSpawn
-    #- id: RevenantSpawn # removed from OMU events
+    #- id: RevenantSpawn  # GoobStation - removed till rework
     - id: SleeperAgents
+    - id: ChangelingMidround
+    - id: HereticMidround
+    - id: Devilmidround
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: DerelictCyborgSpawn
@@ -200,7 +202,8 @@
     - id: BingleSpawn #Goobstation - Bingle
     - id: SlaughterDemonMidround # Goobstation - Slaughter Demon
     - id: XenomorphsInfestation # WD EDIT
-    - id: AncientXenoVentsRogue # Goobstation
+   # - id: WraithMidround # Goobstation - Wraith - OMU Wraith is unbalanced and shit to deal with
+    #TODO When Slasher is Ready - id: SlasherSpawn # Goobstation - The Slasher
 
 - type: entity
   id: BaseStationEvent
@@ -243,7 +246,7 @@
     weight: 8
     duration: 35
     chaos: # Goobstation
-      Anomaly: 100 # OMU change - make it less chaotic
+      Anomaly: 100
     eventType: Chaotic # Goobstation
   # Goobstation
   - type: GameRule
@@ -355,10 +358,11 @@
   id: DragonSpawn
   components:
   - type: StationEvent
-    weight: 2 # Omu, weight decreased from 3
-    earliestStart: 45
-    reoccurrenceDelay: 20
-    minimumPlayers: 60
+    weight: 2 # Goobstation - was 3
+    earliestStart: 30 # Goobstation was 45
+    #recorruenceDelay: 20 # Goobstation - no longer needed
+    maxOccurrences: 1 # Goobstation
+    minimumPlayers: 50
     duration: null
     chaos: # Goobstation
       Hostile: 20
@@ -396,8 +400,9 @@
   - type: StationEvent
     weight: 4 # OMU change - make ninja less likely
     duration: null
-    earliestStart: 45
-    reoccurrenceDelay: 20
+    earliestStart: 30 # Goobstation - was 45
+    #reoccurrenceDelay: 20 # Goobstation - no longer needed
+    maxOccurrences: 1 # Goobstation
     minimumPlayers: 30
     chaos: # Goobstation
       Hostile: 20
@@ -419,6 +424,7 @@
     - Diona
     - Abductor
     - Harpy
+    - Plasmaman # EE
     # Goobstation end
   - type: AntagObjectives
     objectives:
@@ -504,27 +510,27 @@
       mindRoles:
       - MindRoleParadoxClone
 
-- type: entity
-  parent: BaseGameRule
-  id: RevenantSpawn
-  components:
-  - type: StationEvent
-    weight: 3.5
-    duration: 1
-    earliestStart: 30
-    minimumPlayers: 100 # OMU change - removes it from viable spawns (outside of ninja)
-    chaos: # Goobstation
-      Hostile: 20
-      Friend: 20
-      Combat: 40
-      Death: 100
-      Medical: 100
-    eventType: HostilesSpawn # Goobstation
-  # Goobstation
-  - type: GameRule
-    chaosScore: 450
-  - type: RandomSpawnRule
-    prototype: MobRevenant
+#- type: entity   Goobstaion start - disabled until rework
+#  parent: BaseGameRule
+#  id: RevenantSpawn
+#  components:
+#  - type: StationEvent
+#    weight: 3.5
+#    duration: 1
+#    earliestStart: 30
+#    minimumPlayers: 20
+#    chaos: # Goobstation
+#      Hostile: 20
+#      Friend: 20
+#      Combat: 40
+#      Death: 100
+#      Medical: 100
+#    eventType: HostilesSpawn # Goobstation
+#  # Goobstation
+#  - type: GameRule
+#    chaosScore: 450
+#  - type: RandomSpawnRule
+#    prototype: MobRevenant      goobstation end
 
 # Goob - wiz of our own
 #- type: entity
@@ -697,7 +703,7 @@
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
     minimumPlayers: 15
-    weight: 5
+    weight: 7 # Goobstation - was 5
     duration: 30 # DeltaV: was 60, used as a delay now
     chaos: # Goobstation
       Hostile: 20
@@ -723,7 +729,7 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
     minimumPlayers: 15
-    weight: 5
+    weight: 7 # Goobstation - was 5
     duration: 30 # DeltaV: was 60, used as a delay now
     chaos: # Goobstation
       Hostile: 20
@@ -749,7 +755,7 @@
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
     minimumPlayers: 15
-    weight: 5
+    weight: 7 # Goobstation - was 5
     duration: 30 # DeltaV: was 60, used as a delay now
     chaos: # Goobstation
       Hostile: 20
@@ -772,7 +778,7 @@
       path: /Audio/Announcements/attention.ogg
     earliestStart: 45 # DeltaV - was 20
     minimumPlayers: 30 # DeltaV - was 20
-    weight: 1 # DeltaV - was 1.5
+    weight: 3 # Goobstation - was 1.5
     duration: 30 # DeltaV: was 60, used as a delay now
     chaos: # Goobstation
       Hostile: 20
@@ -791,7 +797,7 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    earliestStart: 90
+    earliestStart: 60 # Goobstation - was 90 (impossible on goob)
     minimumPlayers: 40
     weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
     duration: 1
@@ -834,13 +840,13 @@
   components:
   - type: StationEvent
     earliestStart: 60 # OMU change - make lone-ops spawn later
-    weight: 5.5
-    minimumPlayers: 20
+    weight: 5.5       #Omu
+    minimumPlayers: 20 #Omu keeping it lower for now cause playercount
     duration: 1
     chaos: # Goobstation
-      Hostile: 80 # Omu, chaos score increased from 60
-      Medical: 90 # Omu, chaos score increased from 75
-      Death: 120 # OMU change, make chaos points more in line with the danger it poses
+      Hostile: 200
+      Medical: 200
+      Death: 200
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
@@ -870,9 +876,6 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
-      - type: AutoImplant
-        implants:
-        - DeathAcidifierImplant # Goobstation
       mindRoles:
       - MindRoleNukeops
   - type: AntagLoadProfileRule # Goobstation

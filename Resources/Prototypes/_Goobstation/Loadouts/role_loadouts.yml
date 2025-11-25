@@ -96,6 +96,7 @@
   - NanotrasenRepresentativeJumpsuit
   - NanotrasenRepresentativeBackpack
   - NanotrasenRepresentativeNeck
+  - NanotrasenRepresentativerMask #Omu
   - NanotrasenRepresentativeShoes
   - NanotrasenRepresentativeBelt
   - Glasses
@@ -156,28 +157,48 @@
   - GroupHonkopsMask
   - GroupPocketTankDouble
 
-# OMU
-#- type: roleLoadout
-#  id: JobBrigmedic
-#  groups:
-#  - BrigmedicHead
-#  - MedicalMask
-#  - BrigmedicJumpsuit
-#  - BrigmedicOuterClothing
-#  - MedicalGloves
-#  - BrigmedicBackpack
-#  #- SecurityMelee # Brigmed probably doesn't need this roundstart
-#  - SecurityShoes
-#  - SecurityNeck
-#  - SurvivalSecurity
-#  - Trinkets
-#  - Animals
-#  - SecurityStar
-#  - GroupSpeciesBreathToolSecurity
-#  # Goobstation - EE Plasmeme Change.
-#  - BrigmedicEnvirohelm
-# - BrigmedicEnvirosuit
-#  - BrigmedicEnvirogloves
+- type: roleLoadout
+  id: JobRoboticist
+  groups:
+  - GroupTankHarness
+  - ScientistHead
+  - ScientistNeck
+  - ScientistJumpsuit
+  - ScientistBackpack
+  - ScientistOuterClothing
+  - ScientistGloves
+  - ScientistShoes
+  - ScientistPDA
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+  # Plasmaman
+  - ScientistEnvirohelm
+  - ScientistEnvirosuit
+  - ScientistEnvirogloves
+
+- type: roleLoadout
+  id: JobBrigmedic
+  groups:
+  - BrigmedicHead
+  - MedicalMask
+  - BrigmedicJumpsuit
+  - BrigmedicOuterClothing
+  - MedicalGloves
+  - BrigmedicBackpack
+  - SecurityMelee # EE parity, make corpsman able to carry weapons like the rest of security
+  - SecurityShoes
+  - SecurityNeck
+  - SurvivalSecurity
+  - Trinkets
+  - Animals
+  - SecurityStar
+  - GroupSpeciesBreathToolSecurity
+  # Goobstation - EE Plasmeme Change.
+  - BrigmedicEnvirohelm
+  - BrigmedicEnvirosuit
+  - BrigmedicEnvirogloves
 
 
 # gives plasmaman a plasma breathing tank
@@ -186,3 +207,27 @@
   id: RoleSurvivalPlasmaTank
   groups:
   - GroupEVATankPlasma
+
+# Event-restricted roles
+
+- type: roleLoadout
+  id: JobSecurityClown
+  groups:
+  - ClownBackpack
+  - SurvivalSecurity
+  - GroupSpeciesBreathToolSecurity
+
+- type: roleLoadout
+  id: JobCommandMaid
+  groups:
+  - CommonBackpack
+  - Survival
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobPartyMaker
+  groups:
+  - GroupTankHarness
+  - CommonBackpack
+  - Survival
+  - GroupSpeciesBreathTool

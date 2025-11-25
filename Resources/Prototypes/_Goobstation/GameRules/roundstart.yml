@@ -29,13 +29,26 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# SubGamemodes
+
+- type: entity
+  parent: BaseGameRule
+  id: TraitorSubGamemodesRule
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: SubgamemodeTraitor
+      prob: 0.5
+
+# GameModes
+
 - type: entity
   parent: BaseGameRule
   id: Changeling
   components:
   - type: ChangelingRule
   - type: GameRule
-    minPlayers: 15
+    minPlayers: 20 # Omu, was 15
   - type: AntagRandomObjectives
     sets:
     - groups: ChangelingObjectiveGroups
@@ -51,8 +64,8 @@
     agentName: changeling-roundend-name
     definitions:
     - prefRoles: [ Changeling ]
-      max: 4
-      playerRatio: 12
+      max: 2 # Omu, was 4, we don't need 4 lings in a single round...
+      playerRatio: 20 # Omu, was 12, lings should require more players.
       chaosScore: 200
       jobBlacklist: [ Chaplain ] # GOOBSTATION
       blacklist:
@@ -76,7 +89,7 @@
     - groups: CorporateObjectiveGroups
     maxDifficulty: 8 # Very rare antag so they should get a lot of objectives
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 20
     delay:
       min: 465
       max: 665 # Delay is so the heads help their department get set up.
@@ -84,8 +97,8 @@
     definitions:
     - prefRoles: [ Traitor ]
       max: 2
-      playerRatio: 25
-      chaosScore: 300
+      playerRatio: 20 # Omu change, allows it to roll with terminal unreadies
+      chaosScore: 150 # Omu change, lowered chaos cost, if we can roll it, we should, its a good antag for RP.
       jobBlacklist: [ NanotrasenRepresentative ]
       whitelist:
         components:
@@ -126,14 +139,14 @@
   id: CalmLing # For Dual Antag Gamemodes
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 40 # Omu, was 30
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     agentName: changeling-roundend-name
     definitions:
     - prefRoles: [ Changeling ]
-      max: 2
-      playerRatio: 15
+      max: 1 # Omu, was 2, this is meant to spawn alongside other antags.
+      playerRatio: 40 # Omu, was 15, "Calm ling" yeah right.
       blacklist:
         components:
         - CommandStaff
@@ -284,7 +297,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 10
+    weight: 1
     duration: 1
     earliestStart: 50
     minimumPlayers: 20
@@ -394,7 +407,7 @@
     definitions:
     - prefRoles: [ Devil ]
       max: 1
-      playerRatio: 20
+      playerRatio: 40 # from 20 --> 40 , makes it less likely to spawn (Fuck devils)
       chaosScore: 150
       jobBlacklist: [ Chaplain, Mime, ChiefEngineer, ResearchDirector, Quartermaster ] #chaplain is obvious, mime can't write.
       mindRoles:
@@ -403,3 +416,30 @@
   - type: Tag
     tags:
     - RoundstartAntag
+
+- type: entity
+  parent: Thief
+  id: OopsAllThieves
+  components:
+  - type: GameRule
+    minPlayers: 30
+    chaosScore: 1200
+  - type: AntagSelection
+    agentName: thief-round-end-agent-name
+    definitions:
+    - prefRoles: [ Thief ]
+      max: 10
+      playerRatio: 7
+      lateJoinAdditional: true
+      allowNonHumans: true
+      multiAntagSetting: NotExclusive
+      startingGear: ThiefGear
+      components:
+      - type: Pacified
+      - type: Thieving
+        stripTimeReduction: 2
+        stealthy: true
+      mindRoles:
+      - MindRoleThief
+      briefing:
+        sound: "/Audio/Misc/thief_greeting.ogg"

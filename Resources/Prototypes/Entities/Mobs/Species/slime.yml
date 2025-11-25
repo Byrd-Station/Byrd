@@ -135,15 +135,16 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Slime
-#  - type: PassiveDamage # Around 8 damage a minute healed
-#    allowedStates:
-#    - Alive
-#    damageCap: 65
-#    damage:
-#      types:
-#        Heat: -0.14
-#      groups:
-#        Brute: -0.14
+  - type: PassiveDamage # Around 8 damage a minute healed # Omu start, add back slime regen
+    allowedStates:
+    - Alive
+    damageCap: 65
+    damage:
+      types:
+        Heat: -0.14
+      groups:
+        Brute: -0.14
+    healAllParts: true # Omu end
   #  - type: DamageVisuals
   #    damageOverlayGroups:
   #      Brute:
@@ -175,12 +176,22 @@
         scaleByQuantity: true
         damage:
           types:
-            Heat: 0.1
+            Heat: 0.25 # goob edit
+        conditions:
+        - !type:HasComponentOnEquipmentCondition # goob edit - make suits protect slimes from water damage
+          components:
+          - type: PressureProtection
+          invert: true
       - !type:PopupMessage
         type: Local
         visualType: Large
         messages: [ "slime-hurt-by-water-popup" ]
         probability: 0.25
+        conditions:
+        - !type:HasComponentOnEquipmentCondition # goob edit - make suits protect slimes from water damage
+          components:
+          - type: PressureProtection
+          invert: true
   - type: Butcherable
     butcheringType: Spike
     spawned:

@@ -133,6 +133,7 @@
   - Visitor
   - Zookeeper
   - ServiceWorker
+  - PartyMaker # event-restricted, Goobstation
 
 - type: department
   id: CentralCommand
@@ -180,6 +181,7 @@
   - BlueshieldOfficer # Goobstation
   - NanotrasenRepresentative # Goobstation
   - NanotrasenCareerTrainer # Goobstation
+  - AdministrativeAssistant # Delta V
   - CentralCommandOfficial
   - CBURN
   - ERTLeader
@@ -190,6 +192,7 @@
   - ERTEngineer
   - DeathSquad
   - HecuOperative
+  - CommandMaid # event-restricted, Goobstation
   primary: false
   weight: 100
 
@@ -230,6 +233,8 @@
   - Detective
   - Warden
   - Brigmedic # Goob
+  - SecurityClown # event-restricted, Goob
+  - TransitPrisoner # Omu
 
 - type: department
   id: Science
@@ -240,6 +245,7 @@
   - ResearchDirector
   - Scientist
   - ResearchAssistant
+  - Roboticist #Goob
 
 - type: department
   id: Silicon

@@ -1,25 +1,16 @@
-#Current brigmed loadout with a few extra groups to account for corpsman gear
 - type: roleLoadout
-  id: JobBrigmedic
+  id: JobTransitPrisoner
   groups:
-  - BrigmedicHead
-  - MedicalMask
-  - CorpsmanGlasses
-  - BrigmedicJumpsuit
-  - BrigmedicOuterClothing
-  - CorpsmanBelt
-  - MedicalGloves
-  - BrigmedicBackpack
-  #- SecurityMelee # Brigmed probably doesn't need this roundstart. /// This was commented out by goob im pretty sure.
-  - SecurityShoes
-  - SecurityNeck
-  - CorpsmanHeadset
-  - SurvivalSecurity
+  - GroupTankHarness
+  - PrisonerJumpsuits
+  - PrisonerOuterClothing
+  - PrisonerShoes
+  - CommonBackpack
+  - Glasses
+  - Survival
   - Trinkets
   - Animals
-  - SecurityStar
-  - GroupSpeciesBreathToolSecurity
-  # Goobstation - EE Plasmeme Change.
-  - BrigmedicEnvirohelm
-  - BrigmedicEnvirosuit
-  - BrigmedicEnvirogloves
+  - GroupSpeciesBreathTool
+  - PrisonerEnvirohelm
+  - PrisonerEnvirosuit
+  - PrisonerEnvirogloves

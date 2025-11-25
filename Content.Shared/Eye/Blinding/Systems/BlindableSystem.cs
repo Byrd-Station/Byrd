@@ -12,9 +12,11 @@
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 // SPDX-FileCopyrightText: 2025 kurokoTurbo <92106367+kurokoTurbo@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ThanosDeGraf <richardgirgindontstop@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Camera;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Rejuvenate;
@@ -40,6 +42,8 @@ public sealed class BlindableSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<BlindableComponent, RejuvenateEvent>(OnRejuvenate);
         SubscribeLocalEvent<BlindableComponent, EyeDamageChangedEvent>(OnDamageChanged);
+        SubscribeLocalEvent<BlindableComponent, GetEyePvsScaleAttemptEvent>(OnGetEyePvsScaleAttemptEvent);
+        SubscribeLocalEvent<BlindableComponent, GetEyeOffsetAttemptEvent>(OnGetEyeOffsetAttemptEvent);
     }
 
     // Might need to keep this one because of slimes since their eyes arent an organ, so they wouldnt get rejuvenated.
@@ -52,6 +56,18 @@ public sealed class BlindableSystem : EntitySystem
     {
         _blurriness.UpdateBlurMagnitude((ent.Owner, ent.Comp));
         _eyelids.UpdateEyesClosable((ent.Owner, ent.Comp));
+    }
+
+    private void OnGetEyePvsScaleAttemptEvent(Entity<BlindableComponent> ent, ref GetEyePvsScaleAttemptEvent args)
+    {
+        if (ent.Comp.IsBlind)
+            args.Cancelled = true;
+    }
+
+    private void OnGetEyeOffsetAttemptEvent(Entity<BlindableComponent> ent, ref GetEyeOffsetAttemptEvent args)
+    {
+        if (ent.Comp.IsBlind)
+            args.Cancelled = true;
     }
 
     [PublicAPI]
@@ -97,7 +113,7 @@ public sealed class BlindableSystem : EntitySystem
 
         // for now
         foreach (var eye in eyes)
-            _trauma.TryCreateOrganDamageModifier(eye.Owner, amount, blindable.Owner, "BlindableDamage", eye.Comp2);
+            _trauma.TryMakeOrganDamageModifier(eye.Owner, amount, blindable.Owner, "BlindableDamage", eye.Comp2); // Omu
     }
 
     // Alternative version of the method intended to be used with Eye Organs, so that you can just pass in

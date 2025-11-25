@@ -10,6 +10,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._DV.Polymorph;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Climbing.Events;
@@ -37,6 +38,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Physics.Components;
 using System.Numerics;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mind.Components;
 
 namespace Content.Shared._DV.Carrying;
@@ -54,6 +56,7 @@ public sealed class CarryingSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly StandingStateSystem _standingState = default!;
     [Dependency] private readonly SharedVirtualItemSystem  _virtualItem = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!;
 
     private EntityQuery<PhysicsComponent> _physicsQuery;
 
@@ -82,6 +85,7 @@ public sealed class CarryingSystem : EntitySystem
         SubscribeLocalEvent<BeingCarriedComponent, UnstrappedEvent>(OnDrop);
         SubscribeLocalEvent<BeingCarriedComponent, EscapeInventoryEvent>(OnDrop);
         SubscribeLocalEvent<CarriableComponent, CarryDoAfterEvent>(OnDoAfter);
+        SubscribeLocalEvent<BeingCarriedComponent, EntityTerminatingEvent>(OnDelete);
     }
 
     private void AddCarryVerb(Entity<CarriableComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
@@ -107,7 +111,8 @@ public sealed class CarryingSystem : EntitySystem
         // If the person is carrying someone, and the carried person is a pseudo-item, and the target entity is a storage,
         // then add an action to insert the carried entity into the target
         // AKA put carried felenid into a duffelbag
-        if (args.Using is not {} carried || !args.CanAccess || !TryComp<PseudoItemComponent>(carried, out var pseudoItem))
+        var carried = ent.Comp.Carried; // Goob edit start - It made ZERO sense to grab args.Using, which would point to a virtual item.
+        if (!args.CanAccess || !TryComp<PseudoItemComponent>(ent.Comp.Carried, out var pseudoItem)) // Goob edit end - OF COURSE if you have CarryingComponent you are carrying something, why even check that.
             return;
 
         var target = args.Target;
@@ -134,7 +139,11 @@ public sealed class CarryingSystem : EntitySystem
     /// </summary>
     private void OnVirtualItemDeleted(Entity<CarryingComponent> ent, ref VirtualItemDeletedEvent args)
     {
-        if (HasComp<CarriableComponent>(args.BlockingEntity))
+        // Goobstation - VirtualItemDeletedEvent is raised on both the blocking entity and the user,
+        //               so we need to check that the item being deleted is the carried person item and
+        //               not something unrelated like the virtual item for pulling another player.
+        //               See https://github.com/Goob-Station/Goob-Station/issues/2121
+        if (args.BlockingEntity == ent.Comp.Carried && HasComp<CarriableComponent>(args.BlockingEntity))
             DropCarried(ent, args.BlockingEntity);
     }
 
@@ -349,8 +358,7 @@ public sealed class CarryingSystem : EntitySystem
             !HasComp<BeingCarriedComponent>(carrier) &&
             !HasComp<BeingCarriedComponent>(carried) &&
             // finally check that there are enough free hands
-            TryComp<HandsComponent>(carrier, out var hands) &&
-            hands.CountFreeHands() >= carried.Comp.FreeHandsRequired;
+            _hands.CountFreeHands(carrier) >= carried.Comp.FreeHandsRequired;
     }
 
     private float MassContest(EntityUid roller, EntityUid target)
@@ -374,6 +382,9 @@ public sealed class CarryingSystem : EntitySystem
 
         return length;
     }
+
+    private void OnDelete(Entity<BeingCarriedComponent> ent, ref EntityTerminatingEvent args)
+        => DropCarried(ent.Comp.Carrier, ent.Owner);
 
     public override void Update(float frameTime)
     {

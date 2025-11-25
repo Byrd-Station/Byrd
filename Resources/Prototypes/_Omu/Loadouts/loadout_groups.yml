@@ -1,65 +1,76 @@
-#Brigmed loadout groups adding new corpsman items.
+﻿# RD
+
 - type: loadoutGroup
-  id: BrigmedicJumpsuit
-  name: loadout-group-brigmedic-jumpsuit
+  id: ResearchDirectorEyewear
+  name: loadout-group-research-director-eyewear
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - BrigmedicJumpsuit
-  - BrigmedicJumpskirt
-  - CorpsmanJumpsuit
-  - CorpsmanJumpskirt
+  - ResearchDirectorScienceGlasses
+  - ResearchDirectorScienceHud
+
+# Transit Prisoner
 
 - type: loadoutGroup
-  id: BrigmedicHead
-  name: loadout-group-brigmedic-head
+  id: PrisonerJumpsuits
+  name: loadout-group-prisoner-jumpsuits
+  loadouts:
+  - PrisonerJumpsuit
+  - PrisonerJumpskirt
+  - PrisonerJumpsuitSyndie
+  - PrisonerJumpskirtSyndie
+
+- type: loadoutGroup
+  id: PrisonerOuterClothing
+  name: loadout-group-prisoner-outer-clothing
   minLimit: 0
   loadouts:
-  - BrigmedicBeret
-  - CMOMedicalHeadMirror
-  - SecurityBeret
-  - SecurityHat
-  - TrooperHat
-  - CorpsmanBeret
+  - PassengerWintercoat
+  - PrisonerWintercoatOrange
+  - PrisonerWintercoatSyndie
 
 - type: loadoutGroup
-  id: CorpsmanBelt
-  name: loadout-group-corpsman-belt
+  id: PrisonerShoes
+  name: loadout-group-prisoner-shoes
+  loadouts:
+  - BlackShoes
+  - WinterBoots
+  - PrisonerShoesWinterSyndie
+
+# Plasmaman stuff
+
+- type: loadoutGroup
+  id: PrisonerEnvirohelm
+  name: loadout-group-prisoner-envirohelm
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - CorpsmanWebbing
-  - EMTBeltFilled
+  - PrisonerEnvirohelm
 
 - type: loadoutGroup
-  id: BrigmedicBackpack
-  name: loadout-group-brigmedic-backpack
-  loadouts:
-  - BrigmedicBackpack
-  - BrigmedicSatchel
-  - BrigmedicDuffel
-  - BrigmedicMessenger
-  - CorpsmanBackpack
-  - CorpsmanSatchel
-  - CorpsmanDuffel
-  - CorpsmanMessenger
-
-- type: loadoutGroup
-  id: CorpsmanHeadset
-  name: loadout-group-corpsman-headset
+  id: PrisonerEnvirosuit
+  name: loadout-group-prisoner-envirosuit
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - BrigmedHeadset
-  - CorpsmanHeadset
-  - CorpsmanAltHeadset
+  - PrisonerEnvirosuit
 
 - type: loadoutGroup
-  id: CorpsmanGlasses
-  name: loadout-group-corpsman-glasses
+  id: PrisonerEnvirogloves
+  name: loadout-group-prisoner-envirogloves
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - GlassesMedSec
-  - GlassesCorpsman
+  - PrisonerEnviroglovesBlack
+  - PrisonerEnviroglovesWhite
+
+# NTR
+
+- type: loadoutGroup
+  id: NanotrasenRepresentativerMask
+  name: loadout-group-ntr-mask
+  minLimit: 0
+  loadouts:
+  - NanotrasenRepresentativerMaskLollypop
+
 

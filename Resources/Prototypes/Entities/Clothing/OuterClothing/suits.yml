@@ -248,6 +248,10 @@
   - type: HideClothingLayerClothing # Goobstation
     hiddenSlots:
     - jumpsuit
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 - type: entity
   parent: [ ClothingOuterBaseLarge, GeigerCounterClothing, AllowSuitStorageClothing, ClothingOuterBaseToggleable ]
@@ -324,8 +328,9 @@
     parent: true
     components:
     - type: Stealth
-      maxVisibility: 0.2 # Goob edit
+      maxVisibility: -1.5 # Goob edit
       hadOutline: true
+      thermalsImmune: true # Goobstation
   - type: PowerCellDraw
     drawRate: 3.6 # 100 seconds on the default cell # Goob edit
   - type: ToggleCellDraw
@@ -439,6 +444,10 @@
   - type: HideClothingLayerClothing # Goobstation
     hiddenSlots:
     - jumpsuit
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - WhitelistChameleon
 
 - type: entity
   parent: [ ClothingOuterBase, ClothingOuterBaseToggleable ]

@@ -29,10 +29,10 @@
   lastNames: NamesOniLast
   naming: LastNoFirst
   # begin Goobstation: port EE height/width sliders
-  minHeight: 1.0
+  minHeight: 1.11
   defaultHeight: 1.2
   maxHeight: 1.35
-  minWidth: 1.05
+  minWidth: 1.1
   defaultWidth: 1.2
   maxWidth: 1.3
   # end Goobstation: port EE height/width sliders
@@ -61,26 +61,26 @@
       points: 8
       required: false
     RightLeg:
-      points: 2
+      points: 8 # Omu Edit - "Uncapped Customizations"
       required: false
     RightFoot:
-      points: 2
+      points: 8 # Omu Edit - "Uncapped Customizations"
       required: false
     LeftLeg:
-      points: 2
+      points: 8 # Omu Edit - "Uncapped Customizations"
       required: false
     LeftFoot:
-      points: 2
+      points: 8 # Omu Edit - "Uncapped Customizations"
       required: false
     RightArm:
-      points: 2
+      points: 8 # Omu Edit - "Uncapped Customizations"
       required: false
     RightHand:
-      points: 3
+      points: 8 # Omu Edit - "Uncapped Customizations"
       required: false
     LeftArm:
-      points: 2
+      points: 8 # Omu Edit - "Uncapped Customizations"
       required: false
     LeftHand:
-      points: 3
+      points: 8 # Omu Edit - "Uncapped Customizations"
       required: false
