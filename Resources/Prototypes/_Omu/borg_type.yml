@@ -23,7 +23,7 @@
   - Science
 
   # Visual
-  inventoryTemplateId: borgShort
+  inventoryTemplateId: borgTall
   spriteBodyState: science
   spriteHasMindState: science_e
   spriteNoMindState: science_e_r
