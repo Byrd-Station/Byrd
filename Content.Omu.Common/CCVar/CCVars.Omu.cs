@@ -6,7 +6,7 @@ namespace Content.Omu.Common.CCVar;
 public sealed partial class OmuCVars
 {
     /// <summary>
-    ///     How many seconds a player will have to wait to close the rules smite window.
+    ///     How many seconds a player will have to wait to close the rules smite popup.
     /// </summary>
     public static readonly CVarDef<float> RulesSmiteTime =
         CVarDef.Create("rulessmite.time", 60f, CVar.SERVER | CVar.REPLICATED);
