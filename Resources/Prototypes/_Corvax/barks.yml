@@ -354,26 +354,7 @@
   soundCollection:
     collection: Aviu4Bark
 
-# raincall
-- type: soundCollection
-  id: ogreBark
-  files:
-    - /Audio/_Omu/Voice/Barks/Ogre/ogre1.ogg
-    - /Audio/_Omu/Voice/Barks/Ogre/ogre2.ogg
-    - /Audio/_Omu/Voice/Barks/Ogre/ogre3.ogg
-    - /Audio/_Omu/Voice/Barks/Ogre/ogre4.ogg
-    - /Audio/_Omu/Voice/Barks/Ogre/ogre5.ogg
-    - /Audio/_Omu/Voice/Barks/Ogre/ogre6.ogg
-
-- type: bark
-  id: Ogre
-  name: Ogre
-  volume: 1
-  frequency: 0.6
-  minPitch: 0.8
-  maxPitch: 1
-  soundCollection:
-   collection: ogreBark
+#raincall
 
 - type: soundCollection
   id: menacingbark
@@ -388,10 +369,10 @@
 - type: bark
   id: menacingvoice
   name: Nerd
-  volume: 1
-  minpitch: 0.9
-  maxpitch: 1
-  frequency: 0.7
+  volume: 1.5
+  minPitch: 0.9
+  maxPitch: 1.2
+  frequency: 0.8
   soundCollection:
    collection: menacingbark
   
