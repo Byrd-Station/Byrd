@@ -331,6 +331,7 @@
     components:
     - type: Stealth
       maxVisibility: 0.8 # Omu
+
       hadOutline: true
       thermalsImmune: true # Goobstation
     - type: StealthOnMove

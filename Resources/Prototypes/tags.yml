@@ -1443,6 +1443,10 @@
 - type: Tag
   id: SalvageExperiment
 
+# Omu Station
+- type: Tag 
+  id: SalvagePinpointer
+
 - type: Tag
   id: SalvageScrap
 
