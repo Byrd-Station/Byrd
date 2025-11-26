@@ -968,8 +968,6 @@
   - BlackShoes
   - CargoWinterBoots
 
-
-
 - type: loadoutGroup
   id: SalvageSpecialistBackpack
   name: loadout-group-salvage-specialist-backpack
