@@ -22,7 +22,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBlueshieldOfficer
-      time: 187200 #52h - nothing ever happens
+      time: 187200
 
 # Hats
 - type: loadout
