@@ -1385,27 +1385,29 @@
   maxLimit: 1
   loadouts:
   - CombatGloves
-# Brigmedic /// Parts moved to _Omu
 
-# Omu
-#- type: loadoutGroup
-#  id: BrigmedicJumpsuit
-#  name: loadout-group-brigmedic-jumpsuit
-#  loadouts:
-#  - BrigmedicJumpsuit
-#  - BrigmedicJumpskirt
+# Brigmedic
 
-# Omu
-#- type: loadoutGroup
-#  id: BrigmedicHead
-#  name: loadout-group-brigmedic-head
-#  minLimit: 0
-#  loadouts:
-#  - BrigmedicBeret
-#  - CMOMedicalHeadMirror
-#  - SecurityBeret
-#  - SecurityHat
-#  - TrooperHat
+- type: loadoutGroup
+  id: BrigmedicJumpsuit
+  name: loadout-group-brigmedic-jumpsuit
+  loadouts:
+  - BrigmedicJumpsuit
+  - BrigmedicJumpskirt
+  - CorpsmanJumpsuit #Omu
+  - CorpsmanJumpskirt #Omu
+
+- type: loadoutGroup
+  id: BrigmedicHead
+  name: loadout-group-brigmedic-head
+  minLimit: 0
+  loadouts:
+  - BrigmedicBeret
+  - CMOMedicalHeadMirror
+  - SecurityBeret
+  - SecurityHat
+  - TrooperHat
+  - CorpsmanBeret #Omu
 
 - type: loadoutGroup
   id: BrigmedicOuterClothing
@@ -1417,15 +1419,18 @@
   - ArmorVestSlim
   - SecurityOfficerWintercoat
 
-# Omu
-#- type: loadoutGroup
-#  id: BrigmedicBackpack
-#  name: loadout-group-brigmedic-backpack
-#  loadouts:
-#  - BrigmedicBackpack
-#  - BrigmedicSatchel
-#  - BrigmedicDuffel
-#  - BrigmedicMessenger
+- type: loadoutGroup
+  id: BrigmedicBackpack
+  name: loadout-group-brigmedic-backpack
+  loadouts:
+  - BrigmedicBackpack
+  - BrigmedicSatchel
+  - BrigmedicDuffel
+  - BrigmedicMessenger
+  - CorpsmanBackpack #Omu
+  - CorpsmanSatchel #Omu
+  - CorpsmanDuffel #Omu
+  - CorpsmanMessenger #Omy
 
 - type: loadoutGroup
   id: BrigmedicEnvirohelm

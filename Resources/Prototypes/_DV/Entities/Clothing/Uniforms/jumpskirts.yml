@@ -75,3 +75,15 @@
     - type: Clothing
       sprite: _DV/Clothing/Uniforms/Jumpskirt/security_grey.rsi
 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtCorpsman
+  name: corpsman jumpskirt
+  description: This uniform is issued to qualified personnel who have been trained. No one cares that the training took half a day.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/corpsman.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/corpsman.rsi
+
+

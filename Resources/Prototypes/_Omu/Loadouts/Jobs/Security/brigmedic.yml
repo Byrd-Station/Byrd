@@ -1,3 +1,13 @@
+- type: loadoutEffectGroup
+  id: SeniorCorpsman
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBrigmedic
+      time: 90000 #25 hours
+
+
 - type: loadout
   id: BrigmedRedJacket
   equipment:
@@ -5,18 +15,29 @@
 
 - type: loadout
   id: CorpsmanBeret
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorCorpsman
   equipment:
     head: ClothingHeadHatBeretCorpsman
 
 - type: loadout
   id: CorpsmanJumpsuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorCorpsman
   equipment:
     jumpsuit: ClothingUniformJumpsuitCorpsman
+  groupBy: "jumpsuit" #Omu
 
 - type: loadout
   id: CorpsmanJumpskirt
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorCorpsman
   equipment:
     jumpsuit: ClothingUniformJumpskirtCorpsman
+  groupBy: "jumpskirt" #Omu
 
 - type: loadout
   id: CorpsmanWebbing
@@ -24,47 +45,61 @@
     belt: ClothingBeltCorpsmanWebbingFilled
 
 - type: loadout
-  id: EMTBeltFilled
+  id: CorpsmanBelt
   equipment:
-    belt: ClothingBeltMedicalEMTFilled
+    belt: ClothingBeltCorpsmanFilled
 
 - type: loadout
   id: CorpsmanBackpack
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorCorpsman
   equipment:
     back: ClothingBackpackCorpsman
+  groupBy: "backpack" #Omu
 
 - type: loadout
   id: CorpsmanSatchel
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorCorpsman
   equipment:
     back: ClothingBackpackSatchelCorpsman
+  groupBy: "satchel" #Omu
 
 - type: loadout
   id: CorpsmanDuffel
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorCorpsman
   equipment:
     back: ClothingBackpackDuffelCorpsman
+  groupBy: "duffel" #Omu
 
 - type: loadout
   id: CorpsmanMessenger
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorCorpsman
   equipment:
     back: ClothingBackpackMessengerCorpsman
+  groupBy: "messenger" #Omu
 
 - type: loadout
-  id: BrigmedHeadset
+  id: BrigmedicHeadset
   equipment:
     ears: ClothingHeadsetBrigmedic
 
 - type: loadout
-  id: CorpsmanHeadset
+  id: BrigmedicAltHeadset
   equipment:
-    ears: ClothingHeadsetCorpsman
-
-- type: loadout
-  id: CorpsmanAltHeadset
-  equipment:
-    ears: ClothingHeadsetAltCorpsman
+    ears: ClothingHeadsetAltBrigmedic
 
 - type: loadout
   id: GlassesCorpsman
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorCorpsman
   equipment:
     eyes: ClothingEyesGlassesCorpsman
 

@@ -12,7 +12,6 @@
     - id: ProcenylLazideChemistryVial
     - id: EbifinlLazideChemistryVial
 
-#Corpsman webbing with fill copied from EMT belt brigmed normally spawns with.
 - type: entity
   id: ClothingBeltCorpsmanWebbingFilled
   parent: ClothingBeltCorpsmanWebbing
@@ -20,15 +19,15 @@
   components:
   - type: StorageFill
     contents:
-    - id: Brutepack
-    - id: Ointment
-    - id: Bloodpack
-    - id: Gauze
-    #- id: EmergencyMedipen #You never know what people are going to latejoin into # Goobstation - start
-    #  amount: 3
+    - id: Stunbaton
+    - id: WeaponDisabler
     - id: HandheldCrewMonitor
-    - id: ParamedHypo
-    - id: CartridgeSaline
+    - id: SecHypo
+    - id: CartridgeEpinephrine
     - id: CartridgeBicaridine
     - id: CartridgeDermaline
-    - id: CartridgeAtropine # Goobstation - end
+    - id: CartridgeAtropine
+
+- type: entity
+  id: ClothingBeltCorpsmanFilled
+  parent: [ClothingBeltCorpsman, ClothingBeltCorpsmanWebbingFilled]

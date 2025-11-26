@@ -204,7 +204,7 @@
     - id: BoxAutoinjectorCartidges
     - id: ClothingBackpackDuffelSurgeryFilled
     - id: ClothingHandsGlovesLatex
-    - id: ClothingOuterHardsuitBrigmedic
+    - id: UndeterminedVoidsuitCorpsman #Omu
     - id: OxygenTankFilled
     - id: NitrogenTankFilled
     - id: ClothingUniformJumpskirtOfLife

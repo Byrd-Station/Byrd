@@ -8,3 +8,16 @@
     sprite: _DV/Clothing/Head/Hats/admin_hat.rsi
   - type: Clothing
     sprite: _DV/Clothing/Head/Hats/admin_hat.rsi
+
+- type: entity
+  parent: [ClothingHeadHatBeretSecurity, BaseSecurityContraband]
+  id: ClothingHeadHatBeretCorpsman
+  name: corpsman beret
+  description: For style-conscious combat lifesavers and medical specialists alike.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/beret_corpsman.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/beret_corpsman.rsi
+
+

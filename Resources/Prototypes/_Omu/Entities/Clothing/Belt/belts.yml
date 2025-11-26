@@ -101,3 +101,15 @@
     damageCoefficient: 0.1
   - type: StaticPrice
     price: 500
+
+- type: entity
+  parent: [ClothingBeltCorpsmanWebbing]
+  id: ClothingBeltCorpsman
+  name: corpsman belt
+  description: Standard security belt with blue corpsman highlights.
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Belt/corpsman.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Belt/corpsman.rsi
+
