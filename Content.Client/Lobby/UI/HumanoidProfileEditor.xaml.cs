@@ -192,7 +192,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
-
+using Content.Goobstation.Common.CCVar; // Goob Station - Barks
+using Content.Goobstation.Common.Barks; // Goob Station - Barks
 namespace Content.Client.Lobby.UI
 {
     [GenerateTypedNameReferences]
@@ -389,6 +390,17 @@ namespace Content.Client.Lobby.UI
 
             #endregion Gender
 
+            // Goob Station
+            #region Barks
+
+            if (configurationManager.GetCVar(GoobCVars.BarksEnabled))
+            {
+                BarksContainer.Visible = true;
+                InitializeBarkVoice();
+            }
+
+            #endregion
+
             RefreshSpecies();
 
             SpeciesButton.OnItemSelected += args =>
@@ -401,7 +413,7 @@ namespace Content.Client.Lobby.UI
             };
 
             // begin Goobstation: port EE height/width sliders
-            #region Height and Width            
+            #region Height and Width
 
             UpdateHeightWidthSliders();
             UpdateDimensions(SliderUpdate.Both);
@@ -1015,6 +1027,7 @@ namespace Content.Client.Lobby.UI
             UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
+            UpdateBarkVoice(); // Goob Station - Barks
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
@@ -1502,6 +1515,7 @@ namespace Content.Client.Lobby.UI
             UpdateSexControls(); // update sex for new species
             UpdateSpeciesGuidebookIcon();
             ReloadPreview();
+            UpdateBarkVoice(); // Goob Station - Barks
             // begin Goobstation: port EE height/width sliders
             // Changing species provides inaccurate sliders without these
             UpdateHeightWidthSliders();
@@ -1526,7 +1540,7 @@ namespace Content.Client.Lobby.UI
             SetDirty();
         }
 
-        // begin Goobstation: port EE height/width sliders
+        // Goob Station - Start
         private void SetProfileHeight(float height)
         {
             Profile = Profile?.WithHeight(height);
@@ -1540,7 +1554,12 @@ namespace Content.Client.Lobby.UI
             ReloadProfilePreview();
             IsDirty = true;
         }
-        // end Goobstation: port EE height/width sliders
+        private void SetBarkVoice(BarkPrototype newVoice)
+        {
+            Profile = Profile?.WithBarkVoice(newVoice);
+            IsDirty = true;
+        }
+        // Goob Station - End
 
         public bool IsDirty
         {
@@ -1843,7 +1862,10 @@ namespace Content.Client.Lobby.UI
             if (fixture != null)
             {
                 var avg = (Profile.Width + Profile.Height) / 2;
-                var weight = FixtureSystem.GetMassData(fixture.Fixtures["fix1"].Shape, fixture.Fixtures["fix1"].Density).Mass * avg;
+
+                var radius = fixture.Fixtures["fix1"].Shape.Radius; // Omu edit start - EEs weight calc system is much more funny
+                var density = fixture.Fixtures["fix1"].Density;
+                var weight = MathF.Round(MathF.PI * MathF.Pow(radius * avg, 2) * density); // Omu edit end
                 WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) weight));
             }
             else // Whelp, the fixture doesn't exist, guesstimate it instead
