@@ -1,0 +1,8 @@
+- type: latheRecipe
+  id: UndeterminedVoidsuitEngineer
+  result: UndeterminedVoidsuitEngineer
+  completetime: 10
+  materials:
+    Steel: 9000
+    Plastic: 500
+    Uranium: 3000

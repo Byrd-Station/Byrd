@@ -57,6 +57,7 @@
     - MiscSignallersStatic
     - NailgunStatic
     - NailsStatic
+    - EngineerVoidsuitsStaticOmu
     dynamicPacks:
     - ConstructionBagOfHolding
     - AdvancedTools

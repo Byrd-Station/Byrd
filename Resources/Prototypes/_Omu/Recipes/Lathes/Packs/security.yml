@@ -3,3 +3,8 @@
   recipes:
   - MagazineShotgunLeverRifleEmpty
   - MagazineShotgunLeverRifle
+
+- type: latheRecipePack
+  id: SecurityVoidsuitsStaticOmu
+  recipes:
+  - UndeterminedVoidsuitSecurity

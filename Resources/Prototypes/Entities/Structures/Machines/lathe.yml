@@ -767,7 +767,9 @@
     - ScienceExplosives
     - GrenadeTriggersStatic
     - SecurityWeaponsNonEmaggableStaticGoob
-    - SecurityAmmoStaticOmu # Omu
+    # Omu
+    - SecurityAmmoStaticOmu
+    - SecurityVoidsuitsStaticOmu
     dynamicPacks:
     - SalvageSecurityBoards
     - SalvageSecurityWeapons

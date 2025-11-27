@@ -1,0 +1,9 @@
+- type: latheRecipe
+  id: UndeterminedVoidsuitSecurity
+  result: UndeterminedVoidsuitSecurity
+  completetime: 10
+  materials:
+    Plasteel: 3000
+    Steel: 1000
+    Plastic: 500
+    Durathread: 3000
