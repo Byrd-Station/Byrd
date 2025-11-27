@@ -1051,7 +1051,7 @@
     thresholds:
       0: Alive
       300: Dead # Omu, Make smile a bit more tanky
-  - type: CanEscapeInventory
+  - type: CanEscapeInventory # Omu
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepSlime
