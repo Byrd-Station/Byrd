@@ -882,6 +882,8 @@
     - GrenadeTriggersStatic
     # Einstein Engines Packs
     - SyringeCase
+    # Omu
+    - ParamedicVoidsuitsStaticOmu
     dynamicPacks:
     - Chemistry
     # Goobstation Packs

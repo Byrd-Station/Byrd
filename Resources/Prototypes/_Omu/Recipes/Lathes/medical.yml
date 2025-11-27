@@ -1,0 +1,9 @@
+- type: latheRecipe
+  id: UndeterminedVoidsuitParamedic
+  result: UndeterminedVoidsuitParamedic
+  completetime: 10
+  materials:
+    Steel: 1500
+    Plastic: 3000
+    Durathread: 1000
+    Cloth: 3000
