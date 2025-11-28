@@ -1202,3 +1202,31 @@ Entries:
       message: Fixed PassiveDamage so that it works properly with woundmed.
   id: 141
   time: '2025-11-23T19:13:22.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: Antag spawn rates
+  id: 142
+  time: '2025-11-24T20:32:02.0000000+00:00'
+- author: Kirisune
+  changes:
+    - type: Tweak
+      message: Squished chaplain's arrythmic knife to a more reasonable size.
+  id: 143
+  time: '2025-11-24T20:33:11.0000000+00:00'
+- author: Sarahon
+  changes:
+    - type: Tweak
+      message: >-
+        Sec no longer use space animal organs for the memes(Command should
+        follow space law)
+  id: 144
+  time: '2025-11-25T20:48:04.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Add
+      message: >-
+        Added the concussive gauntlets as both something you can buy in the salv
+        vendor and a roundstart kit for salvage.
+  id: 145
+  time: '2025-11-25T20:58:24.0000000+00:00'
