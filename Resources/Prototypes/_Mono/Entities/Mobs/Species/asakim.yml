@@ -215,6 +215,11 @@
     - DoorBumpOpener
     - AnomalyHost
     - ReptilianEmotes
+  - type: TranslatorImplantBlocker
+  - type: Access
+    tags:
+    - NuclearOperative # This is the access that ADS use for some reason.
+    - SyndicateAgent
   # Omu End
 
 - type: entity

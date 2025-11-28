@@ -1,6 +1,6 @@
 - type: entity
   name: VC-8 "Handshake" revolver
-  parent: BaseWeaponRevolver
+  parent: [BaseWeaponRevolver, BaseGrandTheftContraband]
   id: VulcanEightRevolver
   description: A replica of the legendary Vulcan Eight, this 12-gauge revolver packs both an unrealistic capacity and an unrealistic punch. A tungsten alloy gyroscope in the handle allows for it to be fired with alarming ease and speed. A CelTek stamp identifies it as a replica.
   components:
@@ -84,7 +84,7 @@
 
 - type: entity
   name: T8 "Consistency" revolver
-  parent: BaseWeaponRevolver
+  parent: [BaseWeaponRevolver, BaseSecurityContraband]
   id: SecurityDutyRevolver
   description: A high-end, high-capacity revolver for the discerning officer. It's even coated in security red! This revolver trades the throughput of a mk58 for not only style, but also stopping power. Loads .30 rifle.
   components:
