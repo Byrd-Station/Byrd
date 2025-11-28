@@ -20,15 +20,23 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 [color=#808080]A Khese is [color=#b3b3b3]a young adult[/color] until age 35, [color=#b3b3b3]an adult[/color] until age 95, [color=#b3b3b3]middle-aged[/color] until age 150, and [color=#b3b3b3]elderly[/color] beyond that point.[/color]
 
 ## Overview
-  The Khese Müüs (Natus Somniatore) are large, horned people hailing from the further reaches of the Orion Spur. After a violent insurrection
+  The [bold][color=#a4d68c]Khese Müüs[/color][/bold] (Natus Somniatore) are large, horned people hailing from the further reaches of the Orion Spur. After a violent insurrection
   following decades of occupation by Interdyne Pharmaceuticals, they've cautiously taken to the stars.
   
 ## Khörs Sölijäštü, the Language of the Khese Müüs
   Born from millions of years of devout worship and nomadic travel, the language of the Khese has taken on an diglossic character.
   There are two dialects: [bold][color=#a4d68c]Khörs Sölijäštü[/color][/bold], the spiritual dialect, and [bold][color=#9966CC]Kors Solijastu[/color][/bold], the nomadic dialect.
-  In casual, or common conversation, one would use Kors, with it's harder consonants and simplified vowel harmony. When speaking of spiritual, political, or otherwise deeply
+  In casual, or common conversation, one would use [bold][color=#9966CC]Kors[/color][/bold], with its harder consonants and simplified vowel harmony. When speaking of spiritual, political, or otherwise deeply
   personal matters, one would use Khörs. Words in this dialect take on more abstract, philosophical meanings, compared to their straightforward nomadic counterparts.
   Among spacefaring Khese, Kors remains a go-to tongue, and usage of the liturgy around or with non-Khese strangers is a social faux-pas at best.
+
+  ### Important Khörs Vocab
+    - [bold][color=#a4d68c]Iñozyn Ûl[/color][/bold] / [bold][color=#9966CC]Inozyn ul[/color][/bold] = The Khese Homeworld = “The Longest Path”
+    - [bold][color=#a4d68c]Khese Müüs[/color][/bold] / = [bold][color=#9966CC]Kese Muus[/color][/bold] = “Gentle People”
+    - [bold][color=#a4d68c]Khüsse Itüčelär[/color][/bold] / [bold][color=#9966CC]Kusse Itucelar[/color][/bold] = Government of the Khese = "Chosen Stewards"
+    - [bold][color=#a4d68c]Khörs Sölijäštÿ[/color][/bold] / [bold][color=#9966CC]Kors Solijasti[/color][/bold] = Shamans = "Soil Speakers"
+    - [bold][color=#a4d68c]Khörs Şirüčelär[/color][/bold] / [bold][color=#9966CC]Kors Sirucelar[/color][/bold] = Industrialists = "Soil Movers"
+    - [bold][color=#a4d68c]Khörs Alkučalar[/color][/bold] / [bold][color=#9966CC]Kors Alkucalar[/color][/bold] = Nomadic Peoples = "Soil Walkers"
 
 ## Khese Naming Conventions
   Given the diglossic nature of Khörs, the name of a Khese Müüs in turn possesses a dual nature. 
@@ -40,26 +48,26 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   ### Khörs Alküče
     The Nomadic peoples of Iñozyn Ûl opt for brief, pleasant names.
-    - Kördimjasqÿ / Kordimjaski 
-    - Muukhaya (An example of a taboo name, would not be spoken in a Liturgical dialect)
-    - Korbatâr / Korbatar
+    - [color=#a4d68c]Kördimjasqÿ / [color=#9966CC]Kordimjaski[/color]
+    - [color=#9966CC]Muukhaya (An example of a taboo name, would not be spoken in a Liturgical dialect)
+    - [color=#a4d68c]Korbatâr / [color=#9966CC]Korbatar[/color]
 
   ### Khörs Sölijäštÿ
     The Shamanic peoples of Iñozyn Ûl opt for flowery, poetic names that reflect their devotion.
-    - Manatai Çetçeg / Manatay Chetcheg
-    - Bekqör Köpke / Bekor Kopke
-    - Öyün Delkhinn / Oyin Delkhin
+    - [color=#a4d68c]Manatai Çetçeg[/color] / [color=#9966CC]Manatay Chetcheg[/color]
+    - [color=#a4d68c]Bekqör Köpke[/color] / [color=#9966CC]Bekor Kopke[/color]
+    - [color=#a4d68c]Öyün Delkhinn[/color] / [color=#9966CC]Oyin Delkhin[/color]
 
   ### Khörs Şirüče
     The Industrialist founders of the Khüsse Itüčelär offer the most variability in naming schema,
     taking influence from both of their cultural counterparts, and iterating upon them. This demographic would be most likely to be using surnames.
-    - Örlög Täščÿ / Orlog Taschi
-    - Âsaqata / Asakata
-    - Jumısşı Maktar / Jumisshi Maktar
+    - [color=#a4d68c]Örlög Täščÿ[/color] / [color=#9966CC]Orlog Taschi[/color]
+    - [color=#a4d68c]Âsaqata[/color] / [color=#9966CC]Asakata[/color]
+    - [color=#a4d68c]Jumısşı Maktar[/color] / [color=#9966CC]Jumisshi Maktar[/color]
 
   ### Creating a Khese Name
     With all this in mind, it may still seem unintuitive to name a Khese character. Thankfully the do's and don'ts are quite simple:
-    - [bold]Do[/bold] pick from the two sets of vowels, [bold]bright (e, i),[/bold] or [bold]dark (a, o, u).[/bold]
+    - [bold]Do[/bold] pick from the two sets of vowels, [bold]bright (e, i, y),[/bold] or [bold]dark (a, o, u).[/bold]
     - [bold]Don't[/bold] mix the vowel sets. Examples would be: Kalime, Irtuuk, Epku
     - [bold]Do[/bold] use hard sounds [bold](k, t, p, s, sh, m, n, l, r)[/bold]
     - [bold]Do[/bold] keep it simple! Most Khese don't have surnames, titles, or family names! One name will do just fine.

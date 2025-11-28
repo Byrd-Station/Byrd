@@ -1,0 +1,11 @@
+- type: localizedDataset
+  id: NamesKheseFirst
+  values:
+    prefix: names-khese-first-dataset-
+    count: 30
+
+- type: localizedDataset
+  id: NamesKheseLast
+  values:
+    prefix: names-khese-last-dataset-
+    count: 30

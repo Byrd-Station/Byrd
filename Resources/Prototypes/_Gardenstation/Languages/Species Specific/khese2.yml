@@ -1,8 +1,8 @@
 # SPDX-FileCopyrightText: 2025 ratdotnet <auroraaegis87@protonmail.com>
-# spoken by the Khese Muus. Simplified Dialect. Comparable to Mongolian/Tatar/Kazakh
-# Font may prove to suck to use, may have to change/comment out.
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
+# spoken by the Khese Muus. Simplified Dialect. Comparable to Mongolian/Tatar/Kazakh
+# Font may prove to suck to use, may have to change/comment out.
 
 - type: language
   id: KheseCommon
