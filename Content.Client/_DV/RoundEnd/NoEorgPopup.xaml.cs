@@ -22,6 +22,8 @@ public sealed partial class NoEorgPopup : FancyWindow
         IoCManager.InjectDependencies(this);
         RobustXamlLoader.Load(this);
 
+        CloseButton.Visible = false;
+
         InitializeUI();
         InitializeEvents();
         ResetTimer();
