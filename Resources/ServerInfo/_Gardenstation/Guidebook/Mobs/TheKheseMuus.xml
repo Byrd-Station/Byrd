@@ -27,7 +27,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Born from millions of years of devout worship and nomadic travel, the language of the Khese has taken on an diglossic character.
   There are two dialects: [bold][color=#a4d68c]Khörs Sölijäštü[/color][/bold], the spiritual dialect, and [bold][color=#9966CC]Kors Solijastu[/color][/bold], the nomadic dialect.
   In casual, or common conversation, one would use [bold][color=#9966CC]Kors[/color][/bold], with its harder consonants and simplified vowel harmony. When speaking of spiritual, political, or otherwise deeply
-  personal matters, one would use Khörs. Words in this dialect take on more abstract, philosophical meanings, compared to their straightforward nomadic counterparts.
+  personal matters, one would use [bold][color=#a4d68c]Khörs[/color][/bold]. Words in this dialect take on more abstract, philosophical meanings, compared to their straightforward nomadic counterparts.
   Among spacefaring Khese, Kors remains a go-to tongue, and usage of the liturgy around or with non-Khese strangers is a social faux-pas at best.
 
   ### Important Khörs Vocab
@@ -42,14 +42,14 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   Given the diglossic nature of Khörs, the name of a Khese Müüs in turn possesses a dual nature. 
   At birth, they are assigned both a "True Name", and a "Common Name", each used in differing contexts.
   A Khese's given name is broadly determined by the aspect of Khese culture it is born into. 
-  Typically, their names are auspicious in nature, though the circumstance of their birth may lead to a taboo name, in hopes of warding off misfortune.
+  Typically, their names are unisex, and auspicious in nature, though the circumstance of their birth may lead to a taboo name, in hopes of warding off misfortune.
   
   Examples from the three cultural tendencies are as follows:
 
   ### Khörs Alküče
     The Nomadic peoples of Iñozyn Ûl opt for brief, pleasant names.
     - [color=#a4d68c]Kördimjasqÿ / [color=#9966CC]Kordimjaski[/color]
-    - [color=#9966CC]Muukhaya (An example of a taboo name, would not be spoken in a Liturgical dialect)
+    - [color=#9966CC]Muukhaya[/color] (An example of a taboo name, would not be spoken in a Liturgical dialect)
     - [color=#a4d68c]Korbatâr / [color=#9966CC]Korbatar[/color]
 
   ### Khörs Sölijäštÿ
@@ -74,6 +74,11 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     - [bold]Don't[/bold] use fancy characters [bold](ö, ä, ç, etc.).[/bold] We do need to be able to type these easily, after all!
     - [bold]Do[/bold] feel free to mash together words from Mongolian, Tatar, and Kazakh! Make something cool!
 
+## Cultural Views and Attitudes
+  - Khese tradition outright disallows the disfigurement of slain combatants or sacrifices. The soul must return to the soil as it was in life, if the body is not consumed. Embalming and demisurgery are extremely important aspects of Khese burial rites
+  - “Borging”, or, the act of interfacing one's brain with a Man-Machine-Interface, has come to be regarded as one of the highest crimes an individual can commit against a Khese. [bold]The Shamanic Confederation of the Khusse Itüčelär[/bold] maintain the position that it is of the utmost importance to simply return unrevivable bodies to their homeland. To hold the soul in a mechanical artifice risks decoupling it from its connection to the world-spirit, damning it to an eternal limbo.
+  - Khese society is nearly entirely agender in its function. Even among its most conservative spaces, men and women perform the same duties, wear the same clothing, and share similar names.
+
 ## Benefits
   - They take [color=#1e90ff]20% less Blunt, Slash, and Piercing damage[/color].
   - Does more damage in melee; 25% more Blunt, Slash, Piece, Stamina, and Structural damage.
@@ -81,7 +86,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   - Slightly more stamina than Humans.
 
 ## Drawbacks
-  - Khese are generally unwilling or unable to wield firearms not produced exclusively for them. 
+  - They are generally unwilling or unable to wield firearms not produced exclusively for them. 
   - They are harder to carry and pull.
   - They are bigger than Humans, making them easier to hit.
 

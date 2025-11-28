@@ -14,4 +14,3 @@ ent-RightFootOni = Khese right foot
 ent-OrganOniStomach = Khese stomach
 ent-OrganOniLiver = Khese liver
 ent-OrganOni = Khese stomach
-ent-UristMcOni = Urist McKhese
