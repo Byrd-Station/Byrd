@@ -125,6 +125,7 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Avalon <jfbentley1@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
 # SPDX-FileCopyrightText: 2025 BloodfiendishOperator <141253729+Diggy0@users.noreply.github.com>
@@ -226,6 +227,7 @@
   - ClothingNeckScarfStripedTrans
   - ClothingNeckScarfStripedGenderfluid
   - ClothingNeckChameleonPride
+  - BarberScissors
   # Omu end
   - CardBoxBlack # GoobStation
   - CardBoxNanotrasen # GoobStation
@@ -254,6 +256,7 @@
   - Cane
   - WhiteCane
   - TapeRecorder
+  - DrinkOniGourd
   # End DeltaV Additions
 
 - type: loadoutGroup
@@ -354,6 +357,7 @@
   - CaptainCloak
   - CaptainCloakFormal
   - CaptainMantle
+  - VeteranCaptainCloak # goob
 
 - type: loadoutGroup
   id: CaptainBackpack
@@ -419,6 +423,7 @@
   - ClothingFormalHoPCoat # Omu
   - ClothingFormalHoPJacket # Omu
   - ClothingFormalHoPDress # Omu
+  - HoPLongcoat #goob
 
 # Civilian
 - type: loadoutGroup
@@ -934,6 +939,7 @@
   - CargoTechnicianSweaterSkirt
   - CargoTechnicianShortPantsIfuckinghateyouifyouwearthisbtw
   - CargoTechnicianShortSkirtsInsteadofPants
+  - CargoTechnicianUniformTopInsteadOfJumpsuit
   # OmuStation End
   - CargoTechnicianJumpsuitMail # Goob/DeltaV - Mail
   - CargoTechnicianJumpskirtMail # Goob/DeltaV - Mail
@@ -1178,6 +1184,7 @@
   - ResearchDirectorLabCoat
   - ResearchDirectorWintercoat
   - LongScienceCoat # OmuStation
+  - ResearchDirectorLabCoatPurple #goob
 
 - type: loadoutGroup
   id: ResearchDirectorShoes
@@ -1191,8 +1198,8 @@
   name: loadout-group-scientist-head
   minLimit: 0
   loadouts:
-  - RoboticistCap
-  - SkullBandana
+  #- RoboticistCap
+  #- SkullBandana
   - ScientificBeret
 
 - type: loadoutGroup
@@ -1208,8 +1215,8 @@
   loadouts:
   - ScientistJumpsuit
   - ScientistJumpskirt
-  - RoboticistJumpsuit
-  - RoboticistJumpskirt
+  #- RoboticistJumpsuit
+  #- RoboticistJumpskirt
   - SeniorResearcherJumpsuit
   - SeniorResearcherJumpskirt
   - ResearchMJ # goob
@@ -1291,6 +1298,10 @@
   - HoSParadeUniformMale # Omu
   - HoSParadeUniformFemale # Omu
   - HoSSummerShirt # goob
+  - HeadofSecurityBlueSuitDV # Omu
+  - HeadofSecurityBlueSkirtDV # Omu
+  - HeadofSecurityGreySuitDV # Omu
+  - HeadofSecurityGreySkirtDV # Omu
 
 - type: loadoutGroup
   id: HeadofSecurityNeck
@@ -1325,6 +1336,10 @@
   loadouts:
   - WardenJumpsuit
   - WardenJumpskirt
+  - WardenJumpsuitBlueDV # Omu
+  - WardenJumpskirtBlueDV # Omu
+  - WardenJumpsuitGreyDV # Omu
+  - WardenJumpskirtGreyDV # Omu
 
 - type: loadoutGroup
   id: WardenOuterClothing
@@ -1332,6 +1347,7 @@
   loadouts:
   - WardenCoat
   - WardenArmoredWinterCoat
+  - WardenCoatBlue #goob
 
 - type: loadoutGroup
   id: SecurityHead
@@ -1356,6 +1372,10 @@
   - SeniorOfficerJumpskirt
   - TrooperUniform
   - BlackRedUniform # OmuStation Addon
+  - SecurityJumpsuitBlueDV # Omu
+  - SecurityJumpskirtBlueDV # Omu
+  - SecurityJumpsuitGreyDV # Omu
+  - SecurityJumpskirtGreyDV # Omu
 
 - type: loadoutGroup
   id: SecurityBackpack
@@ -1372,7 +1392,6 @@
   loadouts:
   - SecurityBelt
   - SecurityWebbing
-  - SecurityJudoBelt # Goobstation - Martial Arts
 
 - type: loadoutGroup
   id: SecurityOuterClothing
@@ -1496,6 +1515,8 @@
   loadouts:
   - ChiefMedicalOfficerCloak
   - ChiefMedicalOfficerMantle
+  - ChiefMedicalOfficerDecoratedCloak # Omu
+  - ChiefMedicalOfficerModernMantle # Omu
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerShoes
@@ -1529,6 +1550,8 @@
   - MedicalGreenScrubs
   - MedicalPurpleScrubs
   - MedicMJ # goob
+  - CybersunMedicalJumpsuit # Omu
+  - CybersunMedicalJumpskirt # Omu
 
 - type: loadoutGroup
   id: MedicalDoctorOuterClothing
@@ -1570,6 +1593,7 @@
   loadouts:
   - LatexGloves
   - NitrileGloves
+  - CybersunNitrileGloves # Omu
 
 - type: loadoutGroup
   id: MedicalMask
@@ -1622,6 +1646,7 @@
   minLimit: 0
   loadouts:
   - ParamedicHead
+  - ParamedicCapCybersun # Omu
   - SeniorPhysicianBeret # Goobstation
 
 - type: loadoutGroup
@@ -1635,6 +1660,9 @@
   - SeniorPhysicianJumpsuit # Goobstation
   - SeniorPhysicianJumpskirt # Goobstation
   - ParamedMJ # goob
+  - CybersunMedicalJumpsuit # Omu
+  - CybersunMedicalJumpskirt # Omu
+  - ParamedUniformCybersun # Omu
 
 - type: loadoutGroup
   id: ParamedicOuterClothing

@@ -96,6 +96,7 @@
   - NanotrasenRepresentativeJumpsuit
   - NanotrasenRepresentativeBackpack
   - NanotrasenRepresentativeNeck
+  - NanotrasenRepresentativerMask #Omu
   - NanotrasenRepresentativeShoes
   - NanotrasenRepresentativeBelt
   - Glasses
@@ -116,6 +117,7 @@
   - BlueshieldOfficerJumpsuit
   - BlueshieldOfficerBackpack
   - BlueshieldOfficerOuter
+  - BlueshieldOfficerBelt #Omu - Senior BSO drip
   - BlueshieldOfficerNeck
   - BlueshieldOfficerMask
   - BlueshieldOfficerShoes
@@ -157,6 +159,27 @@
   - GroupPocketTankDouble
 
 - type: roleLoadout
+  id: JobRoboticist
+  groups:
+  - GroupTankHarness
+  - ScientistHead
+  - ScientistNeck
+  - ScientistJumpsuit
+  - ScientistBackpack
+  - ScientistOuterClothing
+  - ScientistGloves
+  - ScientistShoes
+  - ScientistPDA
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+  # Plasmaman
+  - ScientistEnvirohelm
+  - ScientistEnvirosuit
+  - ScientistEnvirogloves
+
+- type: roleLoadout
   id: JobBrigmedic
   groups:
   - BrigmedicHead
@@ -165,7 +188,7 @@
   - BrigmedicOuterClothing
   - MedicalGloves
   - BrigmedicBackpack
-  #- SecurityMelee # Brigmed probably doesn't need this roundstart
+  - SecurityMelee # EE parity, make corpsman able to carry weapons like the rest of security
   - SecurityShoes
   - SecurityNeck
   - SurvivalSecurity
@@ -185,3 +208,27 @@
   id: RoleSurvivalPlasmaTank
   groups:
   - GroupEVATankPlasma
+
+# Event-restricted roles
+
+- type: roleLoadout
+  id: JobSecurityClown
+  groups:
+  - ClownBackpack
+  - SurvivalSecurity
+  - GroupSpeciesBreathToolSecurity
+
+- type: roleLoadout
+  id: JobCommandMaid
+  groups:
+  - CommonBackpack
+  - Survival
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobPartyMaker
+  groups:
+  - GroupTankHarness
+  - CommonBackpack
+  - Survival
+  - GroupSpeciesBreathTool

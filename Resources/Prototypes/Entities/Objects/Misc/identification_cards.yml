@@ -389,6 +389,9 @@
     - state: idshaftminer
   - type: PresetIdCard
     job: SalvageSpecialist
+  - type: Tag # Omu Edit
+    tags:
+    - SalvagePinpointer
 
 - type: entity
   parent: IDCardStandard
