@@ -178,13 +178,13 @@
     variation: 0.125
   sounds:
     Scream:
-      path: /Audio/_EE/Voice/Xelthia/scream.ogg
+      path: /Audio/_EinsteinEngines/Voice/Xelthia/scream.ogg
     Laugh:
-      path: /Audio/_EE/Voice/Xelthia/laugh.ogg
+      path: /Audio/_EinsteinEngines/Voice/Xelthia/laugh.ogg
     Sneeze:
-      path: /Audio/_EE/Voice/Xelthia/sneeze.ogg
+      path: /Audio/_EinsteinEngines/Voice/Xelthia/sneeze.ogg
     Cough:
-      path: /Audio/_EE/Voice/Xelthia/cough.ogg
+      path: /Audio/_EinsteinEngines/Voice/Xelthia/cough.ogg
     CatMeow:
       collection: CatMeows
     CatHisses:
@@ -202,7 +202,7 @@
     Sigh:
       collection: MaleSigh
     Crying:
-      path: /Audio/_EE/Voice/Xelthia/cry.ogg
+      path: /Audio/_EinsteinEngines/Voice/Xelthia/cry.ogg
     Whistle:
       collection: Whistles
     Weh:

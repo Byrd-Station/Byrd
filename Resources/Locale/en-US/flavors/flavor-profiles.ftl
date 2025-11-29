@@ -391,5 +391,4 @@ flavor-complex-bottledlightning = like lightning in a bottle
 flavor-complex-punishment = like punishment
 flavor-complex-artifact-glue = like crushed artifacts
 flavor-weh = like weh
-flavor-complex-supernova = like a supernova frozen at its apex
-flavor-complex-xelthia = like some exotic kind of sourish calamari
+flavor-hew = like hew

@@ -1,5 +1,5 @@
 using Content.Server.Body.Systems;
-using Content.Shared._EE.Xelthia;
+using Content.Shared._EinsteinEngines.Xelthia;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Events;
 using Content.Shared.Body.Components;
@@ -9,7 +9,7 @@ using Robust.Shared.Timing;
 using Content.Shared.Chemistry.Components;
 
 
-namespace Content.Server._EE.Xelthia;
+namespace Content.Server._EinsteinEngines.Xelthia;
 
 
 /// <summary>
@@ -76,7 +76,7 @@ public sealed class XelthiaSystem : EntitySystem
         newerLimb = _entityManager.SpawnAtPosition("LeftHandXelthia", xform.Coordinates); // Spawns the hand
         bodySystem.TryCreatePartSlotAndAttach(newLimb, "left hand", newerLimb, partType, BodyPartSymmetry.Left);
         _entityManager.EntitySysManager.GetEntitySystem<SharedAudioSystem>()
-            .PlayPvs("/Audio/_EE/Voice/Xelthia/regrow.ogg", uid, null);
+            .PlayPvs("/Audio/_EinsteinEngines/Voice/Xelthia/regrow.ogg", uid, null);
 
         var solution = new Solution();
 

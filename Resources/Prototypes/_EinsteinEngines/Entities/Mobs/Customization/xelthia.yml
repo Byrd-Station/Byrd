@@ -5,7 +5,7 @@
   markingCategory: Tail
   speciesRestriction: [Xelthia]
   sprites:
-  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+  - sprite: _EinsteinEngines/Mobs/Customization/xelthia_parts.rsi
     state: tail_normal
 
 # Ears
@@ -15,7 +15,7 @@
   markingCategory: Snout
   speciesRestriction: [Xelthia]
   sprites:
-  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+  - sprite: _EinsteinEngines/Mobs/Customization/xelthia_parts.rsi
     state: ears_normal
 
 - type: marking
@@ -24,7 +24,7 @@
   markingCategory: Snout
   speciesRestriction: [Xelthia]
   sprites:
-  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+  - sprite: _EinsteinEngines/Mobs/Customization/xelthia_parts.rsi
     state: ears_small
 
 # Tendril Hair
@@ -34,7 +34,7 @@
   markingCategory: Hair
   speciesRestriction: [Xelthia]
   sprites:
-  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+  - sprite: _EinsteinEngines/Mobs/Customization/xelthia_parts.rsi
     state: hair_standard
 
 - type: marking
@@ -43,7 +43,7 @@
   markingCategory: Hair
   speciesRestriction: [Xelthia]
   sprites:
-  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+  - sprite: _EinsteinEngines/Mobs/Customization/xelthia_parts.rsi
     state: hair_short
 
 - type: marking
@@ -52,43 +52,43 @@
   markingCategory: Hair
   speciesRestriction: [Xelthia]
   sprites:
-  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+  - sprite: _EinsteinEngines/Mobs/Customization/xelthia_parts.rsi
     state: hair_longish
-    
+
 - type: marking
   id: XelthiaHairOvereye
   bodyPart: Hair
   markingCategory: Hair
   speciesRestriction: [Xelthia]
   sprites:
-  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+  - sprite: _EinsteinEngines/Mobs/Customization/xelthia_parts.rsi
     state: hair_overeye
-    
+
 - type: marking
   id: XelthiaHairFancy
   bodyPart: Hair
   markingCategory: Hair
   speciesRestriction: [Xelthia]
   sprites:
-  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+  - sprite: _EinsteinEngines/Mobs/Customization/xelthia_parts.rsi
     state: hair_fancy
-    
+
 - type: marking
   id: XelthiaHairTripoint
   bodyPart: Hair
   markingCategory: Hair
   speciesRestriction: [Xelthia]
   sprites:
-  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+  - sprite: _EinsteinEngines/Mobs/Customization/xelthia_parts.rsi
     state: hair_tripoint
-    
+
 - type: marking
   id: XelthiaHairDownNBack
   bodyPart: Hair
   markingCategory: Hair
   speciesRestriction: [Xelthia]
   sprites:
-  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+  - sprite: _EinsteinEngines/Mobs/Customization/xelthia_parts.rsi
     state: hair_downandback
 
 # Chest Patterns
@@ -99,7 +99,7 @@
   markingCategory: Chest
   speciesRestriction: [Xelthia]
   sprites:
-  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+  - sprite: _EinsteinEngines/Mobs/Customization/xelthia_parts.rsi
     state: stripey
 
 - type: marking
@@ -108,8 +108,8 @@
   markingCategory: Chest
   speciesRestriction: [Xelthia]
   sprites:
-  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
-    state: underbelly
+  - sprite: _EinsteinEngines/Mobs/Customization/xelthia_parts.rsi
+    state: underbelly`
 
 # Spikes
 
@@ -124,5 +124,5 @@
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: _EE/Mobs/Customization/xelthia_parts.rsi
+  - sprite: _EinsteinEngines/Mobs/Customization/xelthia_parts.rsi
     state: backspikes

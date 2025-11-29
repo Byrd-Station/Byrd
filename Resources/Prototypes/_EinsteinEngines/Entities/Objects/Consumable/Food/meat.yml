@@ -11,7 +11,7 @@
     - Raw
     - Meat
   - type: Sprite
-    sprite: _EE/Objects/Consumable/Food/meat.rsi
+    sprite: _EinsteinEngines/Objects/Consumable/Food/meat.rsi
     state: xelthia-tentacle
   - type: SolutionContainerManager
     solutions:
@@ -46,7 +46,7 @@
     - Cooked
     - Meat
   - type: Sprite
-    sprite: _EE/Objects/Consumable/Food/meat.rsi
+    sprite: _EinsteinEngines/Objects/Consumable/Food/meat.rsi
     state: xelthia-tentacle-cooked
   - type: SolutionContainerManager
     solutions:

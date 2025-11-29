@@ -1,29 +1,35 @@
 - type: body
   name: "xelthia"
   id: Xelthia
-  root: torso
+  root: chest
   slots:
     head:
       part: HeadXelthia
       connections:
-      - torso
+      - chest
       organs:
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
-    torso:
-      part: TorsoXelthia
+    chest:
+      part: ChestXelthia
       organs:
         heart: OrganAnimalHeart
         lungs: OrganHumanLungs
-        stomach: OrganXelthiaStomach
-        liver: OrganAnimalLiver
-        kidneys: OrganHumanKidneys
       connections:
       - right arm
       - left arm
       - right leg
       - left leg
       - head # Shitmed
+    groin:
+      part: GroinXelthia
+      connections:
+      - right leg
+      - left leg
+      organs:
+        stomach: OrganXelthiaStomach
+        liver: OrganAnimalLiver
+        kidneys: OrganHumanKidneys
     right arm:
       part: RightArmXelthia
       connections:

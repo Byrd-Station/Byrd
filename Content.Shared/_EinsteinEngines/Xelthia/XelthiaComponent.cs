@@ -1,7 +1,7 @@
 using Robust.Shared.GameStates;
 
 
-namespace Content.Shared._EE.Xelthia;
+namespace Content.Shared._EinsteinEngines.Xelthia;
 
 
 /// <summary>
