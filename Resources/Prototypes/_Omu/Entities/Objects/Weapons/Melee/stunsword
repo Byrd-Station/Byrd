@@ -1,0 +1,108 @@
+- type: entity
+  name: NY-6 'Gragnard'
+  parent: [BaseItem, BaseGrandTheftContraband]
+  id: Stunsword
+  description: A mass produced, durable plasteel blade made for only the most experienced and seasoned security officers
+  components:
+  - type: Item
+    sprite: _Goobstation/Objects/Weapons/Melee/justice.rsi
+    size: Ginormous # Use your sheath.
+    heldPrefix: off
+  - type: Sprite
+    sprite: _Goobstation/Objects/Weapons/Melee/justice.rsi
+    state: icon
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 10
+    autoRechargePause: false
+    autoRechargePauseTime: 25
+  - type: DisarmMalus
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1
+    damage:
+      types:
+        Slash: 20
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    angle: 60
+    animation: WeaponArcThrust
+  - type: ItemSwitch
+    needsPower: true
+    defaultState: off
+    state: "off"
+    showLabel: true
+    states:
+      off: !type:ItemSwitchState
+        verb: off
+        energyPerUse: 0
+        sprite:
+          sprite: _Goobstation/Objects/Weapons/Melee/justice.rsi
+          state: icon
+        components:
+        - type: MeleeWeapon
+          wideAnimationRotation: -135
+          attackRate: 1
+          damage:
+            types:
+              Slash: 20
+            woundSeverityMultipliers:
+              Slash: 1.5
+          soundHit:
+            path: /Audio/Weapons/bladeslice.ogg
+          angle: 60
+          animation: WeaponArcThrust
+
+      stun: !type:ItemSwitchState
+        verb: stun
+        energyPerUse: 100
+        sprite:
+          sprite: _Goobstation/Objects/Weapons/Melee/justice.rsi
+          state: stun-icon
+        components:
+        - type: MeleeWeapon
+          wideAnimationRotation: -135
+          attackRate: 1
+          damage:
+            types:
+              Shock: 0
+          angle: 60
+          animation: WeaponArcThrust
+          soundHit:
+            path: /Audio/_Goobstation/Weapons/Effects/energy-short-sword-swing.ogg
+        - type: StaminaDamageOnHit
+          damage: 30
+          overtime: 10
+        soundStateActivate:
+          collection: sparks
+          params:
+            variation: 0.250
+
+      shock: !type:ItemSwitchState
+        verb: shock
+        energyPerUse: 333 # 3 uses
+        sprite:
+          sprite: _Goobstation/Objects/Weapons/Melee/justice.rsi
+          state: ion-icon
+        components:
+        - type: MeleeWeapon
+          wideAnimationRotation: -135
+          attackRate: 1
+          damage:
+            types:
+              Slash: 20
+              Shock: 10
+          angle: 60
+          animation: WeaponArcThrust
+          soundHit:
+            path: /Audio/_Goobstation/Weapons/Effects/energy-short-sword-swing.ogg
+        soundStateActivate:
+          collection: sparks
+          params:
+            variation: 0.250
