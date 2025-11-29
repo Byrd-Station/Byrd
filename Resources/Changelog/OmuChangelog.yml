@@ -1246,3 +1246,9 @@ Entries:
   changes: []
   id: 148
   time: '2025-11-29T07:29:23.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: Removed the reflect from shuttle walls
+  id: 149
+  time: '2025-11-29T17:35:25.0000000+00:00'
