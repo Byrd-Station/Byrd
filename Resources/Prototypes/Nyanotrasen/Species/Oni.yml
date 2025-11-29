@@ -31,8 +31,8 @@
   naming: FirstLast
   minAge: 18 # Khese rework, they didnt already have these? lol. - maus
   youngAge: 35
-  middleAge: 95
   oldAge: 150
+  maxAge: 190
   # begin Goobstation: port EE height/width sliders
   minHeight: 1.11
   defaultHeight: 1.2
