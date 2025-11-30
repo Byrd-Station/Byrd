@@ -409,7 +409,7 @@
   id: SpaceLawCrimeList
   name: guide-entry-rules-sl-crime-list
   priority: 5
-  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
+  text: "/ServerInfo/_Omu/Guidebook/SpaceLaw/SLCrimeList.xml" # Omu - Normally I wouldn't, but you try maintaining a 6x12 table and the 5 subtables that follow
 
 - type: guideEntry
   id: BanTypes
