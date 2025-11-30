@@ -173,6 +173,9 @@
     - id: ClothingHandsKnuckleDustersQM # Goobstation - ROCK THAT MF!!
     - id: SalvageJobBoardComputerCircuitboard # Goobstation - This doesn't really have a use right now but it's there incase it ever gets use again
     - id: CargoMegaphone # goob - loudspeaker
+    - id: ComputerCargoCommsFlatpack #Omu adds departmental comms board
+    - id: Multitool # Omu
+    - id: SlotMachineHighRollerFlatPack # Goob - gambling
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -298,6 +301,8 @@
     - id: ClothingEyesHudCommand
     - id: ServiceTechFabCircuitboard # Goobstation - Service Techfab
     - id: CommandMegaphone # goob - loudspeakers
+    - id: ComputerServiceCommsFlatpack #Omu adds departmental comms board
+    - id: Multitool # Omu
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -338,6 +343,7 @@
     - id: WeaponLauncherSingularityBuster
     - id: MachinePowerTransmissionLaserFlatpack
     - id: RCDRechargingCE
+    - id: ComputerEngiCommsFlatpack #Omu adds departmental comms board
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -411,6 +417,7 @@
     # Shitmed
     - id: MedicalBiofabricatorFlatpack
     # Goobstation End
+    - id: ComputerMedicalCommsFlatpack #Omu adds departmental comms board
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -472,6 +479,8 @@
     - id: ClothingBeltGeminiHoloProjector # Goobstation - Who better to do science with than yourself?
     - id: ClothingEyesGlassesSciDiag # Omustation - HUD that lets RD talk in binary hivemind!
     - id: MMI # Goobstation
+    - id: ComputerScienceCommsFlatpack #Omu adds departmental comms board
+    - id: Multitool # Omu
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -534,6 +543,8 @@
     - id: WantedListCartridge
     - id: DrinkHosFlask
     - id: HeadOfSecurityMeleeCase # Omu
+    - id: ComputerSecurityCommsFlatpack #Omu adds departmental comms board
+    - id: Multitool # Omu
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

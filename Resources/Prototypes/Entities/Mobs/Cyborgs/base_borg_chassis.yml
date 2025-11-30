@@ -156,6 +156,7 @@
 # SPDX-FileCopyrightText: 2025 Scruq445 <storchdamien@gmail.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Theodore Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Zekins <zekins3366@gmail.com>
 # SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
 # SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 crasg <109207982+Scruq445@users.noreply.github.com>
@@ -286,6 +287,7 @@
     defaultChannel: Binary
     channels:
     - Binary
+    canUseInCrit: true # Goobstation
   - type: ZombieImmune
   - type: Repairable
     doAfterDelay: 10
@@ -444,6 +446,13 @@
     understands:
     - TauCetiBasic
     - RobotTalk
+    - Elyran # Omustation start - Borgs and the AI should speak all common languages, minus sign, which they should just understand. (Correction, for now borgs only understand the langs)
+    - Freespeak
+    - NovuNederic
+    - SolCommon
+    - TauCetiBasic
+    - Tradeband
+    - Sign # Omustation end
   - type: ProtectedFromStepTriggers
   - type: DamageOnInteractProtection
     damageProtection:
@@ -453,6 +462,8 @@
     penetrateDamage: 75 # It's harder to kill iron golem
     damagePenalty: 0.25
   - type: MiningPoints # goobstation borgs can claim mining points
+  - type: SpeechSynthesis # Corvax-Frontier-Barks
+    voice: Borg
 
 - type: entity
   abstract: true
@@ -587,6 +598,8 @@
   - type: ExplosionResistance #Goobstation - Ion Damage
     damageCoefficient: 0.5
   - type: FlashImmunity
+  - type: SpeechSynthesis # Corvax-Frontier-Barks
+    voice: BorgSyndie
 
 - type: entity
   id: BaseBorgChassisDerelict
