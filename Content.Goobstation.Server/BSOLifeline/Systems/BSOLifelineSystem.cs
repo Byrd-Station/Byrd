@@ -1,6 +1,7 @@
 using Content.Goobstation.Server.BSOLifeline.Components;
 
 namespace Content.Goobstation.Server.BSOLifeline.Systems;
+
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Mind;
 using Content.Server.Warps;
@@ -9,12 +10,15 @@ using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Standing;
 using Robust.Server.GameObjects;
 using Content.Shared.Rejuvenate;
+using Content.Goobstation.Common.CCVar;
+using Robust.Shared.Configuration;
 
 public sealed class GoobLifelineSystem : EntitySystem
 {
     [Dependency] private readonly PullingSystem _pullingSystem = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
+    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
 
     public override void Initialize()
     {
@@ -43,19 +47,24 @@ public sealed class GoobLifelineSystem : EntitySystem
             return;
 
         // Reset mind - can be considered if greentext is a concern
-        /*if (_mindSystem.TryGetMind(parentUid, out var mindId, out var mind))
+        if (_configurationManager.GetCVar(GoobCVars.LifeLineResetMind))
         {
-            var userId = mind.UserId;
-            var name = mind.CharacterName;
-            _mindSystem.WipeMind(parentUid);
-            var newMindId = _mindSystem.CreateMind(userId, name).Owner;
-            _mindSystem.TransferTo(newMindId, parentUid, true);
-        }*/
-
+            if (_mindSystem.TryGetMind(parentUid, out var mindId, out var mind))
+            {
+                var userId = mind.UserId;
+                var name = mind.CharacterName;
+                _mindSystem.WipeMind(parentUid);
+                var newMindId = _mindSystem.CreateMind(userId, name).Owner;
+                _mindSystem.TransferTo(newMindId, parentUid, true);
+            }
+        }
         var coords = _transform.GetMapCoordinates(location.Value);
         _transform.SetMapCoordinates(parentUid, coords);
 
-        RaiseLocalEvent(parentUid, new RejuvenateEvent());
+        if (_configurationManager.GetCVar(GoobCVars.LifeLineRejuvenate))
+        {
+            RaiseLocalEvent(parentUid, new RejuvenateEvent());
+        }
 
         QueueDel(uid);
 
