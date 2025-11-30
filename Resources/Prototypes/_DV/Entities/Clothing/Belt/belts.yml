@@ -1,6 +1,6 @@
 #Corpsman webbing. Whitelist in theory allows what regular medical and security belts allow but in one item. Unless i messed something up of course.
 - type: entity
-  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseSecurityContraband]
+  parent: [ClothingBeltSecurity]
   id: ClothingBeltCorpsmanWebbing
   name: corpsman webbing
   description: A set of security webbing with blue corpsman highlights.
@@ -64,5 +64,5 @@
       - Defibrillator # Goobstation
       - SyringeGun # Goobstation
       - GunApplySolution # Goobstation - Syndicate dart gun
-    sprite: Clothing/Belt/belt_overlay.rsi
-  - type: Appearance
+
+
