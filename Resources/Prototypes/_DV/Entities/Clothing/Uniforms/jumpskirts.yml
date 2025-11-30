@@ -78,8 +78,8 @@
 - type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtCorpsman
-  name: corpsman jumpskirt
-  description: This uniform is issued to qualified personnel who have been trained. No one cares that the training took half a day.
+  name: blue corpsman jumpskirt
+  description: This uniform is issued to qualified personnel who have been trained. This one comes in alternative blue colours.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Uniforms/Jumpskirt/corpsman.rsi

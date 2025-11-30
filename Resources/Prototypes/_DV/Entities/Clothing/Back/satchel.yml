@@ -1,8 +1,8 @@
 - type: entity
   parent: [ClothingBackpackSatchel, BaseSecurityContraband]
   id: ClothingBackpackSatchelCorpsman
-  name: corpsman satchel
-  description: A sterile satchel for medical related needs.
+  name: blue corpsman satchel
+  description: A sterile satchel for medical related needs. This one comes in alternative blue colours.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Back/Satchels/corpsman.rsi

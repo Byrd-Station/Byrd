@@ -13,8 +13,8 @@
 - type: entity
   parent: [ClothingBackpack, BaseSecurityContraband]
   id: ClothingBackpackCorpsman
-  name: corpsman backpack
-  description: It's a very sterile backpack.
+  name: blue corpsman backpack
+  description: It's a very sterile backpack. This one comes in alternative blue colours.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Back/Backpacks/corpsman.rsi

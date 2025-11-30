@@ -23,18 +23,12 @@
 
 - type: loadout
   id: CorpsmanJumpsuit
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorCorpsman
   equipment:
     jumpsuit: ClothingUniformJumpsuitCorpsman
   groupBy: "jumpsuit" #Omu
 
 - type: loadout
   id: CorpsmanJumpskirt
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorCorpsman
   equipment:
     jumpsuit: ClothingUniformJumpskirtCorpsman
   groupBy: "jumpskirt" #Omu
@@ -51,36 +45,24 @@
 
 - type: loadout
   id: CorpsmanBackpack
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorCorpsman
   equipment:
     back: ClothingBackpackCorpsman
   groupBy: "backpack" #Omu
 
 - type: loadout
   id: CorpsmanSatchel
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorCorpsman
   equipment:
     back: ClothingBackpackSatchelCorpsman
   groupBy: "satchel" #Omu
 
 - type: loadout
   id: CorpsmanDuffel
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorCorpsman
   equipment:
     back: ClothingBackpackDuffelCorpsman
   groupBy: "duffel" #Omu
 
 - type: loadout
   id: CorpsmanMessenger
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorCorpsman
   equipment:
     back: ClothingBackpackMessengerCorpsman
   groupBy: "messenger" #Omu

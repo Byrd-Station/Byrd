@@ -1,8 +1,8 @@
 - type: entity
   parent: [ BaseSecurityContraband , ClothingBackpackMessengerBase ]
   id: ClothingBackpackMessengerCorpsman
-  name: corpsman messenger bag
-  description: A robust bag for storing extra surgery tools for inmate tort... treating.
+  name: blue corpsman messenger bag
+  description: A robust bag for storing extra surgery tools for inmate tort... treating. This one comes in alternative blue colours.
   components:
   - type: Sprite
     layers:

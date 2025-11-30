@@ -12,8 +12,8 @@
 - type: entity
   parent: [ClothingHeadHatBeretSecurity, BaseSecurityContraband]
   id: ClothingHeadHatBeretCorpsman
-  name: corpsman beret
-  description: For style-conscious combat lifesavers and medical specialists alike.
+  name: veteran corpsman beret
+  description: A black beret with blue corpsman highlights. Issued only to the most experienced.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hats/beret_corpsman.rsi
