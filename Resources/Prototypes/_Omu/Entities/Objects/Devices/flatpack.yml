@@ -50,6 +50,7 @@
   description: A flatpack used for constructing a medical communications computer.
   components:
   - type: Flatpack
+    entity: MedicalComputerComms
   
 - type: entity
   parent: BaseFlatpack
