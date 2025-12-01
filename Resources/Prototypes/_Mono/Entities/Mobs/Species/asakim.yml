@@ -207,6 +207,20 @@
   # Begin DeltaV Additions
   - type: BlockWriting # can't speak common can't write common. better get an AAC tablet
   # End DeltaV Additions
+  # Omu Start
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - ReptilianEmotes
+  - type: TranslatorImplantBlocker
+  - type: Access
+    tags:
+    - NuclearOperative # This is the access that ADS use for some reason.
+    - SyndicateAgent
+  # Omu End
 
 - type: entity
   save: false

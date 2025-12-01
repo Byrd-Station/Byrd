@@ -74,10 +74,12 @@
 // SPDX-FileCopyrightText: 2025 thebiggestbruh <199992874+thebiggestbruh@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 thebiggestbruh <marcus2008stoke@gmail.com>
 // SPDX-FileCopyrightText: 2025 āda <ss.adasts@gmail.com>
+// SPDX-FileCopyrightText: 2025 ThanosDeGraf <richardgirgindontstop@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.MartialArts;
+using Content.Goobstation.Shared.Body; // goob
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
@@ -149,14 +151,28 @@ public sealed class RespiratorSystem : EntitySystem
     }
 
     // Goobstation start
-    // Can breathe check for grab
+    // Can breathe check for grab or if they need air
     public bool CanBreathe(EntityUid uid, RespiratorComponent respirator)
     {
+        var airEv = new CheckNeedsAirEvent();
+        RaiseLocalEvent(uid, ref airEv);
+
+        if (airEv.Cancelled)
+            return true;
+
         if (respirator.Saturation < respirator.SuffocationThreshold)
             return false;
         if (TryComp<PullableComponent>(uid, out var pullable)
             && pullable.GrabStage == GrabStage.Suffocate)
             return false;
+
+        // Omu start - If your lungs are caved in you can't breathe.
+        foreach (var ent in _bodySystem.GetBodyOrganEntityComps<LungComponent>(uid))
+        {
+            if (ent.Comp2.Enabled)
+                break;
+            return false;
+        } // Omu end
 
         return !HasComp<KravMagaBlockedBreathingComponent>(uid);
     }
@@ -575,6 +591,14 @@ public sealed class RespiratorSystem : EntitySystem
     {
         if (!Resolve(uid, ref respirator, false))
             return;
+
+        // Goob start
+        var airEv = new CheckNeedsAirEvent();
+        RaiseLocalEvent(uid, ref airEv);
+
+        if (airEv.Cancelled)
+            return;
+        // Goob end
 
         respirator.Saturation += amount;
         respirator.Saturation =

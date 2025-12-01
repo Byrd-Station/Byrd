@@ -93,12 +93,42 @@
   id: WardenJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitWarden
+  groupBy: "jumpsuit" #Omu - cleaning up loadout screen
 
 
 - type: loadout
   id: WardenJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtWarden
+  groupBy: "jumpskirt" #Omu - cleaning up loadout screen
+
+
+- type: loadout #Omu - DeltaV port
+  id: WardenJumpsuitBlueDV
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitWardenBlueDV
+  groupBy: "jumpsuit" #Omu - cleaning up loadout screen
+
+
+- type: loadout #Omu - DeltaV port
+  id: WardenJumpskirtBlueDV
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtWardenBlueDV
+  groupBy: "jumpskirt" #Omu - cleaning up loadout screen
+
+
+- type: loadout #Omu - DeltaV port
+  id: WardenJumpsuitGreyDV
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitWardenGreyDV
+  groupBy: "jumpsuit" #Omu - cleaning up loadout screen
+
+
+- type: loadout #Omu - DeltaV port
+  id: WardenJumpskirtGreyDV
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtWardenGreyDV
+  groupBy: "jumpskirt" #Omu - cleaning up loadout screen
 
 
 # OuterClothing
