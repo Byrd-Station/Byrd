@@ -78,6 +78,8 @@
       types:
         Slash: 13
         Holy: 10
+      woundSeverityMultipliers:
+        Slash: 2.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Wieldable
@@ -237,7 +239,7 @@
         Slash: 20
     UntrainedUseString: nullrod-arrythmicknife-untrained-usage-popup
   - type: Item
-    size: Huge
+    size: Normal #Omu - size change
     sprite: _ShitChap/Objects/Weapons/Nullrod/arrythmic.rsi
   - type: Sprite
     sprite: _ShitChap/Objects/Weapons/Nullrod/arrythmic.rsi
@@ -576,6 +578,9 @@
         Slash: 3
         Structural: 20
         Holy: 6
+      woundSeverityMultipliers:
+        Slash: 2
+        Blunt: 2
     soundHit:
       path: /Audio/Weapons/chainsaw.ogg
       params:

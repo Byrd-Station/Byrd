@@ -61,4 +61,8 @@
   equipment:
     id: altBlueshieldPDA
 
-
+# Belt
+- type: loadout #BSO's belt - Moved to Loadout
+  id: BeltAssaultFilled
+  equipment:
+    belt: ClothingBeltAssaultFilled
