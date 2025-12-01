@@ -254,17 +254,34 @@
     requires:
     - TauCetiBasic
 
+# - type: entity
+#  parent: BaseSubdermalImplant
+#  id: GruntishTranslatorImplant
+#  name: Gruntish translator implant
+#  description: An implant giving the ability to understand and speak Gruntish.
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: TranslatorImplant
+#    understood:
+#    - Gruntish
+#    spoken:
+#    - Gruntish
+#    requires:
+#    - TauCetiBasic
+
 - type: entity
   parent: BaseSubdermalImplant
-  id: GruntishTranslatorImplant
-  name: Gruntish translator implant
-  description: An implant giving the ability to understand and speak Gruntish.
+  id: KhorsTranslatorImplant
+  name: Khörs translator implant
+  description: An implant giving the ability to understand and speak Khörs.
   categories: [ HideSpawnMenu ]
   components:
   - type: TranslatorImplant
     understood:
-    - Gruntish
+    - KheseCommon
+    - KheseComplex
     spoken:
-    - Gruntish
+    - KheseCommon
+    - KheseComplex
     requires:
     - TauCetiBasic

@@ -49,6 +49,9 @@
       - Kobold
       - Cheval
       - YowKriol
+      - KheseCommon
+      - KheseComplex
+
 
     understood:
       - TauCetiBasic
@@ -63,7 +66,7 @@
       - Calcic
       - Canilunzt
       - Chittin
-      - Gruntish
+     # - Gruntish
       - NewKinPidgin #Ka'rakk
       - Marish
       - Moffic
@@ -86,6 +89,8 @@
       - Kobold
       - Cheval
       - YowKriol
+      - KheseCommon
+      - KheseComplex
 
 
 

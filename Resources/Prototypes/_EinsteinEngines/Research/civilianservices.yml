@@ -30,8 +30,9 @@
   - ChevalTranslatorImplanter
   - NewKinPidginTranslator
   - SchechiTranslator
-  - GruntishTranslator
+  # - GruntishTranslator
   - YowKriolTranslator # goob edit - yowie language
+  - KhorsTranslator # GDS, Khese Rework
   position: -4, 4
   technologyPrerequisites:
   - AdvancedEntertainment
@@ -63,8 +64,9 @@
   - NewKinPidginTranslatorImplanter
   - AnimalTranslator
   - XenoTranslator
-  - GruntishTranslatorImplanter
+  # - GruntishTranslatorImplanter
   - YowKriolTranslatorImplanter # goob edit - yowie language
+  - KhorsTranslatorImplanter # GDS, Khese Rework
   position: -4, 5
   technologyPrerequisites:
   - BasicTranslation

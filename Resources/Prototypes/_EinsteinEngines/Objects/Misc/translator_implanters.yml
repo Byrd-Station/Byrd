@@ -157,10 +157,18 @@
   - type: Implanter
     implant: NewKinPidginTranslatorImplant
 
+# - type: entity
+#  id: GruntishTranslatorImplanter
+#  parent: [ BaseTranslatorImplanter ]
+#  suffix: Gruntish
+#  components:
+#  - type: Implanter
+#    implant: GruntishTranslatorImplant
+
 - type: entity
-  id: GruntishTranslatorImplanter
+  id: KhorsTranslatorImplanter
   parent: [ BaseTranslatorImplanter ]
-  suffix: Gruntish
+  suffix: Khörs
   components:
   - type: Implanter
-    implant: GruntishTranslatorImplant
+    implant: KhorsTranslatorImplant

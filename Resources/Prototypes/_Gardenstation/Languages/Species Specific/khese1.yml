@@ -8,7 +8,7 @@
     color: "#a4d68c"
     fontId: Padauk
     boldFontId: PadaukBold
-    fontSize: 20
+    fontSize: 16
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2

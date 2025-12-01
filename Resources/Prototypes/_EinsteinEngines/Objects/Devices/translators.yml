@@ -365,19 +365,39 @@
     - TauCetiBasic
     - Schechi
 
-- type: entity                      # Language of onis
-  id: GruntishTranslator
+#- type: entity                      # Language of onis - swapped out for gds khors
+# id: GruntishTranslator
+# parent: [ TranslatorPoweredBase ]
+# name: Gruntish translator
+# description: Interprets the mess known as Gruntish and translates it to Galactic Common. Primarily spoken by oni.
+# components:
+# - type: HandheldTranslator
+#   spoken:
+#   - TauCetiBasic
+#   - Gruntish
+#   understood:
+#   - Gruntish
+#   - TauCetiBasic
+#   requires:
+#   - TauCetiBasic
+#   - Gruntish
+
+- type: entity
+  id: KhorsTranslator
   parent: [ TranslatorPoweredBase ]
-  name: Gruntish translator
-  description: Interprets the mess known as Gruntish and translates it to Galactic Common. Primarily spoken by oni.
+  name: Khörs translator
+  description: Translates speech between the two dialects of Khörs and Galactic Common. Lets you wax poetic with the Khese Muus!
   components:
   - type: HandheldTranslator
     spoken:
     - TauCetiBasic
-    - Gruntish
+    - KheseCommon
+    - KheseComplex
     understood:
-    - Gruntish
     - TauCetiBasic
+    - KheseCommon
+    - KheseComplex
     requires:
     - TauCetiBasic
-    - Gruntish
+    - KheseCommon
+    - KheseComplex

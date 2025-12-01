@@ -11,7 +11,7 @@
     color: "#9966CC"
     fontId: TobinTax
     boldFontId: TobinTax
-    fontSize: 20
+    fontSize: 16
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
