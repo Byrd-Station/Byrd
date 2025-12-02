@@ -62,20 +62,17 @@
         Blunt: 0.14 #per second, scales with pressure and other constants.
   - type: Bloodstream
     bloodReagent: AcidBlood
-  - type: DamageVisuals
-    damageOverlayGroups:
-      Brute:
-        sprite: Mobs/Effects/brute_damage.rsi
-        color: "#00FF69"
+#  - type: DamageVisuals # MAN how have we not fixed this goobside. Todo goobstation all the chud damage visuals.
+#    damageOverlayGroups:
+#      Brute:
+#        sprite: Mobs/Effects/brute_damage.rsi
+#        color: "#00FF69"
   - type: Hands
     handDisplacement:
-      sprite: _EinsteinEngines/Mobs/Species/Xelthia/displacement.rsi
-      state: held
-      copyToShaderParameters:
-        # Value required, provide a dummy. Gets overridden when applied.
-        layerKey: dummy
-        parameterTexture: displacementMap
-        parameterUV: displacementUV
+      sizeMaps:
+        32:
+          sprite: _EinsteinEngines/Mobs/Species/Xelthia/displacement.rsi
+          state: held
   - type: Inventory
     templateId: xelthia
     speciesId: Xelthia
@@ -138,13 +135,10 @@
     species: Xelthia
   - type: Hands
     handDisplacement:
-      sprite: _EinsteinEngines/Mobs/Species/Xelthia/displacement.rsi
-      state: held
-      copyToShaderParameters:
-        # Value required, provide a dummy. Gets overridden when applied.
-        layerKey: dummy
-        parameterTexture: displacementMap
-        parameterUV: displacementUV
+      sizeMaps:
+        32:
+          sprite: _EinsteinEngines/Mobs/Species/Xelthia/displacement.rsi
+          state: held
   - type: Inventory
     templateId: xelthia
     speciesId: Xelthia
@@ -158,7 +152,7 @@
         sizeMaps:
           32:
             sprite: _EinsteinEngines/Mobs/Species/Xelthia/displacement.rsi
-            state: jumpsuit # name is somewhat misleading, the jumpsuit state ended up being fairly versitile so I reused it
+            state: jumpsuit # name is somewhat misleading, the jumpsuit state ended up being fairly versitile so I reused it # EE WHY
       shoes:
         sizeMaps:
           32:

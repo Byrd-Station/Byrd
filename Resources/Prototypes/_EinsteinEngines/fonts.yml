@@ -15,7 +15,7 @@
 
 - type: font
   id: Aliensatemymum
-  path: /Fonts/_EinsteinEngines/Aliensatemymum.ttf
+  path: /Fonts/_EinsteinEngines/Aliensatemymum/Aliensatemymum.ttf
 
 - type: font
   id: NovaFlat

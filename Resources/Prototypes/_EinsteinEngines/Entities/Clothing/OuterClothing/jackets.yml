@@ -26,9 +26,9 @@
   description: A thick jacket with a membrane attached to the end of its sleeves that conforms to the user's hands, allowing it to function as surgical gloves. Useful for if you need to do surgery but can't wear normal gloves.
   components:
   - type: Sprite
-    sprite: _EE/Clothing/GloveJackets/surgical_jacket.rsi
+    sprite: _EinsteinEngines/Clothing/GloveJackets/surgical_jacket.rsi
   - type: Clothing
-    sprite: _EE/Clothing/GloveJackets/surgical_jacket.rsi
+    sprite: _EinsteinEngines/Clothing/GloveJackets/surgical_jacket.rsi
   - type: Fiber
     fiberMaterial: fibers-nitrile
   - type: FingerprintMask
