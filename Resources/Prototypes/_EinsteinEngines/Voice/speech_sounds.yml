@@ -1,5 +1,5 @@
 - type: speechSounds
-  id: Xelthia
+  id: XelthiaSpeech
   saySound:
     path: /Audio/_EinsteinEngines/Voice/Xelthia/say.ogg
   askSound:

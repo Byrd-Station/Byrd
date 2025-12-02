@@ -109,7 +109,7 @@
   speciesRestriction: [Xelthia]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/xelthia_parts.rsi
-    state: underbelly`
+    state: underbelly
 
 # Spikes
 
