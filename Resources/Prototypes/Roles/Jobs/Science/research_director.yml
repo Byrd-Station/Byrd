@@ -138,14 +138,17 @@
   playTimeTracker: JobResearchDirector
   requirements:
   - !type:RoleTimeRequirement
+    role: JobBorg
+    time: 18000 #5 hrs - Omu Edit
+  - !type:RoleTimeRequirement
     role: JobScientist
-    time: 18000 #5 hrs
+    time: 36000 #10 hours - Omu Edit
   - !type:DepartmentTimeRequirement
     department: Science
-    time: 36000 #10 hrs
-#    - !type:SpeciesRequirement # Goob - None Felinid	
-#      inverted: true	
-#      species:	
+    time: 72000 #20 hours - Omu Edit
+#    - !type:SpeciesRequirement # Goob - None Felinid
+#      inverted: true
+#      species:
 #      - Felinid #Omu, add back Felinid
   weight: 10
   startingGear: ResearchDirectorGear
