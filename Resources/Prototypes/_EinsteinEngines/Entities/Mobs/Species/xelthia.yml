@@ -2,7 +2,7 @@
 - type: entity
   parent: BaseMobSpeciesOrganic
   id: BaseMobXelthia
-  name: Urist McXelthia
+  name: Urist McTentacles
   abstract: true
   components:
   - type: Hunger
@@ -67,15 +67,15 @@
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
         color: "#00FF69"
-#  - type: Hands # This doesnt seem to work. I can't tell why. Is this implemented here and i'm doing this wrong, or is it just on goob? Fix later.
-#    handDisplacement:
-#      sprite: _EinsteinEngines/Mobs/Species/Xelthia/displacement.rsi
-#      state: held
-#      copyToShaderParameters:
-#        # Value required, provide a dummy. Gets overridden when applied.
-#        layerKey: dummy
-#        parameterTexture: displacementMap
-#        parameterUV: displacementUV
+  - type: Hands
+    handDisplacement:
+      sprite: _EinsteinEngines/Mobs/Species/Xelthia/displacement.rsi
+      state: held
+      copyToShaderParameters:
+        # Value required, provide a dummy. Gets overridden when applied.
+        layerKey: dummy
+        parameterTexture: displacementMap
+        parameterUV: displacementUV
   - type: Inventory
     templateId: xelthia
     speciesId: Xelthia
@@ -136,15 +136,15 @@
   components:
   - type: HumanoidAppearance
     species: Xelthia
-#  - type: Hands
-#    handDisplacement:
-#      sprite: _EinsteinEngines/Mobs/Species/Xelthia/displacement.rsi
-#      state: held
-#      copyToShaderParameters:
-#        # Value required, provide a dummy. Gets overridden when applied.
-#        layerKey: dummy
-#        parameterTexture: displacementMap
-#        parameterUV: displacementUV
+  - type: Hands
+    handDisplacement:
+      sprite: _EinsteinEngines/Mobs/Species/Xelthia/displacement.rsi
+      state: held
+      copyToShaderParameters:
+        # Value required, provide a dummy. Gets overridden when applied.
+        layerKey: dummy
+        parameterTexture: displacementMap
+        parameterUV: displacementUV
   - type: Inventory
     templateId: xelthia
     speciesId: Xelthia
