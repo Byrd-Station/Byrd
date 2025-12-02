@@ -1272,3 +1272,16 @@ Entries:
       message: The assault belt loadout on BSO is not longer a Senior BSO drip. My bad.
   id: 152
   time: '2025-11-30T15:18:02.0000000+00:00'
+- author: Super Evil Tuerk
+  changes:
+    - type: Tweak
+      message: >-
+        Most playtime requirements for department heads and security jobs have
+        been massively increased.
+    - type: Tweak
+      message: >-
+        Interns no longer have a limit on how long you can have played at a
+        department for. If you haven't played for a long time and don't want
+        someone to expect you to kwtd, this is for you.
+  id: 153
+  time: '2025-12-01T17:09:43.0000000+00:00'

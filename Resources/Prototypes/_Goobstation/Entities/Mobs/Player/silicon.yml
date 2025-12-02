@@ -83,5 +83,5 @@
     requirements: # Goobstation - ghost roles requirements
     - !type:RoleTimeRequirement
       role: JobBorg
-      time: 3600 #1 hour
+      time: 18000 #5 hrs - Omu Edit: Can be a demanding RP role, needs familiarity with borg-ness.
   - type: GhostTakeoverAvailable
