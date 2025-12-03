@@ -151,7 +151,7 @@
       time: 9000 # 2.5 hrs
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 9000 # 2.5 hours
+      time: 36000 # Omu Edit - around 5-8 shifts of command for this paper pusher
 #    - !type:SpeciesRequirement # Goob - None Felinid
 #      inverted: true
 #      species:
