@@ -49,3 +49,47 @@
           tags:
             - EnergyMagAmmo
             - AdvancedEnergyMagAmmo
+
+- type: entity
+  id: WeaponPistolCHIMPRecharging
+  parent: WeaponPistolCHIMP
+  name: prototypical C.H.I.M.P. handcannon # experimental was coined already
+  description: A C.H.I.M.P. handcannon outfitted with a power cell enchanced with self-recharging properties.
+  suffix: SelfRecharge
+  components:
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 30 # copied from advanced laser pistol
+
+- type: entity
+  name: light x-ray emitter
+  parent: [BaseWeaponBatterySmall, BaseScienceContraband]
+  id: WeaponPistolXrayEmitter
+  description: A neat gadget that emits light x-ray energy at an aimed target. Just don't aim this at a cockroach.
+  components:
+  - type: Sprite
+    sprite: _Omu/Objects/Weapons/Guns/Battery/xray_emitter.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+  - type: Appearance
+  - type: Gun
+    projectileSpeed: 5 # Half of a chimp, to not be possible to be used as a weapon or to hit mobile targets really
+    fireRate: 1
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: ParticleRadiation
+    fireCost: 125 # 8 shots on full charge
+  - type: PacifismAllowedGun
+
+- type: entity
+  id: WeaponPistolXrayEmitterRecharging
+  parent: WeaponPistolXrayEmitter
+  name: prototypical light x-ray emitter
+  description: A light x-ray emitter outfitted with a power cell enchanced with self-recharging properties.
+  suffix: SelfRecharge
+  components:
+    - type: BatterySelfRecharger
+      autoRecharge: true
+      autoRechargeRate: 30 # copied from advanced laser pistol, same as the self recharging chimp

@@ -1,0 +1,11 @@
+- type: latheRecipe
+  id: WeaponPistolXrayEmitter
+  result: WeaponPistolXrayEmitter
+  categories:
+  - Tools
+  completetime: 5
+  materials:
+    Steel: 500
+    Glass: 300
+    Plastic: 150
+    Uranium: 50

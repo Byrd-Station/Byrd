@@ -1,0 +1,30 @@
+- type: entity
+  id: ParticleRadiation # yes I took most of this from anomalous particles, fight me.
+  name: radiation particle
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight # copied this from omega particles but made it bigger and stronger because yes :3
+    enabled: true
+    color: "#38c24f"
+    radius: 3.0
+    energy: 10.0
+  - type: Projectile
+    impactEffect: BulletImpactEffectKinetic
+    damage:
+      types:
+        Radiation: 8
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: magicm_green # yeah I know omega particles use this but like. Rad particles, and also used for sci anyway
+      shader: unshaded
+  - type: Ammo
+    muzzleFlash: null
+  - type: Physics
+  - type: TimedDespawn
+    lifetime: 3
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: SmartLinkBlacklist # Goobstation

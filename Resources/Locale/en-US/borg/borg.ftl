@@ -72,5 +72,5 @@ borg-type-service-transponder = service cyborg
 
 # Omustation - sciborg
 borg-type-science-name = Science
-borg-type-science-desc = uh idfk wip
+borg-type-science-desc = Stare at rocks, floating orbs and other mysterious objects whilst trying to unravel the mysteries of the universe. Work with the station's research and development team to uncover anomalous phenomena... and potentially dissect an alien or two.
 borg-type-science-transponder = science cyborg

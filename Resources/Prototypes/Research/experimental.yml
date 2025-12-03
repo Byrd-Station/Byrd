@@ -78,6 +78,7 @@
   - NodeScanner
   - AnalysisComputerCircuitboard
   - ArtifactAnalyzerMachineCircuitboard
+  - WeaponPistolXrayEmitter # Omustation - woo yeah artifact rad triggers
   # Goobstation R&D Console rework start
   position: -2,2
   technologyPrerequisites:
@@ -168,6 +169,7 @@
   - WeaponPistolCHIMP
   - AnomalySynchronizerCircuitboard
   - AnomalyVesselExperimentalCircuitboard
+  - BorgModuleAdvancedAnomaly # Omu - sciborgs
   technologyPrerequisites:
   - BasicAnomalousResearch
   position: -3,0

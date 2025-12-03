@@ -1,0 +1,5 @@
+# Sci modules cause sciborgs
+- type: latheRecipe
+  parent: BaseGoldBorgModuleRecipe
+  id: BorgModuleAdvancedAnomaly
+  result: BorgModuleAdvancedAnomaly

@@ -6,4 +6,4 @@
   - type: BorgSwitchableType
     selectedBorgType: science
   - type: BorgSwitchableSubtype # Goobstation
-    borgSubtype: default_science
+    borgSubtype: science_default
