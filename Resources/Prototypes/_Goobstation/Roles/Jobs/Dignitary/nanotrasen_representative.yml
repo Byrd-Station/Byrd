@@ -104,9 +104,9 @@
       time: 180000  #50 hours
     - !type:AgeRequirement
       requiredAge: 21
-#    - !type:SpeciesRequirement # Goob - None Felinid	
-#      inverted: true	
-#      species:	
+#    - !type:SpeciesRequirement # Goob - None Felinid
+#      inverted: true
+#      species:
 #      - Felinid #Omu, add back Felinid
   weight: 20
   startingGear: NanotrasenRepresentativeGear
@@ -135,7 +135,7 @@
   - NanotrasenRepresentative
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [ MindShieldImplant, BluespaceLifelineImplant ]
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff

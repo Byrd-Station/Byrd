@@ -981,6 +981,7 @@
   - BlueshieldOfficerBeret
   - BlueshieldOfficerHeadCowboy
   - BlueshieldOfficerGoidaHelmet
+  - BlueshieldOfficerBeretElite # Omustation
 
 - type: loadoutGroup
   id: BlueshieldOfficerBackpack
@@ -1002,6 +1003,9 @@
   - BlueshieldOfficerTurtleneckSkirt # OmuStation Addon
   - BlackBlueshieldOfficerTurtleneck # OmuStation Addon
   - BlackBlueshieldOfficerTurtleneckSkirt # OmuStation Addon
+  - BlueShieldShirt #Omu - Starlight Port
+  - EliteBlueShieldJumpsuit #Omu - Starlight Port
+  - EliteBlueShieldJumpskirt #Omu - Starlight Port
 
 - type: loadoutGroup
   id: BlueshieldOfficerOuter
@@ -1014,7 +1018,7 @@
   - BSOArmoredCoat # EE
   - BSOMarineVest # EE
   - BSOArmoredVest # EE
-  - BlueshieldOfficerOuterKimonoBlueshield
+  - BlueshieldOfficerOuterKimonoBlueshield #Omu
 
 - type: loadoutGroup
   id: BlueshieldOfficerNeck
@@ -1023,6 +1027,7 @@
   loadouts:
   - BlueshieldOfficerOuterBlueshieldMantle
   - BlueshieldOfficerOuterBlueshieldMantleBlack # Omu
+  - BlueShieldEliteCloak # Omu - Starlight Port
 
 - type: loadoutGroup
   id: BlueshieldOfficerMask
