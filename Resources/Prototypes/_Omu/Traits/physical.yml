@@ -167,7 +167,11 @@
   description: trait-synth-desc
   category: PhysicalTraits
   components:
-   - type: Synth
+  - type: Synth
+  - type: LanguageSpeaker
+  languagesSpoken:
+    - RobotTalk
+
   globalCost: 1
   requirements:
     - !type:SpeciesRequirement
