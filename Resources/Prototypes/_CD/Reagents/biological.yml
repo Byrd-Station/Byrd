@@ -5,7 +5,7 @@
   group: Biological
   desc: reagent-desc-synth-blood
   flavor: metallic
-  color: "#FFBF6B"
+  color: "#FFD400"
   recognizable: true
   physicalDesc: reagent-physical-desc-reflective
   footstepSound:
