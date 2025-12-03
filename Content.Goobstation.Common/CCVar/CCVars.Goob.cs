@@ -632,5 +632,17 @@ public sealed partial class GoobCVars
     public static readonly CVarDef<bool> AscensionRequiresObjectives =
         CVarDef.Create("heretic.ascension_requires_objectives", true, CVar.SERVERONLY);
 
+    /// <summary>
+    /// Should the bluespace lifeline rejuvenate on teleport.
+    /// </summary>
+    public static readonly CVarDef<bool> LifeLineRejuvenate =
+        CVarDef.Create("lifeline.rejuvenate", false, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Should the bluespace lifeline reset mind on teleport.
+    /// </summary>
+    public static readonly CVarDef<bool> LifeLineResetMind =
+        CVarDef.Create("lifeline.reset_mind", true, CVar.SERVERONLY);
+
     #endregion
 }
