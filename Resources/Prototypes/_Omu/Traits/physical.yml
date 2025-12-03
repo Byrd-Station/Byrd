@@ -171,7 +171,6 @@
   - type: LanguageSpeaker
   languagesSpoken:
     - RobotTalk
-
   globalCost: 1
   requirements:
     - !type:SpeciesRequirement
