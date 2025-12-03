@@ -1,4 +1,3 @@
-
 fascination-0 = The glint has left their eyes, but something remains.
 fascination-1 = They seem twitchy.
 fascination-2 = They occasionally glance around them.

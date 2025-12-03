@@ -6,6 +6,6 @@ public sealed partial class KnowledgeReadComponent : Component
     /// <summary>
     /// The knowledge given by the book
     /// </summary>
-    [DataField("knowledgebook")]
+    [DataField]
     public float KnowledgeBook = 1f;
 }

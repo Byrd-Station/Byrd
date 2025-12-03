@@ -1,15 +1,16 @@
-using Robust.Shared.GameObjects;
+using Robust.Shared.GameStates;
+
 namespace Content.Omu.Server.HereticalTome.Components;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class FascinationComponent : Component
 {
     /// <summary>
     /// The level of madness
     /// </summary>
-    [DataField("FascinationInt")]
+    [DataField]
     public float FascinationInt = 0f;
 
-    [DataField("FascinationDesc")]
-    public string FascinationDesc;
+    [DataField, AutoNetworkedField]
+    public string? FascinationDesc;
 }
