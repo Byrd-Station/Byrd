@@ -175,6 +175,8 @@
       species:
         - IPC
         - Plasmaman
+        - SlimePerson
+        - Oni
 
 # - type: trait
 #   id: ThievingTrait # removed from selection
