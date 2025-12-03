@@ -161,6 +161,21 @@
         - SharpTeethTrait
       inverted: true
 
+- type: trait
+  id: Synthetic
+  name: trait-synth-name
+  description: trait-synth-desc
+  category: PhysicalTraits
+  components:
+   - type: Synth
+  globalCost: 1
+  requirements:
+    - !type:SpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+        - Plasmaman
+
 # - type: trait
 #   id: ThievingTrait # removed from selection
 #   name: trait-thieving-name
