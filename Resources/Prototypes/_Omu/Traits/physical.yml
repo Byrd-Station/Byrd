@@ -161,6 +161,19 @@
         - SharpTeethTrait
       inverted: true
 
+- type: trait
+  id: DarkAdaptation
+  name: trait-darkadapt-name
+  description: trait-darkadapt-desc
+  category: PhysicalTraits
+  components:
+  - type: ShadowkinLightDetection
+  - type: ShadowkinLightDetectionDamage
+  requirements:
+    - !type:SpeciesRequirement
+      species:
+        - Shadowkin
+
 # - type: trait
 #   id: ThievingTrait # removed from selection
 #   name: trait-thieving-name

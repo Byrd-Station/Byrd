@@ -68,7 +68,12 @@ trait-sharp-teeth-desc =
     Your unarmed melee attacks deal Piercing damage instead of the standard damage type for your species.
     (Note for harpies: If you do take the trait the only things that change are the visuals and sound. You already do 5 piercing damage.)
     This has no effect on damage dealt with any form of armed melee.
+
 trait-small-shit-name = Very Smol
 trait-small-shit-desc =
     You are tiny. So teeny tiny it makes you incredibly puntable to everyone around you.
     On the bright side, you are small enough to snugly fit inside large containers like duffle bags.
+
+trait-darkadapt-name = Dark Adaptation
+trait-darkadapt-desc =
+    All those years spent in "The Dark" have altered you. You slowly heal in the dark but the bright station lights sear your flesh.
