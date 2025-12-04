@@ -45,7 +45,7 @@ public sealed class ShadowkinLightDetectionDamageSystem : SharedShadowkinLightDe
                 return;
             }
 
-            if (comp.DetectionValue > 0 && comp.HealOnShadows && !_mobState.IsDead(uid))
+            if (comp.DetectionValue >= 80 && comp.HealOnShadows && !_mobState.IsDead(uid))
             {
                 _woundSystem.TryHealWoundsOnOwner(uid, comp.DamageToHeal, true);
                 _damageable.TryChangeDamage(uid, comp.DamageToHeal, true, false, targetPart: TargetBodyPart.All, splitDamage: SplitDamageBehavior.SplitEnsureAllOrganic, canMiss: false);

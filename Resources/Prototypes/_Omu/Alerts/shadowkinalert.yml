@@ -1,7 +1,7 @@
 - type: alert
   id: ShadowkinLight
   icons:
-  - sprite: /Textures/_EinsteinEngines/Shadowling/shadowling_light_identifier.rsi
+  - sprite: /Textures/_Omu/Interface/Alerts/shadowkin_light_identifier.rsi
     state: 0
   alertViewEntity: AlertShadowlingLightSpriteView
   name: alerts-shadowling-light-name
@@ -12,6 +12,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: /Textures/_EinsteinEngines/Shadowling/shadowling_light_identifier.rsi
+    sprite: /Textures/_Omu/Alerts/shadowkin_light_identifier.rsi
     layers:
     - map: [ "enum.AlertVisualLayers.Base" ]

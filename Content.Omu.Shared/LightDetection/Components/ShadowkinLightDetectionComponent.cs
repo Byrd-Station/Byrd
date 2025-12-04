@@ -18,7 +18,7 @@ public sealed partial class ShadowkinLightDetectionComponent : Component
     /// Minimum light level for entity to be on light
     /// </summary>
     [DataField]
-    public float OnLightLevel = 2f;
+    public float OnLightLevel = 1.5f;
 
     public bool OnLight => CurrentLightLevel > OnLightLevel;
 }

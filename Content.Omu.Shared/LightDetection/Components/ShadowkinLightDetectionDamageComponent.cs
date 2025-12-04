@@ -19,7 +19,7 @@ public sealed partial class ShadowkinLightDetectionDamageComponent : Component
     /// Max Detection Value
     /// </summary>
     [DataField("maxDetection"), AutoNetworkedField]
-    public float DetectionValueMax = 5f;
+    public float DetectionValueMax = 80f;
 
     /// <summary>
     /// If this reaches 0, the entity will start taking damage.
@@ -32,7 +32,7 @@ public sealed partial class ShadowkinLightDetectionDamageComponent : Component
     /// How much detection entity regenerate in darkness.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float DetectionValueRegeneration = 0.5f;
+    public float DetectionValueRegeneration = 1f;
 
     /// <summary>
     /// Indicates whether the user should take damage on light
@@ -61,7 +61,7 @@ public sealed partial class ShadowkinLightDetectionDamageComponent : Component
     {
         DamageDict = new()
         {
-            ["Heat"] = 3,
+            ["Heat"] = 5,
         }
     };
 
@@ -73,12 +73,12 @@ public sealed partial class ShadowkinLightDetectionDamageComponent : Component
     {
         DamageDict = new()
         {
-            ["Blunt"] = -0.15,
-            ["Slash"] = -0.15,
-            ["Piercing"] = -0.15,
-            ["Heat"] = -0.20,
+            ["Blunt"] = -0.25,
+            ["Slash"] = -0.25,
+            ["Piercing"] = -0.25,
+            ["Heat"] = -0.25,
             ["Cold"] = -.20,
-            ["Shock"] = -0.15,
+            ["Shock"] = -0.20,
             ["Asphyxiation"] = -0,
             ["Bloodloss"] = -.10,
             ["Poison"] = -0,
