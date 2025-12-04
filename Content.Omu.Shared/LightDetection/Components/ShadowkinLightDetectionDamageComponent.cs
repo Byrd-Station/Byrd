@@ -73,15 +73,15 @@ public sealed partial class ShadowkinLightDetectionDamageComponent : Component
     {
         DamageDict = new()
         {
-            ["Blunt"] = -0.25,
-            ["Slash"] = -0.25,
-            ["Piercing"] = -0.25,
-            ["Heat"] = -0.25,
-            ["Cold"] = -.20,
-            ["Shock"] = -0.20,
+            ["Blunt"] = -0.3,
+            ["Slash"] = -0.3,
+            ["Piercing"] = -0.3,
+            ["Heat"] = -0.3,
+            ["Cold"] = -.3,
+            ["Shock"] = -0.3,
             ["Asphyxiation"] = -0,
             ["Bloodloss"] = -.10,
-            ["Poison"] = -0,
+            ["Poison"] = -.15,
         }
     };
 
