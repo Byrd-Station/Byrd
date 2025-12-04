@@ -12,6 +12,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: /Textures/_Omu/Alerts/shadowkin_light_identifier.rsi
+    sprite: /Textures/_Omu/Interface/Alerts/shadowkin_light_identifier.rsi
     layers:
     - map: [ "enum.AlertVisualLayers.Base" ]
