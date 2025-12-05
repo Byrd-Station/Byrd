@@ -1,7 +1,7 @@
 - type: entity
+  parent: BaseBullet
   id: ParticleRadiation # yes I took most of this from anomalous particles, fight me.
   name: radiation particle
-  parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: PointLight # copied this from omega particles but made it bigger and stronger because yes :3
@@ -9,11 +9,8 @@
     color: "#38c24f"
     radius: 3.0
     energy: 10.0
-  - type: Projectile
-    impactEffect: BulletImpactEffectKinetic
-    damage:
-      types:
-        Radiation: 8
+  - type: AnomalousParticle
+    particleType: Delta
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
     layers:
@@ -22,6 +19,20 @@
   - type: Ammo
     muzzleFlash: null
   - type: Physics
+  # - type: Fixtures
+  #   fixtures:
+  #     projectile:
+  #       shape:
+  #         !type:PhysShapeAabb
+  #         bounds: "-0.2,-0.2,0.2,0.2"
+  #       hard: false
+  #       mask:
+  #       - Opaque
+  #     fly-by: *flybyfixture
+  - type: Projectile
+    damage:
+      types:
+        Radiation: 8
   - type: TimedDespawn
     lifetime: 3
   - type: Reflective

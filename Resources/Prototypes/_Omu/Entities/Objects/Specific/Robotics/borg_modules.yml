@@ -2,6 +2,7 @@
   id: BorgModuleAdvancedAnomaly
   parent: [ BaseBorgModuleScience, BaseProviderBorgModule ]
   name: advanced anomaly cyborg module
+  description: An advanced science module containing improved and prototypical tools required for work with anomalous entities.
   components:
   - type: Sprite
     layers: 
