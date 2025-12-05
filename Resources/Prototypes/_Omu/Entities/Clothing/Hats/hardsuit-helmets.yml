@@ -56,7 +56,7 @@
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetSyndicateDeathsquadHelmet
   name: CSI-478X "Xian" hardsuit helm
-  description: Thermals, night vision, vitals HUD, anything a elite operative could desire, private model, of course.
+  description: Thermals, night vision, anything a elite operative could desire, private model, of course.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/Hardsuits/gorlexmarkfive.rsi
