@@ -1,0 +1,19 @@
+- type: startingGear
+  id: SyndicateStrikeTeamGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOperative
+    back: ClothingBackpackDuffelSyndicateC4tBundle
+    mask: ClothingMaskGasSyndicate
+    eyes: ClothingEyesHudSyndicate
+    ears: ClothingHeadsetAltSyndicate
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitSyndicateDeathsquadHardsuit
+    shoes: ClothingShoesBootsMagSyndie
+    id: SyndiPDANukie
+    pocket1: EnergyShield
+    pocket2: EnergySword
+    belt: ClothingBeltMilitaryWebbing
+  storage:
+    back:
+      - BaseUplinkRadio350TC
+      - SyndicateBusinessCard

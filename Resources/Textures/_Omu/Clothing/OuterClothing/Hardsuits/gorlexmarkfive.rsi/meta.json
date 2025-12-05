@@ -1,0 +1,46 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from TGMC at https://github.com/tgstation/TerraGov-Marine-Corps/pull/14207/commits/10fa187d28d3d31c9be6220921dd7c26dca7aba7",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "markfive_leg",
+            "directions": 4
+        },
+		{
+            "name": "markfive_chest",
+            "directions": 4
+        },
+		{
+            "name": "markfive_boots",
+            "directions": 4
+        },
+		{
+            "name": "markfive_gloves",
+            "directions": 4
+        },
+        {
+            "name": "markfive_arm",
+            "directions": 4
+        },
+		{
+            "name": "markfive_chestrig",
+            "directions": 4
+        },
+		{
+            "name": "inhand-left",
+            "directions": 4
+        },
+		{
+            "name": "inhand-right",
+            "directions": 4
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from TGMC at https://github.com/tgstation/TerraGov-Marine-Corps/pull/14207/commits/10fa187d28d3d31c9be6220921dd7c26dca7aba7",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+	{
+      "name": "icon-flash"
+    },
+	{
+      "name": "fourvisor",
+      "directions": 4
+    },
+    {
+      "name": "markfive_antenna",
+	  "directions": 4
+    },
+    {
+      "name": "markfive_helm",
+      "directions": 4
+    },
+	{
+      "name": "markfive_helmplate",
+      "directions": 4
+    }
+  ]
+}

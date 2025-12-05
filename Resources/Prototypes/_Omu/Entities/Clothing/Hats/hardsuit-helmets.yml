@@ -10,8 +10,8 @@
     sprite: _Omu/Clothing/Head/Hardsuits/cybersunparamedhelmet.rsi
   - type: PointLight
     color: "#f2feff"
-    radius: 7  
-    energy: 3 
+    radius: 7
+    energy: 3
 
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
@@ -25,8 +25,8 @@
     sprite: _Omu/Clothing/Head/Hardsuits/cybersunscientisthelmet.rsi
   - type: PointLight
     color: "#d96050"
-    radius: 7  
-    energy: 3 
+    radius: 7
+    energy: 3
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -34,7 +34,7 @@
     heatingCoefficient: 0.005
     coolingCoefficient: 0.005
   - type: FireProtection
-    reduction: 0.7  
+    reduction: 0.7
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.5
@@ -52,5 +52,64 @@
         Caustic: 0.4
   - type: EyeProtection
 
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetSyndicateDeathsquadHelmet
+  name: CSI-478X "Xian" hardsuit helm
+  description: Thermals, night vision, vitals HUD, anything a elite operative could desire, private model, of course.
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/Hardsuits/gorlexmarkfive.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/Hardsuits/gorlexmarkfive.rsi
+    clothingVisuals:
+      head:
+      - state: markfive_helm
+        color: "#3a3a3a"
+      - state: markfive_helmplate
+        color: "#3a3a3a"
+      - state: fourvisor
+        color: "#ffd480"
+        shader: unshaded
+      - state: markfive_antenna
+  - type: PointLight
+    color: "#ffd480"
+    radius: 7
+    energy: 3
+  - type: ThermalVision
+    isEquipment: true
+    color: "#ffd480"
+    lightRadius: 15
+  - type: NightVision
+    isEquipment: true
+    color: "#ffd480"
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    heatingCoefficient: 0.005
+    coolingCoefficient: 0.005
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: FireProtection
+    reduction: 1
+  - type: Armor
+    traumaDeductions:
+      Dismemberment: 0.5
+      OrganDamage: 0.5
+      BoneDamage: 0.5
+      VeinsDamage: 0
+      NerveDamage: 0
+    modifiers:
+      coefficients:
+        Blunt: 0.3
+        Slash: 0.3
+        Piercing: 0.2
+        Heat: 0.2
+        Radiation: 0.2
+        Caustic: 0.1
+  - type: EyeProtection
 
-  
+
