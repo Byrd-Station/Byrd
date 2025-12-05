@@ -120,7 +120,7 @@ public sealed class FaceHuggerSystem : EntitySystem
         BeingUnequippedAttemptEvent args)
     {
         if (component.Slot != args.Slot || args.Unequipee != args.UnEquipTarget ||
-            !component.InfectionPrototype.HasValue || _mobState.IsDead(uid))
+            !component.InfectionPrototype.HasValue || _mobState.IsDead(uid) || _entityWhitelist.IsBlacklistPass(component.Blacklist, args.Unequipee)) // Omu, add IsBlacklistPass
             return;
 
         _popup.PopupEntity(
@@ -164,7 +164,10 @@ public sealed class FaceHuggerSystem : EntitySystem
                     // Get the entity that has this item equipped
                     if (_container.TryGetContainingContainer(uid, out var container) && container.Owner != uid)
                     {
-                        InjectChemicals(uid, faceHugger, container.Owner);
+                        if (!_entityWhitelist.IsBlacklistPass(faceHugger.Blacklist, container.Owner)) // Omu, don't inject into people who the facehugger wont infect
+                        {
+                            InjectChemicals(uid, faceHugger, container.Owner);
+                        }
                         // Set the next injection time based on the current time plus interval
                         faceHugger.NextInjectionTime = time + faceHugger.InjectionInterval;
                     }
