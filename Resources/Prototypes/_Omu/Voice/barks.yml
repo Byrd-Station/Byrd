@@ -17,3 +17,4 @@
     collection: MortisBark
   speciesWhitelist:
   - IPC
+  - Harpy
