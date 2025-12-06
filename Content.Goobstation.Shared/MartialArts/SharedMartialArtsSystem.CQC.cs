@@ -143,36 +143,6 @@ public partial class SharedMartialArtsSystem
                 _stamina.TakeStaminaDamage(args.Target, 25f, applyResistances: true);
                 break;
             case ComboAttackType.Harm:
-                // Snap neck
-                if (!_mobState.IsDead(args.Target) && !HasComp<GodmodeComponent>(args.Target) &&
-                    TryComp(ent, out PullerComponent? puller) && puller.Pulling == args.Target &&
-                    TryComp(args.Target, out PullableComponent? pullable) &&
-                    TryComp(args.Target, out BodyComponent? body) &&
-                    TryComp(args.Target, out StaminaComponent? stamina) && stamina.Critical &&
-                    puller.GrabStage == GrabStage.Suffocate && TryComp(ent, out TargetingComponent? targeting) &&
-                    targeting.Target == TargetBodyPart.Head
-                    && _mobThreshold.TryGetDeadThreshold(args.Target, out var damageToKill))
-                {
-                    _pulling.TryStopPull(args.Target, pullable);
-
-                    var blunt = new DamageSpecifier(_proto.Index<DamageTypePrototype>("Blunt"), damageToKill.Value);
-                    _damageable.TryChangeDamage(args.Target, blunt, true, targetPart: TargetBodyPart.Chest);
-
-                    var (partType, symmetry) = _body.ConvertTargetBodyPart(targeting.Target);
-                    var targetedBodyPart = _body.GetBodyChildrenOfType(args.Target, partType, body, symmetry)
-                        .ToList()
-                        .FirstOrNull();
-
-                    if (targetedBodyPart == null ||
-                        !TryComp(targetedBodyPart.Value.Id, out WoundableComponent? woundable) ||
-                        woundable.Bone.ContainedEntities.FirstOrNull() is not { } bone ||
-                        !TryComp(bone, out BoneComponent? boneComp) || boneComp.BoneSeverity == BoneSeverity.Broken)
-                        break;
-
-                    _trauma.ApplyDamageToBone(bone, boneComp.BoneIntegrity, boneComp);
-                    ComboPopup(ent, args.Target, "Neck Snap");
-                    break;
-                }
 
                 // Leg sweep
                 if (!TryComp<StandingStateComponent>(ent, out var standing)
@@ -269,7 +239,7 @@ public partial class SharedMartialArtsSystem
 
         if (TryComp<PullableComponent>(target, out var pullable))
             _pulling.TryStopPull(target, pullable, ent, true);
-        _grabThrowing.Throw(target, ent, dir, proto.ThrownSpeed);
+        _grabThrowing.Throw(target, ent, dir, proto.ThrownSpeed, behavior: proto.DropHeldItemsBehavior);
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Weapons/genhit2.ogg"), target);
         ComboPopup(ent, target, proto.Name);
         ent.Comp.LastAttacks.Clear();

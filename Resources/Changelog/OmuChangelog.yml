@@ -1291,3 +1291,29 @@ Entries:
       message: Disablers do ion damage now, heal IPCs with cables
   id: 154
   time: '2025-12-02T17:38:23.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Remove
+      message: Removed CQC Neck-snapping
+  id: 155
+  time: '2025-12-04T21:12:41.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: Goob Upstream from 23 Nov till 3 Dec (Read In-game Changelog :fire:)
+  id: 156
+  time: '2025-12-05T17:02:34.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Facehuggers will no longer infect you if you have the hive node organ.
+    - type: Tweak
+      message: The hive node organ now provides xeno access (you can open resin doors).
+  id: 157
+  time: '2025-12-06T07:22:43.0000000+00:00'
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: The Terminus no longer wide-swings when out of battery
+  id: 158
+  time: '2025-12-06T10:12:08.0000000+00:00'
