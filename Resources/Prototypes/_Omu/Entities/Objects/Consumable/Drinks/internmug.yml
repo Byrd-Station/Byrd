@@ -2,7 +2,7 @@
   parent: [DrinkBase, DrinkFlaskVisualsOpenable, BaseCommandContraband]
   id: DrinkMugAA
   name: administrative assistant's bluespace coffee mug
-  description: Bluespace enhanced mug given to the AA in place of their last paycheck. It has "COMMAND ONLY" and "DONT EVEN THINK ABOUT HAVING 2 CUPS OF IT" written on it in a small font.
+  description: Given to the AA in place of their last paycheck.
   components:
   - type: Sprite
     sprite: _Omu/Objects/Consumable/Drinks/mug_aa.rsi
