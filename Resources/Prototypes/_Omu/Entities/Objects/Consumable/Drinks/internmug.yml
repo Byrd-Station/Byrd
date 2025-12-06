@@ -15,7 +15,7 @@
           Quantity: 60
   - type: SolutionRegeneration
     solution: drink
-    duration: 5
+    duration: 10
     generated:
       reagents:
       - ReagentId: NTApprovedCoffee
