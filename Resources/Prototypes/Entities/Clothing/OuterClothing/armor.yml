@@ -170,6 +170,7 @@
   - type: Armor
     coverage:
     - Chest
+    - Groin # Omu, add back Groin prot
     traumaDeductions:
       Dismemberment: 0.2
       OrganDamage: 0.2
@@ -178,10 +179,10 @@
       NerveDamage: 0
     modifiers:
       coefficients:
-        Blunt: 0.70
-        Slash: 0.70
-        Piercing: 0.70
-        Heat: 0.80
+        Blunt: 0.55 # Omu, was 0.7
+        Slash: 0.55 # Omu, was 0.7
+        Piercing: 0.55 # Omu, was 0.7
+        Heat: 0.7 # Omu, was 0.8
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: ModifyDelayedKnockdown # Goobstation
@@ -240,7 +241,7 @@
       coefficients:
         Blunt: 0.35
         Slash: 0.35
-        Piercing: 0.8
+        Piercing: 0.6 # Omu, was 0.8
         Heat: 0.6
         Caustic: 0.75
   - type: ExplosionResistance
@@ -558,6 +559,7 @@
   - type: Armor
     coverage:
     - Chest
+    - Groin
     traumaDeductions:
       Dismemberment: 0.2
       OrganDamage: 0.2
@@ -566,11 +568,11 @@
       NerveDamage: 0
     modifiers:
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.6
-        Heat: 0.5
-        Caustic: 0.9
+        Blunt: 0.3 # Omu, was 0.5
+        Slash: 0.3 # Omu, was 0.5
+        Piercing: 0.4 # Omu, was 0.6
+        Heat: 0.3 # Omu, was 0.5
+        Caustic: 0.75 # Omu, was 0.9
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
