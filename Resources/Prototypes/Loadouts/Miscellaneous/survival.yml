@@ -137,6 +137,8 @@
     - Tajaran
     - Chitinid # DeltaV
     - Shadowkin
+    # Omu - Custom Species
+    - Xelthia
 
 # Goobstation start
 - type: loadoutEffectGroup
