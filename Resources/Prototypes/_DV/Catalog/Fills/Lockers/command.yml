@@ -7,9 +7,9 @@
     - id: ClothingUniformJumpsuitAdminAssistant
     - id: ClothingUniformJumpskirtAdminAssistant
     - id: ClothingHeadsetAltAdminAssistant
+    - id: DrinkGlass # Omu start
     - id: DrinkGlass
-    - id: DrinkGlass
-    - id: DrinkGlass
+    - id: DrinkGlass # Omu end
     # - id: AdminAssistantIDCard
 
 - type: entity
