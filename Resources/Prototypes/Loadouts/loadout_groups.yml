@@ -177,6 +177,7 @@
   - PlushieSpaceLizard
   - PersonalAI # Goobstation
   - GoldenPersonalAI # Goobstation
+  - CrewCassette # Goobstation
   - ThreeCandles
   - Lighter
   - CigPackGreen
@@ -939,6 +940,7 @@
   - CargoTechnicianSweaterSkirt
   - CargoTechnicianShortPantsIfuckinghateyouifyouwearthisbtw
   - CargoTechnicianShortSkirtsInsteadofPants
+  - CargoTechnicianUniformTopInsteadOfJumpsuit
   # OmuStation End
   - CargoTechnicianJumpsuitMail # Goob/DeltaV - Mail
   - CargoTechnicianJumpskirtMail # Goob/DeltaV - Mail
@@ -1391,6 +1393,7 @@
   loadouts:
   - SecurityBelt
   - SecurityWebbing
+  - SecurityJudoBelt # Goobstation - Martial Arts
 
 - type: loadoutGroup
   id: SecurityOuterClothing
