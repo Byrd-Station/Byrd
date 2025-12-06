@@ -66,7 +66,7 @@
       - !type:HealthChange
         damage:
           types:
-            Poison: 0.5
+            Poison: 1
             Asphyxiation: 1
         conditions:
         - !type:ReagentThreshold
