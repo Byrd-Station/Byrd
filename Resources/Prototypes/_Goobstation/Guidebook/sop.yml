@@ -358,7 +358,7 @@
   name: guide-entry-sop-qm
   text: "/ServerInfo/_Goobstation/Guidebook/SoP/Jobs/Command/QuartermasterSOP.xml"
 
-- type: guideEntry
+- type: guideEntry # Omu
   id: Administrative Assistant SOP
   name: guide-entry-sop-aa
   text: "/ServerInfo/_Goobstation/Guidebook/SoP/Jobs/Command/AdministrativeAssistant.xml"
