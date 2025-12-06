@@ -1,6 +1,0 @@
-﻿- type: currency
-  id: ThreatLevel
-  displayName: store-currency-display-threat-level
-  cash:
-    1: ThreatLevel1
-  canWithdraw: false
