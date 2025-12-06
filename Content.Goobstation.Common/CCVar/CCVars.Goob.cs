@@ -653,5 +653,11 @@ public sealed partial class GoobCVars
     public static readonly CVarDef<bool> LifeLineResetMind =
         CVarDef.Create("lifeline.reset_mind", true, CVar.SERVERONLY);
 
+    /// <summary>
+    /// Enable admin notification sounds
+    /// </summary>
+    public static readonly CVarDef<float> AdminNotificationVolume =
+        CVarDef.Create("admin.notification_volume", 1f, CVar.CLIENT | CVar.CLIENTONLY | CVar.ARCHIVE);
+
     #endregion
 }
