@@ -79,6 +79,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.MartialArts;
+using Content.Goobstation.Shared.Body; // goob
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
@@ -150,9 +151,15 @@ public sealed class RespiratorSystem : EntitySystem
     }
 
     // Goobstation start
-    // Can breathe check for grab
+    // Can breathe check for grab or if they need air
     public bool CanBreathe(EntityUid uid, RespiratorComponent respirator)
     {
+        var airEv = new CheckNeedsAirEvent();
+        RaiseLocalEvent(uid, ref airEv);
+
+        if (airEv.Cancelled)
+            return true;
+
         if (respirator.Saturation < respirator.SuffocationThreshold)
             return false;
         if (TryComp<PullableComponent>(uid, out var pullable)
@@ -195,7 +202,7 @@ public sealed class RespiratorSystem : EntitySystem
             var multiplier = -1f;
             foreach (var (_, lung, _) in organs)
             {
-                multiplier *= lung.SaturationLoss;
+                multiplier *= lung.SaturationLoss * respirator.SaturationLoss; // Goob Edit - In a DeltaV Edit :o
             }
             // End DeltaV Code
             UpdateSaturation(uid,  multiplier * (float) respirator.UpdateInterval.TotalSeconds, respirator); // DeltaV: use multiplier instead of negating
@@ -515,7 +522,7 @@ public sealed class RespiratorSystem : EntitySystem
         }
 
         // Shitmed Change End
-        _damageableSys.TryChangeDamage(ent, HasComp<DebrainedComponent>(ent) ? ent.Comp.Damage * 4.5f : ent.Comp.Damage, targetPart: TargetBodyPart.All, interruptsDoAfters: false); // Shitmed Change
+        _damageableSys.TryChangeDamage(ent, HasComp<DebrainedComponent>(ent) ? ent.Comp.Damage * 4.5f : ent.Comp.Damage, targetPart: TargetBodyPart.Vital, interruptsDoAfters: false); // Shitmed Change + Goobstation
 
         if (ent.Comp.SuffocationCycles < ent.Comp.SuffocationCycleThreshold)
             return;
@@ -584,6 +591,14 @@ public sealed class RespiratorSystem : EntitySystem
     {
         if (!Resolve(uid, ref respirator, false))
             return;
+
+        // Goob start
+        var airEv = new CheckNeedsAirEvent();
+        RaiseLocalEvent(uid, ref airEv);
+
+        if (airEv.Cancelled)
+            return;
+        // Goob end
 
         respirator.Saturation += amount;
         respirator.Saturation =

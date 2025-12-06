@@ -1149,3 +1149,177 @@ Entries:
         to throw gang signs with.
   id: 135
   time: '2025-11-14T07:00:43.0000000+00:00'
+- author: XWASHERE
+  changes:
+    - type: Add
+      message: rules smite
+  id: 136
+  time: '2025-11-17T18:06:06.0000000+00:00'
+- author: Kirisune
+  changes:
+    - type: Add
+      message: A new uniform for NTR
+    - type: Add
+      message: CC business card in to executive briefcase
+    - type: Add
+      message: >-
+        Multitool to NTR's locker. You can finally start on your tasks shift
+        start instead of looking for a multitool.
+    - type: Tweak
+      message: NTR handheld fax squished from 4x4 to 4x2
+  id: 137
+  time: '2025-11-18T17:33:02.0000000+00:00'
+- author: GNUtopia
+  changes:
+    - type: Fix
+      message: >-
+        Duty weapons and selector cases are now properly classified as
+        contraband
+  id: 138
+  time: '2025-11-21T18:28:29.0000000+00:00'
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added the Sharp Teeth trait, which at the cost of ONE of your trait
+        points (and slots) replaces your unarmed melee with the arachnid bite!
+        This changes the visual, sound, and also the damage to 5 pierce!
+  id: 139
+  time: '2025-11-21T18:40:40.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: >-
+        Added Goob Upstream from 7 Nov till 23 Nov (Check In-game change-logs!)
+        :egg: 
+  id: 140
+  time: '2025-11-23T14:22:32.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added back Slimepeople's passive regen.
+    - type: Fix
+      message: Fixed PassiveDamage so that it works properly with woundmed.
+  id: 141
+  time: '2025-11-23T19:13:22.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: Antag spawn rates
+  id: 142
+  time: '2025-11-24T20:32:02.0000000+00:00'
+- author: Kirisune
+  changes:
+    - type: Tweak
+      message: Squished chaplain's arrythmic knife to a more reasonable size.
+  id: 143
+  time: '2025-11-24T20:33:11.0000000+00:00'
+- author: Sarahon
+  changes:
+    - type: Tweak
+      message: >-
+        Sec no longer use space animal organs for the memes(Command should
+        follow space law)
+  id: 144
+  time: '2025-11-25T20:48:04.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Add
+      message: >-
+        Added the concussive gauntlets as both something you can buy in the salv
+        vendor and a roundstart kit for salvage.
+  id: 145
+  time: '2025-11-25T20:58:24.0000000+00:00'
+- author: XWASHERE
+  changes:
+    - type: Add
+      message: rules smite attempt 2
+  id: 146
+  time: '2025-11-29T06:15:30.0000000+00:00'
+- author: Gab
+  changes:
+    - type: Add
+      message: Added some new drip for BSOs from Starlight.
+  id: 147
+  time: '2025-11-29T06:48:14.0000000+00:00'
+- author: '-'
+  changes: []
+  id: 148
+  time: '2025-11-29T07:29:23.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: Removed the reflect from shuttle walls
+  id: 149
+  time: '2025-11-29T17:35:25.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Add
+      message: Added Distress signaller to sec vend
+  id: 150
+  time: '2025-11-30T06:48:19.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Add
+      message: >-
+        Added departmental comms consoles, now CE can scream tesloose while
+        being vaporised and people will listen!
+  id: 151
+  time: '2025-11-30T06:48:34.0000000+00:00'
+- author: Gab
+  changes:
+    - type: Fix
+      message: The assault belt loadout on BSO is not longer a Senior BSO drip. My bad.
+  id: 152
+  time: '2025-11-30T15:18:02.0000000+00:00'
+- author: Super Evil Tuerk
+  changes:
+    - type: Tweak
+      message: >-
+        Most playtime requirements for department heads and security jobs have
+        been massively increased.
+    - type: Tweak
+      message: >-
+        Interns no longer have a limit on how long you can have played at a
+        department for. If you haven't played for a long time and don't want
+        someone to expect you to kwtd, this is for you.
+  id: 153
+  time: '2025-12-01T17:09:43.0000000+00:00'
+- author: raincally
+  changes:
+    - type: Tweak
+      message: Disablers do ion damage now, heal IPCs with cables
+  id: 154
+  time: '2025-12-02T17:38:23.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Remove
+      message: Removed CQC Neck-snapping
+  id: 155
+  time: '2025-12-04T21:12:41.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: Goob Upstream from 23 Nov till 3 Dec (Read In-game Changelog :fire:)
+  id: 156
+  time: '2025-12-05T17:02:34.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Facehuggers will no longer infect you if you have the hive node organ.
+    - type: Tweak
+      message: The hive node organ now provides xeno access (you can open resin doors).
+  id: 157
+  time: '2025-12-06T07:22:43.0000000+00:00'
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: The Terminus no longer wide-swings when out of battery
+  id: 158
+  time: '2025-12-06T10:12:08.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Xenos can now target limbs
+  id: 159
+  time: '2025-12-06T15:43:48.0000000+00:00'

@@ -158,6 +158,7 @@
     - !type:TraitsRequirement
       traits:
         - ClawsTrait
+        - SharpTeethTrait
       inverted: true
 
 # - type: trait
@@ -184,6 +185,27 @@
 #   components:
 #     - type: IgnorePocketHiding
 #   globalCost: 2
+
+- type: trait
+  id: SharpTeethTrait
+  name: trait-sharp-teeth-name
+  description: trait-sharp-teeth-desc
+  category: PhysicalTraits
+  functions:
+    - !type:TraitModifyUnarmed
+      hitSound:
+        path: /Audio/Effects/bite.ogg
+      animation: WeaponArcBite
+      damage:
+        types:
+          Piercing: 5
+  globalCost: 1
+  requirements:
+    - !type:SpeciesRequirement
+      species: # a list of species which already have them sharp chompers.
+        - Feroxi
+        - Arachnid
+      inverted: true
 
 - type: trait
   id: SmallShit # Stuff Shadowkin and Harpies into a bag
