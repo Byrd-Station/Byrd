@@ -444,7 +444,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         Code
       </Box>
     </ColorBox>
-    <ColorBox Color="#593a4e">
+    <ColorBox Color="#2f3832">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Disturbance
       </Box>
@@ -494,7 +494,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         I-II
       </Box>
     </ColorBox>
-    <ColorBox Color="#2e422e">
+    <ColorBox Color="#2f3832">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Possession/Use of Illegal Substances
       </Box>
@@ -519,7 +519,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         I-III
       </Box>
     </ColorBox>
-    <ColorBox Color="#453a59">
+    <ColorBox Color="#2f3832">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Trespass
       </Box>
@@ -544,7 +544,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         I-IV
       </Box>
     </ColorBox>
-    <ColorBox Color="#59563a">
+    <ColorBox Color="#2f3832">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Vandalism
       </Box>
@@ -598,7 +598,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         Code
       </Box>
     </ColorBox>
-    <ColorBox Color="#593a4e">
+    <ColorBox Color="#2e422e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Animal Cruelty
       </Box>
@@ -622,7 +622,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         II-I
       </Box>
     </ColorBox>
-    <ColorBox Color="#2f3832">
+    <ColorBox Color="#2e422e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Damage/Destruction of Property
       </Box>
@@ -672,7 +672,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         II-III
       </Box>
     </ColorBox>
-    <ColorBox Color="#453a59">
+    <ColorBox Color="#2e422e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Failure to Comply
       </Box>
@@ -697,7 +697,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         II-IV
       </Box>
     </ColorBox>
-    <ColorBox Color="#59563a">
+    <ColorBox Color="#2e422e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Possession of Restricted Gear
       </Box>
@@ -722,7 +722,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         II-V
       </Box>
     </ColorBox>
-    <ColorBox Color="#4d2e2e">
+    <ColorBox Color="#2e422e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Rioting
       </Box>
@@ -778,7 +778,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         Code
       </Box>
     </ColorBox>
-    <ColorBox Color="#593a4e">
+    <ColorBox Color="#453a59">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Assault/Battery
       </Box>
@@ -803,7 +803,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         III-I
       </Box>
     </ColorBox>
-    <ColorBox Color="#2f3832">
+    <ColorBox Color="#453a59">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Breach of Arrest
       </Box>
@@ -828,7 +828,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         III-II
       </Box>
     </ColorBox>
-    <ColorBox Color="#2e422e">
+    <ColorBox Color="#453a59">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Grand Theft
       </Box>
@@ -878,7 +878,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         III-IV
       </Box>
     </ColorBox>
-    <ColorBox Color="#59563a">
+    <ColorBox Color="#453a59">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Mass Destruction
       </Box>
@@ -903,7 +903,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         III-V
       </Box>
     </ColorBox>
-    <ColorBox Color="#4d2e2e">
+    <ColorBox Color="#453a59">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Possession of Restricted Weaponry
       </Box>
@@ -928,7 +928,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         III-VI
       </Box>
     </ColorBox>
-    <ColorBox Color="#4d2e2e">
+    <ColorBox Color="#453a59">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Secure Trespass
       </Box>
@@ -953,7 +953,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         III-VII
       </Box>
     </ColorBox>
-    <ColorBox Color="#3b4354">
+    <ColorBox Color="#453a59">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Breach of Custody
       </Box>
@@ -1010,7 +1010,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         Code
       </Box>
     </ColorBox>
-    <ColorBox Color="#593a4e">
+    <ColorBox Color="#59563a">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Attempted Murder
       </Box>
@@ -1035,7 +1035,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         IV-I
       </Box>
     </ColorBox>
-    <ColorBox Color="#2f3832">
+    <ColorBox Color="#59563a">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Unlawful Control/Kidnapping/Hostage Taking
       </Box>
@@ -1060,7 +1060,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         IV-II
       </Box>
     </ColorBox>
-    <ColorBox Color="#2e422e">
+    <ColorBox Color="#59563a">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Murder
       </Box>
@@ -1115,7 +1115,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         Code
       </Box>
     </ColorBox>
-    <ColorBox Color="#593a4e">
+    <ColorBox Color="#4d2e2e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Mass Murder
       </Box>
@@ -1140,7 +1140,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         V-I
       </Box>
     </ColorBox>
-    <ColorBox Color="#2f3832">
+    <ColorBox Color="#4d2e2e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Prevention of Revival
       </Box>
@@ -1165,7 +1165,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         V-II
       </Box>
     </ColorBox>
-    <ColorBox Color="#2e422e">
+    <ColorBox Color="#4d2e2e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Refusal of Mental Shielding
       </Box>
@@ -1190,7 +1190,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         V-III
       </Box>
     </ColorBox>
-    <ColorBox Color="#453a59">
+    <ColorBox Color="#4d2e2e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Terrorism
       </Box>
