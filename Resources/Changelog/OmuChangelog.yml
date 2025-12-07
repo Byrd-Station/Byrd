@@ -1347,3 +1347,15 @@ Entries:
       message: Special gloved-jackets for those lacking hands.
   id: 162
   time: '2025-12-06T17:24:19.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: >-
+        Chestbursters no longer gib, instead they deal large amounts of damage
+        to the torso.
+  id: 163
+  time: '2025-12-07T15:08:43.0000000+00:00'
+- author: CliveOcelot
+  changes: []
+  id: 164
+  time: '2025-12-07T19:59:51.0000000+00:00'
