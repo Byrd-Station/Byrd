@@ -14,7 +14,7 @@
   - type: GloveJacket
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: [ClothingOuterBase, BaseEngineeringContraband]
   id: ClothingOuterJacketSeniorEngineer
   name: senior engineer insulated jacket
   description: A prestigious insulated membrane jacket for handless engineers.
