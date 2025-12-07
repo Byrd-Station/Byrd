@@ -46,6 +46,7 @@
         Slash: 15
     soundHit:
       collection: MetalThud
+    canWideSwing: false # Omu
   - type: StaminaDamageOnHit
     damage: 30
   - type: Wieldable
