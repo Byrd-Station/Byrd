@@ -20,7 +20,7 @@
   - BlueshieldOfficer
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, BluespaceLifelineImplant, DnaScramblerImplant ] # Omu, add Dna Scrambler
+    implants: [ MindShieldImplant, BluespaceLifelineImplant ]
   - !type:RemoveComponentSpecial # Omu, no stealing NCT's gear
     components:
     - type: Strippable
