@@ -92,7 +92,7 @@
   - type: Lube
   - type: TrashOnSolutionEmpty
     solution: drink
-  - type: Tag
+  - type: Tag #Omu - Greaser Gun
     tags:
       - Lubricant
 
