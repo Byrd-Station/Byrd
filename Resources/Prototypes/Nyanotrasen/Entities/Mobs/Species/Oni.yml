@@ -46,9 +46,9 @@
     # scale: 1.2, 1.2 # Goobstation: port EE height/width sliders
   - type: PlayerToolModifier
     pryTimeMultiplier: 0.6
-  # - type: PlayerAccuracyModifier
-  #  spreadMultiplier: 15
-  #  maxSpreadAngle: 180 # They can't use guns any more, this seems overkill - maus
+   - type: PlayerAccuracyModifier
+    spreadMultiplier: 15
+    maxSpreadAngle: 180 # They can't use guns any more, this seems overkill - maus
   - type: BonusStaminaDamage
     multiplier: 1.25
   - type: BonusMeleeDamage
@@ -65,8 +65,6 @@
     prototype: Oni
   - type: LightweightDrunk
     boozeStrengthMultiplier: 0.5 # REAL hard to get drunk
-  - type: DoAfterDelayMultiplier
-    multiplier: 1.1
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:
