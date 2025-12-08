@@ -210,6 +210,7 @@
     - id: WeaponDisabler
     - id: ClothingEyesGlassesCommand
     - id: HeadSkeleton # A skull to accompany your skeleton crew
+    # Omu - No second skin - id: SecondSkinSecurity # Goobstation
       conditions:
       - !type:PlayerCountCondition
         max: 15
@@ -321,6 +322,7 @@
     children:
     - id: AccessConfigurator
     - id: BoxEncryptionKeyEngineering
+    - id: ClothingOuterJacketInsulated # Omu - Port Xelthia
     - id: CigarCase
       prob: 0.15
     - id: ClothingBeltChiefEngineerFilled
@@ -393,6 +395,7 @@
     - id: ClothingCloakCmo
     - id: ClothingEyesHudMedical
     - id: ClothingHandsGlovesNitrile
+    - id: ClothingOuterJacketSurgical # Omu - port Xelthia
     - id: ClothingHeadHatBeretCmo
     - id: ClothingHeadsetAltMedical
     - id: ClothingMaskSterile
@@ -404,6 +407,7 @@
     - id: MedkitFilled
     - id: RubberStampCMO
     # Goobstation Start
+    - id: ChemistryHotplateFlatPack
     - id: CloningpodFlatpack
     - id: MedicalScannerFlatpack
     - id: ComputerCloningConsoleFlatpack
@@ -545,6 +549,8 @@
     - id: HeadOfSecurityMeleeCase # Omu
     - id: ComputerSecurityCommsFlatpack #Omu adds departmental comms board
     - id: Multitool # Omu
+    - id: ClothingBeltSheathHeadOfSecurityFilled # Goobstation - security revamp
+    # Omu - no second skin - id: SecondSkinSecurity # Goobstation
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

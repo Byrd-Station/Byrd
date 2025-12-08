@@ -101,11 +101,3 @@
     damageCoefficient: 0.1
   - type: StaticPrice
     price: 500
-
-- type: loadout #BSO's belt - Moved to Loadout
-  id: BeltAssaultFilled
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorBlueshieldOfficer
-  equipment:
-    belt: ClothingBeltAssaultFilled
