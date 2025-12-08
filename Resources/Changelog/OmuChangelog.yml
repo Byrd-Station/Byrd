@@ -1230,3 +1230,45 @@ Entries:
         vendor and a roundstart kit for salvage.
   id: 145
   time: '2025-11-25T20:58:24.0000000+00:00'
+- author: XWASHERE
+  changes:
+    - type: Add
+      message: rules smite attempt 2
+  id: 146
+  time: '2025-11-29T06:15:30.0000000+00:00'
+- author: Gab
+  changes:
+    - type: Add
+      message: Added some new drip for BSOs from Starlight.
+  id: 147
+  time: '2025-11-29T06:48:14.0000000+00:00'
+- author: '-'
+  changes: []
+  id: 148
+  time: '2025-11-29T07:29:23.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: Removed the reflect from shuttle walls
+  id: 149
+  time: '2025-11-29T17:35:25.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Add
+      message: Added Distress signaller to sec vend
+  id: 150
+  time: '2025-11-30T06:48:19.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Add
+      message: >-
+        Added departmental comms consoles, now CE can scream tesloose while
+        being vaporised and people will listen!
+  id: 151
+  time: '2025-11-30T06:48:34.0000000+00:00'
+- author: Gab
+  changes:
+    - type: Fix
+      message: The assault belt loadout on BSO is not longer a Senior BSO drip. My bad.
+  id: 152
+  time: '2025-11-30T15:18:02.0000000+00:00'
