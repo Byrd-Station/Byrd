@@ -1073,9 +1073,6 @@
   id: LoneOpsUplink # Goob
 
 - type: Tag
-  id: Lubricant
-
-- type: Tag
   id: Machete
 
 - type: Tag
