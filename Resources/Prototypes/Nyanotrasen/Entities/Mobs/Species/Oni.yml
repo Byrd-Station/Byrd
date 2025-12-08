@@ -65,6 +65,8 @@
     prototype: Oni
   - type: LightweightDrunk
     boozeStrengthMultiplier: 0.5 # REAL hard to get drunk
+  - type: DoAfterDelayMultiplier
+    multiplier: 1.1
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:
