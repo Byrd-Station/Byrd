@@ -46,7 +46,7 @@
     # scale: 1.2, 1.2 # Goobstation: port EE height/width sliders
   - type: PlayerToolModifier
     pryTimeMultiplier: 0.6
-   - type: PlayerAccuracyModifier
+  - type: PlayerAccuracyModifier
     spreadMultiplier: 15
     maxSpreadAngle: 180 # They can't use guns any more, this seems overkill - maus
   - type: BonusStaminaDamage
