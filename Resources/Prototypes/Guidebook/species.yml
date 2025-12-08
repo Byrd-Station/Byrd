@@ -47,6 +47,7 @@
     - Chitinid
     - Plasmaman
     - Feroxi
+    - Xelthia # OMU - EE species
 
 - type: guideEntry
   id: Arachnid
@@ -134,3 +135,9 @@
   id: Plasmaman
   name: species-name-plasmaman
   text: "/ServerInfo/Guidebook/Mobs/Plasmaman.xml"
+  text: "/ServerInfo/Guidebook/Mobs/Plasmaman.xml"
+
+- type: guideEntry
+  id: Xelthia
+  name: species-name-xelthia
+  text: "/ServerInfo/_EinsteinEngines/Guidebook/Mobs/Xelthia.xml"
