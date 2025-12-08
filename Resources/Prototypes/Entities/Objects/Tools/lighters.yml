@@ -429,6 +429,9 @@
     netsync: false
     radius: 2
     color: green
+  - type: Tag
+    tags:
+      - Lighter #Omustation - whitelisted cig pack strorage (added tag)
 
 - type: entity
   parent: Lighter
@@ -484,6 +487,9 @@
         - ReagentId: WeldingFuel
           Quantity: 3
         maxVol: 3
+  - type: Tag
+    tags:
+      - Lighter #Omustation - whitelisted cig pack strorage (added tag)
 
 - type: entity
   parent: [BaseBrandedLighter, BaseSyndicateContraband]
@@ -504,6 +510,9 @@
     netsync: false
     radius: 2
     color: magenta
+  - type: Tag
+    tags:
+      - Lighter #Omustation - whitelisted cig pack strorage (added tag)
 
 - type: entity
   parent: [BaseBrandedLighter, BaseSyndicateContraband]
@@ -528,6 +537,9 @@
     netsync: false
     radius: 2
     color: cyan
+  - type: Tag
+    tags:
+      - Lighter #Omustation - whitelisted cig pack strorage (added tag)
 
 - type: entity
   parent: [BaseBrandedLighter]
@@ -558,6 +570,9 @@
         - ReagentId: Plasma
           Quantity: 10
         maxVol: 10
+  - type: Tag
+    tags:
+      - Lighter #Omustation - whitelisted cig pack strorage (added tag)
 
 - type: entity
   parent: [BaseBrandedLighter, BaseCentcommContraband]
@@ -604,6 +619,9 @@
   - type: Lock
   - type: AccessReader
     access: [["CentralCommand"]]
+  - type: Tag
+    tags:
+      - Lighter #Omustation - whitelisted cig pack strorage (added tag)
 
 - type: entity
   parent: [BaseBrandedLighter, BaseMajorContraband]
@@ -624,6 +642,9 @@
     netsync: false
     radius: 2
     color: green
+  - type: Tag
+    tags:
+      - Lighter #Omustation - whitelisted cig pack strorage (added tag)
 
 - type: entity
   parent: [BaseBrandedLighter, BaseSyndicateContraband]
@@ -644,6 +665,9 @@
     netsync: false
     radius: 2
     color: brown
+  - type: Tag
+    tags:
+      - Lighter #Omustation - whitelisted cig pack strorage (added tag)
 
 - type: entity
   parent: [BaseBrandedLighter]
@@ -689,6 +713,9 @@
     netsync: false
     radius: 2
     color: yellow
+  - type: Tag
+    tags:
+      - Lighter #Omustation - whitelisted cig pack strorage (added tag)
 
 - type: entity
   parent: [BaseBrandedLighter]
@@ -708,6 +735,7 @@
     tags:
     - DonkPocket
     - Meat
+    - Lighter #Omustation - whitelisted cig pack strorage (added tag)
   - type: SolutionContainerManager
     solutions:
       Welder:
