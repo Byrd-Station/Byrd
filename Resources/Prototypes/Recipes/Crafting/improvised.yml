@@ -216,11 +216,3 @@
   targetNode: bagPet
   category: construction-category-clothing
   objectType: Item
-
-- type: construction
-  id: greaserGun
-  graph: GreaserGraph
-  startNode: start
-  targetNode: greaser
-  category: construction-category-weapons
-  objectType: Item

@@ -5,11 +5,11 @@
   description: A crude, rectangular hunk of station steel. Nothing’s drilled, nothing’s fitted. Just raw potential and bad intentions.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/greaser.rsi
+    sprite: _Omu/Objects/Weapons/Guns/SMGs/greaser.rsi
     state: construction-1
   - type: Item
     size: Normal
-    sprite: Objects/Weapons/Guns/SMGs/greaser.rsi
+    sprite: 
   - type: Construction
     graph: GreaserGraph
     node: greaserframe
@@ -21,11 +21,11 @@
   description: A roughly machined receiver shell. The metal’s uneven, crude, and filed by hand, but the shape of a gun is finally showing itself.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/greaser.rsi
+    sprite: _Omu/Objects/Weapons/Guns/SMGs/greaser.rsi
     state: construction-2
   - type: Item
     size: Normal
-    sprite: Objects/Weapons/Guns/SMGs/greaser.rsi
+    sprite: _Omu/Objects/Weapons/Guns/SMGs/greaser.rsi
   - type: Construction
     graph: GreaserGraph
     node: greasermachinedframe
@@ -37,11 +37,11 @@
   description: The bolt’s slapped in and welded shut. Lords' lore says if it rattles, it’ll run—this one rattles like hell.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/greaser.rsi
+    sprite: _Omu/Objects/Weapons/Guns/SMGs/greaser.rsi
     state: construction-3
   - type: Item
     size: Normal
-    sprite: Objects/Weapons/Guns/SMGs/greaser.rsi
+    sprite: _Omu/Objects/Weapons/Guns/SMGs/greaser.rsi
   - type: Construction
     graph: GreaserGraph
     node: greaserboltwelded
@@ -53,11 +53,11 @@
   description: The lower assembly is wired, screwed, and half-aligned. The trigger crunches like a mousetrap. One or two more steps and this thing might actually fire.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/greaser.rsi
+    sprite: _Omu/Objects/Weapons/Guns/SMGs/greaser.rsi
     state: construction-4
   - type: Item
     size: Normal
-    sprite: Objects/Weapons/Guns/SMGs/greaser.rsi
+    sprite: _Omu/Objects/Weapons/Guns/SMGs/greaser.rsi
   - type: Construction
     graph: GreaserGraph
     node: greaserlowerassembly
@@ -69,11 +69,11 @@
   description: Every part of the gun is now bolted together; Barrel, bolt, frame, and trigger. It just needs some minor adjustments and, of course, grease.
   components: 
   - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/greaser.rsi
+    sprite: _Omu/Objects/Weapons/Guns/SMGs/greaser.rsi
     state: construction-5
   - type: Item
     size: Normal
-    sprite: Objects/Weapons/Guns/SMGs/greaser.rsi
+    sprite: _Omu/Objects/Weapons/Guns/SMGs/greaser.rsi
   - type: Construction
     graph: GreaserGraph
     node: greaserbarrel
