@@ -202,7 +202,7 @@ public sealed class RespiratorSystem : EntitySystem
             var multiplier = -1f;
             foreach (var (_, lung, _) in organs)
             {
-                multiplier *= lung.SaturationLoss;
+                multiplier *= lung.SaturationLoss * respirator.SaturationLoss; // Goob Edit - In a DeltaV Edit :o
             }
             // End DeltaV Code
             UpdateSaturation(uid,  multiplier * (float) respirator.UpdateInterval.TotalSeconds, respirator); // DeltaV: use multiplier instead of negating
@@ -522,7 +522,7 @@ public sealed class RespiratorSystem : EntitySystem
         }
 
         // Shitmed Change End
-        _damageableSys.TryChangeDamage(ent, HasComp<DebrainedComponent>(ent) ? ent.Comp.Damage * 4.5f : ent.Comp.Damage, targetPart: TargetBodyPart.All, interruptsDoAfters: false); // Shitmed Change
+        _damageableSys.TryChangeDamage(ent, HasComp<DebrainedComponent>(ent) ? ent.Comp.Damage * 4.5f : ent.Comp.Damage, targetPart: TargetBodyPart.Vital, interruptsDoAfters: false); // Shitmed Change + Goobstation
 
         if (ent.Comp.SuffocationCycles < ent.Comp.SuffocationCycleThreshold)
             return;

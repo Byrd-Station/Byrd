@@ -64,11 +64,11 @@
   playTimeTracker: JobTechnicalAssistant
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 1800 # 30 Minutes
-    - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 18000 #5 hrs
-      inverted: true # stop playing intern if you're good at engineering!
+      time: 18000 # 5 hrs # Omu edit start - Engineering Raider prevention
+    #- !type:DepartmentTimeRequirement
+    #  department: Engineering
+    #  time: 18000 #5 hrs
+    #  inverted: true # Omu edit end
   startingGear: TechnicalAssistantGear
   icon: "JobIconTechnicalAssistant"
   supervisors: job-supervisors-engineering
