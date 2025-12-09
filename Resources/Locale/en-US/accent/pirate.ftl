@@ -53,14 +53,18 @@ accent-pirate-replacement-13 = doubloons
 accent-pirate-replaced-14 = crate
 accent-pirate-replacement-14 = coffer
 
+#omustation
 accent-pirate-replaced-15 = of
 accent-pirate-replacement-15 = o'
+#omustation
 
 accent-pirate-replaced-16 = treasure
 accent-pirate-replacement-16 = booty
 
+#omustation
 accent-pirate-replaced-17 = stop
 accent-pirate-replacement-17 = avast
+#omustation
 
 accent-pirate-replaced-18 = stupid
 accent-pirate-replacement-18 = parrot-brained
@@ -107,6 +111,7 @@ accent-pirate-replacement-31 = musket
 accent-pirate-replaced-32 = ammo
 accent-pirate-replacement-32 = gunpowder
 
+#omustation
 accent-pirate-replaced-33 = shotgun
 accent-pirate-replacement-33 = blunderbuss
 
@@ -334,3 +339,7 @@ accent-pirate-replacement-107 = brig
 
 accent-pirate-replaced-108 = prison
 accent-pirate-replacement-108 = brig
+
+accent-pirate-replaced-109 = cancel
+accent-pirate-replacement-109 = belay
+#omustation
