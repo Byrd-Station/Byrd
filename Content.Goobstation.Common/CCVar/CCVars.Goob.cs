@@ -291,13 +291,16 @@ public sealed partial class GoobCVars
 
     #endregion
 
+    public static readonly CVarDef<string> PatronSupportLastShown =
+        CVarDef.Create("patron.support_last_shown", "", CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    public static readonly CVarDef<int> PatronAskSupport =
+        CVarDef.Create("patron.ask_support", 7, CVar.REPLICATED | CVar.SERVER);
+
     #region Goobcoins
 
     public static readonly CVarDef<int> GoobcoinsPerPlayer =
         CVarDef.Create("servercurrency.per_player", 10, CVar.SERVERONLY);
-
-    public static readonly CVarDef<int> GoobcoinsPerGreentext =
-        CVarDef.Create("servercurrency.per_greentext", 5, CVar.SERVERONLY);
 
     public static readonly CVarDef<int> GoobcoinNonAntagMultiplier =
         CVarDef.Create("servercurrency.non_antag_multiplier", 1, CVar.SERVERONLY);
@@ -631,6 +634,24 @@ public sealed partial class GoobCVars
     /// </summary>
     public static readonly CVarDef<bool> AscensionRequiresObjectives =
         CVarDef.Create("heretic.ascension_requires_objectives", true, CVar.SERVERONLY);
+
+    /// <summary>
+    /// Should the bluespace lifeline rejuvenate on teleport.
+    /// </summary>
+    public static readonly CVarDef<bool> LifeLineRejuvenate =
+        CVarDef.Create("lifeline.rejuvenate", false, CVar.SERVERONLY);
+
+    /// <summary>
+    /// A multiplier for bloodloss damage and heal.
+    /// </summary>
+    public static readonly CVarDef<float> BleedMultiplier =
+        CVarDef.Create("medical.bloodloss_multiplier", 4.0f, CVar.SERVER);
+
+    /// <summary>
+    /// Should the bluespace lifeline reset mind on teleport.
+    /// </summary>
+    public static readonly CVarDef<bool> LifeLineResetMind =
+        CVarDef.Create("lifeline.reset_mind", true, CVar.SERVERONLY);
 
     #endregion
 }
