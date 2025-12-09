@@ -28,7 +28,7 @@
 #New PDAs for command!
 
 - type: entity
-  parent: [BaseWidePDA, NanotrasenRepresentativePDA]
+  parent: [NanotrasenRepresentativePDA, BaseWidePDA]
   id: AltNanotrasenRepresentativePDA
   name: nanotrasen representative's PDA
   description: Slick design for the one who walks among the crew.
