@@ -81,6 +81,9 @@
     - DoorBumpOpener
     - AnomalyHost
     - Oni
+  # Omu Station - Global Oni DoAfter Delay
+  - type: DoAfterDelayMultiplier
+    multiplier: 2
 
 - type: entity
   save: false

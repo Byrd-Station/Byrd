@@ -37,5 +37,6 @@ public sealed class DoAfterDelayMultiplierSystem : EntitySystem
     private void OnGetMultiplier(Entity<DoAfterDelayMultiplierComponent> ent, ref GetDoAfterDelayMultiplierEvent args)
     {
         args.Multiplier *= ent.Comp.Multiplier;
+        Dirty(ent); // Omu Change, DoAfterDelay Prediction
     }
 }
