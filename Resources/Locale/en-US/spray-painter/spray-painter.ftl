@@ -95,6 +95,7 @@ spray-painter-style-airlockglass-virology = Virology
 spray-painter-style-locker-atmospherics = Atmospherics
 spray-painter-style-locker-basic = Basic
 spray-painter-style-locker-botanist = Botanist
+# Omu Brigmed --> Corpsman
 spray-painter-style-locker-brigmedic = Corpsman
 spray-painter-style-locker-captain = Captain
 spray-painter-style-locker-ce = CE
