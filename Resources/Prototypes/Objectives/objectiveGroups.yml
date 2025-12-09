@@ -199,6 +199,7 @@
     BibleStealObjective: 1
     ClothingNeckGoldmedalStealObjective: 1              #other
     ClothingNeckClownmedalStealObjective: 0.5
+    DrinkMugAAStealObjective: 1 #command omu
 
 - type: weightedRandom
   id: ThiefObjectiveGroupStructure
