@@ -1359,3 +1359,31 @@ Entries:
   changes: []
   id: 164
   time: '2025-12-07T19:59:51.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Remove
+      message: Removed the Guerilla Gloves.
+  id: 165
+  time: '2025-12-08T16:12:50.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Add
+      message: >-
+        Salvager Jumpskirt added! Check your MiningDrobe or loadout screen for
+        it.
+  id: 166
+  time: '2025-12-09T13:07:56.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Shiva is now a ghostrole
+    - type: Tweak
+      message: Smile is now a bit more tanky.
+  id: 167
+  time: '2025-12-09T13:08:16.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: MORTIS voice for IPCs
+  id: 168
+  time: '2025-12-09T13:09:50.0000000+00:00'
