@@ -41,8 +41,8 @@
     - Yowie
     - IPC
     - Resomi
-#   - Oni | Deprecated, Replaced by The Khese Muus iteration of Oni, from Gardenstation - maus
-    - TheKheseMuus 
+#   - Oni ### Garden Station -  Deprecated, Replaced by The Khese Muus iteration of Oni, from Gardenstation - maus
+    - TheKheseMuus
     - Tajaran
     - Chitinid
     - Plasmaman
@@ -89,6 +89,7 @@
   name: species-name-felinid
   text: "/ServerInfo/Guidebook/Mobs/Felinid.xml"
 
+### Omu - No Gingerbread Guidebook
 #- type: guideEntry
 #  id: Gingerbread
 #  name: species-name-gingerbread

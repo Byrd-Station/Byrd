@@ -45,6 +45,6 @@
   - ChevalTranslatorImplanter
   - NewKinPidginTranslatorImplanter
   - SchechiTranslatorImplanter
-  # - GruntishTranslatorImplanter
+  # - GruntishTranslatorImplanter # Garden Station -> Replaced with Khörs Translator Implanter
   - YowKriolTranslatorImplanter # goob edit - yowie language
-  - KhorsTranslator # GDS, Oni -> Khese Rework
+  - KhorsTranslator # Garden Station, Oni -> Khese Rework

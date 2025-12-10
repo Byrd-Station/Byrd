@@ -157,6 +157,8 @@
     Plastic: 50
     Gold: 50
 
+### Garden Station
+### Replaced with Khörs Translator
 # - type: latheRecipe
 #  id: GruntishTranslator
 #  result: GruntishTranslator

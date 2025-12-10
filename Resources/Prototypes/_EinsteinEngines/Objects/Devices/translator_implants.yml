@@ -254,6 +254,8 @@
     requires:
     - TauCetiBasic
 
+### Garden Station
+### Replaced with Khörs Translator Implant
 # - type: entity
 #  parent: BaseSubdermalImplant
 #  id: GruntishTranslatorImplant
