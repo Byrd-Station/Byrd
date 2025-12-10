@@ -83,7 +83,7 @@
           shouldHave: false
         damage:
           types:
-            Poison: 0.75
+            Cellular: 1 # evil omustation meth update
       - !type:HealthChange
         conditions:
         - !type:OrganType # Goobstation - Yowie
@@ -361,7 +361,16 @@
     amount: -5
   metabolisms:
     Narcotic:
+      metabolismRate: 0.2 #omu
       effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType # Goobstation - Yowie
+          type: Yowie
+          shouldHave: false
+        damage:
+          types:
+            Cellular: 0.05 #omustation 500 cigarettes
       - !type:HealthChange
         conditions:
         - !type:OrganType # Goobstation - Yowie
@@ -374,7 +383,9 @@
             Shock: -0.1
             Cold: -0.1
             Radiation: -0.1
-
+    Food:
+      effects:
+      - !type:SatiateHunger        
 # TODO: Replace these nonstandardized effects with generic brain damage
 - type: reagent
   id: Impedrezene
