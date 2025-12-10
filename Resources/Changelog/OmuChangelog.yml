@@ -1387,3 +1387,11 @@ Entries:
       message: MORTIS voice for IPCs
   id: 168
   time: '2025-12-09T13:09:50.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: MORTIS should sound not broken now.
+    - type: Tweak
+      message: MORTIS is quieter.
+  id: 169
+  time: '2025-12-10T17:52:51.0000000+00:00'
