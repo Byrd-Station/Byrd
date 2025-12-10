@@ -68,7 +68,7 @@
     baseWalkSpeed : 2.7
     baseSprintSpeed : 4.65
     weightlessAcceleration: 1.5 # Slightly more manueverable in space.
-  - type: ClothingSlowResistance
+  - type: ClothingSlowResistance # Omu
     modifier: 1.0 # Completely unaffected by clothing slow
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
