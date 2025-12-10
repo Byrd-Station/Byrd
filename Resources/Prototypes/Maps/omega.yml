@@ -98,6 +98,8 @@
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
 
+            NanotrasenCareerTrainer: [ -1, -1] # Omu
+
         # Goobstation blob-config-start SMALL+
         - type: StationBlobConfig
           stageBegin: 25
