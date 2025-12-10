@@ -388,7 +388,7 @@
   - type: Ammo
     muzzleFlash: MuzzleFlashEffectOmnilaser # imp
   - type: StaminaDamageOnCollide
-    damage: 33
+    damage: 20 # Goob edit
   - type: Projectile
     impactEffect: BulletImpactEffectDisabler
     damage:
@@ -1272,7 +1272,7 @@
   - type: Ammo
     muzzleFlash: MuzzleFlashEffectOmnilaser # imp
   - type: StaminaDamageOnCollide
-    damage: 15
+    damage: 12 # Goob edit
   - type: Projectile
     impactEffect: BulletImpactEffectDisabler
     damage:

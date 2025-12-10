@@ -114,7 +114,7 @@
   - ChiefMedicalOfficer SOP
   - ChiefEngineer SOP
   - Quartermaster SOP
-
+  - Administrative Assistant SOP # Omu
 - type: guideEntry
   id: Engineering SOP
   name: guide-entry-sop-engineering
@@ -357,6 +357,11 @@
   id: Quartermaster SOP
   name: guide-entry-sop-qm
   text: "/ServerInfo/_Goobstation/Guidebook/SoP/Jobs/Command/QuartermasterSOP.xml"
+
+- type: guideEntry # Omu
+  id: Administrative Assistant SOP
+  name: guide-entry-sop-aa
+  text: "/ServerInfo/_Goobstation/Guidebook/SoP/Jobs/Command/AdministrativeAssistant.xml"
 
 # Engineering SOP Entries
 - type: guideEntry

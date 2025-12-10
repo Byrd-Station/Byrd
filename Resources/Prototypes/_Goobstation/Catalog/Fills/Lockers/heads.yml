@@ -66,6 +66,7 @@
     - id: BlueshieldUndeterminedWeapon
     - id: BlueshieldUndeterminedHardsuit
     - id: FlashlightSeclite
+    # Omu no second skin - id: SecondSkinSecurity
 
 - type: entity
   id: LockerBlueshieldOfficerFilled
