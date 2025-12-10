@@ -136,7 +136,6 @@
   id: Plasmaman
   name: species-name-plasmaman
   text: "/ServerInfo/Guidebook/Mobs/Plasmaman.xml"
-  text: "/ServerInfo/Guidebook/Mobs/Plasmaman.xml"
 
 - type: guideEntry
   id: Xelthia
