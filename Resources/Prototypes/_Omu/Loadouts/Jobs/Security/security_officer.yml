@@ -4,9 +4,6 @@
   equipment:
     jumpsuit: ClothingUniformBlackRedSecUniform
 
-
-
-
 #Belt
 - type: loadout
   id: SecuritySwordBelt
