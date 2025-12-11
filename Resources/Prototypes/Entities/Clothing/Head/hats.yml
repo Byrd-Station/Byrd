@@ -429,7 +429,7 @@
   parent: [ClothingHeadHatBeret, BaseSecurityContraband] # Goob edit
   id: ClothingHeadHatBeretBrigmedic
   name: brigmedical beret
-  description: A white beret for brigmedics.
+  description: A white beret for corpsmen. # Omu - rename Brigmedic to Corpsman (I am not changing the above as it's brigmedical not brigmed dummy)
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/beret_brigmedic.rsi

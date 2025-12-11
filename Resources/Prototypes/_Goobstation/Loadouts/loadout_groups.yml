@@ -1392,7 +1392,7 @@
   loadouts:
   - CombatGloves
 
-# Brigmedic
+# Brigmedic | Omu - You mean Corpsman?
 
 - type: loadoutGroup
   id: BrigmedicJumpsuit
