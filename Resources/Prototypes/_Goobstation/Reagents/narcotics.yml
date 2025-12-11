@@ -279,7 +279,7 @@
   color: "#75fff5"
   metabolisms:
     Narcotic:
-      metabolismRate: 0.5
+      metabolismRate: 0.75
       effects:
       - !type:HealthChange
         conditions:
