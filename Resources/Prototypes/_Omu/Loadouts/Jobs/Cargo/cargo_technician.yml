@@ -23,8 +23,11 @@
     jumpsuit: ClothingUniformJumpsuitCargotechShortsSkirt
   groupBy: "jumpskirt" #loadout cleanup
 
-
-
+- type: loadout
+  id: CargoTechnicianUniformTopInsteadOfJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCargoMascot
+  groupBy: "jumpskirt"
 
 # OuterClothing
 - type: loadout

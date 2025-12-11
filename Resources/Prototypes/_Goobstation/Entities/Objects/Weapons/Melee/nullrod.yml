@@ -226,6 +226,7 @@
   - type: UseDelay
     delay: 1
   - type: Prying
+  - type: GrabbingItem
 
 - type: entity
   parent: BaseNullrod
@@ -239,7 +240,7 @@
         Slash: 20
     UntrainedUseString: nullrod-arrythmicknife-untrained-usage-popup
   - type: Item
-    size: Huge
+    size: Normal #Omu - size change
     sprite: _ShitChap/Objects/Weapons/Nullrod/arrythmic.rsi
   - type: Sprite
     sprite: _ShitChap/Objects/Weapons/Nullrod/arrythmic.rsi
@@ -595,6 +596,9 @@
       path: /Audio/Weapons/chainsawwield.ogg
     endSound:
       path: /Audio/Weapons/chainsaw.ogg
+  - type: Tag
+    tags:
+      - HolyChainsaw
 
 # Casul & Jackal
 - type: entity

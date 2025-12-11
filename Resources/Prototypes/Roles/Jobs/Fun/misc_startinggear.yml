@@ -243,7 +243,7 @@
   inhand:
     - WeaponMeleeToolboxRobust
 
-#Brigmedic
+#Brigmedic | Omu - CORPSMAN!!
 
 - type: startingGear
   id: BrigmedicGear
