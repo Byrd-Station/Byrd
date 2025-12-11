@@ -83,7 +83,7 @@
           shouldHave: false
         damage:
           types:
-            Poison: 1.5 # evil omustation meth update
+            Poison: 1 # evil omustation meth update
       - !type:HealthChange
         conditions:
         - !type:OrganType # Goobstation - Yowie
