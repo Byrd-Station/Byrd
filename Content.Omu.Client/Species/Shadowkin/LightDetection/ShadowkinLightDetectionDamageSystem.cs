@@ -1,10 +1,9 @@
 ﻿using Content.Client.Alerts;
 using Content.Client.UserInterface.Systems.Alerts.Controls;
-using Content.Omu.Shared.ShadowkinLightDetection.Components;
-using Content.Omu.Shared.ShadowkinLightDetection.Systems;
+using Content.Omu.Shared.Species.Shadowkin.LightDetection.Systems;
 using Robust.Client.GameObjects;
 
-namespace Content.Omu.Client.ShadowkinLightDetection;
+namespace Content.Omu.Client.Species.Shadowkin.LightDetection;
 
 public sealed class ShadowkinLightDetectionDamageSystem : SharedShadowkinLightDetectionDamageSystem
 {
@@ -13,10 +12,11 @@ public sealed class ShadowkinLightDetectionDamageSystem : SharedShadowkinLightDe
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<ShadowkinLightDetectionDamageComponent, UpdateAlertSpriteEvent>(OnUpdateAlert);
+
+        SubscribeLocalEvent<Shared.Species.Shadowkin.LightDetection.Components.ShadowkinLightDetectionDamageComponent, UpdateAlertSpriteEvent>(OnUpdateAlert);
     }
 
-    private void OnUpdateAlert(Entity<ShadowkinLightDetectionDamageComponent> ent, ref UpdateAlertSpriteEvent args)
+    private void OnUpdateAlert(Entity<Shared.Species.Shadowkin.LightDetection.Components.ShadowkinLightDetectionDamageComponent> ent, ref UpdateAlertSpriteEvent args)
     {
         if (args.Alert.ID != ent.Comp.AlertProto)
             return;

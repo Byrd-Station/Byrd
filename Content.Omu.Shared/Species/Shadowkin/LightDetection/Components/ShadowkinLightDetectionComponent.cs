@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Omu.Shared.ShadowkinLightDetection.Components;
+namespace Content.Omu.Shared.Species.Shadowkin.LightDetection.Components;
 
 /// <summary>
 /// This is used for detecting if an entity is near a lighted area

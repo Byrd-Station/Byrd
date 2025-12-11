@@ -1,6 +1,5 @@
+using System.Linq;
 using Content.Goobstation.Common.CCVar;
-using Content.Omu.Shared.ShadowkinLightDetection.Components;
-using Content.Omu.Shared.ShadowkinLightDetection.Systems;
 using Content.Server.Disposal.Unit;
 using Content.Shared.Physics;
 using Robust.Server.GameObjects;
@@ -10,13 +9,13 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Threading;
 using Robust.Shared.Timing;
 
-namespace Content.Omu.Server.ShadowkinLightDetection;
+namespace Content.Omu.Server.Species.Shadowkin.LightDetection;
 
 /// <summary>
 /// This system detects if an entity is standing on light.
 /// It casts rays from the PointLight to the player.
 /// </summary>
-public sealed class ShadowkinLightDetectionSystem : SharedShadowkinLightDetectionSystem
+public sealed class ShadowkinLightDetectionSystem : EntitySystem
 {
     [Dependency] private readonly SharedPhysicsSystem _physicsSystem = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
@@ -59,7 +58,7 @@ public sealed class ShadowkinLightDetectionSystem : SharedShadowkinLightDetectio
         _nextUpdate = _timing.CurTime + TimeSpan.FromSeconds(UpdateFrequency);
         _job.UpdateEnts.Clear();
 
-        var query = EntityQueryEnumerator<ShadowkinLightDetectionComponent, TransformComponent>();
+        var query = EntityQueryEnumerator<Shared.Species.Shadowkin.LightDetection.Components.ShadowkinLightDetectionComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var comp, out var xform))
         {
             _job.UpdateEnts.Add((uid, comp, xform));
@@ -71,7 +70,7 @@ public sealed class ShadowkinLightDetectionSystem : SharedShadowkinLightDetectio
     private record struct HandleLightJob() : IParallelRobustJob
     {
         public readonly int BatchSize => 16;
-        public readonly List<Entity<ShadowkinLightDetectionComponent, TransformComponent>> UpdateEnts = [];
+        public readonly List<Entity<Shared.Species.Shadowkin.LightDetection.Components.ShadowkinLightDetectionComponent, TransformComponent>> UpdateEnts = [];
 
         public required ShadowkinLightDetectionSystem LightSys;
         public required SharedTransformSystem XformSys;
@@ -129,15 +128,7 @@ public sealed class ShadowkinLightDetectionSystem : SharedShadowkinLightDetectio
                     distance,
                     point);
 
-                var hasBeenBlocked = false;
-                foreach (var result in rayResults)
-                {
-                    if (result.HitEntity != uid)
-                    {
-                        hasBeenBlocked = true;
-                        break;
-                    }
-                }
+                var hasBeenBlocked = rayResults.Any(result => result.HitEntity != uid);
 
                 if (hasBeenBlocked)
                     continue;

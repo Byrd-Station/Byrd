@@ -1,7 +1,7 @@
-﻿using Content.Omu.Shared.ShadowkinLightDetection.Components;
+﻿using Content.Omu.Shared.Species.Shadowkin.LightDetection.Components;
 using Content.Shared.Alert;
 
-namespace Content.Omu.Shared.ShadowkinLightDetection.Systems;
+namespace Content.Omu.Shared.Species.Shadowkin.LightDetection.Systems;
 
 public abstract class SharedShadowkinLightDetectionDamageSystem : EntitySystem
 {

@@ -1,7 +1,5 @@
-using Content.Omu.Shared.ShadowkinLightDetection.Components;
-using Content.Omu.Shared.ShadowkinLightDetection.Systems;
+using Content.Omu.Shared.Species.Shadowkin.LightDetection.Systems;
 using Content.Shared._Shitmed.Damage;
-using Content.Shared._Shitmed.Medical.Surgery.Pain.Systems;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Damage;
@@ -10,7 +8,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
 
-namespace Content.Omu.Server.ShadowkinLightDetection;
+namespace Content.Omu.Server.Species.Shadowkin.LightDetection;
 
 /// <summary>
 /// This handles healing or dealing damage to an entity that is standing on a lighted area.
@@ -27,7 +25,7 @@ public sealed class ShadowkinLightDetectionDamageSystem : SharedShadowkinLightDe
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<ShadowkinLightDetectionDamageComponent, ShadowkinLightDetectionComponent>();
+        var query = EntityQueryEnumerator<Shared.Species.Shadowkin.LightDetection.Components.ShadowkinLightDetectionDamageComponent, Shared.Species.Shadowkin.LightDetection.Components.ShadowkinLightDetectionComponent>();
         while (query.MoveNext(out var uid, out var comp, out var lightDet))
         {
             if (comp.NextUpdate > _timing.CurTime)
@@ -36,25 +34,23 @@ public sealed class ShadowkinLightDetectionDamageSystem : SharedShadowkinLightDe
             comp.NextUpdate = _timing.CurTime + comp.UpdateInterval;
 
             UpdateDetectionValues(comp, lightDet.CurrentLightLevel);
-            DirtyField(uid, comp, nameof(ShadowkinLightDetectionDamageComponent.DetectionValue));
+            DirtyField(uid, comp, nameof(Shared.Species.Shadowkin.LightDetection.Components.ShadowkinLightDetectionDamageComponent.DetectionValue));
 
-            if (comp.DetectionValue <= 0 && comp.TakeDamageOnLight && !_mobState.IsDead(uid))
+            switch (comp.DetectionValue)
             {
-                _damageable.TryChangeDamage(uid, comp.DamageToDeal * comp.ResistanceModifier, splitDamage: SplitDamageBehavior.SplitEnsureAll);
-                _audio.PlayPvs(comp.SoundOnDamage, uid, AudioParams.Default.WithVolume(-2f));
-                return;
-            }
-
-            if (comp.DetectionValue >= 80 && comp.HealOnShadows && !_mobState.IsDead(uid))
-            {
-                _woundSystem.TryHealWoundsOnOwner(uid, comp.DamageToHeal, true);
-                _damageable.TryChangeDamage(uid, comp.DamageToHeal, true, false, targetPart: TargetBodyPart.All, splitDamage: SplitDamageBehavior.SplitEnsureAllOrganic, canMiss: false);
-                return;
+                case <= 0 when comp.TakeDamageOnLight && !_mobState.IsDead(uid):
+                    _damageable.TryChangeDamage(uid, comp.DamageToDeal * comp.ResistanceModifier, splitDamage: SplitDamageBehavior.SplitEnsureAll);
+                    _audio.PlayPvs(comp.SoundOnDamage, uid, AudioParams.Default.WithVolume(-2f));
+                    return;
+                case >= 80 when comp.HealOnShadows && !_mobState.IsDead(uid):
+                    _woundSystem.TryHealWoundsOnOwner(uid, comp.DamageToHeal, true);
+                    _damageable.TryChangeDamage(uid, comp.DamageToHeal, true, false, targetPart: TargetBodyPart.All, splitDamage: SplitDamageBehavior.SplitEnsureAllOrganic, canMiss: false);
+                    return;
             }
         }
     }
 
-    private void UpdateDetectionValues(ShadowkinLightDetectionDamageComponent comp, float detectionDamage)
+    private void UpdateDetectionValues(Shared.Species.Shadowkin.LightDetection.Components.ShadowkinLightDetectionDamageComponent comp, float detectionDamage)
     {
         var detectionDelta = comp.DetectionValueRegeneration - detectionDamage;
         comp.DetectionValue += detectionDelta;
