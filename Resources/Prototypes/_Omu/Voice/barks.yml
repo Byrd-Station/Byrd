@@ -12,7 +12,7 @@
 - type: bark
   id: Mortis
   name: Mortis
-  volume: 1
+  volume: 0.7
   soundCollection:
     collection: MortisBark
   speciesWhitelist:
