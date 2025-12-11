@@ -130,6 +130,7 @@
     - Softsuit # OuterSlotClothingPenalty
   - type: StaticPrice
     price: 1000 # Helmet is 500
+  ### Omu Station Edits
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1
