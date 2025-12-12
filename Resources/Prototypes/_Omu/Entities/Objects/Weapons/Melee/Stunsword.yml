@@ -66,7 +66,8 @@
 
       stun: !type:ItemSwitchState
         verb: stun
-        energyPerUse: 100
+        energyPerUse: 50
+        lightAttackEnergyMultiplier: 2
         sprite:
           sprite: _Omu/Objects/Weapons/Melee/stunsword.rsi
           state: stun-icon
@@ -82,8 +83,15 @@
           soundHit:
             path: /Audio/_Goobstation/Weapons/Effects/energy-short-sword-swing.ogg
         - type: StaminaDamageOnHit
-          damage: 30
-          overtime: 10
+          damage: 25
+          overtime: 15
+          lightAttackDamageMultiplier: 3
+          lightAttackOvertimeDamageMultiplier: 0
+        - type: DelayedKnockdownOnHit
+          useDelay: stunbaton
+        - type: UseDelayBlockMelee
+          delays:
+          - stunbaton
         soundStateActivate:
           collection: sparks
           params:
