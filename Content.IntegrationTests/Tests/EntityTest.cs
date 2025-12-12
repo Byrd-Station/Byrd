@@ -57,6 +57,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using Content.Omu.Common.CCVar;
 using Robust.Shared;
 using Robust.Shared.Audio.Components;
 using Robust.Shared.Configuration;
@@ -267,6 +268,8 @@ namespace Content.IntegrationTests.Tests
             var sEntMan = server.ResolveDependency<IEntityManager>();
             var mapSys = server.System<SharedMapSystem>();
 
+            cfg.SetCVar(OmuCVars.DisablePathfinding, true); // Omu
+            Assert.That(cfg.GetCVar(OmuCVars.DisablePathfinding), Is.True); // Omu
             Assert.That(cfg.GetCVar(CVars.NetPVS), Is.False);
 
             var protoIds = prototypeMan
