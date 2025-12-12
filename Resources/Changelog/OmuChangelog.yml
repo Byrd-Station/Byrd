@@ -1462,3 +1462,9 @@ Entries:
       message: Removed nuclear 14 assets
   id: 177
   time: '2025-12-12T16:00:31.0000000+00:00'
+- author: raincally
+  changes:
+    - type: Add
+      message: vulps can take glowing eyes marking
+  id: 178
+  time: '2025-12-12T19:54:58.0000000+00:00'
