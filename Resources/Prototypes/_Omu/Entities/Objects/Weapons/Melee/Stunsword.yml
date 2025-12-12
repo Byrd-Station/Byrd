@@ -91,7 +91,7 @@
 
       shock: !type:ItemSwitchState
         verb: shock
-        energyPerUse: 333 # 3 uses
+        energyPerUse: 100 
         sprite:
           sprite: _Omu/Objects/Weapons/Melee/stunsword.rsi
           state: shock-icon
@@ -101,7 +101,7 @@
           attackRate: 1
           damage:
             types:
-              Slash: 20
+              Slash: 10
               Shock: 10
             woundSeverityMultipliers:
               Slash: 1.5
