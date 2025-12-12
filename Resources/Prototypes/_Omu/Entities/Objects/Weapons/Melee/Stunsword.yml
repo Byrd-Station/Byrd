@@ -66,8 +66,7 @@
 
       stun: !type:ItemSwitchState
         verb: stun
-        energyPerUse: 50
-        lightAttackEnergyMultiplier: 2
+        energyPerUse: 100
         sprite:
           sprite: _Omu/Objects/Weapons/Melee/stunsword.rsi
           state: stun-icon
