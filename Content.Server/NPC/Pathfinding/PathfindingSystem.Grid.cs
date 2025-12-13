@@ -96,7 +96,7 @@ public sealed partial class PathfindingSystem
 
     private void UpdateGrid(ParallelOptions options)
     {
-        PauseUpdating = _cfg.GetCVar(OmuCVars.DisablePathfinding);
+        PauseUpdating = _cfg.GetCVar(OmuCVars.DisablePathfinding); // Omu. Disabling pathfinding for certain tests.
         if (PauseUpdating)
             return;
 
