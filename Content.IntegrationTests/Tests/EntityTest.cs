@@ -279,6 +279,9 @@ namespace Content.IntegrationTests.Tests
                 .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
                 .Where(p => !p.Components.ContainsKey("MobReplacementRule")) // goob edit - fuck them mimics
                 .Where(p => !p.Components.ContainsKey("Supermatter")) // Goobstation - Supermatter eats everything, oh no!
+                .Where(p => !p.Components.ContainsKey("SoundCollection")) // Omu
+                .Where(p => !p.Components.ContainsKey("RandomSpawner")) // Omu
+                .Where(p => !p.Components.ContainsKey("Marker")) // Omu - we spawn ALL entities including the ones the fucking markers spawn
                 .Select(p => p.ID)
                 .ToList();
 
