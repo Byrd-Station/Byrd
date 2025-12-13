@@ -1391,37 +1391,37 @@
       - ContravendUplink
 
 # Martial Arts
-- type: listing
-  id: UplinkCQCManual
-  name: uplink-cqc-name
-  description: uplink-cqc-desc
-  productEntity: CQCManual
-  cost:
-    Telecrystal: 60
-  categories:
-  - UplinkWeaponry
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
-      - ContravendUplink
-
-- type: listing
-  id: UplinkCQCManualChef
-  name: uplink-cqc-name
-  description: uplink-cqc-desc
-  productEntity: CQCManual
-  cost:
-    Telecrystal: 60
-  categories:
-  - UplinkJob
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
-  - !type:BuyerJobCondition
-    whitelist:
-    - Chef
+#- type: listing # Omu, remove CQC.
+#  id: UplinkCQCManual
+#  name: uplink-cqc-name
+#  description: uplink-cqc-desc
+#  productEntity: CQCManual
+#  cost:
+#    Telecrystal: 60
+#  categories:
+#  - UplinkWeaponry
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - NukeOpsUplink
+#      - ContravendUplink
+#
+#- type: listing
+#  id: UplinkCQCManualChef
+#  name: uplink-cqc-name
+#  description: uplink-cqc-desc
+#  productEntity: CQCManual
+#  cost:
+#    Telecrystal: 60
+#  categories:
+#  - UplinkJob
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+#  - !type:BuyerJobCondition
+#    whitelist:
+#    - Chef
 
 - type: listing
   id: UplinkCapoeiraManual
