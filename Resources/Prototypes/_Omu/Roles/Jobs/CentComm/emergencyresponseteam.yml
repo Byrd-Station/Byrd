@@ -84,7 +84,7 @@
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesColorBlack
     outerClothing: ClothingOuterArmorBasicSlim
-    id: ERTSecurityPDA
+    id: ERTSecurityPDABlue
     ears: ClothingHeadsetAltCentComSec
     belt: ClothingBeltAssaultFilled
     pocket1: OfficerGunCase
@@ -131,7 +131,7 @@
     eyes: ClothingEyesGlassesMedChemFlash
     gloves: ClothingHandsGlovesNitrile
     outerClothing: ClothingOuterArmorBasicSlim
-    id: ERTMedicPDA
+    id: ERTMedicPDABlue
     ears: ClothingHeadsetAltCentComMed
     belt: ClothingBeltMedicalEMTFilled
     pocket1: WeaponDisablerAdvanced
@@ -177,7 +177,7 @@
     eyes: ClothingEyesGlassesCommand
     gloves: ClothingHandsGlovesColorPurple
     outerClothing: ClothingOuterArmorBasicSlim
-    id: ERTJanitorPDA
+    id: ERTJanitorPDABlue
     ears: ClothingHeadsetAltCentComJani
     belt: ClothingBeltJanitorFilled
     pocket1: WeaponDisablerAdvanced
@@ -223,7 +223,7 @@
     eyes: ClothingEyesGlassesMeson
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterArmorBasicSlim
-    id: ERTEngineerPDA
+    id: ERTEngineerPDABlue
     ears: ClothingHeadsetAltCentComEngi
     belt: ClothingBeltChiefEngineerFilled
     pocket1: WeaponDisablerAdvanced
@@ -282,7 +282,7 @@
     eyes: ClothingEyesGlassesCommand
     gloves: ClothingHandsGlovesColorBlack
     outerClothing: ClothingOuterArmorBasicSlim
-    id: ERTChaplainPDA
+    id: ERTChaplainPDABlue
     ears: ClothingHeadsetAltCentComChaplain
     belt: ClothingBeltStorageWaistbag
     pocket1: WeaponDisablerAdvanced
