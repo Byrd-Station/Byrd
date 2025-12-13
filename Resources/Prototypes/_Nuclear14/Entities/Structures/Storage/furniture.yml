@@ -1,0 +1,13 @@
+- type: entity
+  parent: N14ClosetBaseW
+  id: N14ClosetSafe
+  name: safe
+  description: Might be filled with valuables.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Furniture/safe.rsi
+
+- type: entity
+  parent: [ N14ClosetSafe ]
+  id: N14LootClosetSafe
+  suffix: Loot, Random Military
