@@ -1,0 +1,5 @@
+# Metal
+- type: stack
+  id: FloorTileMetalFreezer
+  name: metal-floor-freezer
+  spawn: FloorTileItemMetalFreezer

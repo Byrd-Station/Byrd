@@ -1,0 +1,46 @@
+- type: entity
+  parent: ClosetBase
+  id: N14ClosetBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Closets/closet.rsi
+    layers:
+    - state: closet
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closet_door
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: Physics
+    bodyType: Static
+  - type: EntityStorageVisuals
+    stateBaseClosed: closet
+    stateDoorOpen: closet_open
+    stateDoorClosed: closet_door
+  - type: Transform
+    anchored: true
+  - type: Anchorable # Makes the anchoring near impossible due to high time requirement
+    delay: 3600
+
+- type: entity
+  parent: N14ClosetBase
+  id: N14ClosetBaseW
+  name: closet
+  description: A basic closet for storing things.
+  components:
+  - type: Weldable
+  - type: Sprite
+    noRot: true
+    netsync: false
+    sprite: _Nuclear14/Structures/Storage/Closets/closet.rsi
+    layers:
+    - state: closet
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closet_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+  - type: EntityStorageVisuals
+    stateBaseClosed: closet
+    stateDoorOpen: closet_open
+    stateDoorClosed: closet_door
