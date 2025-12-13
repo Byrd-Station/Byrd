@@ -4433,7 +4433,7 @@ entities:
     - type: Transform
       pos: -3.5989714,1.9869726
       parent: 1
-- proto: ClosetSteelBase
+- proto: N14ClosetSafe
   entities:
   - uid: 592
     components:
