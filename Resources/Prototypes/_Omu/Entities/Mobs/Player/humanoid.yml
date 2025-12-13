@@ -117,7 +117,7 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
-      job: ERTMedicalBlue
+      job: ERTMedicBlue
     - type: RandomMetadata
       nameSegments:
       - NamesMilitaryFirst
