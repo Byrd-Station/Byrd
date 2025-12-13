@@ -6,6 +6,9 @@
 
 - type: playTimeTracker
   id: JobTransitPrisoner
+  
+- type: playTimeTracker
+  id: JobNanoTrasenSpectre
 
 - type: playTimeTracker
   id: JobERTChaplainBlue
