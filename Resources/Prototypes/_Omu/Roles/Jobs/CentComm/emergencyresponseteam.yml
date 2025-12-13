@@ -100,12 +100,12 @@
 # ERT Medical
 
 - type: job
-  id: ERTMedicalBlue
+  id: ERTMedicBlue
   name: job-name-ertmedic
   description: job-description-ertmedic
   playTimeTracker: JobERTMedicalBlue
   setPreference: false
-  startingGear: ERTMedicalGearBlue
+  startingGear: ERTMedicGearBlue
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom
   canBeAntag: false
@@ -123,7 +123,7 @@
     implants: [ MindShieldImplant, FreedomImplant, RadioImplantCentcomm, NutrimentPumpImplant, DeathRattleImplantCentcomm ]
 
 - type: startingGear
-  id: ERTMedicalGearBlue
+  id: ERTMedicGearBlue
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTMedic
     back: ClothingBackpackERTMedical
