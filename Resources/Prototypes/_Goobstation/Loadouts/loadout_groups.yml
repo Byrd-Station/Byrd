@@ -1400,6 +1400,8 @@
   loadouts:
   - BrigmedicJumpsuit
   - BrigmedicJumpskirt
+  - CorpsmanJumpsuit #Omu
+  - CorpsmanJumpskirt #Omu
 
 - type: loadoutGroup
   id: BrigmedicHead
@@ -1411,6 +1413,7 @@
   - SecurityBeret
   - SecurityHat
   - TrooperHat
+  - CorpsmanBeret #Omu
 
 - type: loadoutGroup
   id: BrigmedicOuterClothing
@@ -1430,6 +1433,10 @@
   - BrigmedicSatchel
   - BrigmedicDuffel
   - BrigmedicMessenger
+  - CorpsmanBackpack #Omu
+  - CorpsmanSatchel #Omu
+  - CorpsmanDuffel #Omu
+  - CorpsmanMessenger #Omy
 
 - type: loadoutGroup
   id: BrigmedicEnvirohelm

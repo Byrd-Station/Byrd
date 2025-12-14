@@ -1480,3 +1480,13 @@ Entries:
       message: Added a new CC ghostrole, Nanotrasen Spectre.
   id: 180
   time: '2025-12-13T21:06:01.0000000+00:00'
+- author: Kirisune
+  changes:
+    - type: Add
+      message: Full set of new corpsman gear
+    - type: Add
+      message: Corpsman hardsuit selector along with a new hardsuit.
+    - type: Tweak
+      message: Changed colour of job icon on brigmed's ID card to red from blue.
+  id: 181
+  time: '2025-12-14T10:15:48.0000000+00:00'
