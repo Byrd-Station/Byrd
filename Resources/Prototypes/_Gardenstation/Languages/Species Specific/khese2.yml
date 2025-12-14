@@ -9,8 +9,8 @@
   isVisibleLanguage: true
   speech:
     color: "#9966CC"
-    fontId: TobinTax
-    boldFontId: TobinTax
+    #fontId:
+    # boldFontId:
     fontSize: 16
   obfuscation:
     !type:SyllableObfuscation

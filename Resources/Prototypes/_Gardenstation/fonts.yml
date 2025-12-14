@@ -6,6 +6,6 @@
   id: PadaukBold
   path: /Fonts/_Gardenstation/Padauk/PadaukBold.ttf
 
-- type: font # khesespeak common
-  id: TobinTax
-  path: /Fonts/_Gardenstation/TobinTax/TobinTax.otf
+#- type: font # khesespeak common
+#  id:
+#  path:
