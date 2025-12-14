@@ -1456,3 +1456,37 @@ Entries:
         too
   id: 176
   time: '2025-12-11T12:10:38.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: Removed nuclear 14 assets
+  id: 177
+  time: '2025-12-12T16:00:31.0000000+00:00'
+- author: raincally
+  changes:
+    - type: Add
+      message: vulps can take glowing eyes marking
+  id: 178
+  time: '2025-12-12T19:54:58.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Fix
+      message: 'You should no longer be able to spawn as NCT '
+  id: 179
+  time: '2025-12-13T09:59:53.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added a new CC ghostrole, Nanotrasen Spectre.
+  id: 180
+  time: '2025-12-13T21:06:01.0000000+00:00'
+- author: Kirisune
+  changes:
+    - type: Add
+      message: Full set of new corpsman gear
+    - type: Add
+      message: Corpsman hardsuit selector along with a new hardsuit.
+    - type: Tweak
+      message: Changed colour of job icon on brigmed's ID card to red from blue.
+  id: 181
+  time: '2025-12-14T10:15:48.0000000+00:00'
