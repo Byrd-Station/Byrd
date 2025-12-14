@@ -1040,6 +1040,7 @@
     pocket2: FoodSnackEnergy
   inhand:                 #goobstation
   - Nullrod               #goobstation
+  - ArmamentsBeacon       #goobstation
 
 - type: startingGear
   id: VisitorChaplainAlt
@@ -1055,6 +1056,7 @@
     pocket2: DrinkCoconutWaterCarton
   inhand:                 #goobstation
   - Nullrod               #goobstation
+  - ArmamentsBeacon       #goobstation
 
 - type: startingGear
   id: VisitorChef
@@ -1085,7 +1087,7 @@
     back: ClothingBackpack
     belt: ClothingBeltChefFilled
     ears: ClothingHeadsetService
-    outerClothing: ClothingOuterWinterChef 
+    outerClothing: ClothingOuterWinterChef
     pocket1: RollingPin
     pocket2: BookHowToCookForFortySpaceman
   inhand:

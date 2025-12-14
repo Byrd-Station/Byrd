@@ -210,7 +210,6 @@
     - id: WeaponDisabler
     - id: ClothingEyesGlassesCommand
     - id: HeadSkeleton # A skull to accompany your skeleton crew
-    # Omu - No second skin - id: SecondSkinSecurity # Goobstation
       conditions:
       - !type:PlayerCountCondition
         max: 15
@@ -550,7 +549,6 @@
     - id: ComputerSecurityCommsFlatpack #Omu adds departmental comms board
     - id: Multitool # Omu
     - id: ClothingBeltSheathHeadOfSecurityFilled # Goobstation - security revamp
-    # Omu - no second skin - id: SecondSkinSecurity # Goobstation
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
