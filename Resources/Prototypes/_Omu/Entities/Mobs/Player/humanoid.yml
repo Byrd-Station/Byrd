@@ -1,0 +1,44 @@
+- type: entity
+  id: RandomHumanoidSpawnerNanoTrasenSpectre
+  name: NanoTrasen Spectre Agent
+  suffix: ERTRole, Death Squad, Spectre Agent
+  components:
+    - type: Sprite
+      sprite: _Omu/Clothing/Modsuits/chrono.rsi
+      state: control
+    - type: RandomMetadata
+      nameSegments:
+        - NamesMilitaryFirstLeader
+        - NamesMilitaryLast
+      nameFormat: name-format-ert
+    - type: RandomHumanoidSpawner
+      settings: NanoTrasenSpectre
+
+- type: randomHumanoidSettings
+  id: NanoTrasenSpectre
+  parent: NanoTrasenSpectreHumanoid # Goobstation
+  components:
+    - type: AutoImplant
+      implants: [ FreedomImplant, BluespaceLifelineImplant, RadioImplantCentcomm, NutrimentPumpImplant, StypticStimulatorImplant, DeathRattleImplantCentcomm] # Goobstation
+    - type: DeathSquadMember # Goobstation
+    - type: GhostRole
+      name: ghost-role-information-nanotrasen-spectre-name
+      description: ghost-role-information-nanotrasen-spectre-description
+      rules: ghost-role-information-nanotrasen-spectre-rules
+      raffle:
+        settings: short
+      requirements:
+      - !type:DepartmentTimeRequirement
+        department: Security
+        time: 48000 # Goobstation
+      - !type:DepartmentTimeRequirement
+        department: Command
+        time: 18000 # Goobstation
+    - type: Loadout
+      prototypes: [ NanoTrasenSpectreGear ]
+      roleLoadout: [ RoleSurvivalEVA ]
+    - type: RandomMetadata
+      nameSegments:
+        - NamesMilitaryFirstLeader
+        - NamesMilitaryLast
+      nameFormat: name-format-ert
