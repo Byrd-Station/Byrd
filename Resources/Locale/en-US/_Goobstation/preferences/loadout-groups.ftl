@@ -53,10 +53,11 @@ loadout-group-chemist-head = Chemist head
 
 loadout-group-hos-shoes = Head of Security shoes
 
-loadout-group-brigmedic-jumpsuit = Brigmedic jumpsuit
-loadout-group-brigmedic-head = Brigmedic head
-loadout-group-brigmedic-outer = Brigmedic outer clothing
-loadout-group-brigmedic-backpack = Brigmedic backpack
+# Omu - rename Brigmedic to Corpsman
+loadout-group-brigmedic-jumpsuit = Corpsman jumpsuit
+loadout-group-brigmedic-head = Corpsman head
+loadout-group-brigmedic-outer = Corpsman outer clothing
+loadout-group-brigmedic-backpack = Corpsman backpack
 
 loadout-group-security-melee = Security melee weapon
 

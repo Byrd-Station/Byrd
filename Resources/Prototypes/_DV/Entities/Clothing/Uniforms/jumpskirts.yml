@@ -75,3 +75,15 @@
     - type: Clothing
       sprite: _DV/Clothing/Uniforms/Jumpskirt/security_grey.rsi
 
+# Salvage uniform
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtSalvageSpecialist
+  name: salvage specialist's jumpskirt
+  description: It's a snappy jumpsuit with a sturdy skirt. It's very dirty.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/explorer.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Uniforms/Jumpskirt/explorer.rsi
