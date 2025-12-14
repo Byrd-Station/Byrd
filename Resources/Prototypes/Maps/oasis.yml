@@ -161,7 +161,7 @@
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
 
-            NanotrasenCareerTrainer: [ -1, -1] # Omu
+            NanotrasenCareerTrainer: [ 2, 2] # Omu
 
         # Goobstation blob-config-start HUGE
         - type: StationBlobConfig

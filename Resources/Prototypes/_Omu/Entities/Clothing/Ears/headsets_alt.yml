@@ -1,0 +1,19 @@
+#Corpsman alt headset. Base brigmed code, new sprite.
+- type: entity
+  parent: [ClothingHeadsetAlt, BaseSecurityContraband]
+  id: ClothingHeadsetAltBrigmedic
+  name: corpsman over-ear headset
+  description: A headset that helps to hear the death cries.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyMedical
+      - EncryptionKeySecurity
+      - EncryptionKeyCommon
+  - type: Sprite
+    sprite: _Omu/Clothing/Ears/Headsets/corpsman.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Ears/Headsets/corpsman.rsi
+
+
