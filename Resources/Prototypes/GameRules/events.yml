@@ -321,6 +321,7 @@
   - type: BureaucraticErrorRule
     ignoredJobs:
     - StationAi
+    - NanotrasenCareerTrainer #Omu
 
 - type: entity
   id: ClericalError
