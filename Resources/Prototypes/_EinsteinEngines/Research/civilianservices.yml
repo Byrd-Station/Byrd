@@ -30,7 +30,7 @@
   - ChevalTranslatorImplanter
   - NewKinPidginTranslator
   - SchechiTranslator
-  # - GruntishTranslator
+  # - GruntishTranslator ### Garden Station Replaced with Khörs Translator
   - YowKriolTranslator # goob edit - yowie language
   - KhorsTranslator # GDS, Khese Rework
   position: -4, 4

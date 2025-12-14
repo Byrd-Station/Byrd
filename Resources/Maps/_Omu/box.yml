@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/11/2025 21:14:08
-  entityCount: 27399
+  time: 12/12/2025 19:47:30
+  entityCount: 27400
 maps:
 - 1
 grids:
@@ -11586,7 +11586,7 @@ entities:
       pos: 24.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -40856.344
+      secondsUntilStateChange: -40879.344
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -82667,7 +82667,7 @@ entities:
       pos: -34.5,-14.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -35044.883
+      secondsUntilStateChange: -35067.883
       state: Closing
   - uid: 13393
     components:
@@ -83160,7 +83160,7 @@ entities:
       pos: -4.5,-71.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -26792.625
+      secondsUntilStateChange: -26815.625
       state: Closing
   - uid: 14038
     components:
@@ -142387,6 +142387,13 @@ entities:
     components:
     - type: Transform
       pos: 21.5,2.5
+      parent: 2
+- proto: SpawnPointNanotrasenCareerTrainer
+  entities:
+  - uid: 21124
+    components:
+    - type: Transform
+      pos: -0.5,-7.5
       parent: 2
 - proto: SpawnPointNanotrasenRepresentative
   entities:

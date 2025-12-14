@@ -157,6 +157,8 @@
   - type: Implanter
     implant: NewKinPidginTranslatorImplant
 
+### Garden Station
+### Replaced with Khörs Translator Implanter
 # - type: entity
 #  id: GruntishTranslatorImplanter
 #  parent: [ BaseTranslatorImplanter ]

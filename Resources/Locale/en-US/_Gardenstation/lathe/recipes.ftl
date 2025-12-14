@@ -1,0 +1,1 @@
+lathe-recipe-KhorsTranslatorImplanter-subname = khörs translator implant
