@@ -365,9 +365,9 @@
       - EncryptionKeySecurity
       - EncryptionKeyCommon
   - type: Sprite
-    sprite: Clothing/Ears/Headsets/brigmedic.rsi
+    sprite: _Omu/Clothing/Ears/Headsets/corpsman.rsi #Omu - new sprite
   - type: Clothing
-    sprite: Clothing/Ears/Headsets/brigmedic.rsi
+    sprite: _Omu/Clothing/Ears/Headsets/corpsman.rsi #Omu - new sprite
 
 - type: entity
   parent: ClothingHeadset
