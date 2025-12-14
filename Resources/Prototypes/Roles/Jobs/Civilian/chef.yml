@@ -97,11 +97,11 @@
   - Hydroponics
   - Bar
   special: # Goobstation - Martial Arts
-  - !type:AddComponentSpecial
-    components:
-      - type: GrantCqc
-        startingStage: Hard
-        isBlocked: true
+#  - !type:AddComponentSpecial # Omu, remove CQC
+#    components:
+#      - type: GrantCqc
+#        startingStage: Hard
+#        isBlocked: true
   - !type:AddImplantSpecial # Chefs speak space italian
     implants: [ SpaceItalianTranslatorImplant ]
 

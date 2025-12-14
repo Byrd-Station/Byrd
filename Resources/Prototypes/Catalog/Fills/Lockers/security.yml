@@ -191,7 +191,7 @@
 
 - type: entity
   id: LockerBrigmedicFilled
-  suffix: Brigmedic, Filled
+  suffix: Corpsman, Filled # Omu - rename Brigmedic to Corpsman
   parent: LockerBrigmedic
   components:
   - type: EntityTableContainerFill
