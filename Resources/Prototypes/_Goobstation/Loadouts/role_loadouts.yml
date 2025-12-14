@@ -184,8 +184,11 @@
   groups:
   - BrigmedicHead
   - MedicalMask
+  - CorpsmanGlasses #Omu
+  - CorpsmanHeadset #Omu
   - BrigmedicJumpsuit
   - BrigmedicOuterClothing
+  - CorpsmanBelt #Omu
   - MedicalGloves
   - BrigmedicBackpack
   - SecurityMelee # EE parity, make corpsman able to carry weapons like the rest of security
