@@ -88,6 +88,7 @@
     inverted: true
     species:
     - Plasmaman
+    - Xelthia #OmuStation 14 (They can't use gloves)
 
 #Ninja Gear
 - type: startingGear
