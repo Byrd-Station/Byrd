@@ -1308,6 +1308,8 @@
       task: RuminantCompound
   - type: Body
     prototype: AnimalHemocyanin
+  - type: Fish
+    difficulty: 0.023
 
 - type: entity
   name: goat
