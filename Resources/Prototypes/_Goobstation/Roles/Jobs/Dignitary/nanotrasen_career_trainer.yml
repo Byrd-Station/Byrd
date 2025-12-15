@@ -16,6 +16,8 @@
   canBeAntag: false
   whitelisted: true # 1984
   setPreference: true # Omu, enable NCT for admins
+  guides: # Omu
+  - NanoTrasen Career Trainer SOP
   accessGroups:
   - AllAccess
   access:
@@ -28,9 +30,10 @@
   - !type:RemoveComponentSpecial # Omu, no stealing NCT's gear
     components:
     - type: Strippable
-#  - !type:AddComponentSpecial # Intentionally not command. I don't want them to ruin rev rounds.
-#    components:
-#    - type: CommandStaff
+  - !type:AddComponentSpecial
+    components:
+    #- type: CommandStaff # Intentionally not command. I don't want them to ruin rev rounds.
+    - type: AntagImmune # Omu - NCT Should be immune from antag objectives so they can focus on training
 
 - type: startingGear
   id: NanotrasenCareerTrainerGear

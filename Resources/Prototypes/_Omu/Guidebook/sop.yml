@@ -1,4 +1,9 @@
 - type: guideEntry
-  id: Corpsman SOP 
+  id: Corpsman SOP
   name: guide-entry-sop-corpsman
   text: /ServerInfo/_Omu/Guidebook/SoP/Jobs/Security/CorpsmanSOP.xml
+
+- type: guideEntry
+  id: NanoTrasen Career Trainer SOP
+  name: guide-entry-sop-NCT
+  text: /ServerInfo/_Omu/Guidebook/SoP/Jobs/CentComm/NanoTrasenCareerTrainerSOP.xml
