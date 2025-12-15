@@ -96,13 +96,18 @@
           sprite: _Omu/Objects/Weapons/Melee/stunsword.rsi
           state: shock-icon
         components:
+        - type: IgnitionSource
+          temperature: 700
+        - type: Tool
+          qualities:
+          - Ignition
         - type: MeleeWeapon
           wideAnimationRotation: -135
           attackRate: 1
           damage:
             types:
               Slash: 5
-              Burn: 12
+              Heat: 12
               Shock: 3
             woundSeverityMultipliers:
               Slash: 1.5
