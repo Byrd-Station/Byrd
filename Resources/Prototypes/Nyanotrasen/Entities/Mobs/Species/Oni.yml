@@ -40,7 +40,7 @@
   - type: PlayerToolModifier
     pryTimeMultiplier: 0.6
   - type: PlayerAccuracyModifier
-      spreadMultiplier: 15
+    spreadMultiplier: 15
     maxSpreadAngle: 180
   - type: BonusStaminaDamage
     multiplier: 1.25
@@ -70,7 +70,8 @@
         - MobMask
         layer:
         - MobLayer
-          - type: Stamina
+
+  - type: Stamina
     critThreshold: 115
   - type: TypingIndicator
     proto: oni
