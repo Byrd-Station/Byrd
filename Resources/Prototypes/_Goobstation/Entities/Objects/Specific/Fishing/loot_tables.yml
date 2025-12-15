@@ -53,7 +53,8 @@
   table: !type:GroupSelector
     children:
     - id: MobDragonDungeon  # This one dies pretty easy its just gonna be funny
-    - id: TeslaToy
+    - id: NukeDiskFake
+    - id: ClothingOuterHardsuitCarp
 
 # Fish from water
 - type: entityTable
