@@ -1502,3 +1502,9 @@ Entries:
       message: Fixed an issue with cavity implants.
   id: 183
   time: '2025-12-14T19:14:17.0000000+00:00'
+- author: Dot5511
+  changes:
+    - type: Fix
+      message: Ninjas can no longer spawn in as Xelthias (Because no Ninja Gloves)
+  id: 184
+  time: '2025-12-15T08:08:16.0000000+00:00'
