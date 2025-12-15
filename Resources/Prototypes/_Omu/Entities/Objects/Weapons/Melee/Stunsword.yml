@@ -107,8 +107,7 @@
           damage:
             types:
               Slash: 5
-              Heat: 12
-              Shock: 3
+              Heat: 15
             woundSeverityMultipliers:
               Slash: 1.5
           angle: 60
