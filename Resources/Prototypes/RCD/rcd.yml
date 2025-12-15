@@ -65,6 +65,21 @@
   fx: EffectRCDConstruct1
 
 - type: rcd
+  id: FloorWaterEntity
+  name: rcd-component-floor-water
+  category: WallsAndFlooring
+  sprite: /Textures/Interface/Radial/RCD/water.png
+  mode: ConstructObject
+  prototype: FloorWaterEntity
+  cost: 5
+  delay: 1
+  collisionMask: InteractImpassable
+  rules:
+    - MustBuildOnSubfloor
+  rotation: Fixed
+  fx: EffectRCDConstruct1
+
+- type: rcd
   id: Catwalk
   category: WallsAndFlooring
   sprite: /Textures/Interface/Radial/RCD/catwalk.png
