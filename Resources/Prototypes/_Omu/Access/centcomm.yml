@@ -4,3 +4,8 @@
   - CentralCommand
   - NanotrasenRepresentative
   - BlueshieldOfficer
+  - CentralCommandOfficial
+
+- type: accessLevel
+  id: CentralCommandOfficial
+  name: CCO
