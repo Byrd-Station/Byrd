@@ -33,7 +33,7 @@
   - !type:AddComponentSpecial
     components:
     #- type: CommandStaff # Intentionally not command. I don't want them to ruin rev rounds.
-    - type: AntagImmune # Omu - NCT Should be immune from antag objectives so they can focus on training
+    - type: AntagImmune # Omu - NCT Shouldn't roll as Antags.
 
 - type: startingGear
   id: NanotrasenCareerTrainerGear
