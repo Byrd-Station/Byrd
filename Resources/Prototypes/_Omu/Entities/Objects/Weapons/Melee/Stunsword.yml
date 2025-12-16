@@ -82,8 +82,10 @@
           soundHit:
             path: /Audio/_Goobstation/Weapons/Effects/energy-short-sword-swing.ogg
         - type: StaminaDamageOnHit
-          damage: 25
+          damage: 20
           overtime: 15
+          lightAttackDamageMultiplier: 2
+          lightAttackOvertimeDamageMultiplier: 0
         soundStateActivate:
           collection: sparks
           params:
