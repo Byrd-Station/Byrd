@@ -2,7 +2,7 @@
   name: NY-6 'Grognard'
   parent: [BaseItem, BaseSecurityContraband]
   id: Stunsword
-  description: A mass produced, durable plasteel blade made for only the most experienced and seasoned security officers
+  description: A mass produced, durable plasteel blade made for only the most experienced and seasoned security officers.
   components:
   - type: Item
     sprite: _Omu/Objects/Weapons/Melee/stunsword.rsi
