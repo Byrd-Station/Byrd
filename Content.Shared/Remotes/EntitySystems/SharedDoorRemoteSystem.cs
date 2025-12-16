@@ -1,19 +1,32 @@
-// SPDX-FileCopyrightText: 2024 Jake Huxell <JakeHuxell@pm.me>
-// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Plykiya <plykiya@protonmail.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-//
-// SPDX-License-Identifier: MIT
-
+using Content.Shared.Access.Components;
+using Content.Shared.Administration.Logs;
+using Content.Shared.Database;
+using Content.Shared.Doors.Components;
+using Content.Shared.Doors.Systems;
+using Content.Shared.Electrocution;
+using Content.Shared.Examine;
+using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Remotes.Components;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Serialization;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.Remotes.EntitySystems;
 
 public abstract class SharedDoorRemoteSystem : EntitySystem
 {
-    [Dependency] protected readonly SharedPopupSystem Popup = default!;
+    [Dependency] private readonly SharedAirlockSystem _airlock = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedDoorSystem _doorSystem = default!;
+    [Dependency] private readonly SharedElectrocutionSystem _electrify = default!;
+    [Dependency] private readonly ExamineSystemShared _examine = default!;
+    [Dependency] private readonly SharedPowerReceiverSystem _powerReceiver = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] protected readonly IGameTiming Timing = default!;
+
 
     public override void Initialize()
     {
@@ -38,8 +51,28 @@ public abstract class SharedDoorRemoteSystem : EntitySystem
 
             // Skip ToggleEmergencyAccess mode and move on from there (to door toggle)
             case OperatingMode.ToggleEmergencyAccess:
-                entity.Comp.Mode = OperatingMode.OpenClose;
-                switchMessageId = "door-remote-switch-state-open-close";
+                if (airlockComp != null)
+                {
+                    _airlock.SetEmergencyAccess((args.Target.Value, airlockComp), !airlockComp.EmergencyAccess, user: args.User, predicted: true);
+                    _adminLogger.Add(LogType.Action,
+                        LogImpact.Medium,
+                        $"{ToPrettyString(args.User):player} used {ToPrettyString(args.Used)} on {ToPrettyString(args.Target.Value)} to set emergency access {(airlockComp.EmergencyAccess ? "on" : "off")}");
+                }
+
+                break;
+            case OperatingMode.ToggleOvercharge:
+                if (TryComp<ElectrifiedComponent>(args.Target, out var eletrifiedComp))
+                {
+                    _electrify.SetElectrified((args.Target.Value, eletrifiedComp), !eletrifiedComp.Enabled);
+                    var soundToPlay = eletrifiedComp.Enabled
+                        ? eletrifiedComp.AirlockElectrifyDisabled
+                        : eletrifiedComp.AirlockElectrifyEnabled;
+                    _audio.PlayLocal(soundToPlay, args.Target.Value, args.User);
+                    _adminLogger.Add(LogType.Action,
+                        LogImpact.Medium,
+                        $"{ToPrettyString(args.User):player} used {ToPrettyString(args.Used)} on {ToPrettyString(args.Target.Value)} to {(eletrifiedComp.Enabled ? "" : "un")}electrify it");
+                }
+
                 break;
             default:
                 throw new InvalidOperationException(

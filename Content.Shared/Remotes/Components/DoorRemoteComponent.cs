@@ -28,5 +28,6 @@ public enum OperatingMode : byte
     OpenClose,
     ToggleBolts,
     ToggleEmergencyAccess,
-    placeholderForUiUpdates
+    placeholderForUiUpdates,
+    ToggleOvercharge
 }
