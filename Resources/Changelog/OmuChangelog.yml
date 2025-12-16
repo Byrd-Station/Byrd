@@ -1508,3 +1508,26 @@ Entries:
       message: Ninjas can no longer spawn in as Xelthias (Because no Ninja Gloves)
   id: 184
   time: '2025-12-15T08:08:16.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Tweak
+      message: >-
+        Buffed Onis! They now receive 25% less slowdown by clothing to help them
+        get into melee distance!
+    - type: Tweak
+      message: >-
+        Asakim's harnesses now slow you down by 80%, the harness isn't made for
+        small meatbags.
+    - type: Tweak
+      message: >-
+        Asakim's harness helmet now blocks facehuggers, xenos HATE this one
+        trick.
+    - type: Tweak
+      message: Asakim are now as tall as an Oni.
+    - type: Tweak
+      message: >-
+        Asakim can now accept translation implants, them not being able to was
+        unintended, now they can also write if they EVER take off the harness,
+        which probably won't happen.
+  id: 185
+  time: '2025-12-15T15:51:55.0000000+00:00'
