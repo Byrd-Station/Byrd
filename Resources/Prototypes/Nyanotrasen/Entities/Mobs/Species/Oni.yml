@@ -41,7 +41,16 @@
     pryTimeMultiplier: 0.6
   - type: PlayerAccuracyModifier
     spreadMultiplier: 15
+    spreadMultiplier: 15
     maxSpreadAngle: 180
+    blacklist:
+      components:
+      - DamageBoostOnMarker
+      - LeechOnMarker
+      - ArcaneBarrage
+      tags:
+      - WizardWand
+      - WizardStaff
   - type: BonusStaminaDamage
     multiplier: 1.25
   - type: BonusMeleeDamage
