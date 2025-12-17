@@ -7,6 +7,6 @@
   components:
   - type: Sprite
     sprite: _Omu/Objects/Specific/ashwalkeregg.rsi
+    state: large-egg
   - type: Item
-    sprite: Objects/Devices/ashwalkeregg.rsi
     size: Ginormous
