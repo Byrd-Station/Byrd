@@ -41,7 +41,6 @@
     pryTimeMultiplier: 0.6
   - type: PlayerAccuracyModifier
     spreadMultiplier: 15
-    spreadMultiplier: 15
     maxSpreadAngle: 180
     blacklist:
       components:
