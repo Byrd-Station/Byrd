@@ -133,6 +133,8 @@
       amount: 3
     - id: MaterialGoliathHide1
       amount: 1
+    - id: Bones # Omu!
+      amount: 2
   - type: Fauna # Lavaland Change
 
 - type: entity
@@ -171,7 +173,7 @@
     sprite: Mobs/Aliens/Asteroid/goliath.rsi
     layers:
     - state: goliath_tentacle_wiggle
-  - type: StunOnContact
+  - type: StunOnContact # Goliaths shouldn't stun you instantly now. Omu change.
     blacklist:
       tags:
       - Goliath
@@ -467,3 +469,5 @@
     - id: DiamondOre1
       amount: 1
       maxAmount: 3
+    - id: Bones # Omu!
+      amount: 1

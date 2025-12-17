@@ -146,7 +146,7 @@
   unit: materials-unit-piece
   icon: { sprite: Objects/Materials/materials.rsi, state: bones }
   color: "#896f5e"
-  price: 0
+  price: 0.1 # $10 for 1 unit, Omu change.
 
 - type: material
   id: Coal
