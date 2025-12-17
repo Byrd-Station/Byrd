@@ -213,6 +213,7 @@
       conditions:
       - !type:PlayerCountCondition
         max: 15
+    - id: BookCorporateSecrets # funky
 
 # No laser table + Laser table
 - type: entityTable
