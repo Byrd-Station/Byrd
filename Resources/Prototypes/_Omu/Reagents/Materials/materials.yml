@@ -1,0 +1,7 @@
+- type: material
+  id: WatcherSinew
+  name: materials-sinew
+  unit: materials-unit-piece
+  icon: { sprite: _Omu/Objects/Materials/materials.rsi, state: sinew }
+  color: "#a15555"
+  price: 0.1 # $10 for 1 unit, Omu change.

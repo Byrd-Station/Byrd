@@ -19768,7 +19768,7 @@ entities:
     - type: Transform
       pos: 22.5,-16.5
       parent: 1
-- proto: SpawnMobSyndicateFootsoldierPilot
+- proto: TrashBananaPeel
   entities:
   - uid: 3019
     components:
@@ -22592,5 +22592,27 @@ entities:
     components:
     - type: Transform
       pos: 30.558758,5.4101496
+      parent: 1
+- proto: MobHumanSyndicateResearcher
+  entities:
+  - uid: 3532
+    components:
+    - type: Transform
+      pos: 20.5,-8.5
+      parent: 1
+  - uid: 3533
+    components:
+    - type: Transform
+      pos: 14.5,-8.5
+      parent: 1
+  - uid: 3534
+    components:
+    - type: Transform
+      pos: 15.5,-1.5
+      parent: 1
+  - uid: 3535
+    components:
+    - type: Transform
+      pos: 21.5,-1.5
       parent: 1
 ...
