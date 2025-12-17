@@ -24,3 +24,12 @@
     stealGroup: ClothingEyesHudSciDiag
   - type: Objective
     difficulty: 0.7
+
+- type: entity
+  parent: BaseThiefStealObjective
+  id: DrinkMugAAStealObjective
+  components:
+  - type: StealCondition
+    stealGroup: DrinkMugAA
+  - type: Objective
+    difficulty: 0.5

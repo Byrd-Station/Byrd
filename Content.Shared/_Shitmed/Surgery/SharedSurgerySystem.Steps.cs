@@ -234,6 +234,8 @@ public abstract partial class SharedSurgerySystem
 
         var activeHandEntity = _hands.EnumerateHeld(args.User).FirstOrDefault();
         if (activeHandEntity != default
+            && !HasComp<BodyPartComponent>(activeHandEntity) // Omu
+            && !HasComp<OrganComponent>(activeHandEntity) // Omu
             && ent.Comp.Action == "Insert"
             && TryComp(activeHandEntity, out ItemComponent? itemComp)
             && (itemComp.Size.Id == "Tiny"
@@ -702,9 +704,15 @@ public abstract partial class SharedSurgerySystem
             surgeryTargetComponent.SepsisImmune)
             return;
 
-        var sepsis = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Poison"), 5);
-        var ev = new SurgeryStepDamageEvent(args.User, args.Body, args.Part, args.Surgery, sepsis, 0.5f);
-        RaiseLocalEvent(args.Body, ref ev);
+        // EE Glovejacket supercode start
+        _inventory.TryGetSlotEntity(args.User, "outerClothing", out var glovejacket);
+        if (!HasComp<GloveJacketComponent>(glovejacket) || !_inventory.TryGetSlotEntity(args.User, "mask", out var _))
+        {
+            var sepsis = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Poison"), 5);
+            var ev = new SurgeryStepDamageEvent(args.User, args.Body, args.Part, args.Surgery, sepsis, 0.5f);
+            RaiseLocalEvent(args.Body, ref ev);
+        }
+        // EE Glovejacket supercode end
     }
 
     private bool TryToolAudio(Entity<SurgeryStepComponent> ent, SurgeryStepEvent args)
