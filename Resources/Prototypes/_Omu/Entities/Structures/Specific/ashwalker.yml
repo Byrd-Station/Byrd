@@ -9,7 +9,7 @@
   components:
    - type: Sprite
      noRot: true
-     sprite: _Omu/Structures/Specific/nest.rsi
+     sprite: _Omu/Structures/Specific/necropolisnest.rsi
      state: nest
      drawdepth: Mobs
    - type: NecropolisNest
