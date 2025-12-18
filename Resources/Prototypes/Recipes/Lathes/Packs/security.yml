@@ -148,6 +148,7 @@
   - WeaponLaserCarbine
   - WeaponXrayCannon
   - WeaponTemperatureGun # Goobstation
+  - SecDispatchSpear # Omu
 
 - type: latheRecipePack
   id: SecurityDisablers

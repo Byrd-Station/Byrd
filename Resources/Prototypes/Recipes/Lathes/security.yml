@@ -257,6 +257,16 @@
     Steel: 250
     Plastic: 100
 
+- type: latheRecipe
+  parent: BaseWeaponRecipeMelee
+  id: SecDispatchSpear
+  result: SecDispatchSpear
+  materials:
+    Steel: 1000
+    Plastic: 500
+    Plasma: 1000
+    Silver: 500
+
 # Practice weapons
 - type: latheRecipe
   parent: BaseWeaponRecipePractice

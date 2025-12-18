@@ -328,6 +328,7 @@
   - PowerCellOverchargedRevolver # Goobstation
   - PowerCellOverchargedSMG # Goobstation
   - PowerCellOverchargedSniper # Goobstation
+  - SecDispatchSpear
   # Goobstation R&D Console rework start
   position: 6,0
   technologyPrerequisites:
