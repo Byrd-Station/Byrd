@@ -26,5 +26,6 @@ public override void Initialize()
             _ => comp.FascinationDesc
         };
         args.PushMarkup(comp.FascinationDesc ?? Loc.GetString("Fascination-0"));
+        Dirty(ent);
     }
 }

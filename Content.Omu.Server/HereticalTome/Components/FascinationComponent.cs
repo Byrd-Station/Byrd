@@ -6,11 +6,14 @@ namespace Content.Omu.Server.HereticalTome.Components;
 public sealed partial class FascinationComponent : Component
 {
     /// <summary>
-    /// The level of madness
+    /// The current intensity of the fascination effect, where higher values indicate stronger effects.
     /// </summary>
     [DataField]
     public float FascinationInt = 0f;
 
+    /// <summary>
+    /// A localized description of the current fascination effect.
+    /// </summary>
     [DataField, AutoNetworkedField]
     public string? FascinationDesc;
 }
