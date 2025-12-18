@@ -12,3 +12,22 @@
     - id: ProcenylLazideChemistryVial
     - id: EbifinlLazideChemistryVial
 
+- type: entity
+  id: ClothingBeltCorpsmanWebbingFilled
+  parent: ClothingBeltCorpsmanWebbing
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: Stunbaton
+    - id: WeaponDisabler
+    - id: HandheldCrewMonitor
+    - id: SecHypo
+    - id: CartridgeEpinephrine
+    - id: CartridgeBicaridine
+    - id: CartridgeDermaline
+    - id: CartridgeAtropine
+
+- type: entity
+  id: ClothingBeltCorpsmanFilled
+  parent: [ClothingBeltCorpsman, ClothingBeltCorpsmanWebbingFilled]
