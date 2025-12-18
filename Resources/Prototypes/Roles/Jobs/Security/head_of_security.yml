@@ -176,6 +176,8 @@
   - HeadOfSecurity SOP
   - Security SOP
   - Alert Levels
+  - CommandTrainingManual # Omu
+  - SecurityTrainingManual # Omu
   goobcoins: 45 #Goob content
   access:
   - HeadOfSecurity
