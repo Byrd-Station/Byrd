@@ -92,7 +92,7 @@
             variation: 0.250
 
       shock: !type:ItemSwitchState
-        verb: shock
+        verb: heat # no more shock dmg :(
         energyPerUse: 100 
         sprite:
           sprite: _Omu/Objects/Weapons/Melee/stunsword.rsi
