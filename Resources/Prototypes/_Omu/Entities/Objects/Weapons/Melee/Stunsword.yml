@@ -103,6 +103,7 @@
         - type: Tool
           qualities:
           - Ignition
+        - type: AlwaysHot # Hopefully this should make it actually light cigs :)
         - type: MeleeWeapon
           wideAnimationRotation: -135
           attackRate: 1
