@@ -262,10 +262,11 @@
   id: SecDispatchSpear
   result: SecDispatchSpear
   materials:
-    Steel: 1000
-    Plastic: 500
-    Plasma: 1000
+    Steel: 1500
+    Plastic: 1000
+    Plasma: 1500
     Silver: 500
+    Gold: 500
 
 # Practice weapons
 - type: latheRecipe
