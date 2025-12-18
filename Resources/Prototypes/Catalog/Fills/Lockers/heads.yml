@@ -548,7 +548,6 @@
     - id: HeadOfSecurityMeleeCase # Omu
     - id: ComputerSecurityCommsFlatpack #Omu adds departmental comms board
     - id: Multitool # Omu
-    - id: ClothingBeltSheathHeadOfSecurityFilled
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
