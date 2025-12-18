@@ -1531,3 +1531,37 @@ Entries:
         which probably won't happen.
   id: 185
   time: '2025-12-15T15:51:55.0000000+00:00'
+- author: Shy-ivy
+  changes:
+    - type: Tweak
+      message: Oni have gotten their strength and defenses back.
+  id: 186
+  time: '2025-12-17T19:47:18.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Ported corporate secrets from Funky.
+  id: 187
+  time: '2025-12-18T12:02:35.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added a weaker form of ERT
+  id: 188
+  time: '2025-12-18T12:05:10.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: Upstream till 18th December
+  id: 189
+  time: '2025-12-18T12:29:25.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Tweak
+      message: Asteroid rocks can now be breakable with blunt weapons.
+    - type: Tweak
+      message: >-
+        Basalt now makes noise when broken, asteroid rocks should be slightly
+        more audible when they break.
+  id: 190
+  time: '2025-12-18T12:31:56.0000000+00:00'
