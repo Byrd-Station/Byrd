@@ -161,6 +161,7 @@
   - Command
   - ResearchDirector SOP
   - Science SOP
+  - CommandTrainingManual # Omu
   goobcoins: 40 #Goob content
   access:
   - Research

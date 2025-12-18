@@ -1398,6 +1398,7 @@
   loadouts:
   - SecurityBelt
   - SecurityWebbing
+  - SecuritySwordBelt # Omu
   - SecurityJudoBelt # Goobstation - Martial Arts
 
 - type: loadoutGroup
