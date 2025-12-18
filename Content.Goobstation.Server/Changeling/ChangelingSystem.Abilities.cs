@@ -194,7 +194,7 @@ public sealed partial class ChangelingSystem
         _blood.SpillAllSolutions(target);
 
         EnsureComp<AbsorbedComponent>(target);
-        EnsureComp<UnrevivableComponent>(target);
+        // EnsureComp<UnrevivableComponent>(target); Omu - Make hollows revivable again
 
         var popup = string.Empty;
         var bonusChemicals = 0f;
