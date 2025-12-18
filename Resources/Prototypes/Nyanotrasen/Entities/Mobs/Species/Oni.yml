@@ -51,14 +51,14 @@
     maxSpreadAngle: 180 # They can't use guns any more, this seems overkill - maus
   - type: BonusStaminaDamage
     multiplier: 1.25
-    blacklist:
-      components:
-      - DamageBoostOnMarker
-      - LeechOnMarker
-      - ArcaneBarrage
-      tags:
-      - WizardWand
-      - WizardStaff
+    # blacklist: # this dogshit makes githubs linter fail bruh idk???
+    #  components:
+    #  - DamageBoostOnMarker
+    #  - LeechOnMarker
+    #  - ArcaneBarrage
+    #  tags:
+    #  - WizardWand
+    #  - WizardStaff
   - type: BonusMeleeDamage
     damageModifierSet:
       coefficients:
@@ -87,7 +87,6 @@
         - MobMask
         layer:
         - MobLayer
-
   - type: Stamina
     critThreshold: 115
   - type: TypingIndicator
