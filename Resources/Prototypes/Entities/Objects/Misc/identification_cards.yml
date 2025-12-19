@@ -389,6 +389,9 @@
     - state: idshaftminer
   - type: PresetIdCard
     job: SalvageSpecialist
+  - type: Tag # Omu Edit
+    tags:
+    - SalvagePinpointer
 
 - type: entity
   parent: IDCardStandard
@@ -628,7 +631,7 @@
 - type: entity
   parent: IDCardStandard
   id: BrigmedicIDCard
-  name: brigmedic ID card
+  name: corpsman ID card # Omu - rename Brigmedic to Corpsman
   components:
   - type: Sprite
     layers:

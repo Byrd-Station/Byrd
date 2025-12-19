@@ -7,6 +7,8 @@
   components:
   - type: HumanoidAppearance
     species: Feroxi
+    hideLayersOnEquip:
+    - Snout
   - type: Hunger
   # - type: Carriable # ShibaStation - disabled because broken, for now.
   - type: Inventory
@@ -32,8 +34,8 @@
     noRot: true
     drawdepth: Mobs
     layers:
-      - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Groin" ]
+      - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
       - map: [ "enum.HumanoidVisualLayers.Eyes" ]
@@ -119,6 +121,8 @@
   components:
   - type: HumanoidAppearance
     species: Feroxi
+    hideLayersOnEquip:
+    - Snout
   - type: Sprite # Why does feroxi redefine sprites in basemob but NOT in dummy (lobby) ???, fixing that - Omu 120
     netsync: false
     noRot: true

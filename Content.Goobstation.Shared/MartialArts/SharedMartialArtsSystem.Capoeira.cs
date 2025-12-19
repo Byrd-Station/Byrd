@@ -11,12 +11,19 @@ using Content.Goobstation.Common.MartialArts;
 using Content.Goobstation.Shared.Emoting;
 using Content.Goobstation.Shared.MartialArts.Components;
 using Content.Goobstation.Shared.MartialArts.Events;
+using Content.Goobstation.Shared.Sprinting;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Physics.Components;
+using Content.Goobstation.Maths.FixedPoint; //omu
+using Content.Shared.Clothing; //omu
+using Content.Shared.Clothing.Components; //omu
+using Content.Shared.Damage; // omu
+using Content.Shared.Damage.Components; // omu
+using Content.Shared.Damage.Prototypes; // omu
 
 namespace Content.Goobstation.Shared.MartialArts;
 
@@ -31,7 +38,47 @@ public abstract partial class SharedMartialArtsSystem
         SubscribeLocalEvent<CanPerformComboComponent, KickUpPerformedEvent>(OnKickUp);
 
         SubscribeLocalEvent<GrantCapoeiraComponent, UseInHandEvent>(OnGrantCQCUse);
+        // omu start
+        SubscribeLocalEvent<GrantCapoeiraComponent, ClothingGotEquippedEvent>(OnWear);
+        SubscribeLocalEvent<GrantCapoeiraComponent, ClothingGotUnequippedEvent>(OnRemove);
+        // omu end
     }
+    // Omu start
+    private void OnWear(EntityUid uid, GrantCapoeiraComponent component, ref ClothingGotEquippedEvent args)
+    {
+        if (!_netManager.IsServer)
+            return;
+
+        var user = args.Wearer;
+        TryGrantMartialArt(user, component);
+
+    }
+
+    private void OnRemove(Entity<GrantCapoeiraComponent> ent, ref ClothingGotUnequippedEvent args)
+    {
+        var user = args.Wearer;
+
+        // Omu Station
+        // Don't proceed if the user has non-removable Martial Arts knowledge
+        if (HasManualCqcKnowledge(user))
+            return;
+
+        if (!TryComp<MartialArtsKnowledgeComponent>(user, out var martialArtsKnowledge)
+            || !TryComp<MeleeWeaponComponent>(user, out var meleeWeaponComponent)) // Omu
+            return;
+
+        if (martialArtsKnowledge.MartialArtsForm != MartialArtsForms.Capoeira)
+            return;
+
+        var originalDamage = new DamageSpecifier();
+        originalDamage.DamageDict[martialArtsKnowledge.OriginalFistDamageType]
+            = FixedPoint2.New(martialArtsKnowledge.OriginalFistDamage);
+        meleeWeaponComponent.Damage = originalDamage;
+
+        RemComp<MartialArtsKnowledgeComponent>(user);
+        RemComp<CanPerformComboComponent>(user);
+    }
+    // Omu end
 
     private void OnCapoeiraMeleeHit(EntityUid uid, ref MeleeHitEvent ev)
     {
@@ -63,6 +110,12 @@ public abstract partial class SharedMartialArtsSystem
         {
             ApplyMultiplier(ent, 1.2f, 0f, TimeSpan.FromSeconds(4), MartialArtModifierType.MoveSpeed);
             _modifier.RefreshMovementSpeedModifiers(ent);
+            if (!TryComp(args.Target, out SprinterComponent? sprinter))
+                return;
+
+            _sprinting.ToggleSprint(args.Target, sprinter, false, false);
+            sprinter.LastSprint = _timing.CurTime + TimeSpan.FromSeconds(2); // 5s sprinting delay
+            Dirty(args.Target, sprinter);
             return;
         }
 
@@ -233,7 +286,7 @@ public abstract partial class SharedMartialArtsSystem
         if (ev.MinVelocity <= velocity)
         {
             power = GetCapoeiraPower(ev, velocity);
-            //_stamina.TryTakeStamina(uid, ev.StaminaToHeal);
+            _stamina.TryTakeStamina(uid, ev.StaminaToHeal);
             return true;
         }
 
