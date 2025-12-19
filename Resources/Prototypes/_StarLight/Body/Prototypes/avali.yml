@@ -1,32 +1,30 @@
 - type: body
   id: Avali
   name: avali
-  root: torso
+  root: chest
   slots:
     head:
       part: HeadAvali
       connections:
-      - torso
+        - chest
       organs:
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
-        tongue: OrganHumanTongue
-        eye_implant: null
     chest: # Omu, split torso into chest and groin
       part: ChestAvali
       connections:
-      - groin
-      - right arm
-      - left arm
-      - head # Shitmed Change
+        - groin
+        - right arm
+        - left arm
+        - head # Shitmed Change
       organs:
         heart: OrganAvaliHeart
         lungs: OrganAvaliLungs
     groin:
       part: GroinAvali
       connections:
-      - right leg
-      - left leg
+        - right leg
+        - left leg
       organs:
         stomach: OrganAvaliStomach
         liver: OrganAvaliLiver
@@ -34,11 +32,11 @@
     right arm:
       part: RightArmAvali
       connections:
-      - right hand
+        - right hand
     left arm:
       part: LeftArmAvali
       connections:
-      - left hand
+        - left hand
     right hand:
       part: RightHandAvali
     left hand:
@@ -46,11 +44,11 @@
     right leg:
       part: RightLegAvali
       connections:
-      - right foot
+        - right foot
     left leg:
       part: LeftLegAvali
       connections:
-      - left foot
+        - left foot
     right foot:
       part: RightFootAvali
     left foot:

@@ -121,16 +121,13 @@
     - type: Damageable
       damageContainer: Biological
       damageModifierSet: Avali
-    - type: DamageVisuals
-      damageOverlayGroups:
-        Brute:
-          sprite: Mobs/Effects/brute_damage.rsi
-          color: "#6C3BAA"
+#    - type: DamageVisuals # This sprite doesn't exist.
+#      damageOverlayGroups:
+#        Brute:
+#          sprite: Mobs/Effects/brute_damage.rsi
+#          color: "#6C3BAA"
     - type: Bloodstream
-      bloodReagents:
-        reagents:
-        - ReagentId: AvaliBlood
-          Quantity: 1
+      bloodReagent: AvaliBlood
     - type: MeleeWeapon
       soundHit:
         path: /Audio/Weapons/pierce.ogg
@@ -174,6 +171,10 @@
         - 4,4,5,0
         - 6,3,6,0
         - 7,1,7,0
+    - type: CollectiveMind
+      defaultChannel: Nexus
+      channels:
+      - Nexus
 
 # Chirp!
 
