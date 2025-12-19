@@ -1565,3 +1565,9 @@ Entries:
         more audible when they break.
   id: 190
   time: '2025-12-18T12:31:56.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: 'Changed Qua Nar''Vulna from Judo to Capoeira '
+  id: 191
+  time: '2025-12-18T20:05:05.0000000+00:00'
