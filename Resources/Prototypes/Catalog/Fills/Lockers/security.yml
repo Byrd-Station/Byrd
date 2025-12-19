@@ -182,14 +182,14 @@
     - !type:GroupSelector
       children:
       - id: ClothingBeltSecurityFilled
-        weight: 0.7
+        weight: 0.5
       - id: ClothingBeltCorporateJudoFilled
-        weight: 0.3
+        weight: 0.5
     # Goobstation - Martial Arts - end
 
 - type: entity
   id: LockerBrigmedicFilled
-  suffix: Brigmedic, Filled
+  suffix: Corpsman, Filled # Omu - rename Brigmedic to Corpsman
   parent: LockerBrigmedic
   components:
   - type: EntityTableContainerFill
@@ -204,7 +204,7 @@
     - id: BoxAutoinjectorCartidges
     - id: ClothingBackpackDuffelSurgeryFilled
     - id: ClothingHandsGlovesLatex
-    - id: ClothingOuterHardsuitBrigmedic
+    - id: UndeterminedVoidsuitCorpsman #Omu
     - id: OxygenTankFilled
     - id: NitrogenTankFilled
     - id: ClothingUniformJumpskirtOfLife
