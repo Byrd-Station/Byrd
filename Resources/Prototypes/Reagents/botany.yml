@@ -247,9 +247,22 @@
     Poison:
       effects:
       - !type:HealthChange
+        conditions: #Starlight
+        - !type:MetabolizerTypeCondition
+          type: [ Avali, Resomi ]
+          inverted: true
         damage:
           types:
             Caustic: 1
+    Medicine: #Starlight
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Avali, Resomi ]
+        damage:
+          types:
+            Asphyxiation: -1
     Gas:
       effects:
       - !type:HealthChange

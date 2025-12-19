@@ -61,19 +61,20 @@
     requiredLegs: 2
   - type: Speech
     speechVerb: Parrot
-    speechSounds: MaleAvali
+    speechSounds: MaleResomi
     allowedEmotes: ['Chirp', 'Trill', 'Warble', 'Wurble'] #goob
   - type: Vocal
     sounds:
-      Male: MaleAvaliEmote
-      Unsexed: MaleAvaliEmote
-      Female: FemaleAvaliEmote
+      Male: MaleResomiEmote
+      Unsexed: MaleResomiEmote
+      Female: FemaleResomiEmote
   - type: Tag
     tags:         # Goob - What the fuck is FootstepSound and DoorBumpOpener for if they work without them - rest fixes anoms though.
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+    - Resomi # Starlight
   - type: Hands
     handDisplacement:
       sizeMaps:
@@ -205,7 +206,7 @@
             sprite: _Floofstation/Mobs/Species/Resomi/displacement.rsi
             state: belt
   - type: Bloodstream # Goobstation - lore stuff
-    bloodReagent: AmmoniaBlood
+    bloodReagent: ResomiBlood # Starlight
   - type: MeleeWeapon # Goobstation - aliem raptors probably use their claws
     soundHit:
       collection: AlienClaw

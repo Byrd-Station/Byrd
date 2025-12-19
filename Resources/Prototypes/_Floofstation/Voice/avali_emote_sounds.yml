@@ -14,24 +14,24 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: soundCollection
-  id: AvaliScreams
+  id: ResomiScreams # Omu, rename to Resomi
   files:
     - /Audio/_Floofstation/Voice/Avali/avali_scream.ogg
 
 - type: soundCollection
-  id: AvaliLaugh
+  id: ResomiLaugh # Omu, rename to Resomi
   files:
     - /Audio/_Floofstation/Voice/Avali/avali_laugh.ogg
 
 - type: emoteSounds
-  id: MaleAvaliEmote
+  id: MaleResomiEmote # Omu, rename to Resomi
   params:
     variation: 0.125
   sounds:
     Scream:
-      collection: AvaliScreams
+      collection: ResomiScreams  # Omu, rename to Resomi
     Laugh:
-      collection: AvaliLaugh
+      collection: ResomiLaugh # Omu, rename to Resomi
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -74,14 +74,14 @@
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
 
 - type: emoteSounds
-  id: FemaleAvaliEmote
+  id: FemaleResomiEmote  # Omu, rename to Resomi
   params:
     variation: 0.125
   sounds:
     Scream:
-      collection: AvaliScreams
+      collection: ResomiScreams  # Omu, rename to Resomi
     Laugh:
-      collection: AvaliLaugh
+      collection: ResomiLaugh  # Omu, rename to Resomi
     Sneeze:
       collection: FemaleSneezes
     Cough:

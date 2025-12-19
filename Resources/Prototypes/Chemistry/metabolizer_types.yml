@@ -42,6 +42,14 @@
   id: Slime
   name: metabolizer-type-slime
 
+- type: metabolizerType #🌟Starlight🌟
+  id: Avali
+  name: metabolizer-type-avali
+
+- type: metabolizerType #🌟Starlight🌟
+  id: Resomi
+  name: metabolizer-type-resomi
+
 - type: metabolizerType
   id: Vox
   name: metabolizer-type-vox
