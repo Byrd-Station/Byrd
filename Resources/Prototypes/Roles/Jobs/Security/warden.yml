@@ -159,6 +159,8 @@
   - Security
   - Warden SOP
   - KravMaga
+  - CommandTrainingManual # Omu
+  - SecurityTrainingManual # Omu
   goobcoins: 35 #Goob content
   access:
   - Security
