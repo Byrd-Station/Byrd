@@ -3,6 +3,7 @@
   name: collective-mind-nexus
   keycode: 'n'
   color: "#FF7922"
-  requiredTags: 
+  requiredTags:
   - Resomi
   - Avali
+  showNames: false # Omu

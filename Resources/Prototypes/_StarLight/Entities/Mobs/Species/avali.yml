@@ -7,11 +7,11 @@
   components:
     - type: LanguageKnowledge
       speaks:
-      - GalacticCommon
-      - Scratch
+      - TauCetiBasic
+      - Schechi # Omu, todo - replace this with a unique language.
       understands:
-      - GalacticCommon
-      - Scratch
+      - TauCetiBasic
+      - Schechi # Omu, todo - replace this with a unique language.
     - type: Tag
       tags:
         - CanPilot
@@ -149,16 +149,16 @@
       shiveringHeatRegulation: 2000
       normalBodyTemperature: 261
       thermalRegulationTemperatureThreshold: 1
-    - type: Stasis
-      enterStasisAction: ActionStasisEnter
-      exitStasisAction: ActionStasisExit
-      updateInterval: 1s
-      healingPerUpdate:
-        types:
-          Heat: 2
-          Cold: 2
-        groups:
-          Brute: 6
+#    - type: Stasis # Move this to a organ, Omu.
+#      enterStasisAction: ActionStasisEnter
+#      exitStasisAction: ActionStasisExit
+#      updateInterval: 1s
+#      healingPerUpdate:
+#        types:
+#          Heat: 2
+#          Cold: 2
+#        groups:
+#          Brute: 6
       bleedHealPerUpdate: 1.0
       critHealingModifier: 2.0
       stasisDamageReduction: 0.5
@@ -186,8 +186,8 @@
   components:
     - type: HumanoidAppearance
       species: Avali
-      undergarmentTop: UndergarmentTopTanktopAvali
-      undergarmentBottom: UndergarmentBottomBoxersAvali
+#      Undershirt: UndergarmentTopTanktopAvali # Omu
+#      Underwear: UndergarmentBottomBoxersAvali # Omu, we don't have these markings yet.
     - type: Inventory
       speciesId: Avali
       displacements:

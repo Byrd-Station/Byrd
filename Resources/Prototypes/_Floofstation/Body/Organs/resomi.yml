@@ -41,7 +41,6 @@
   description: "The heart of a resomi."
   components:
   - type: Metabolizer
-    maxReagents: 2
     metabolizerTypes: [Resomi]
     groups:
     - id: Medicine
