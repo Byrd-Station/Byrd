@@ -26,7 +26,7 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
-    Hisses:
+    Hiss:
       collection: CatHisses # Omu, replace Felionoid sounds.
     Purr:
       collection: FelinidPurrs # Omu, replace Felionoid sounds.
@@ -76,7 +76,7 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
-    Hisses:
+    Hiss:
       collection: CatHisses # Omu, replace Felionoid sounds.
     Purr:
       collection: FelinidPurrs # Omu, replace Felionoid sounds.
