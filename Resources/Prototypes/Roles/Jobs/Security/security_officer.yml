@@ -91,11 +91,18 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 9000 #2.5 hrs
+      time: 18000 #5 hours - Omu Edit: Coupled with the SecurityCadet req changes.
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
   canBeAntag: false
+  guides: # goobstation
+  - Security
+  - Legal SOP
+  - OfficerCadet SOP
+  - CorporateJudo
+  - Alert Levels
+  - SecurityTrainingManual # Omu
   goobcoins: 30 #Goob content
   access:
   - Security

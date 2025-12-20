@@ -78,6 +78,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common.Body.Components;
 using Content.Goobstation.Common.MartialArts;
 using Content.Goobstation.Shared.Body; // goob
 using Content.Server.Administration.Logs;
@@ -102,8 +103,6 @@ using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.Movement.Pulling.Components; // Goobstation
-using Content.Shared.Movement.Pulling.Systems; // Goobstation
-using Content.Goobstation.Shared.Body.Components;
 using Content.Shared._DV.CosmicCult.Components; // DeltaV
 
 // Shitmed Change
@@ -202,7 +201,7 @@ public sealed class RespiratorSystem : EntitySystem
             var multiplier = -1f;
             foreach (var (_, lung, _) in organs)
             {
-                multiplier *= lung.SaturationLoss;
+                multiplier *= lung.SaturationLoss * respirator.SaturationLoss; // Goob Edit - In a DeltaV Edit :o
             }
             // End DeltaV Code
             UpdateSaturation(uid,  multiplier * (float) respirator.UpdateInterval.TotalSeconds, respirator); // DeltaV: use multiplier instead of negating
