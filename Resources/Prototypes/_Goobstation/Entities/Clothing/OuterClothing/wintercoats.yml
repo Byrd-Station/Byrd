@@ -47,6 +47,10 @@
   - type: StaticPrice
     price: 220
   - type: Armor
+    coverage:
+    - Chest
+    - Arm
+    - Groin
     modifiers:
       coefficients:
         Blunt: 0.65
