@@ -7,10 +7,12 @@
 
 using Content.Goobstation.Common.Weapons.MeleeDash;
 using Content.Shared.Emoting;
+using Content.Shared.Gravity;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Physics;
+using Content.Shared.Popups;
 using Content.Shared.Standing;
 using Content.Shared.Throwing;
 using Content.Shared.Timing;
@@ -22,7 +24,8 @@ using Robust.Shared.Physics;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
-
+using Robust.Shared.Input.Binding;
+using Content.Shared.Input;
 namespace Content.Goobstation.Shared.Weapons.MeleeDash;
 
 public sealed class MeleeDashSystem : EntitySystem
@@ -35,6 +38,8 @@ public sealed class MeleeDashSystem : EntitySystem
     [Dependency] private readonly StandingStateSystem _standing = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly SharedGravitySystem _gravity = default!;
+    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
 
     private const int DashCollisionLayer = (int) CollisionGroup.MidImpassable;
 
@@ -103,17 +108,30 @@ public sealed class MeleeDashSystem : EntitySystem
             return;
 
         var user = args.SenderSession.AttachedEntity.Value;
-
-        if (_standing.IsDown(user))
-            return;
-
-        if (_container.IsEntityInContainer(user))
-            return;
-
         var weapon = GetEntity(msg.Weapon);
 
-        if (!TryComp(weapon, out MeleeDashComponent? dash) ||
-            !TryComp(weapon, out UseDelayComponent? delay) || _useDelay.IsDelayed((weapon, delay)))
+        if (!TryComp<MeleeDashComponent>(weapon, out var dash))
+            return;
+
+        if (_gravity.IsWeightless(user) && !dash.CanDashWhileWeightless)
+        {
+            _popupSystem.PopupClient(Loc.GetString("no-dash-while-weightless"), user, user, PopupType.Medium);
+            return;
+        }
+
+        if (_standing.IsDown(user))
+        {
+            _popupSystem.PopupClient(Loc.GetString("no-dash-while-lying"), user, user, PopupType.Medium);
+            return;
+        }
+
+        if (_container.IsEntityInContainer(user))
+        {
+            _popupSystem.PopupClient(Loc.GetString("no-dash-while-contained"), user, user, PopupType.Medium);
+            return;
+        }
+
+        if (!TryComp(weapon, out UseDelayComponent? delay) || _useDelay.IsDelayed((weapon, delay)))
             return;
 
         var length = MathF.Min(msg.Direction.Length(), dash.MaxDashLength);

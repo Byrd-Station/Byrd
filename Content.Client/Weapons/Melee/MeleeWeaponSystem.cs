@@ -97,6 +97,8 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
     [Dependency] private readonly MapSystem _map = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
     [Dependency] private readonly TransformSystem _transform = default!; // Goobstation
+    private bool wasPressedPreviously = false;
+
 
     private EntityQuery<TransformComponent> _xformQuery;
 
@@ -119,6 +121,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+
 
         if (!Timing.IsFirstTimePredicted)
             return;
@@ -152,6 +155,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             {
                 RaisePredictiveEvent(new StopAttackEvent(GetNetEntity(weaponUid)));
             }
+            wasPressedPreviously = altDown == BoundKeyState.Down;
         }
 
         if (weapon.Attacking || weapon.NextAttack > Timing.CurTime)
@@ -223,13 +227,17 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
                 return;
             }
             // WD edit end
+            if(wasPressedPreviously)
+            {
+                return;
+            }
 
-            // Dash
             if (TryComp(weaponUid, out MeleeDashComponent? dash))
             {
                 var direction = GetDirection();
                 if (direction != Vector2.Zero)
                     RaisePredictiveEvent(new MeleeDashEvent(GetNetEntity(weaponUid), direction));
+                    wasPressedPreviously = altDown == BoundKeyState.Down;
                 return;
             }
 
@@ -248,8 +256,6 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
                 return targetMap.Position - userPos;
             }
             // Goobstation end
-
-            ClientHeavyAttack(entity, coordinates, weaponUid, weapon);
             return;
         }
 

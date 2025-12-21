@@ -72,6 +72,7 @@
   - type: MeleeDash
     emoteOnDash: null
     length: 2
+    canDashWhileWeightless: false
   - type: UseDelay
     delay: 1.5
   - type: Tag
