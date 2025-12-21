@@ -1,8 +1,8 @@
 - type: entity
-  parent: ClothingBeltSheath
+  parent: [ClothingBeltBase, ClothingSlotBase, BaseSecurityContraband]
   id: ClothingBeltSheathStunsword
   name: security sword sheath
-  description: A plain black sheath, made to hold the NY-6 stunsword
+  description: A plain black sheath, made to hold the NY-6 stunsword.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Belt/stunswordsheath.rsi
