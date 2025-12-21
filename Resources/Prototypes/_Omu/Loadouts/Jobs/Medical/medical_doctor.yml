@@ -28,3 +28,12 @@
     proto: SeniorPhysician
   equipment:
     outerClothing: ClothingOuterJacketSeniorPhys
+
+# Neck
+- type: loadout
+  id: seniorphysponcho
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorPhysician
+  equipment:
+    jumpsuit: ClothingNeckSeniorMedPoncho

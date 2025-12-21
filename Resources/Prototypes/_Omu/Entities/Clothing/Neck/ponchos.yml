@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckSeniorMedPoncho
+  name: senior physician's poncho
+  description: Made in response to the senior officer's boring STUPID poncho.
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Neck/Ponchos/medponcho.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Neck/Ponchos/medponcho.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.5

@@ -1549,6 +1549,8 @@
   loadouts:
    - VirologistJumpsuit
    - VirologistJumpskirt
+   - SeniorPhysicianJumpsuit # omu
+   - SeniorPhysicianJumpskirt # omu
    - VirologistMJ # goobin
 
 - type: loadoutGroup
@@ -1566,6 +1568,7 @@
   loadouts:
    - VirologistLabCoat
    - VirologistWintercoat
+   - SeniorPhysicianLabCoat # omu
 
 - type: loadoutGroup
   id: VirologistPDA
