@@ -189,7 +189,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             if (!TryComp<AltFireMeleeComponent>(weaponUid, out var altFireComponent) || altDown != BoundKeyState.Down)
                 return;
 
-            switch(altFireComponent.AttackType)
+            switch (altFireComponent.AttackType)
             {
                 case AltFireAttackType.Light:
                     ClientLightAttack(entity, mousePos, coordinates, weaponUid, weapon);
@@ -227,17 +227,18 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
                 return;
             }
             // WD edit end
-            if(wasPressedPreviously)
+            if (wasPressedPreviously)
             {
                 return;
             }
 
+            //Dash
             if (TryComp(weaponUid, out MeleeDashComponent? dash))
             {
                 var direction = GetDirection();
                 if (direction != Vector2.Zero)
                     RaisePredictiveEvent(new MeleeDashEvent(GetNetEntity(weaponUid), direction));
-                    wasPressedPreviously = altDown == BoundKeyState.Down;
+                wasPressedPreviously = altDown == BoundKeyState.Down;
                 return;
             }
 
