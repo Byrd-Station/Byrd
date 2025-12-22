@@ -28,10 +28,10 @@
   skinColoration: HumanToned
   # begin Goobstation: port EE height/width sliders
   # Omu edit start - MORE FREEDOM FOR HARPIES!! MORE LIGHT PARROTS!! MORE HEAVY BIRDS!!
-  minHeight: 0.6
+  minHeight: 0.7
   defaultHeight: 0.8
   maxHeight: 1.2
-  minWidth: 0.55
+  minWidth: 0.75
   defaultWidth: 0.8
   maxWidth: 1.2
   # Omu edit end
