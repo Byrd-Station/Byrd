@@ -196,6 +196,8 @@
     sprite: Clothing/Head/Hats/beret_french.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/beret_french.rsi
+# - type: AddAccentClothing  omu
+#   accent: FrenchAccent   omu
   - type: Tag
     tags:
     - PetWearable
@@ -977,6 +979,8 @@
   components:
   - type: Clothing
     sprite: Clothing/Head/Hats/ushanka.rsi
+# - type: AddAccentClothing  omu
+#   accent: RussianAccent  omu
   - type: Appearance
   - type: Foldable
     canFoldInsideContainer: true
