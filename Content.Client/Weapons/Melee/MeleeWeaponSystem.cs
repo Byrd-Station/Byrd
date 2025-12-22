@@ -256,6 +256,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
                 return targetMap.Position - userPos;
             }
             // Goobstation end
+            ClientHeavyAttack(entity, coordinates, weaponUid, weapon);
             return;
         }
 
