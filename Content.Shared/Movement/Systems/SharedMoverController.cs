@@ -259,8 +259,12 @@ public abstract partial class SharedMoverController : VirtualController
             LerpRotation(uid, mover, frameTime);
             var dirtied = false;
 
+            if (_mobState.IsImmobile(relayTarget.Source) || //Funky port
+                TryComp<SleepingComponent>(relayTarget.Source, out _) ||
+                !MoverQuery.TryGetComponent(relayTarget.Source, out var relayedMover))
+            { //Funky port end
+
             if (relayTargetMover.RelativeEntity != mover.RelativeEntity)
-            {
                 relayTargetMover.RelativeEntity = mover.RelativeEntity;
                 dirtied = true;
             }

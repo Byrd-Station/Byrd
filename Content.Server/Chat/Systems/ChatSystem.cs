@@ -106,6 +106,12 @@
 // SPDX-FileCopyrightText: 2025 ash lea <ashkitten@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
+// SPDX-FileCopyrightText: 2024 kbarkevich <24629810+kbarkevich@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 duston <66768086+dch-GH@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -348,6 +354,16 @@ public sealed partial class ChatSystem : SharedChatSystem
         // and i dont feel like vibe checking 50 code paths
         // so we set this here
         // todo free me from chat code
+
+        // check if the entity is forced to whisper and convert to local whisper if yes
+        if (!ignoreActionBlocker && _actionBlocker.CanSpeak(source, out var onlyWhisper))
+        {
+            if (desiredType == InGameICChatType.Speak && onlyWhisper)
+            {
+                desiredType = InGameICChatType.Whisper;
+            }
+        }
+
         if (player != null)
         {
             _chatManager.EnsurePlayer(player.UserId).AddEntity(GetNetEntity(source));
@@ -672,7 +688,10 @@ public sealed partial class ChatSystem : SharedChatSystem
         Color? colorOverride = null // Goobstation
         )
     {
-        if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
+        if (!_actionBlocker.CanSpeak(source, out var onlyWhisper) && !ignoreActionBlocker)
+            return;
+
+        if (onlyWhisper)
             return;
 
         // The Original Message [-] Einstein Engines - Language
@@ -780,7 +799,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         Color? colorOverride = null // Goobstation
         )
     {
-        if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
+        if (!_actionBlocker.CanSpeak(source, out var onlyWhisper) && !ignoreActionBlocker)
             return;
 
         // Goob edit start
@@ -788,8 +807,15 @@ public sealed partial class ChatSystem : SharedChatSystem
         message = FormattedMessage.EscapeText(message);
         message = TransformSpeech(source, message, language); // Einstein Engines - Language
         // Goob edit end
+
+        //Funky port start - if a channel is present but the user must whisper, force it to be a local whisper
+        if (channel != null && onlyWhisper)
+            channel = null;
+
+        var message = TransformSpeech(source, FormattedMessage.RemoveMarkupOrThrow(originalMessage));
         if (message.Length == 0)
             return;
+        //Funky port end
 
         // get the entity's name by visual identity (if no override provided).
         string nameIdentity = FormattedMessage.EscapeText(nameOverride ?? Identity.Name(source, EntityManager));
