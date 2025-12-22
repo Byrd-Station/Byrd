@@ -980,7 +980,7 @@
   - type: Clothing
     sprite: Clothing/Head/Hats/ushanka.rsi
 # - type: AddAccentClothing  omu
-#   accent: RussianAccent  omu
+#   accent: RussianAccent    omu
   - type: Appearance
   - type: Foldable
     canFoldInsideContainer: true
