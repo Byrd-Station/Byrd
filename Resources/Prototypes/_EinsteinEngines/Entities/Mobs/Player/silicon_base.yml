@@ -204,7 +204,7 @@
     - type: Barotrauma # Omu
       damage:
         types:
-          Blunt: 0.20 #per second, scales with pressure and other constants.
+          Blunt: 0.25 #per second, scales with pressure and other constants.
           Heat: 0.1
     - type: Identity
     #  soundHit:
