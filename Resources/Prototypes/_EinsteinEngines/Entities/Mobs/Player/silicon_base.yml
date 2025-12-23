@@ -201,10 +201,11 @@
       damage:
         types:
           Heat: 0 # GoobStation: Replaced fire damage with overheating shutdown
-    # - type: Barotrauma # Not particularly modifiable. In the future, some response to pressure changes would be nice.
-    #   damage:
-    #     types:
-    #       Blunt: 0.28 #per second, scales with pressure and other constants.
+    - type: Barotrauma # Omu
+      damage:
+        types:
+          Heat: 0.35 #per second, scales with pressure and other constants.
+          Blunt: 0.10
     - type: Identity
     #  soundHit:
     #    path: /Audio/Effects/metalbreak.ogg
