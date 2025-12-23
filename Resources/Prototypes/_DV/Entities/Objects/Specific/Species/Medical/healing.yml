@@ -16,8 +16,8 @@
       - SiliconRadiation
     damage:
       types:
-        Heat: -0 #lowers bloodloss damage, was .5 buffed due to Limb Damage Changes (Goobstation)
-    modifyBloodLevel: -30 #used to restore 5% blood per use, now restores about 10% blood per use on standard Buffed due to Limb Damage Changes (Goobstation)
+        Heat: -0 # use cables for thiisss i tried  to remove this part but it broke my game lol
+    modifyBloodLevel: -60 # heal moreeee
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
       params:
@@ -33,3 +33,11 @@
     count: 15 #Was 10, Buffed due to limb damage changes (Goobstation)
   - type: StackPrice
     price: 10
+
+- type: entity
+  parent: Oilpack
+  id: Oilpack1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
