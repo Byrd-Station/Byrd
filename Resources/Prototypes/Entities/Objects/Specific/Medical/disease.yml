@@ -96,7 +96,7 @@
   - type: BotanySwab
   - type: GuideHelp
     guides:
-  # - Virology (when it's back)
+    - Virology # Omu
     - Botany
     - Chemicals
   - type: DiseaseSwab # Goobstation
@@ -117,9 +117,18 @@
       - BotanySwab
     proto: DiseaseSwab
     capacity: 30
+#  # Omu - Make it clickable
+#  - type: Item
+#    size: Normal
+#  - type: ContainerContainer
+#    containers:
+#      ballistic-ammo: !type:Container
+#  - type: InteractionOutline
+#  - type: Clickable
+#  # END
   - type: GuideHelp
     guides:
-  # - Virology (when it's back)
+    - Virology # Omu
     - Botany
     - Chemicals
 
