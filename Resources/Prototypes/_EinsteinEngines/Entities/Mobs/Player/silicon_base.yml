@@ -179,22 +179,22 @@
     - type: StatusIcon # Goobstation
       bounds: -0.5,-0.5,0.5,0.5
     - type: HasJobIcons # Goobstation
-    #- type: Bloodstream This is left commented out because it's not necessary for a robot, but you may want it.
-    #  damageBleedModifiers: BloodlossIPC
-    #  bloodReagent: Oil
-    #  bleedReductionAmount: 0
-    #  bloodMaxVolume: 500
-    #  chemicalMaxVolume: 0
-    #  bleedPuddleThreshold: 3
-    #  bleedRefreshAmount: 0
-    #  bloodLossThreshold: 0
-    #  maxBleedAmount: 14
-    #  bloodlossDamage:
-    #    types:
-    #      Burn: 1.5
-    #  bloodlossHealDamage:
-    #    types:
-    #      Burn: 0
+    - type: Bloodstream
+      damageBleedModifiers: BloodlossHuman
+      bloodReagent: Oil
+      bleedReductionAmount: 0
+      bloodMaxVolume: 500
+      chemicalMaxVolume: 0
+      bleedPuddleThreshold: 3
+      bleedRefreshAmount: 0
+      bloodLossThreshold: 0
+      maxBleedAmount: 14
+      bloodlossDamage:
+        types:
+          Heat: .30
+      bloodlossHealDamage:
+        types:
+          Heat: 0
     - type: Flammable
       fireSpread: true
       canResistFire: true
@@ -204,8 +204,8 @@
     - type: Barotrauma # Omu
       damage:
         types:
-          Heat: 0.35 #per second, scales with pressure and other constants.
-          Blunt: 0.10
+          Blunt: 0.40 #per second, scales with pressure and other constants.
+          Heat: 0.1
     - type: Identity
     #  soundHit:
     #    path: /Audio/Effects/metalbreak.ogg
