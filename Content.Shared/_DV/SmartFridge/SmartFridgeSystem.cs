@@ -3,16 +3,16 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Item;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Whitelist;
+using Content.Shared.DragDrop;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._DV.SmartFridge;
@@ -33,6 +33,12 @@ public sealed class SmartFridgeSystem : EntitySystem
 
         SubscribeLocalEvent<SmartFridgeComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<SmartFridgeComponent, EntRemovedFromContainerMessage>(OnItemRemoved);
+
+        // Omu Subs
+        SubscribeLocalEvent<SmartFridgeComponent, DragDropTargetEvent>(OnDragDropTarget);
+        SubscribeLocalEvent<SmartFridgeComponent, CanDropTargetEvent>(OnCanDropTarget);
+        SubscribeLocalEvent<SmartFridgeComponent, EntInsertedIntoContainerMessage>(OnItemInserted);
+        // End
 
         Subs.BuiEvents<SmartFridgeComponent>(SmartFridgeUiKey.Key,
             sub =>
@@ -145,8 +151,16 @@ public sealed class SmartFridgeSystem : EntitySystem
         if (_whitelist.IsWhitelistFail(ent.Comp.Whitelist, item) || _whitelist.IsBlacklistPass(ent.Comp.Blacklist, item))
             return false;
 
-        if (user is { Valid: true } userUid && !Allowed(ent, userUid))
-            return false;
+        // Omu - Check if the item is allowed to be inserted
+        if (user is { Valid: true } uid)
+        {
+            if (!Allowed(ent, uid))
+                return false;
+
+            if (_hands.IsHolding((uid, null), item) && !_hands.TryDrop(uid, item))
+                return false;
+        }
+        // Omu End
 
         if (container.Count >= ent.Comp.MaxContainedCount)
             return false;
@@ -164,4 +178,60 @@ public sealed class SmartFridgeSystem : EntitySystem
         return true;
     }
     // End Frontier: hacky function to insert an object
+
+    #region Omu
+    /// <summary>
+    /// Handles the actual drag & drop action onto the fridge (attempts to insert the dragged entity).
+    /// </summary>
+    private void OnCanDropTarget(Entity<SmartFridgeComponent> ent, ref CanDropTargetEvent args)
+    {
+        if (args.Handled
+            || !_container.TryGetContainer(ent, ent.Comp.Container, out var container)
+            || !HasComp<ItemComponent>(args.Dragged)
+            || _whitelist.IsWhitelistFail(ent.Comp.Whitelist, args.Dragged)
+            || _whitelist.IsBlacklistPass(ent.Comp.Blacklist, args.Dragged)
+            || !_accessReader.IsAllowed(args.User, ent))
+            return;
+
+        if (container.Count >= ent.Comp.MaxContainedCount)
+            return;
+
+        args.CanDrop = _container.CanInsert(args.Dragged, container);
+        args.Handled = true;
+    }
+
+    /// <summary>
+    /// Used by the client to determine whether this fridge can accept the dragged entity via drag-and-drop.
+    /// </summary>
+    private void OnDragDropTarget(Entity<SmartFridgeComponent> ent, ref DragDropTargetEvent args)
+    {
+        if (args.Handled
+            || !_timing.IsFirstTimePredicted
+            || !TryInsertObject(ent, args.Dragged, args.User))
+            return;
+
+        args.Handled = true;
+    }
+
+    /// <summary>
+    /// Keeps SmartFridge UI state in sync when an entity is inserted into the fridge's container.
+    /// </summary>
+    private void OnItemInserted(Entity<SmartFridgeComponent> ent, ref EntInsertedIntoContainerMessage args)
+    {
+        if (_timing.ApplyingState
+            || args.Container.ID != ent.Comp.Container)
+            return;
+
+        var key = new SmartFridgeEntry(Identity.Name(args.Entity, EntityManager));
+        if (!ent.Comp.Entries.Contains(key))
+            ent.Comp.Entries.Add(key);
+
+        ent.Comp.ContainedEntries.TryAdd(key, new());
+        var entries = ent.Comp.ContainedEntries[key];
+        if (!entries.Contains(GetNetEntity(args.Entity)))
+            entries.Add(GetNetEntity(args.Entity));
+
+        Dirty(ent);
+    }
+    #endregion
 }
