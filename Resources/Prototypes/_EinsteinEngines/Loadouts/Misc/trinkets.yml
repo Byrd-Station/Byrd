@@ -1,0 +1,9 @@
+- type: loadout
+  id: ClothingNeckUnathiMantle
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - Reptilian
+  storage:
+    back:
+    - ClothingNeckUnathiMantle
