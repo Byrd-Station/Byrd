@@ -154,6 +154,7 @@
   - Quartermaster SOP
   - Cargo SOP
   - Command
+  - CommandTrainingManual # Omu
   goobcoins: 40 #Goob content
   access:
   - Cargo
