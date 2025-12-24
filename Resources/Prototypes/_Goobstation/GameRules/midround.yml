@@ -84,7 +84,7 @@
     - prefRoles: [ Changeling ]
       min: 1
       max: 2
-      playerRatio: 25 # Omu change was 10 - 8 lings at 80 pop sob
+      playerRatio: 25 # Omu 10 --> 25
       blacklist:
         components:
         - CommandStaff
