@@ -978,8 +978,8 @@
 #    tags:
 #    - Security
 #    - Brig
-#  - type: Puller
-#    needsHands: false # Omu end / Death to validhunting Shiva
+  - type: Puller
+    needsHands: false # Omu end
   - type: LanguageKnowledge # Einstein Engines - Language
     speaks:
     - Xeno
