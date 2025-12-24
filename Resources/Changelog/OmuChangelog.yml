@@ -1359,3 +1359,229 @@ Entries:
   changes: []
   id: 164
   time: '2025-12-07T19:59:51.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Remove
+      message: Removed the Guerilla Gloves.
+  id: 165
+  time: '2025-12-08T16:12:50.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Add
+      message: >-
+        Salvager Jumpskirt added! Check your MiningDrobe or loadout screen for
+        it.
+  id: 166
+  time: '2025-12-09T13:07:56.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Shiva is now a ghostrole
+    - type: Tweak
+      message: Smile is now a bit more tanky.
+  id: 167
+  time: '2025-12-09T13:08:16.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: MORTIS voice for IPCs
+  id: 168
+  time: '2025-12-09T13:09:50.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: MORTIS should sound not broken now.
+    - type: Tweak
+      message: MORTIS is quieter.
+  id: 169
+  time: '2025-12-10T17:52:51.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: Feroxi and Harpies can be buff again, alongside other markings!
+  id: 170
+  time: '2025-12-10T17:56:14.0000000+00:00'
+- author: 3PonPon3
+  changes:
+    - type: Tweak
+      message: >-
+        Brigmedic has been officially renamed to Corpsman! Rejoice! Their SoP
+        has been slightly reworded as well.
+    - type: Tweak
+      message: >-
+        Both of the Now-Corpsman's armor (outer slot) options allow things to be
+        put in the outer suit storage slot. 
+  id: 171
+  time: '2025-12-10T18:47:04.0000000+00:00'
+- author: RedstonewolfX
+  changes:
+    - type: Add
+      message: >-
+        Medical Chemistry (Medichem) Goggles! Craftable like MedSec or MedDiag
+        HUDs. Combines the features of a Medical HUD and Chemical Analysis
+        Goggles.
+    - type: Add
+      message: >-
+        Medichem Glasses, craftable with Medichem Goggles, LV Cable, and
+        Sunglasses.
+    - type: Tweak
+      message: The Chief Medical Officer spawns with a free pair of Medichem Glasses.
+  id: 172
+  time: '2025-12-10T20:20:50.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: >-
+        midround spawns, we shouldn't get the midround blob anymore, we should
+        get heretic's and changelings at appropriate pop.
+  id: 173
+  time: '2025-12-11T12:04:56.0000000+00:00'
+- author: Scalebeard
+  changes:
+    - type: Tweak
+      message: Updated pirate accent 🏴‍☠️
+  id: 174
+  time: '2025-12-11T12:06:44.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Add
+      message: the spiders have discovered wigs. they have human hair now
+  id: 175
+  time: '2025-12-11T12:09:49.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Add
+      message: >-
+        Xelthia jackets added to med and engi loadouts, they get senior variants
+        too
+  id: 176
+  time: '2025-12-11T12:10:38.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: Removed nuclear 14 assets
+  id: 177
+  time: '2025-12-12T16:00:31.0000000+00:00'
+- author: raincally
+  changes:
+    - type: Add
+      message: vulps can take glowing eyes marking
+  id: 178
+  time: '2025-12-12T19:54:58.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Fix
+      message: 'You should no longer be able to spawn as NCT '
+  id: 179
+  time: '2025-12-13T09:59:53.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added a new CC ghostrole, Nanotrasen Spectre.
+  id: 180
+  time: '2025-12-13T21:06:01.0000000+00:00'
+- author: Kirisune
+  changes:
+    - type: Add
+      message: Full set of new corpsman gear
+    - type: Add
+      message: Corpsman hardsuit selector along with a new hardsuit.
+    - type: Tweak
+      message: Changed colour of job icon on brigmed's ID card to red from blue.
+  id: 181
+  time: '2025-12-14T10:15:48.0000000+00:00'
+- author: CliveOcelot, Richard Blonski
+  changes:
+    - type: Add
+      message: Upstream merge till 14 Dec
+  id: 182
+  time: '2025-12-14T17:40:49.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed an issue with cavity implants.
+  id: 183
+  time: '2025-12-14T19:14:17.0000000+00:00'
+- author: Dot5511
+  changes:
+    - type: Fix
+      message: Ninjas can no longer spawn in as Xelthias (Because no Ninja Gloves)
+  id: 184
+  time: '2025-12-15T08:08:16.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Tweak
+      message: >-
+        Buffed Onis! They now receive 25% less slowdown by clothing to help them
+        get into melee distance!
+    - type: Tweak
+      message: >-
+        Asakim's harnesses now slow you down by 80%, the harness isn't made for
+        small meatbags.
+    - type: Tweak
+      message: >-
+        Asakim's harness helmet now blocks facehuggers, xenos HATE this one
+        trick.
+    - type: Tweak
+      message: Asakim are now as tall as an Oni.
+    - type: Tweak
+      message: >-
+        Asakim can now accept translation implants, them not being able to was
+        unintended, now they can also write if they EVER take off the harness,
+        which probably won't happen.
+  id: 185
+  time: '2025-12-15T15:51:55.0000000+00:00'
+- author: Shy-ivy
+  changes:
+    - type: Tweak
+      message: Oni have gotten their strength and defenses back.
+  id: 186
+  time: '2025-12-17T19:47:18.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Ported corporate secrets from Funky.
+  id: 187
+  time: '2025-12-18T12:02:35.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added a weaker form of ERT
+  id: 188
+  time: '2025-12-18T12:05:10.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: Upstream till 18th December
+  id: 189
+  time: '2025-12-18T12:29:25.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Tweak
+      message: Asteroid rocks can now be breakable with blunt weapons.
+    - type: Tweak
+      message: >-
+        Basalt now makes noise when broken, asteroid rocks should be slightly
+        more audible when they break.
+  id: 190
+  time: '2025-12-18T12:31:56.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: 'Changed Qua Nar''Vulna from Judo to Capoeira '
+  id: 191
+  time: '2025-12-18T20:05:05.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Tweak
+      message: >-
+        Updated Secuirty SoP n.8, Security are now required to wear a full
+        clearly identifiable uniform.
+  id: 192
+  time: '2025-12-22T08:55:38.0000000+00:00'
+- author: Dot5511
+  changes:
+    - type: Add
+      message: Nanotrasen Career Trainer now can spawn in Cog!
+  id: 193
+  time: '2025-12-22T08:57:38.0000000+00:00'
