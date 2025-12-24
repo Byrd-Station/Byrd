@@ -1949,7 +1949,7 @@
   description: uplink-cat-ears-desc
   productEntity: ClothingHeadHatCatEars
   cost:
-    Telecrystal: 2 # goob
+    Telecrystal: 2 # omu
   categories:
   - UplinkPointless
 
@@ -2031,7 +2031,7 @@
   description: uplink-balloon-desc
   productEntity: BalloonSyn
   cost:
-    Telecrystal: 1 # goob
+    Telecrystal: 1 # omu
   categories:
   - UplinkPointless
 
