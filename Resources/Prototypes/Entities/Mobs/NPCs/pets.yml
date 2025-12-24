@@ -961,25 +961,25 @@
     - FootstepSound
   - type: StealTarget
     stealGroup: AnimalShiva
-  - type: SolutionContainerManager # Omu start
-    solutions:
-      melee:
-        maxVol: 12
-  - type: SolutionRegeneration
-    solution: melee
-    generated:
-      reagents:
-      - ReagentId: Nocturine
-        Quantity: 0.1
-  - type: MeleeChemicalInjector
-    solution: melee
-    transferAmount: 3
-  - type: Access
-    tags:
-    - Security
-    - Brig
-  - type: Puller
-    needsHands: false # Omu end
+#  - type: SolutionContainerManager # Omu start / Death to validhunting Shiva
+#    solutions:
+#      melee:
+#        maxVol: 12
+#  - type: SolutionRegeneration
+#    solution: melee
+#    generated:
+#      reagents:
+#      - ReagentId: Nocturine
+#        Quantity: 0.1
+#  - type: MeleeChemicalInjector
+#    solution: melee
+#    transferAmount: 3
+#  - type: Access
+#    tags:
+#    - Security
+#    - Brig
+#  - type: Puller
+#    needsHands: false # Omu end / Death to validhunting Shiva
   - type: LanguageKnowledge # Einstein Engines - Language
     speaks:
     - Xeno
