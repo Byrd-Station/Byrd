@@ -1,0 +1,14 @@
+- type: reaction
+  id: VeganSyrup #no diona murder here
+  impact: Low
+  minTemp: 377
+  reactants:
+    Water:
+      amount: 1
+    Sugar:
+      amount: 1
+  effects:
+  - !type:CreateGas
+    gas: WaterVapor
+  products:
+    Syrup: 1
