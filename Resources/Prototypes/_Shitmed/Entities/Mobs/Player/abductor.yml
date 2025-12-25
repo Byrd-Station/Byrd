@@ -41,6 +41,7 @@
       - CanPilot
       - FootstepSound
       - DoorBumpOpener
+  - type: TranslatorImplantBlocker # Omu, no translators for abductors.
 
 - type: entity
   name: lone abductor
