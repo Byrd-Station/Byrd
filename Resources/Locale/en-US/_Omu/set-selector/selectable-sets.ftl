@@ -110,7 +110,7 @@ selectable-set-corpsman-combathardsuit-desc =
     Built based on designs recovered from Regalis sector.
     Offers much better armor then newer models.
 
-selectable-set-syndicate-waffle-name = Waffle Warrior
+selectable-set-syndicate-waffle-name = Waffle Warrior Bundle
 selectable-set-syndicate-waffle-description = 
     Waffle Co. has found their new champion. 
     Don the old uniform of a Waffle Co. cook and feed people. Be it waffle or KNUCKLE SANDWICH.

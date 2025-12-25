@@ -160,7 +160,7 @@
   parent: [ClothingUniformBase, BaseSyndicateContraband]
   id: ClothingUniformJumpsuitWaffleCo
   name: waffle co. cook uniform
-  description: You're gonna be serving some right hooks! And maybe a little bit of left hooks on the side.
+  description: Can I get a waffle? CAN I PLEASE GET A WAFFLE
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Uniforms/Jumpsuit/waffleco.rsi
@@ -179,6 +179,3 @@
         Blunt: 0.75
         Slash: 0.85
         Heat: 0.85
-  - type: ClothingSpeedModifier
-    walkModifier: 1.1
-    sprintModifier: 1.1

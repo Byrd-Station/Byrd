@@ -159,7 +159,9 @@
   - MagazinePistolCaselessRifle
   - MagazinePistolCaselessRifle
   - MagazinePistolCaselessRifle
-  - CQCManual
+  - MagazinePistolCaselessRifle
+  - EnergyDaggerBox
+  - CapoeiraManual
   - ClothingOuterArmourInvisibleSyndie
   - ClothingShoesBootsJack
   - CigPackSyndicate
@@ -167,6 +169,7 @@
   - ClothingEyesGlassesSunglasses
   - ClothingUniformJumpsuitDetectiveGrey
   - ClothingHandsGlovesCombat
+  - AgentIDCard
 
 - type: selectableSet
   id: SyndicateImplantsSet

@@ -60,8 +60,8 @@ selectable-set-syndicate-spy-description =
 selectable-set-syndicate-hitman-name = Hitman Bundle
 selectable-set-syndicate-hitman-description =
     Find and eliminate your targets quietly and effectively with this bundle.
-    Contains: Cobra pistol with 3 extra mags, CQC manual,
-    a special invisible armor vest, Interdyne herbals packet,
+    Contains: Cobra pistol with 4 extra mags, Capoeira manual, energy dagger
+    a special invisible armor vest, Interdyne herbals packet, agent ID card
     combat medkit, a stylish look and a syndicate encryption key.
 
 selectable-set-syndicate-implants-name = Cyberpsychosis Bundle
