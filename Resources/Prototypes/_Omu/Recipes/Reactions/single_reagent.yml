@@ -1,5 +1,6 @@
 - type: reaction
   id: VeganSyrup #no diona murder here
+  priority: -1
   impact: Low
   minTemp: 377
   reactants:
