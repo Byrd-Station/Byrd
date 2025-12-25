@@ -220,3 +220,30 @@
     state: icon
   content:
   - ClothingOuterHardsuitCorpsman
+
+- type: selectableSet
+  id: SyndicateWaffleSet
+  name: selectable-set-syndicate-waffle-name
+  description: selectable-set-syndicate-waffle-description
+  sprite:
+    sprite: _Omu/Clothing/Head/soft/wafflecap.rsi
+    state: icon
+  content:
+    - EncryptionKeySyndie
+    - SleepingCarpScroll
+    - ClothingUniformJumpsuitWaffleCo
+    - ClothingOuterApronWaffleCo
+    - ClothingHeadHatWaffleCook
+    - ClothingShoesChameleonNoSlips
+    - MedkitCombatFilled
+    - ClothingEyesGlassesSunglasses
+    - FoodBakedWaffle
+    - FoodBakedWaffle
+    - FoodBakedWaffle
+    - FoodBakedWaffle
+    - FoodBakedWaffle
+    - FoodBakedWaffle
+    - FoodBakedWaffle
+    - FoodBakedWaffle
+    - FoodBakedWaffle
+    - FoodBakedWaffle

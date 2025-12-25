@@ -109,3 +109,10 @@ selectable-set-corpsman-combathardsuit-desc =
     Older model of corpsman's hardsuit.
     Built based on designs recovered from Regalis sector.
     Offers much better armor then newer models.
+
+selectable-set-syndicate-waffle-name = Waffle Warrior
+selectable-set-syndicate-waffle-description = 
+    Waffle Co. has found their new champion. 
+    Don the old uniform of a Waffle Co. cook and feed people. Be it waffle or KNUCKLE SANDWICH.
+    Contains: a sleeping carp scroll, no slip shoes, a full combat medkit,
+     sunglasses, an armored uniform, a syndicate encryption key, and some waffles.

@@ -155,3 +155,30 @@
     sprite: _Omu/Clothing/Uniforms/Jumpsuit/cybersunparamed.rsi
   - type: Clothing
     sprite: _Omu/Clothing/Uniforms/Jumpsuit/cybersunparamed.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseSyndicateContraband]
+  id: ClothingUniformJumpsuitWaffleCo
+  name: waffle co. cook uniform
+  description: You're gonna be serving some right hooks! And maybe a little bit of left hooks on the side.
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Uniforms/Jumpsuit/waffleco.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Uniforms/Jumpsuit/waffleco.rsi
+  - type: Armor
+    coverage:
+    - Chest
+    - Groin
+    - Arm
+    - Hand
+    - Leg
+    - Foot
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.85
+        Heat: 0.85
+  - type: ClothingSpeedModifier
+    walkModifier: 1.1
+    sprintModifier: 1.1
