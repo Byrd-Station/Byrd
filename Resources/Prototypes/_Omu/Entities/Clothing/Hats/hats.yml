@@ -50,9 +50,9 @@
   description: We don't start boxing 'til the customers show up.
   components:
   - type: Sprite
-    sprite: _Omu/Clothing/Head/soft/wafflecap.rsi
+    sprite: _Omu/Clothing/Head/Soft/wafflecap.rsi
   - type: Clothing
-    sprite: _Omu/Clothing/Head/soft/wafflecap.rsi
+    sprite: _Omu/Clothing/Head/Soft/wafflecap.rsi
   - type: Armor
     coverage:
     - Head
