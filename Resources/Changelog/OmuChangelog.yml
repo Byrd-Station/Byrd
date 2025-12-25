@@ -1585,3 +1585,9 @@ Entries:
       message: Nanotrasen Career Trainer now can spawn in Cog!
   id: 193
   time: '2025-12-22T08:57:38.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: Alters midround antags - no more midround ling doubling the C-ling count
+  id: 194
+  time: '2025-12-24T21:50:46.0000000+00:00'
