@@ -114,4 +114,10 @@
   - BrigmedicHeadset
   - BrigmedicAltHeadset
 
-
+# doctor
+- type: loadoutGroup
+  id: MedicalNeck
+  name: loadout-group-medical-neck
+  minLimit: 0
+  loadouts:
+  - seniorphysponcho

@@ -1549,13 +1549,6 @@
   - NurseHat
 
 - type: loadoutGroup
-  id: MedicalNeck
-  name: loadout-group-medical-neck
-  minLimit: 0
-  loadouts:
-  - seniorphysponcho
-
-- type: loadoutGroup
   id: MedicalDoctorJumpsuit
   name: loadout-group-medical-doctor-jumpsuit
   loadouts:
@@ -1596,8 +1589,8 @@
   name: loadout-group-medical-doctor-shoes
   loadouts:
   - WhiteShoes
-  - BlueShoes
-  - BrownShoes
+  - BlueShoes #omu
+  - BrownShoes #omu
   - MedicalWinterBoots
 
 - type: loadoutGroup

@@ -752,7 +752,7 @@
   - GroupTankHarness
   - ChemistHead # Goobstation
   - MedicalMask
-  - MedicalNeck
+  - MedicalNeck #omu
   - ChemistJumpsuit
   - MedicalGloves
   - ChemistBackpack
@@ -772,7 +772,7 @@
   groups:
   - GroupTankHarness
   - ParamedicHead
-  - MedicalNeck
+  - MedicalNeck #omu
   - MedicalMask
   - ParamedicJumpsuit
   - MedicalGloves
