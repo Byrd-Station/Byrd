@@ -40,8 +40,8 @@
     damageModifierSet: StructuralMetallic
   - type: Physics
     bodyType: Static
-  - type: Reflect
-    reflectProb: 1
+  - type: Reflect 
+    reflectProb: 0.3 # Omu, lower reflect chance
   - type: Pullable
   - type: Airtight
     noAirWhenFullyAirBlocked: false
@@ -93,7 +93,7 @@
     key: walls
     base: state
   - type: Appearance
-  - type: Reflect
-    reflectProb: 1
+  - type: Reflect 
+    reflectProb: 0.3 # Omu, lower reflect chance
   - type: RustRequiresPathStage
     pathStage: 10 # Ascension
