@@ -226,7 +226,7 @@
   name: selectable-set-syndicate-waffle-name
   description: selectable-set-syndicate-waffle-description
   sprite:
-    sprite: _Omu/Clothing/Head/soft/wafflecap.rsi
+    sprite: _Omu/Clothing/Head/Soft/wafflecap.rsi
     state: icon
   content:
     - EncryptionKeySyndie
