@@ -185,6 +185,7 @@ marking-VulpTailOtie = Vulpkanin Otie
 marking-VulpTailFluffy-fluffy = Fluffy tail
 marking-VulpTailFluffy = Vulpkanin Fluffy
 
+# from omustation
 marking-VulpTailFluffyTip-fluffy = Fluffy tail (base)
 marking-VulpTailFluffyTip-fluffy-tip = Fluffy tail (tip)
 marking-VulpTailFluffyTip = Vulpkanin Fluffy (tip)
