@@ -146,7 +146,7 @@ using Robust.Shared.Map.Events;
 
 namespace Content.IntegrationTests.Tests
 {
-    [TestFixture]
+    [TestFixture, NonParallelizable] // Omu edit, NonParallelizable
     public sealed class PostMapInitTest
     {
         private const bool SkipTestMaps = true;
