@@ -63,21 +63,21 @@
         whitelist:
           tags:
             - CartridgeCaselessRifle
-  - type: ExtendDescription
-    descriptionList:
-      - description: "gun-suppressed"
-        fontSize: 10
-        color: "#ff4f00"
-        requireDetailRange: false
+#  - type: ExtendDescription
+#    descriptionList:
+#      - description: "gun-suppressed"
+#        fontSize: 10
+#        color: "#ff4f00"
+#        requireDetailRange: false
 
 - type: entity
   name: antique BRDI R-25
-  parent: WeaponSubMachineGunBRDIR25
+  parent: [WeaponSubMachineGunBRDIR25, BaseGrandTheftContraband]
   id: WeaponSubMachineGunBRDIR25HoS
   description: Once wielded by an unknown member of the Biesel Foreign Legion, this beloved rifle has seen battle with Sol on every world in the colonies.
   components:
     - type: StealTarget
-      stealGroup: HoSAntiqueWeapon
+      stealGroup: WeaponEnergyGunLawbringer # Omu
     - type: Sprite
       sprite: _DEN/Objects/Weapons/Guns/SMGs/BRDI_R25_decorated.rsi # The Den sprites
     - type: Clothing
