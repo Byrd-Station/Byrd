@@ -33,6 +33,7 @@
     ClothingUniformSyndicateCombat: 3
     ClothingUniformTacticalTurtleneckFormal: 3
     ClothingMaskBalaclava: 2
+    ClothingMaskBalaclavaThreeHole: 2
     # OmuStation Changes End.
   contrabandInventory:
     ToyFigurineFootsoldier: 1
