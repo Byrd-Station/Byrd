@@ -4,7 +4,7 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/27/2025 14:13:16
+  time: 12/27/2025 14:17:07
   entityCount: 9183
 maps:
 - 1
@@ -4416,7 +4416,7 @@ entities:
       pos: 4.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4280.966
+      secondsUntilStateChange: -4502.912
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -4779,11 +4779,25 @@ entities:
     - type: Transform
       pos: 3.5,-19.5
       parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        230:
+        - - DoorStatus
+          - DoorBolt
   - uid: 230
     components:
     - type: Transform
       pos: 4.5,-18.5
       parent: 2
+    - type: DeviceLinkSink
+      invokeCounter: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        229:
+        - - DoorStatus
+          - DoorBolt
 - proto: AirSensor
   entities:
   - uid: 231
