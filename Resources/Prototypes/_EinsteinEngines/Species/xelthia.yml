@@ -11,7 +11,7 @@
   maleFirstNames: NamesXelthiaFirst
   femaleFirstNames: NamesXelthiaFirst
   lastNames: NamesXelthiaLast
-  minHeight: 0.8
+  minHeight: 0.8 # Omu 0.7 -> 0.8
   defaultHeight: 0.95
   maxHeight: 1.25
   minWidth: 0.75
