@@ -1571,3 +1571,31 @@ Entries:
       message: 'Changed Qua Nar''Vulna from Judo to Capoeira '
   id: 191
   time: '2025-12-18T20:05:05.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Tweak
+      message: >-
+        Updated Secuirty SoP n.8, Security are now required to wear a full
+        clearly identifiable uniform.
+  id: 192
+  time: '2025-12-22T08:55:38.0000000+00:00'
+- author: Dot5511
+  changes:
+    - type: Add
+      message: Nanotrasen Career Trainer now can spawn in Cog!
+  id: 193
+  time: '2025-12-22T08:57:38.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: Alters midround antags - no more midround ling doubling the C-ling count
+  id: 194
+  time: '2025-12-24T21:50:46.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: >-
+        Limit of 10 flesh stalkers now, BUT they are buffed, you should tase em,
+        holy em or freeze em now!
+  id: 195
+  time: '2025-12-27T07:54:48.0000000+00:00'
