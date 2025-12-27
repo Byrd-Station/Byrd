@@ -8,3 +8,6 @@ loadout-group-bso-belt = Blueshield Officer belt
 loadout-group-corpsman-glasses = Corpsman glasses
 loadout-group-corpsman-belt = Corpsman belt
 loadout-group-corpsman-headset = Corpsman headset
+
+# Mask
+loadout-group-mask-balaclava = Balaclava masks

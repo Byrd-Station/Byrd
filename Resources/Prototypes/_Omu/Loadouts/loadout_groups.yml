@@ -114,4 +114,13 @@
   - BrigmedicHeadset
   - BrigmedicAltHeadset
 
+# Mask
+- type: loadoutGroup
+  id:  MaskSecurityBalaclava
+  name: loadout-group-mask-balaclava
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - SecurityBalaclavaMask
+  - SecurityBalaclavaThreeHoleMask
 

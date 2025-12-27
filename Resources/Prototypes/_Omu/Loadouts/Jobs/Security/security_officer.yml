@@ -12,3 +12,14 @@
     proto: SeniorOfficer
   equipment:
     belt: ClothingBeltSheathStunswordFilled
+
+# Mask / Face
+- type: loadout
+  id: SecurityBalaclavaMask
+  equipment:
+    mask: ClothingMaskBalaclava
+
+- type: loadout
+  id: SecurityBalaclavaThreeHoleMask
+  equipment:
+    mask: ClothingMaskBalaclavaThreeHole

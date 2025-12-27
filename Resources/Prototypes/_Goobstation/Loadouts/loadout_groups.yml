@@ -1036,6 +1036,8 @@
   minLimit: 0
   loadouts:
   - BlueshieldOfficerMaskLollypop
+  - SecurityBalaclavaMask # Omu
+  - SecurityBalaclavaThreeHoleMask # Omu
 
 - type: loadoutGroup
   id: BlueshieldOfficerShoes

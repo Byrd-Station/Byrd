@@ -592,6 +592,7 @@
   - SecurityMelee # Goobstation
   - SecurityBelt
   - HeadofSecurityOuterClothing
+  - MaskSecurityBalaclava # Omu
   - HeadofSecurityShoes # Goobstation edit
   - SurvivalSecurity
   - Trinkets
@@ -614,6 +615,7 @@
   - SecurityNeck
   - SecurityBelt
   - WardenOuterClothing
+  - MaskSecurityBalaclava # Omu
   - SecurityShoes
   - SurvivalSecurity
   - Trinkets
@@ -633,6 +635,7 @@
   - SecurityBackpack
   - SecurityMelee # Goobstation
   - SecurityOuterClothing
+  - MaskSecurityBalaclava # Omu
   - SecurityShoes
   - SecurityNeck
   - SecurityPDA
@@ -655,6 +658,7 @@
   - DetectiveJumpsuit
   - SecurityBackpack
   - DetectiveOuterClothing
+  - MaskSecurityBalaclava # Omu
   - SecurityShoes
   - SurvivalSecurity
   - Trinkets
@@ -676,6 +680,7 @@
   - SurvivalSecurity
   - SecurityNeck
   - SecurityOuterClothing # Goobstation - Why not.
+  - MaskSecurityBalaclava # Omu
   - Trinkets
   - Animals
   - GroupSpeciesBreathToolSecurity
