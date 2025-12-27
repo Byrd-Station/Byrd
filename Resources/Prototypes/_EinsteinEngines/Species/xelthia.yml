@@ -14,7 +14,7 @@
   minHeight: 0.8 # Omu 0.7 -> 0.8
   defaultHeight: 0.95
   maxHeight: 1.25
-  minWidth: 0.75
+  minWidth: 0.75 # Omu 0.65 -> 0.75
   defaultWidth: 0.95
   maxWidth: 1.3
 
