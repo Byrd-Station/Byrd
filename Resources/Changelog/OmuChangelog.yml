@@ -1591,3 +1591,31 @@ Entries:
       message: Alters midround antags - no more midround ling doubling the C-ling count
   id: 194
   time: '2025-12-24T21:50:46.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: >-
+        Limit of 10 flesh stalkers now, BUT they are buffed, you should tase em,
+        holy em or freeze em now!
+  id: 195
+  time: '2025-12-27T07:54:48.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: Upstream till the 26th December
+    - type: Add
+      message: Added Virology spawns to all maps that need it.
+    - type: Tweak
+      message: Pink Xenobio slimes will now make Weh juice instead of Genderfluid.
+    - type: Fix
+      message: Fixed Polymorph issues from Upstream.
+    - type: Fix
+      message: >-
+        Fixed a rare crash that is caused by an entity that is polymorphed
+        multiple times being reverted.
+    - type: Remove
+      message: Removed Genderfluid.
+    - type: Remove
+      message: Removed Serpentcrest from the map rotation.
+  id: 196
+  time: '2025-12-27T11:33:36.0000000+00:00'
