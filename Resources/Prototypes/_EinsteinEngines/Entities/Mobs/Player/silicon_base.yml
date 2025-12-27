@@ -186,8 +186,6 @@
       bloodMaxVolume: 500
       chemicalMaxVolume: 0
       bleedPuddleThreshold: 3
-      bleedRefreshAmount: 0
-      bloodLossThreshold: 0
       maxBleedAmount: 14
       bloodlossDamage:
         types:
