@@ -74,6 +74,7 @@
             Paramedic: [ 2, 2 ]
             MedicalIntern: [ 1, 2 ]
             Psychologist: [ 1, 1 ]
+            Virologist: [ 2, 2 ] # Omu
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 4, 4 ]
@@ -96,6 +97,7 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
+            RadioHost: [ 1, 1 ] # Omu - Radio Host
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
