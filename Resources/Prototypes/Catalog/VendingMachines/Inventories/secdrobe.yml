@@ -72,6 +72,7 @@
     ClothingHeadHelmetJustice: 1
     ClothingHeadHelmetBasic: 2
     ClothingHeadHelmetBasicAlt: 2
+    ClothingMaskBalaclava: 2 # Omu
   contrabandInventory:
     ClothingMaskClownSecurity: 1
     ClothingMaskMimeSecurity: 1

@@ -1,0 +1,22 @@
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskBalaclava
+  name: balaclava
+  description: Face mask intended for keeping your face warm in cold environments
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Mask/balaclava.rsi/
+  - type: Clothing
+    sprite: _Omu/Clothing/Mask/balaclava.rsi/
+  - type: IdentityBlocker
+  - type: IngestionBlocker
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - HidesHair
+    - HamsterWearable
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      HeadTop: HEAD
+      HeadSide: HEAD
