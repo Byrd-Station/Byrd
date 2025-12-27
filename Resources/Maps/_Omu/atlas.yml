@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/27/2025 14:17:07
-  entityCount: 9183
+  time: 12/27/2025 14:23:17
+  entityCount: 9184
 maps:
 - 1
 grids:
@@ -4416,7 +4416,7 @@ entities:
       pos: 4.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4502.912
+      secondsUntilStateChange: -4858.545
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -50438,6 +50438,14 @@ entities:
       - SurveillanceCameraService
       nameSet: True
       id: Chaplain
+  - uid: 8680
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -5.5,-10.5
+      parent: 2
+    - type: SurveillanceCamera
+      id: Library
 - proto: SurveillanceCameraSupply
   entities:
   - uid: 7618
