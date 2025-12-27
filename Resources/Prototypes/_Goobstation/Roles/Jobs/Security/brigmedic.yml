@@ -41,7 +41,8 @@
   - !type:AddComponentSpecial
     components:
     - type: SurgerySpeedModifier
-      speedModifier: 1.25 # Same as Paramedic
+      speedModifier: 1.25 # same as every med
+    - type: CPRTraining
 
 - type: chameleonOutfit
   id: BrigmedicChameleonOutfit

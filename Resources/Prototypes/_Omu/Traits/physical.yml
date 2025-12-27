@@ -23,7 +23,7 @@
       - BorgChassis
   functions:
     - !type:TraitModifyDensity
-      densityModifier: 55
+      densityModifier: 92
   globalCost: 4
 
 - type: trait
@@ -232,3 +232,54 @@
   - !type:WeightRequirement # too heavy for uppies
     minimumWeight: 40
     inverted: true
+
+- type: trait
+  id: SurgeryTraining
+  name: trait-surgery-training-name
+  description: trait-surgery-training-desc
+  category: PhysicalTraits
+  components:
+  - type: SurgerySpeedModifier
+    speedModifier: 1.5
+  globalCost: 2
+
+- type: trait
+  id: CPRTrainingTrait
+  name: trait-cpr-training-name
+  description: trait-cpr-training-desc
+  category: PhysicalTraits
+  components:
+  - type: CPRTraining
+  globalCost: 1
+
+# Harpy-specific traits
+- type: trait
+  id: HarpyEndurance
+  name: trait-harpy-endurance-name
+  description: trait-harpy-endurance-desc
+  category: PhysicalTraits
+  requirements:
+  - !type:SpeciesRequirement
+    species:
+      - Harpy
+  functions:
+    - !type:TraitModifyFlight
+      staminaDrainRate: 8.0
+      staminaRegenMultiplier: 0.5
+  globalCost: 2
+
+- type: trait
+  id: HeavyHarpyDash
+  name: trait-heavy-harpy-dash-name
+  description: trait-heavy-harpy-dash-desc
+  category: PhysicalTraits
+  requirements:
+  - !type:SpeciesRequirement
+    species:
+      - Harpy
+  - !type:WeightRequirement
+    minimumWeight: 60
+  components:
+    - type: DashAction
+      actionProto: ActionDashGeneric
+  globalCost: 1

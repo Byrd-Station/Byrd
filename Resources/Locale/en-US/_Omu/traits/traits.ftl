@@ -72,3 +72,24 @@ trait-small-shit-name = Very Smol
 trait-small-shit-desc =
     You are tiny. So teeny tiny it makes you incredibly puntable to everyone around you.
     On the bright side, you are small enough to snugly fit inside large containers like duffle bags.
+
+
+trait-surgery-training-name = Surgeon
+trait-surgery-training-desc =
+    You have studied surgical technique and practice it regularly.
+    Surgical steps you perform are completed more quickly, letting you start and finish complex procedures faster.
+
+trait-cpr-training-name = Lifesaver
+trait-cpr-training-desc =
+    You have received formal CPR training and know how to perform it under pressure.
+    Performing CPR takes less time and has an improved chance of resuscitation.
+
+trait-harpy-endurance-name = Enduring Wings
+trait-harpy-endurance-desc =
+    Your wings are built for longer flights.
+    You expend stamina more slowly while flying.
+
+trait-heavy-harpy-dash-name = Heavy Runner
+trait-heavy-harpy-dash-desc =
+    As a heavy harpy, you sprint with your legs rather than sustained flight.
+    Your flight ability is replaced with a burst dash action, trading continuous flight for short powerful sprints.
