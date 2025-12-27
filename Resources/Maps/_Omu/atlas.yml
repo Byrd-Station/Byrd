@@ -36265,8 +36265,6 @@ entities:
       pos: 1.5,-20.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 445
     - type: AtmosPipeColor
@@ -36689,8 +36687,6 @@ entities:
       pos: -1.5,-20.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 445
     - type: AtmosPipeColor
@@ -37041,8 +37037,6 @@ entities:
       pos: 2.5,-20.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 445
     - type: AtmosPipeColor
@@ -37618,8 +37612,6 @@ entities:
       pos: -2.5,-20.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 445
     - type: AtmosPipeColor
