@@ -28,7 +28,7 @@
   description: Face mask intended for keeping your face warm in cold environments
   components:
   - type: Sprite
-    sprite: _Omu/Clothing/Mask/balaclava/one_hole_balaclava.rsi
+    sprite: _Omu/Clothing/Mask/balaclava/three_hole_balaclava.rsi/
   - type: Clothing
-    sprite: _Omu/Clothing/Mask/balaclava/one_hole_balaclava.rsi
+    sprite: _Omu/Clothing/Mask/balaclava/three_hole_balaclava.rsi/
 
