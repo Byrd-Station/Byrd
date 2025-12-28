@@ -899,10 +899,10 @@
     - TranslatorImplanters # Language
   - type: Machine
     board: MedicalTechFabCircuitboard
-  - type: EmagLatheRecipes # Goobstation Packs
+  - type: EmagLatheRecipes 
     emagStaticPacks:
-    - SyndicateCatridgesStatic
-    - EmagSyringeGunStatic
+    - SyndicateCatridgesStatic # goob
+    - EmagSyringeGunStatic #omu
   - type: StealTarget
     stealGroup: MedicalTechFabCircuitboard
 
