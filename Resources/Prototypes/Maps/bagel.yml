@@ -97,12 +97,12 @@
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_lox.yml
         - type: StationJobs
-          availableJobs: # 60 jobs total w/o latejoins & interns, 77 jobs total w/ latejoins & interns
+          availableJobs: # Omu 90 Jobs overall, 86 if you don't consider Admin only or trasnfer prisoners
             #command (7)
             Captain: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
-            #service
+            #service 16
             HeadOfPersonnel: [ 1, 1 ]
             AdministrativeAssistant: [ 1, 1 ] # Delta V
             Bartender: [ 1, 2 ]
@@ -112,22 +112,23 @@
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 2, 2 ]
-            #engineering
+            #engineering 12
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
             StationEngineer: [ 4, 4 ]
             TechnicalAssistant: [ 4, 4 ]
-            #medical
+            #medical 14
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 2, 2 ]
             MedicalDoctor: [ 3, 3 ]
-            Paramedic: [ 1, 1 ]
+            Paramedic: [ 2, 2 ] # Omu 1 -> 2
+            Virologist: [ 2, 2 ] # Omu
             MedicalIntern: [ 4, 4 ]
-            #science
+            #science 10
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 5, 5 ]
             ResearchAssistant: [ 4, 4 ] #intern, not counted
-            #security (10)
+            #security 16 + 2 transfers
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
             SecurityOfficer: [ 6, 6 ]
@@ -136,19 +137,19 @@
             Lawyer: [ 2, 2 ]
             Brigmedic: [ 1, 1 ]
             TransitPrisoner: [2, 2] # Omu - Prisoner role
-            #supply
+            #supply 7
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 3, 3 ]
-            #civilian
+            #civilian 5
             Passenger: [ -1, -1 ]
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
-            Reporter: [ 2, 2 ]
-            #TODO Omu map RadioHost: [ 1, 1 ]
-            #silicon
+            Reporter: [ 1, 1 ] # Omu 2 -> 1
+            RadioHost: [ 1, 1 ] # Omu
+            #silicon 3
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
-
+            #others 2
             NanotrasenCareerTrainer: [ 2, 2] # Omu
