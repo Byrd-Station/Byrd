@@ -4,7 +4,7 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/28/2025 11:58:42
+  time: 12/28/2025 12:08:16
   entityCount: 27523
 maps:
 - 1
@@ -4012,6 +4012,7 @@ entities:
             3423: 9,-62
             3424: 9,-61
             3425: 9,-60
+            3915: 3,-70
         - node:
             color: '#334E6DC8'
             id: QuarterTileOverlayGreyscale270
@@ -4295,6 +4296,7 @@ entities:
             2501: -4,-58
             2502: -3,-58
             2503: -2,-58
+            3916: 5,-70
         - node:
             color: '#F5DB9E96'
             id: QuarterTileOverlayGreyscale270
@@ -11612,7 +11614,7 @@ entities:
       pos: 24.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -44731.168
+      secondsUntilStateChange: -45231.938
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -82818,7 +82820,7 @@ entities:
       pos: -34.5,-14.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -38919.707
+      secondsUntilStateChange: -39420.477
       state: Closing
   - uid: 13393
     components:
@@ -83311,7 +83313,7 @@ entities:
       pos: -4.5,-71.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -30667.45
+      secondsUntilStateChange: -31168.22
       state: Closing
   - uid: 14038
     components:
