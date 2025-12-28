@@ -97,7 +97,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
     [Dependency] private readonly MapSystem _map = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
     [Dependency] private readonly TransformSystem _transform = default!; // Goobstation
-    private bool wasPressedPreviously = false;
+    private bool wasPressedPreviously = false; //Omu
 
 
     private EntityQuery<TransformComponent> _xformQuery;
@@ -155,7 +155,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             {
                 RaisePredictiveEvent(new StopAttackEvent(GetNetEntity(weaponUid)));
             }
-            wasPressedPreviously = altDown == BoundKeyState.Down;
+            wasPressedPreviously = altDown == BoundKeyState.Down; //Omu
         }
 
         if (weapon.Attacking || weapon.NextAttack > Timing.CurTime)
@@ -227,18 +227,18 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
                 return;
             }
             // WD edit end
-            if (wasPressedPreviously)
+            if (wasPressedPreviously) // Omu
             {
                 return;
             }
 
-            //Dash
+            // Dash
             if (TryComp(weaponUid, out MeleeDashComponent? dash))
             {
                 var direction = GetDirection();
                 if (direction != Vector2.Zero)
                     RaisePredictiveEvent(new MeleeDashEvent(GetNetEntity(weaponUid), direction));
-                wasPressedPreviously = altDown == BoundKeyState.Down;
+                wasPressedPreviously = altDown == BoundKeyState.Down; // Omu - removed autofire from dashes by making it only trigger once per state change.
                 return;
             }
 
