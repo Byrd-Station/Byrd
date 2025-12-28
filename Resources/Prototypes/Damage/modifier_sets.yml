@@ -102,12 +102,12 @@
   id: Rock
   coefficients:
     Structural: 4
-    Blunt: 0.5
+    Blunt: 4 # Omu change - 0.25 - 4 / PKAs can now be used to break both station rock and lavaland rock
     Slash: 0.25
     Piercing: 0.75
     Heat: 0.9
-  flatReductions:
-    Blunt: 5
+  # flatReductions: # Omu change - PKAs can now be used to break both station rock and lavaland rock
+  #  Blunt: 5
 
 - type: damageModifierSet
   id: PerforatedMetallic
@@ -217,8 +217,8 @@
   id: Slime
   coefficients:
     Blunt: 0.6
-    Slash: 1.2
-    Piercing: 1.2
+    Slash: 1.15 # Goob edit
+    Piercing: 1.15 # Goob edit
     Cold: 1.5
     Poison: 0.8
   ignoreArmorPierceFlags: All # Goobstation

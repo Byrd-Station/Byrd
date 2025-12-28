@@ -1,0 +1,33 @@
+- type: loadoutEffectGroup
+  id: SeniorNanotrasenRepresentative
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobNanotrasenRepresentative
+      time: 187200
+
+
+# Mask
+- type: loadout
+  id: NanotrasenRepresentativerMaskLollypop
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorNanotrasenRepresentative
+  equipment:
+    mask: FoodSnackLollypopCentcomm
+
+# Jumpsuits
+- type: loadout
+  id: CCAgentJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomAgent
+  groupBy: "jumpsuit"
+
+
+- type: loadout
+  id: CCAgentJumpskirt
+  equipment:
+    jumpsuit: CentcomAgentSkirt
+  groupBy: "jumpskirt"
+

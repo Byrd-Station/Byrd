@@ -133,6 +133,7 @@
   - Visitor
   - Zookeeper
   - ServiceWorker
+  - PartyMaker # event-restricted, Goobstation
 
 - type: department
   id: CentralCommand
@@ -191,6 +192,7 @@
   - ERTEngineer
   - DeathSquad
   - HecuOperative
+  - CommandMaid # event-restricted, Goobstation
   primary: false
   weight: 100
 
@@ -217,6 +219,7 @@
   - MedicalIntern
   - Psychologist
   - Paramedic
+  - Virologist # Gooby goob ba gooby goob ba
 
 - type: department
   id: Security
@@ -231,6 +234,7 @@
   - Detective
   - Warden
   - Brigmedic # Goob
+  - SecurityClown # event-restricted, Goob
   - TransitPrisoner # Omu
 
 - type: department
@@ -260,6 +264,7 @@
   color: "#9FED58"
   weight: 10
   roles:
+  - RadioHost # Goobstation
   - Boxer
   - Reporter
   - Zookeeper
