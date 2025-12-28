@@ -61,7 +61,7 @@
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 1, 3 ]
             Reporter: [ 1, 1 ]
-            #TODO Omu map RadioHost: [ 1, 1 ]
+            RadioHost: [ 1, 1 ] # Omu - Radio Host
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 2, 2 ]
@@ -97,7 +97,6 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
-            RadioHost: [ 1, 1 ] # Omu - Radio Host
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
