@@ -118,7 +118,7 @@
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             Reporter: [ 1, 1 ]
-            #TODO Omu map RadioHost: [ 1, 1 ]
+            RadioHost: [ 1, 1 ] # Omu
             ServiceWorker: [ 2, 2 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
@@ -129,7 +129,8 @@
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 2, 2 ]
             MedicalDoctor: [ 4, 4 ]
-            Paramedic: [ 1, 1 ]
+            Paramedic: [ 2, 2 ] # Omu 1 -> 2
+            Virologist: [ 2, 2 ] # Omu
             MedicalIntern: [ 4, 4 ]
             Psychologist: [ 1, 1 ]
             #science
@@ -158,4 +159,5 @@
             StationAi: [ 1, 1 ]
             Borg: [ 2, 3 ]
 
+            # Others
             NanotrasenCareerTrainer: [ 2, 2] # Omu
