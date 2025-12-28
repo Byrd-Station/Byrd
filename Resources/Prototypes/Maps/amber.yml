@@ -61,6 +61,7 @@
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 1, 3 ]
             Reporter: [ 1, 1 ]
+            #TODO Omu map RadioHost: [ 1, 1 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 2, 2 ]
@@ -99,7 +100,7 @@
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
 
-            NanotrasenCareerTrainer: [ -1, -1] # Omu
+            NanotrasenCareerTrainer: [ 2, 2] # Omu
    # Goobstation blob-config-start MEDIUM
         - type: StationBlobConfig
           stageBegin: 40
