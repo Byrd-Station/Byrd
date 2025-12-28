@@ -159,9 +159,7 @@
   - MagazinePistolCaselessRifle
   - MagazinePistolCaselessRifle
   - MagazinePistolCaselessRifle
-  - MagazinePistolCaselessRifle
-  - EnergyDaggerBox
-  - CapoeiraManual
+# - CQCManual
   - ClothingOuterArmourInvisibleSyndie
   - ClothingShoesBootsJack
   - CigPackSyndicate
@@ -169,7 +167,10 @@
   - ClothingEyesGlassesSunglasses
   - ClothingUniformJumpsuitDetectiveGrey
   - ClothingHandsGlovesCombat
-  - AgentIDCard
+  - AgentIDCard #omu
+  - MagazinePistolCaselessRifle #omu
+  - EnergyDaggerBox #omu
+  - CapoeiraManual #omu
 
 - type: selectableSet
   id: SyndicateImplantsSet
