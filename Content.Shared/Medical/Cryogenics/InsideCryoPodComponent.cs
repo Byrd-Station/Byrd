@@ -22,4 +22,13 @@ public sealed partial class InsideCryoPodComponent: Component
 
     [DataField] // Shitmed Change
     public EntityUid? SleepAction;
+
+    #region Omu
+    /// <summary>
+    /// Store the original tempature transfer for species if any
+    /// </summary>
+    [DataField]
+    public float? OriginalAtmosTemperatureTransferEfficiency;
+
+    #endregion
 }

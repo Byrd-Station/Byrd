@@ -142,6 +142,11 @@ public sealed partial class CryoPodSystem : SharedCryoPodSystem
         SubscribeLocalEvent<CryoPodComponent, ActivatableUIOpenAttemptEvent>(OnActivateUIAttempt);
         SubscribeLocalEvent<CryoPodComponent, AfterActivatableUIOpenEvent>(OnActivateUI);
         SubscribeLocalEvent<CryoPodComponent, EntRemovedFromContainerMessage>(OnEjected);
+
+        // Omu
+        // Handle Species with tempature transfer thresholds
+        // Look inside `CryoPodSystem.Omu.cs` for the methods
+        SubscribeLocalEvent<CryoPodComponent, EntInsertedIntoContainerMessage>(OnInserted);
     }
 
     public override void Update(float frameTime)
@@ -374,6 +379,10 @@ public sealed partial class CryoPodSystem : SharedCryoPodSystem
         {
             healthAnalyzer.ScannedEntity = null;
         }
+
+        // Omu - CryoPodSystem.Omu.cs
+        OnRemoved(cryoPod.Owner, cryoPod.Comp, args);
+        // END
 
         // if body is ejected - no need to display health-analyzer
         _uiSystem.CloseUi(cryoPod.Owner, HealthAnalyzerUiKey.Key);
