@@ -78,7 +78,7 @@
 - type: latheRecipePack
   id: MedicalMiscRestricted
   recipes:
-  - SyringeGun
+# - SyringeGun # omu
   - HandheldCrewMonitor
   - DefibrillatorCompact
   - ClothingHandsGlovesSurgical

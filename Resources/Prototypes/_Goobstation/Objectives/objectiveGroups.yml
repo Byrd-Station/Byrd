@@ -16,7 +16,7 @@
   weights:
     LingCaptainIDStealObjective: 1
     LingCMOHyposprayStealObjective: 1
-    LingCMORapidSyringeGunStealObjective: 1
+ #   LingCMORapidSyringeGunStealObjective: 1  # omu
     LingRDHardsuitStealObjective: 1
     LingNukeDiskStealObjective: 1
     LingMagbootsStealObjective: 1

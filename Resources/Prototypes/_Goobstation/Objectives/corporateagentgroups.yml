@@ -19,7 +19,7 @@
     CorporateCaptainIDStealObjective: 1
     CorporateCMOHyposprayStealObjective: 1
     # CMOCrewMonitorStealObjective: 1
-    CorporateCMORapidSyringeGunStealObjective: 1
+    # CorporateCMORapidSyringeGunStealObjective: 1 # omu
     CorporateRDHardsuitStealObjective: 1
     CorporateNukeDiskStealObjective: 1
     CorporateMagbootsStealObjective: 1

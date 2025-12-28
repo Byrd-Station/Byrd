@@ -35,20 +35,20 @@
   technologyPrerequisites:
   - AdvancedEntertainment
 
-- type: technology
-  id: MedicalDefense
-  name: research-technology-medical-defense
-  icon:
-    sprite: _Goobstation/Objects/Weapons/Guns/Cannons/syringe_gun.rsi
-    state: icon
-  discipline: CivilianServices
-  tier: 1
-  cost: 5000
-  recipeUnlocks:
-  - SyringeGun
-  position: 3,6
-  technologyPrerequisites:
-  - BiochemicalStasis
+#- type: technology  # omu
+#  id: MedicalDefense
+#  name: research-technology-medical-defense
+#  icon:
+#    sprite: _Goobstation/Objects/Weapons/Guns/Cannons/syringe_gun.rsi
+#    state: icon
+#  discipline: CivilianServices
+#  tier: 1
+#  cost: 5000
+#  recipeUnlocks:
+#  - SyringeGun
+#  position: 3,6
+#  technologyPrerequisites:
+#  - BiochemicalStasis
 
 - type: technology
   id: RescueTechnology

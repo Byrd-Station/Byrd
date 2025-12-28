@@ -403,14 +403,14 @@
     stealGroup: WeaponEnergyGunLawbringer
     owner: job-name-hos
 
-- type: entity
-  parent: CorporateBaseCMOStealObjective
-  id: CorporateCMORapidSyringeGunStealObjective
-  components:
-  - type: StealCondition
-    stealGroup: RapidSyringeGun
-  - type: Objective
-    difficulty: 3 # Slightly more than normal as it does not fit into storage implant
+#- type: entity  # Omu
+#  parent: CorporateBaseCMOStealObjective
+#  id: CorporateCMORapidSyringeGunStealObjective
+#  components:
+#  - type: StealCondition
+#    stealGroup: RapidSyringeGun
+#  - type: Objective
+#    difficulty: 3 # Slightly more than normal as it does not fit into storage implant
 
 - type: entity
   parent: CorporateBaseRDStealObjective

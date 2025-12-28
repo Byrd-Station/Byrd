@@ -902,6 +902,7 @@
   - type: EmagLatheRecipes # Goobstation Packs
     emagStaticPacks:
     - SyndicateCatridgesStatic
+    - EmagSyringeGunStatic
   - type: StealTarget
     stealGroup: MedicalTechFabCircuitboard
 

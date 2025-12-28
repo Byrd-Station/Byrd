@@ -147,12 +147,12 @@
   - type: StealCondition
     stealGroup: Hypospray
 
-- type: entity
-  parent: LingCMOStealObjective
-  id: LingCMORapidSyringeGunStealObjective
-  components:
-  - type: StealCondition
-    stealGroup: RapidSyringeGun
+#- type: entity   # omu, fuck uuuuuuuuuuuu
+#  parent: LingCMOStealObjective
+#  id: LingCMORapidSyringeGunStealObjective
+#  components:
+# - type: StealCondition
+#    stealGroup: RapidSyringeGun
 
 ## rd
 

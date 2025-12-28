@@ -46,7 +46,7 @@
 
 - type: entity
   name: syringe gun
-  parent: [ BaseSyringeGun, BaseMedicalContraband ]
+  parent: [ BaseSyringeGun, BaseMajorContraband ]
   id: SyringeGun
   description: A gun that allows you to fire syringes to slowly inject their contents on a target.
   components:
@@ -82,11 +82,11 @@
     size: Large
     shape:
     - 0,0,3,1
-  - type: StealTarget
-    stealGroup: RapidSyringeGun
+#  - type: StealTarget # omu
+#    stealGroup: RapidSyringeGun # omu
   - type: Tag
     tags:
-    - HighRiskItem
+#    - HighRiskItem
     - GunCanAimShooter
 
 - type: entity

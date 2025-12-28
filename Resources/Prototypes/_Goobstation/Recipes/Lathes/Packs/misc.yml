@@ -45,6 +45,11 @@
   - CartridgeTirizene
 
 - type: latheRecipePack
+  id: EmagSyringeGunStatic
+  recipes:
+  - SyringeGun
+
+- type: latheRecipePack
   id: ProtoLatheMiscStatic
   recipes:
   - MaterialBSCrystal
