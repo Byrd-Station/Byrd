@@ -162,6 +162,7 @@
   - StandardProcedures SOP
   - HeadOfPersonnel SOP
   - Writing
+  - CommandTrainingManual # Omu
   goobcoins: 40 #Goob content
   weight: 20
   startingGear: HoPGear
