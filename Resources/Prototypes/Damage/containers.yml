@@ -107,3 +107,16 @@
   - Genetic
   supportedTypes: # Goobstation
   - Holy
+
+# Omu - For asakim rework
+- type: damageContainer
+  id: BiologicalCyborg
+  supportedGroups:
+  - Brute
+  - Burn
+  - Toxin
+  - Airloss
+  - Genetic
+  - Electronic # Couldn't get this one to work, dunno.
+  supportedTypes:
+  - Holy

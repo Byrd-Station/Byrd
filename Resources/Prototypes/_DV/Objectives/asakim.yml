@@ -63,7 +63,7 @@
   parent: [BaseAsakimObjective, BaseSurviveObjective]
   id: AsakimUpgradeObjective
   name: ">UPGRADE"
-  description: Preliminary sector scans detect possible high-value cybernetics. Upgrade your body.
+  description: Preliminary sector scans detect possible high-value bluespace engines. Repair your vessel. # Omu - Replacing the cybernetic part for fixing your ship, cuz of the ghost role rework or whatev
   components:
   - type: Objective
 

@@ -39,10 +39,16 @@
       NerveDamage: 1
     modifiers:
       coefficients:
-        Blunt: 0.35
-        Slash: 0.35
-        Piercing: 0.35
+        Blunt: 0.7
+        Slash: 0.8
+        Piercing: 0.4
         Heat: 0.35
+        # Omu changes start
+        Shock: 0.8
+        Poison: 0.4
+        Caustic: 0.4
+        Ion: 0.95 # Omu - A advanced harness should protect agaisnt their weakness.
+        # Omu changes end
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 15

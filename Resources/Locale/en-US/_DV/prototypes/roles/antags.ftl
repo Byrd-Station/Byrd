@@ -1,2 +1,2 @@
 roles-antag-asakim-name = Asakim
-roles-antag-asakim-objective = Serve the ancient directives of your ship's AI.
+roles-antag-asakim-objective = Find a way to travel back to your original era.

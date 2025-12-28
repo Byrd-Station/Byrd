@@ -27,8 +27,8 @@
     - DoubleEmergencyOxygenTankFilled
     - BoxSurvivalSlotsEngineering # Omu
     - JetpackMiniFilled
-    - MedkitCombatFilled
-    - MedkitCombatFilled
+    - MedkitBSOIPCFilled # Omu - Replaced the combat kit for the IPC one since the asakim rework makes them a semi silicon
+    - MedkitBSOIPCFilled # Omu - Replaced the combat kit for the IPC one since the asakim rework makes them a semi silicon
     #- SyringeCaseAltFilled # DeltaV - fake
     #- StorageImplanter # DeltaV - implanters too OP they already have insane stamina resist
     - FreedomImplanter # Omu - DeltaV didn't give em the freedom implanter, unsure why.
@@ -38,10 +38,10 @@
     #- PowerDrill # DeltaV - less gamer loot, replaced with below
     - Screwdriver # DeltaV
     - Wrench # DeltaV
-    - WelderIndustrial # DeltaV - less gamer loot roundstart, was WelderExperimental
+    - WelderExperimental # DeltaV - less gamer loot roundstart, was WelderExperimental / Omu - Was changed back because I personally saw no issue with it.
     - JawsOfLife
     - Multitool # DeltaV - let them hack doors, also snugly fills out the chest rig
-    #- CombatMedipen # DeltaV - these things are so busted
-    #- CombatMedipen # DeltaV
-    #- CombatMedipen # DeltaV
-    #- CombatMedipen # DeltaV
+    - BruteAutoInjector # DeltaV - these things are so busted / Omu - Gave the asakim two of each common type, brute and burn.
+    - BruteAutoInjector # Omu
+    - BurnAutoInjector # Omu
+    - BurnAutoInjector # Omu

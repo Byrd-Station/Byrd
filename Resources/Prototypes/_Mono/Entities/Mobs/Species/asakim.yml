@@ -104,12 +104,12 @@
     - id: FoodMeatLizard
       amount: 7
   - type: LizardAccent
-  - type: Speech
-    speechSounds: Lizard
-    speechVerb: Reptilian
+  - type: Speech #
+    speechSounds: SyndieBorg # Omu - From lizard to SyndieBorg because we're leaning into the whole these mfs are chromed theme
+    speechVerb: Robotic # From lizard to robotic because of the reason stated above
     allowedEmotes: ['Thump']
   - type: TypingIndicator
-    proto: lizard
+    proto: robot # Omu From lizard to robot for the reason above.
   - type: Vocal
     sounds:
       Male: MaleReptilian
@@ -119,14 +119,25 @@
     speaks:
     - Draconic
     - Azaziba
+    - RobotTalk # Omu - Leaning into the whole robot lizard thing.
     understands:
     - Draconic
     - Azaziba
     - TauCetiBasic
+    # Omu Start - Asakim rework, leaning into the whole robot lizard thing
+    - RobotTalk
+    - Elyran
+    - Freespeak
+    - NovuNederic
+    - SolCommon
+    - TauCetiBasic
+    - Tradeband
+    - Sign
+    # Omustation end
   - type: BodyEmotes
     soundsId: ReptilianBodyEmotes
   - type: Damageable
-    damageContainer: Biological
+    damageContainer: BiologicalCyborg # Omu - Changed so they can take Ion damage
     damageModifierSet: GenemoddedScale
   - type: MeleeWeapon
     soundHit:
@@ -210,6 +221,8 @@
   # - type: BlockWriting # can't speak common can't write common. better get an AAC tablet - Omu: Moved to hardsuit, funny idea that they can write but hardsuit makes their hands too big.
   # End DeltaV Additions
   # Omu Start
+  - type: SpeechSynthesis # Corvax-Frontier-Barks
+    voice: BorgSyndie
   - type: Tag
     tags:
     - CanPilot
@@ -217,8 +230,16 @@
     - DoorBumpOpener
     - AnomalyHost
     - ReptilianEmotes
-  - type: SpeechSynthesis # Corvax-Frontier-Barks
-    voice: Lizard
+  - type: Repairable # Going further with the larp
+    fuelCost: 5
+    doAfterDelay: 3
+    selfRepairPenalty: 1.5 # They are skilled with tools and are enhanced cyborgs, so
+    damage:
+      types:
+        Blunt: -15
+        Piercing: -15
+        Slash: -15
+  - type: EmitBuzzWhileDamaged
   - type: Access
     tags:
     - NuclearOperative # This is the access that ADS use for some reason.
@@ -283,11 +304,11 @@
 - type: damageModifierSet
   id: GenemoddedScale # Strong brute-focused scales.
   coefficients:
-    Cold: 1.2
-    Radiation: 1.2
-    Poison: 1.2
+    Cold: 1.3 # Omu - Asakim rework, still retains the cold weakness from being a lizard.
+    Radiation: 0.8 # Omu - Asakim rework
+    Poison: 0.7 # Omu - Asakim rework
     Piercing: 0.8
     Slash: 0.95 # DeltaV - emphasize slash weakness, was 0.75
     Blunt: 0.75
     Heat: 1.1
-    Shock: 1.1
+    Shock: 1.4 # Omu - Asakim rework
