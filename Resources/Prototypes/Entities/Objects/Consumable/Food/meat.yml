@@ -1220,10 +1220,6 @@
       - state: slime-inhand-left
       right:
       - state: slime-inhand-right
-  # Omu start
-  - type: Stomach # Will this have unforeseen consequences in the future? Probably.
-  - type: Organ   # oh well
-  # Omu end
 
 - type: entity
   name: raw snail meat
