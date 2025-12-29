@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/11/2025 21:09:28
-  entityCount: 9176
+  time: 12/20/2025 14:33:32
+  entityCount: 9177
 maps:
 - 1
 grids:
@@ -4384,7 +4384,7 @@ entities:
       pos: 4.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -1054.946
+      secondsUntilStateChange: -1187.8586
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -49034,6 +49034,13 @@ entities:
     components:
     - type: Transform
       pos: -35.5,9.5
+      parent: 2
+- proto: SpawnPointVirologist
+  entities:
+  - uid: 6291
+    components:
+    - type: Transform
+      pos: 1.5,-21.5
       parent: 2
 - proto: SpawnPointWarden
   entities:
