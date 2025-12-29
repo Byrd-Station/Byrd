@@ -32,7 +32,8 @@ using Content.Shared.Pointing;
 using Content.Shared._Shitmed.Body.Organ;
 using Content.Shared.Body.Systems;
 using Content.Goobstation.Shared.Changeling.Components;
-
+// EE Reverse MMI
+using Content.Shared.Silicons.Borgs.Components;
 
 namespace Content.Server.Body.Systems
 {
@@ -92,7 +93,10 @@ namespace Content.Server.Body.Systems
             var ghostOnMove = EnsureComp<GhostOnMoveComponent>(newEntity);
             if (HasComp<BodyComponent>(newEntity))
                 ghostOnMove.MustBeDead = true;
-
+            // EE Reverse MMI start
+            if (HasComp<BorgBrainComponent>(newEntity))
+                EntityManager.RemoveComponent<GhostOnMoveComponent>(newEntity);
+            // EE Reverse MMI End
             if (!_mindSystem.TryGetMind(oldEntity, out var mindId, out var mind))
                 return;
 
