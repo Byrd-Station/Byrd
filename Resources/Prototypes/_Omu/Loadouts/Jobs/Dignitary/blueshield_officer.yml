@@ -64,3 +64,11 @@
   equipment:
     belt: ClothingBeltSheathStunswordFilled
 
+# boots
+- type: loadout
+  id: BSOAdvancedJackBoots
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorBlueshieldOfficer
+  equipment:
+    shoes: ClothingShoesBootsBSOJackAdvancedFilled
