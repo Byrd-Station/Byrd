@@ -133,7 +133,7 @@
       amount: 3
     - id: MaterialGoliathHide1
       amount: 1
-    - id: Bones # Omu!
+    - id: MaterialBones1 # Omu!
       amount: 2
   - type: Fauna # Lavaland Change
 
@@ -470,5 +470,5 @@
     - id: DiamondOre1
       amount: 1
       maxAmount: 3
-    - id: Bones # Omu!
+    - id: MaterialBones1 # Omu!
       amount: 1

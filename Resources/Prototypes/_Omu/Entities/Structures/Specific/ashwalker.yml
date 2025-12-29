@@ -62,3 +62,6 @@
    - type: WarpPoint
      follow: true
      location: Necropolis Nest
+   - type: Drain # remove liquids around the nest, mostly just to not ruin HOW COOL THE NEST LOOKS
+     unitsPerSecond: 10
+     unitsDestroyedPerSecond: 10

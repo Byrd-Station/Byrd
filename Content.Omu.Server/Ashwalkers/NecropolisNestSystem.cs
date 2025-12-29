@@ -1,13 +1,18 @@
 using System;
 using System.Numerics;
 using Content.Omu.Common.Ashwalkers;
+using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
+using Content.Server.Pinpointer;
+using Content.Shared.Destructible;
 using Content.Shared.Destructible;
 using Content.Shared.Ghost.Roles.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Maps;
+using Content.Shared.Database;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Destructible;
 using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Humanoid;
 using Content.Shared.Weapons.Melee.Events;
@@ -16,7 +21,9 @@ using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Popups;
 using Content.Shared.StepTrigger.Systems;
+using Content.Shared.Weapons.Melee.Events;
 using Robust.Server.GameObjects;
+using Content.Server.Administration.Logs;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -26,6 +33,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Item;
 using Content.Server.Body.Systems;
@@ -36,16 +44,20 @@ public sealed class NecropolisNestSystem : EntitySystem
 {
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
+    [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly PullingSystem _pulling = default!;
     [Dependency] private readonly MobStateSystem _mob = default!;
+    [Dependency] private readonly NavMapSystem _navMap = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly StepTriggerSystem _step = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ITileDefinitionManager _tiledef = default!;
     [Dependency] private readonly BodySystem _body = default!;
+    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
 
     private EntityQuery<NecropolisNestComponent> _query;
 
@@ -108,8 +120,8 @@ public sealed class NecropolisNestSystem : EntitySystem
 
        // Timer is there so the console doesn't get flooded with errors.
        Timer.Spawn(TimeSpan.FromMilliseconds(50), () => _body.GibBody(victim));
-       var logImpact = HasComp<HumanoidAppearanceComponent>(item) ? LogImpact.Extreme : LogImpact.Medium;
-       _adminLogger.Add(LogType.Gib, logImpact, $"{ToPrettyString(item):victim} was gibbed by a necropolis nest!");
+       var logImpact = HasComp<HumanoidAppearanceComponent>(victim) ? LogImpact.Extreme : LogImpact.Medium;
+       _adminLogger.Add(LogType.Gib, logImpact, $"{ToPrettyString(victim):victim} was gibbed by a necropolis nest!");
     }
 
     private void OnStepTriggerAttempt(EntityUid uid, NecropolisNestComponent component, ref StepTriggerAttemptEvent args)

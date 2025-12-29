@@ -23,7 +23,7 @@ public sealed partial class NecropolisNestComponent : Component
     /// amount of points needed for a new egg
     /// </summary>
     [DataField]
-    public float SpawnNewAt = 12f;
+    public float SpawnNewAt = 5f;
 
     [DataField]
     public SoundSpecifier AbsorbingSound = new SoundPathSpecifier("/Audio/Effects/demon_consume.ogg");
