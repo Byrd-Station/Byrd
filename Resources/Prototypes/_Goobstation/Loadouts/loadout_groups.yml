@@ -1044,7 +1044,7 @@
   - JackBoots
   - BlackCowboyBoots
   - SnowjacksBso
-  - BSOAdvancedJackBoots
+  - BSOAdvancedJackBoots #Omu
 
 - type: loadoutGroup
   id: BlueshieldOfficerEnvirohelm
