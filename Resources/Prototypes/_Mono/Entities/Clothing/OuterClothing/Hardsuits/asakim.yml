@@ -45,14 +45,13 @@
     modifiers:
       coefficients:
         Blunt: 0.7 # DeltaV - was 0.35
-        Slash: 0.45 # Omu - was 0.85
-        Piercing: 0.4 # DeltaV - was 0.3
+        Slash: 0.7 # Omu - was 0.85
+        Piercing: 0.45 # DeltaV - was 0.3
         Heat: 0.4
         Radiation: 0
         Shock: 0.8
         Poison: 0.4
         Caustic: 0.4
-        Ion: 0.95 # Omu - A advanced harness should protect agaisnt their weakness.
   - type: ClothingSpeedModifier
     walkModifier: 0.2
     sprintModifier: 0.2

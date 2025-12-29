@@ -21,8 +21,8 @@
     chest:
       part: ChestAsakim
       organs:
-        heart: OrganAnimalHeart
-        lungs: OrganHumanLungs
+        heart: BasicCyberneticHeart # Omu change - Cybernetic lizards having cybernetic organs.
+        lungs: BasicCyberneticLungs # Omu change - Cybernetic lizards having cybernetic organs.
       connections:
       - groin
       - right arm
@@ -35,7 +35,7 @@
       - left leg
       organs:
         stomach: OrganReptilianStomach
-        liver: OrganAnimalLiver
+        liver: BasicCyberneticLiver # Omu change - Cybernetic lizards having cybernetic organs.
         kidneys: OrganHumanKidneys
     right arm:
       part: RightArmAsakim
