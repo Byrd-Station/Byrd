@@ -40,7 +40,7 @@
         reagents:
         - ReagentId: Water
           Quantity: 9999999
-  - type: RCDDeconstructable
+  - type: RCDDeconstructable # omu
     cost: 1
     delay: 2
     fx: EffectRCDDeconstruct2

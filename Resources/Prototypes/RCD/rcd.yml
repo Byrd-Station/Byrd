@@ -64,7 +64,7 @@
     - CanBuildOnEmptyTile
   fx: EffectRCDConstruct1
 
-- type: rcd
+- type: rcd # omu
   id: FloorWaterEntity
   name: rcd-component-floor-water
   category: WallsAndFlooring

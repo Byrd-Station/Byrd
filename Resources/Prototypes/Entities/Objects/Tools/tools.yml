@@ -534,7 +534,7 @@
     availablePrototypes:
     - WallSolid
     - FloorSteel
-    - FloorWaterEntity
+    - FloorWaterEntity # omu
     - Plating
     - Catwalk
     - Grille
