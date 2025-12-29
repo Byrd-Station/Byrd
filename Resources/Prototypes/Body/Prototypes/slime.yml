@@ -15,6 +15,11 @@
   slots:
     head:
       part: HeadSlime
+      # Omu start
+      organs:
+        stomach: FoodMeatSlime # free space (and i want to get rid of the brain slot so this is a quick fix)
+        eyes: OrganHumanEyes # why did we not ever give them eyes
+      # Omu end
       connections:
       - chest
     chest:
@@ -29,7 +34,7 @@
     groin:
       part: GroinSlime
       organs:
-        core: SentientSlimeCore
+        brain: SentientSlimeCore # Omu normalize slime brains
       connections:
       - right leg
       - left leg

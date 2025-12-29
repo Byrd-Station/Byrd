@@ -670,7 +670,8 @@
     - PowerAugments
     - ToolAugments
     - PowerCells
-    # todo marty revmmi recipe pack here
+    # EE Recipe packs
+    - ReverseMMiRecipeEE
   - type: EmagLatheRecipes # Goobstation
     emagStaticPacks:
     - MechWeaponsSecurityStatic

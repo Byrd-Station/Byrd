@@ -560,7 +560,7 @@
 - type: entity
   parent: BaseSurgeryRemoveOrgan
   id: SurgeryRemoveBorgBrain
-  name: Remove Positronic Brain
+  name: Remove Positronic Interface # Omu change name
   components:
   # TODO: ipc surgery steps
   - type: SurgeryPartCondition
@@ -583,7 +583,7 @@
 - type: entity
   parent: BaseSurgeryInsertOrgan
   id: SurgeryInsertBorgBrain
-  name: Insert Positronic Brain
+  name: Insert Positronic Interface # Omu change surgery name
   components:
   - type: SurgeryPartCondition
     parts: [ Chest ]

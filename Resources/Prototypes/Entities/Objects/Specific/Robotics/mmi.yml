@@ -178,7 +178,7 @@
   - type: Brain
     active: false
   - type: Organ
-    slotId: posibrain
+    slotId: posbrain
   # EE Reverse MMI end
 
 - type: entity
@@ -228,10 +228,6 @@
     - type: Brain
     - type: BlockMovement
     - type: Examiner
-      # EE Reverse MMI
-    - type: Brain # hopefully this doesn't break everything
-      active: false
-      # EE Reverse MMI End
     - type: BorgBrain
     - type: IntrinsicRadioReceiver
     #- type: IntrinsicRadioTransmitter

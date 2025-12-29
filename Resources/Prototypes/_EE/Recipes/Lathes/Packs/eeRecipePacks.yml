@@ -1,0 +1,7 @@
+# EE doesn't actually have recipe packs as far as i can see so i'm just gonna stuff any separate recipes in here and call it a day
+# Feel free to toss in anything EE related fuck sorting them honestly.
+
+- type: latheRecipePack
+  id: ReverseMMiRecipeEE
+  recipes:
+  - ReverseMMI

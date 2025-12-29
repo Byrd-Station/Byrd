@@ -10,8 +10,12 @@
     state: icon
   discipline: CivilianServices
   tier: 2
-  cost: 10000
+  cost: 5000
   recipeUnlocks:
   - ReverseMMI
+  position: -5,5
+  technologyPrerequisites:
+  - BasicAugmentation
+  - BasicRobotics
 
 # Tier 3
