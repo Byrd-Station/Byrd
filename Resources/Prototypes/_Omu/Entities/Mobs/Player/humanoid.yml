@@ -43,7 +43,7 @@
         - NamesMilitaryLast
       nameFormat: name-format-ert
 
-# BLUE ERT START
+# BLUE ERT
 
 # ERT Leader
 
@@ -298,8 +298,6 @@
     - type: Loadout
       prototypes: [ ERTChaplainGearBlue ]
       roleLoadout: [ RoleSurvivalExtended ]
-
-# BLUE ERT END
 
 - type: entity
   parent: MobHuman
