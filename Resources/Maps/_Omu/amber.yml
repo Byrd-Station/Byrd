@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/28/2025 10:42:49
-  entityCount: 23581
+  time: 12/30/2025 09:44:12
+  entityCount: 23585
 maps:
 - 1
 grids:
@@ -19117,7 +19117,7 @@ entities:
       pos: -25.5,-25.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -5357.3203
+      secondsUntilStateChange: -5551.1167
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -66734,6 +66734,20 @@ entities:
     components:
     - type: Transform
       pos: -16.5,-50.5
+      parent: 2
+- proto: CrateRadioStationAds
+  entities:
+  - uid: 23215
+    components:
+    - type: Transform
+      pos: 21.5,-37.5
+      parent: 2
+- proto: CrateRadioStationVinyls
+  entities:
+  - uid: 23214
+    components:
+    - type: Transform
+      pos: 20.5,-37.5
       parent: 2
 - proto: CrateSecurityTrackingMindshieldImplants
   entities:
@@ -125923,6 +125937,13 @@ entities:
     - type: Transform
       pos: -18.5,-14.5
       parent: 2
+- proto: Screwdriver
+  entities:
+  - uid: 23216
+    components:
+    - type: Transform
+      pos: 21.521544,-37.44034
+      parent: 2
 - proto: SecurityComputerComms
   entities:
   - uid: 14192
@@ -130571,7 +130592,7 @@ entities:
   - uid: 21125
     components:
     - type: Transform
-      pos: 21.5,-37.5
+      pos: 22.5,-37.5
       parent: 2
 - proto: SpawnPointReporter
   entities:
@@ -136995,6 +137016,18 @@ entities:
     - type: Transform
       pos: -7.5,-10.5
       parent: 2
+- proto: VinylPlayer
+  entities:
+  - uid: 23213
+    components:
+    - type: Transform
+      pos: 21.5,-36.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        3810:
+        - - VinylPlayerPort
+          - StationRadioRigPort
 - proto: WallmountSubstationElectronics
   entities:
   - uid: 11836
