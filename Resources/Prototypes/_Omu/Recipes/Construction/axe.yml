@@ -1,7 +1,7 @@
 - type: construction
   id: BoneAxeConstruction
   name: bone axe
-  description: A powerful axe made of bones. A primitive hunters favorite... probably.
+  description: An axe made of bones. A primitive hunters favorite... probably.
   graph: BoneAxe
   startNode: start
   targetNode: axe

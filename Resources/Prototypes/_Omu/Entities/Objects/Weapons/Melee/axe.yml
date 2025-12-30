@@ -2,7 +2,7 @@
   name: bone axe
   parent: [BaseItem, BaseMajorContraband]
   id: BoneAxe
-  description: A powerful axe made of bones. A primitive hunters favorite... probably.
+  description: An axe made of bones. A primitive hunters favorite... probably.
   components:
   - type: Sharp
   - type: Execution

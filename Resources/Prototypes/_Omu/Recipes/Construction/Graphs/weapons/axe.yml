@@ -9,6 +9,8 @@
             - material: Bones
               amount: 6
               doAfter: 2
+            - material: MaterialGoliathHide
+              amount: 2
 
     - node: axe
       entity: BoneAxe
