@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/28/2025 09:51:29
-  entityCount: 25042
+  time: 12/30/2025 09:49:07
+  entityCount: 25049
 maps:
 - 1
 grids:
@@ -10238,6 +10238,8 @@ entities:
       - 14460
       - 14648
       - 14458
+      - 24485
+      - 24486
   - uid: 57
     components:
     - type: Transform
@@ -63727,6 +63729,20 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+- proto: CrateRadioStationAds
+  entities:
+  - uid: 24482
+    components:
+    - type: Transform
+      pos: 36.5,16.5
+      parent: 2
+- proto: CrateRadioStationVinyls
+  entities:
+  - uid: 24483
+    components:
+    - type: Transform
+      pos: 35.5,16.5
+      parent: 2
 - proto: CrateScienceSecure
   entities:
   - uid: 9652
@@ -72186,6 +72202,24 @@ entities:
     - type: Transform
       pos: -77.30687,1.6141582
       parent: 2
+- proto: Firelock
+  entities:
+  - uid: 24485
+    components:
+    - type: Transform
+      pos: 49.5,-32.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 56
+  - uid: 24486
+    components:
+    - type: Transform
+      pos: 46.5,-32.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 56
 - proto: FirelockEdge
   entities:
   - uid: 10901
@@ -124815,6 +124849,11 @@ entities:
     - type: Transform
       pos: 20.606422,21.831692
       parent: 2
+  - uid: 24484
+    components:
+    - type: Transform
+      pos: 35.487656,17.54646
+      parent: 2
 - proto: SecurityComputerComms
   entities:
   - uid: 9557
@@ -132301,6 +132340,11 @@ entities:
     - type: Transform
       pos: 0.5,1.5
       parent: 2
+  - uid: 24487
+    components:
+    - type: Transform
+      pos: 52.5,-29.5
+      parent: 2
 - proto: StationRadioRig
   entities:
   - uid: 3595
@@ -138623,6 +138667,18 @@ entities:
     - type: Transform
       pos: 12.5,15.5
       parent: 2
+- proto: VinylPlayer
+  entities:
+  - uid: 24481
+    components:
+    - type: Transform
+      pos: 35.5,18.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        3595:
+        - - VinylPlayerPort
+          - StationRadioRigPort
 - proto: ViolinInstrument
   entities:
   - uid: 21191
