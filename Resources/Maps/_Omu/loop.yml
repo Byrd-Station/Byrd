@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/30/2025 17:34:02
-  entityCount: 18166
+  time: 12/30/2025 22:43:45
+  entityCount: 18170
 maps:
 - 1
 grids:
@@ -24762,6 +24762,16 @@ entities:
     components:
     - type: Transform
       pos: -62.5,54.5
+      parent: 2
+  - uid: 18167
+    components:
+    - type: Transform
+      pos: 23.5,14.5
+      parent: 2
+  - uid: 18168
+    components:
+    - type: Transform
+      pos: 24.5,14.5
       parent: 2
 - proto: CableApcStack
   entities:
@@ -83931,13 +83941,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 25.5,14.5
       parent: 2
-- proto: PoweredlightEmpty
-  entities:
-  - uid: 12418
-    components:
-    - type: Transform
-      pos: -4.5,33.5
-      parent: 2
 - proto: PoweredLightPostSmall
   entities:
   - uid: 12419
@@ -84045,6 +84048,11 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 4.5,56.5
+      parent: 2
+  - uid: 12418
+    components:
+    - type: Transform
+      pos: -4.5,33.5
       parent: 2
   - uid: 12434
     components:
@@ -84783,6 +84791,18 @@ entities:
     components:
     - type: Transform
       pos: 3.5,-19.5
+      parent: 2
+  - uid: 18169
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -1.5,31.5
+      parent: 2
+  - uid: 18170
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -4.5,30.5
       parent: 2
 - proto: PrefilledSyringe
   entities:
