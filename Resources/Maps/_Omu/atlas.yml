@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/28/2025 12:23:35
-  entityCount: 9192
+  time: 12/30/2025 09:39:28
+  entityCount: 9193
 maps:
 - 1
 grids:
@@ -3583,6 +3583,7 @@ entities:
       - 5563
       - 5530
       - 5646
+      - 8882
 - proto: AirCanister
   entities:
   - uid: 43
@@ -4416,7 +4417,7 @@ entities:
       pos: 4.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -5761.1714
+      secondsUntilStateChange: -5892.382
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -25109,6 +25110,14 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -55.5,0.5
       parent: 2
+  - uid: 8882
+    components:
+    - type: Transform
+      pos: 4.5,-18.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 445
 - proto: FirelockEdge
   entities:
   - uid: 3960
