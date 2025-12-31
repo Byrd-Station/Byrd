@@ -25,7 +25,7 @@ public sealed partial class InsideCryoPodComponent: Component
 
     #region Omu
     /// <summary>
-    /// Store the original tempature transfer for species if any
+    /// Store the original temperature transfer for species if any
     /// </summary>
     [DataField]
     public float? OriginalAtmosTemperatureTransferEfficiency;
