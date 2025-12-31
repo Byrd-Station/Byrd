@@ -35,9 +35,9 @@ public sealed partial class CryoPodSystem
     /// Used to handle ejecting species with temperature transfer thresholds,
     /// this resets their thresholds to their stored values.
     /// </summary>
-    private void OnRemoved(EntityUid uid, CryoPodComponent cryoComp, EntRemovedFromContainerMessage args)
+    private void OnRemoved(Entity<CryoPodComponent> cryo, EntRemovedFromContainerMessage args)
     {
-        if (args.Container.ID != cryoComp.BodyContainer.ID)
+        if (args.Container.ID != cryo.Comp.BodyContainer.ID)
             return;
 
         if (!TryComp<InsideCryoPodComponent>(args.Entity, out var insideCom)

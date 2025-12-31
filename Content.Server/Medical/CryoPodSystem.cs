@@ -381,7 +381,7 @@ public sealed partial class CryoPodSystem : SharedCryoPodSystem
         }
 
         // Omu - CryoPodSystem.Omu.cs
-        OnRemoved(cryoPod.Owner, cryoPod.Comp, args);
+        OnRemoved(cryoPod, args);
         // END
 
         // if body is ejected - no need to display health-analyzer
