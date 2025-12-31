@@ -46,3 +46,22 @@
   id: VirologistPDA
   equipment:
     id: VirologistPDA
+
+# Plasmamen
+- type: loadout
+  id: VirologistEnvirosuit
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitVirology
+  effects:
+  - !type:SpeciesLoadoutEffect # Goobstation - EE Plasmeme Change.
+    species:
+    - Plasmaman
+
+- type: loadout
+  id: VirologistEnvirohelm
+  equipment:
+    head: ClothingHeadEnvirohelmVirology
+  effects:
+  - !type:SpeciesLoadoutEffect # Goobstation - EE Plasmeme Change.
+    species:
+    - Plasmaman

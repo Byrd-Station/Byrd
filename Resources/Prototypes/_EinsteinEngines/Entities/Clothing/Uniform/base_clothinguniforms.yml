@@ -118,6 +118,12 @@
     whitelist:
       tags:
       - GasTank
+  - type: DiseaseProtection #same protection as a biosuit
+    incoming:
+      powerModifiers:
+        Blood: -1
+      chanceMultipliers:
+        Blood: 0.5
 
 - type: entity
   abstract: true
