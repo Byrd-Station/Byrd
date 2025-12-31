@@ -14,3 +14,10 @@
   - PrisonerEnvirohelm
   - PrisonerEnvirosuit
   - PrisonerEnvirogloves
+
+- type: roleLoadout
+  id: JobVirologist
+  groups:
+  - VirologistEnvirohelm
+  - VirologistEnvirosuit
+  - VirologistEnvirogloves
