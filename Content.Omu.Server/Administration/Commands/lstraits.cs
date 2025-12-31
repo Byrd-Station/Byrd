@@ -18,8 +18,8 @@ public sealed class LsTraits : LocalizedCommands
     [Dependency] private readonly IServerPreferencesManager _prefsManager = default!;
 
     public override string Command => "lstraits";
-    public override string Description => "Lists the traits of a specified player.";
-    public override string Help => "Usage: lstraits <Username>";
+    public override string Description => Loc.GetString("lstraits-desc");
+    public override string Help => Loc.GetString("lstraits-help");
 
     public override void Execute(IConsoleShell shell, string argStr, string[] args)
     {
@@ -31,31 +31,31 @@ public sealed class LsTraits : LocalizedCommands
 
         if (session == null)
         {
-            shell.WriteError(LocalizationManager.GetString("shell-target-player-does-not-exist"));
+            shell.WriteError(Loc.GetString("shell-could-not-find-entity"));
             return;
         }
 
         // Get the player's preferences
         if (!_prefsManager.TryGetCachedPreferences(session.UserId, out var prefs))
         {
-            shell.WriteError("Could not find player preferences. Have they fully connected?");
+            shell.WriteError(Loc.GetString("lstraits-could-not-find-player-preferences"));
             return;
         }
 
         // Get the selected character profile
         if (prefs.SelectedCharacter is not HumanoidCharacterProfile character)
         {
-            shell.WriteError("Could not find character profile.");
+            shell.WriteError(Loc.GetString("lstraits-could-not-find-profile"));
             return;
         }
 
-        shell.WriteLine($"Traits for {character.Name} (User: {session.Name}):");
+        shell.WriteLine(Loc.GetString("lstraits-traits "));
 
         // Get the player's traits
         var traits = character.TraitPreferences;
         if (!traits.Any())
         {
-            shell.WriteLine("No traits found.");
+            shell.WriteLine(Loc.GetString("lstraits-no-traits"));
             return;
         }
 
@@ -64,7 +64,7 @@ public sealed class LsTraits : LocalizedCommands
         {
             shell.WriteLine(_prototypeManager.TryIndex(traitId, out _)
                 ? $"  - {traitId}"
-                : $"  - Unknown trait: {traitId}");
+                : LocalizationManager.GetString("lstraits-unknown-trait"));
         }
     }
 
@@ -76,7 +76,7 @@ public sealed class LsTraits : LocalizedCommands
         {
             return CompletionResult.FromHintOptions(
                 CompletionHelper.SessionNames(),
-                LocalizationManager.GetString("shell-argument-username-hint"));
+                Loc.GetString("shell-argument-username-hint"));
         }
 
         return CompletionResult.Empty;
