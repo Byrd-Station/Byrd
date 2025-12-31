@@ -1167,6 +1167,7 @@
   minLimit: 0
   loadouts:
   - ResearchDirectorBeret
+  - MystaHat # omu
 
 - type: loadoutGroup
   id: ResearchDirectorNeck
@@ -1194,6 +1195,7 @@
   - ResearchDirectorLabCoat
   - ResearchDirectorWintercoat
   - LongScienceCoat # OmuStation
+  - MystaLabcoat # Omu
   - ResearchDirectorLabCoatPurple #goob
 
 - type: loadoutGroup
@@ -1246,6 +1248,7 @@
   minLimit: 0
   loadouts:
   - RegularLabCoat
+  - EpiLabcoat
   - ScienceLabCoat
   - ScienceWintercoat
   - RoboticistLabCoat
