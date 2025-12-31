@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/30/2025 12:14:41
-  entityCount: 23693
+  time: 12/31/2025 11:02:15
+  entityCount: 23687
 maps:
 - 1
 grids:
@@ -16365,8 +16365,6 @@ entities:
       - 13796
       - 13957
       - 617
-      - 16383
-      - 16395
   - uid: 89
     components:
     - type: Transform
@@ -16498,9 +16496,6 @@ entities:
       parent: 2
     - type: DeviceList
       devices:
-      - 23676
-      - 23677
-      - 23672
       - 23615
       - 23639
       - 23616
@@ -19159,7 +19154,7 @@ entities:
       pos: -25.5,-25.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -5051.1655
+      secondsUntilStateChange: -5124.026
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -76108,14 +76103,6 @@ entities:
     - type: Transform
       pos: 44.5,-31.5
       parent: 2
-    - type: DeviceList
-      devices:
-      - 23675
-      - 23674
-      - 23673
-      - 23677
-      - 23676
-      - 23672
 - proto: FireAxeCabinetFilled
   entities:
   - uid: 10967
@@ -99369,6 +99356,14 @@ entities:
       - 97
     - type: AtmosPipeColor
       color: '#0335FCFF'
+  - uid: 16383
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 20.5,-37.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#0335FCFF'
   - uid: 23639
     components:
     - type: Transform
@@ -100998,6 +100993,14 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 97
+    - type: AtmosPipeColor
+      color: '#FF1212FF'
+  - uid: 16395
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 20.5,-36.5
+      parent: 2
     - type: AtmosPipeColor
       color: '#FF1212FF'
   - uid: 23615
