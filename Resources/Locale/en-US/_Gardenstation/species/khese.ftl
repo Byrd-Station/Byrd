@@ -1,0 +1,16 @@
+species-name-Khese = Khese
+species-name-Introduction = Introduction
+body-name-Oni = Khese
+ent-ChestOni = Khese torso
+ent-HeadOni = Khese head  
+ent-LeftArmOni = Khese left arm
+ent-RightArmOni = Khese right arm
+ent-LeftHandOni = Khese left hand
+ent-RightHandOni = Khese right hand
+ent-LeftLegOni = Khese left leg
+ent-RightLegOni = Khese right leg
+ent-LeftFootOni = Khese left foot
+ent-RightFootOni = Khese right foot
+ent-OrganOniStomach = Khese stomach
+ent-OrganOniLiver = Khese liver
+ent-OrganOni = Khese stomach

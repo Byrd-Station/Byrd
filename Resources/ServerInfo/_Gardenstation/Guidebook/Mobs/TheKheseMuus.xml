@@ -1,0 +1,96 @@
+<!--
+SPDX-FileCopyrightText: 2024 ScyronX <166930367+ScyronX@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com> 
+SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+SPDX-FileCopyrightText: 2025 ratdotnet <auroraaegis87@protonmail.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # The Khese Müüs
+
+  <Box>
+    <GuideEntityEmbed Entity="MobOni" Caption=""/>
+  </Box>
+
+[color=#808080]A Khese is [color=#b3b3b3]a young adult[/color] until age 35, [color=#b3b3b3]an adult[/color] until age 95, [color=#b3b3b3]middle-aged[/color] until age 150, and [color=#b3b3b3]elderly[/color] beyond that point.[/color]
+
+## Overview
+  The [bold][color=#a4d68c]Khese Müüs[/color][/bold] (Natus Somniatore) are large, horned people hailing from the further reaches of the Orion Spur. After a violent insurrection
+  following decades of occupation by Interdyne Pharmaceuticals, they've cautiously taken to the stars.
+  
+## Khörs Sölijäštü, the Language of the Khese Müüs
+  Born from millions of years of devout worship and nomadic travel, the language of the Khese has taken on an diglossic character.
+  There are two dialects: [bold][color=#a4d68c]Khörs Sölijäštü[/color][/bold], the spiritual dialect, and [bold][color=#9966CC]Kors Solijastu[/color][/bold], the nomadic dialect.
+  In casual, or common conversation, one would use [bold][color=#9966CC]Kors[/color][/bold], with its harder consonants and simplified vowel harmony. When speaking of spiritual, political, or otherwise deeply
+  personal matters, one would use [bold][color=#a4d68c]Khörs[/color][/bold]. Words in this dialect take on more abstract, philosophical meanings, compared to their straightforward nomadic counterparts.
+  Among spacefaring Khese, Kors remains a go-to tongue, and usage of the liturgy around or with non-Khese strangers is a social faux-pas at best.
+
+  ### Important Khörs Vocab
+    - [bold][color=#a4d68c]Iñozyn Ûl[/color][/bold] / [bold][color=#9966CC]Inozyn ul[/color][/bold] = The Khese Homeworld = “The Longest Path”
+    - [bold][color=#a4d68c]Khese Müüs[/color][/bold] / = [bold][color=#9966CC]Kese Muus[/color][/bold] = “Gentle People”
+    - [bold][color=#a4d68c]Khüsse Itüčelär[/color][/bold] / [bold][color=#9966CC]Kusse Itucelar[/color][/bold] = Government of the Khese = "Chosen Stewards"
+    - [bold][color=#a4d68c]Khörs Sölijäštÿ[/color][/bold] / [bold][color=#9966CC]Kors Solijasti[/color][/bold] = Shamans = "Soil Speakers"
+    - [bold][color=#a4d68c]Khörs Şirüčelär[/color][/bold] / [bold][color=#9966CC]Kors Sirucelar[/color][/bold] = Industrialists = "Soil Movers"
+    - [bold][color=#a4d68c]Khörs Alkučalar[/color][/bold] / [bold][color=#9966CC]Kors Alkucalar[/color][/bold] = Nomadic Peoples = "Soil Walkers"
+
+## Khese Naming Conventions
+  Given the diglossic nature of Khörs, the name of a Khese Müüs in turn possesses a dual nature. 
+  At birth, they are assigned both a "True Name", and a "Common Name", each used in differing contexts.
+  A Khese's given name is broadly determined by the aspect of Khese culture it is born into. 
+  Typically, their names are unisex, and auspicious in nature, though the circumstance of their birth may lead to a taboo name, in hopes of warding off misfortune.
+  
+  Examples from the three cultural tendencies are as follows:
+
+  ### Khörs Alküče
+    The Nomadic peoples of Iñozyn Ûl opt for brief, pleasant names.
+    - [color=#a4d68c]Kördimjasqÿ / [color=#9966CC]Kordimjaski[/color]
+    - [color=#9966CC]Muukhaya[/color] (An example of a taboo name, would not be spoken in a Liturgical dialect)
+    - [color=#a4d68c]Korbatâr / [color=#9966CC]Korbatar[/color]
+
+  ### Khörs Sölijäštÿ
+    The Shamanic peoples of Iñozyn Ûl opt for flowery, poetic names that reflect their devotion.
+    - [color=#a4d68c]Manatai Çetçeg[/color] / [color=#9966CC]Manatay Chetcheg[/color]
+    - [color=#a4d68c]Bekqör Köpke[/color] / [color=#9966CC]Bekor Kopke[/color]
+    - [color=#a4d68c]Öyün Delkhinn[/color] / [color=#9966CC]Oyin Delkhin[/color]
+
+  ### Khörs Şirüče
+    The Industrialist founders of the Khüsse Itüčelär offer the most variability in naming schema,
+    taking influence from both of their cultural counterparts, and iterating upon them. This demographic would be most likely to be using surnames.
+    - [color=#a4d68c]Örlög Täščÿ[/color] / [color=#9966CC]Orlog Taschi[/color]
+    - [color=#a4d68c]Âsaqata[/color] / [color=#9966CC]Asakata[/color]
+    - [color=#a4d68c]Jumısşı Maktar[/color] / [color=#9966CC]Jumisshi Maktar[/color]
+
+  ### Creating a Khese Name
+    With all this in mind, it may still seem unintuitive to name a Khese character. Thankfully the do's and don'ts are quite simple:
+    - [bold]Do[/bold] pick from the two sets of vowels, [bold]bright (e, i, y),[/bold] or [bold]dark (a, o, u).[/bold]
+    - [bold]Don't[/bold] mix the vowel sets. Examples would be: Kalime, Irtuuk, Epku
+    - [bold]Do[/bold] use hard sounds [bold](k, t, p, s, sh, m, n, l, r)[/bold]
+    - [bold]Do[/bold] keep it simple! Most Khese don't have surnames, titles, or family names! One name will do just fine.
+    - [bold]Don't[/bold] use fancy characters [bold](ö, ä, ç, etc.).[/bold] We do need to be able to type these easily, after all!
+    - [bold]Do[/bold] feel free to mash together words from Mongolian, Tatar, and Kazakh! Make something cool!
+
+## Cultural Views and Attitudes
+  - Khese tradition outright disallows the disfigurement of slain combatants or sacrifices. The soul must return to the soil as it was in life, if the body is not consumed. Embalming and demisurgery are extremely important aspects of Khese burial rites
+  - “Borging”, or, the act of interfacing one's brain with a Man-Machine-Interface, has come to be regarded as one of the highest crimes an individual can commit against a Khese. [bold]The Shamanic Confederation of the Khusse Itüčelär[/bold] maintain the position that it is of the utmost importance to simply return unrevivable bodies to their homeland. To hold the soul in a mechanical artifice risks decoupling it from its connection to the world-spirit, damning it to an eternal limbo.
+  - Khese society is nearly entirely agender in its function. Even among its most conservative spaces, men and women perform the same duties, wear the same clothing, and share similar names.
+
+## Benefits
+  - They take [color=#1e90ff]20% less Blunt, Slash, and Piercing damage[/color].
+  - Does more damage in melee; 25% more Blunt, Slash, Piece, Stamina, and Structural damage.
+  - Due to their big size, they can easily carry and pull any other species.
+  - Slightly more stamina than Humans.
+
+## Drawbacks
+  - They are generally unwilling or unable to wield firearms not produced exclusively for them. 
+  - They are harder to carry and pull.
+  - They are bigger than Humans, making them easier to hit.
+
+  ## Diet
+  - Just about anything. Can even eat many things raw.
+
+</Document>

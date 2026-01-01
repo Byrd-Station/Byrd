@@ -12,3 +12,18 @@
     - BieselEckeckyik
     requires:
     - TauCetiBasic
+
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: KhorsTranslatorImplant
+  name: Khörs translator implant
+  description: A more advanced version of the translator implant, teaches your illiterate friends the ability to both speak and understand the galactic tongue!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - KheseCommon
+    - KheseComplex
+    spoken:
+    - KheseCommon

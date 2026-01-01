@@ -31,3 +31,23 @@
     requires:
     - TauCetiBasic
     - Eckeckyik
+  
+- type: entity
+  id: KhorsTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Khörs translator
+  description: Translates the twin dialects of the Khörs language. Allows you to wax philosophical with the Khese Muus.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - KheseCommon
+    understood:
+    - TauCetiBasic
+    - KheseCommon
+    - KheseComplex
+    requires:
+    - TauCetiBasic
+    - KheseCommon
+    - KheseComplex
+  

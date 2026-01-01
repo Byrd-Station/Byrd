@@ -10,10 +10,14 @@
   id: Goo
   path: /Fonts/_Gardenstation/Goo/Goo.ttf
 
-- type: font # khesespeak 
-  id: NotoSansMyanmarRegular
-  path: /Fonts/_Gardenstation/NotoSansMyanmar/NotoSansMyanmarRegular.ttf
+- type: font # khesecomplex 
+  id: Padauk
+  path: /Fonts/_Gardenstation/Padauk/Padauk.ttf
 
-- type: font # khesespeak bold
-  id: NotoSansMyanmarBold
-  path: /Fonts/_Gardenstation/NotoSansMyanmar/NotoSansMyanmarBold.ttf
+- type: font # khesexcomplex bold
+  id: PadaukBold
+  path: /Fonts/_Gardenstation/Padauk/PadaukBold.ttf
+
+#- type: font # khesespeak common
+#  id:
+#  path:

@@ -1,14 +1,14 @@
-# spoken by the Khese Muus. Looks Burmese, comparable to Mongolian/Tatar/Kazakh
 # SPDX-FileCopyrightText: 2025 ratdotnet <auroraaegis87@protonmail.com>
+# spoken by the Khese Muus. Looks Burmese, comparable to Mongolian/Tatar/Kazakh
 
 - type: language
-  id: KheseSpeak
+  id: KheseComplex
   isVisibleLanguage: true
   speech:
     color: "#a4d68c"
-    fontId: NotoSansMyanmarRegular
-    boldFontId: NotoSansMyanmarBold
-    fontsize: 16
+    fontId: Padauk
+    boldFontId: PadaukBold
+    fontSize: 16
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2

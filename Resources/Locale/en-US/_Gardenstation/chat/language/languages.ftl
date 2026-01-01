@@ -9,6 +9,10 @@ language-BieselEckeckyik-description =
     A more humanized dialect of the Thaven common language, thought to be developed by Thaven dockworkers in the coastal cities of Biesel.
     The dialect relies less heavily on subsonics and manipulation of frequencies, with a larger emphasis on harmonics, whooping hollers, and sing-song vocalizations.
 
-language-KheseSpeak-name = Khörs Söjläšü
-language-KheseSpeak-description =
-    An ancient tongue spoken by the Khese Muus. A vowel-heavy, harmonic language, spoken at an almost meditative pace.
+language-KheseComplex-name = Khörs Solijästu
+language-KheseComplex-description =
+    An ancient tongue spoken by the Khese Muus. A vowel-heavy, harmonic language, spoken at an almost meditative pace. A liturgical dialect, used in spiritual, political, or deeply personal contexts.
+
+language-KheseCommon-name = Kors Solijastu
+language-KheseCommon-description =
+    An ancient tongue spoken by the Khese Muus. A common dialect, used in casual speech. Features a collapsed vowel harmony, and harder consonants.

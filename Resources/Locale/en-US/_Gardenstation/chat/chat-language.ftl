@@ -2,4 +2,6 @@
 
 chat-language-BieselEckeckyik-name = Bieselized Eckeckyik
 
-chat-language-KheseSpeak-name = Khörs Söjläšü
+chat-language-KheseCommon-name = Kors Solijastu
+
+chat-language-KheseComplex-name = Khörs Solijästu

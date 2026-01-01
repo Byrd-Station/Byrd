@@ -17,17 +17,21 @@
 
 - type: species
   id: Oni
-  name: species-name-oni
+  name: species-name-Khese # Gardenstation Lore: Oni -> Khese
   roundStart: true
   prototype: MobOni
   dollPrototype: MobOniDummy
   markingLimits: MobOniMarkingLimits
   sprites: MobHumanSprites
   skinColoration: Hues
-  maleFirstNames: NamesOniFirstMale
-  femaleFirstNames: NamesOniFirstFemale
-  lastNames: NamesOniLast
-  naming: LastNoFirst
+  maleFirstNames: NamesKheseFirst # Khese rework, unisex naming convention - maus
+  femaleFirstNames: NamesKheseFirst
+  lastNames: NamesKheseLast
+  naming: FirstLast
+  minAge: 18 # Khese rework, they didnt already have these? lol. - maus
+  youngAge: 35
+  oldAge: 150
+  maxAge: 190
   # begin Goobstation: port EE height/width sliders
   minHeight: 1.0
   defaultHeight: 1.2

@@ -1,0 +1,69 @@
+# SPDX-FileCopyrightText: 2025 ratdotnet <auroraaegis87@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# spoken by the Khese Muus. Simplified Dialect. Comparable to Mongolian/Tatar/Kazakh
+# Fonts may prove to suck to use, may have to change/comment out.
+
+- type: language
+  id: KheseCommon
+  isVisibleLanguage: true
+  speech:
+    color: "#9966CC"
+    #fontId:
+    # boldFontId:
+    fontSize: 16
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 2
+    replacement:
+      - "kor"
+      - "selta"
+      - "mushko"
+      - "ine"
+      - "golta"
+      - "arkan"
+      - "pyrme"
+      - "jeshto"
+      - "vun"
+      - "hask"
+      - "ildim"
+      - "ozon"
+      - "prege"
+      - "tash"
+      - "ybar"
+      - "folt"
+      - "kep"
+      - "nushpar"
+      - "zirtek"
+      - "ambo"
+      - "skeja"
+      - "trinak"
+      - "woteg"
+      - "plovo"
+      - "frist"
+      - "dalka"
+      - "gwen"
+      - "snur"
+      - "hebra"
+      - "quop"
+      - "mizban"
+      - "jask"
+      - "vorto"
+      - "threng"
+      - "spen"
+      - "klib"
+      - "agnot"
+      - "frul"
+      - "drenar"
+      - "skelt"
+      - "porvish"
+      - "twen"
+      - "hogra"
+      - "nepro"
+      - "zambar"
+      - "flosh"
+      - "kadra"
+      - "brimst"
+      - "osteg"
+      - "glent"

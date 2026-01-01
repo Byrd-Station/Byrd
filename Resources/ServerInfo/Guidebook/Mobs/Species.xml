@@ -31,7 +31,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="MobHuman" Caption="Human"/>
     <GuideEntityEmbed Entity="MobIPCDummy" Caption="IPC"/>
     <GuideEntityEmbed Entity="MobMoth" Caption="Moth Person"/>
-    <GuideEntityEmbed Entity="MobOni" Caption="Oni"/>
+    <GuideEntityEmbed Entity="MobOni" Caption="The "/>
     <GuideEntityEmbed Entity="MobReptilian" Caption="Reptilian"/>
     <GuideEntityEmbed Entity="MobResomi" Caption="Resomi"/>
   </Box>

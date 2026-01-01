@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2025 ratdotnet <auroraaegis87@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: guideEntry
+  id: TheKheseMuus
+  name: species-name-Khese
+  text: "/ServerInfo/_Gardenstation/Guidebook/Mobs/TheKheseMuus.xml"
+  children: 
+  - Introduction
+
+- type: guideEntry
+  id: Introduction
+  name: species-name-Introduction
+  text: "/ServerInfo/_Gardenstation/Guidebook/Mobs/Introduction.xml"

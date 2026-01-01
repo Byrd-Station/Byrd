@@ -13,6 +13,7 @@
 # SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 # SPDX-FileCopyrightText: 2025 ratdotnet <auroraaegis87@protonmail.com>
+# SPDX-FileCopyrightText: 2025 ratdotnet <auroraaegis87@protonmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -28,10 +29,12 @@
   - type: LanguageKnowledge # Einstein Engines - Languages
     speaks:
     - TauCetiBasic # Nothing else because Rouge said she was adding a language for Oni
-    - KheseSpeak # Gardenstation
+    - KheseCommon # Gardenstation
+    - KheseComplex # Gardenstation
     understands:
     - TauCetiBasic
-    - KheseSpeak # Gardenstation
+    - KheseCommon # Gardenstation
+    - KheseComplex # Gardenstation
   - type: HumanoidAppearance
     species: Oni
   - type: Sprite

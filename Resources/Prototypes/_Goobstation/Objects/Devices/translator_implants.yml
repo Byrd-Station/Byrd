@@ -45,6 +45,8 @@
       - Kobold
       - SpaceItalian
       - Cheval
+      - KheseCommon
+      - KheseComplex
     understood:
       - Eldritch
       - Chittin
@@ -77,6 +79,8 @@
       - Kobold
       - SpaceItalian
       - Cheval
+      - KheseCommon
+      - KheseComplex
 
 - type: entity
   parent: BaseSubdermalImplant
