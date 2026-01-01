@@ -74,6 +74,13 @@
     - id: MobSpaceShrimp
     - id: MobCrab
 
+- type: entityTable
+  id: LavaFishTableCommon
+  table: !type:GroupSelector
+    children:
+    - id: FishCoal
+    - id: FishQuartz
+
 # Items from Water
 - type: entityTable
   id: WaterFishingLootTable

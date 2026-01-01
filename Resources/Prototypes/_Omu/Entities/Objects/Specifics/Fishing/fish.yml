@@ -1,0 +1,31 @@
+- type: entity
+  id: FishCoal
+  parent: BaseFish
+  name: coal orefish
+  description: Fucked up looking rock fish.. I think I see some coal in it?
+  components:
+  - type: Sprite
+    sprite: _Omu/Objects/Specific/Fishing/orefish.rsi
+    state: coalfish
+  - type: Item
+    sprite: _Omu/Objects/Specific/Fishing/orefish.rsi
+  - type: Butcherable
+    spawned:
+    - id: CoalUnprocessed
+      amount: 30
+
+- type: entity
+  id: FishQuartz
+  parent: BaseFish
+  name: quartz orefish
+  description: Fucked up looking rock fish.. I think I see some quartz in it?
+  components:
+  - type: Sprite
+    sprite: _Omu/Objects/Specific/Fishing/orefish.rsi
+    state: quartzfish
+  - type: Item
+    sprite: _Omu/Objects/Specific/Fishing/orefish.rsi
+  - type: Butcherable
+    spawned:
+    - id: SpaceQuartzUnprocessed
+      amount: 30
