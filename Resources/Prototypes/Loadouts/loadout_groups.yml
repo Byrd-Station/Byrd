@@ -970,7 +970,7 @@
   name: loadout-group-cargo-technician-shoes
   loadouts:
   - BlackShoes
-  - WorkBoots
+  - WorkBoots 
   - FishingBoots
   - SalvageBoots
   - CargoWinterBoots
@@ -1248,7 +1248,7 @@
   minLimit: 0
   loadouts:
   - RegularLabCoat
-  - EpiLabcoat
+  - EpiLabcoat # omu
   - ScienceLabCoat
   - ScienceWintercoat
   - RoboticistLabCoat
