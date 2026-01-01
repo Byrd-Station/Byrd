@@ -47,7 +47,7 @@
   equipment:
     id: VirologistPDA
 
-# Emu edit
+# Omu edit
 - type: loadout
   id: VirologistEnvirosuit
   equipment:
@@ -65,3 +65,4 @@
   - !type:SpeciesLoadoutEffect
     species:
     - Plasmaman
+  # Omu End
