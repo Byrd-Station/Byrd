@@ -42,8 +42,8 @@
     attackRate: 0.8
     damage:
       types:
-        Blunt: 15
-        Slash: 15
+        Blunt: 15 # Omu
+        Slash: 15 # Omu
     soundHit:
       collection: MetalThud
     canWideSwing: false # Omu
