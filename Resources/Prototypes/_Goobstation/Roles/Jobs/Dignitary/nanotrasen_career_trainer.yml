@@ -27,13 +27,13 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, BluespaceLifelineImplant ]
-  - !type:RemoveComponentSpecial # Omu, no stealing NCT's gear
-    components:
-    - type: Strippable
   - !type:AddComponentSpecial
     components:
     #- type: CommandStaff # Intentionally not command. I don't want them to ruin rev rounds.
     - type: AntagImmune # Omu - NCT Shouldn't roll as Antags.
+#  - !type:AddComponentSpecial # Intentionally not command. I don't want them to ruin rev rounds.
+#    components:
+#    - type: CommandStaff
 
 - type: startingGear
   id: NanotrasenCareerTrainerGear
