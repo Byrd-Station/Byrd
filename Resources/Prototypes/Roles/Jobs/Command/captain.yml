@@ -163,6 +163,24 @@
       #any MRP using our code might eventually want to use it
     # - !type:SaturationRequirement # MisandryBox - no neon hair on captain
     #   hairColorSaturation: 0.30
+    - !type:RoleTimeRequirement
+      role: JobQuartermaster
+      time: 18000 # Omu - 5 hours
+    - !type:RoleTimeRequirement
+      role: JobChiefMedicalOfficer
+      time: 18000 # Omu - 5 hours, no more shitcap
+    - !type:RoleTimeRequirement
+      role: JobChiefEngineer
+      time: 18000 # Omu - 5 hours, no more shitcap
+    - !type:RoleTimeRequirement
+      role: JobHeadOfPersonnel
+      time: 18000 # Omu - 5 hours, no more shitcap
+    - !type:RoleTimeRequirement
+      role: JobHeadOfSecurity
+      time: 18000 # Omu - 5 hours, no more shitcap
+    - !type:RoleTimeRequirement
+      role: JobResearchDirector
+      time: 18000 # Omu - 5 hours, no more shitcap
   guides: # goobstation
   - Command
   - Succession
