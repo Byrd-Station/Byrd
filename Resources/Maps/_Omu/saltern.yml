@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/30/2025 10:26:00
-  entityCount: 12541
+  time: 01/01/2026 14:00:39
+  entityCount: 12544
 maps:
 - 1
 grids:
@@ -1889,6 +1889,11 @@ entities:
             id: BrickTileDarkLineW
           decals:
             719: -10,-29
+        - node:
+            color: '#9FED58FF'
+            id: BrickTileSteelBox
+          decals:
+            1071: 55,-8
         - node:
             zIndex: 2
             color: '#D381C9FF'
@@ -3778,6 +3783,17 @@ entities:
     - type: Action
       container: 5
       originalIconColor: '#FFFFFFFF'
+- proto: ActionToggleLight
+  entities:
+  - uid: 8762
+    mapInit: true
+    paused: true
+    components:
+    - type: Transform
+      parent: 8373
+    - type: Action
+      container: 8373
+      originalIconColor: '#FFFFFFFF'
 - proto: AirAlarm
   entities:
   - uid: 7
@@ -5508,7 +5524,7 @@ entities:
       pos: -9.5,-35.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2481.352
+      secondsUntilStateChange: -2738.69
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -23770,6 +23786,13 @@ entities:
     - type: Transform
       pos: 36.5,12.5
       parent: 2
+- proto: CargoComputerComms
+  entities:
+  - uid: 4768
+    components:
+    - type: Transform
+      pos: 28.5,17.5
+      parent: 2
 - proto: CargoTechFab
   entities:
   - uid: 3766
@@ -27929,6 +27952,13 @@ entities:
       rot: 3.141592653589793 rad
       pos: -18.5,-13.5
       parent: 2
+- proto: CloningPod
+  entities:
+  - uid: 4580
+    components:
+    - type: Transform
+      pos: 16.5,-7.5
+      parent: 2
 - proto: ClosetBombFilled
   entities:
   - uid: 4534
@@ -28174,11 +28204,6 @@ entities:
     components:
     - type: Transform
       pos: 17.5,-20.5
-      parent: 2
-  - uid: 4580
-    components:
-    - type: Transform
-      pos: 14.5,-7.5
       parent: 2
   - uid: 4581
     components:
@@ -29300,11 +29325,6 @@ entities:
       parent: 2
 - proto: ComputerCargoBounty
   entities:
-  - uid: 4768
-    components:
-    - type: Transform
-      pos: 28.5,17.5
-      parent: 2
   - uid: 4769
     components:
     - type: Transform
@@ -29367,6 +29387,25 @@ entities:
     - type: Transform
       pos: -28.5,1.5
       parent: 2
+- proto: ComputerCloningConsole
+  entities:
+  - uid: 8780
+    components:
+    - type: Transform
+      pos: 18.5,-4.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        4985:
+        - - MedicalScannerSender
+          - MedicalScannerReceiver
+        - - CloningPodSender
+          - MedicalScannerReceiver
+        4580:
+        - - CloningPodSender
+          - CloningPodReceiver
+        - - MedicalScannerSender
+          - CloningPodReceiver
 - proto: ComputerComms
   entities:
   - uid: 4778
@@ -30745,11 +30784,6 @@ entities:
       parent: 2
 - proto: DiseaseDiagnoser
   entities:
-  - uid: 4985
-    components:
-    - type: Transform
-      pos: 19.5,-5.5
-      parent: 2
   - uid: 4986
     components:
     - type: Transform
@@ -34343,6 +34377,13 @@ entities:
       parent: 5600
     - type: Physics
       canCollide: False
+- proto: EngiComputerComms
+  entities:
+  - uid: 10420
+    components:
+    - type: Transform
+      pos: 40.5,-0.5
+      parent: 2
 - proto: EngineeringTechFab
   entities:
   - uid: 5602
@@ -35698,7 +35739,7 @@ entities:
       pos: 40.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -11914.086
+      secondsUntilStateChange: -12171.424
       state: Closing
   - uid: 5823
     components:
@@ -52131,7 +52172,7 @@ entities:
   - uid: 8204
     components:
     - type: Transform
-      pos: 40.50493,-0.0047982335
+      pos: 40.46472,0.45526898
       parent: 2
 - proto: HandLabeler
   entities:
@@ -53216,8 +53257,24 @@ entities:
   - uid: 8373
     components:
     - type: Transform
-      pos: 37.66952,-0.30827445
+      pos: 37.886597,-0.10723102
       parent: 2
+    - type: HandheldLight
+      toggleActionEntity: 8762
+    - type: ContainerContainer
+      containers:
+        cell_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        actions: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 8762
+    - type: Physics
+      canCollide: True
+    - type: ActionsContainer
   - uid: 8374
     components:
     - type: Transform
@@ -54173,6 +54230,20 @@ entities:
       - Arsenal
       - Experimental
       - CivilianServices
+- proto: MedicalComputerComms
+  entities:
+  - uid: 10646
+    components:
+    - type: Transform
+      pos: 24.5,-9.5
+      parent: 2
+- proto: MedicalScanner
+  entities:
+  - uid: 4985
+    components:
+    - type: Transform
+      pos: 19.5,-4.5
+      parent: 2
 - proto: MedicalTechFab
   entities:
   - uid: 8512
@@ -55836,11 +55907,6 @@ entities:
     - type: Transform
       pos: -43.5,-9.5
       parent: 2
-  - uid: 8762
-    components:
-    - type: Transform
-      pos: 18.5,-4.5
-      parent: 2
   - uid: 8763
     components:
     - type: Transform
@@ -55941,13 +56007,6 @@ entities:
     - type: Transform
       pos: -0.5,-27.5
       parent: 2
-  - uid: 8780
-    components:
-    - type: Transform
-      pos: 40.5,-0.5
-      parent: 2
-    - type: Physics
-      canCollide: False
   - uid: 8781
     components:
     - type: Transform
@@ -55967,6 +56026,11 @@ entities:
     components:
     - type: Transform
       pos: 22.5,-4.5
+      parent: 2
+  - uid: 10493
+    components:
+    - type: Transform
+      pos: 37.5,-0.5
       parent: 2
 - proto: PowerCellSmall
   entities:
@@ -61107,6 +61171,13 @@ entities:
       rot: 3.141592653589793 rad
       pos: 23.5,15.5
       parent: 2
+- proto: ScienceComputerComms
+  entities:
+  - uid: 12544
+    components:
+    - type: Transform
+      pos: -3.5,-19.5
+      parent: 2
 - proto: ScienceTechFab
   entities:
   - uid: 9648
@@ -61140,6 +61211,14 @@ entities:
     - type: Transform
       pos: -23.430374,-21.53869
       parent: 2
+- proto: SecurityComputerComms
+  entities:
+  - uid: 10577
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -8.5,20.5
+      parent: 2
 - proto: SecurityTechFab
   entities:
   - uid: 9652
@@ -61159,6 +61238,14 @@ entities:
     components:
     - type: Transform
       pos: -18.5,1.5
+      parent: 2
+- proto: ServiceComputerComms
+  entities:
+  - uid: 12542
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 9.5,16.5
       parent: 2
 - proto: ServiceTechFab
   entities:
@@ -66490,11 +66577,6 @@ entities:
     - type: Transform
       pos: 9.5,28.5
       parent: 2
-  - uid: 10420
-    components:
-    - type: Transform
-      pos: 40.5,-0.5
-      parent: 2
   - uid: 10421
     components:
     - type: Transform
@@ -66869,11 +66951,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -21.5,17.5
-      parent: 2
-  - uid: 10493
-    components:
-    - type: Transform
-      pos: -8.5,20.5
       parent: 2
   - uid: 10494
     components:
@@ -67602,11 +67679,6 @@ entities:
     - type: Transform
       pos: 27.5,-24.5
       parent: 2
-  - uid: 10577
-    components:
-    - type: Transform
-      pos: 19.5,-4.5
-      parent: 2
 - proto: VehicleKeyJanicart
   entities:
   - uid: 10578
@@ -68077,10 +68149,10 @@ entities:
           - StationRadioRigPort
 - proto: VirologyServer
   entities:
-  - uid: 10646
+  - uid: 12543
     components:
     - type: Transform
-      pos: 24.5,-9.5
+      pos: 55.5,-7.5
       parent: 2
 - proto: WallmountTelescreen
   entities:
