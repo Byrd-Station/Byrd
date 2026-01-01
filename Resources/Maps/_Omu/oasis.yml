@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/11/2025 21:41:16
-  entityCount: 29863
+  time: 12/12/2025 20:00:48
+  entityCount: 29864
 maps:
 - 1
 grids:
@@ -13224,7 +13224,7 @@ entities:
       pos: 0.5,48.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -36549.86
+      secondsUntilStateChange: -36566.027
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13924,7 +13924,7 @@ entities:
       pos: -3.5,-35.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -638194.75
+      secondsUntilStateChange: -638210.94
       state: Opening
   - uid: 422
     components:
@@ -76212,8 +76212,8 @@ entities:
           restitution: 0
           friction: 0.4
     - type: EntityStorage
-      open: True
       removedMasks: 20
+      open: True
     - type: PlaceableSurface
       isPlaceable: True
   - uid: 7911
@@ -79833,8 +79833,8 @@ entities:
       pos: -20.5,-4.5
       parent: 2
     - type: EntityStorage
-      open: True
       removedMasks: 28
+      open: True
     - type: Fixtures
       fixtures:
         fix1:
@@ -79941,8 +79941,8 @@ entities:
           restitution: 0
           friction: 0.4
     - type: EntityStorage
-      open: True
       removedMasks: 20
+      open: True
     - type: PlaceableSurface
       isPlaceable: True
 - proto: CrateTrashCartFilled
@@ -93055,7 +93055,7 @@ entities:
       pos: -1.5,-16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4974.305
+      secondsUntilStateChange: -4990.4717
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -157373,6 +157373,13 @@ entities:
     - type: Transform
       pos: 26.5,17.5
       parent: 2
+- proto: SpawnPointNanotrasenCareerTrainer
+  entities:
+  - uid: 21837
+    components:
+    - type: Transform
+      pos: 22.5,13.5
+      parent: 2
 - proto: SpawnPointNanotrasenRepresentative
   entities:
   - uid: 18519
@@ -186596,7 +186603,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -61898.875
+      secondsUntilStateChange: -61915.043
       state: Opening
     - type: Airlock
       autoClose: False
@@ -187950,7 +187957,7 @@ entities:
       pos: 24.5,2.5
       parent: 22618
     - type: Door
-      secondsUntilStateChange: -416326.25
+      secondsUntilStateChange: -416342.4
       state: Opening
   - uid: 29025
     components:
@@ -187959,7 +187966,7 @@ entities:
       pos: -46.5,28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -70282.64
+      secondsUntilStateChange: -70298.805
       state: Opening
 - proto: WoodenBench
   entities:
