@@ -11,3 +11,8 @@ loadout-group-corpsman-headset = Corpsman headset
 
 # Med
 loadout-group-medical-neck = Medical neck
+
+# Virologist
+loadout-group-virologist-envirohelm = Virologist envirohelm
+loadout-group-virologist-envirosuit = Virologist envirosuit
+loadout-group-virologist-envirogloves = Virologist envirogloves

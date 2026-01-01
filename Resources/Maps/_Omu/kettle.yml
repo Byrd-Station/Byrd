@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/11/2025 21:31:13
-  entityCount: 26933
+  time: 12/21/2025 18:39:09
+  entityCount: 26935
 maps:
 - 1
 grids:
@@ -10491,6 +10491,7 @@ entities:
     - type: SpreaderGrid
     - type: ImplicitRoof
     - type: FTLDrive
+    - type: NavMap
 - proto: AccordionInstrument
   entities:
   - uid: 3
@@ -68740,8 +68741,8 @@ entities:
       pos: -18.5,0.5
       parent: 2
     - type: EntityStorage
-      open: True
       removedMasks: 28
+      open: True
 - proto: CrateNPCGoose
   entities:
   - uid: 10340
@@ -68750,8 +68751,8 @@ entities:
       pos: -10.5,-40.5
       parent: 2
     - type: EntityStorage
-      open: True
       removedMasks: 28
+      open: True
 - proto: CrateNPCLizard
   entities:
   - uid: 10341
@@ -68760,8 +68761,8 @@ entities:
       pos: -17.5,-38.5
       parent: 2
     - type: EntityStorage
-      open: True
       removedMasks: 28
+      open: True
 - proto: CrateScienceSecure
   entities:
   - uid: 10342
@@ -144464,6 +144465,18 @@ entities:
     components:
     - type: Transform
       pos: -15.5,37.5
+      parent: 2
+- proto: SpawnPointVirologist
+  entities:
+  - uid: 26934
+    components:
+    - type: Transform
+      pos: -45.5,-25.5
+      parent: 2
+  - uid: 26935
+    components:
+    - type: Transform
+      pos: -43.5,-25.5
       parent: 2
 - proto: SpawnPointWarden
   entities:
