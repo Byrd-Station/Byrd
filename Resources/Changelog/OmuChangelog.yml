@@ -1585,3 +1585,79 @@ Entries:
       message: Nanotrasen Career Trainer now can spawn in Cog!
   id: 193
   time: '2025-12-22T08:57:38.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: Alters midround antags - no more midround ling doubling the C-ling count
+  id: 194
+  time: '2025-12-24T21:50:46.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: >-
+        Limit of 10 flesh stalkers now, BUT they are buffed, you should tase em,
+        holy em or freeze em now!
+  id: 195
+  time: '2025-12-27T07:54:48.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: Upstream till the 26th December
+    - type: Add
+      message: Added Virology spawns to all maps that need it.
+    - type: Tweak
+      message: Pink Xenobio slimes will now make Weh juice instead of Genderfluid.
+    - type: Fix
+      message: Fixed Polymorph issues from Upstream.
+    - type: Fix
+      message: >-
+        Fixed a rare crash that is caused by an entity that is polymorphed
+        multiple times being reverted.
+    - type: Remove
+      message: Removed Genderfluid.
+    - type: Remove
+      message: Removed Serpentcrest from the map rotation.
+  id: 196
+  time: '2025-12-27T11:33:36.0000000+00:00'
+- author: Sarahon
+  changes:
+    - type: Tweak
+      message: >-
+        NCT is actually a crew member - no godmode or admin special things need
+        to apply to them
+  id: 197
+  time: '2025-12-28T20:53:22.0000000+00:00'
+- author: maertayn
+  changes:
+    - type: Add
+      message: Integrated bodycams to HoS mantle & cloak
+  id: 198
+  time: '2026-01-01T03:13:00.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: resin breaking sound effects changed
+  id: 199
+  time: '2026-01-01T03:42:56.0000000+00:00'
+- author: SirCannonFodder
+  changes:
+    - type: Add
+      message: >-
+        Envirosuits, are now certificated Biosuits. Plasmamen rejoice, all two
+        of you!
+    - type: Fix
+      message: Virologists Plasmaman now have the envirosuits in their loadout.
+  id: 200
+  time: '2026-01-01T14:12:13.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Tweak
+      message: Replaced the pink slime weh juice with Genderfluid.
+  id: 201
+  time: '2026-01-01T15:49:38.0000000+00:00'
+- author: PhosphateWithManyOs
+  changes:
+    - type: Add
+      message: Chunky shoes for the BSO.
+  id: 202
+  time: '2026-01-01T17:34:28.0000000+00:00'

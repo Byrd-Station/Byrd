@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/12/2025 19:59:31
-  entityCount: 27676
+  time: 12/21/2025 18:48:29
+  entityCount: 27679
 maps:
 - 1
 grids:
@@ -2889,8 +2889,6 @@ entities:
           decals:
             1377: -43,-48
             1378: -51,-57
-            1379: -51,-50
-            1380: -52,-50
             1381: -54,-50
         - node:
             color: '#A4610696'
@@ -5110,6 +5108,7 @@ entities:
             3652: 0,-58
             3653: 0,-55
             3654: 0,-51
+            3786: -52,-50
         - node:
             color: '#FFFFFFFF'
             id: WarnCornerNE
@@ -11365,7 +11364,7 @@ entities:
       pos: -42.5,29.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -19570.303
+      secondsUntilStateChange: -19704.67
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 2
@@ -140732,6 +140731,12 @@ entities:
     - type: Transform
       pos: 92.5,6.5
       parent: 2
+  - uid: 27677
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -51.5,-50.5
+      parent: 2
 - proto: SignSurgery
   entities:
   - uid: 20848
@@ -143391,6 +143396,18 @@ entities:
     components:
     - type: Transform
       pos: 53.5,15.5
+      parent: 2
+- proto: SpawnPointVirologist
+  entities:
+  - uid: 27678
+    components:
+    - type: Transform
+      pos: -50.5,-47.5
+      parent: 2
+  - uid: 27679
+    components:
+    - type: Transform
+      pos: -51.5,-47.5
       parent: 2
 - proto: SpawnPointWarden
   entities:
