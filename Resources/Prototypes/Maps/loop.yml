@@ -158,8 +158,9 @@
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
             Reporter: [ 1, 1 ]
+            #TODO Omu map RadioHost: [ 1, 1 ]
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 3 ]
 
-            NanotrasenCareerTrainer: [ -1, -1] # Omu
+            NanotrasenCareerTrainer: [ 2, 2] # Omu

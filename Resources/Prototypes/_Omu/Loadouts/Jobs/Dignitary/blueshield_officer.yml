@@ -49,8 +49,18 @@
   equipment:
     neck: ClothingNeckMantleTwoBlueshield
 
+
 # Belt
 - type: loadout #BSO's belt - Moved to Loadout
   id: BeltAssaultFilled
   equipment:
     belt: ClothingBeltAssaultFilled
+
+- type: loadout
+  id: BsoSwordBelt
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorOfficer
+  equipment:
+    belt: ClothingBeltSheathStunswordFilled
+
