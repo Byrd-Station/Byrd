@@ -25,4 +25,4 @@
       types:
         Slash: 13
   - type: Construction
-    graph: DaggerBone
+    graph: DaggerBoneConstructionGraph

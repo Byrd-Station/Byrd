@@ -1,11 +1,11 @@
-- type: construction
-  id: BoneAxeConstruction
-  name: bone axe
-  description: An axe made of bones. A primitive hunters favorite... probably.
-  graph: BoneAxe
-  startNode: start
-  targetNode: axe
-  icon:
-    sprite: _Omu/Objects/Weapons/Melee/bone_axe.rsi
-    state: icon
-  objectType: Item
+#- type: construction
+#  id: BoneAxeConstruction
+#  name: bone axe
+#  description: An axe made of bones. A primitive hunters favorite... probably.
+#  graph: BoneAxe
+#  startNode: start
+#  targetNode: axe
+#  icon:
+#    sprite: _Omu/Objects/Weapons/Melee/bone_axe.rsi
+#    state: icon
+#  objectType: Item

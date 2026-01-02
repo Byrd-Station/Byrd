@@ -53,4 +53,4 @@
     startSound:
       path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
   - type: Construction
-    graph: BoneAxe
+    graph: BoneAxeConstructionGraph

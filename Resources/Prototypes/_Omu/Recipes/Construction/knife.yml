@@ -1,11 +1,11 @@
-- type: construction
-  id: BoneDaggerConstruction
-  name: bone dagger
-  description: A sharpened bone. The bare minimum in survival.
-  graph: DaggerBone
-  startNode: start
-  targetNode: dagger
-  icon:
-    sprite: _Omu/Objects/Weapons/Melee/bone_dagger.rsi
-    state: icon
-  objectType: Item
+#- type: construction
+#  id: BoneDaggerConstruction
+#  name: bone dagger
+#  description: A sharpened bone. The bare minimum in survival.
+#  graph: DaggerBone
+#  startNode: start
+#  targetNode: dagger
+#  icon:
+#    sprite: _Omu/Objects/Weapons/Melee/bone_dagger.rsi
+#    state: icon
+#  objectType: Item
