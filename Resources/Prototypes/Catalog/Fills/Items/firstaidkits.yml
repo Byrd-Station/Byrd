@@ -126,7 +126,7 @@
   suffix: Filled
   parent: MedkitCombat
   components:
-  - type: Fish
+  - type: Fish # omu
     difficulty: 0.023
   - type: StorageFill
     contents:
