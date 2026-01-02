@@ -58,12 +58,13 @@
           path: /Maps/Shuttles/cargo_fland.yml
         - type: StationJobs
           availableJobs:
-            #service
+            #command
             Captain: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
-            HeadOfPersonnel: [ 1, 1 ]
             AdministrativeAssistant: [ 1, 1 ] # Delta V
+            #service
+            HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 2, 2 ]
             Botanist: [ 3, 3 ]
             Chef: [ 3, 3 ]
@@ -71,7 +72,7 @@
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 2, 2 ]
-            RadioHost: [ 1, 1 ]
+            RadioHost: [ 1, 1 ] # Omu
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 4, 4 ]
@@ -83,7 +84,7 @@
             MedicalDoctor: [ 6, 6 ]
             Paramedic: [ 2, 2 ]
             MedicalIntern: [ 6, 6 ]
-            Virologist: [ 2, 2 ]
+            Virologist: [ 2, 2 ] # Omu
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 6, 6 ]
@@ -109,6 +110,8 @@
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 4, 4 ]
+            #Omu
+            NanotrasenCareerTrainer: [ 2, 2]
 
         # Goobstation blob-config-start HUGE
         - type: StationBlobConfig
