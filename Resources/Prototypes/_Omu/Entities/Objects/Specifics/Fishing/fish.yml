@@ -1,8 +1,8 @@
 - type: entity
   id: FishCoalOre
   parent: BaseFish
-  name: coal orefish
-  description: Fucked up looking rock fish.. I think I see some coal in it?
+  name: steel orefish
+  description: Messed up looking rock fish.. I can make butcher it for coal and iron.
   components:
   - type: Sprite
     sprite: _Omu/Objects/Specific/Fishing/orefish.rsi
@@ -12,13 +12,15 @@
   - type: Butcherable
     spawned:
     - id: CoalUnprocessed
-      amount: 1
+      amount: 2
+    - id: SteelOreUnProcessed
+      amount: 2
 
 - type: entity
   id: FishQuartzOre
   parent: BaseFish
   name: quartz orefish
-  description: Fucked up looking rock fish.. I think I see some quartz in it?
+  description: Messed up looking rock fish.. I can butcher it for quartz.
   components:
   - type: Sprite
     sprite: _Omu/Objects/Specific/Fishing/orefish.rsi
@@ -28,7 +30,7 @@
   - type: Butcherable
     spawned:
     - id: SpaceQuartzUnprocessed
-      amount: 1
+      amount: 2
 
 - type: entity
   id: FishGoldOre
@@ -82,7 +84,7 @@
   id: FishUraniumOre
   parent: BaseFish
   name: uranium orefish
-  description: Uranium fever has done and got me down.
+  description: Uranium fever has done and got me down!
   components:
   - type: Sprite
     sprite: _Omu/Objects/Specific/Fishing/orefish.rsi
@@ -98,7 +100,7 @@
   id: FishDiamondOre
   parent: BaseFishRare
   name: diamond orefish
-  description: I am placing blocks and shit.
+  description: I'm ofishially rich.
   components:
   - type: Sprite
     sprite: _Omu/Objects/Specific/Fishing/orefish.rsi
@@ -130,7 +132,7 @@
   id: FishArtifactOre
   parent: BaseFishRare
   name: artifact orefish
-  description: Science might enjoy this.
+  description: Science would krill for this.
   components:
   - type: Sprite
     sprite: _Omu/Objects/Specific/Fishing/orefish.rsi

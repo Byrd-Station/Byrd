@@ -102,10 +102,16 @@
     children:
     - id: FishCoalOre
     - id: FishQuartzOre
+
+- type: entityTable
+  id: LavaFishTableUncommon
+  table: !type:GroupSelector
+    children:
     - id: FishSilverOre
     - id: FishGoldOre
     - id: FishPlasmaOre
     - id: FishUraniumOre
+
 - type: entityTable
   id: LavaFishTableRare
   table: !type:GroupSelector
@@ -124,17 +130,17 @@
     children:
       # omu salvage fishing real
       - !type:NestedSelector
-        tableId: BasicFishingLootTable
-        weight: 30
-      - !type:NestedSelector
         tableId: LavaFishTableCommon
         weight: 50
       - !type:NestedSelector
+        tableId: LavaFishTableUncommon
+        weight: 30
+      - !type:NestedSelector
         tableId: LavaFishTableRare
-        weight: 15
+        weight: 17
       - !type:NestedSelector
         tableId: InsaneFishTable
-        weight: 5
+        weight: 3
         
 # Items from Plasma
 - type: entityTable
