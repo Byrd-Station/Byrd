@@ -58,7 +58,7 @@ selectable-set-syndicate-spy-description =
     stealth box, syndicate jaws of life, and a syndicate encryption key.
 
 selectable-set-syndicate-hitman-name = Hitman Bundle
-#omu
+# Omu
 selectable-set-syndicate-hitman-description =
     Find and eliminate your targets quietly and effectively with this bundle.
     Contains: Cobra pistol with 4 extra mags, Capoeira manual, energy dagger
