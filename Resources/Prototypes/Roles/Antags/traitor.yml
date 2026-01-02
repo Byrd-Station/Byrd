@@ -101,6 +101,10 @@
   setPreference: true
   objective: roles-antag-syndicate-agent-objective
   guides: [ Traitors ]
+  # Omu - Add Antag Time requirements
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 18000 # 5 Hours
 
 - type: antag
   id: TraitorSleeper
@@ -109,6 +113,10 @@
   setPreference: true
   objective: roles-antag-syndicate-agent-sleeper-objective
   guides: [ Traitors ]
+  # Omu - Add Antag Time requirements
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 18000 # 5 Hours
 
 # Syndicate Operative Outfit - Monkey
 - type: startingGear

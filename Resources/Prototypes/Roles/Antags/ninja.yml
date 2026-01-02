@@ -89,6 +89,9 @@
     species:
     - Plasmaman
     - Xelthia #Omu Edit - They can't use gloves and ninja objectives needs gloves
+  # Omu - Add Antag Time requirements
+  - !type:OverallPlaytimeRequirement
+    time: 18000 # 5 Hours
 
 #Ninja Gear
 - type: startingGear

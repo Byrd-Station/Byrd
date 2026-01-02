@@ -89,6 +89,10 @@
   setPreference: true
   objective: roles-antag-thief-objective
   guides: [ Thieves ]
+  # Omu - Add Antag Time requirements
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 18000 # 5 Hours
 
 - type: startingGear
   id: ThiefGear

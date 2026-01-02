@@ -21,6 +21,9 @@
     species:
     - IPC
     - Plasmaman
+  # Omu - Add Antag Time requirements
+  - !type:OverallPlaytimeRequirement
+    time: 18000 # 5 Hours
   guides: [ Zombies ]
 
 - type: antag

@@ -11,3 +11,7 @@
   setPreference: true
   objective: roles-antag-corporate-agent-description
   guides: [ CorporateAgents ]
+  # Omu - Add Antag Time requirements
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 18000 # 5 Hours
