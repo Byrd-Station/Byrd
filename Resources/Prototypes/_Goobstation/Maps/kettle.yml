@@ -51,12 +51,13 @@
           emergencyShuttlePath: /Maps/Shuttles/emergency_courser.yml
         - type: StationJobs
           availableJobs:
-            #service
+            #Command
             NanotrasenRepresentative: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
             Captain: [ 1, 1 ]
-            HeadOfPersonnel: [ 1, 1 ]
             AdministrativeAssistant: [ 1, 1 ] # Delta V
+            #service
+            HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 2 ]
             Botanist: [ 3, 4 ]
             Chef: [ 2, 3 ]
@@ -66,7 +67,7 @@
             Lawyer: [ 2, 3 ]
             Zookeeper: [ 1, 1 ]
             ServiceWorker: [ 4, 4 ]
-            RadioHost: [ 1, 1 ]
+            RadioHost: [ 1, 1 ] # Omu
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
@@ -78,7 +79,7 @@
             Paramedic: [ 2, 2 ]
             MedicalDoctor: [ 3, 5 ]
             MedicalIntern: [ 8, 8 ]
-            Virologist: [ 1, 1 ]
+            Virologist: [ 1, 1 ] # Omu
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 4, 6 ]
@@ -102,6 +103,8 @@
             Mime: [ 1, 2 ]
             Musician: [ 1, 2 ]
             StationAi: [ 1, 1 ]
+            # Omu
+            NanotrasenCareerTrainer: [ 2, 2]
 
         # Goobstation blob-config-start HUGE
         - type: StationBlobConfig
