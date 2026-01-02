@@ -105,6 +105,7 @@
   name: guide-entry-sop-command
   text: "/ServerInfo/_Goobstation/Guidebook/SoP/Jobs/Command/CommandSOP.xml"
   children:
+  - CommandTrainingManual # Omu
   - NanotrasenRep SOP
   - BlueshieldOfficer SOP
   - Captain SOP
@@ -145,6 +146,7 @@
   text: "/ServerInfo/_Goobstation/Guidebook/SoP/Jobs/Security/SecuritySOP.xml"
   children:
   # - Brigmedic SOP # Omu - rename Brigmedic to Corpsman
+  - SecurityTrainingManual # Omu
   - Corpsman SOP # Omu - rename Brigmedic to Corpsman
   - Warden SOP
   - OfficerCadet SOP

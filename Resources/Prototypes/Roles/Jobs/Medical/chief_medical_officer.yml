@@ -162,6 +162,8 @@
   - Medical SOP
   - Command
   - Chemicals
+  - CommandTrainingManual # Omu
+  - Virology
   goobcoins: 40 #Goob content
   weight: 10 #Goob Edit
   access:
