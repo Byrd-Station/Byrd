@@ -121,7 +121,7 @@
     - id: FishBluespaceOre
     - id: MobShark
     - id: MedkitCombatFilled
-    - id: GoliathPlate
+    - id: MaterialGoliathHide
 # Items from Lava
 - type: entityTable
   id: LavaFishingLootTable
