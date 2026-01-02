@@ -55,8 +55,8 @@
     - id: MobDragonDungeon  # This one dies pretty easy its just gonna be funny
     - id: NukeDiskFake
     - id: ClothingOuterHardsuitCarp
-    - id: FoodSnackLollypopWrappedCarpEvil
-    - id: CombatMedipen
+    - id: FoodSnackLollypopWrappedCarpEvil # Omu
+    - id: CombatMedipen # Omu
 
 # Fish from water
 - type: entityTable
