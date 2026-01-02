@@ -1661,3 +1661,33 @@ Entries:
       message: Chunky shoes for the BSO.
   id: 202
   time: '2026-01-01T17:34:28.0000000+00:00'
+- author: Dishwasher0
+  changes: []
+  id: 203
+  time: '2026-01-01T20:50:46.0000000+00:00'
+- author: Delphine
+  changes:
+    - type: Fix
+      message: >-
+        The Chef Engineer has been fired and replaced with a Chief Engineer. We
+        apologize for any inconvenience caused.
+  id: 204
+  time: '2026-01-01T20:51:33.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Add
+      message: >-
+        Added space shrimps, fish them up. Fry them before a ghost takes it over
+        and fries YOU
+    - type: Tweak
+      message: >-
+        Added crabs to the fishing loot pool. Oh also you can fish up dragons
+        now have fun
+  id: 205
+  time: '2026-01-01T20:52:18.0000000+00:00'
+- author: WazuraWasTaken
+  changes:
+    - type: Tweak
+      message: Terminus damage value reverted to how it was before upstream.
+  id: 206
+  time: '2026-01-01T20:53:23.0000000+00:00'

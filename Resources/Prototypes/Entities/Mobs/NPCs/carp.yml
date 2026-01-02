@@ -393,6 +393,8 @@
         types:
           Slash: 10
           Bloodloss: 5
+    - type: Fish
+      difficulty: 0.040
 
 - type: entity
   id: MobSharkSalvage
