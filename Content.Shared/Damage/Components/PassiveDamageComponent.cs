@@ -11,10 +11,11 @@
 //
 // SPDX-License-Identifier: MIT
 
-using Content.Shared.Mobs;
 using Content.Goobstation.Maths.FixedPoint;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Content.Shared._Shitmed.Damage;
+using Content.Shared.Mobs;
 using Robust.Shared.GameStates;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Damage.Components;
 
@@ -50,4 +51,15 @@ public sealed partial class PassiveDamageComponent : Component
 
     [DataField("nextDamage", customTypeSerializer: typeof(TimeOffsetSerializer)), ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
     public TimeSpan NextDamage = TimeSpan.Zero;
+
+    /// <summary>
+    /// Goobstation - How passive damage split damage between parts
+    /// Split for damage and SplitEnsureAllDamagedAndOrganic for passive regen
+    /// MOCHO, I DON'T CARE -> COME AND FIX YOUR MED!!
+    /// </summary>
+    [DataField]
+    public SplitDamageBehavior SplitBehavior = SplitDamageBehavior.Split;
+
+    [DataField("healAllParts"), ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+    public bool HealAllParts { get; set; } = false; // Omu, make it so slimes have natural regen again.
 }

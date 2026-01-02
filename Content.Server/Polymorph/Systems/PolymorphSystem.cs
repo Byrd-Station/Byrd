@@ -106,6 +106,7 @@ using Content.Server.Humanoid;
 using Content.Server.Inventory;
 using Content.Server.Mind.Commands;
 using Content.Server.Polymorph.Components;
+using Content.Shared._DV.Polymorph;
 using Content.Shared._Goobstation.Wizard.BindSoul;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
@@ -175,8 +176,6 @@ public sealed partial class PolymorphSystem : EntitySystem
     [Dependency] private readonly SharedBodySystem _body = default!;
     [Dependency] private readonly WoundSystem _wound = default!;
 
-    private ISawmill _sawMill = default!; // Goobstation
-
     private const string RevertPolymorphId = "ActionRevertPolymorph";
 
     public override void Initialize()
@@ -186,6 +185,7 @@ public sealed partial class PolymorphSystem : EntitySystem
 
         SubscribeLocalEvent<PolymorphableComponent, PolymorphActionEvent>(OnPolymorphActionEvent);
         SubscribeLocalEvent<PolymorphedEntityComponent, RevertPolymorphActionEvent>(OnRevertPolymorphActionEvent);
+        SubscribeLocalEvent<PolymorphedEntityComponent, ComponentStartup>(OnPolymorphedStartup); // Omu - Fix Poly
 
         SubscribeLocalEvent<PolymorphedEntityComponent, BeforeFullyEatenEvent>(OnBeforeFullyEaten);
         SubscribeLocalEvent<PolymorphedEntityComponent, BeforeFullySlicedEvent>(OnBeforeFullySliced);
@@ -193,8 +193,6 @@ public sealed partial class PolymorphSystem : EntitySystem
 
         InitializeMap();
         InitializeTrigger();
-
-        _sawMill = Logger.GetSawmill("polymorph"); // Goobstation
     }
 
     public override void Update(float frameTime)
@@ -236,16 +234,31 @@ public sealed partial class PolymorphSystem : EntitySystem
         }
     }
 
+    private void OnPolymorphedStartup(Entity<PolymorphedEntityComponent> ent, ref ComponentStartup args)
+    {
+        EnsureRevertAction(ent);
+    }
+
     private void OnMapInit(Entity<PolymorphedEntityComponent> ent, ref MapInitEvent args)
+    {
+        EnsureRevertAction(ent);
+    }
+
+    private void EnsureRevertAction(Entity<PolymorphedEntityComponent> ent)
     {
         var (uid, component) = ent;
         if (component.Configuration.Forced)
+            return;
+
+        if (component.Action != null)
             return;
 
         if (_actions.AddAction(uid, ref component.Action, out var action, RevertPolymorphId))
         {
             _actions.SetEntityIcon((component.Action.Value, action), component.Parent);
             _actions.SetUseDelay(component.Action.Value, TimeSpan.FromSeconds(component.Configuration.Delay));
+            if (component.Configuration.SkipRevertConfirmation) // Goobstation
+                RemComp<ConfirmableActionComponent>(component.Action.Value);
         }
     }
 
@@ -360,15 +373,7 @@ public sealed partial class PolymorphSystem : EntitySystem
         // Einstein Engines - Language begin
         // Copy specified components over
         foreach (var compName in configuration.CopiedComponents)
-        {
-            if (!_compFact.TryGetRegistration(compName, out var reg)
-                || !EntityManager.TryGetComponent(uid, reg.Idx, out var comp))
-                continue;
-
-            var copy = _serialization.CreateCopy(comp, notNullableOverride: true);
-            copy.Owner = child;
-            AddComp(child, copy, true);
-        }
+            CopyPolymorphComponent(uid, child, compName, transfer: false); // Omu
         // Einstein Engines - Language end
 
         var polymorphedComp = Factory.GetComponent<PolymorphedEntityComponent>();
@@ -493,7 +498,7 @@ public sealed partial class PolymorphSystem : EntitySystem
                 }
                 catch (UnknownComponentException e)
                 {
-                    _sawMill.Error(e.Message);
+                    Log.Error(e.Message);
                     continue;
                 }
 
@@ -709,4 +714,44 @@ public sealed partial class PolymorphSystem : EntitySystem
         if (actions.TryGetValue(id, out var action))
             _actions.RemoveAction(target.Owner, action);
     }
+    #region Omu - Return Polymorph Goob edits
+    // goob edit
+    // it makes more sense for it to be here than anywhere.
+    // if anywhere it should be embedded in the engine but we can't afford that :P
+    public T? CopyPolymorphComponent<T>(EntityUid old, EntityUid @new, bool transfer = true) where T : Component
+        => CopyPolymorphComponent(old, @new, typeof(T), transfer) as T;
+
+    // don't use transfer if you have component references like EE languages
+    // ideally you shouldn't use comp references at all
+    public IComponent? CopyPolymorphComponent(EntityUid old, EntityUid @new, string componentRegistration, bool transfer = true)
+    {
+        if (!_compFact.TryGetRegistration(componentRegistration, out var reg))
+            return null;
+
+        return CopyPolymorphComponent(old, @new, reg.Type, transfer);
+    }
+
+    public IComponent? CopyPolymorphComponent(EntityUid old, EntityUid @new, Type compType, bool transfer = true)
+    {
+        if (old == @new)
+            return null;
+
+        if (!EntityManager.TryGetComponent(old, compType, out var comp))
+            return null;
+
+        if (transfer)
+        {
+            var newComp = (Component) _compFact.GetComponent(compType);
+            var temp = (object) newComp;
+            _serialization.CopyTo(comp, ref temp, notNullableOverride: true);
+            EntityManager.AddComponent(@new, (Component) temp!, true); // Omu - fix crash when a polymorphed entity gets polymorphed while polymorphed and then dies.
+            return temp as IComponent;
+        }
+
+        var copy = _serialization.CreateCopy(comp, notNullableOverride: true);
+        AddComp(@new, copy, true);
+        return copy;
+    }
+    // goob edit end
+    #endregion
 }

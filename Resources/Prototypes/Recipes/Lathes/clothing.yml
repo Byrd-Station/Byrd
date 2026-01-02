@@ -662,7 +662,7 @@
   id: ClothingUniformJumpskirtSec
   result: ClothingUniformJumpskirtSec
 
-## Brigmedic
+## Brigmedic | Omu - CORPSMAN!!
 
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
@@ -912,11 +912,6 @@
   id: ClothingHeadHatHopcap
   result: ClothingHeadHatHopcap
 
-- type: latheRecipe
-  parent: BaseCommandHatRecipe
-  id: ClothingHeadHatBeretHop
-  result: ClothingHeadHatBeretHop
-  
 - type: latheRecipe
   parent: BaseCommandHatRecipe
   id: ClothingHeadHatQMsoft

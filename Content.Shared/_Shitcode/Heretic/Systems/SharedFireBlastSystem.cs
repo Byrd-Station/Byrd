@@ -14,11 +14,10 @@ namespace Content.Shared._Shitcode.Heretic.Systems;
 public abstract class SharedFireBlastSystem : EntitySystem
 {
     [Dependency] protected readonly SharedTransformSystem Xform = default!;
-    [Dependency] protected readonly SharedStatusEffectsSystem Status = default!;
+    [Dependency] protected readonly StatusEffectsSystem Status = default!;
     [Dependency] protected readonly DamageableSystem Dmg = default!;
 
     [Dependency] private readonly IGameTiming _timing = default!;
-
     [Dependency] private readonly SharedStaminaSystem _stam = default!;
 
     public static readonly EntProtoId FireBlastStatusEffect = "StatusEffectFireBlasted";
@@ -33,6 +32,9 @@ public abstract class SharedFireBlastSystem : EntitySystem
 
     private void OnRemoved(Entity<FireBlastedStatusEffectComponent> ent, ref StatusEffectRemovedEvent args)
     {
+        if (_timing.ApplyingState)
+            return;
+
         if (TerminatingOrDeleted(args.Target))
             return;
 
@@ -41,6 +43,9 @@ public abstract class SharedFireBlastSystem : EntitySystem
 
     private void OnApplied(Entity<FireBlastedStatusEffectComponent> ent, ref StatusEffectAppliedEvent args)
     {
+        if (_timing.ApplyingState)
+            return;
+
         EnsureComp<FireBlastedComponent>(args.Target);
     }
 

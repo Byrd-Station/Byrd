@@ -76,6 +76,7 @@
       - id: FlashlightSeclite
       - id: ClothingEyesGlassesMeson
       # Lavaland Change End
+      - id: PinpointerSalvage # Omu Salvage Crew Pinpointer
 
 - type: entity
   id: LockerSalvageSpecialistFilled
@@ -109,3 +110,4 @@
       - id: FlashlightSeclite
       # TODO: bluespace shelter capsule
       # Lavaland Change End
+      - id: PinpointerSalvage # Omu Salvage Crew Pinpointer

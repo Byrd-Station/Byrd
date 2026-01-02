@@ -145,6 +145,10 @@
             "name": "pinpointer-crewprox"
         },
         {
+            "name": "pinpointer-miner",
+            "_comment": "OmuStation"
+        },
+        {
             "name": "pinpointer-syndicate"
         },
         {

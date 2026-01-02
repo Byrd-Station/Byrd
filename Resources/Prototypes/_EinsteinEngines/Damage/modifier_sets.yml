@@ -27,11 +27,13 @@
 - type: damageModifierSet
   id: Shadowkin
   coefficients:
-    Blunt: 1.25
-    Slash: 1.25
-    Piercing: 1.25
+# begin Omu - shadowkin take less brute and heat now, but take 40% more radiation
+    Blunt: 1.15
+    Slash: 1.15
+    Piercing: 1.15
     Asphyxiation: 0.50
-    Heat: 1.4
+    Radiation: 1.4
+    # end Omu
   ignoreArmorPierceFlags: All # Goobstation
 
 - type: damageModifierSet
@@ -45,3 +47,24 @@
     Poison: 0.8
     Radiation: 0
     Bloodloss: 0.0 # Immune to weapons that directly deal bloodloss damage
+
+- type: damageModifierSet
+  id: Smile
+  coefficients:
+    Blunt: 0.7
+    Slash: 0.7
+    Piercing: 0.7
+    Heat: 0.8
+    Shock: 0.6
+    Cold: 0.2
+    Bloodloss: 0
+    Poison: 0.4
+    Radiation: 0
+    Cellular: 0.1
+    
+- type: damageModifierSet
+  id: Xelthia
+  coefficients:
+    Cold: 1.5
+    Heat: 0.5
+    Caustic: 0

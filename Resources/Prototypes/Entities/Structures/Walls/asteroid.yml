@@ -164,7 +164,7 @@
         sound:
           path: /Audio/Effects/break_stone.ogg
           params:
-            volume: -6
+            volume: -2 # Omu - Sound wasn't playing when I broke the rocks in lavaland
   - type: Fixtures
     fixtures:
       fix1:
@@ -1292,6 +1292,24 @@
       state: rock_wall_north
     - map: [ "enum.EdgeLayer.West" ]
       state: rock_wall_west
+  # Omu - Make lavaland mining satisfying again
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 120
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/break_stone.ogg
+          params:
+            volume: -6
+  # Omu - Make lavaland mining satisfying again
 
 - type: entity
   id: WallRockBasaltCoal
@@ -2128,23 +2146,23 @@
   parent: WallRockChromite
   suffix: Coal
   components:
-    - type: OreVein
-      oreChance: 1.0
-      currentOre: OreCoal
-    - type: Sprite
-      layers:
-        - state: rock_chromite
-        - map: [ "enum.EdgeLayer.South" ]
-          state: rock_chromite_south
-        - map: [ "enum.EdgeLayer.East" ]
-          state: rock_chromite_east
-        - map: [ "enum.EdgeLayer.North" ]
-          state: rock_chromite_north
-        - map: [ "enum.EdgeLayer.West" ]
-          state: rock_chromite_west
-        - state: rock_coal
-          map: [ "enum.MiningScannerVisualLayers.Overlay" ]
-          visible: false # Lavaland Change
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreCoal
+  - type: Sprite
+    layers:
+    - state: rock_chromite
+    - map: [ "enum.EdgeLayer.South" ]
+      state: rock_chromite_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: rock_chromite_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: rock_chromite_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: rock_chromite_west
+    - state: rock_coal
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+      visible: false # Lavaland Change
 
 - type: entity
   id: WallRockChromiteGold

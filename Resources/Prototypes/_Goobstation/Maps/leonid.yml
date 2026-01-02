@@ -41,7 +41,7 @@
 - type: gameMap
   id: Leonid
   mapName: 'Leonid Station'
-  mapPath: /Maps/_Goobstation/leonid.yml
+  mapPath: /Maps/_Omu/leonid.yml # Omu - Prisoner role mapping
   minPlayers: 35
   stations:
     Leonid:
@@ -63,6 +63,7 @@
             NanotrasenRepresentative: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
+            AdministrativeAssistant: [ 1, 1 ] # Delta V
             Bartender: [ 2, 2 ]
             Botanist: [ 3, 3 ]
             Chef: [ 3, 3 ]
@@ -70,6 +71,7 @@
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             ServiceWorker: [ 2, 2 ]
+            RadioHost: [ 1, 1 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 4, 4 ]
@@ -81,6 +83,7 @@
             MedicalDoctor: [ 6, 6 ]
             Paramedic: [ 2, 2 ]
             MedicalIntern: [ 6, 6 ]
+            Virologist: [ 2, 2 ]
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 6, 6 ]
@@ -93,6 +96,7 @@
             SecurityCadet: [ 6, 6 ]
             Lawyer: [ 3, 3 ]
             Brigmedic: [ 1, 1 ]
+            TransitPrisoner: [2, 2] # Omu - Prisoner role
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 6, 6 ]

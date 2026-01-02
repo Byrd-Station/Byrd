@@ -381,7 +381,7 @@
 - type: entity
   id: BedsheetBrigmedic
   parent: BedsheetBase
-  name: brigmedic's bedsheet
+  name: corpsman's bedsheet # Omu - rename Brigmedic to Corpsman
   description: Not worse than cotton.
   components:
   - type: Sprite
@@ -409,6 +409,8 @@
     state: sheetsyndie
   - type: Clothing
     sprite: Clothing/Neck/Bedsheets/syndie.rsi
+  - type: ScannableForPoints # goob edit
+    points: 1
 
 - type: entity
   id: BedsheetUSA

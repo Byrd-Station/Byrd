@@ -192,7 +192,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
-
+using Content.Goobstation.Common.CCVar; // Goob Station - Barks
+using Content.Goobstation.Common.Barks; // Goob Station - Barks
 namespace Content.Client.Lobby.UI
 {
     [GenerateTypedNameReferences]
@@ -269,8 +270,7 @@ namespace Content.Client.Lobby.UI
 
         private bool _isDirty;
 
-        [ValidatePrototypeId<GuideEntryPrototype>]
-        private const string DefaultSpeciesGuidebook = "Species";
+        private static readonly ProtoId<GuideEntryPrototype> DefaultSpeciesGuidebook = "Species";
 
         public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
 
@@ -390,6 +390,17 @@ namespace Content.Client.Lobby.UI
 
             #endregion Gender
 
+            // Goob Station
+            #region Barks
+
+            if (configurationManager.GetCVar(GoobCVars.BarksEnabled))
+            {
+                BarksContainer.Visible = true;
+                InitializeBarkVoice();
+            }
+
+            #endregion
+
             RefreshSpecies();
 
             SpeciesButton.OnItemSelected += args =>
@@ -402,7 +413,7 @@ namespace Content.Client.Lobby.UI
             };
 
             // begin Goobstation: port EE height/width sliders
-            #region Height and Width            
+            #region Height and Width
 
             UpdateHeightWidthSliders();
             UpdateDimensions(SliderUpdate.Both);
@@ -435,6 +446,7 @@ namespace Content.Client.Lobby.UI
             };
 
             RgbSkinColorContainer.AddChild(_rgbSkinColorSelector = new ColorSelectorSliders());
+            _rgbSkinColorSelector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV
             _rgbSkinColorSelector.OnColorChanged += _ =>
             {
                 OnSkinColorOnValueChanged();
@@ -723,10 +735,9 @@ namespace Content.Client.Lobby.UI
             // setup the maxtraits and global trait points counters. These values will go up as selectors are (re)added to the UI.
             _selectedTraitCount = 0;
             _selectedTraitPointCount = _traitStartingPoints;
-            var selectionCount = 0;
 
-            // keep track of which categories have category-specific points, for later.
-            HashSet<TraitCategoryPrototype> categoriesWithPoints = new();
+            // keep track of which categories have category-specific points, and the points which those categories have.
+            Dictionary<TraitCategoryPrototype, int> categoriesWithPoints = new();
 
             foreach (var trait in traits)
             {
@@ -739,9 +750,9 @@ namespace Content.Client.Lobby.UI
                     continue;
 
                 // Take note of categories with their own points count, so we can add category-points text later.
-                if (category.MaxTraitPoints > 0)
+                if (category.MaxTraitPoints > 0 && !categoriesWithPoints.ContainsKey(category))
                 {
-                    categoriesWithPoints.Add(category);
+                    categoriesWithPoints.Add(category, 0);
                 }
 
                 // Create a selector for this trait, but don't display it just yet.
@@ -758,8 +769,12 @@ namespace Content.Client.Lobby.UI
                 // increment the trait count and points, if the user has the trait selected.
                 if (selector.Preference)
                 {
-                    selectionCount += trait.Cost;
                     _selectedTraitPointCount -= trait.GlobalCost;
+
+                    if (categoriesWithPoints.ContainsKey(category))
+                    {
+                        categoriesWithPoints[category] += trait.Cost;
+                    }
 
                     if (trait.CountsTowardsMaxTraits)
                         _selectedTraitCount++;
@@ -808,12 +823,12 @@ namespace Content.Client.Lobby.UI
             }
 
             // each category with category-specific points recieves a label here.
-            foreach (var categoryWithPoints in categoriesWithPoints)
+            foreach (var (categoryWithPoints, categoryPoints) in categoriesWithPoints)
             {
                 // create the label
                 var categoryPointsText = new Label
                 {
-                    Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", selectionCount), ("max", categoryWithPoints.MaxTraitPoints!)), // we know MaxTraitPoints isn't null here because it needs to have value in order to add this category to categoriesWithPoints
+                    Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", categoryPoints), ("max", categoryWithPoints.MaxTraitPoints!)), // we know MaxTraitPoints isn't null here because it needs to have value in order to add this category to categoriesWithPoints
                     FontColorOverride = Color.LightGray
                 };
 
@@ -1012,6 +1027,7 @@ namespace Content.Client.Lobby.UI
             UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
+            UpdateBarkVoice(); // Goob Station - Barks
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
@@ -1057,9 +1073,9 @@ namespace Content.Client.Lobby.UI
             var species = Profile?.Species ?? SharedHumanoidAppearanceSystem.DefaultSpecies;
             var page = DefaultSpeciesGuidebook;
             if (_prototypeManager.HasIndex<GuideEntryPrototype>(species))
-                page = species;
+                page = new ProtoId<GuideEntryPrototype>(species.Id); // Gross. See above todo comment.
 
-            if (_prototypeManager.TryIndex<GuideEntryPrototype>(DefaultSpeciesGuidebook, out var guideRoot))
+            if (_prototypeManager.TryIndex(DefaultSpeciesGuidebook, out var guideRoot))
             {
                 var dict = new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry>();
                 dict.Add(DefaultSpeciesGuidebook, guideRoot);
@@ -1499,6 +1515,7 @@ namespace Content.Client.Lobby.UI
             UpdateSexControls(); // update sex for new species
             UpdateSpeciesGuidebookIcon();
             ReloadPreview();
+            UpdateBarkVoice(); // Goob Station - Barks
             // begin Goobstation: port EE height/width sliders
             // Changing species provides inaccurate sliders without these
             UpdateHeightWidthSliders();
@@ -1523,7 +1540,7 @@ namespace Content.Client.Lobby.UI
             SetDirty();
         }
 
-        // begin Goobstation: port EE height/width sliders
+        // Goob Station - Start
         private void SetProfileHeight(float height)
         {
             Profile = Profile?.WithHeight(height);
@@ -1537,7 +1554,12 @@ namespace Content.Client.Lobby.UI
             ReloadProfilePreview();
             IsDirty = true;
         }
-        // end Goobstation: port EE height/width sliders
+        private void SetBarkVoice(BarkPrototype newVoice)
+        {
+            Profile = Profile?.WithBarkVoice(newVoice);
+            IsDirty = true;
+        }
+        // Goob Station - End
 
         public bool IsDirty
         {
@@ -1840,7 +1862,10 @@ namespace Content.Client.Lobby.UI
             if (fixture != null)
             {
                 var avg = (Profile.Width + Profile.Height) / 2;
-                var weight = FixtureSystem.GetMassData(fixture.Fixtures["fix1"].Shape, fixture.Fixtures["fix1"].Density).Mass * avg;
+
+                var radius = fixture.Fixtures["fix1"].Shape.Radius; // Omu edit start - EEs weight calc system is much more funny
+                var density = fixture.Fixtures["fix1"].Density;
+                var weight = MathF.Round(MathF.PI * MathF.Pow(radius * avg, 2) * density); // Omu edit end
                 WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int) weight));
             }
             else // Whelp, the fixture doesn't exist, guesstimate it instead
@@ -1860,17 +1885,13 @@ namespace Content.Client.Lobby.UI
             {
                 return;
             }
-            var hairMarking = Profile.Appearance.HairStyleId switch
-            {
-                HairStyles.DefaultHairStyle => new List<Marking>(),
-                _ => new() { new(Profile.Appearance.HairStyleId, new List<Color>() { Profile.Appearance.HairColor }) },
-            };
+            var hairMarking = Profile.Appearance.HairStyleId == HairStyles.DefaultHairStyle
+                ? new List<Marking>()
+                : new() { new(Profile.Appearance.HairStyleId, new List<Color>() { Profile.Appearance.HairColor }) };
 
-            var facialHairMarking = Profile.Appearance.FacialHairStyleId switch
-            {
-                HairStyles.DefaultFacialHairStyle => new List<Marking>(),
-                _ => new() { new(Profile.Appearance.FacialHairStyleId, new List<Color>() { Profile.Appearance.FacialHairColor }) },
-            };
+            var facialHairMarking = Profile.Appearance.FacialHairStyleId == HairStyles.DefaultFacialHairStyle
+                ? new List<Marking>()
+                : new() { new(Profile.Appearance.FacialHairStyleId, new List<Color>() { Profile.Appearance.FacialHairColor }) };
 
             HairStylePicker.UpdateData(
                 hairMarking,

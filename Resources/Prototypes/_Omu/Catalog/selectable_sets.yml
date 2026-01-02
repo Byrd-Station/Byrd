@@ -9,6 +9,16 @@
   - ClothingOuterHardsuitHeadOfSecurityExperimental
 
 - type: selectableSet
+  id: HardsuitSelectorCybersunParamedHardsuit
+  name: selectable-set-paramedic-cybersunhardsuit-name
+  description: selectable-set-paramedic-cybersunhardsuit-desc
+  sprite:
+    sprite: _Omu/Clothing/OuterClothing/Hardsuits/cybersunparamedhardsuit.rsi
+    state: icon
+  content:
+  - ClothingOuterHardsuitCybersunParamedic
+
+- type: selectableSet
   id: HosCQCSet
   name: selectable-set-hos-belt-name
   description: selectable-set-hos-belt-description
@@ -41,7 +51,7 @@
 - type: selectableSet
   id: WeaponEnergyShotgunSet
   name: selectable-set-warden-eshotty-name
-  description: selectable-set-hos-eshotty-description
+  description: selectable-set-warden-eshotty-description
   sprite:
     sprite: Objects/Weapons/Guns/Battery/energy_shotgun.rsi
     state: icon
@@ -121,3 +131,92 @@
     state: base
   content:
   - HosIreLander
+
+- type: selectableSet
+  id: WardenRapierSet
+  name: selectable-set-warden-rapier-name
+  description: selectable-set-warden-rapier-description
+  sprite:
+    sprite: _Omu/Objects/Weapons/Melee/wardenrapier.rsi
+    state: icon
+  content:
+  - ClothingNeckWardenParryCloakFilled
+
+- type: selectableSet
+  id: HosOniGlaiveSet
+  name: selectable-set-hosoniblade-name
+  description: selectable-set-hosoniblade-description
+  sprite:
+    sprite: _Omu/Objects/Weapons/Melee/oniglaive.rsi
+    state: base
+  content:
+  - HosOniBlade
+
+# ERT
+
+- type: selectableSet
+  id: ERTShotgunSet
+  name: selectable-set-ert-shotgun-name
+  description: selectable-set-ert-shotgun-description
+  sprite:
+    sprite: _Goobstation/Objects/Weapons/Guns/Lever/combatshotgun.rsi
+    state: icon
+  content:
+  - WeaponShotgunCombatCentComm
+  - MagazineBoxShotgunHighCaliber
+  - MagazineBoxShotgunHighCaliber
+  - WeaponPistolAnacondaCentComm
+
+- type: selectableSet
+  id: ERTSMGSet
+  name: selectable-set-ert-smg-name
+  description: selectable-set-ert-smg-description
+  sprite:
+    sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
+    state: icon
+  content:
+  - WeaponSubMachineGunC20rCentComm
+  - MagazinePistolSubMachineGun
+  - MagazinePistolSubMachineGun
+  - MagazinePistolSubMachineGun
+  - MagazinePistolSubMachineGun
+  - BlueShieldShieldMarginallyLessEvilFilled
+  - BoxFlashbang
+  - BoxStinger
+  - BoxTearGas
+  - BoxHandcuff
+
+- type: selectableSet
+  id: ERTLightEnergySet
+  name: selectable-set-ert-light-energy-name
+  description: selectable-set-ert-light-energy-description
+  sprite:
+    sprite: _Omu/Objects/Weapons/Guns/Battery/ert_energy_rifle.rsi
+    state: icon
+  content:
+  - WeaponAdvancedEnergyRifle
+  - ClothingBeltHolsterFilledBlueshield
+  - AdvancedEnergyMagRifleLethal
+  - AdvancedEnergyMagRifleOverchargeLethal
+  - AdvancedEnergyMagRifleDisabler
+
+#corpsman
+- type: selectableSet
+  id: VoidsuitSelectorCorpsmanLightHardsuit
+  name: selectable-set-corpsman-lighthardsuit-name
+  description: selectable-set-corpsman-lighthardsuit-desc
+  sprite:
+    sprite: Clothing/OuterClothing/Hardsuits/brigmedic.rsi
+    state: icon
+  content:
+  - ClothingOuterHardsuitBrigmedic
+
+- type: selectableSet
+  id: VoidsuitSelectorCorpsmanCombatHardsuit
+  name: selectable-set-corpsman-combathardsuit-name
+  description: selectable-set-corpsman-combathardsuit-desc
+  sprite:
+    sprite: _DV/Clothing/OuterClothing/Hardsuits/corpsman.rsi
+    state: icon
+  content:
+  - ClothingOuterHardsuitCorpsman

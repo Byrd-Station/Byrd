@@ -36,6 +36,8 @@
     clothingVisuals:
       head:
       - state: equipped-HEAD
+      head-vox:
+      - state: equipped-HEAD-vox
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -58,6 +60,7 @@
     - Snout
     - HeadTop
     - HeadSide
+  - type: FaceHuggerBlocker
 
 - type: entity
   abstract: true
@@ -105,6 +108,8 @@
       - state: equipped-HEAD-sealed
       head-resomi:
       - state: equipped-HEAD-sealed-resomi
+      head-vox:
+      - state: equipped-HEAD-sealed-vox
   - type: Armor
     modifiers:
       coefficients:
@@ -161,8 +166,8 @@
         id: blinking
         interpolate: Nearest
         maxDuration: 1.0
-        minValue: 0.1
-        maxValue: 2.0
+        startValue: 0.1
+        endValue: 2.0
         isLooped: true
   - type: Battery
     maxCharge: 600 #lights drain 3/s but recharge of 2 makes this 1/s. Therefore 600 is 10 minutes of light.
@@ -192,6 +197,8 @@
       - state: equipped-HEAD
       head-resomi:
       - state: equipped-HEAD-resomi
+      head-vox:
+      - state: equipped-HEAD-vox
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Modsuits/security.rsi
     layers:
@@ -212,6 +219,8 @@
       - state: equipped-HEAD-sealed
       head-resomi:
       - state: equipped-HEAD-sealed-resomi
+      head-vox:
+      - state: equipped-HEAD-sealed-vox
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.3
@@ -274,8 +283,8 @@
         id: blinking
         interpolate: Nearest
         maxDuration: 1.0
-        minValue: 0.1
-        maxValue: 2.0
+        startValue: 0.1
+        endValue: 2.0
         isLooped: true
   - type: Battery
     maxCharge: 600 #lights drain 3/s but recharge of 2 makes this 1/s. Therefore 600 is 10 minutes of light.
@@ -299,6 +308,8 @@
       - state: equipped-HEAD
       head-resomi:
       - state: equipped-HEAD-resomi
+      head-vox:
+      - state: equipped-HEAD-vox
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Modsuits/headofsecurity.rsi
     layers:
@@ -318,6 +329,8 @@
       - state: equipped-HEAD-sealed
       head-resomi:
       - state: equipped-HEAD-sealed-resomi
+      head-vox:
+      - state: equipped-HEAD-sealed-vox
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.3
@@ -373,8 +386,8 @@
         id: blinking
         interpolate: Nearest
         maxDuration: 1.0
-        minValue: 0.1
-        maxValue: 2.0
+        startValue: 0.1
+        endValue: 2.0
         isLooped: true
   - type: Battery
     maxCharge: 600 #lights drain 3/s but recharge of 2 makes this 1/s. Therefore 600 is 10 minutes of light.
@@ -408,6 +421,8 @@
     clothingVisuals:
       head:
       - state: equipped-HEAD-sealed
+      head-vox:
+      - state: equipped-HEAD-sealed-vox
   - type: Armor
     modifiers:
       coefficients:
@@ -457,8 +472,8 @@
         id: blinking
         interpolate: Nearest
         maxDuration: 1.0
-        minValue: 0.1
-        maxValue: 2.0
+        startValue: 0.1
+        endValue: 2.0
         isLooped: true
   - type: Battery
     maxCharge: 600 #lights drain 3/s but recharge of 2 makes this 1/s. Therefore 600 is 10 minutes of light.
@@ -482,6 +497,7 @@
     - state: helmet-sealed
       visible: false
       map: [ "sealed" ]
+  - type: HideLayerClothing
     hideOnToggle: true
   - type: IdentityBlocker
   - type: IngestionBlocker
@@ -493,6 +509,8 @@
     clothingVisuals:
       head:
       - state: equipped-HEAD-sealed
+      head-vox:
+      - state: equipped-HEAD-sealed-vox
   - type: Armor
     modifiers:
       coefficients:
@@ -544,8 +562,8 @@
         id: blinking
         interpolate: Nearest
         maxDuration: 1.0
-        minValue: 0.1
-        maxValue: 2.0
+        startValue: 0.1
+        endValue: 2.0
         isLooped: true
   - type: Battery
     maxCharge: 600 #lights drain 3/s but recharge of 2 makes this 1/s. Therefore 600 is 10 minutes of light.
@@ -579,6 +597,8 @@
       - state: equipped-HEAD
       head-resomi:
       - state: equipped-HEAD-resomi
+      head-vox:
+      - state: equipped-HEAD-vox
   - type: SealableClothing
     sealUpPopup: sealable-clothing-seal-up-helmet
     sealDownPopup: sealable-clothing-seal-down-helmet
@@ -589,6 +609,8 @@
       - state: equipped-HEAD-sealed
       head-resomi:
       - state: equipped-HEAD-sealed-resomi
+      head-vox:
+      - state: equipped-HEAD-sealed-vox
   - type: Armor
     modifiers:
       coefficients:
@@ -645,8 +667,8 @@
         id: blinking
         interpolate: Nearest
         maxDuration: 1.0
-        minValue: 0.1
-        maxValue: 2.0
+        startValue: 0.1
+        endValue: 2.0
         isLooped: true
   - type: Battery
     maxCharge: 600 #lights drain 3/s but recharge of 2 makes this 1/s. Therefore 600 is 10 minutes of light.
@@ -689,6 +711,8 @@
     clothingVisuals:
       head:
       - state: equipped-HEAD-sealed
+      head-vox:
+      - state: equipped-HEAD-sealed-vox
   - type: Armor
     modifiers:
       coefficients:
@@ -739,8 +763,8 @@
         id: blinking
         interpolate: Nearest
         maxDuration: 1.0
-        minValue: 0.1
-        maxValue: 2.0
+        startValue: 0.1
+        endValue: 2.0
         isLooped: true
   - type: Battery
     maxCharge: 600 #lights drain 3/s but recharge of 2 makes this 1/s. Therefore 600 is 10 minutes of light.
@@ -763,6 +787,8 @@
       - state: equipped-HEAD
       head-resomi:
       - state: equipped-HEAD-resomi
+      head-vox:
+      - state: equipped-HEAD-vox
   - type: Sprite
     sprite: _Goobstation/Clothing/Head/Modsuits/captain.rsi
     layers:
@@ -783,6 +809,8 @@
       - state: equipped-HEAD-sealed
       head-resomi:
       - state: equipped-HEAD-sealed-resomi
+      head-vox:
+      - state: equipped-HEAD-sealed-vox
   - type: Armor
     traumaDeductions:
       Dismemberment: 0.3
@@ -846,8 +874,8 @@
         id: blinking
         interpolate: Nearest
         maxDuration: 1.0
-        minValue: 0.1
-        maxValue: 2.0
+        startValue: 0.1
+        endValue: 2.0
         isLooped: true
   - type: Battery
     maxCharge: 600 #lights drain 3/s but recharge of 2 makes this 1/s. Therefore 600 is 10 minutes of light.

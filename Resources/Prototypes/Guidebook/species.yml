@@ -45,6 +45,7 @@
     - Chitinid
     - Plasmaman
     - Feroxi
+    - Xelthia # OMU - EE species
 
 - type: guideEntry
   id: Arachnid
@@ -105,6 +106,8 @@
   id: Vulpkanin
   name: species-name-vulpkanin
   text: "/ServerInfo/Guidebook/Mobs/Vulpkanin.xml"
+  children:
+    - CyberneticBeast
 
 - type: guideEntry
   id: Yowie
@@ -130,3 +133,8 @@
   id: Plasmaman
   name: species-name-plasmaman
   text: "/ServerInfo/Guidebook/Mobs/Plasmaman.xml"
+
+- type: guideEntry
+  id: Xelthia
+  name: species-name-xelthia
+  text: "/ServerInfo/_EinsteinEngines/Guidebook/Mobs/Xelthia.xml"

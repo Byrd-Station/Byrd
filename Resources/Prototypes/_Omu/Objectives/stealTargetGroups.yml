@@ -1,0 +1,20 @@
+- type: stealTargetGroup
+  id: CyberneticMantles
+  name: steal-target-groups-cybernetic-mantles
+  sprite:
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon
+
+- type: stealTargetGroup
+  id: ClothingEyesHudSciDiag
+  name: steal-target-groups-scidiag-eyewear
+  sprite:
+    sprite: _Omu/Clothing/Eyes/scidiagglasses.rsi
+    state: icon
+  
+- type: stealTargetGroup
+  id: DrinkMugAA
+  name: steal-target-groups-aamug
+  sprite:
+    sprite: _Omu/Objects/Consumable/Drinks/mug_aa.rsi
+    state: icon

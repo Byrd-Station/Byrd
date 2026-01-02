@@ -1,7 +1,7 @@
 - type: entity
   parent: IDCardStandard
   id: CentralCommandInternIDCard
-  name: CentComm Intern ID card
+  name: CentComm intern ID card
   components:
   - type: Sprite
     layers:
@@ -52,17 +52,82 @@
 - type: entity
   parent: IDCardStandard
   id: CentralCommandDireggtorIDCard
-  name: CentComm Direggtor ID card
+  name: CentComm direggtor ID card
   components:
   - type: Sprite
     layers:
     - state: centcom
     - state: idcentcom
   - type: Item
-    heldPrefix: 
+    heldPrefix:
   - type: IdCard
     jobTitle: job-name-centcomm-direggtor
     jobIcon: JobIconCentCommDireggtor
   - type: PresetIdCard
     job: CentralCommandDireggtor
 
+- type: entity
+  parent: IDCardStandard
+  id: PrisonerIDCardPerma
+  name: transit prisoner ID card
+  description: A generically printed ID card for scummy prisoners.
+  components:
+  - type: Sprite
+    layers:
+    - state: orange
+  - type: Item
+    heldPrefix: orange
+  - type: Access
+    tags:
+    - GenpopEnter
+  - type: IdCard
+    jobTitle: job-name-transit-prisoner
+    jobIcon: JobIconPrisoner
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+    - WhitelistChameleonIdCard
+    - Recyclable
+  - type: StaticPrice
+    price: 0
+
+- type: entity
+  parent: ERTChaplainIDCard
+  id: ERTChaplainIDCardBlue
+  suffix: Blue alert
+  components:
+  - type: PresetIdCard
+    job: ERTChaplainBlue
+
+- type: entity
+  parent: ERTEngineerIDCard
+  id: ERTEngineerIDCardBlue
+  suffix: Blue alert
+  components:
+  - type: PresetIdCard
+    job: ERTEngineerBlue
+
+- type: entity
+  parent: ERTJanitorIDCard
+  id: ERTJanitorIDCardBlue
+  suffix: Blue alert
+  components:
+  - type: PresetIdCard
+    job: ERTJanitorBlue
+
+- type: entity
+  parent: ERTMedicIDCard
+  id: ERTMedicIDCardBlue
+  suffix: Blue alert
+  components:
+  - type: PresetIdCard
+    job: ERTMedicBlue
+
+- type: entity
+  parent: ERTSecurityIDCard
+  id: ERTSecurityIDCardBlue
+  suffix: Blue alert
+  components:
+  - type: PresetIdCard
+    job: ERTSecurityBlue

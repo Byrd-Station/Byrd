@@ -31,7 +31,7 @@
 - type: gameMap
   id: OriginHighPop
   mapName: 'Origin'
-  mapPath: /Maps/_Goobstation/origin.yml
+  mapPath: /Maps/_Omu/origin.yml # Omu - Prisoner role mapping
   minPlayers: 85
   stations:
     Origin:
@@ -52,6 +52,7 @@
             NanotrasenRepresentative: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
+            AdministrativeAssistant: [ 1, 1 ] # Delta V
             Bartender: [ 3, 3 ]
             Botanist: [ 5, 5 ]
             Chef: [ 4, 4 ]
@@ -60,6 +61,7 @@
             Librarian: [ 2, 2 ]
             ServiceWorker: [ 4, 4 ]
             Reporter: [ 3, 3 ]
+            RadioHost: [ 1, 1 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 5, 5 ]
@@ -72,6 +74,7 @@
             Paramedic: [ 3, 3 ]
             MedicalIntern: [ -1, -1 ]
             Psychologist: [ 2, 2 ]
+            Virologist: [ 1, 1 ]
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 10, 10 ]
@@ -85,6 +88,7 @@
             SecurityCadet: [ -1, -1 ]
             Lawyer: [ 3, 3 ]
             Brigmedic: [ 1, 1 ]
+            TransitPrisoner: [2, 2] # Omu - Prisoner role
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 8, 8 ]

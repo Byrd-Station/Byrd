@@ -31,11 +31,11 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
     [Dependency] private readonly INetManager _netManager = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
+    private bool _allowBypassPopup = true; // Omustation - Rules smite
     private RulesPopup? _rulesPopup;
     private RulesAndInfoWindow? _infoWindow;
 
-    [ValidatePrototypeId<GuideEntryPrototype>]
-    private const string DefaultRuleset = "DefaultRuleset";
+    private static readonly ProtoId<GuideEntryPrototype> DefaultRuleset = "DefaultRuleset";
 
     public ProtoId<GuideEntryPrototype> RulesEntryId = DefaultRuleset;
 
@@ -48,12 +48,22 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
         _netManager.RegisterNetMessage<RulesAcceptedMessage>();
         _netManager.RegisterNetMessage<SendRulesInformationMessage>(OnRulesInformationMessage);
 
+        // Omustation - Rules Smite - Completely rewritten
         _consoleHost.RegisterCommand("fuckrules",
             "",
             "",
-            (_, _, _) =>
+            (con, _, _) =>
         {
-            OnAcceptPressed();
+            if (_allowBypassPopup)
+            {
+                OnAcceptPressed();
+            }
+            else
+            {
+                con.WriteError(Loc.GetString("ui-rules-fuckrules-no-bypass"));
+                if (_rulesPopup != null)
+                    _rulesPopup.Timer += 60;
+            }
         });
     }
 
@@ -62,7 +72,7 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
         RulesEntryId = message.CoreRules;
 
         if (message.ShouldShowRules)
-            ShowRules(message.PopupTime);
+            ShowRules(message.PopupTime, message.AllowBypass); // Omustation - Rules smite
     }
 
     public void OnStateExited(GameplayState state)
@@ -74,10 +84,13 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
         _infoWindow = null;
     }
 
-    private void ShowRules(float time)
+    // Omustation - Rules smite - Added allowBypass argument
+    private void ShowRules(float time, bool allowBypass)
     {
         if (_rulesPopup != null)
             return;
+
+        _allowBypassPopup = allowBypass; // Omustation - Rules smite
 
         _rulesPopup = new RulesPopup
         {
@@ -101,13 +114,15 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
 
         _rulesPopup?.Orphan();
         _rulesPopup = null;
+
+        _allowBypassPopup = true; // Omustation - Rules smite
     }
 
     public GuideEntryPrototype GetCoreRuleEntry()
     {
         if (!_prototype.TryIndex(RulesEntryId, out var guideEntryPrototype))
         {
-            guideEntryPrototype = _prototype.Index<GuideEntryPrototype>(DefaultRuleset);
+            guideEntryPrototype = _prototype.Index(DefaultRuleset);
             Log.Error($"Couldn't find the following prototype: {RulesEntryId}. Falling back to {DefaultRuleset}, please check that the server has the rules set up correctly");
             return guideEntryPrototype;
         }

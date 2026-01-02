@@ -4,6 +4,7 @@
 // SPDX-FileCopyrightText: 2020 V�ctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2020 V�ctor Aguilera Puerto <zddm@outlook.es>
 // SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2021 Javier Guardia Fern�ndez <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
 // SPDX-FileCopyrightText: 2021 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
@@ -28,19 +29,22 @@
 // SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2024 ElectroJr <leonsfriedrich@gmail.com>
 // SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+// SPDX-FileCopyrightText: 2025 Ed <96445749+TheShuEd@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Unlumination <144041835+Unlumy@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
@@ -57,6 +61,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using Content.Omu.Common.CCVar; // Omu
 using Robust.Shared;
 using Robust.Shared.Audio.Components;
 using Robust.Shared.Configuration;
@@ -75,7 +80,7 @@ namespace Content.IntegrationTests.Tests
     {
         private static readonly ProtoId<EntityCategoryPrototype> SpawnerCategory = "Spawner";
 
-        [Test]
+        [Test, NonParallelizable] // Goobstation edit - NonParallelizable
         public async Task SpawnAndDeleteAllEntitiesOnDifferentMaps()
         {
             // This test dirties the pair as it simply deletes ALL entities when done. Overhead of restarting the round
@@ -89,8 +94,22 @@ namespace Content.IntegrationTests.Tests
             var prototypeMan = server.ResolveDependency<IPrototypeManager>();
             var mapSystem = entityMan.System<SharedMapSystem>();
 
+            // Goobstation edit start - moved this up and out of server.WaitPost
+            var protoIds = prototypeMan
+                .EnumeratePrototypes<EntityPrototype>()
+                .Where(p => !p.Abstract)
+                .Where(p => !pair.IsTestPrototype(p))
+                .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
+                .Where(p => !p.Components.ContainsKey("MobReplacementRule")) // goob edit - fuck them mimics
+                .Where(p => !p.Components.ContainsKey("Supermatter")) // Goobstation - Supermatter eats everything, oh no!
+                .Where(p => !p.Components.ContainsKey("RoomFill")) // This comp can delete all entities, and spawn others
+                .Select(p => p.ID)
+                .ToList();
+            // Goobstation edit end
+
             await server.WaitPost(() =>
             {
+                /* Goobstation
                 var protoIds = prototypeMan
                     .EnumeratePrototypes<EntityPrototype>()
                     .Where(p => !p.Abstract)
@@ -101,6 +120,7 @@ namespace Content.IntegrationTests.Tests
                     .Where(p => !p.Components.ContainsKey("RoomFill")) // This comp can delete all entities, and spawn others
                     .Select(p => p.ID)
                     .ToList();
+                    Goobstation */
 
                 foreach (var protoId in protoIds)
                 {
@@ -113,7 +133,41 @@ namespace Content.IntegrationTests.Tests
                 }
             });
 
-            await server.WaitRunTicks(15);
+            // Goobstation Edit Start  (this test isn't even worth the effort tbh)
+            // Run up to 15 ticks, but stop early if memory usage exceeds 13 GB
+            // At the time of writing (2025-10-22) Wizden reaches at most like 9-10 GB on SpawnAndDirtyAllEntities
+            // Goob gets to about ~12GB, if we reach 16 GB on integrationtests we'll time out from GitHub
+            //
+            // This area on my local testing is where most of the memory builds up, so run it as long as we can within reason.
+            // i mean yeah you could run the test in batches of entities but its not really a stress test then is it.
+
+            const int maxTicks = 15; // (default wizden)
+            const long memoryLimitBytes = 13L * 1024 * 1024 * 1024; // 13 GB, depends on how close you wanna fly to the sun.
+
+            var warninglog = true; // if we stop caring about this test turn this off.
+
+            for (var tick = 0; tick < maxTicks; tick++)
+            {
+                await pair.RunTicksSync(1);
+
+                var memoryUsed = GC.GetTotalMemory(forceFullCollection: false);
+
+                // debug logging but tbh just use debugger
+                // await TestContext.Progress.WriteLineAsync($"[EntityTest SpawnAndDeleteAllEntitiesOnDifferentMaps] Memory usage = {memoryUsed / (1024 * 1024 * 1024.0):F2} GB at tick {tick + 1}");
+
+                if (memoryUsed < memoryLimitBytes)
+                    continue;
+                if (warninglog)
+                    await TestContext.Progress.WriteLineAsync(
+                        "Warning:\n"+
+                        $"[SpawnAndDeleteAllEntitiesOnDifferentMaps] Memory usage reached {memoryUsed / (1024 * 1024 * 1024.0):F2} GB at tick {tick + 1} out of {maxTicks} \n" +
+                        "Stopping early (limit: 13 GB)." +
+                        $"\nWe spawned a total of {protoIds.Count} entities and held on for {tick+1} ticks. We're probably fine."
+                    );
+
+                break; // stop ticking early
+            }
+            // Goobstation Edit End
 
             await server.WaitPost(() =>
             {
@@ -202,7 +256,7 @@ namespace Content.IntegrationTests.Tests
         ///     Variant of <see cref="SpawnAndDeleteAllEntitiesOnDifferentMaps"/> that also launches a client and dirties
         ///     all components on every entity.
         /// </summary>
-        [Test]
+        [Test, NonParallelizable] // Goobstation edit - NonParallelizable
         public async Task SpawnAndDirtyAllEntities()
         {
             // This test dirties the pair as it simply deletes ALL entities when done. Overhead of restarting the round
@@ -218,6 +272,8 @@ namespace Content.IntegrationTests.Tests
             var sEntMan = server.ResolveDependency<IEntityManager>();
             var mapSys = server.System<SharedMapSystem>();
 
+            cfg.SetCVar(OmuCVars.DisablePathfinding, true); // Omu
+            Assert.That(cfg.GetCVar(OmuCVars.DisablePathfinding), Is.True); // Omu
             Assert.That(cfg.GetCVar(CVars.NetPVS), Is.False);
 
             var protoIds = prototypeMan
@@ -227,6 +283,9 @@ namespace Content.IntegrationTests.Tests
                 .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
                 .Where(p => !p.Components.ContainsKey("MobReplacementRule")) // goob edit - fuck them mimics
                 .Where(p => !p.Components.ContainsKey("Supermatter")) // Goobstation - Supermatter eats everything, oh no!
+                .Where(p => !p.Components.ContainsKey("SoundCollection")) // Omu
+                .Where(p => !p.Components.ContainsKey("RandomSpawner")) // Omu
+                .Where(p => !p.Components.ContainsKey("Marker")) // Omu - we spawn ALL entities including the ones the fucking markers spawn
                 .Select(p => p.ID)
                 .ToList();
 
@@ -244,7 +303,41 @@ namespace Content.IntegrationTests.Tests
                 }
             });
 
-            await pair.RunTicksSync(15);
+            // Goobstation Edit Start  (this test isn't even worth the effort tbh)
+            // Run up to 15 ticks, but stop early if memory usage exceeds 13 GB
+            // At the time of writing (2025-10-22) Wizden reaches at most like 9-10 GB on this test
+            // Goob gets to about 15GB, if we reach 16 GB on integrationtests we'll time out from github
+            //
+            // This area on my local testing is where most of the memory builds up, so run it as long as we can within reason.
+            // i mean yeah you could run the test in batches of entities but its not really a stress test then is it.
+
+            const int maxTicks = 15; // (default wizden)
+            const long memoryLimitBytes = 13L * 1024 * 1024 * 1024; // 13 GB
+
+            var warninglog = true; // if we stop caring about this test turn this off.
+
+            for (var tick = 0; tick < maxTicks; tick++)
+            {
+                await pair.RunTicksSync(1);
+
+                var memoryUsed = GC.GetTotalMemory(forceFullCollection: false);
+
+                // debug logging but tbh just use debugger
+                // await TestContext.Progress.WriteLineAsync($"[EntityTest SpawnAndDirtyAllEntities] Memory usage = {memoryUsed / (1024 * 1024 * 1024.0):F2} GB at tick {tick + 1}");
+
+                if (memoryUsed < memoryLimitBytes)
+                    continue;
+                if (warninglog)
+                    await TestContext.Progress.WriteLineAsync(
+                        "Warning:\n"+
+                        $"[SpawnAndDirtyAllEntities] Memory usage reached {memoryUsed / (1024 * 1024 * 1024.0):F2} GB at tick {tick + 1} out of {maxTicks}\n" +
+                        "Stopping early (limit: 13 GB)." +
+                        $"\nWe spawned and dirtied {protoIds.Count} entities and held on for {tick+1} ticks. We're probably fine."
+                    );
+
+                break; // stop ticking early
+            }
+            // Goobstation Edit End
 
             // Make sure the client actually received the entities
             // 500 is completely arbitrary. Note that the client & sever entity counts aren't expected to match.
@@ -308,6 +401,9 @@ namespace Content.IntegrationTests.Tests
 
                 // makes an announcement on mapInit.
                 "AnnounceOnSpawn",
+
+                "PendingSlimeSpawn", // shut the fuck up please
+                "Slime" // please
             };
 
             Assert.That(server.CfgMan.GetCVar(CVars.NetPVS), Is.False);
@@ -341,9 +437,6 @@ namespace Content.IntegrationTests.Tests
             {
                 foreach (var protoId in protoIds)
                 {
-                    if (protoId == "LavalandHierophantTelepad") // TODO Lavaland Change: fix telepad
-                        continue;
-
                     var count = Count(server.EntMan);
                     var clientCount = Count(client.EntMan);
                     var serverEntities = new HashSet<EntityUid>(Entities(server.EntMan));

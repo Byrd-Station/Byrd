@@ -75,7 +75,7 @@ selectable-set-syndicate-hacker-name = Hacker Bundle
 selectable-set-syndicate-hacker-description =
     A bundle with everything you need to hack into and disrupt the Station itself,
     the station AI, its cyborgs and the Security team. HACK THE PLANET!
-    Contains: Antimov law board, authentication disruptor, EMAG,
+    Contains: A custom law board, authentication disruptor, EMAG,
     radio jammer, filled toolbox, experimental syndicate teleporter,
     cool glasses, binary decoder implanter and a syndicate encryption key.
 
@@ -108,6 +108,14 @@ selectable-set-syndicate-carp-description =
     Grr! Rrrr! Grr... Grrow?! KOWABUNGA!
     Contains: a scroll of the Way of The Sleeping Carp, 10 dehydrated carp
     (half of which are holo), a carp hardsuit and a syndicate encryption key.
+
+selectable-set-syndicate-western-name = Western Bundle
+selectable-set-syndicate-western-description =
+    Light the western holo-cigar, tip the hat, and let the music play.
+    Contains: western holo-cigar, syndicate encryption key,
+    resonant jumpsuit, sunglasses, classic poncho,
+    cowboy hat and boots, two Python revolvers, six AP speedloaders,
+    and two advanced combat medipens.
 
 selectable-set-syndicate-sus-name = Suspicion Bundle
 selectable-set-syndicate-sus-description =
@@ -164,17 +172,16 @@ selectable-set-blueshield-modsuit-description =
 
 # ERT
 
-selectable-set-ert-ballistic-name = ballistics set
+selectable-set-ert-ballistic-name = Ballistics Set
 selectable-set-ert-ballistic-description =
     Reliable, efficient, and compact. The Annies got your back.
     Includes: .30 caliber rifle, the Annie.
     Spare magazines for it, and an N1984.
 
-selectable-set-ert-pulse-name = pulse set
+selectable-set-ert-pulse-name = Energy Set
 selectable-set-ert-pulse-description =
-    Running out of ammo is the worst thing that could happen
-    in a firefight.
-    Includes: A modified pulse carbine.
+    Running won't save them when your rounds go at lightspeed.
+    Includes: A pulse carbine.
     EG-4 revolver, pulse cells.
 
 # Voidsuit selectors

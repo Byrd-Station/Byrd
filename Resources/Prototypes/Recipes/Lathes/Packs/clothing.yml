@@ -13,6 +13,8 @@
   - ClothingUniformJumpsuitLoungewear
 
 - type: latheRecipePack
+  parent:
+  - ClothingCargoDeltaV # DeltaV
   id: ClothingCargo
   recipes:
   - ClothingUniformJumpsuitCargo
@@ -38,7 +40,6 @@
   - ClothingUniformJumpskirtCapFormalDress
   # HoP
   - ClothingHeadHatHopcap
-  - ClothingHeadHatBeretHop
   - ClothingUniformJumpsuitHoP
   - ClothingUniformJumpskirtHoP
   # Generic

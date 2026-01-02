@@ -555,3 +555,1139 @@ Entries:
       message: Heretics and Lings should spawn less on lower pop now.
   id: 67
   time: '2025-09-29T02:49:54.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Cosmic blank now has a hidden do-after.
+  id: 68
+  time: '2025-09-30T19:53:26.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: Removed the shrapnel grenade from syndie uplink.
+    - type: Tweak
+      message: >-
+        Changed the price of the shrapnel grenade from 4tc to 20tc in the nukie
+        uplink
+  id: 69
+  time: '2025-09-30T19:54:20.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Add
+      message: revolvers can now pistol-whip
+    - type: Tweak
+      message: >-
+        Bandolier's can now also store 8 Gauge shells ( used to be only 12 Gauge
+        )
+    - type: Fix
+      message: >-
+        Warden's duty case now has working fluff. Also fixes capitalization of
+        the other duty cases.
+  id: 70
+  time: '2025-09-30T19:55:20.0000000+00:00'
+- author: MarkerWicker
+  changes:
+    - type: Add
+      message: >-
+        Introduced the Photophobia trait. Players with photophobia will see the
+        world a little bit brighter, and will be flashed if a flashlight is
+        toggled in their direction.
+  id: 71
+  time: '2025-10-01T01:45:47.0000000+00:00'
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Thieving trait no longer hides popups
+    - type: Add
+      message: >-
+        Characters can take the Frisky trait which allows them to see pockets in
+        the strip menu
+  id: 72
+  time: '2025-10-01T02:48:48.0000000+00:00'
+- author: MarkerWicker
+  changes:
+    - type: Fix
+      message: >-
+        Trait-categories with category-specific points now correctly show the
+        points taken in that category, rather than the sum of category-specific
+        points across all categories.
+  id: 73
+  time: '2025-10-01T02:54:52.0000000+00:00'
+- author: MarkerWicker
+  changes:
+    - type: Fix
+      message: >-
+        Traits should work again, the previous bugfix broke them entirely. If
+        traits are still broken, contact marker4457 on Discord.
+  id: 74
+  time: '2025-10-01T17:08:38.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed SecretPlus failing to select antags properly
+  id: 75
+  time: '2025-10-02T18:39:21.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Add
+      message: >-
+        New HUD and Glasses that lets RDs (or a sneaky thief) communicate in the
+        binary hivemind. Found in RDs locker and in their loadout.
+  id: 76
+  time: '2025-10-05T10:58:06.0000000+00:00'
+- author: MarkerWicker
+  changes:
+    - type: Add
+      message: >-
+        "Cybernetic Beasts", a subset of Vulpkanin, have been introduced to the
+        game. Cybernetic Beasts can be selected as a trait. Beasts come with a
+        visor, called a "mantle", which provides some benefit to the beast, but
+        comes with opportunity costs, and may be a target for stealing.
+  id: 77
+  time: '2025-10-05T15:02:53.0000000+00:00'
+- author: capsflern
+  changes:
+    - type: Tweak
+      message: >-
+        shadowkin brute damage has been reduced from 25% to 15%, burn 40%
+        vulnerability has been replaced with radiation
+  id: 78
+  time: '2025-10-05T15:16:05.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Tweak
+      message: Feroxi has more markings to choose for you shark-lovers out there.
+    - type: Tweak
+      message: Feroxi, IPCs, Tajaran, and Shadowkin can now wear undergarments.
+  id: 79
+  time: '2025-10-06T16:13:47.0000000+00:00'
+- author: Lenny
+  changes:
+    - type: Add
+      message: Added the prisoner role. Security beware! (Not mapped yet, but soon:tm:)
+  id: 80
+  time: '2025-10-09T00:42:11.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: Removed DuoAbductors from roundstart, as the rule does not work.
+  id: 81
+  time: '2025-10-09T00:44:33.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Remove
+      message: CQC No longer grants Riposte ability.
+  id: 82
+  time: '2025-10-09T15:27:20.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Add
+      message: >-
+        3 Cybersun related jumpsuits added to medical, one exclusive to
+        paramedics, red nitrile gloves are now available for med, new hardsuit
+        for paramedics to select.
+    - type: Add
+      message: >-
+        New hardsuit in the uplink for 30 TC, the "Guānlián" hardsuit offers
+        general resistance agaisnt enviromental hazards, but little agaisnt
+        physical damage like blunt, slash, or piercing, along with total
+        protection agaisn't zombification.
+    - type: Tweak
+      message: The paramed hardsuit's light has a further reach.
+  id: 83
+  time: '2025-10-11T07:53:13.0000000+00:00'
+- author: Appenzaller
+  changes:
+    - type: Add
+      message: 3 new deathsquad music themes
+    - type: Tweak
+      message: Removed Styptic Stimulator implants from ERT/DS
+  id: 84
+  time: '2025-10-11T17:18:16.0000000+00:00'
+- author: Fat-Engineer-Gaming
+  changes:
+    - type: Add
+      message: >-
+        ERT-Type Cyborgs have been added to Nanotrasens Emergency Response
+        Teams!
+    - type: Add
+      message: >-
+        |REDACTED|-Type Cyborgs have been added to Nanotrasens |REDACTED|
+        Reserves!
+    - type: Tweak
+      message: >-
+        Syndicate Cyborgs are now held to higher standards, atleast, that's what
+        the ghost role raffle says. Quit finding loopholes in your laws and
+        focus on that fukken disk!
+  id: 85
+  time: '2025-10-11T17:20:05.0000000+00:00'
+- author: MarkerWicker
+  changes:
+    - type: Tweak
+      message: >-
+        Cybernetic mantles have been improved for Engineers and Atmosians. In
+        return, all "sealed" mantle variants need to be taken off in order for
+        the wearer to eat.
+    - type: Fix
+      message: Cybernetic mantle eye colours now show up as the same for each player.
+    - type: Fix
+      message: The cybernetic beast trait is now transferred to clones of a character.
+    - type: Fix
+      message: Virtual items no longer show up when a character is examined.
+  id: 86
+  time: '2025-10-11T17:29:34.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added back the 40mm beanbags and slug shell for sec.
+    - type: Add
+      message: Added back recipes for 8 gauge lever action mags.
+  id: 87
+  time: '2025-10-11T18:00:33.0000000+00:00'
+- author: CerberusWolfie, Radezolid, AppleSmithWorks
+  changes:
+    - type: Add
+      message: Added Administrative Assistant (not mapped yet).
+  id: 88
+  time: '2025-10-11T20:27:57.0000000+00:00'
+- author: Lenny
+  changes:
+    - type: Add
+      message: >-
+        Mapped Prisoners and Administrative Assistants to every map in current
+        rotation except Reach.
+  id: 89
+  time: '2025-10-12T03:10:47.0000000+00:00'
+- author: Kirisune
+  changes:
+    - type: Tweak
+      message: >-
+        Changed RD hardsuit stats so it becomes viable again while bringing back
+        its old sprite and changing its name and description to reference Omu
+        lore.
+  id: 90
+  time: '2025-10-12T10:47:01.0000000+00:00'
+- author: GNUtopia
+  changes:
+    - type: Add
+      message: The warden can now select a lunging rapier as their duty weapon
+  id: 91
+  time: '2025-10-12T15:02:44.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Added Prison Channel for prisoners.
+    - type: Tweak
+      message: >-
+        Set Security Encryption Key to have Prisoner Channel (all Security
+        personnel have it now).
+  id: 92
+  time: '2025-10-19T00:14:59.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Tweak
+      message: Transit Prisoner has been raised to 2 job slots on Saltern.
+    - type: Tweak
+      message: Transit Prisoner has been limited to 2 job slots on most maps.
+    - type: Tweak
+      message: >-
+        Transit Prisoner has been limited to 3 job slots on Oasis, FlandHighPop,
+        and Submarine.
+  id: 93
+  time: '2025-10-19T00:15:36.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Remove
+      message: Removed Revolutionary from Secret Classic and Secret Plus.
+    - type: Tweak
+      message: Revolutionary is now Admin-Only Spawn.
+  id: 94
+  time: '2025-10-19T00:15:59.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Upstream Merge with Oni and Woundmed fixes.
+  id: 95
+  time: '2025-10-20T00:46:01.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Added a bunch of community lobby arts.
+    - type: Remove
+      message: Removed old lobby arts and Goob-specific lobby arts.
+  id: 96
+  time: '2025-10-20T01:09:43.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Upstream fix for RCD and some Woundmed
+    - type: Remove
+      message: The Geese have been put down in Upstream.
+  id: 97
+  time: '2025-10-21T02:07:33.0000000+00:00'
+- author: jellygato
+  changes:
+    - type: Fix
+      message: Adjusted some YAML comments to fit YAML formatting best practices.
+  id: 98
+  time: '2025-10-21T02:09:03.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: 'Fixed Irelander using the incorrect damage type when wielded '
+  id: 99
+  time: '2025-10-21T04:37:13.0000000+00:00'
+- author: RadsammyT
+  changes:
+    - type: Add
+      message: A new IPC Screen has been added.
+    - type: Add
+      message: Dot.
+  id: 100
+  time: '2025-10-21T04:37:53.0000000+00:00'
+- author: Sarahon
+  changes:
+    - type: Tweak
+      message: Blacklist sec, bso and command from anxiety
+  id: 101
+  time: '2025-10-21T04:39:05.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Allowed AI to set whitelists on their turrets properly.
+  id: 102
+  time: '2025-10-21T04:41:02.0000000+00:00'
+- author: Cygnye
+  changes:
+    - type: Add
+      message: Added six pack marking to Harpy.
+  id: 103
+  time: '2025-10-21T04:46:05.0000000+00:00'
+- author: Fish-Fork
+  changes:
+    - type: Add
+      message: Added the ability for Clownspiders to inject Crapotoxin on bite.
+  id: 104
+  time: '2025-10-21T04:46:15.0000000+00:00'
+- author: MarkerWicker
+  changes:
+    - type: Tweak
+      message: >-
+        Cybernetic mantles no longer come with flash protection for jobs where
+        it is not required.
+    - type: Tweak
+      message: >-
+        Cybernetic mantles also now always provide armour and pressure
+        protection to the wearer, regardless of whether the mantle is worn by a
+        cybernetic beast or not. This should hopefully make the behaviour of the
+        mantle more predictable for anybody who isn't intimately familiar with
+        the trait.
+  id: 105
+  time: '2025-10-21T05:16:15.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Tweak
+      message: >-
+        Initial Antag and Chaos scores in Medium Plus rounds now consistently
+        scale based on the number of ready players.
+  id: 106
+  time: '2025-10-21T05:25:37.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: Removing Martial arts belts will remove the automatic parrying.
+    - type: Fix
+      message: >-
+        Learned Martial Arts will not be forgotten when removing martial arts
+        belts.
+  id: 107
+  time: '2025-10-21T05:40:48.0000000+00:00'
+- author: Thesia000
+  changes:
+    - type: Add
+      message: Glacier for testing purposes, admin only for now
+  id: 108
+  time: '2025-10-23T22:32:55.0000000+00:00'
+- author: ShieldAcrados
+  changes:
+    - type: Add
+      message: Brand new ERT shuttle and 5 Variants!
+    - type: Add
+      message: 2 New ERT Loadouts!
+    - type: Add
+      message: ERT Borg Spawners!
+    - type: Tweak
+      message: Nerfed Pulse Carbine
+    - type: Tweak
+      message: Changed Announcement text for several ERT.
+  id: 109
+  time: '2025-10-26T21:31:07.0000000+00:00'
+- author: CometVoid
+  changes:
+    - type: Tweak
+      message: Made the ahelp introduction message less intimidating
+  id: 110
+  time: '2025-10-27T11:42:41.0000000+00:00'
+- author: ShieldAcrados
+  changes:
+    - type: Add
+      message: Added a new ERT energy weapon and selectable set!
+    - type: Tweak
+      message: Reverted Pulse Carbine nerf
+    - type: Tweak
+      message: Made Pulse Carbine not take 20,000,000 years to recharge
+  id: 111
+  time: '2025-10-28T02:01:44.0000000+00:00'
+- author: Cygnye
+  changes:
+    - type: Add
+      message: Added a glaive for Oni HoS
+    - type: Tweak
+      message: attempted to fix the irelander but its already fixed
+  id: 112
+  time: '2025-10-29T10:32:28.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: Goobstation Upstream from 21/Oct till 27/Oct
+  id: 113
+  time: '2025-10-29T22:42:02.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Fix
+      message: Harpies with the 'Wheelchair Bound' trait can fly again. Chirp!
+  id: 114
+  time: '2025-10-30T15:18:32.0000000+00:00'
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: Many item names and descriptions have been tweaked for grammar
+  id: 115
+  time: '2025-10-30T18:50:39.0000000+00:00'
+- author: Tofi-Dev
+  changes:
+    - type: Add
+      message: Added barber scissors as a selectable trinket in the loadout.
+  id: 116
+  time: '2025-10-31T14:35:06.0000000+00:00'
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Upstream for IPC, Wraith, and Woundmed/Pain Fixes.
+  id: 117
+  time: '2025-10-31T19:52:02.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Remove
+      message: Disabled Wraith from spawning naturally.
+  id: 118
+  time: '2025-11-01T18:14:31.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: >-
+        Added a new midround, Asakim, they are new to this sector, treat them
+        nice, and they may do the same.
+    - type: Tweak
+      message: >-
+        Changed the muzzle flash and projectile sprites for most weapons to ones
+        from Imp.
+  id: 119
+  time: '2025-11-02T09:09:02.0000000+00:00'
+- author: GNUtopia
+  changes:
+    - type: Fix
+      message: The Brigmedic now spawns with a duty case instead of a mk58.
+  id: 120
+  time: '2025-11-02T20:00:38.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: Removed Rat King's ability to ventcrawl
+  id: 121
+  time: '2025-11-02T20:01:13.0000000+00:00'
+- author: Diggy
+  changes:
+    - type: Tweak
+      message: Asakim gear has recovered their original naming from Monolith.
+    - type: Tweak
+      message: Asakim can now weh and yip.
+    - type: Tweak
+      message: >-
+        Asakim helmet lights now glow in the dark, helmet's description has been
+        updated with this, speech sounds will get changed when you put on the
+        helmet as well.
+    - type: Tweak
+      message: Asakim magboots now make the stomping sound that DeltaV removed.
+    - type: Tweak
+      message: >-
+        Asakim harness's description has been included to point out it's
+        function.
+    - type: Tweak
+      message: >-
+        Asakim now have access to a freedom implanter and a nutriment pump
+        implanter.
+  id: 122
+  time: '2025-11-05T19:20:37.0000000+00:00'
+- author: Evil Tuerk
+  changes:
+    - type: Tweak
+      message: >-
+        Cybernetic Hearts and Lungs now get disabled by EMPs correctly. You can
+        fix a stopped cyber heart by using a defibrillator, and airloss from
+        stopped cyberlungs with dexalin.
+  id: 123
+  time: '2025-11-05T20:11:51.0000000+00:00'
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added a cooler decorated cloak for the CMO to have, available in CMO's
+        loadout with the same 20hr requirement the mantle has. Credits to
+        phantasai on github for the sprites!
+    - type: Add
+      message: >-
+        Added the modern CMO mantle, a modernised version of the old mantle.
+        Available in CMO's loadout with the same 20hr requirement the old mantle
+        has. Credits to phantasai on github for the sprites!
+  id: 124
+  time: '2025-11-08T08:25:42.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Tweak
+      message: >-
+        Weight calculations have been adjusted to what EE used to do. Expect
+        more realistic weights, but also wider ranges.
+    - type: Tweak
+      message: >-
+        Before, Harpies went from 24kg to 28kg. Now it goes from 14kg to 53kg
+        (lighter than Ian to as heavy as a piano). Humans are 70kg on average,
+        but can go from 48kg to 98kg.
+  id: 125
+  time: '2025-11-08T08:26:31.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Tweak
+      message: >-
+        Wheelchairs should look a little less weird when going in some
+        directions.
+    - type: Tweak
+      message: >-
+        Wheelchairs are a teeny bit faster on the pedal, still slower than
+        running. Base 'walking' speed unaffected to maintain scenic walks around
+        the station~
+  id: 126
+  time: '2025-11-08T08:27:06.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Add
+      message: >-
+        Added a new physical trait locked behind a weight requirement called
+        "Very Smol". Stuff all of kinsci in a duffelbag of holding!
+  id: 127
+  time: '2025-11-08T08:29:59.0000000+00:00'
+- author: Kirisune
+  changes:
+    - type: Add
+      message: New outfits for security officers, warden and HoS
+    - type: Tweak
+      message: Cleaned up security loadout screen
+  id: 128
+  time: '2025-11-08T08:31:20.0000000+00:00'
+- author: RadsammyT
+  changes:
+    - type: Add
+      message: >-
+        Salvage have been given their own pinpointers because they keep dying so
+        fucking much. They can be found in their respective salvage lockers.
+        They only lock onto an individual salvage ID, are used for
+        search-and-rescue operations, and reports on movement inactivity.
+  id: 129
+  time: '2025-11-08T08:45:44.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed trait weight requirement so it uses the correct calculation
+  id: 130
+  time: '2025-11-08T17:41:10.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: Goob Upstream from 31 Oct till 7 Nov, read Changelogs in-game!
+  id: 131
+  time: '2025-11-08T23:47:02.0000000+00:00'
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added the Polyglot trait, which at the cost of one of your trait slots
+        and GLOBAL points, gives you one LANGUAGE trait point!
+  id: 132
+  time: '2025-11-08T23:51:34.0000000+00:00'
+- author: 3PonPon3
+  changes:
+    - type: Remove
+      message: Killed the Thieving and Frisky traits in physical traits.
+  id: 133
+  time: '2025-11-14T03:00:04.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Add
+      message: >-
+        Cargo Request Slips are re-enabled! If you want your mats, crayons or
+        five hundred gorillas, have the stamped docs ready and be nice to your
+        CTs!
+  id: 134
+  time: '2025-11-14T03:12:52.0000000+00:00'
+- author: 3PonPon3
+  changes:
+    - type: Tweak
+      message: >-
+        The borgs and Station AI went to school and now UNDERSTAND (not speak)
+        all six common languages (all six selectable languages in traits), with
+        the Station AI also knowing how to SPEAK them all, minus sign. No hands
+        to throw gang signs with.
+  id: 135
+  time: '2025-11-14T07:00:43.0000000+00:00'
+- author: XWASHERE
+  changes:
+    - type: Add
+      message: rules smite
+  id: 136
+  time: '2025-11-17T18:06:06.0000000+00:00'
+- author: Kirisune
+  changes:
+    - type: Add
+      message: A new uniform for NTR
+    - type: Add
+      message: CC business card in to executive briefcase
+    - type: Add
+      message: >-
+        Multitool to NTR's locker. You can finally start on your tasks shift
+        start instead of looking for a multitool.
+    - type: Tweak
+      message: NTR handheld fax squished from 4x4 to 4x2
+  id: 137
+  time: '2025-11-18T17:33:02.0000000+00:00'
+- author: GNUtopia
+  changes:
+    - type: Fix
+      message: >-
+        Duty weapons and selector cases are now properly classified as
+        contraband
+  id: 138
+  time: '2025-11-21T18:28:29.0000000+00:00'
+- author: 3PonPon3
+  changes:
+    - type: Add
+      message: >-
+        Added the Sharp Teeth trait, which at the cost of ONE of your trait
+        points (and slots) replaces your unarmed melee with the arachnid bite!
+        This changes the visual, sound, and also the damage to 5 pierce!
+  id: 139
+  time: '2025-11-21T18:40:40.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: >-
+        Added Goob Upstream from 7 Nov till 23 Nov (Check In-game change-logs!)
+        :egg: 
+  id: 140
+  time: '2025-11-23T14:22:32.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added back Slimepeople's passive regen.
+    - type: Fix
+      message: Fixed PassiveDamage so that it works properly with woundmed.
+  id: 141
+  time: '2025-11-23T19:13:22.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: Antag spawn rates
+  id: 142
+  time: '2025-11-24T20:32:02.0000000+00:00'
+- author: Kirisune
+  changes:
+    - type: Tweak
+      message: Squished chaplain's arrythmic knife to a more reasonable size.
+  id: 143
+  time: '2025-11-24T20:33:11.0000000+00:00'
+- author: Sarahon
+  changes:
+    - type: Tweak
+      message: >-
+        Sec no longer use space animal organs for the memes(Command should
+        follow space law)
+  id: 144
+  time: '2025-11-25T20:48:04.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Add
+      message: >-
+        Added the concussive gauntlets as both something you can buy in the salv
+        vendor and a roundstart kit for salvage.
+  id: 145
+  time: '2025-11-25T20:58:24.0000000+00:00'
+- author: XWASHERE
+  changes:
+    - type: Add
+      message: rules smite attempt 2
+  id: 146
+  time: '2025-11-29T06:15:30.0000000+00:00'
+- author: Gab
+  changes:
+    - type: Add
+      message: Added some new drip for BSOs from Starlight.
+  id: 147
+  time: '2025-11-29T06:48:14.0000000+00:00'
+- author: '-'
+  changes: []
+  id: 148
+  time: '2025-11-29T07:29:23.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: Removed the reflect from shuttle walls
+  id: 149
+  time: '2025-11-29T17:35:25.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Add
+      message: Added Distress signaller to sec vend
+  id: 150
+  time: '2025-11-30T06:48:19.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Add
+      message: >-
+        Added departmental comms consoles, now CE can scream tesloose while
+        being vaporised and people will listen!
+  id: 151
+  time: '2025-11-30T06:48:34.0000000+00:00'
+- author: Gab
+  changes:
+    - type: Fix
+      message: The assault belt loadout on BSO is not longer a Senior BSO drip. My bad.
+  id: 152
+  time: '2025-11-30T15:18:02.0000000+00:00'
+- author: Super Evil Tuerk
+  changes:
+    - type: Tweak
+      message: >-
+        Most playtime requirements for department heads and security jobs have
+        been massively increased.
+    - type: Tweak
+      message: >-
+        Interns no longer have a limit on how long you can have played at a
+        department for. If you haven't played for a long time and don't want
+        someone to expect you to kwtd, this is for you.
+  id: 153
+  time: '2025-12-01T17:09:43.0000000+00:00'
+- author: raincally
+  changes:
+    - type: Tweak
+      message: Disablers do ion damage now, heal IPCs with cables
+  id: 154
+  time: '2025-12-02T17:38:23.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Remove
+      message: Removed CQC Neck-snapping
+  id: 155
+  time: '2025-12-04T21:12:41.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: Goob Upstream from 23 Nov till 3 Dec (Read In-game Changelog :fire:)
+  id: 156
+  time: '2025-12-05T17:02:34.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Facehuggers will no longer infect you if you have the hive node organ.
+    - type: Tweak
+      message: The hive node organ now provides xeno access (you can open resin doors).
+  id: 157
+  time: '2025-12-06T07:22:43.0000000+00:00'
+- author: GNUtopia
+  changes:
+    - type: Tweak
+      message: The Terminus no longer wide-swings when out of battery
+  id: 158
+  time: '2025-12-06T10:12:08.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Xenos can now target limbs
+  id: 159
+  time: '2025-12-06T15:43:48.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Changed armor values back to pre-second skin values.
+  id: 160
+  time: '2025-12-06T16:54:41.0000000+00:00'
+- author: raincally
+  changes:
+    - type: Add
+      message: >-
+        AA now has a self refilling super coffee mug. The super coffee is
+        command only so HANDS OFF!
+  id: 161
+  time: '2025-12-06T17:18:49.0000000+00:00'
+- author: NotActuallyMarty,
+  changes:
+    - type: Add
+      message: Xelthia have arrived! Squid people. They don't have hands.
+    - type: Add
+      message: Squid voice bark for Xelthia.
+    - type: Add
+      message: Special gloved-jackets for those lacking hands.
+  id: 162
+  time: '2025-12-06T17:24:19.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: >-
+        Chestbursters no longer gib, instead they deal large amounts of damage
+        to the torso.
+  id: 163
+  time: '2025-12-07T15:08:43.0000000+00:00'
+- author: CliveOcelot
+  changes: []
+  id: 164
+  time: '2025-12-07T19:59:51.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Remove
+      message: Removed the Guerilla Gloves.
+  id: 165
+  time: '2025-12-08T16:12:50.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Add
+      message: >-
+        Salvager Jumpskirt added! Check your MiningDrobe or loadout screen for
+        it.
+  id: 166
+  time: '2025-12-09T13:07:56.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Shiva is now a ghostrole
+    - type: Tweak
+      message: Smile is now a bit more tanky.
+  id: 167
+  time: '2025-12-09T13:08:16.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Add
+      message: MORTIS voice for IPCs
+  id: 168
+  time: '2025-12-09T13:09:50.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: MORTIS should sound not broken now.
+    - type: Tweak
+      message: MORTIS is quieter.
+  id: 169
+  time: '2025-12-10T17:52:51.0000000+00:00'
+- author: dootythefrooty
+  changes:
+    - type: Fix
+      message: Feroxi and Harpies can be buff again, alongside other markings!
+  id: 170
+  time: '2025-12-10T17:56:14.0000000+00:00'
+- author: 3PonPon3
+  changes:
+    - type: Tweak
+      message: >-
+        Brigmedic has been officially renamed to Corpsman! Rejoice! Their SoP
+        has been slightly reworded as well.
+    - type: Tweak
+      message: >-
+        Both of the Now-Corpsman's armor (outer slot) options allow things to be
+        put in the outer suit storage slot. 
+  id: 171
+  time: '2025-12-10T18:47:04.0000000+00:00'
+- author: RedstonewolfX
+  changes:
+    - type: Add
+      message: >-
+        Medical Chemistry (Medichem) Goggles! Craftable like MedSec or MedDiag
+        HUDs. Combines the features of a Medical HUD and Chemical Analysis
+        Goggles.
+    - type: Add
+      message: >-
+        Medichem Glasses, craftable with Medichem Goggles, LV Cable, and
+        Sunglasses.
+    - type: Tweak
+      message: The Chief Medical Officer spawns with a free pair of Medichem Glasses.
+  id: 172
+  time: '2025-12-10T20:20:50.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: >-
+        midround spawns, we shouldn't get the midround blob anymore, we should
+        get heretic's and changelings at appropriate pop.
+  id: 173
+  time: '2025-12-11T12:04:56.0000000+00:00'
+- author: Scalebeard
+  changes:
+    - type: Tweak
+      message: Updated pirate accent 🏴‍☠️
+  id: 174
+  time: '2025-12-11T12:06:44.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Add
+      message: the spiders have discovered wigs. they have human hair now
+  id: 175
+  time: '2025-12-11T12:09:49.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Add
+      message: >-
+        Xelthia jackets added to med and engi loadouts, they get senior variants
+        too
+  id: 176
+  time: '2025-12-11T12:10:38.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: Removed nuclear 14 assets
+  id: 177
+  time: '2025-12-12T16:00:31.0000000+00:00'
+- author: raincally
+  changes:
+    - type: Add
+      message: vulps can take glowing eyes marking
+  id: 178
+  time: '2025-12-12T19:54:58.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Fix
+      message: 'You should no longer be able to spawn as NCT '
+  id: 179
+  time: '2025-12-13T09:59:53.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added a new CC ghostrole, Nanotrasen Spectre.
+  id: 180
+  time: '2025-12-13T21:06:01.0000000+00:00'
+- author: Kirisune
+  changes:
+    - type: Add
+      message: Full set of new corpsman gear
+    - type: Add
+      message: Corpsman hardsuit selector along with a new hardsuit.
+    - type: Tweak
+      message: Changed colour of job icon on brigmed's ID card to red from blue.
+  id: 181
+  time: '2025-12-14T10:15:48.0000000+00:00'
+- author: CliveOcelot, Richard Blonski
+  changes:
+    - type: Add
+      message: Upstream merge till 14 Dec
+  id: 182
+  time: '2025-12-14T17:40:49.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed an issue with cavity implants.
+  id: 183
+  time: '2025-12-14T19:14:17.0000000+00:00'
+- author: Dot5511
+  changes:
+    - type: Fix
+      message: Ninjas can no longer spawn in as Xelthias (Because no Ninja Gloves)
+  id: 184
+  time: '2025-12-15T08:08:16.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Tweak
+      message: >-
+        Buffed Onis! They now receive 25% less slowdown by clothing to help them
+        get into melee distance!
+    - type: Tweak
+      message: >-
+        Asakim's harnesses now slow you down by 80%, the harness isn't made for
+        small meatbags.
+    - type: Tweak
+      message: >-
+        Asakim's harness helmet now blocks facehuggers, xenos HATE this one
+        trick.
+    - type: Tweak
+      message: Asakim are now as tall as an Oni.
+    - type: Tweak
+      message: >-
+        Asakim can now accept translation implants, them not being able to was
+        unintended, now they can also write if they EVER take off the harness,
+        which probably won't happen.
+  id: 185
+  time: '2025-12-15T15:51:55.0000000+00:00'
+- author: Shy-ivy
+  changes:
+    - type: Tweak
+      message: Oni have gotten their strength and defenses back.
+  id: 186
+  time: '2025-12-17T19:47:18.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Ported corporate secrets from Funky.
+  id: 187
+  time: '2025-12-18T12:02:35.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added a weaker form of ERT
+  id: 188
+  time: '2025-12-18T12:05:10.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: Upstream till 18th December
+  id: 189
+  time: '2025-12-18T12:29:25.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Tweak
+      message: Asteroid rocks can now be breakable with blunt weapons.
+    - type: Tweak
+      message: >-
+        Basalt now makes noise when broken, asteroid rocks should be slightly
+        more audible when they break.
+  id: 190
+  time: '2025-12-18T12:31:56.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: 'Changed Qua Nar''Vulna from Judo to Capoeira '
+  id: 191
+  time: '2025-12-18T20:05:05.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Tweak
+      message: >-
+        Updated Secuirty SoP n.8, Security are now required to wear a full
+        clearly identifiable uniform.
+  id: 192
+  time: '2025-12-22T08:55:38.0000000+00:00'
+- author: Dot5511
+  changes:
+    - type: Add
+      message: Nanotrasen Career Trainer now can spawn in Cog!
+  id: 193
+  time: '2025-12-22T08:57:38.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: Alters midround antags - no more midround ling doubling the C-ling count
+  id: 194
+  time: '2025-12-24T21:50:46.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: >-
+        Limit of 10 flesh stalkers now, BUT they are buffed, you should tase em,
+        holy em or freeze em now!
+  id: 195
+  time: '2025-12-27T07:54:48.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: Upstream till the 26th December
+    - type: Add
+      message: Added Virology spawns to all maps that need it.
+    - type: Tweak
+      message: Pink Xenobio slimes will now make Weh juice instead of Genderfluid.
+    - type: Fix
+      message: Fixed Polymorph issues from Upstream.
+    - type: Fix
+      message: >-
+        Fixed a rare crash that is caused by an entity that is polymorphed
+        multiple times being reverted.
+    - type: Remove
+      message: Removed Genderfluid.
+    - type: Remove
+      message: Removed Serpentcrest from the map rotation.
+  id: 196
+  time: '2025-12-27T11:33:36.0000000+00:00'
+- author: Sarahon
+  changes:
+    - type: Tweak
+      message: >-
+        NCT is actually a crew member - no godmode or admin special things need
+        to apply to them
+  id: 197
+  time: '2025-12-28T20:53:22.0000000+00:00'
+- author: maertayn
+  changes:
+    - type: Add
+      message: Integrated bodycams to HoS mantle & cloak
+  id: 198
+  time: '2026-01-01T03:13:00.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: resin breaking sound effects changed
+  id: 199
+  time: '2026-01-01T03:42:56.0000000+00:00'
+- author: SirCannonFodder
+  changes:
+    - type: Add
+      message: >-
+        Envirosuits, are now certificated Biosuits. Plasmamen rejoice, all two
+        of you!
+    - type: Fix
+      message: Virologists Plasmaman now have the envirosuits in their loadout.
+  id: 200
+  time: '2026-01-01T14:12:13.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Tweak
+      message: Replaced the pink slime weh juice with Genderfluid.
+  id: 201
+  time: '2026-01-01T15:49:38.0000000+00:00'
+- author: PhosphateWithManyOs
+  changes:
+    - type: Add
+      message: Chunky shoes for the BSO.
+  id: 202
+  time: '2026-01-01T17:34:28.0000000+00:00'
+- author: Dishwasher0
+  changes: []
+  id: 203
+  time: '2026-01-01T20:50:46.0000000+00:00'
+- author: Delphine
+  changes:
+    - type: Fix
+      message: >-
+        The Chef Engineer has been fired and replaced with a Chief Engineer. We
+        apologize for any inconvenience caused.
+  id: 204
+  time: '2026-01-01T20:51:33.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Add
+      message: >-
+        Added space shrimps, fish them up. Fry them before a ghost takes it over
+        and fries YOU
+    - type: Tweak
+      message: >-
+        Added crabs to the fishing loot pool. Oh also you can fish up dragons
+        now have fun
+  id: 205
+  time: '2026-01-01T20:52:18.0000000+00:00'
+- author: WazuraWasTaken
+  changes:
+    - type: Tweak
+      message: Terminus damage value reverted to how it was before upstream.
+  id: 206
+  time: '2026-01-01T20:53:23.0000000+00:00'

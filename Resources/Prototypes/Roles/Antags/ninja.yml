@@ -83,6 +83,12 @@
   setPreference: false
   objective: roles-antag-space-ninja-objective
   guides: [ SpaceNinja ]
+  requirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - Plasmaman
+    - Xelthia #Omu Edit - They can't use gloves and ninja objectives needs gloves
 
 #Ninja Gear
 - type: startingGear

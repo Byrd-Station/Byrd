@@ -35,6 +35,14 @@ loadout-group-nct-shoes = Nanotrasen Career Trainer shoes
 
 loadout-group-reporter-outerclothing = Reporter outer clothing
 
+loadout-group-roboticist-head = Roboticist head
+loadout-group-roboticist-jumpsuit = Roboticist jumpsuit
+loadout-group-roboticist-backpack = Roboticist backpack
+loadout-group-roboticist-outerclothing = Roboticist outer clothing
+loadout-group-roboticist-gloves = Roboticist gloves
+loadout-group-roboticist-shoes = Roboticist shoes
+loadout-group-roboticist-id = Roboticist ID
+
 loadout-group-security-neck = Security neck
 
 loadout-group-captain-mask = Captain Mask
@@ -45,11 +53,18 @@ loadout-group-chemist-head = Chemist head
 
 loadout-group-hos-shoes = Head of Security shoes
 
-loadout-group-brigmedic-jumpsuit = Brigmedic jumpsuit
-loadout-group-brigmedic-head = Brigmedic head
-loadout-group-brigmedic-outer = Brigmedic outer clothing
-loadout-group-brigmedic-backpack = Brigmedic backpack
+# Omu - rename Brigmedic to Corpsman
+loadout-group-brigmedic-jumpsuit = Corpsman jumpsuit
+loadout-group-brigmedic-head = Corpsman head
+loadout-group-brigmedic-outer = Corpsman outer clothing
+loadout-group-brigmedic-backpack = Corpsman backpack
 
 loadout-group-security-melee = Security melee weapon
 
 loadout-group-animals = Animals
+
+# Virology
+loadout-group-virologist-jumpsuit = Virologist jumpsuit
+loadout-group-virologist-backpack = Virologist backpack
+loadout-group-virologist-outerclothing = Virologist outer clothing
+loadout-group-virologist-id = Virologist ID
