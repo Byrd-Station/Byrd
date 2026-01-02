@@ -13,7 +13,7 @@
     spawned:
     - id: CoalUnprocessed
       amount: 2
-    - id: SteelOreUnProcessed
+    - id: SteelOreUnprocessed
       amount: 2
 
 - type: entity
@@ -130,7 +130,7 @@
 
 - type: entity
   id: FishArtifactOre
-  parent: BaseFishRare
+  parent: BaseFish
   name: artifact orefish
   description: Science would krill for this.
   components:
@@ -142,7 +142,7 @@
   - type: Butcherable
     spawned:
     - id: ArtifactFragmentOre1Unprocessed
-      amount: 6
+      amount: 8
 
 - type: entity
   id: FishBananiumOre

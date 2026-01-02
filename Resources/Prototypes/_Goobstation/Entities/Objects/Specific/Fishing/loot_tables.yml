@@ -111,14 +111,13 @@
     - id: FishGoldOre
     - id: FishPlasmaOre
     - id: FishUraniumOre
-
+    - id: FishArtifactOre
 - type: entityTable
   id: LavaFishTableRare
   table: !type:GroupSelector
     children:
     - id: FishDiamondOre
     - id: FishBananiumOre
-    - id: FishArtifactOre
     - id: FishBluespaceOre
     - id: MobShark
     - id: MedkitCombatFilled
