@@ -7,3 +7,18 @@
     state: icon
   content:
   - ClothingHandsConcussiveGauntlets
+
+- type: thiefBackpackSet
+  id: MiningFishingSet
+  name: mining-voucher-fishing-name
+  description: mining-voucher-fishing-description
+  sprite:
+    sprite: _Goobstation/Objects/Specific/Fishing/fishing_rod.rsi
+    state: icon
+  content:
+  - FishingRod
+  - ChairFolding
+  - DrinkBeerBottleFull
+  - DrinkBeerBottleFull
+  - DrinkBeerBottleFull
+  - CrateFreezer

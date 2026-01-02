@@ -126,6 +126,8 @@
   suffix: Filled
   parent: MedkitCombat
   components:
+  - type: Fish
+    difficulty: 0.023
   - type: StorageFill
     contents:
       - id: MedicatedSuture
