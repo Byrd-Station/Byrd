@@ -183,7 +183,7 @@
   category: construction-category-misc
   description: A cozy house for your electronic pal.
   icon:
-    sprite: _EE/Objects/Specific/Robotics/paiadapter.rsi
+    sprite: _EinsteinEngines/Objects/Specific/Robotics/paiadapter.rsi
     state: mmi_off
   objectType: Item
 # EE Reverse MMI End

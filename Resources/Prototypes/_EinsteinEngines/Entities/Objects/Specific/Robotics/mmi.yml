@@ -5,7 +5,7 @@
   description: A device that allows a pAI to interface with electronics as if it was a positronic brain.
   components:
     - type: Sprite
-      sprite: _EE/Objects/Specific/Robotics/paiadapter.rsi
+      sprite: _EinsteinEngines/Objects/Specific/Robotics/paiadapter.rsi
       layers:
       - state: mmi_off
         map: ["enum.MMIVisualLayers.Base"]
@@ -35,7 +35,7 @@
   description: A machine able to facilitate communication between a biological body and positronics, enabling crew to continue to provide value after work-related incidents.
   components:
     - type: Sprite
-      sprite: _EE/Objects/Specific/Robotics/reversemmi.rsi
+      sprite: _EinsteinEngines/Objects/Specific/Robotics/reversemmi.rsi
       layers:
       - state: mmi_brain
         map: ["enum.MMIVisualLayers.Brain"]
