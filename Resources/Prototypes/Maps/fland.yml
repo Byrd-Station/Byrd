@@ -115,8 +115,6 @@
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
             #Omu
-            NanotrasenCareerTrainer: [ 2, 2]
-
             NanotrasenCareerTrainer: [ 2, 2] # Omu
         # Goobstation blob-config-start HUGE
         - type: StationBlobConfig
