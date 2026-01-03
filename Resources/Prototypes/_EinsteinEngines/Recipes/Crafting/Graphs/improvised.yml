@@ -1,6 +1,5 @@
 # EE Reverse MMI
 - type: construction
-  name: personal ai adapter
   id: AiAdapter
   graph: AiAdapter
   startNode: start
