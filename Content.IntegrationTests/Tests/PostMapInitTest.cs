@@ -535,7 +535,7 @@ namespace Content.IntegrationTests.Tests
             return true;
         }
 
-        [Test, TestCaseSource(nameof(GameMapsInCurrentPool)), NonParallelizable] // Goob edit - GameMapsInCurrentPool only, - Nonparallelizable
+        [Test, TestCaseSource(nameof(GameMapsInCurrentPool))] // Goob edit - GameMapsInCurrentPool only
         public async Task GameMapsLoadableTest(string mapProto)
         {
             await using var pair = await PoolManager.GetServerClient(new PoolSettings
@@ -702,7 +702,7 @@ namespace Content.IntegrationTests.Tests
             await pair.CleanReturnAsync();
         }
 
-        [Test, NonParallelizable] // Goob Nonparallel
+        [Test]
         public async Task NonGameMapsLoadableTest()
         {
             await using var pair = await PoolManager.GetServerClient();
