@@ -40,7 +40,7 @@
   id: PositronicInterfacing
   name: research-technology-positronic-interfacing
   icon:
-    sprite: _EE/Objects/Specific/Robotics/reversemmi.rsi
+    sprite: _EinsteinEngines/Objects/Specific/Robotics/reversemmi.rsi
     state: icon
   discipline: CivilianServices
   tier: 2
