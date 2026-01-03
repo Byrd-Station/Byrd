@@ -140,16 +140,6 @@
     Silver: 100
     Plasma: 1000
 
-- type: latheRecipe
-  parent: BaseRoboticsRecipe
-  id: ReverseMMI
-  result: ReverseMMI
-  completetime: 3
-  materials:
-    Steel: 1000
-    Gold: 200
-    Plasma: 500
-
 # Modules
 
 - type: latheRecipe

@@ -173,21 +173,6 @@
     sprite: Objects/Weapons/Bombs/pipebomb.rsi
     state: icon
 
-# EE Reverse MMI
-- type: construction
-  name: personal ai adapter
-  id: AiAdapter
-  graph: AiAdapter
-  startNode: start
-  targetNode: paiadapter
-  category: construction-category-misc
-  description: A cozy house for your electronic pal.
-  icon:
-    sprite: _EinsteinEngines/Objects/Specific/Robotics/paiadapter.rsi
-    state: mmi_off
-  objectType: Item
-# EE Reverse MMI End
-
 - type: construction
   id: rollingpin
   graph: WoodenRollingPin
