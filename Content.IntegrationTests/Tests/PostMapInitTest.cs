@@ -146,7 +146,7 @@ using Robust.Shared.Map.Events;
 
 namespace Content.IntegrationTests.Tests
 {
-    [TestFixture, NonParallelizable] // Omu edit, NonParallelizable
+    [TestFixture]
     public sealed class PostMapInitTest
     {
         private const bool SkipTestMaps = true;
@@ -535,7 +535,7 @@ namespace Content.IntegrationTests.Tests
             return true;
         }
 
-        [Test, TestCaseSource(nameof(GameMapsInCurrentPool))] // Goob edit - GameMapsInCurrentPool only
+        [Test, TestCaseSource(nameof(GameMapsInCurrentPool)), NonParallelizable] // Goob edit - GameMapsInCurrentPool only, - Nonparallelizable
         public async Task GameMapsLoadableTest(string mapProto)
         {
             await using var pair = await PoolManager.GetServerClient(new PoolSettings
@@ -702,7 +702,7 @@ namespace Content.IntegrationTests.Tests
             await pair.CleanReturnAsync();
         }
 
-        [Test]
+        [Test, NonParallelizable] // Goob Nonparallel
         public async Task NonGameMapsLoadableTest()
         {
             await using var pair = await PoolManager.GetServerClient();
