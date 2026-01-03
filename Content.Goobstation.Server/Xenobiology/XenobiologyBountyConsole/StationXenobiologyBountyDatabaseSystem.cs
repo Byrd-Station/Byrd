@@ -59,7 +59,10 @@ public sealed class StationXenobiologyBountyDatabaseSystem : EntitySystem
 
         var bounties = _proto.EnumeratePrototypes<XenobiologyBountyPrototype>();
         foreach (var bounty in bounties)
-            TryAddBounty(database, bounty);
+        {
+            if (!TryAddBounty(database, bounty)) // Dont do this shit infinitely.
+                break;
+        }
 
         SortBounties(database.Comp);
         _xenoConsole.UpdateBountyConsoles();
