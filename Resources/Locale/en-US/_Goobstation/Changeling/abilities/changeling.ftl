@@ -99,3 +99,11 @@ changeling-onfire = Our cells writhe with agony, failing to perform the action!
 changeling-voidadapt-onfire = Our adaptions become too painful to maintain on fire! We cast them off!
 
 changeling-rejuvenate = An strange energy pulses through our body, rejuvenating our cells and restoring our chemicals!
+
+# Omu changes start
+changeling-hollowed-onexamine-brainless = [color=purple]You can tell [/color][color=red]there's no brain.[/color][color=purple] It's pointless![/color]
+changeling-hollowed-onexamine-fullhollow = [color=red]They lack all organs! As if they've been gutted![/color]
+changeling-hollowed-onexamine-partialhollow = [color=yellow]They're [/color][color=red]missing[/color][color=yellow] some organs... Just needs a bit more work.[/color]
+changeling-hollowed-onexamine-filled = [color=red]All organs are there![/color][color=green] There's a chance![/color]
+
+
