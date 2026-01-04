@@ -71,7 +71,7 @@
     speaks:
     - Xeno
 #    - XenoHivemind # Goobstation - collective mind
-    - TauCetiBasic
+#    - TauCetiBasic  Omu change - no more talking in tau
     understands:
     - Xeno
 #    - XenoHivemind # Goobstation - collective mind
@@ -81,6 +81,16 @@
   # - type: GuideHelp
   #   guides:
   #   - XenomorphQueen
+    - type: PassiveDamage # passive regen.
+    allowedStates:
+    - Alive
+    - Critical
+    - Dead # if engie wants to use a dead eeep as a power source they have to deal with it coming back :)
+    damage:         #Omu change - actual queen health regen!
+      types:
+        Heat: -0.5
+      groups:
+        Brute: -0.5
 
 - type: entity
   parent: BaseMobXenomorphQueen

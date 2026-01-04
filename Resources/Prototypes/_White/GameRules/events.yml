@@ -15,7 +15,7 @@
       Death: 400
     eventType: HostilesSpawn
   - type: GameRule
-    chaosScore: 400
+    chaosScore: 2000 #Omu change - was 400
   - type: VentSpawnRule
   - type: AntagSpawner
     prototype: MobXenomorphLarva
