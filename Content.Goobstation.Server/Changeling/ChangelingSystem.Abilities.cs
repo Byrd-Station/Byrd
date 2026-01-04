@@ -74,6 +74,10 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Shared.Actions.Components;
 using Content.Goobstation.Shared.Devour.Events;
+using Content.Server.Body.Components;
+using Content.Server.Body.Systems;
+using Content.Shared.Body.Components;
+using Robust.Server.Containers;
 
 namespace Content.Goobstation.Server.Changeling;
 
@@ -81,6 +85,8 @@ public sealed partial class ChangelingSystem
 {
     #region Dependencies
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private readonly ContainerSystem _container = default!;
+    [Dependency] private readonly BodySystem _bodySystem = null!; // Omu
     #endregion
 
     public void SubscribeAbilities()
@@ -195,6 +201,20 @@ public sealed partial class ChangelingSystem
 
         EnsureComp<AbsorbedComponent>(target);
         EnsureComp<UnrevivableComponent>(target);
+
+        // Omu Start - todo marty omumod this
+        if (!TryComp<BodyComponent>(target, out var body))
+            return;
+        var parts = _bodySystem.GetBodyChildren(target, body);
+        foreach (var part in parts)
+        {
+            foreach (var (organ, _) in _bodySystem.GetPartOrgans(part.Id, part.Component))
+            {
+                if (!HasComp<BrainComponent>(organ))
+                    EntityManager.QueueDeleteEntity(organ);
+            }
+        }
+        // Omu End
 
         var popup = string.Empty;
         var bonusChemicals = 0f;
