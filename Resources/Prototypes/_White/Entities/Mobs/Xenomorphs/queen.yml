@@ -81,7 +81,7 @@
   # - type: GuideHelp
   #   guides:
   #   - XenomorphQueen
-    - type: PassiveDamage # passive regen.
+  - type: PassiveDamage # passive regen.
     allowedStates:
     - Alive
     - Critical
