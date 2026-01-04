@@ -1,0 +1,123 @@
+using Content.Shared.Store.Components;
+using Content.Server.Store.Systems;
+
+namespace Content.Server.Arcfiend.EntitySystems;
+public sealed class ArcfiendSystem : EntitySystem
+{
+    [Dependency] private readonly StoreSystem _store = default!;
+
+     public bool MakeArcfiend(EntityUid target, ChangelingRuleComponent rule)
+    {
+        if (HasComp<SiliconComponent>(target))
+            return false;
+
+        if (!_mind.TryGetMind(target, out var mindId, out var mind))
+            return false;
+
+        _role.MindAddRole(mindId, mindRole.Id, mind, true);
+
+        // briefing
+        if (TryComp<MetaDataComponent>(target, out var metaData))
+        {
+            var briefing = Loc.GetString("arcfiend-role-greeting", ("name", metaData?.EntityName ?? "Unknown"));
+            var briefingShort = Loc.GetString("arcfiend-role-greeting-short", ("name", metaData?.EntityName ?? "Unknown"));
+
+            _antag.SendBriefing(target, briefing, Color.Yellow, BriefingSound);
+
+            if (_role.MindHasRole<ArcfiendRoleComponent>(mindId, out var mr))
+                AddComp(mr.Value, new RoleBriefingComponent { Briefing = briefingShort }, overwrite: true);
+        }
+        // hivemind stuff
+        _npcFaction.RemoveFaction(target, NanotrasenFactionId, false);
+        _npcFaction.AddFaction(target, ArcfiendFactionId);
+
+        // make sure it's initial chems are set to max
+        EnsureComp<ArcfiendIdentityComponent>(target);
+        EnsureComp<ArcfiendComponent>(target);
+
+        // add store
+        var store = EnsureComp<StoreComponent>(target);
+        foreach (var category in rule.StoreCategories)
+            store.Categories.Add(category);
+        store.CurrencyWhitelist.Add(Currency);
+        store.Balance.Add(Currency, StartingCurrency);
+
+        rule.ArcfiendMinds.Add(mindId);
+
+        return true;
+    }
+
+
+        private void OnAbsorb(EntityUid uid, ArcfiendIdentityComponent comp, ref ArcDrainEvent args)
+    {
+        var target = args.Target;
+
+        if (HasComp<AbsorbedComponent>(target))
+        {
+            _popup.PopupEntity(Loc.GetString("arcfiend-drain-fail-drain"), uid, uid);
+            return;
+        }
+        if (!HasComp<SyntheticComponent>(target))
+        {
+            _popup.PopupEntity(Loc.GetString("arcfiend-drain-fail-undrainable"), uid, uid);
+            return;
+        }
+        if (!IsIncapacitated(target) && !IsHardGrabbed(target))
+        {
+            _popup.PopupEntity(Loc.GetString("arcfiend-drain-fail-nograb"), uid, uid);
+            return;
+        }
+
+        if (!TryUseAbility(uid, comp, args))
+            return;
+
+        var popupOthers = Loc.GetString("arcfiend-drain-start", ("user", Identity.Entity(uid, EntityManager)), ("target", Identity.Entity(target, EntityManager)));
+        _popup.PopupEntity(popupOthers, uid, PopupType.LargeCaution);
+        PlayMeatySound(uid, comp);
+        var dargs = new DoAfterArgs(EntityManager, uid, TimeSpan.FromSeconds(15), new ArcDrainDoAfterEvent(), uid, target)
+        {
+            DistanceThreshold = 1.5f,
+            BreakOnDamage = true,
+            BreakOnHandChange = false,
+            BreakOnMove = true,
+            BreakOnWeightlessMove = true,
+            AttemptFrequency = AttemptFrequency.StartAndEnd,
+            MultiplyDelay = false,
+        };
+        _doAfter.TryStartDoAfter(dargs);
+    }
+    public ProtoId<DamageGroupPrototype> AbsorbedDamageGroup = "Genetic";
+    private void OnArcDrainDoAfter(EntityUid uid, ArcfiendIdentityComponent comp, ref ArcDrainDoAfterEvent args)
+    {
+        if (args.Args.Target == null)
+            return;
+
+        var target = args.Args.Target.Value;
+
+        if (args.Cancelled || HasComp<AbsorbedComponent>(target) || (!IsIncapacitated(target) && !IsHardGrabbed(target)))
+            return;
+
+        var dmg = new DamageSpecifier(_proto.Index(AbsorbedDamageGroup), 200);
+        _damage.TryChangeDamage(target, dmg, true, false, targetPart: TargetBodyPart.All); // Shitmed Change
+
+        var popup = string.Empty;
+        var bonusChargePoints = 0f;
+
+        if (!HasComp<SyntheticComponent>(target))
+        {
+            popup = Loc.GetString("arcfiend-absorb-end-self");
+            bonusChargePoints += 2;
+        }
+        else
+            popup = Loc.GetString("arcfiend-absorb-end-partial");
+
+        comp.TotalChargePoints += bonusChargePoints;
+
+        if (TryComp<StoreComponent>(args.User, out var store))
+        {
+            _store.TryAddCurrency(new Dictionary<string, FixedPoint2> { { "ChargePoint", bonusChargePoints } }, args.User, store);
+            _store.UpdateUserInterface(args.User, args.User, store);
+        }
+
+    }
+}
