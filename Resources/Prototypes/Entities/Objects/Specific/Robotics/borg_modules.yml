@@ -1452,10 +1452,11 @@
     - state: xenoborg_engi
     - state: icon-xenoborg-access-breaker
   - type: ItemBorgModule
-    hands:
-    - item: DoorRemoteXenoborg
-    - item: AccessBreaker
-    - item: AccessConfiguratorXenoborg
+    moduleId: XenoborgDoorControl
+    items:
+    - DoorRemoteXenoborg
+    - AccessBreaker
+    - AccessConfiguratorXenoborg
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: xenoborg-door-remote-module }
 

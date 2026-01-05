@@ -140,7 +140,7 @@
   description: Don't lose an arm!
   components:
   - type: Sprite
-    sprite: Structures/Doors/Shutters/xeno_blastdoor.rsi
+    sprite: Structures/Doors/Shutters/xenoborg_blastdoor.rsi
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
@@ -182,7 +182,7 @@
   description: This one says 'BLAST DONGER'.
   components:
   - type: Sprite
-    sprite: Structures/Doors/Shutters/xeno_blastdoor.rsi
+    sprite: Structures/Doors/Shutters/xenoborg_blastdoor.rsi
     state: assembly
   - type: InteractionOutline
   - type: Damageable
