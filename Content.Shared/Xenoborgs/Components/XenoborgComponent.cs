@@ -1,4 +1,5 @@
 using Content.Shared.Roles.Components;
+using Content.Shared.Roles; // Omu
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
