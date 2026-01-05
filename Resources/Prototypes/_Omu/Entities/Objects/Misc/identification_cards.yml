@@ -108,3 +108,41 @@
     jobIcon: JobIconCourier
   - type: PresetIdCard
     job: Courier
+  parent: ERTChaplainIDCard
+  id: ERTChaplainIDCardBlue
+  suffix: Blue alert
+  components:
+  - type: PresetIdCard
+    job: ERTChaplainBlue
+
+- type: entity
+  parent: ERTEngineerIDCard
+  id: ERTEngineerIDCardBlue
+  suffix: Blue alert
+  components:
+  - type: PresetIdCard
+    job: ERTEngineerBlue
+
+- type: entity
+  parent: ERTJanitorIDCard
+  id: ERTJanitorIDCardBlue
+  suffix: Blue alert
+  components:
+  - type: PresetIdCard
+    job: ERTJanitorBlue
+
+- type: entity
+  parent: ERTMedicIDCard
+  id: ERTMedicIDCardBlue
+  suffix: Blue alert
+  components:
+  - type: PresetIdCard
+    job: ERTMedicBlue
+
+- type: entity
+  parent: ERTSecurityIDCard
+  id: ERTSecurityIDCardBlue
+  suffix: Blue alert
+  components:
+  - type: PresetIdCard
+    job: ERTSecurityBlue
