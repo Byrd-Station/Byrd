@@ -290,10 +290,12 @@ namespace Content.Server.RoundEnd
             }
         }
 
-        public void CancelRoundEndCountdown(EntityUid? requester = null, bool forceRecall = false, bool playStationAnnouncement = true)  // funkystation
+        public void CancelRoundEndCountdown(EntityUid? requester = null, bool checkCooldown = true, bool forceRecall = false, bool playStationAnnouncement = true)  // funkystation
         {
             if (_gameTicker.RunLevel != GameRunLevel.InRound)
                 return;
+
+            if (checkCooldown && _cooldownTokenSource != null) return;
 
             if (!forceRecall && (CantRecall || _cooldownTokenSource != null))
                 return;

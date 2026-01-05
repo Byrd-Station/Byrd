@@ -42,6 +42,7 @@
     sprite: Objects/Materials/parts.rsi
   - type: Tag
     tags:
+      - ConstructionMaterial
       - DroneUsable # Goobstation
       - PartBase # Goobstation
   - type: Damageable
@@ -116,6 +117,7 @@
   components:
   - type: Tag
     tags:
+    - ConstructionMaterial
     - RodMetal1
     - DroneUsable # Goobstation
   - type: Sprite
@@ -131,6 +133,7 @@
   components:
   - type: Tag
     tags:
+    - ConstructionMaterial
     - RodMetal1
     - DroneUsable # Goobstation
   - type: Sprite

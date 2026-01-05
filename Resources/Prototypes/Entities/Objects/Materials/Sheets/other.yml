@@ -54,6 +54,7 @@
     tags:
     - Sheet
     - DroneUsable # Goobstation
+    - ConstructionMaterial
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -196,6 +197,7 @@
     - Plastic
     - Sheet
     - DroneUsable # Goobstation
+    - ConstructionMaterial
   - type: Material
   - type: PhysicalComposition
     materialComposition:

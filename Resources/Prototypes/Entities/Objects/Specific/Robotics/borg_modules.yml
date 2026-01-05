@@ -1292,33 +1292,9 @@
     - state: xenoborg_generic
     - state: icon-xenoborg-basic
   - type: ItemBorgModule
-    hands:
-    - item: DoorRemoteXenoborg
-    - hand:
-        emptyRepresentative: MMIFilled
-        emptyLabel: borg-slot-brains-empty
-        whitelist:
-          components:
-          - Brain
-          - BorgBrain
-    - hand:
-        emptyRepresentative: XenoborgModuleBasic
-        emptyLabel: borg-slot-modules-empty
-        whitelist:
-          components:
-          - BorgModule
-    - hand:
-        emptyRepresentative: BorgModuleConstructionMaterialPlaceholder
-        emptyLabel: borg-slot-construction-empty
-        whitelist:
-          tags:
-          - ConstructionMaterial
-    - hand:
-        emptyRepresentative: PowerCellHigh
-        emptyLabel: borg-slot-powercell-empty
-        whitelist:
-          components:
-          - PowerCell
+    moduleId: Mothership
+    items:
+    - DoorRemoteXenoborg
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: xenoborg-module-module }
 

@@ -28,5 +28,5 @@
       - MindRoleXenoborg
       min: 4
       max: 4
-  - type: DynamicRuleCost
-    cost: 200
+#  - type: DynamicRuleCost
+#    cost: 200
