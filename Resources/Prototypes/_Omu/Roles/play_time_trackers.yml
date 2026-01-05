@@ -12,9 +12,6 @@
 
 - type: playTimeTracker
   id: JobNanoTrasenSpectre
-  
-- type: playTimeTracker
-  id: JobNanoTrasenSpectre
 
 - type: playTimeTracker
   id: JobERTChaplainBlue

@@ -62,6 +62,8 @@
     state: pda-courier-whiteblue
   - type: Sprite
     state: pda-courier-whiteblue
+
+- type: entity
   parent: ERTChaplainPDA
   id: ERTChaplainPDABlue
   suffix: Chaplain, Blue alert

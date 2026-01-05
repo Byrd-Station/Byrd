@@ -108,6 +108,8 @@
     jobIcon: JobIconCourier
   - type: PresetIdCard
     job: Courier
+
+- type: entity
   parent: ERTChaplainIDCard
   id: ERTChaplainIDCardBlue
   suffix: Blue alert
