@@ -2,7 +2,7 @@
   name: NY-6 'Grognard'
   parent: [BaseItem, BaseSecurityContraband]
   id: Stunsword
-  description: A mass produced, durable plasteel blade made for only the most experienced and seasoned security officers
+  description: A mass produced, durable plasteel blade made for only the most experienced and seasoned security officers.
   components:
   - type: Item
     sprite: _Omu/Objects/Weapons/Melee/stunsword.rsi
@@ -82,34 +82,35 @@
           soundHit:
             path: /Audio/_Goobstation/Weapons/Effects/energy-short-sword-swing.ogg
         - type: StaminaDamageOnHit
-          damage: 25
+          damage: 20
           overtime: 15
-          lightAttackDamageMultiplier: 3
-          lightAttackOvertimeDamageMultiplier: 0
-        - type: DelayedKnockdownOnHit
-          useDelay: stunbaton
-        - type: UseDelayBlockMelee
-          delays:
-          - stunbaton
+          lightAttackDamageMultiplier: 2
+          lightAttackOvertimeDamageMultiplier: 1
         soundStateActivate:
           collection: sparks
           params:
             variation: 0.250
 
       shock: !type:ItemSwitchState
-        verb: shock
+        verb: heat # no more shock dmg :(
         energyPerUse: 100 
         sprite:
           sprite: _Omu/Objects/Weapons/Melee/stunsword.rsi
           state: shock-icon
         components:
+        - type: IgnitionSource
+          temperature: 700
+        - type: Tool
+          qualities:
+          - Ignition
+        - type: AlwaysHot # Hopefully this should make it actually light cigs :)
         - type: MeleeWeapon
           wideAnimationRotation: -135
           attackRate: 1
           damage:
             types:
-              Slash: 10
-              Shock: 10
+              Slash: 5
+              Heat: 15
             woundSeverityMultipliers:
               Slash: 1.5
           angle: 60
