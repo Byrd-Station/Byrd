@@ -179,6 +179,13 @@
     - id: MalignRiftSpawn # DeltaV
     - id: FloorGoblinMidRound # Goobstation
     - id: ClownGoblinMigration # Goobstation - New Midrounds
+    - id: ImmovableRodSpawn #Omu edit begin
+    - id: GameRuleUristSwarm
+    - id: GameRuleMeteorSwarmLarge
+    - id: GameRuleMeteorSwarmMedium
+    - id: GameRuleMeteorSwarmSmall
+    - id: GameRuleSpaceDustMajor
+    - id: GameRuleSpaceDustMinor #Omu edit end - adds meteors to eligible events
 
 - type: entityTable
   id: BasicAntagEventsTable

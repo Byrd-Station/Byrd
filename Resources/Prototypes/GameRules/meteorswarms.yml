@@ -165,6 +165,7 @@
   abstract: true
   components:
   - type: GameRule
+    chaosScore: 200
   - type: StationEvent
     reoccurrenceDelay: 1
     earliestStart: 12
@@ -175,6 +176,8 @@
   parent: GameRuleMeteorSwarm
   id: GameRuleSpaceDustMinor
   components:
+  - type: GameRule
+    chaosScore: 400
   - type: StationEvent
     weight: 44
     earliestStart: 2
@@ -199,6 +202,8 @@
   parent: GameRuleMeteorSwarm
   id: GameRuleSpaceDustMajor
   components:
+  - type: GameRule
+    chaosScore: 600
   - type: StationEvent
     weight: 22
     minimumPlayers: 0
@@ -222,6 +227,8 @@
   parent: GameRuleMeteorSwarm
   id: GameRuleMeteorSwarmSmall
   components:
+  - type: GameRule
+    chaosScore: 200
   - type: StationEvent
     weight: 18
     minimumPlayers: 15
@@ -237,6 +244,8 @@
   parent: GameRuleMeteorSwarm
   id: GameRuleMeteorSwarmMedium
   components:
+  - type: GameRule
+    chaosScore: 400
   - type: StationEvent
     weight: 10
     chaos: # Goobstation
@@ -252,6 +261,8 @@
   parent: GameRuleMeteorSwarm
   id: GameRuleMeteorSwarmLarge
   components:
+  - type: GameRule
+    chaosScore: 600
   - type: StationEvent
     weight: 5
     chaos: # Goobstation
@@ -267,6 +278,8 @@
   parent: GameRuleMeteorSwarm
   id: GameRuleUristSwarm
   components:
+  - type: GameRule
+    chaosScore: 400
   - type: StationEvent
     weight: 0.05
   - type: MeteorSwarm
@@ -285,11 +298,13 @@
   id: ImmovableRodSpawn
   parent: BaseGameRule
   components:
+  - type: GameRule
+    chaosScore: 1000
   - type: StationEvent
     startAnnouncement: station-event-immovable-rod-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    weight: 3.5
+    weight: 2 # omu change was 3.5
     reoccurrenceDelay: 1
     duration: 1
     earliestStart: 30
