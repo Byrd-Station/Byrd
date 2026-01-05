@@ -20,7 +20,7 @@
             components:
             - PAI
     - type: Organ
-      slotId: posibrain
+      slotId: posbrain
     - type: Tag
       tags:
       - Posibrain
