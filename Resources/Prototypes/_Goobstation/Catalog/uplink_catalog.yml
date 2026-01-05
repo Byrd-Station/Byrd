@@ -526,7 +526,7 @@
   icon: { sprite: /Textures/Clothing/Head/Helmets/swat_syndicate.rsi, state: icon }
   productEntity: ClothingHeadHelmetSwatSyndicate
   cost:
-    Telecrystal: 5
+    Telecrystal: 10
   categories:
   - UplinkWearables
 
@@ -590,17 +590,6 @@
   categories:
   - UplinkWearables
 
-# Omu no Second Skin
-#- type: listing
-#  id: UplinkSecondSkinSyndicate
-#  name: uplink-second-skin-name
-#  description: uplink-second-skin-desc
-#  icon: { sprite: _Goobstation/Clothing/OuterClothing/second_skin.rsi, state: action }
-#  productEntity: SecondSkinSyndicate
-#  cost:
-#    Telecrystal: 10
-#  categories:
-#  - UplinkWearables
 
 #Omu change - remove unbalanced item
 #- type: listing
@@ -816,7 +805,7 @@
   description: uplink-advanced-combat-medipen-desc
   productEntity: AdvancedCombatMedipen
   cost:
-    Telecrystal: 20
+    Telecrystal: 24
   categories:
   - UplinkChemicals
 
@@ -1391,37 +1380,37 @@
       - ContravendUplink
 
 # Martial Arts
-- type: listing
-  id: UplinkCQCManual
-  name: uplink-cqc-name
-  description: uplink-cqc-desc
-  productEntity: CQCManual
-  cost:
-    Telecrystal: 60
-  categories:
-  - UplinkWeaponry
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
-      - ContravendUplink
-
-- type: listing
-  id: UplinkCQCManualChef
-  name: uplink-cqc-name
-  description: uplink-cqc-desc
-  productEntity: CQCManual
-  cost:
-    Telecrystal: 60
-  categories:
-  - UplinkJob
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
-  - !type:BuyerJobCondition
-    whitelist:
-    - Chef
+#- type: listing # Omu, remove CQC.
+#  id: UplinkCQCManual
+#  name: uplink-cqc-name
+#  description: uplink-cqc-desc
+#  productEntity: CQCManual
+#  cost:
+#    Telecrystal: 60
+#  categories:
+#  - UplinkWeaponry
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - NukeOpsUplink
+#      - ContravendUplink
+#
+#- type: listing
+#  id: UplinkCQCManualChef
+#  name: uplink-cqc-name
+#  description: uplink-cqc-desc
+#  productEntity: CQCManual
+#  cost:
+#    Telecrystal: 60
+#  categories:
+#  - UplinkJob
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
+#  - !type:BuyerJobCondition
+#    whitelist:
+#    - Chef
 
 - type: listing
   id: UplinkCapoeiraManual
