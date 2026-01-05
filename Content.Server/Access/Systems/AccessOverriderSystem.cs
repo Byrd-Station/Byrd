@@ -164,8 +164,7 @@ public sealed class AccessOverriderSystem : SharedAccessOverriderSystem
             missingAccess,
             privilegedIdName,
             targetLabel,
-            targetLabelColor,
-            component.ShowPrivilegedId);
+            targetLabelColor);
 
         _userInterface.SetUiState(uid, AccessOverriderUiKey.Key, newState);
     }
