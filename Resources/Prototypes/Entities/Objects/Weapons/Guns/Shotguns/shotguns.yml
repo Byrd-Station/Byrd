@@ -293,6 +293,8 @@
     - WeaponShotgunKammerer
   - type: BallisticAmmoProvider # Goobstation
     autoCycle: false
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/pump_action_cycle.ogg
 
 - type: entity
   name: sawn-off shotgun

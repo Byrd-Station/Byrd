@@ -162,7 +162,7 @@
   - type: ChamberMagazineAmmoProvider
     autoCycle: false
     soundRack:
-      path: /Audio/Weapons/Guns/Cock/sf_rifle_cock.ogg
+      path: /Audio/Weapons/Guns/Cock/heavy_sniper_cock.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -228,6 +228,9 @@
     solutions:
       melee:
         maxVol: 2
+  - type: BallisticAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/bolt_action_cycle.ogg
   - type: MeleeChemicalInjector
     solution: melee
   - type: RefillableSolution
