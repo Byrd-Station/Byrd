@@ -222,7 +222,7 @@
   available: false
   icon: Interface/Emotes/chitter.png
   whitelist:
-    tags: 
+    tags:
     - HarpyEmotes # Omu, allow harpy to chitter
     components:
     - Vocal
@@ -242,7 +242,7 @@
   available: false
   icon: Interface/Emotes/squeak.png
   whitelist:
-    tags: 
+    tags:
     - HarpyEmotes # Omu, allow harpy to squeak
     components:
       - Vocal
@@ -256,13 +256,13 @@
    - squeaked
 
 - type: emote
-  id: Click 
+  id: Click
   name: chat-emote-name-click
   category: Vocal
   available: false
   icon: Interface/Emotes/click.png
   whitelist:
-    tags: 
+    tags:
     - HarpyEmotes # Omu, allow harpy to click
     components:
     - Vocal
@@ -441,7 +441,7 @@
     tags:
       - HarpyEmotes # Omu, allow harpy to hew
   chatTriggers: # Omu, allow harpy to hew
-    - hew 
+    - hew
     - hews
 
 - type: emote
@@ -545,3 +545,31 @@
     - pings
     - pinged
     - pinging
+
+- type: emote # Omu
+  id: Rattle
+  name: chat-emote-name-rattle
+  category: Vocal
+  icon: Interface/Emotes/weh.png
+  chatMessages: ["chat-emote-msg-reptile-rattle"]
+  whitelist:
+    tags:
+    - ReptilianEmotes
+  chatTriggers:
+    - rattles
+    - rattle
+    - rattled
+
+- type: emote # Omu
+  id: ReptilianPurr
+  name: chat-emote-name-reptile-purr
+  category: Vocal
+  icon: Interface/Emotes/weh.png
+  chatMessages: ["chat-emote-msg-reptile-purr"]
+  whitelist:
+    tags:
+    - ReptilianEmotes
+  chatTriggers:
+    - purrs
+    - purr
+    - purred
