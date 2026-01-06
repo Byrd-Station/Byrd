@@ -16,7 +16,6 @@
   access:
   - Cargo
   - Maintenance
-  - Courier
   extendedAccess:
   - Salvage
   - External # goobstation

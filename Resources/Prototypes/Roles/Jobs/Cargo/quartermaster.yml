@@ -158,7 +158,6 @@
   goobcoins: 40 #Goob content
   access:
   - Cargo
-  - Courier # Omu
   - Salvage
   - Quartermaster
   - Maintenance

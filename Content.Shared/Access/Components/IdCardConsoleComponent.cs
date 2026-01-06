@@ -61,7 +61,6 @@ public sealed partial class IdCardConsoleComponent : Component
         "Detective",
         "Captain",
         "Cargo",
-        "Courier", // Omu edit - Courier
         "Chapel",
         "Chemistry",
         "ChiefEngineer",
