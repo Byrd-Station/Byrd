@@ -17,6 +17,7 @@
 # SPDX-FileCopyrightText: 2025 grub <unalterableness@gmail.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 # SPDX-FileCopyrightText: 2025 shityaml <unalterableness@gmail.com>
+# SPDX-FileCopyrightText: 2026 ThanosDeGraf <richardgirgindontstop@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -245,7 +246,7 @@
   maxLimit: 1
   loadouts:
   - CargoTechnicianEnvirohelm
-  - MailCarrierEnvirohelm
+  #- MailCarrierEnvirohelm # Omu - Moved to courier
 
 - type: loadoutGroup
   id: CargoTechnicianEnvirosuit
@@ -254,7 +255,7 @@
   maxLimit: 1
   loadouts:
   - CargoTechnicianEnvirosuit
-  - MailCarrierEnvirosuit
+  #- MailCarrierEnvirosuit # Omu - Moved to courier
 
 - type: loadoutGroup
   id: CargoTechnicianEnvirogloves
@@ -263,7 +264,7 @@
   maxLimit: 1
   loadouts:
   - CargoTechnicianEnvirogloves
-  - WhiteEnvirogloves
+  #- WhiteEnvirogloves # Omu - Moved to courier
 
 # Quartermaster
 
