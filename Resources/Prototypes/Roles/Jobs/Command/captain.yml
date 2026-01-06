@@ -163,6 +163,10 @@
       #any MRP using our code might eventually want to use it
     # - !type:SaturationRequirement # MisandryBox - no neon hair on captain
     #   hairColorSaturation: 0.30
+    - !type:SizeRequirement
+      minimumHeight: 150
+    #- !type:WeightRequirement
+    #  minimumWeight: 80
   guides: # goobstation
   - Command
   - Succession
