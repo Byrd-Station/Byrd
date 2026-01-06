@@ -228,7 +228,7 @@
     solutions:
       melee:
         maxVol: 2
-  - type: BallisticAmmoProvider
+  - type: BallisticAmmoProvider # overrides default cycle sound effect to custom one
     soundRack:
       path: /Audio/Weapons/Guns/Cock/bolt_action_cycle.ogg
   - type: MeleeChemicalInjector

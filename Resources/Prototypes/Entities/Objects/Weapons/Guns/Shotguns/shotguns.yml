@@ -293,7 +293,7 @@
     - WeaponShotgunKammerer
   - type: BallisticAmmoProvider # Goobstation
     autoCycle: false
-    soundRack:
+    soundRack: # overrides default cycle sound effect to custom one
       path: /Audio/Weapons/Guns/Cock/pump_action_cycle.ogg
 
 - type: entity
