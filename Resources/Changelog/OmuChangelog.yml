@@ -1697,3 +1697,9 @@ Entries:
       message: Fixed the Temperature Gun not working properly.
   id: 207
   time: '2026-01-02T18:33:53.0000000+00:00'
+- author: ukuleleman
+  changes:
+    - type: Tweak
+      message: Made IPCs fat again (you lost your Ozempic privileges)
+  id: 208
+  time: '2026-01-06T08:19:52.0000000+00:00'
