@@ -17,3 +17,7 @@ loadout-group-courier-outerclothing = Courier outer clothing
 loadout-group-courier-gloves = Courier gloves
 loadout-group-courier-shoes = Courier shoes
 loadout-group-courier-id = Courier ID
+
+loadout-group-courier-envirohelm = Courier envirohelm
+loadout-group-courier-envirosuit = Courier envirosuit
+loadout-group-courier-envirogloves = Courier envirogloves

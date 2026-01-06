@@ -132,23 +132,21 @@
 # Plasma Mail Man
 - type: loadoutGroup
   id: CourierEnvirohelm
-  name: loadout-group-cargo-technician-envirohelm
+  name: loadout-group-courier-envirohelm
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - CourierEnvirohelm
   - MailCarrierEnvirohelm
-  - CargoTechnicianEnvirohelm
+  - CourierEnvirohelm
 
 - type: loadoutGroup
   id: CourierEnvirosuit
-  name: loadout-group-cargo-technician-envirosuit
+  name: loadout-group-courier-envirosuit
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - CourierEnvirosuit
   - MailCarrierEnvirosuit
-  - CargoTechnicianEnvirosuit
+  - CourierEnvirosuit
 
 - type: loadoutGroup
   id: CourierEnvirogloves
@@ -156,9 +154,8 @@
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - CourierEnvirogloves
-  - CargoTechnicianEnvirogloves
   - WhiteEnvirogloves
+  - CourierEnvirogloves
 - type: loadoutGroup
   id: VirologistEnvirohelm
   name: loadout-group-virologist-envirohelm
