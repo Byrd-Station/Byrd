@@ -71,20 +71,20 @@
   name: loadout-group-courier-head
   minLimit: 0
   loadouts:
+  - CargoTechnicianHeadMail
   - CourierHead
   - CourierHeadFlipped
-  - CargoTechnicianHeadMail
   - CargoTechnicianHead
 
 - type: loadoutGroup
   id: CourierJumpsuit
   name: loadout-group-courier-jumpsuit
   loadouts:
+  - CargoTechnicianJumpsuitMail
+  - CargoTechnicianJumpskirtMail
   - CourierJumpsuit
   - CourierJumpskirt
   - CourierJumpsuitLong
-  - CargoTechnicianJumpsuitMail
-  - CargoTechnicianJumpskirtMail
   - CargoTechnicianJumpsuit
   - CargoTechnicianJumpskirt
   - CargoTechnicianSweater
@@ -100,9 +100,9 @@
   - CargoTechnicianBackpack
   - CargoTechnicianSatchel
   - CargoTechnicianDuffel
+  - MailCarrierMessenger
   - CourierMessenger
   - CargoTechnicianMessenger
-  - MailCarrierMessenger
 
 - type: loadoutGroup
   id: CourierOuterClothing
