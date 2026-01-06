@@ -194,7 +194,6 @@ BoxMaintenanceLightbulb: BoxLightMixed
 BoxPDAPrisoner: BoxPDA
 ClothingBeltMartialBlack: null
 ClothingCostumeArcDress: null
-#ClothingHeadCourier: null # Omu
 ClothingHeadHatFedoraBlack: null
 ClothingHeadHatFedoraChoc: null
 ClothingHeadHatFezMantis: null
@@ -202,7 +201,6 @@ ClothingHeadPrisonGuard: null
 ClothingUniformMartialGi: null
 ClothingUniformTShirtKhakiPants: null
 ComputerShipyard: null
-#CourierBag: null # Omu
 CryogenicSleepUnitSpawnerPrisoner: null
 DefaultStationBeaconBoxing: null
 DefaultStationBeaconCameraServerRoom: null
@@ -289,7 +287,6 @@ SpareIdCabinetFilled: null
 SpawnMobArcticFoxSiobhan: null
 SpawnMobFerret: null
 SpawnMobMothroach: null
-#SpawnPointCourier: null # Omu
 SpawnPointForensicMantis: null
 SpawnPointLocationMidRoundAntag: null
 SpawnPointMartialArtist: null
@@ -305,7 +302,6 @@ ToyRenault: null
 ToySiobhan: null
 VendingMachineBoozeUnlocked: null
 VendingMachineBoxingDrobe: null
-#VendingMachineCourierDrobe: null # Omu
 VendingMachineMNKDrobe: null
 VendingMachineRepDrobe: null
 WallPaper: null
@@ -523,7 +519,7 @@ VehicleSecwayStealObjective: null
 #VehicleKeyJanicart: null Goobstation - Re-add vehicles
 #VehicleKeySecway: null Goobstation - Re-add vehicles
 #VehicleKeyATV: null Goobstation - Re-add vehicles
-VehicleKeySkeleton: null 
+VehicleKeySkeleton: null
 #VehicleKeySyndicateSegway: null Goobstation - Re-add vehicles
 #VehicleKeySkeletonMotorcycle: null Corvax Goobstation - Re-add vehicles
 #VehicleSecway: null Goobstation - Re-add vehicles
@@ -1137,3 +1133,6 @@ LockableButtonRobotics: null
 
 # 2025-10-09
 FoodDonutJellySlugcat: FoodDonutJellyScurret
+
+# 2026-01-07 - Omu
+SpawnPointCourier: null
