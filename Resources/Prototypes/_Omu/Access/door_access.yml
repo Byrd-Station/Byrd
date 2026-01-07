@@ -1,5 +1,0 @@
-﻿# Courier
-- type: entity
-  parent: DoorElectronicsCargo
-  id: DoorElectronicsCourier
-  suffix: Courier, Locked
