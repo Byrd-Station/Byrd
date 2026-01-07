@@ -10,7 +10,7 @@
     - state: icon-adv-anomalies
       sprite: _Omu/Objects/Specific/Robotics/borgmodule.rsi
   - type: ItemBorgModule
-    moduleID: AdvancedAnomaly
+    moduleId: AdvancedAnomaly
     items:
     - WeaponPistolCHIMPRecharging
     - AnomalyScanner
