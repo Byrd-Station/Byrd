@@ -293,8 +293,8 @@
     - WeaponShotgunKammerer
   - type: BallisticAmmoProvider # Goobstation
     autoCycle: false
-    soundRack: # overrides default cycle sound effect to custom one
-      path: /Audio/Weapons/Guns/Cock/pump_action_cycle.ogg
+    soundRack: # Omu
+      path: /Audio/_Omu/Weapons/Guns/Cock/pump_action_cycle.ogg
 
 - type: entity
   name: sawn-off shotgun

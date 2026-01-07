@@ -161,8 +161,8 @@
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
   - type: ChamberMagazineAmmoProvider
     autoCycle: false
-    soundRack:
-      path: /Audio/Weapons/Guns/Cock/heavy_sniper_cock.ogg
+    soundRack: # Omu
+      path: /Audio/_Omu/Weapons/Guns/Cock/heavy_sniper_cock.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -228,9 +228,11 @@
     solutions:
       melee:
         maxVol: 2
-  - type: BallisticAmmoProvider # overrides default cycle sound effect to custom one
+  # Omu start
+  - type: BallisticAmmoProvider
     soundRack:
-      path: /Audio/Weapons/Guns/Cock/bolt_action_cycle.ogg
+      path: /Audio/_Omu/Weapons/Guns/Cock/bolt_action_cycle.ogg
+  # Omu end
   - type: MeleeChemicalInjector
     solution: melee
   - type: RefillableSolution
