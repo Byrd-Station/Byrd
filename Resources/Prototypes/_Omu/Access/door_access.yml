@@ -1,8 +1,5 @@
-﻿# Courier!
+﻿# Courier
 - type: entity
-  parent: DoorElectronics
+  parent: DoorElectronicsCargo
   id: DoorElectronicsCourier
   suffix: Courier, Locked
-  components:
-  - type: AccessReader
-    access: [["Courier"]]
