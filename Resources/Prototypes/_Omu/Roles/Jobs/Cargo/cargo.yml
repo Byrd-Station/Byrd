@@ -8,6 +8,9 @@
   - !type:DepartmentTimeRequirement
     department: Cargo
     time: 9000 # = 2.5 hours
+  guides: # goobstation
+  - Courier SOP
+  - Cargo
   startingGear: CourierGear #FIXME: CourierGear later since altTitles will be a thing, SO FIX AAAAAAAAAAAAAAAAAAAA
   icon: "JobIconCourier"
   supervisors: job-supervisors-qm
