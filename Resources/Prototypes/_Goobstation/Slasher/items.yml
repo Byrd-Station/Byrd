@@ -10,7 +10,7 @@
   - type: Sprite
     sprite: _Goobstation/Objects/Specific/Slasher/machete.rsi
   - type: MeleeWeapon
-#    canWideSwing: false # Wideswing causes issues with massacre. (Ok but it makes it playable, wideswings are needed for melee weapons for the average player. You can still left click anyways. Omu change)
+    canWideSwing: false
     damage:
       types:
         Slash: 15
