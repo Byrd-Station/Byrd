@@ -257,3 +257,11 @@
   name: lavaland-ruin-flock-large
   path: /Maps/_Lavaland/Lavaland/flock_ruins_large.yml
   priority: 31
+
+# Omustation ruins...
+
+- type: lavalandGridRuin
+  id: AshWalkerTribe
+  name: lavaland-ruin-ash-walker
+  path: /Maps/_Omu/Lavaland/ashwalkertribe.yml
+  priority: -1 # highest priority SPAWN GRAHHH
