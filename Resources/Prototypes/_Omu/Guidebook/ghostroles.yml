@@ -1,0 +1,20 @@
+- type: guideEntry
+  id: GhostRoles
+  name: guide-entry-ghost-roles
+  text: "/ServerInfo/_Omu/Guidebook/GhostRole/Ghostrole.xml"
+  children:
+  - Ashwalkers
+  - MinorAntagonists
+  - SpaceNinja
+  - Abductors
+  - Bingle
+  - SlaughterDemon
+  - Wraith
+  - Slasher
+  - Xenomorphs
+  - Blob
+
+- type: guideEntry
+  id: Ashwalkers
+  name: guide-entry-ashwalkers
+  text: "/ServerInfo/_Omu/Guidebook/GhostRole/Ashwalker.xml"

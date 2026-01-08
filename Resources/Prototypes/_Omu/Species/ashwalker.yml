@@ -1,0 +1,197 @@
+# Most of this is just reptilians, just a little different.
+- type: species
+  id: Ashwalker
+  name: species-name-ashwalker
+  roundStart: false
+  prototype: MobReptilian
+  sprites: MobReptilianSprites
+  defaultSkinTone: "#77501c"
+  markingLimits: MobReptilianMarkingLimits
+  dollPrototype: MobReptilianDummy
+  skinColoration: Hues
+  maleFirstNames: NamesReptilianMale
+  femaleFirstNames: NamesReptilianFemale
+  naming: FirstDashFirst
+
+- type: speciesBaseSprites
+  id: MobAshwalkerSprites
+  sprites:
+    Head: MobReptilianHead
+    Face: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
+    Chest: MobReptilianChest
+    Groin: MobReptilianGroin
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
+    Eyes: MobHumanoidEyes
+    LArm: MobReptilianLArm
+    RArm: MobReptilianRArm
+    LHand: MobReptilianLHand
+    RHand: MobReptilianRHand
+    LLeg: MobReptilianLLegDigi
+    RLeg: MobReptilianRLegDigi
+    LFoot: MobReptilianLFootDigi
+    RFoot: MobReptilianRFootDigi
+
+- type: markingPoints
+  id: MobAshwalkerMarkingLimits
+  onlyWhitelisted: true
+  points:
+    Hair:
+      points: 0
+      required: false
+    FacialHair:
+      points: 0
+      required: false
+    Tail:
+      points: 1
+      required: true
+      defaultMarkings: [ LizardTailSmooth ]
+    Snout:
+      points: 1
+      required: true
+      defaultMarkings: [ LizardSnoutRound ]
+    HeadTop:
+      points: 3
+      required: false
+    HeadSide:
+      points: 6
+      required: false
+    Chest:
+      points: 8
+      required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    RightLeg:
+      points: 8
+      required: false
+    RightFoot:
+      points: 8
+      required: false
+    LeftLeg:
+      points: 8
+      required: false
+    LeftFoot:
+      points: 8
+      required: false
+    RightArm:
+      points: 8
+      required: false
+    RightHand:
+      points: 8
+      required: false
+    LeftArm:
+      points: 8
+      required: false
+    LeftHand:
+      points: 8
+      required: false
+
+- type: humanoidBaseSprite
+  id: MobAshwalkerHead
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobAshwalkerHeadMale
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobAshwalkerHeadFemale
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: MobAshwalkerChest
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: chest_m
+
+- type: humanoidBaseSprite
+  id: MobAshwalkerChestMale
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: chest_m
+
+- type: humanoidBaseSprite
+  id: MobAshwalkerChestFemale
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: chest_f
+
+- type: humanoidBaseSprite
+  id: MobAshwalkerGroin
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: groin_m
+
+- type: humanoidBaseSprite
+  id: MobAshwalkerGroinMale
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: groin_m
+
+- type: humanoidBaseSprite
+  id: MobAshwalkerGroinFemale
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: groin_f
+
+- type: humanoidBaseSprite
+  id: MobAshwalkerLLeg
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobAshwalkerLHand
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobAshwalkerLArm
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobAshwalkerLFoot
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobAshwalkerRLeg
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobAshwalkerRHand
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobAshwalkerRArm
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobAshwalkerRFoot
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: r_foot

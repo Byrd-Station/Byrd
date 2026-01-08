@@ -24,5 +24,5 @@
     damage:
       types:
         Slash: 13
-  - type: Construction
-    graph: DaggerBoneConstructionGraph
+#  - type: Construction
+#    graph: DaggerBoneConstructionGraph

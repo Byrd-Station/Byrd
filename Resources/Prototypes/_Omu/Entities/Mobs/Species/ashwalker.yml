@@ -1,0 +1,52 @@
+- type: entity
+  save: false
+  name: Urissst McAsssh
+  parent: BaseMobReptilian # they're reptilians but slightly worse :godo:
+  id: BaseMobAshwalker
+  abstract: true
+  components:
+  - type: HumanoidAppearance
+    species: Ashwalker
+    hideLayersOnEquip:
+    - Snout
+    - HeadSide
+  - type: Body
+    prototype: Ashwalker
+    requiredLegs: 2
+  - type: LanguageKnowledge
+    speaks:
+    - Draconic
+    understands:
+    - Draconic
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 8 # I'd imagine living on lavaland makes you stronger evolution wise.
+  - type: Inventory
+    speciesId: ashwalker
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: jumpsuit-female
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: shoes
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: jumpsuit
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: shoes

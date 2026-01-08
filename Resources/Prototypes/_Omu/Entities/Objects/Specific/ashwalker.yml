@@ -3,10 +3,7 @@
   id: AshWalkerEgg
   name: ash walker egg
   description: A man-sized yellow egg, spawned from some unfathomable creature. A humanoid silhouette lurks within.
-  suffix: Empty
   components:
   - type: Sprite
     sprite: _Omu/Objects/Specific/ashwalkeregg.rsi
     state: large-egg
-  - type: Item
-    size: Ginormous
