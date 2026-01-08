@@ -1,0 +1,6 @@
+- type: lavalandGridRuin
+  id: AshwalkerTribe
+  name: lavaland-ruin-ash-walker
+  path: /Maps/_Omu/Lavaland/ashwalkertribe.yml
+  priority: -1 # highest priority
+  patchToPlanet: false
