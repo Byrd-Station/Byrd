@@ -1,6 +1,6 @@
 using System;
 using System.Numerics;
-using Content.Omu.Common.Ashwalkers;
+using Content.Omu.Common.AshWalkers;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
 using Content.Server.Pinpointer;
@@ -38,7 +38,7 @@ using Robust.Shared.Timing;
 using Content.Shared.Item;
 using Content.Server.Body.Systems;
 
-namespace Content.Omu.Server.Ashwalkers;
+namespace Content.Omu.Server.AshWalkers;
 
 public sealed class NecropolisNestSystem : EntitySystem
 {

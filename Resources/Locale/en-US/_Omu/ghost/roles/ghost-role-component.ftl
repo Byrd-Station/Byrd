@@ -20,8 +20,8 @@ ghost-role-information-free-agent-offstation-rules = You are [color=yellow][bold
                                                      You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                                      You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 
-ghost-role-information-ash-walker-rules = You are [color=yellow][bold]Ash Walker[/bold][/color]. Protect the Necropolis at any cost. You are allowed to attack or trade with any miners you happen to encounter, you are effectively a [color=yellow][bold]Free Agent[/bold][/color].
-                                          YOU ARE [bold][color=red]NOT ALLOWED TO INTERFERE OR SABATODGE THE STATION WITHOUT A GOOD REASON OR ADMIN APPROVAL.[/bold][/red]
+ghost-role-information-ash-walker-rules = You are an [color=yellow][bold]Ash Walker[/bold][/color]. Protect the Necropolis at any cost. You are allowed to attack or trade with any miners you happen to encounter, you are effectively a [color=yellow][bold]Free Agent[/bold][/color].
+                                          YOU ARE [bold][color=red]NOT ALLOWED TO INTERFERE OR SABATODGE THE STATION WITHOUT A GOOD REASON OR ADMIN APPROVAL[/bold][/red].
                                           You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
                                           You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                           You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.

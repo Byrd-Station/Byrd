@@ -7,3 +7,13 @@
   - type: Sprite
     sprite: _Omu/Objects/Specific/ashwalkeregg.rsi
     state: large-egg
+  - type: GhostRole
+    name: ghost-role-information-ash-walker-name
+    description: ghost-role-information-ash-walker-description
+    rules: ghost-role-information-ash-walker-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: AshWalker

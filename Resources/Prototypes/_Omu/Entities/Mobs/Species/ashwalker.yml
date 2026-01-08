@@ -2,16 +2,16 @@
   save: false
   name: Urissst McAsssh
   parent: BaseMobReptilian # they're reptilians but slightly worse :godo:
-  id: BaseMobAshwalker
+  id: BaseMobAshWalker
   abstract: true
   components:
   - type: HumanoidAppearance
-    species: Ashwalker
+    species: AshWalker
     hideLayersOnEquip:
     - Snout
     - HeadSide
   - type: Body
-    prototype: Ashwalker
+    prototype: AshWalker
     requiredLegs: 2
   - type: LanguageKnowledge
     speaks:
@@ -26,8 +26,11 @@
     damage:
       types:
         Slash: 8 # I'd imagine living on lavaland makes you stronger evolution wise.
+  - type: MovementSpeedModifier # slightly faster
+    baseWalkSpeed : 0.95
+    baseSprintSpeed : 0.95
   - type: Inventory
-    speciesId: ashwalker
+    speciesId: AshWalker
     femaleDisplacements:
       jumpsuit:
         sizeMaps:

@@ -1,6 +1,6 @@
 - type: body # Mostly the same as reptilian
-  name: "ashwalker"
-  id: Ashwalker
+  name: "ash walker"
+  id: AshWalker
   root: chest
   slots:
     head:
@@ -14,7 +14,7 @@
       part: ChestReptilian
       organs:
         heart: OrganAnimalHeart
-        lungs: OrganAshwalkerLungs # literally just abductor lungs with a different name. bite me.
+        lungs: OrganAshWalkerLungs # literally just abductor lungs with a different name. bite me.
       connections:
       - right arm
       - left arm

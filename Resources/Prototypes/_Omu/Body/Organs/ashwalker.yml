@@ -1,7 +1,7 @@
 - type: entity
-  id: OrganAshwalkerLungs
+  id: OrganAshWalkerLungs
   parent: OrganHumanLungs
-  name: Ashwalker Lungs
+  name: AshWalker Lungs
   components:
   - type: Sprite
     sprite: _Shitmed/Mobs/Species/Abductor/organs.rsi # it fits sprite wise

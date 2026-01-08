@@ -1,7 +1,7 @@
 - type: entity
   name: bone dagger
   parent: [BaseKnife, BaseMinorContraband]
-  id: DaggerBone
+  id: BoneDagger
   description: A sharpened bone. The bare minimum in survival.
   components:
   - type: Tag
@@ -24,5 +24,6 @@
     damage:
       types:
         Slash: 13
-#  - type: Construction
-#    graph: DaggerBoneConstructionGraph
+  - type: Construction
+    graph: BoneDaggerConstructionGraph
+    node: dagger

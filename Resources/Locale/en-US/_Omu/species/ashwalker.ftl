@@ -1,1 +1,1 @@
-species-name-ashwalker = Ashwalker
+species-name-ash-walker = Ash Walker

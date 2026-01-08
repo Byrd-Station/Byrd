@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager.Attributes;
 using Robust.Shared.GameStates;
 
-namespace Content.Omu.Common.Ashwalkers;
+namespace Content.Omu.Common.AshWalkers;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class NecropolisNestComponent : Component
