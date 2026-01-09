@@ -45,3 +45,4 @@
     quickEquip: false
     slots:
     - back
+    - SuitStorage # Omu
