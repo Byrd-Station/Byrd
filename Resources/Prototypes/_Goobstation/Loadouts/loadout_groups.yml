@@ -922,6 +922,7 @@
   loadouts:
   - NanotrasenRepresentativeJumpsuit
   - NanotrasenRepresentativeJumpskirt
+  - NanotrasenRepresentativeFancyJumpsuit
   - CCAgentJumpsuit #Omu
   - CCAgentJumpskirt #Omu
 
@@ -981,6 +982,7 @@
   - BlueshieldOfficerBeret
   - BlueshieldOfficerHeadCowboy
   - BlueshieldOfficerGoidaHelmet
+  - BlueshieldOfficerBeretElite # Omustation
 
 - type: loadoutGroup
   id: BlueshieldOfficerBackpack
@@ -1002,6 +1004,9 @@
   - BlueshieldOfficerTurtleneckSkirt # OmuStation Addon
   - BlackBlueshieldOfficerTurtleneck # OmuStation Addon
   - BlackBlueshieldOfficerTurtleneckSkirt # OmuStation Addon
+  - BlueShieldShirt #Omu - Starlight Port
+  - EliteBlueShieldJumpsuit #Omu - Starlight Port
+  - EliteBlueShieldJumpskirt #Omu - Starlight Port
 
 - type: loadoutGroup
   id: BlueshieldOfficerOuter
@@ -1014,7 +1019,7 @@
   - BSOArmoredCoat # EE
   - BSOMarineVest # EE
   - BSOArmoredVest # EE
-  - BlueshieldOfficerOuterKimonoBlueshield
+  - BlueshieldOfficerOuterKimonoBlueshield #Omu
 
 - type: loadoutGroup
   id: BlueshieldOfficerNeck
@@ -1023,6 +1028,7 @@
   loadouts:
   - BlueshieldOfficerOuterBlueshieldMantle
   - BlueshieldOfficerOuterBlueshieldMantleBlack # Omu
+  - BlueShieldEliteCloak # Omu - Starlight Port
 
 - type: loadoutGroup
   id: BlueshieldOfficerMask
@@ -1038,6 +1044,7 @@
   - JackBoots
   - BlackCowboyBoots
   - SnowjacksBso
+  - BSOAdvancedJackBoots #Omu
 
 - type: loadoutGroup
   id: BlueshieldOfficerEnvirohelm
@@ -1385,7 +1392,8 @@
   maxLimit: 1
   loadouts:
   - CombatGloves
-# Brigmedic
+
+# Brigmedic | Omu - You mean Corpsman?
 
 - type: loadoutGroup
   id: BrigmedicJumpsuit
@@ -1393,6 +1401,8 @@
   loadouts:
   - BrigmedicJumpsuit
   - BrigmedicJumpskirt
+  - CorpsmanJumpsuit #Omu
+  - CorpsmanJumpskirt #Omu
 
 - type: loadoutGroup
   id: BrigmedicHead
@@ -1404,6 +1414,7 @@
   - SecurityBeret
   - SecurityHat
   - TrooperHat
+  - CorpsmanBeret #Omu
 
 - type: loadoutGroup
   id: BrigmedicOuterClothing
@@ -1423,6 +1434,10 @@
   - BrigmedicSatchel
   - BrigmedicDuffel
   - BrigmedicMessenger
+  - CorpsmanBackpack #Omu
+  - CorpsmanSatchel #Omu
+  - CorpsmanDuffel #Omu
+  - CorpsmanMessenger #Omy
 
 - type: loadoutGroup
   id: BrigmedicEnvirohelm
@@ -1455,6 +1470,8 @@
   name: loadout-group-security-melee
   loadouts:
   - SecurityMeleeKnife
+  - SecurityMeleePolyBaton
+  - SecurityMeleeSpear
 
 # Zookeeper
 
@@ -1524,3 +1541,35 @@
   hidden: true
   loadouts:
   - LoadoutSpeciesPlasma
+
+# Virologist
+
+- type: loadoutGroup
+  id: VirologistJumpsuit
+  name: loadout-group-virologist-jumpsuit
+  loadouts:
+   - VirologistJumpsuit
+   - VirologistJumpskirt
+   - VirologistMJ # goobin
+
+- type: loadoutGroup
+  id: VirologistBackpack
+  name: loadout-group-virologist-backpack
+  loadouts:
+   - VirologistBackpack
+   - VirologistSatchel
+   - VirologistDuffel
+
+- type: loadoutGroup
+  id: VirologistOuterClothing
+  name: loadout-group-virologist-outerclothing
+  minLimit: 0
+  loadouts:
+   - VirologistLabCoat
+   - VirologistWintercoat
+
+- type: loadoutGroup
+  id: VirologistPDA
+  name: loadout-group-virologist-id
+  loadouts:
+   - VirologistPDA
