@@ -1,6 +1,5 @@
 - type: construction
   id: BoneDaggerConstruction
-  name: bone dagger
   graph: BoneDaggerConstructionGraph
   startNode: start
   targetNode: dagger
