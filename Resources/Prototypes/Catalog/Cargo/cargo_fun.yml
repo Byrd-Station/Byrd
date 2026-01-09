@@ -271,7 +271,7 @@
     sprite: Structures/Wallmounts/posters.rsi
     state: poster55_legit
   product: CrateFunScurret
-  cost: 25000 # You will surely not regret buying this
+  cost: 13000 # OMU change, was 25k, wawa
   category: cargoproduct-category-name-fun
   group: market
 
