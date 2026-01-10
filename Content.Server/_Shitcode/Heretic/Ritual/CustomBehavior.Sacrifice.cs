@@ -84,6 +84,7 @@ namespace Content.Server.Heretic.Ritual;
     // this is awful but it works so i'm not complaining
     // i'm complaining -kandiyaki //IMP
     // i, too am in this episode -dooty //OMU
+    // hi guys -lord //OMU
     protected SharedMindSystem _mind = default!;
     protected HereticSystem _heretic = default!;
     protected SharedTransformSystem _xform = default!; //imp
@@ -254,7 +255,8 @@ namespace Content.Server.Heretic.Ritual;
                 }
 
             }
-            _hellworld.SendToHell(uids[i], args, speciesPrototype);
+            // Omu - Idk why this is done twice. Might've been my fault during merging. Commenting it out and hoping nothing breaks.
+            // _hellworld.SendToHell(uids[i], args, speciesPrototype);
             //impstation end
 
             // update objectives

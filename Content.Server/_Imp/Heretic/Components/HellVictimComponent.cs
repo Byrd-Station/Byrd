@@ -38,6 +38,9 @@ public sealed partial class HellVictimComponent : Component
     public Boolean HasMind = false;
 
     [DataField, AutoNetworkedField]
-    public TimeSpan HellDuration = TimeSpan.FromSeconds(15);
+    public TimeSpan HellDuration = TimeSpan.FromSeconds(30); // Omu - 15 seconds is an INCREDIBLY brief visit to hell
 
+    // Omu - The time that you are stunned for after exiting hell world
+    [DataField, AutoNetworkedField]
+    public TimeSpan StunTime = TimeSpan.FromSeconds(4);
 }

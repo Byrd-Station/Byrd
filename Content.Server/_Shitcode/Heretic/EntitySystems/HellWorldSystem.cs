@@ -22,6 +22,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using System.Collections.Immutable;
 using Content.Shared.Body.Components;
+using Content.Shared.Stunnable;
 
 //this is kind of badly named since we're doing infinite archives stuff now but i dont feel like changing it :)
 
@@ -42,6 +43,7 @@ namespace Content.Server._Goobstation.Heretic.EntitySystems
         [Dependency] private readonly SharedMapSystem _map = default!;
         [Dependency] private readonly SharedMindSystem _mind = default!;
         [Dependency] private readonly SharedTransformSystem _xform = default!;
+        [Dependency] private readonly SharedStunSystem _stun = default!; // Omu
 
         private readonly ResPath _mapPath = new("Maps/_Impstation/Nonstations/InfiniteArchives.yml");
 
@@ -89,6 +91,8 @@ namespace Content.Server._Goobstation.Heretic.EntitySystems
                     TransformVictim(uid);
                     //and then revive the old body
                     _rejuvenate.PerformRejuvenate(uid);
+                    // Omu - stun them briefly when they snap back to reality
+                    _stun.TryParalyze(uid, victimComp.StunTime, true);
                 }
             }
         }
@@ -155,8 +159,13 @@ namespace Content.Server._Goobstation.Heretic.EntitySystems
             if (spawnPoints.Count == 0)
             {
                 //fallback to cryo, incase someone forgot to map points
+                // Omu - I don't think we have these markers mapped anywhere so this will always be the case here
                 spawnPoints = EntityManager.GetAllComponents(typeof(CryostorageComponent)).ToImmutableList();
             }
+            // Omu - If theres no antag spawn markers OR cryopods, just give up. Otherwise this crashes on dev world
+            if (spawnPoints.Count == 0)
+                return;
+
             var newSpawn = _random.Pick(spawnPoints);
             var spawnTgt = Transform(newSpawn.Uid).Coordinates;
 
