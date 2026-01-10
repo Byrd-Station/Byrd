@@ -66,6 +66,7 @@
             Lawyer: [ 2, 3 ]
             Zookeeper: [ 1, 1 ]
             ServiceWorker: [ 4, 4 ]
+            RadioHost: [ 1, 1 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
