@@ -1715,3 +1715,9 @@ Entries:
       message: Ventclog can now jet out any chem, enjoy.
   id: 210
   time: '2026-01-07T04:59:18.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Fix
+      message: Paramedics now exist in submarine again.
+  id: 211
+  time: '2026-01-10T11:52:55.0000000+00:00'
