@@ -58,6 +58,7 @@
     - id: FoodSnackLollypopWrappedCarpEvil
     - id: CombatMedipen
     - id: MobXenomorphMaid
+
 # Fish from water
 - type: entityTable
   id: WaterFishTable
