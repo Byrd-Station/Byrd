@@ -211,11 +211,11 @@ public sealed partial class DragonSystem : EntitySystem
             if (!_mobState.IsDead(uid))
                 comp.RiftAccumulator += frameTime;
 
-            // Delete it, naughty dragon!
+            // Gib it, naughty dragon!
             if (comp.RiftAccumulator >= comp.RiftMaxAccumulator)
             {
                 Roar(uid, comp);
-                QueueDel(uid);
+                _body.GibBody(uid); // Omu Change -- QueueDel(uid);
             }
         }
     }
