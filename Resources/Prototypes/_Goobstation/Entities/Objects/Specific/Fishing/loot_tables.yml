@@ -57,7 +57,7 @@
     - id: ClothingOuterHardsuitCarp
     - id: FoodSnackLollypopWrappedCarpEvil
     - id: CombatMedipen
-
+    - id: MobXenomorphMaid
 # Fish from water
 - type: entityTable
   id: WaterFishTable
@@ -75,7 +75,7 @@
     - id: FishTropical
     - id: MobSpaceShrimp # omu
     - id: MobCrab # omu
-
+    - id: MobCarpGoldfish # omu
 # Items from Water
 - type: entityTable
   id: WaterFishingLootTable
