@@ -8,6 +8,10 @@
     sprite: _Omu/Clothing/Eyes/scidiag.rsi
   - type: Clothing
     sprite: _Omu/Clothing/Eyes/scidiag.rsi
+  #- type: ClothingGrantCollectiveMind
+  #  minds:
+  #  - Binary
+  #  defaultChannel: Binary # Who thought it was fair to give RD access to Binary, with an infinite ammount due to it also being in the loadout?
   - type: HandheldTranslator # Thanks, Goob Italian Moustache!
     toggleOnInteract: false
     showInfoOnExamine: false
