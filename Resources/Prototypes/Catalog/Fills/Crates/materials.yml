@@ -64,7 +64,7 @@
   - type: StorageFill
     contents:
       - id: SheetPlastic
-        amount: 3
+        amount: 5       #OMU change was 3
 
 - type: entity
   id: CrateMaterialWood
