@@ -656,6 +656,7 @@
   materials:
     Steel: 25
 
+# Omu start
 #- type: latheRecipe
 #  parent: BaseEmptyAmmoRecipe
 #  id: MagazineCaselessRifleEmpty
@@ -669,6 +670,7 @@
 #  result: MagazineCaselessRifle
 #  materials:
 #    Steel: 400
+# Omu end
 
 - type: latheRecipe
   parent: BaseAmmoRecipe
