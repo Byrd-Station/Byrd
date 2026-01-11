@@ -64,6 +64,30 @@
   - PrisonerEnviroglovesBlack
   - PrisonerEnviroglovesWhite
 
+- type: loadoutGroup
+  id: VirologistEnvirohelm
+  name: loadout-group-virologist-envirohelm
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - VirologistEnvirohelm
+
+- type: loadoutGroup
+  id: VirologistEnvirosuit
+  name: loadout-group-virologist-envirosuit
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - VirologistEnvirosuit
+
+- type: loadoutGroup
+  id: VirologistEnvirogloves
+  name: loadout-group-virologist-envirogloves
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - WhiteEnvirogloves
+  - NitrileEnvirogloves
 # NTR
 
 - type: loadoutGroup
