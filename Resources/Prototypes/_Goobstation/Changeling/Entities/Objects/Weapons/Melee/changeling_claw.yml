@@ -37,7 +37,7 @@
   - type: Unremoveable
   - type: DisarmMalus
     malus: 0
-  - type: SolutionContainerManager
+  - type: SolutionContainerManager    #Omu change revert hard grab shit in favor of poison inject.
     solutions:
       melee:
         maxVol: 30
