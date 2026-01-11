@@ -33,6 +33,8 @@
   - CartridgeDermaline
   - CartridgeAtropine
   - CartridgeSaline
+  - CartridgeArith
+  - CartridgeDylo
   - SecHypo
 
 - type: latheRecipePack

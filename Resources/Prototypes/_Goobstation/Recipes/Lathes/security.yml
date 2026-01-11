@@ -91,6 +91,22 @@
     Plasma: 50
 
 - type: latheRecipe
+  id: CartridgeArith
+  result: CartridgeArith
+  completetime: 1
+  materials:
+    Glass: 100
+    Plasma: 100
+
+- type: latheRecipe
+  id: CartridgeDylo
+  result: CartridgeDylo
+  completetime: 1
+  materials:
+    Glass: 100
+    Plasma: 100
+
+- type: latheRecipe
   id: CartridgeEphedrine
   result: CartridgeEphedrine
   completetime: 1

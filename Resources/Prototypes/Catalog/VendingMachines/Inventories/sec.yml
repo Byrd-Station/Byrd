@@ -72,7 +72,9 @@
     CartridgeSaline: 2
     CartridgeBicaridine: 2
     CartridgeDermaline: 2 # Goobstation - end
-    PanicButton: 2 # Omu
+    PanicButton: 2 # Omu start
+    CartridgeArith: 4
+    CartridgeDylo: 4 # Omu end
   # security officers need to follow a diet regimen!
   contrabandInventory:
     WeaponMeleeNeedle: 2
