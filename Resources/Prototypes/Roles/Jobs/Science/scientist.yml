@@ -90,6 +90,7 @@
   id: ScientistGear
   equipment:
     ears: ClothingHeadsetScience
+    belt: ClothingBeltUtilityEngineering
   #storage:
     #back:
     #- Stuff

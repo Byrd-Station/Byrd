@@ -77,6 +77,7 @@
     id: ResearchAssistantPDA
     ears: ClothingHeadsetScience
     pocket2: BookScientistsGuidebook
+    belt: ClothingBeltUtilityEngineering
   #storage:
     #back:
     #- Stuff
