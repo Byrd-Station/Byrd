@@ -6,7 +6,7 @@
   id: Shoi
   isVisibleLanguage: true
   speech:
-    color: "#FFB4A2"
+    color: "#9B4444"
     fontId: NotoSansTamilRegular
     boldFontId: NotoSansTamilBold
     fontSize: 17
