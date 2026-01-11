@@ -33,7 +33,7 @@ using Content.Shared.Throwing;
 using Content.Shared.Atmos.Components;
 using Content.Server.Nutrition.EntitySystems;
 using Content.Shared.Nutrition.Components;
-using Content.Goobstation.Shared.Xenomorph;
+using Content.Goobstation.Shared.Xenomorph; // Omu
 
 
 namespace Content.Server._White.Xenomorphs.FaceHugger;
@@ -124,7 +124,7 @@ public sealed class FaceHuggerSystem : EntitySystem
         BeingUnequippedAttemptEvent args)
     {
         if (component.Slot != args.Slot || args.Unequipee != args.UnEquipTarget || !component.InfectionPrototype.HasValue || _mobState.IsDead(uid) || HasComp<FacehuggerImmuneComponent>(args.Unequipee)) ; // Omu, add check for FacehuggerImmune
-        return;
+            return;
 
         _popup.PopupEntity(
             Loc.GetString("xenomorphs-face-hugger-unequip", ("equipment", Identity.Entity(uid, EntityManager))),
