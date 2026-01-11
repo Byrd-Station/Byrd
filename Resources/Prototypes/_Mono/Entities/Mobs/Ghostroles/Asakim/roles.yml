@@ -25,7 +25,7 @@
       settings: default
     requirements:
     - !type:OverallPlaytimeRequirement
-      time: 86400 # 24 hours, same reasoning as SRN
+      time: 180000 # 50 hrs
     - !type:DepartmentTimeRequirement # Omu
       department: Security
       time: 18000 # 5 hours

@@ -241,6 +241,7 @@
     - Kobold
     - Hissing
     - Deer
+    - Carptongue # goob edit - carp language
     requires:
     - TauCetiBasic
     setLanguageOnInteract: false

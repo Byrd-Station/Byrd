@@ -95,6 +95,7 @@ using Robust.Shared.Containers;
 using Content.Shared.Damage;
 using Content.Shared._Shitmed.BodyEffects;
 using Content.Shared._Shitmed.Body.Organ;
+using Content.Shared.Heretic;
 using Content.Shared.Tag; // Omu Edit
 using Robust.Shared.Prototypes; // Omu Edit
 
@@ -303,6 +304,14 @@ public partial class SharedBodySystem
         if (!Resolve(entity, ref entity.Comp))
             return new List<Entity<T, OrganComponent>>();
 
+        // Goobstation start
+        var ev = new GetBodyOrganOverrideEvent<T>();
+        RaiseLocalEvent(entity, ref ev);
+        var result = ev.Organ;
+        if (result != null)
+            return new List<Entity<T, OrganComponent>> {result.Value};
+        // Goobstation end
+
         var query = GetEntityQuery<T>();
         var list = new List<Entity<T, OrganComponent>>(3);
         foreach (var organ in GetBodyOrgans(entity.Owner, entity.Comp))
@@ -374,7 +383,7 @@ public partial class SharedBodySystem
         if (!_tag.HasTag(organEnt, XenomorphTagPrototype)) //Excluding any and all BaseXenomorphOrgan's.
         {
             var ev = new OrganEnabledEvent(organEnt);
-            RaiseLocalEvent(organEnt, ref ev); // Omu
+            RaiseLocalEvent(organEnt, ref ev);
         }
     }
 

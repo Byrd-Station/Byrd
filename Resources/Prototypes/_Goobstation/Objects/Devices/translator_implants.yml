@@ -14,71 +14,84 @@
   components:
   - type: TranslatorImplant
     spoken:
-      - Eldritch
-      - Chittin
-      - RootSpeak
-      - ValyrianStandard
-      - Marish
-      - Moffic
-      - Schechi
-      - NewKinPidgin #Ka'rakk
-      - Nekomimetic
-      - Draconic     #Sinta'Unathi
-      - Azaziba
-      - Calcic
-      - Bubblish
-      - SiikMaas
-      - NalRasan
-      - SiikTajr
-      - YaSsa
-      - Delvahii
-      - Canilunzt
+      - TauCetiBasic # Common Languages -
+      - SolCommon
       - Elyran
       - Freespeak
       - NovuNederic
-      - SolCommon
-      - TauCetiBasic
       - Tradeband
+      - Sign
+      - SpaceItalian # Job Specific -
+      - Bubblish # Species Languages -
+      - Calcic
+      - Canilunzt
+      - Chittin
+      - Gruntish
+      - NewKinPidgin # = Ka'rakk
+      - Marish
+      - Moffic
+      - Nehina
+      - Nekomimetic
+      - RobotTalk
+      - RootSpeak
+      - SiikMaas
+      - Draconic # = Sinta'Unathi
+      - Schechi
+      - ValyrianStandard
+      - YowKriol
+      - Azaziba # Depricated Languages -
+      - Delvahii
+      - Eldritch
+      - NalRasan
+      - SiikTajr
+      - YaSsa
+      - Cheval # Animal Languages -
       - Mouse
+      - Monkey
+      - Kobold
+
+    understood:
+      - TauCetiBasic # Common Languages -
+      - SolCommon
+      - Elyran
+      - Freespeak
+      - NovuNederic
+      - Tradeband
       - Sign
       - Monkey
       - Kobold
       - SpaceItalian
       - Cheval
-      -  Shoi
+      - Shoi
     understood:
       - Eldritch
       - Chittin
-      - RootSpeak
-      - ValyrianStandard
+      - Gruntish
+      - NewKinPidgin # = Ka'rakk
       - Marish
       - Moffic
-      - Schechi
-      - NewKinPidgin #Ka'rakk
+      - Nehina
       - Nekomimetic
-      - Draconic     #Sinta'Unathi
-      - Azaziba
-      - Calcic
-      - Bubblish
+      - RobotTalk
+      - RootSpeak
       - SiikMaas
+      - Draconic # = Sinta'Unathi
+      - Schechi
+      - ValyrianStandard
+      - YowKriol
+      - Azaziba # Depricated Languages -
+      - Delvahii
+      - Eldritch
       - NalRasan
       - SiikTajr
       - YaSsa
-      - Delvahii
-      - Canilunzt
-      - Elyran
-      - Freespeak
-      - NovuNederic
-      - SolCommon
-      - TauCetiBasic
-      - Tradeband
+      - Cheval # Animal Languages -
       - Mouse
-      - Sign
       - Monkey
       - Kobold
       - SpaceItalian
       - Cheval
-      -  Shoi
+      - Shoi
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -116,3 +129,18 @@
     - SpaceItalian
     spoken:
     - SpaceItalian
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: YowKriolTranslatorImplant
+  name: Yow Kriol translator implant
+  description: An implant giving the ability to understand and speak Yow Kriol.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - YowKriol
+    spoken:
+    - YowKriol
+    requires:
+    - TauCetiBasic

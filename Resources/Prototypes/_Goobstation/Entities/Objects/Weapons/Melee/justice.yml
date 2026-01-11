@@ -48,6 +48,8 @@
     damage:
       types:
         Slash: 12
+      woundSeverityMultipliers:
+        Slash: 2
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
     angle: 60
@@ -88,6 +90,8 @@
           damage:
             types:
               Slash: 12
+            woundSeverityMultipliers:
+              Slash: 2
           soundHit:
             path: /Audio/Weapons/bladeslice.ogg
           angle: 60
@@ -113,6 +117,8 @@
         - type: StaminaDamageOnHit
           damage: 20
           overtime: 15
+          lightAttackDamageMultiplier: 2
+          lightAttackOvertimeDamageMultiplier: 1
         soundStateActivate:
           collection: sparks
           params:
@@ -155,6 +161,8 @@
             types:
               Slash: 6
               Heat: 12
+            woundSeverityMultipliers:
+              Slash: 2
           angle: 60
           animation: WeaponArcThrust
           soundHit:

@@ -33,9 +33,11 @@ using Content.Server.Heretic.Components;
 using Content.Server.Antag;
 using Robust.Shared.Random;
 using System.Linq;
+using Content.Goobstation.Common.CCVar;
 using Content.Server._Goobstation.Objectives.Components;
 using Content.Server.Actions;
 using Content.Server.Chat.Managers;
+using Content.Server.Objectives;
 using Content.Shared.Humanoid;
 using Robust.Server.Player;
 using Content.Server.Revolutionary.Components;
@@ -47,9 +49,12 @@ using Content.Shared.Random.Helpers;
 using Content.Shared.Roles.Jobs;
 using Content.Shared.Tag;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared.Polymorph;
+using Content.Server.Polymorph.Systems;
 
 namespace Content.Server.Heretic.EntitySystems;
 
@@ -64,15 +69,20 @@ public sealed class HereticSystem : EntitySystem
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly SharedJobSystem _job = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
+    [Dependency] private readonly ObjectivesSystem _objectives = default!;
+    [Dependency] private readonly PolymorphSystem _polymorph = default!;
+
     [Dependency] private readonly IRobustRandom _rand = default!;
     [Dependency] private readonly IPlayerManager _playerMan = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IChatManager _chatMan = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     private float _timer;
     private const float PassivePointCooldown = 20f * 60f;
+    private bool _ascensionRequiresObjectives;
 
-    private const int HereticVisFlags = (int) VisibilityFlags.EldritchInfluence;
+    private const int HereticVisFlags = (int) (VisibilityFlags.EldritchInfluence | VisibilityFlags.EldritchInfluenceSpent);
 
     public override void Initialize()
     {
@@ -85,8 +95,15 @@ public sealed class HereticSystem : EntitySystem
         SubscribeLocalEvent<HereticComponent, EventHereticRerollTargets>(OnRerollTargets);
         SubscribeLocalEvent<HereticComponent, EventHereticAscension>(OnAscension);
 
+        SubscribeLocalEvent<HereticComponent, PolymorphedEvent>(OnPolymorphed);
+
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRestart);
+
+        Subs.CVar(_cfg, GoobCVars.AscensionRequiresObjectives, value => _ascensionRequiresObjectives = value, true);
     }
+
+    private void OnPolymorphed(Entity<HereticComponent> ent, ref PolymorphedEvent args)
+        => _polymorph.CopyPolymorphComponent<HereticComponent>(ent, args.NewEntity);
 
     private void OnRestart(RoundRestartCleanupEvent ev)
     {
@@ -109,6 +126,24 @@ public sealed class HereticSystem : EntitySystem
             // passive point gain every 20 minutes
             UpdateKnowledge(heretic.Owner, heretic, 1f);
         }
+    }
+
+    public bool ObjectivesAllowAscension(Entity<HereticComponent> ent)
+    {
+        if (!_ascensionRequiresObjectives)
+            return true;
+
+        if (!_mind.TryGetMind(ent, out var mindId, out var mind))
+            return false;
+
+        foreach (var objId in ent.Comp.AllObjectives)
+        {
+            if (_mind.TryFindObjective((mindId, mind), objId, out var obj) &&
+                !_objectives.IsCompleted(obj.Value, (mindId, mind)))
+                return false;
+        }
+
+        return true;
     }
 
     public void UpdateKnowledge(EntityUid uid,
@@ -173,12 +208,15 @@ public sealed class HereticSystem : EntitySystem
     private void OnCompInit(Entity<HereticComponent> ent, ref ComponentInit args)
     {
         // add influence layer
-        if (TryComp<EyeComponent>(ent,
-                out var eye)) // As a result, I'm afraid its complete shitcode however it's working shitcode.
+        if (TryComp<EyeComponent>(ent, out var eye))
             _eye.SetVisibilityMask(ent, eye.VisibilityMask | HereticVisFlags, eye);
 
-        foreach (var knowledge in ent.Comp.BaseKnowledge)
-            _knowledge.AddKnowledge(ent, ent.Comp, knowledge);
+        foreach (var k in ent.Comp.BaseKnowledge)
+            _knowledge.AddKnowledge(ent, ent.Comp, k, research: false);
+
+        // in case of polymorph
+        foreach (var k in ent.Comp.ResearchedKnowledge)
+            _knowledge.AddKnowledge(ent, ent.Comp, k, research: false);
 
         GenerateRequiredKnowledgeTags(ent);
         RaiseLocalEvent(ent, new EventHereticRerollTargets());
@@ -195,7 +233,7 @@ public sealed class HereticSystem : EntitySystem
 
     private void OnGetVisMask(Entity<HereticComponent> uid, ref GetVisMaskEvent args)
     {
-        args.VisibilityMask |= (int) VisibilityFlags.EldritchInfluence;
+        args.VisibilityMask |= HereticVisFlags;
     }
 
     #region Internal events (target reroll, ascension, etc.)

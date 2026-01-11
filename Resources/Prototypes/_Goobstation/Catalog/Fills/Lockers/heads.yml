@@ -36,6 +36,7 @@
       amount: !type:ConstantNumberSelector
         value: 5
     - id: NanoRepStationReport # Goobstation
+    - id: Multitool # Omu - Added for tasks flatpack
 
 - type: entity
   id: LockerNanorepFilled

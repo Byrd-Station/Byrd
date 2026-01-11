@@ -114,6 +114,10 @@
   - MagazineBoxMagnumIncendiary
   - MagazineBoxLightRifleIncendiary
   - MagazineBoxRifleIncendiary
+  # Omu start
+  - MagazineCaselessRifleIncendiary
+  - MagazineBoxCaselessRifleIncendiary
+  # Omu end
   # Goobstation R&D Console rework start
   position: 2,2
   technologyPrerequisites:
@@ -177,6 +181,8 @@
   - MagazinePistolUranium
   - MagazinePistolSubMachineGunUranium
   - MagazineLightRifleUranium
+  - MagazineCaselessRifleUranium # Omu
+  - MagazineBoxCaselessRifleUranium # Omu
   - SpeedLoaderMagnumUranium
   - MagazineBoxPistolUranium
   - MagazineBoxMagnumUranium
@@ -204,8 +210,6 @@
   - TelescopicShield
   - HoloprojectorSecurity
   - WeaponDisablerSMG
-  - PolymerBaton #goob
-  - SpearTelescopic #goob
   # Goobstation R&D Console rework start
   position: 3,3
   technologyPrerequisites:
