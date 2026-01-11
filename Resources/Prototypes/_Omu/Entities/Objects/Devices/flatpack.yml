@@ -51,3 +51,21 @@
   components:
   - type: Flatpack
     entity: MedicalComputerComms
+
+- type: entity
+  parent: BaseFlatpack
+  id: CircuitImprinterFlatpack
+  name: Circuit Imprinter flatpack
+  description: A flatpack used for constructing a Circuit Imprinter.
+  components:
+  - type: Flatpack
+    entity: CircuitImprinter
+
+- type: entity
+  parent: BaseFlatpack
+  id: FlatpackerFlatpack
+  name: Flatpacker flatpack
+  description: A flatpack used for constructing a Flatpack, to make more flatpacks, so you can flatpack. This IKEA has gone to far.
+  components:
+  - type: Flatpack
+    entity: MachineFlatpacker
