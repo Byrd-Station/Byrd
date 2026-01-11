@@ -22,8 +22,8 @@
   - MarishTranslator
   - NewKinPidginTranslator
   - SchechiTranslator
-  - GruntishTranslator
-
+ # - GruntishTranslator ### Omu Edit - Onis speak Sho'i
+  - ShoiTranslator
 - type: latheRecipePack
   id: TranslatorImplanters
   recipes:
@@ -43,4 +43,5 @@
   - ChevalTranslatorImplanter
   - NewKinPidginTranslatorImplanter
   - SchechiTranslatorImplanter
-  - GruntishTranslatorImplanter
+#  - GruntishTranslatorImplanter ### Omu Edit - Onis speak Sho'i
+  - ShoiTranslatorImplanter

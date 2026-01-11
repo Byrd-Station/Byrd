@@ -1,0 +1,14 @@
+- type: entity
+  parent: BaseSubdermalImplant
+  id: ShoiTranslatorImplant
+  name: Sho'i translator implant
+  description: An implant giving the ability to understand and speak Sho'i.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - Shoi
+    spoken:
+    - Shoi
+    requires:
+    - TauCetiBasic

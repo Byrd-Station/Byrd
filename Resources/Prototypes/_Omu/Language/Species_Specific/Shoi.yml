@@ -1,0 +1,62 @@
+# SPDX-FileCopyrightText: 2025 ratdotnet <auroraaegis87@protonmail.com>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Spoken by Oni. Tibetan inspired mountain drone language
+- type: language
+  id: Shoi
+  isVisibleLanguage: true
+  speech:
+    color: "#FFB4A2"
+    fontId: NotoSansTamilRegular
+    boldFontId: NotoSansTamilBold
+    fontSize: 17
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 6
+    replacement:
+    - ௐ
+    - அ
+    - ஆ
+    - இ
+    - ஈ
+    - உ
+    - ஊ
+    - எ
+    - ஏ
+    - ஐ
+    - ஒ
+    - ஓ
+    - ஔ
+    - ஃ
+    - க
+    - ங
+    - ச
+    - ஞ
+    - ட
+    - ண
+    - த
+    - ந
+    - ப
+    - ம
+    - ய
+    - ர
+    - ல
+    - வ
+    - ழ
+    - ள
+    - ற
+    - ன
+    - ஜ
+    - ஶ
+    - ஷ
+    - ஸ
+    - ஹ
+    - ௳
+    - ௴
+    - ௵
+    - ௶
+    - ௷
+    - ௸
+    - ௺
+    - ௹

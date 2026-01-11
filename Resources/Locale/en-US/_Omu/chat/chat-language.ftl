@@ -1,0 +1,1 @@
+chat-language-Shoi-name= Sho'i

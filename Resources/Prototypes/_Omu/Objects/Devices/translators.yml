@@ -1,0 +1,16 @@
+- type: entity
+  id: ShoiTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Sho'i translator
+  description: Translates the harmonic drones of Sho'i into Galactic Common. Primarily spoken by Oni.
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - Shoi
+    understood:
+    - Shoi
+    - TauCetiBasic
+    requires:
+    - TauCetiBasic
+    - Shoi

@@ -1,0 +1,7 @@
+- type: entity
+  id: ShoiTranslatorImplanter
+  parent: BaseTranslatorImplanter
+  suffix: Sho'i
+  components:
+  - type: Implanter
+    implant: ShoiTranslatorImplant

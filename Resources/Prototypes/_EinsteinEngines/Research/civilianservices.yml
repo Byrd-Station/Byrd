@@ -30,7 +30,8 @@
   - ChevalTranslatorImplanter
   - NewKinPidginTranslator
   - SchechiTranslator
-  - GruntishTranslator
+# - GruntishTranslator ### Omu Edit - Onis speak Sho'i
+  - ShoiTranslator
   position: -4, 4
   technologyPrerequisites:
   - AdvancedEntertainment
@@ -62,7 +63,8 @@
   - NewKinPidginTranslatorImplanter
   - AnimalTranslator
   - XenoTranslator
-  - GruntishTranslatorImplanter
+ # - GruntishTranslatorImplanter ### Omu Edit - Onis speak Sho'i
+  - ShoiTranslatorImplanter
   position: -4, 5
   technologyPrerequisites:
   - BasicTranslation

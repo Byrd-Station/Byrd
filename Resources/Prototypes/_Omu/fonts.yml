@@ -1,0 +1,7 @@
+- type: font # oni sho'i
+  id:  NotoSansTamilRegular
+  path: /Fonts/_Omu/NotoSansTamil/NotoSansTamil_Condensed-Regular.ttf
+
+- type: font # oni sho'i
+  id:  NotoSansTamilBold
+  path: /Fonts/_Omu/NotoSansTamil/NotoSansTamil_Condensed-Bold.ttf

@@ -45,6 +45,7 @@
       - Kobold
       - SpaceItalian
       - Cheval
+      -  Shoi
     understood:
       - Eldritch
       - Chittin
@@ -77,6 +78,7 @@
       - Kobold
       - SpaceItalian
       - Cheval
+      -  Shoi
 
 - type: entity
   parent: BaseSubdermalImplant
