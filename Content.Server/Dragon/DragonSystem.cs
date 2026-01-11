@@ -136,6 +136,7 @@ public sealed partial class DragonSystem : EntitySystem
     [Dependency] private readonly ISerializationManager _serManager = default!; // Goobstation
     [Dependency] private readonly DamageableSystem _damage = default!; // Goobstation
     [Dependency] private readonly TurfSystem _turf = default!;
+    [Dependency] private readonly BodySystem _body = default!; // OmuStation
 
     private EntityQuery<CarpRiftsConditionComponent> _objQuery;
 
