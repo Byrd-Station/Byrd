@@ -240,6 +240,19 @@
   - type: Stack
     count: 10
 
+#OMU start
+- type: entity
+  parent: SheetPlastic
+  id: SheetPlastic30
+  name: plastic
+  suffix: 30
+  components:
+  - type: Sprite
+    state: plastic
+  - type: Stack
+    count: 30
+#OMU end
+
 - type: entity
   parent: SheetPlastic
   id: SheetPlastic1
