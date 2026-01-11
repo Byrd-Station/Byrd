@@ -198,6 +198,14 @@
     - CigarGold
   groupBy: "smokeables"
 
+# Omu
+- type: loadout
+  id: MysteryLighterBox
+  storage:
+    back:
+    - MysteryLighterBox
+  groupBy: "smokeables"
+
 # Pins
 - type: loadout
   id: ClothingNeckLGBTPin
