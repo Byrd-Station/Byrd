@@ -54,9 +54,107 @@ These altars can be constructed by placing the following offerings atop your bas
 Allows you to choose a set of armor. All armors have identical stats.
 
 ### Null Rod
-The obsidian rod will be your defense against the forces of evil. [color=blue][bold] Having it in your hands will make you completely immune to the effects of magic. [/bold][/color]
+  The Null Rod, while mighty, is capable of far more than just bludgeoning. It can be changed into many [bold]special variants[/bold] depending on what altar you place it on.
+  [Color=blue][bold]All variants of the Null Rod, unless stated otherwise, provide immunity to the effects of magic while held.[/bold][/color]
 
-You can transform it into a holy weapon of choice by placing it on an altar!
+  ### Null Rod [Default]
+  The obsidian rod will be your defense against the forces of evil.
+  It's basic, but reliable. Sometimes all you need is a good 'ole whack on the head.
+
+  Does good damage (10 blunt and 10 holy) at average speed
+
+  ### Atheist's Fedora [Nanotrasen Altar]
+  Not so much a fan of the divine? Prefer to worship our corporate overlords? Use space-reddit regularly?
+  Boy do we have the weapon for you.
+
+  This fedora can both be worn as a stylish fashion statement, and tossed like a knife!
+  And to add insult to injury, [bold]it returns after being thrown![/bold]
+
+  Deals low melee damage (5 slash and 10 holy) with average throwing damage (10 slash and 10 holy) with average attack speed.
+
+  ### God Hand [Chaos Altar]
+  A searing, blazing, divine gift from the Gods themselves.
+  You won't ever drop this one, it's your new hand!
+
+  Not only can you punch people directly in the throat with this, it'll [italic]also[/italic] [color=red]light them on fire and force them into your grasp.[/color]
+  Additionally, you may use it to pry open certain objects!
+
+  Deals good damage (10 Heat, 4 slash and 10 holy) at average speed with the added utility of instant hard grab.
+
+  ### Holy Claymore [Heaven Altar]
+  A righteous blade fit for a righteous crusader.
+  Does the phrase "[color=yellow]DEUS VULT![/color]" ignite something within you?
+  You may enjoy this weapon then!
+
+  This weapon functions as a normal sword, effective at slashing and cleaving the unclean from your station.
+  As a bonus, right-clicking with this weapon while wielding it will fire a [color=yellow]bolt of holy energy from the blade.[/color]
+
+  Hitting an enemy who is marked with one of these bolts will both deal more damage [color=green]and heal you for twenty brute, and ten airloss.[/color]
+
+  Deals good damage (13 slash and 10 holy) with the additional utility as above. It's melee speed is average with a 0.5 shots per second ranged bolt.
+
+  ### Monk's Staff [Nature Altar]
+  A long, polished, wooden rod. Typically used to beat the literal and metaphorical Devil out of someone.
+
+  While dealing a relatively low amount of damage, [color=blue]the Monk's Staff can be swung incredibly fast.[/color]
+  The fast attack speed combined with its holy damage make it incredibly effective at crippling any unholy entities quickly.
+
+  Deals low damage (2.5 blunt and 6 holy) with additional stamina damage (10) at a fast attack speed.
+
+  ### His Holy Chainsaw [Toolbox Altar]
+  Sometimes all you need to do is [color=red]rip... and tear.[/color]
+  This [italic]does[/italic] replace your hand with a chainsaw so... just be aware of that.
+
+  This weapon has both an incredibly fast attack speed, even faster than the Monk's Staff, along with the ability to inflict especially nasty wounds.
+  A chainsaw, as one would imagine, is very proficient in ripping things limb from limb.
+
+  Additionally, it's quite good at tearing down walls and doors.
+
+  Needs weilding, but deals low damage (2 blunt, 3 slash and 6 holy. With 20 structural to tear into places) at a fast attack speed.
+
+  ### Rosary [Space Christian Altar]
+  In comparison to the other Nullrod variants, the Rosary hits with the force of a cardboard tube.
+  Where it's [color=yellow]true strength[/color] comes in is it's ability to heal nearby creatures with it's holy aura.
+
+  When praying to the Rosary, all other creatures will be healed by [color=green] 22.5 Brute, 7.5 Heat, 7.5 Cold, 7.5 Shock per tick,[/color][color=yellow] and deal holy damage to any demons nearby.[/color]
+  While this may sound like a lot, when spread across the entire body it is a far more reasonable number.
+
+  If you hold the Rosary in two hands, you may walk slightly faster while doing so.
+  Also, it can be worn in the belt slot!
+
+  Strangely enough, does little damage, (3 blunt and 10 holy), its real utility is the AoE heal which will deal holy damage to the unholy.
+
+  ### Casul & Jackal [Technology Altar]
+  Not a fan of getting your hands dirty?
+  This pair of legally-distinct, copyright free handguns are perfect for you!
+
+  Both pistols come in a specially made holster designed specifically to hold them.
+  Due to the holy awesomeness of them, you can only fire when holding both of them at once, with one in each hand.
+
+  Each pistol does low damage, but are both fired together (5 peircing and 4 holy)
+
+  Out of ammo? No worries! Just pray to whatever God you believe in for a new clip of ammo and get back to shooting demons!
+
+  ### Grey Emperor's Glove [Maintenance Altar]
+  Holding this weapon fills your head with the word "Self-antag"... What does that mean?
+  You can't drop this one either!
+
+  You may use this weapon to strike foes and send them flying through the air with the power of the Grey-Tide.
+  As a neat function, you may also use this weapon as almost any type of tool, and it's completely insulated!
+
+  Deals nice damage (14 holy and 9 blunt) with average attack speed.
+
+  ### Arythmic Knife [Fanged Altar]
+  They say fear is the true mind killer, but you can just stab them. Let that flow through em, eh?
+  Randomly speeds you up and slows you down, between 0.6x move speed and 2.0x move speed, thats fast!
+
+  Average attack speed and lowish damage (9 slash and 10 holy).
+
+  ### Honkmother's maw [Bananium Altar]
+  Oh great, another clown, just what we need.
+  Slips targets on hit, very potent! Comes with a cooldown so you can't slip-lock someone.
+
+  Average attack speed and lowish damage (10 blunt and 12 holy)
 
 ### Spirit Candles
 You can craft a spirit candle by putting a candle on a skull. Spirit Candles are useful against evil spirits like Wraith.
