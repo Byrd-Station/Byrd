@@ -178,6 +178,16 @@
     - CigPackBlack
   groupBy: "smokeables"
 
+#Omu Start
+- type: loadout
+  id: CigPackMixed
+  storage:
+    back:
+    - CigPackMixed
+  groupBy: "smokeables"
+
+#Omu End
+
 - type: loadout
   id: CigarCase
   effects:
