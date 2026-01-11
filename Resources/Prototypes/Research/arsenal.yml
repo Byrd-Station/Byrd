@@ -108,14 +108,16 @@
   - MagazinePistolSubMachineGunIncendiary
   - MagazineBoxShotgunIncendiaryHighCaliber # Goobstation
   - MagazineLightRifleIncendiary
-  - MagazineCaselessRifleIncendiary # Omu
   - SpeedLoaderMagnumIncendiary
   - MagazineShotgunIncendiary
   - MagazineBoxPistolIncendiary
   - MagazineBoxMagnumIncendiary
   - MagazineBoxLightRifleIncendiary
   - MagazineBoxRifleIncendiary
-  - MagazineBoxCaselessRifleIncendiary # Omu
+  # Omu start
+  - MagazineCaselessRifleIncendiary
+  - MagazineBoxCaselessRifleIncendiary
+  # Omu end
   # Goobstation R&D Console rework start
   position: 2,2
   technologyPrerequisites:
