@@ -154,6 +154,8 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 108000 #30 hours - Omu Edit end
+    - !type:SizeRequirement # Omu - Short people exclusion
+      minimumHeight: 150
 #    - !type:SpeciesRequirement # Goob - None Felinid
 #      inverted: true
 #      species:

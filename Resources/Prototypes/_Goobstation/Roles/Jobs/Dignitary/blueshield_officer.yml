@@ -44,6 +44,8 @@
       time: 90000 # 25 hours
     - !type:AgeRequirement
       requiredAge: 21
+    - !type:SizeRequirement # Omu - Short people exclusion
+      minimumHeight: 150
 #    - !type:SpeciesRequirement # Goob - None Felinid
 #      inverted: true
 #      species:
