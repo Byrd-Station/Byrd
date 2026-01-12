@@ -1691,9 +1691,9 @@
   id: UplinkHolster
   name: uplink-holster-name
   description: uplink-holster-desc
-  productEntity: ClothingBeltSyndieHolster
+  productEntity: ClothingBeltChameleonHolster # omu
   cost:
-    Telecrystal: 8 # goob - holster rework
+    Telecrystal: 15 # omu. its chameleon and it can fit any gun you can pull a hristov out of what looks like a towel
   categories:
   - UplinkWearables
 
