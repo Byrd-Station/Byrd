@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/01/2026 18:39:22
-  entityCount: 12546
+  time: 01/12/2026 18:14:43
+  entityCount: 12553
 maps:
 - 1
 grids:
@@ -5647,7 +5647,7 @@ entities:
       pos: -9.5,-35.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3732.8892
+      secondsUntilStateChange: -3893.3518
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7212,6 +7212,11 @@ entities:
     components:
     - type: Transform
       pos: 15.5,-17.5
+      parent: 2
+  - uid: 12551
+    components:
+    - type: Transform
+      pos: 0.5,-35.5
       parent: 2
 - proto: BlastDoor
   entities:
@@ -27952,6 +27957,11 @@ entities:
       parent: 2
 - proto: CheapRollerBed
   entities:
+  - uid: 3763
+    components:
+    - type: Transform
+      pos: 17.534672,-22.994013
+      parent: 2
   - uid: 4514
     components:
     - type: Transform
@@ -27961,6 +27971,11 @@ entities:
     components:
     - type: Transform
       pos: 24.491184,-6.41413
+      parent: 2
+  - uid: 8432
+    components:
+    - type: Transform
+      pos: 17.521421,-23.417665
       parent: 2
 - proto: CheckerBoard
   entities:
@@ -28082,13 +28097,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -18.5,-13.5
-      parent: 2
-- proto: CloningPod
-  entities:
-  - uid: 4576
-    components:
-    - type: Transform
-      pos: 17.5,-21.5
       parent: 2
 - proto: ClosetBombFilled
   entities:
@@ -28311,6 +28319,13 @@ entities:
     components:
     - type: Transform
       pos: -17.5,-10.5
+      parent: 2
+- proto: ClosetL3Filled
+  entities:
+  - uid: 12545
+    components:
+    - type: Transform
+      pos: 17.5,-21.5
       parent: 2
 - proto: ClosetL3VirologyFilled
   entities:
@@ -29490,22 +29505,6 @@ entities:
     - type: Transform
       pos: -28.5,1.5
       parent: 2
-- proto: ComputerCloningConsole
-  entities:
-  - uid: 3763
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 17.5,-22.5
-      parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        4576:
-        - - CloningPodSender
-          - CloningPodReceiver
-        8432:
-        - - MedicalScannerSender
-          - MedicalScannerReceiver
 - proto: ComputerComms
   entities:
   - uid: 4778
@@ -30335,11 +30334,6 @@ entities:
     components:
     - type: Transform
       pos: -40.5,-3.5
-      parent: 2
-  - uid: 4904
-    components:
-    - type: Transform
-      pos: 10.5,-16.5
       parent: 2
 - proto: CryogenicSleepUnitSpawnerLateJoin
   entities:
@@ -35850,7 +35844,7 @@ entities:
       pos: 40.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -13165.623
+      secondsUntilStateChange: -13326.086
       state: Closing
   - uid: 5823
     components:
@@ -35973,6 +35967,46 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -10.5,-4.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 12548
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -3.5,-40.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 12549
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 4.5,-39.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 12550
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 5.5,-35.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 12552
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,-35.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 12553
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,-41.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -53752,6 +53786,11 @@ entities:
       parent: 2
 - proto: LockerMedicalFilled
   entities:
+  - uid: 4904
+    components:
+    - type: Transform
+      pos: 17.5,-22.5
+      parent: 2
   - uid: 8429
     components:
     - type: Transform
@@ -53778,6 +53817,11 @@ entities:
     components:
     - type: Transform
       pos: 12.5,-10.5
+      parent: 2
+  - uid: 10513
+    components:
+    - type: Transform
+      pos: 17.5,-20.5
       parent: 2
 - proto: LockerParamedicFilled
   entities:
@@ -54362,13 +54406,6 @@ entities:
     components:
     - type: Transform
       pos: 24.5,-9.5
-      parent: 2
-- proto: MedicalScanner
-  entities:
-  - uid: 8432
-    components:
-    - type: Transform
-      pos: 17.5,-20.5
       parent: 2
 - proto: MedicalTechFab
   entities:
@@ -62213,18 +62250,6 @@ entities:
     components:
     - type: Transform
       pos: 10.5,-12.5
-      parent: 2
-  - uid: 10513
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 19.5,-19.5
-      parent: 2
-  - uid: 12545
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 20.5,-22.5
       parent: 2
 - proto: SignConference
   entities:
@@ -77613,6 +77638,14 @@ entities:
     - type: Transform
       pos: -12.5,18.5
       parent: 2
+- proto: WindoorSecureBrigLocked
+  entities:
+  - uid: 4576
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -9.5,10.5
+      parent: 2
 - proto: WindoorSecureCargoLocked
   entities:
   - uid: 12410
@@ -78267,6 +78300,12 @@ entities:
     components:
     - type: Transform
       pos: 57.5,16.5
+      parent: 2
+  - uid: 12547
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -9.5,11.5
       parent: 2
 - proto: Wrench
   entities:

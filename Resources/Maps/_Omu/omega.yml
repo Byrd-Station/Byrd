@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/01/2026 19:02:59
-  entityCount: 14023
+  time: 01/12/2026 18:06:45
+  entityCount: 14024
 maps:
 - 1
 grids:
@@ -11288,6 +11288,11 @@ entities:
     components:
     - type: Transform
       pos: -18.5,-18.5
+      parent: 2
+  - uid: 14024
+    components:
+    - type: Transform
+      pos: 7.5,-42.5
       parent: 2
 - proto: BlastDoor
   entities:
@@ -30986,13 +30991,6 @@ entities:
     - type: Transform
       pos: -20.5,-5.5
       parent: 2
-- proto: CloningPod
-  entities:
-  - uid: 4406
-    components:
-    - type: Transform
-      pos: -17.5,-25.5
-      parent: 2
 - proto: ClosetBombFilled
   entities:
   - uid: 4983
@@ -33338,22 +33336,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -17.5,-1.5
       parent: 2
-- proto: ComputerCloningConsole
-  entities:
-  - uid: 1116
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -16.5,-28.5
-      parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        8370:
-        - - MedicalScannerSender
-          - MedicalScannerReceiver
-        4406:
-        - - CloningPodSender
-          - CloningPodReceiver
 - proto: ComputerComms
   entities:
   - uid: 5228
@@ -40443,6 +40425,20 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+  - uid: 1116
+    components:
+    - type: Transform
+      pos: 8.5,-33.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 4406
+    components:
+    - type: Transform
+      pos: 8.5,-37.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
   - uid: 6253
     components:
     - type: Transform
@@ -40497,6 +40493,13 @@ entities:
     components:
     - type: Transform
       pos: -19.5,29.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 8370
+    components:
+    - type: Transform
+      pos: 8.5,-41.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -63842,13 +63845,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -26.5,-26.5
-      parent: 2
-- proto: MedicalScanner
-  entities:
-  - uid: 8370
-    components:
-    - type: Transform
-      pos: -15.5,-28.5
       parent: 2
 - proto: MedicalTechFab
   entities:

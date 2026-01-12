@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/01/2026 12:27:38
-  entityCount: 27652
+  time: 01/12/2026 16:12:38
+  entityCount: 27655
 maps:
 - 1
 grids:
@@ -6080,7 +6080,7 @@ entities:
             0: 61423
           8,-1:
             0: 12320
-            4: 34944
+            2: 34944
           -8,-4:
             0: 30583
           -8,-5:
@@ -6431,7 +6431,7 @@ entities:
             0: 30583
           6,-12:
             1: 4369
-            2: 204
+            4: 204
             3: 49152
           6,-11:
             1: 61713
@@ -6440,10 +6440,10 @@ entities:
             0: 29424
           6,-13:
             1: 4369
-            2: 49152
+            4: 49152
             3: 204
           7,-12:
-            2: 17
+            4: 17
             3: 4096
             1: 17476
           7,-11:
@@ -6452,7 +6452,7 @@ entities:
           7,-10:
             0: 61680
           7,-13:
-            2: 4096
+            4: 4096
             1: 17476
             3: 17
           8,-12:
@@ -6490,7 +6490,7 @@ entities:
             1: 8704
           8,0:
             0: 63523
-            4: 8
+            2: 8
           8,1:
             0: 61440
           8,2:
@@ -6770,24 +6770,24 @@ entities:
             1: 35064
             0: 771
           9,0:
-            4: 15
+            2: 15
             0: 65296
           9,1:
             0: 47232
           9,2:
             0: 48955
           9,-1:
-            4: 65520
+            2: 65520
             0: 1
           10,0:
-            4: 1
+            2: 1
             0: 65292
           10,1:
             0: 56789
           10,2:
             0: 64961
           10,-1:
-            4: 4368
+            2: 4368
             0: 57548
           11,0:
             0: 30543
@@ -8591,50 +8591,50 @@ entities:
           - 0
           - 0
         - volume: 2500
-          temperature: 293.15
-          moles:
-          - 0
-          - 0
-          - 0
-          - 6666.982
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
           temperature: 235
           moles:
           - 27.225372
           - 102.419266
           - 0
           - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 0
+          - 0
+          - 0
+          - 6666.982
           - 0
           - 0
           - 0
@@ -11739,7 +11739,7 @@ entities:
       pos: 24.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -44914.54
+      secondsUntilStateChange: -46049.906
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11918,7 +11918,7 @@ entities:
       pos: -19.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2242.1865
+      secondsUntilStateChange: -3377.5522
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13075,7 +13075,7 @@ entities:
       pos: 75.5,-40.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3119.8188
+      secondsUntilStateChange: -4255.1846
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -15898,20 +15898,10 @@ entities:
     - type: Transform
       pos: 55.5,-49.5
       parent: 2
-  - uid: 993
-    components:
-    - type: Transform
-      pos: 24.5,-28.5
-      parent: 2
   - uid: 994
     components:
     - type: Transform
       pos: 8.5,-21.5
-      parent: 2
-  - uid: 995
-    components:
-    - type: Transform
-      pos: 24.5,-29.5
       parent: 2
   - uid: 996
     components:
@@ -16048,6 +16038,16 @@ entities:
     - type: Transform
       pos: -10.5,-45.5
       parent: 2
+  - uid: 7039
+    components:
+    - type: Transform
+      pos: 27.5,-30.5
+      parent: 2
+  - uid: 11333
+    components:
+    - type: Transform
+      pos: 27.5,-27.5
+      parent: 2
 - proto: BedsheetCaptain
   entities:
   - uid: 1021
@@ -16140,18 +16140,6 @@ entities:
     - type: Transform
       pos: 32.5,-36.5
       parent: 2
-  - uid: 1034
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 24.5,-29.5
-      parent: 2
-  - uid: 1035
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 24.5,-28.5
-      parent: 2
   - uid: 1036
     components:
     - type: Transform
@@ -16167,6 +16155,16 @@ entities:
     components:
     - type: Transform
       pos: 34.5,-36.5
+      parent: 2
+  - uid: 24858
+    components:
+    - type: Transform
+      pos: 27.5,-30.5
+      parent: 2
+  - uid: 24859
+    components:
+    - type: Transform
+      pos: 27.5,-27.5
       parent: 2
 - proto: BedsheetNT
   entities:
@@ -16324,6 +16322,11 @@ entities:
       parent: 2
 - proto: BiomassReclaimer
   entities:
+  - uid: 798
+    components:
+    - type: Transform
+      pos: 89.5,-41.5
+      parent: 2
   - uid: 12387
     components:
     - type: Transform
@@ -63488,13 +63491,6 @@ entities:
     - type: Transform
       pos: 7.5,-32.5
       parent: 2
-- proto: CloningPod
-  entities:
-  - uid: 7039
-    components:
-    - type: Transform
-      pos: 45.5,-46.5
-      parent: 2
 - proto: ClosetBombFilled
   entities:
   - uid: 10685
@@ -68772,6 +68768,12 @@ entities:
       parent: 2
 - proto: ComputerBroken
   entities:
+  - uid: 1035
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 45.5,-44.5
+      parent: 2
   - uid: 11123
     components:
     - type: Transform
@@ -68799,22 +68801,6 @@ entities:
     - type: Transform
       pos: -22.5,-21.5
       parent: 2
-- proto: ComputerCloningConsole
-  entities:
-  - uid: 7038
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 45.5,-44.5
-      parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        7039:
-        - - CloningPodSender
-          - CloningPodReceiver
-        798:
-        - - MedicalScannerSender
-          - MedicalScannerReceiver
 - proto: ComputerComms
   entities:
   - uid: 11130
@@ -70534,16 +70520,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -24.5,43.5
-      parent: 2
-  - uid: 11333
-    components:
-    - type: Transform
-      pos: 27.5,-27.5
-      parent: 2
-  - uid: 12393
-    components:
-    - type: Transform
-      pos: 27.5,-30.5
       parent: 2
 - proto: CryogenicSleepUnitSpawnerLateJoin
   entities:
@@ -83187,7 +83163,7 @@ entities:
       pos: -34.5,-14.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -39103.08
+      secondsUntilStateChange: -40238.445
       state: Closing
   - uid: 13393
     components:
@@ -83680,7 +83656,7 @@ entities:
       pos: -4.5,-71.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -30850.82
+      secondsUntilStateChange: -31986.186
       state: Closing
   - uid: 14038
     components:
@@ -83991,6 +83967,22 @@ entities:
       parent: 2
 - proto: FloorDrain
   entities:
+  - uid: 993
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 88.5,-36.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 995
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 86.5,-39.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
   - uid: 12388
     components:
     - type: Transform
@@ -84051,6 +84043,14 @@ entities:
     components:
     - type: Transform
       pos: 5.5,-34.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 24860
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 89.5,-40.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -122849,47 +122849,16 @@ entities:
           ent: null
 - proto: LockerMedical
   entities:
-  - uid: 18957
+  - uid: 1034
+    components:
+    - type: Transform
+      pos: 24.5,-29.5
+      parent: 2
+  - uid: 12393
     components:
     - type: Transform
       pos: 24.5,-30.5
       parent: 2
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.1496
-        moles:
-        - 5.001885
-        - 18.816614
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-    - type: ContainerContainer
-      containers:
-        EntityStorageComponent: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: LockerMedicalFilled
   entities:
   - uid: 18958
@@ -123533,8 +123502,20 @@ entities:
     - type: Transform
       pos: 18.5,-22.5
       parent: 2
+- proto: MachineFrame
+  entities:
+  - uid: 7038
+    components:
+    - type: Transform
+      pos: 46.5,-44.5
+      parent: 2
 - proto: MachineFrameDestroyed
   entities:
+  - uid: 18957
+    components:
+    - type: Transform
+      pos: 45.5,-46.5
+      parent: 2
   - uid: 19004
     components:
     - type: Transform
@@ -123839,13 +123820,6 @@ entities:
     components:
     - type: Transform
       pos: 37.5,-38.5
-      parent: 2
-- proto: MedicalScanner
-  entities:
-  - uid: 798
-    components:
-    - type: Transform
-      pos: 46.5,-44.5
       parent: 2
 - proto: MedicalTechFab
   entities:
@@ -129289,14 +129263,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 27.5,-30.5
       parent: 2
-  - uid: 19829
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 46.5,-45.5
-      parent: 2
-    - type: ApcPowerReceiver
-      powerLoad: 0
   - uid: 19830
     components:
     - type: Transform
@@ -130088,6 +130054,14 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 91.5,-34.5
+      parent: 2
+- proto: PoweredlightEmpty
+  entities:
+  - uid: 19829
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 46.5,-45.5
       parent: 2
 - proto: PoweredlightExterior
   entities:
