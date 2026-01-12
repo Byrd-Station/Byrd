@@ -24,8 +24,8 @@
   - CartridgeBicaridine
   - CartridgeDermaline
   - CartridgeSaline
-  - CartridgeArith
-  - CartridgeDylo
+  - CartridgeArith # Omu
+  - CartridgeDylo # Omu
   - ParamedHypo
 
 - type: latheRecipePack
