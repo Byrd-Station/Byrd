@@ -172,3 +172,10 @@
   storage:
     back:
     - BarberScissors
+
+- type: loadout
+  id: MysteryLighterBox
+  storage:
+    back:
+    - MysteryLighterBox
+  groupBy: "smokeables"
