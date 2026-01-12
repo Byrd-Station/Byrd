@@ -1693,7 +1693,7 @@
   description: uplink-holster-desc
   productEntity: ClothingBeltChameleonHolster # omu
   cost:
-    Telecrystal: 15 # omu. its chameleon and it can fit any gun you can pull a hristov out of what looks like a towel
+    Telecrystal: 10 # omu. its chameleon and it can fit any gun you can pull a hristov out of what looks like a towel
   categories:
   - UplinkWearables
 
