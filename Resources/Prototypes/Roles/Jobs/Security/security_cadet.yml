@@ -108,6 +108,10 @@
     #  inverted: true # Omu edit end
     - !type:SizeRequirement # Omu - Short people exclusion
       minimumHeight: 150
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 36000 #10 hours
+      inverted: true # Omu edit end
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
