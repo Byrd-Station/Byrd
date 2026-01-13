@@ -2,13 +2,14 @@
 # SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2026 ThanosDeGraf <richardgirgindontstop@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: vendingMachineInventory
   id: MailDrobeInventory
   startingInventory:
-    ClothingHeadMailCarrier: 2 # Omu edit start - combined MailDrobe and CourierDrobe
+    ClothingHeadMailCarrier: 2 # Omu edit start - A bunch of apperal added, sorted in a way that makes it easier to sift through in-game going from head to toes to misc-items.
     ClothingHeadCourier: 2 # Omu
     ClothingEyesGlasses: 2
     ClothingHeadsetCargo: 2
@@ -27,4 +28,4 @@
     CourierBag: 2 # Omu
     WeaponMailLake: 2 # Frontier
     BoxMailCapsulePrimed: 3 # Frontier
-    ClothingMaskCourier: 1 # Omu edit end - combined MailDrobe and CourierDrobe
+    ClothingMaskCourier: 1 # Omu edit end
