@@ -164,7 +164,7 @@
     # - !type:SaturationRequirement # MisandryBox - no neon hair on captain
     #   hairColorSaturation: 0.30
     - !type:SizeRequirement # Omu - Short people exclusion
-      minimumHeight: 150
+      minimumHeight: 140
     #- !type:WeightRequirement
     #  minimumWeight: 80
   guides: # goobstation

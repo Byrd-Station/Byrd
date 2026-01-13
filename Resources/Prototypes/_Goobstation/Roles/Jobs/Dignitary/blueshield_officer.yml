@@ -45,7 +45,7 @@
     - !type:AgeRequirement
       requiredAge: 21
     - !type:SizeRequirement # Omu - Short people exclusion
-      minimumHeight: 150
+      minimumHeight: 140
 #    - !type:SpeciesRequirement # Goob - None Felinid
 #      inverted: true
 #      species:

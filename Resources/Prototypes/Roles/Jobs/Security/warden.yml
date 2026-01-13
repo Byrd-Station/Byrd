@@ -145,7 +145,7 @@
       department: Security
       time: 54000 #15 hours - Omu edit end: Earn your thankless spot.
     - !type:SizeRequirement # Omu - Short people exclusion
-      minimumHeight: 150
+      minimumHeight: 140
 #    - !type:SpeciesRequirement # Goob - None Felinid
 #      inverted: true
 #      species:

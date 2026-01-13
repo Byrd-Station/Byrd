@@ -73,7 +73,7 @@
     role: JobSecurityOfficer
     time: 18000 #5 hrs
   - !type:SizeRequirement # Omu - Short people exclusion
-      minimumHeight: 150
+      minimumHeight: 140
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos

@@ -110,6 +110,8 @@
     inverted: true
     species:
     - Plasmaman
+  - !type:SizeRequirement # Omu - Short people exclusion
+      minimumHeight: 140
   guides: [ NuclearOperatives ]
 
 - type: antag
@@ -153,6 +155,8 @@
     inverted: true
     species:
     - Plasmaman
+  - !type:SizeRequirement # Omu - Short people exclusion
+      minimumHeight: 140
   guides: [ NuclearOperatives ]
 
 - type: startingGear

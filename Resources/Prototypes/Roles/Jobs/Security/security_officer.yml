@@ -93,7 +93,7 @@
       department: Security
       time: 18000 #5 hours - Omu Edit: Coupled with the SecurityCadet req changes.
     - !type:SizeRequirement # Omu - Short people exclusion
-      minimumHeight: 150
+      minimumHeight: 140
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos

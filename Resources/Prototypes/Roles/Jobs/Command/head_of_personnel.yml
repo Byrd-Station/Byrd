@@ -152,8 +152,6 @@
     - !type:DepartmentTimeRequirement
       department: Command
       time: 36000 # Omu Edit - around 5-8 shifts of command for this paper pusher
-    - !type:SizeRequirement # Omu - Short people exclusion
-      minimumHeight: 150
 #    - !type:SpeciesRequirement # Goob - None Felinid
 #      inverted: true
 #      species:
