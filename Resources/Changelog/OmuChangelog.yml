@@ -1779,3 +1779,9 @@ Entries:
       message: Removed Shiva's nocturine injection along with their access to security.
   id: 220
   time: '2026-01-12T07:33:13.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Add
+      message: Added rad and poison cartridges
+  id: 221
+  time: '2026-01-13T04:24:59.0000000+00:00'
