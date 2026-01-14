@@ -85,8 +85,8 @@
           amount: 3
     - type: Speech
       speechVerb: Parrot # RMC did it right.
-      speechSounds: MaleAvali
-      allowedEmotes: ['Chirp', 'Hiss', 'Purr', 'Growl', 'Trill', 'Warble', 'Wurble'] #'Scree', 'Call', 'Squawk' # Omu, add 'Warble', 'Wurble'
+      speechSounds: MaleResomi
+      allowedEmotes: ['Chirp', 'Hiss', 'Purr', 'Growl', 'Trill', 'Warble', 'Wurble'] #'Scree', 'Call', 'Squawk' # Omu
     - type: MobThresholds
       thresholds:
         0: Alive
@@ -111,9 +111,9 @@
             - MobLayer
     - type: Vocal
       sounds:
-        Male: MaleResomi # Omu start
-        Female: FemaleResomi
-        Unsexed: MaleResomi # Omu end
+        Male: MaleAvali # Omu start
+        Female: FemaleAvali
+        Unsexed: MaleAvali # Omu end
     - type: MovementSpeedModifier
       weightlessAcceleration: 1.6 # Avalis are specifically built to fly in low-g environments
       weightlessFriction: 1

@@ -45,7 +45,7 @@
     Wurble:
       collection: Wurble # Omu end
     Crying:
-      path: /Audio/_Starlight/Voice/Avali/avali_cry.ogg
+      collection: ResomiCry # Omu
     Honk:
       collection: BikeHorn
     Whistle:
@@ -101,7 +101,7 @@
     Wurble:
       collection: Wurble # Omu end
     Crying:
-      path: /Audio/_Starlight/Voice/Avali/avali_cry.ogg
+      collection: ResomiCry # Omu
     Honk:
       collection: BikeHorn
     Whistle:
