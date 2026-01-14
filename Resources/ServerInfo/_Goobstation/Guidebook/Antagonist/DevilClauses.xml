@@ -8,7 +8,15 @@
   </Box>
 
   - Grants the target an unlimited amount of self revives.
-  -->## Fear of Death
+  -->## Weakness
+  <Box>
+    [color=#999999][italic]-35 Weight[/italic][/color]
+  </Box>
+
+  - Cuts all damage the contractee takes in half.
+  - Increases holy damage taken.
+
+  ## Fear of Death
   <Box>
     [color=#999999][italic]-25 Weight[/italic][/color]
   </Box>
