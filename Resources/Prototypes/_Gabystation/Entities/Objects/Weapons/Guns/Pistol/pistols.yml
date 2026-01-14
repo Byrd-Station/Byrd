@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  name: MK-58 Dourada
+  name: Golden MK-58
   parent: [BaseWeaponPistol, BaseSecurityContraband]
   id: WeaponPistolMk58Gold
-  description: MK-58 folheada a ouro, puro estilo, so estilo mesmo pq o resto é tudo igual. Utiliza pentes de pistolas .35 .
+  description: A Gold-plated MK-58. If you see an officer wielding this, they have definitely seen some shit. Uses .35 caliber pistol magazines.
   components:
   - type: Sprite
     sprite: _Gabystation/Objects/Weapons/Guns/Pistol/mk58gold.rsi
