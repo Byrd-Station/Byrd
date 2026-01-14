@@ -48,7 +48,7 @@
 - type: entity
   parent: CourierPDA
   id: CourierPDAAlt
-  name: courier PDA
+  name: mail carrier PDA
   description: Smells of dog repellent.
   components:
   - type: Appearance
