@@ -10,7 +10,7 @@
       requirement:
         !type:DepartmentTimeRequirement
         department: Security
-        time: 108000 #30 hrs
+        time: 252000 #70 hrs
   storage:
     back:
     - WeaponPistolMk58Gold
