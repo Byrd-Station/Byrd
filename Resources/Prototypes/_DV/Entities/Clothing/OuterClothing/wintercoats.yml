@@ -97,7 +97,7 @@
         Caustic: 0.65
 
 - type: entity
-  parent: ClothingOuterArmoredWinterCoat
+  parent: [ClothingOuterWinterCoatToggleable, BaseSecurityContraband]
   id: ClothingOuterCoatStasecDet
   name: detective's coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version is detective plum.
@@ -108,7 +108,7 @@
     sprite: _DV/Clothing/OuterClothing/WinterCoats/detcoat.rsi
 
 - type: entity
-  parent: ClothingOuterArmoredWinterCoat
+  parent: [ClothingOuterWinterCoatToggleable, BaseSecurityContraband]
   id: ClothingOuterCoatStasecCorpsman
   name: corpsman's coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version is corpsman blue.
