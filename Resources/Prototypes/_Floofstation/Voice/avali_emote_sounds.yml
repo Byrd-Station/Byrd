@@ -23,6 +23,11 @@
   files:
     - /Audio/_Floofstation/Voice/Avali/avali_laugh.ogg
 
+- type: soundCollection # Omu start
+  id: ResomiCry
+  files:
+    - /Audio/_Floofstation/Voice/Avali/avali_cry.ogg # Omu end
+
 - type: emoteSounds
   id: MaleResomiEmote # Omu, rename to Resomi
   params:
@@ -53,7 +58,7 @@
     Sigh:
       collection: MaleSigh
     Crying:
-      collection: MaleCry
+      collection: ResomiCry # Omu
     Whistle:
       collection: Whistles
     Weh:
@@ -103,7 +108,7 @@
     Sigh:
       collection: FemaleSigh
     Crying:
-      collection: FemaleCry
+      collection: ResomiCry # Omu
     Whistle:
       collection: Whistles
     Weh:

@@ -5,9 +5,9 @@
     variation: 0.125
   sounds:
     Scream:
-      path: /Audio/_Starlight/Effects/avali_scream.ogg
+      collection: ResomiScreams  # Omu
     Laugh:
-      path: /Audio/_Starlight/Voice/Avali/avali_laugh.ogg
+      collection: ResomiLaugh # Omu
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -40,6 +40,10 @@
 #      collection: ResomiCalls
 #    Squawk:
 #      collection: ResomiSquawk
+    Warble: # Omu start
+      collection: Warble
+    Wurble:
+      collection: Wurble # Omu end
     Crying:
       path: /Audio/_Starlight/Voice/Avali/avali_cry.ogg
     Honk:
@@ -48,6 +52,8 @@
       collection: Whistles #path: /Audio/Voice/Resomi/resomi_whistle.ogg Omu, we don't have this.
     Chirp:
       collection: ResomiChirp
+    Gulp: # Omu
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
 
 - type: emoteSounds
   id: FemaleAvali
@@ -55,9 +61,9 @@
     variation: 0.125
   sounds:
     Scream:
-      path: /Audio/_Starlight/Effects/avali_scream.ogg
+      collection: ResomiScreams  # Omu
     Laugh:
-      path: /Audio/_Starlight/Voice/Avali/avali_laugh.ogg
+      collection: ResomiLaugh # Omu
     Sneeze:
       collection: FemaleSneezes
     Cough:
@@ -90,6 +96,10 @@
 #      collection: ResomiCalls
 #    Squawk:
 #      collection: ResomiSquawk
+    Warble: # Omu start
+      collection: Warble
+    Wurble:
+      collection: Wurble # Omu end
     Crying:
       path: /Audio/_Starlight/Voice/Avali/avali_cry.ogg
     Honk:
@@ -98,3 +108,5 @@
       collection: Whistles #path: /Audio/Voice/Resomi/resomi_whistle.ogg Omu, we don't have this.
     Chirp:
       collection: ResomiChirp
+    Gulp: # Omu
+      path: /Audio/_Goobstation/Voice/gulpexotic.ogg
