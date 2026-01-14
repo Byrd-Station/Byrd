@@ -1,37 +1,4 @@
 - type: entity
-  abstract: true
-  parent: [ClothingOuterArmorBase, BaseSecurityContraband]
-  id: ClothingOuterArmoredWinterCoat
-  components:
-  - type: Armor
-    coverage:
-    - Chest
-    - Groin
-    modifiers:
-      coefficients:
-        Blunt: 0.65
-        Slash: 0.65
-        Piercing: 0.65
-        Heat: 0.6
-  - type: ExplosionResistance
-    damageCoefficient: 0.95
-
-- type: entity
-  abstract: true
-  parent: ClothingOuterArmoredWinterCoat
-  id: ClothingOuterArmoredWinterCoatToggleable
-  components:
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterDefault
-    slot: head
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot {}
-      storagebase: !type:Container
-        ents: []
-
-
-- type: entity
   parent: [ClothingOuterArmorBase, BaseSecurityContraband]
   id: ClothingOuterStasecSweater
   name: station security sweater
@@ -44,16 +11,16 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.65
-        Slash: 0.65
-        Piercing: 0.65
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
         Heat: 0.6
   - type: ExplosionResistance
     damageCoefficient: 0.95
 
 
 - type: entity
-  parent: ClothingOuterArmoredWinterCoat
+  parent: [ClothingOuterWinterCoatToggleable, BaseSecurityContraband]
   id: ClothingOuterCoatStasec
   name: station security coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards.
@@ -62,10 +29,17 @@
     sprite: _DV/Clothing/OuterClothing/WinterCoats/staseccoat.rsi
   - type: Clothing
     sprite: _DV/Clothing/OuterClothing/WinterCoats/staseccoat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.6
 
 
 - type: entity
-  parent: ClothingOuterArmoredWinterCoat
+  parent: [ClothingOuterArmorHoS, ClothingOuterWinterCoat, BaseSecurityCommandContraband]
   id: ClothingOuterCoatStasecHoS
   name: head of security's coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version is adorned with gold trim.
@@ -74,9 +48,17 @@
     sprite: _DV/Clothing/OuterClothing/WinterCoats/hosgreatcoat.rsi
   - type: Clothing
     sprite: _DV/Clothing/OuterClothing/WinterCoats/hosgreatcoat.rsi
+  - type: Armor # Goob
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.6
+        Heat: 0.6
+        Caustic: 0.65
 
 - type: entity
-  parent: ClothingOuterArmoredWinterCoat
+  parent: [ClothingOuterArmorWarden, ClothingOuterWinterCoat, BaseWardenContraband]
   id: ClothingOuterCoatStasecWarden
   name: warden's coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version features ice-white trim.
@@ -85,10 +67,18 @@
     sprite: _DV/Clothing/OuterClothing/WinterCoats/armourergreatcoat.rsi
   - type: Clothing
     sprite: _DV/Clothing/OuterClothing/WinterCoats/armourergreatcoat.rsi
+  - type: Armor # Goob
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.6
+        Heat: 0.6
+        Caustic: 0.65
 
 
 - type: entity
-  parent: ClothingOuterArmoredWinterCoat
+  parent: [ClothingOuterArmorWarden, ClothingOuterWinterCoat, BaseSecurityContraband]
   id: ClothingOuterCoatStasecSenior
   name: security great coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards.
@@ -97,6 +87,14 @@
     sprite: _DV/Clothing/OuterClothing/WinterCoats/stasecgreatcoat.rsi
   - type: Clothing
     sprite: _DV/Clothing/OuterClothing/WinterCoats/stasecgreatcoat.rsi
+  - type: Armor # Goob
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.6
+        Heat: 0.6
+        Caustic: 0.65
 
 - type: entity
   parent: ClothingOuterArmoredWinterCoat
