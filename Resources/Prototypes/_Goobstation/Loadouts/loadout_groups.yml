@@ -1425,6 +1425,7 @@
   - ArmorVest
   - ArmorVestSlim
   - SecurityOfficerWintercoat
+  - CorpsmanWinterCoatDV
 
 - type: loadoutGroup
   id: BrigmedicBackpack
