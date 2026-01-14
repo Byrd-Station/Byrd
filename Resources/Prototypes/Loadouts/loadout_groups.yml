@@ -1415,6 +1415,7 @@
   - ArmorVestSlim
   - SecurityOfficerWintercoat
   - WinterCoatSeniorSecArmored # Goobstation
+  - WinterCoatSecSweater # Omu
 
 - type: loadoutGroup
   id: SecurityShoes
