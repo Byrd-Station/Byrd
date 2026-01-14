@@ -1,0 +1,86 @@
+- type: entity
+  parent: BaseGameRule
+  id: SyndicateInfiltrators
+  components:
+  - type: StationEvent
+    weight: 4
+    duration: null
+    earliestStart: 30 # Goobstation - was 45
+    #reoccurrenceDelay: 20 # Goobstation - no longer needed
+    maxOccurrences: 1 # Goobstation
+    minimumPlayers: 30
+    chaos: # Goobstation
+      Hostile: 20
+      Friend: 20
+      Combat: 40
+      Death: 40
+      Medical: 40
+    eventType: HostilesSpawn # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 500 # OMU change - make chaos score cost higher
+  - type: SpaceSpawnRule
+  - type: AntagLoadProfileRule
+    # Goobstation start
+    speciesOverride: Human
+    speciesOverrideBlacklist:
+    - Yowie
+    - IPC
+    - Diona
+    - Abductor
+    - Harpy
+    - Plasmaman
+    # Goobstation end
+    - Xelthia
+  - type: AntagRandomObjectives
+    sets:
+    - groups: TraitorObjectiveGroups
+    maxDifficulty: 5
+  - type: AntagSelection
+    agentName: ninja-round-end-agent-name
+    definitions:
+    - spawnerPrototype: SpawnPointGhostSpaceNinja
+      min: 1
+      max: 3
+      pickPlayer: false
+      startingGear: SpaceNinjaGear
+      roleLoadout:
+      - RoleSurvivalEVA
+      briefing:
+        text: ninja-role-greeting
+        color: Green
+        sound: /Audio/Misc/ninja_greeting.ogg
+      components:
+      - type: SpaceNinja
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      - type: AutoImplant
+        implants:
+        - MicroBombImplant # Goobstation
+      - type: RandomMetadata
+        nameSegments:
+        - NamesSyndicatePrefix
+        - NamesSyndicateNormal
+        nameFormat: name-format-nukie-generic
+      mindRoles:
+      - MindRoleTraitor
+
+
+- type: startingGear
+  id: SyndicateInfiltrator
+  parent: SyndicateOperativeClothing
+  equipment:
+    pocket1: WeaponPistolViper
+    outerClothing: ClothingOuterSuitSpaceNinja
+    head: ClothingHeadHelmetSpaceNinja
+  inhand:
+    - JetpackBlackFilled
+  storage:
+    back:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool
