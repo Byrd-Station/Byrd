@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  name: Golden MK-58
+  name: golden mk 58
   parent: [BaseWeaponPistol, BaseSecurityContraband]
   id: WeaponPistolMk58Gold
   description: A Gold-plated MK-58. If you see an officer wielding this, they have definitely seen some shit. Uses .35 caliber pistol magazines.
