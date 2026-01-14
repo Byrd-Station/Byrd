@@ -37,6 +37,10 @@
   - type: Unremoveable
   - type: DisarmMalus
     malus: 0
+  ## - type: GrabbingItem        Omu commented out so we dont get it
+  ##   escapeAttemptModifier: 1
+  ## - type: GrabModifier
+  ##   grabMoveSpeedMultiplier: 4 # 0.8 speed modifier on choke grab
   - type: SolutionContainerManager    #Omu change revert hard grab shit in favor of poison inject.
     solutions:
       melee:
