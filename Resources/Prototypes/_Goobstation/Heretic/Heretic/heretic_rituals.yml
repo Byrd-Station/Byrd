@@ -451,6 +451,7 @@
     CableCoil: 15
   output:
     MobGhoulRustWalker: 1
+  limit: 5
 
 - type: hereticRitual
   id: CarvingKnife
