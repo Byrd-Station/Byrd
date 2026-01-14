@@ -1333,6 +1333,7 @@
   - ClothingHOSWinterJacket # OmuStation
   - HeadofSecurityGreatCoat # Goobstation
   - HeadofSecurityVestWeb # Goobstation
+  - HeadofSecurityGreatCoatDV # Omu
 
 - type: loadoutGroup
   id: WardenHead
@@ -1360,6 +1361,7 @@
   - WardenCoat
   - WardenArmoredWinterCoat
   - WardenCoatBlue #goob
+  - WardenGreatCoatDV # Omu
 
 - type: loadoutGroup
   id: SecurityHead
@@ -1417,6 +1419,7 @@
   - WinterCoatSeniorSecArmored # Goobstation
   - WinterCoatSecSweaterDV # Omu
   - WinterCoatSecCoatDV # Omu
+  - WinterGreatCoatSecCoatDV # Omu
 
 - type: loadoutGroup
   id: SecurityShoes
@@ -1465,6 +1468,7 @@
   - DetectiveArmorVest
   - DetectiveCoat
   - DetectiveCoatGrey
+  - DetectiveWinterCoatDV # Omu
 
 - type: loadoutGroup
   id: SecurityCadetJumpsuit

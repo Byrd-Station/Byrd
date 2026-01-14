@@ -56,7 +56,7 @@
 
 - type: entity
   parent: ClothingOuterWinterWarden
-  id: ClothingOuterCoatStasecWarden
+  id: ClothingOuterCoatStasecSenior
   name: security great coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards.
   components:
