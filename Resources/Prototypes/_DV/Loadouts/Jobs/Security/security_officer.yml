@@ -1,4 +1,9 @@
 - type: loadout
-  id: WinterCoatSecSweater
+  id: WinterCoatSecSweaterDV
   equipment:
     outerClothing: ClothingOuterStasecSweater
+
+- type: loadout
+  id: WinterCoatSecCoatDV
+  equipment:
+    outerClothing: ClothingOuterCoatStasec
