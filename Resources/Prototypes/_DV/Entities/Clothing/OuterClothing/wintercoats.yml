@@ -1,0 +1,88 @@
+- type: entity
+  parent: [ClothingOuterArmorBase, BaseSecurityContraband]
+  id: ClothingOuterStasecSweater
+  name: station security sweater
+  description: A thick synthetic sweater with reinforced shoulders and elbows, enough to warm even the harshest security officer's cold heart.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/stasecsweater.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/stasecsweater.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.95
+
+
+- type: entity
+  parent: ClothingOuterWinterSecArmored
+  id: ClothingOuterCoatStasec
+  name: station security coat
+  description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/staseccoat.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/staseccoat.rsi
+
+
+- type: entity
+  parent: ClothingOuterWinterHoS
+  id: ClothingOuterCoatStasecHoS
+  name: head of security's coat
+  description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version is adorned with gold trim.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/hosgreatcoat.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/hosgreatcoat.rsi
+
+- type: entity
+  parent: ClothingOuterWinterWarden
+  id: ClothingOuterCoatStasecWarden
+  name: warden's coat
+  description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version features ice-white trim.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/armourergreatcoat.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/armourergreatcoat.rsi
+
+
+- type: entity
+  parent: ClothingOuterWinterWarden
+  id: ClothingOuterCoatStasecWarden
+  name: security great coat
+  description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/stasecgreatcoat.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/stasecgreatcoat.rsi
+
+- type: entity
+  parent: ClothingOuterWinterSecArmored
+  id: ClothingOuterCoatStasecDet
+  name: detective's coat
+  description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version is detective plum.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/detcoat.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/detcoat.rsi
+
+- type: entity
+  parent: ClothingOuterWinterSecArmored
+  id: ClothingOuterCoatStasecCorpsman
+  name: corpsman's coat
+  description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version is corpsman blue.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/corpsmancoat.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/corpsmancoat.rsi
