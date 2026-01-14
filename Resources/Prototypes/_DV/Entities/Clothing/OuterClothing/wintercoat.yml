@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingOuterWinterSecArmored #Omu Change so its the same as normal wintercoat
+  id: ClothingOuterStasecSweater
+  name: station security sweater
+  description: A thick synthetic sweater with reinforced shoulders and elbows, enough to warm even the harshest security officer's cold heart.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/stasecsweater.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/stasecsweater.rsi
