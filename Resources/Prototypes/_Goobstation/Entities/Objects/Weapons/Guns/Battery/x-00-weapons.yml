@@ -71,7 +71,7 @@
     defaultDirection: 1, 0
   - type: ProjectileBatteryAmmoProvider
     proto: BulletLaserHeavy
-    fireCost: 15 # Omu
+    fireCost: 20 # Omu
   - type: StaticPrice
     price: 2500
 
