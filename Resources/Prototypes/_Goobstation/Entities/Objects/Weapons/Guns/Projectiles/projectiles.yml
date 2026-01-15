@@ -230,6 +230,7 @@
     damage:
       types:
         Heat: 11 # Omu
+        Shock: 1 # Omu
 
 - type: entity
   name: heavy laser bolt
@@ -242,6 +243,7 @@
     damage:
       types:
         Heat: 12
+        Shock: 1 # Omu
         Structural: 10
 
 - type: entity
