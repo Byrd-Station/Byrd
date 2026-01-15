@@ -76,7 +76,7 @@
     sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/energy_cell_pistol_lethal.rsi
   - type: HitscanBatteryAmmoProvider
     proto: SmallRedLaser
-    fireCost: 40
+    fireCost: 40 # Omu
 
 - type: entity
   name: x-ray SMG power cell
@@ -89,7 +89,7 @@
     sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/energy_cell_pistol_xray.rsi
   - type: HitscanBatteryAmmoProvider
     proto: SmallXrayLaser
-    fireCost: 40
+    fireCost: 40 # Omu
 
 - type: entity
   name: overclocked SMG power cell
@@ -102,7 +102,7 @@
     sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/energy_cell_pistol_overcharge.rsi
   - type: HitscanBatteryAmmoProvider
     proto: SmallOverchargedLaser
-    fireCost: 80
+    fireCost: 80 # Omu
 
 - type: entity
   name: pulse SMG power cell
@@ -115,7 +115,7 @@
     sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/energy_cell_pistol_pulse.rsi
   - type: HitscanBatteryAmmoProvider
     proto: SmallPulseLaser
-    fireCost: 40
+    fireCost: 40 # Omu
 
 - type: entity
   name: ion SMG power cell
@@ -128,7 +128,7 @@
     sprite: _Goobstation/Objects/Weapons/Guns/Ammunition/Magazine/energy_cell_pistol_ion.rsi
   - type: HitscanBatteryAmmoProvider
     proto: SmallIonLaser
-    fireCost: 40
+    fireCost: 40 # Omu
 
 
 - type: entity
