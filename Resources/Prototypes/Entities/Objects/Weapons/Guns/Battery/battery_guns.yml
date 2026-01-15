@@ -518,7 +518,7 @@
     - SemiAuto
   - type: HitscanBatteryAmmoProvider
     proto: RedLaser
-    fireCost: 62.5
+    fireCost: 25 # Omu more shots
   # Goobstation
   - type: Item
     size: Large
@@ -699,7 +699,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanBatteryAmmoProvider
     proto: RedHeavyLaser
-    fireCost: 100
+    fireCost: 62.5
   - type: Tag
     tags:
     - TurretCompatibleWeapon
@@ -769,7 +769,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: HitscanBatteryAmmoProvider
     proto: XrayLaser
-    fireCost: 100
+    fireCost: 62.5
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -1242,11 +1242,11 @@
   - type: EnergyGun # Omu
     fireModes:
     - proto: BulletTemperatureCold
-      fireCost: 100
+      fireCost: 62.5
       name: cooling # Omu
       state: cooling # Omu
     - proto: BulletTemperatureHot
-      fireCost: 100
+      fireCost: 62.5
       name: heating # Omu
       state: heating # Omu
   - type: Battery
