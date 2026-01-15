@@ -7,3 +7,75 @@
   - type: Contraband
     allowedDepartments: [ CentralCommand ]
     severity: Restricted
+
+- type: entity
+  name: folding shotgun
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityContraband]
+  id: WeaponShotgunFolding
+  description: An abysmally outdated, but otherwise decently effective and compact shotgun. Chambered in 12 gauge shotgun shells.
+  components:
+  - type: Item
+    heldPrefix: folded
+    size: Normal
+  - type: Sprite
+    sprite: _Omu/Objects/Weapons/Guns/Shotguns/hardlight_bow.rsi
+    layers:
+    - state: bow-folded
+      map: [ "base" ]
+    - state: unwielded-arrow
+      color: "#FFFFFF"
+      visible: false
+      shader: unshaded
+      map: [ "bowstring" ]
+  - type: ToggleableVisuals
+    spriteLayer: bowstring
+    inhandVisuals:
+      left:
+      - state: inhand-left-bowstring
+        shader: unshaded
+        map: [ "left" ]
+      - state: wielded-inhand-left-bowstring
+        shader: unshaded
+        visible: false
+        map: [ "wielded-left" ]
+      right:
+      - state: inhand-right-bowstring
+        shader: unshaded
+        map: [ "right" ]
+      - state: wielded-inhand-right-bowstring
+        shader: unshaded
+        visible: false
+        map: [ "wielded-right" ]
+    clothingVisuals:
+      back:
+      - state: bowstring-equipped-BACKPACK
+        shader: unshaded
+      suitstorage:
+      - state: bowstring-equipped-BACKPACK
+        shader: unshaded
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        base:
+          True: { state: bow }
+          False: { state: bow-folded }
+  - type: Clothing
+    sprite: _Omu/Objects/Weapons/Guns/Shotguns/hardlight_bow.rsi
+  - type: ToggleableLightWieldable
+  - type: GunRequiresWield
+  - type: Appearance
+  - type: Gun
+    fireRate: 0.8
+  - type: BallisticAmmoProvider
+    capacity: 4
+  - type: GunSpreadModifier
+    spread: 1.25
+  - type: ItemToggle
+    wieldToggle: false
+    soundActivate:
+      path: /Audio/Weapons/Guns/Cock/shotgun_open.ogg
+    soundDeactivate:
+      path: /Audio/Weapons/Guns/Cock/shotgun_close.ogg
+  - type: ItemToggleSize
+    activatedSize: Huge
+  - type: FoldingWeapon
