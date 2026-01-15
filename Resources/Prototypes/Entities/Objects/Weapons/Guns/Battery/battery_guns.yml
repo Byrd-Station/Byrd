@@ -480,7 +480,7 @@
     - SemiAuto
   - type: HitscanBatteryAmmoProvider
     proto: RedLaserPractice
-    fireCost: 33.3
+    fireCost: 33.3 # Omu
   - type: StaticPrice
     price: 300
   - type: PacifismAllowedGun
@@ -699,7 +699,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanBatteryAmmoProvider
     proto: RedHeavyLaser
-    fireCost: 62.5
+    fireCost: 62.5 # Omu
   - type: Tag
     tags:
     - TurretCompatibleWeapon
@@ -769,7 +769,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: HitscanBatteryAmmoProvider
     proto: XrayLaser
-    fireCost: 62.5
+    fireCost: 62.5 # Omu
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -1242,11 +1242,11 @@
   - type: EnergyGun # Omu
     fireModes:
     - proto: BulletTemperatureCold
-      fireCost: 62.5
+      fireCost: 62.5 # Omu
       name: cooling # Omu
       state: cooling # Omu
     - proto: BulletTemperatureHot
-      fireCost: 62.5
+      fireCost: 62.5 # Omu
       name: heating # Omu
       state: heating # Omu
   - type: Battery
