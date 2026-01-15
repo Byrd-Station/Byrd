@@ -480,7 +480,7 @@
     - SemiAuto
   - type: HitscanBatteryAmmoProvider
     proto: RedLaserPractice
-    fireCost: 40 # Omu
+    fireCost: 50 # Omu
   - type: StaticPrice
     price: 300
   - type: PacifismAllowedGun
@@ -518,7 +518,7 @@
     - SemiAuto
   - type: HitscanBatteryAmmoProvider
     proto: RedLaser
-    fireCost: 40 # Omu more shots
+    fireCost: 50 # Omu more shots
   # Goobstation
   - type: Item
     size: Large
@@ -699,7 +699,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanBatteryAmmoProvider
     proto: RedHeavyLaser
-    fireCost: 62.5 # Omu
+    fireCost: 83.3 # Omu
   - type: Tag
     tags:
     - TurretCompatibleWeapon
@@ -769,7 +769,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: HitscanBatteryAmmoProvider
     proto: XrayLaser
-    fireCost: 62.5 # Omu
+    fireCost: 83.3 # Omu
   - type: MagazineVisuals
     magState: mag
     steps: 5
