@@ -229,7 +229,7 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 10 # Omu
+        Heat: 11 # Omu
         Shock: 1 # Omu
 
 - type: entity
