@@ -51,7 +51,7 @@
 
 - type: hitscan
   id: SmallOverchargedLaser
-  fireStacks: 0.4
+  fireStacks: 0.6 # Omu
   damage:
     types:
       Heat: 14 # Omu
@@ -128,7 +128,7 @@
 
 - type: hitscan
   id: MediumOverchargedLaser
-  fireStacks: 0.7
+  fireStacks: 1 # Omu
   damage:
     types:
       Heat: 17 # Omu
