@@ -57,7 +57,7 @@
     - 0,0,3,1
   - type: Gun
     minAngle: 3
-    maxAngle: 18
+    maxAngle: 15 # Omu Slight Acuracy Buff
     fireRate: 6
     burstFireRate: 8
     angleIncrease: 4
