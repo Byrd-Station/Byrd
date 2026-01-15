@@ -27,9 +27,9 @@
     startingCharge: 1000
   - type: BatterySelfRecharger
     autoRecharge: true
-    autoRechargeRate: 50
-    autoRechargePause: true
-    autoRechargePauseTime: 20 # same as lawbringer
+    autoRechargeRate: 20 # Omu
+#    autoRechargePause: true
+#    autoRechargePauseTime: 20 # same as lawbringer
   - type: DisarmMalus
   - type: Tag
     tags:
