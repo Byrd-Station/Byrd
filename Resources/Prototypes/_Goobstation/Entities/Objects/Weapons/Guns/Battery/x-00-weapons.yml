@@ -33,7 +33,7 @@
     defaultDirection: 1, 0
   - type: HitscanBatteryAmmoProvider
     proto: RedMediumSplitLaser
-    fireCost: 33.3
+    fireCost: 33.3 # Omu
   - type: StaticPrice
     price: 2500
 
@@ -71,7 +71,7 @@
     defaultDirection: 1, 0
   - type: ProjectileBatteryAmmoProvider
     proto: BulletLaserHeavy
-    fireCost: 15
+    fireCost: 15 # Omu
   - type: StaticPrice
     price: 2500
 
@@ -102,7 +102,7 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: ProjectileBatteryAmmoProvider
     proto: BulletLaserSpreadHeavy
-    fireCost: 100
+    fireCost: 100 # Omu
   - type: StaticPrice
     price: 2500
 
@@ -133,7 +133,7 @@
   - type: GunRequiresWield
   - type: HitscanBatteryAmmoProvider
     proto: LaserSniper
-    fireCost: 62.5
+    fireCost: 100 
   - type: SpeedModifiedOnWield
     walkModifier: 0.80
     sprintModifier: 0.80
