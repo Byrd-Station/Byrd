@@ -7,7 +7,7 @@
   id: SmallRedLaser
   damage:
     types:
-      Heat: 11 # Omu
+      Heat: 10 # Omu
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: muzzle_beam_light
@@ -22,7 +22,7 @@
   id: SmallIonLaser
   damage:
     types:
-      Ion: 14 # Omu
+      Ion: 13 # Omu
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: muzzle_beam_light_ion
@@ -38,7 +38,7 @@
   damage:
     types:
       Heat: 5 # Omu
-      Radiation: 6 # Omu
+      Radiation: 5 # Omu
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: muzzle_beam_light_xray
@@ -54,7 +54,7 @@
   fireStacks: 0.6 # Omu
   damage:
     types:
-      Heat: 14 # Omu
+      Heat: 13 # Omu
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: muzzle_beam_light_overcharged
@@ -69,7 +69,7 @@
   id: SmallPulseLaser
   damage:
     types:
-      Heat: 16 # Omu
+      Heat: 15 # Omu
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: muzzle_beam_light_pulse
