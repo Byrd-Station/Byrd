@@ -477,9 +477,9 @@
     repeatable: true
   - type: BatterySelfRecharger
     autoRecharge: true
-    autoRechargeRate: 20 # Omu
-#Omu    autoRechargePause: true
-#Omu    autoRechargePauseTime: 20
+    autoRechargeRate: 40
+    autoRechargePause: true
+    autoRechargePauseTime: 20 #Omu
 
 - type: entity
   name: ion rifle
