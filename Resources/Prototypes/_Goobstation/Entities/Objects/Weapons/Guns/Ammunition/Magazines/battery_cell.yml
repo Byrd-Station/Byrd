@@ -330,7 +330,7 @@
             shader: null
   - type: HitscanBatteryAmmoProvider
     proto: MediumOverchargedLaser
-    fireCost: 120
+    fireCost: 125
 
 - type: entity
   name: pulse revolver power cell
