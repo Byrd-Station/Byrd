@@ -229,7 +229,7 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 8
+        Heat: 11 # Omu
 
 - type: entity
   name: heavy laser bolt
