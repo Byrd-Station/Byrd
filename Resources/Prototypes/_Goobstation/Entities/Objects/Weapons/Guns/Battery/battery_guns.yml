@@ -277,7 +277,7 @@
     - Belt
   - type: ProjectileBatteryAmmoProvider
     proto: BulletDisabler
-    fireCost: 50
+    fireCost: 62.5
   - type: PacifismAllowedGun
   - type: BatterySelfRecharger
     autoRecharge: true
@@ -479,7 +479,7 @@
     autoRecharge: true
     autoRechargeRate: 50
     autoRechargePause: true
-    autoRechargePauseTime: 40
+    autoRechargePauseTime: 20
 
 - type: entity
   name: ion rifle
