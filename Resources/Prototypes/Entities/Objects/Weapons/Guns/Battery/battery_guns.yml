@@ -480,7 +480,7 @@
     - SemiAuto
   - type: HitscanBatteryAmmoProvider
     proto: RedLaserPractice
-    fireCost: 62.5
+    fireCost: 33.3
   - type: StaticPrice
     price: 300
   - type: PacifismAllowedGun
@@ -518,7 +518,7 @@
     - SemiAuto
   - type: HitscanBatteryAmmoProvider
     proto: RedLaser
-    fireCost: 25 # Omu more shots
+    fireCost: 33.3 # Omu more shots
   # Goobstation
   - type: Item
     size: Large
