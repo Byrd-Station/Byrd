@@ -139,3 +139,23 @@
   - BrigmedicAltHeadset
 
 
+# placeholder items
+- type: loadoutGroup
+  id: SergeantHead
+  name: loadout-group-sergeant-head
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - SecurityBeret
+  - TrooperHat
+
+- type: loadoutGroup
+  id: SergeantOuterClothing
+  name: loadout-group-sergeant-outerclothing
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ArmorVest
+  - ArmorVestSlim
+  - SecurityOfficerWintercoat
+  - WinterCoatSeniorSecArmored

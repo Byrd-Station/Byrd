@@ -19,11 +19,11 @@
 - type: roleLoadout
   id: JobSergeant
   groups:
-  - SecurityHead
+  - SergeantHead
   - SecurityJumpsuit
   - SecurityBackpack
   - SecurityMelee
-  - SecurityOuterClothing
+  - SergeantOuterClothing
   - SecurityShoes
   - SecurityNeck
   - SecurityBelt
