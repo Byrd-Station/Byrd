@@ -54,7 +54,7 @@
   fireStacks: 0.6 # Omu
   damage:
     types:
-      Heat: 15 # Omu
+      Heat: 14 # Omu
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: muzzle_beam_light_overcharged
@@ -131,7 +131,7 @@
   fireStacks: 1 # Omu
   damage:
     types:
-      Heat: 19 # Omu
+      Heat: 18 # Omu
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: muzzle_beam_light_overcharged
