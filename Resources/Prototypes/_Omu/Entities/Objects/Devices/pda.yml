@@ -66,7 +66,10 @@
     id: ERTSecurityIDCardBlue
 
 - type: entity
-  parent: ClearPDA
-  id: SeniorOfficerPDA
+  parent: SeniorOfficerPDA
+  id: SergeantPDA
   name: sergeant PDA
   description: battered and bruised, but still kicking like its owner
+  components:
+  - type: Pda
+    id: SecurityIDCard

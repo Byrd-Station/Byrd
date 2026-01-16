@@ -1,0 +1,8 @@
+#Belt
+- type: loadout
+  id: SecuritySwordBelt
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorOfficer
+  equipment:
+    belt: ClothingBeltSheathStunswordFilled

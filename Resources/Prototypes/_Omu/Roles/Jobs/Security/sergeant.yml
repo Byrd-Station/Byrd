@@ -47,6 +47,7 @@
     eyes: ClothingEyesGlassesSecurity
     gloves: ClothingHandsGlovesCombat
     ears: ClothingHeadsetAltSecurityRegular
+    id: SergeantPDA
   storage:
     back:
     - Flash
