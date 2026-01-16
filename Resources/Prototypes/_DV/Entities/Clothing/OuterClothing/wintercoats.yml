@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingOuterArmorBase, BaseSecurityContraband]
+  parent: [ClothingOuterWinterCoat, BaseSecurityContraband]
   id: ClothingOuterStasecSweater
   name: station security sweater
   description: A thick synthetic sweater with reinforced shoulders and elbows, enough to warm even the harshest security officer's cold heart.
