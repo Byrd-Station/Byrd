@@ -146,7 +146,7 @@
   id: MediumPulseLaser
   damage:
     types:
-      Heat: 19 # Omu
+      Heat: 20 # Omu
   muzzleFlash:
     sprite: _Goobstation/Objects/Weapons/Guns/Projectiles/small_laser.rsi
     state: muzzle_beam_light_pulse
