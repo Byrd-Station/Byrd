@@ -4,4 +4,6 @@ job-name-centcomm-intern = CentComm Intern
 job-name-centcomm-direggtor = Centcomm Direggtor
 job-name-nanotrasen-spectre = Spectre Agent
 # Security Misc
+job-name-sergeant = Sergeant
 job-name-transit-prisoner = Transit Prisoner
+
