@@ -699,7 +699,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanBatteryAmmoProvider
     proto: RedHeavyLaser
-    fireCost: 83.3 # Omu
+    fireCost: 71.4 # Omu
   - type: Tag
     tags:
     - TurretCompatibleWeapon
@@ -769,7 +769,7 @@
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: HitscanBatteryAmmoProvider
     proto: XrayLaser
-    fireCost: 83.3 # Omu
+    fireCost: 62.5 # Omu
   - type: MagazineVisuals
     magState: mag
     steps: 5
