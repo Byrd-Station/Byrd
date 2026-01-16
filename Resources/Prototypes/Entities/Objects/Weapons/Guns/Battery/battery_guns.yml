@@ -1242,16 +1242,16 @@
   - type: EnergyGun # Omu
     fireModes:
     - proto: BulletTemperatureCold
-      fireCost: 62.5 # Omu
+      fireCost: 40 # Omu
       name: cooling # Omu
       state: cooling # Omu
     - proto: BulletTemperatureHot
-      fireCost: 62.5 # Omu
+      fireCost: 40 # Omu
       name: heating # Omu
       state: heating # Omu
   - type: Battery
-    maxCharge: 2500 # Goobstation - 1000 -> 2500
-    startingCharge: 2500 # 1000 -> 2500
+    maxCharge: 1000 # Omu
+    startingCharge: 1000 # Omu
   - type: StaticPrice
     price: 100
   - type: GenericVisualizer # Goobstation
