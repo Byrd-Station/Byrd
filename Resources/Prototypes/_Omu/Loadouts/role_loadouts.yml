@@ -14,3 +14,24 @@
   - PrisonerEnvirohelm
   - PrisonerEnvirosuit
   - PrisonerEnvirogloves
+
+
+- type: roleLoadout
+  id: JobSergeant
+  groups:
+  - SecurityHead
+  - SecurityJumpsuit
+  - SecurityBackpack
+  - SecurityMelee
+  - SecurityOuterClothing
+  - SecurityShoes
+  - SecurityNeck
+  - SecurityBelt
+  - SurvivalSecurity
+  - Trinkets
+  - SecurityStar
+  - Animals
+  - GroupSpeciesBreathToolSecurity
+  - SecurityOfficerEnvirohelm
+  - SecurityOfficerEnvirosuit
+  - SecurityOfficerEnvirogloves
