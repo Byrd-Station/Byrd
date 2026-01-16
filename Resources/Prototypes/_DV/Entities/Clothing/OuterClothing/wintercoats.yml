@@ -15,8 +15,10 @@
         Slash: 0.6
         Piercing: 0.6
         Heat: 0.6
-  - type: ExplosionResistance
-    damageCoefficient: 0.95
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+
 
 
 - type: entity
@@ -39,7 +41,7 @@
 
 
 - type: entity
-  parent: [ClothingOuterArmorHoS, ClothingOuterWinterCoat, BaseSecurityCommandContraband]
+  parent: [ClothingOuterArmorHoS, ClothingOuterStorageFoldableBase, ClothingOuterWinterCoat, BaseSecurityCommandContraband]
   id: ClothingOuterCoatStasecHoS
   name: head of security's coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version is adorned with gold trim.
@@ -56,11 +58,20 @@
         Piercing: 0.6
         Heat: 0.6
         Caustic: 0.65
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
 
 - type: entity
-  parent: [ClothingOuterArmorWarden, ClothingOuterWinterCoat, BaseWardenContraband]
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatStasecHoS]
+  id: ClothingOuterCoatStasecHoSOpen
+  name: head of security's great coat
+  suffix: Opened
+
+- type: entity
+  parent: [ClothingOuterArmorWarden, ClothingOuterStorageFoldableBase, ClothingOuterWinterCoat, BaseWardenContraband]
   id: ClothingOuterCoatStasecWarden
-  name: warden's coat
+  name: warden's great coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version features ice-white trim.
   components:
   - type: Sprite
@@ -75,10 +86,18 @@
         Piercing: 0.6
         Heat: 0.6
         Caustic: 0.65
-
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
 
 - type: entity
-  parent: [ClothingOuterArmorWarden, ClothingOuterWinterCoat, BaseSecurityContraband]
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatStasecWarden]
+  id: ClothingOuterCoatStasecWardenOpen
+  name: warden's great coat
+  suffix: Opened
+
+- type: entity
+  parent: [ClothingOuterArmorWarden, ClothingOuterStorageFoldableBase, ClothingOuterWinterCoat, BaseSecurityContraband]
   id: ClothingOuterCoatStasecSenior
   name: security great coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards.
@@ -95,6 +114,15 @@
         Piercing: 0.6
         Heat: 0.6
         Caustic: 0.65
+  - type: TemperatureProtection
+    heatingCoefficient: 0.1
+    coolingCoefficient: 0.1
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatStasecSenior]
+  id: ClothingOuterCoatStasecSeniorOpen
+  name: security great coat
+  suffix: Opened
 
 - type: entity
   parent: ClothingOuterCoatStasec
