@@ -9,3 +9,15 @@
     layers:
       - state: green
       - state: prisoner
+
+- type: entity
+  id: SpawnPointSergeant
+  parent: SpawnPointJobBase
+  name: sergeant
+  components:
+  - type: SpawnPoint
+    job_id: Sergeant
+  - type: Sprite
+    layers:
+      - state: green
+      - state: sergeant

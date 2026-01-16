@@ -1,0 +1,53 @@
+
+- type: job
+  id: Sergeant
+  name: job-name-sergeant
+  description: job-description-sergeant
+  playTimeTracker: JobSergeant
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobHeadofSecurity
+      time: 72000 #50 hrs
+    - !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 72000 #50 hrs
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 360000 #100 hrs
+  weight: 10
+  startingGear: SergeantGear
+  icon: "JobIconSergeant"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  guides:
+  - Security
+  - SpaceLaw
+  - Legal SOP
+  - Security SOP
+  - Alert Levels
+  - SecurityTrainingManual
+  goobcoins: 40
+  access:
+  - Brig
+  - Security
+  - Maintenance
+  - Service
+  - External
+  - Cryogenics
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: SecurityStaff
+
+- type: startingGear
+  id: SergeantGear
+  equipment:
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    ears: ClothingHeadsetAltSecurityRegular
+  storage:
+    back:
+    - Flash
+    - MagazinePistol
