@@ -229,8 +229,8 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 11 # Omu
-        Shock: 1 # Omu
+        Heat: 12 # Omu
+
 
 - type: entity
   name: heavy laser bolt
@@ -242,8 +242,7 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 12
-        Shock: 1 # Omu
+        Heat: 13 # Omu
         Structural: 20 # Omu
 
 - type: entity
