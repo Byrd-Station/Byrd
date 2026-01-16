@@ -477,7 +477,7 @@
     repeatable: true
   - type: BatterySelfRecharger
     autoRecharge: true
-    autoRechargeRate: 50
+    autoRechargeRate: 40 #Omu
     autoRechargePause: true
     autoRechargePauseTime: 20 #Omu
 
