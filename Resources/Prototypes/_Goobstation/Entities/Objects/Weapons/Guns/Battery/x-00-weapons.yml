@@ -102,7 +102,7 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: ProjectileBatteryAmmoProvider
     proto: BulletLaserSpreadHeavy
-    fireCost: 80 # Omu
+    fireCost: 83.3 # Omu
   - type: StaticPrice
     price: 2500
 
@@ -133,7 +133,7 @@
   - type: GunRequiresWield
   - type: HitscanBatteryAmmoProvider
     proto: LaserSniper
-    fireCost: 83.3 
+    fireCost: 83.3 # Omu
   - type: SpeedModifiedOnWield
     walkModifier: 0.80
     sprintModifier: 0.80
