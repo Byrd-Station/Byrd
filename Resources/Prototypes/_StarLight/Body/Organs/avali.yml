@@ -28,19 +28,6 @@
   suffix: Avali
   description: "The heart of an avali."
   components:
-    - type: Organ
-      onAdd:
-        - type: Stasis # Omu, moved the stasis to their heart.
-          enterStasisAction: ActionStasisEnter
-          exitStasisAction: ActionStasisExit
-          updateInterval: 1s
-          healingPerUpdate:
-            types:
-              Heat: 2 # Omu, was 2
-              Cold: 2 # Omu, was 2
-            groups:
-              Brute: 6 # Omu, was 6
-          stasisDamageReduction: 2 # Omu, make them take more dmg in stasis
     - type: Metabolizer
       metabolizerTypes: [Avali]
       groups:
