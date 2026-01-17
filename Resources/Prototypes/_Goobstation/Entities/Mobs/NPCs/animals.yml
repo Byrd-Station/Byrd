@@ -465,6 +465,7 @@
         layer:
         - SmallMobLayer
   - type: GhostRole
+    prob: 0.2 # Omu - only 1 in 5 homunculi are smart
     makeSentient: true
     allowSpeech: true
     allowMovement: true
