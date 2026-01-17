@@ -66,10 +66,30 @@
     id: ERTSecurityIDCardBlue
 
 - type: entity
-  parent: SeniorOfficerPDA
+  parent: BaseSecurityPDA
   id: SergeantPDA
   name: sergeant PDA
   description: battered and bruised, but still kicking like its owner
   components:
   - type: Pda
-    id: SecurityIDCard
+    id: SergeantIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-sergeant
+  - type: PdaBorderColor
+    borderColor: "#A32D26"
+    accentHColor: "#447987"
+  - type: Icon
+    state: pda-sergeant
+  - type: CartridgeLoader
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NanoTaskCartridge
+    - NewsReaderCartridge
+    - WantedListCartridge
+    - LogProbeCartridge
+    - NanoChatCartridge # DeltaV
+

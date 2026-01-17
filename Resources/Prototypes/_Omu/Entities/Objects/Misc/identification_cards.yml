@@ -131,3 +131,16 @@
   components:
   - type: PresetIdCard
     job: ERTSecurityBlue
+
+
+- type: entity
+  parent: IDCardStandard
+  id: SergeantIDCard
+  name: sergeant ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorofficer
+  - type: PresetIdCard
+    job: Sergeant
