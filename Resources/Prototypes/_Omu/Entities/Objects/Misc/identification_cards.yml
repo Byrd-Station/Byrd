@@ -141,6 +141,6 @@
   - type: Sprite
     layers:
     - state: default
-    - state: idseniorofficer
+    - state: idsergeant
   - type: PresetIdCard
     job: Sergeant
