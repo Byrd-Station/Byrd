@@ -222,7 +222,7 @@
         Slash: 0.6
         Piercing: 0.55
         Heat: 0.55
-        Caustic: 0.6
+        Caustic: 0.6 
   - type: ExplosionResistance
     damageCoefficient: 0.9
   - type: ModifyDelayedKnockdown # Goobstation
@@ -247,9 +247,9 @@
       coefficients:
         Blunt: 0.6
         Slash: 0.6
-        Piercing: 0.55
+        Piercing: 0.55 # Omu
         Heat: 0.55
-        Caustic: 0.6
+        Caustic: 0.6 # Omu
   - type: ExplosionResistance
     damageCoefficient: 0.9
   - type: ModifyDelayedKnockdown # Goobstation
