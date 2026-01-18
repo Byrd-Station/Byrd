@@ -5,7 +5,7 @@
 
 - type: entity
   name: golden mk 58
-  parent: [BaseWeaponPistol, BaseSecurityContraband]
+  parent: [WeaponPistolMk58]
   id: WeaponPistolMk58Gold
   description: A Gold-plated MK-58. If you see an officer wielding this, they have definitely seen some shit. Uses .35 caliber pistol magazines.
   components:
@@ -18,9 +18,3 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
     sprite: _Gabystation/Objects/Weapons/Guns/Pistol/mk58gold.rsi
-  - type: Gun
-    fireRate: 5
-    availableModes:
-    - SemiAuto
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
