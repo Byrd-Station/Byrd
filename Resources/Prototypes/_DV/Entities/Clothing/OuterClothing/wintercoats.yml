@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingOuterWinterCoat, BaseSecurityContraband]
+  parent: [ ClothingOuterWinterCoat, BaseSecurityContraband ]
   id: ClothingOuterStasecSweater
   name: station security sweater
   description: A thick synthetic sweater with reinforced shoulders and elbows, enough to warm even the harshest security officer's cold heart.
@@ -24,7 +24,7 @@
 
 
 - type: entity
-  parent: [ClothingOuterWinterCoatToggleable, BaseSecurityContraband]
+  parent: [ ClothingOuterWinterCoatToggleable, BaseSecurityContraband ]
   id: ClothingOuterCoatStasec
   name: station security coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards.
@@ -48,7 +48,7 @@
 
 
 - type: entity
-  parent: [ClothingOuterCoatStasecSenior, BaseSecurityCommandContraband]
+  parent: [ ClothingOuterCoatStasecSenior, BaseSecurityCommandContraband ]
   id: ClothingOuterCoatStasecHoS
   name: head of security's coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version is adorned with gold trim.
@@ -59,13 +59,13 @@
     sprite: _DV/Clothing/OuterClothing/WinterCoats/hosgreatcoat.rsi
 
 - type: entity
-  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatStasecHoS]
+  parent: [ ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatStasecHoS ]
   id: ClothingOuterCoatStasecHoSOpen
   name: head of security's great coat
   suffix: Opened
 
 - type: entity
-  parent: [ClothingOuterCoatStasecSenior, BaseWardenContraband]
+  parent: [ ClothingOuterCoatStasecSenior, BaseWardenContraband ]
   id: ClothingOuterCoatStasecWarden
   name: warden's great coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version features ice-white trim.
@@ -76,13 +76,13 @@
     sprite: _DV/Clothing/OuterClothing/WinterCoats/armourergreatcoat.rsi
 
 - type: entity
-  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatStasecWarden]
+  parent: [ ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatStasecWarden ]
   id: ClothingOuterCoatStasecWardenOpen
   name: warden's great coat
   suffix: Opened
 
 - type: entity
-  parent: [ClothingOuterStorageFoldableBase, AllowSuitStorageClothing, BaseSecurityContraband]
+  parent: [ ClothingOuterStorageFoldableBase, AllowSuitStorageClothing, BaseSecurityContraband ]
   id: ClothingOuterCoatStasecSenior
   name: security great coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards.
@@ -117,7 +117,7 @@
     damageCoefficient: 0.7
 
 - type: entity
-  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatStasecSenior]
+  parent: [ ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatStasecSenior ]
   id: ClothingOuterCoatStasecSeniorOpen
   name: security great coat
   suffix: Opened
