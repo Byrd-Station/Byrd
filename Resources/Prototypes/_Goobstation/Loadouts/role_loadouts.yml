@@ -192,10 +192,10 @@
   - MedicalGloves
   - BrigmedicBackpack
   - SecurityMelee # EE parity, make corpsman able to carry weapons like the rest of security
+  - TrinketsSecurityBrigmed # Omu Edit
   - SecurityShoes
   - SecurityNeck
   - SurvivalSecurity
-  - TrinketsSecurity # Omu
   - Trinkets
   - Animals
   - SecurityStar

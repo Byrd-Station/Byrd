@@ -612,12 +612,12 @@
   - WardenJumpsuit
   - SecurityBackpack
   - SecurityMelee # Goobstation
+  - TrinketsSecurity # Omu Edit
   - SecurityNeck
   - SecurityBelt
   - WardenOuterClothing
   - SecurityShoes
   - SurvivalSecurity
-  - TrinketsSecurity # Omu Edit
   - Trinkets
   - SecurityStar
   - Animals
@@ -634,13 +634,13 @@
   - SecurityJumpsuit
   - SecurityBackpack
   - SecurityMelee # Goobstation
+  - TrinketsSecurity # Omu Edit
   - SecurityOuterClothing
   - SecurityShoes
   - SecurityNeck
   - SecurityPDA
   - SecurityBelt
   - SurvivalSecurity
-  - TrinketsSecurity # Omu Edit
   - Trinkets
   - SecurityStar
   - Animals
@@ -654,13 +654,15 @@
   id: JobDetective
   groups:
   - DetectiveHead
+  - DetectiveEyes # Omu edit
   - DetectiveNeck
   - DetectiveJumpsuit
   - SecurityBackpack
+  - SecurityMelee # Omu edit
+  - TrinketsSecurityDetective # Omu Edit
   - DetectiveOuterClothing
   - SecurityShoes
   - SurvivalSecurity
-  - TrinketsSecurityDetective # Omu Edit
   - Trinkets
   - SecurityStar
   - Animals
