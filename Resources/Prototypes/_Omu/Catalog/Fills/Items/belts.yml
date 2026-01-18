@@ -17,3 +17,12 @@
 - type: entity
   id: ClothingBeltCorpsmanFilled
   parent: [ClothingBeltCorpsman, ClothingBeltCorpsmanWebbingFilled]
+
+- type: entity
+  id: ClothingBeltHolsterAmmoFilled
+  parent: ClothingBeltHolster
+  suffix: Filled, SpeedLoaderMagnum
+  components:
+  - type: StorageFill
+    contents:
+    - id: SpeedLoaderMagnum

@@ -13,9 +13,13 @@
   equipment:
     belt: ClothingBeltSheathStunswordFilled
 
-#Backpack
+#Pocket1
 - type: loadout
   id: SecurityOfficerGunCase
-  storage:
-    back:
-    - OfficerGunCase
+  equipment:
+    pocket1: OfficerGunCase
+
+- type: loadout
+  id: DetectiveWeaponRevolverInspector
+  equipment:
+    pocket1: WeaponRevolverInspector
