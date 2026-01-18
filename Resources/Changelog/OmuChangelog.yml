@@ -1799,3 +1799,9 @@ Entries:
       message: Killed insta hard grab on hand of god and ling arm claw.
   id: 223
   time: '2026-01-14T00:45:44.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Fix
+      message: This time midround blob is dead.
+  id: 224
+  time: '2026-01-18T05:53:44.0000000+00:00'
