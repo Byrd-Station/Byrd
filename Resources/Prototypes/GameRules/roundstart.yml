@@ -372,7 +372,7 @@
     - prefRoles: [ Traitor ]
       max: 8
       playerRatio: 10
-      chaosScore: 150 # Omu Change reverted
+      chaosScore: 150
       blacklist:
         components:
         - CommandStaff # Goobstation
