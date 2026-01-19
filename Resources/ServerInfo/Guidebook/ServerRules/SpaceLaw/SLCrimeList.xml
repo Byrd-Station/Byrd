@@ -907,6 +907,31 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         IV-I
       </Box>
     </ColorBox>
+    <ColorBox Color="#593a4e">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Disfigurement
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        5:00
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To modify or disfugure an individuals body without express consent or permission, via surgery, chemicals or other means.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Undeniable proof that there was an attempt to modify or disfigure without express consent, written, verbal or otherwise. Implantation of any subdermal implant without permission is disfigurement.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        IV-I
+      </Box>
+    </ColorBox>
     <ColorBox Color="#2f3832">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Unlawful Control/Kidnapping/Hostage Taking
