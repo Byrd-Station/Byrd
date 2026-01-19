@@ -229,7 +229,7 @@
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
-    ReptilianPurr: #Omu
+    Purr: #Omu
       path: /Audio/_Omu/Voice/Reptilian/Reptilian_lizard_purr.ogg
     Rattle: #Omu
       path: /Audio/_Omu/Voice/Reptilian/Reptilian_lizard_rattle.ogg
@@ -272,7 +272,7 @@
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
     Surprised: # Goob
       path: /Audio/_Goobstation/Voice/surprised.ogg
-    ReptilianPurr: #Omu
+    Purr: #Omu
       path: /Audio/_Omu/Voice/Reptilian/Reptilian_lizard_purr.ogg
     Rattle: #Omu
       path: /Audio/_Omu/Voice/Reptilian/Reptilian_lizard_rattle.ogg
