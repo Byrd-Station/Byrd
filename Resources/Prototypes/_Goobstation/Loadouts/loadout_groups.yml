@@ -1426,7 +1426,7 @@
   - ArmorVest
   - ArmorVestSlim
   - SecurityOfficerWintercoat
-  - CorpsmanWinterCoatDV
+  - CorpsmanWinterCoatDV # Omu
 
 - type: loadoutGroup
   id: BrigmedicBackpack
