@@ -58,40 +58,6 @@
 
 
 - type: entity
-  parent: [ ClothingOuterCoatStasecSenior, BaseSecurityCommandContraband ]
-  id: ClothingOuterCoatStasecHoS
-  name: head of security's coat
-  description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version is adorned with gold trim.
-  components:
-  - type: Sprite
-    sprite: _DV/Clothing/OuterClothing/WinterCoats/hosgreatcoat.rsi
-  - type: Clothing
-    sprite: _DV/Clothing/OuterClothing/WinterCoats/hosgreatcoat.rsi
-
-- type: entity
-  parent: [ ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatStasecHoS ]
-  id: ClothingOuterCoatStasecHoSOpen
-  name: head of security's great coat
-  suffix: Opened
-
-- type: entity
-  parent: [ ClothingOuterCoatStasecSenior, BaseWardenContraband ]
-  id: ClothingOuterCoatStasecWarden
-  name: warden's great coat
-  description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version features ice-white trim.
-  components:
-  - type: Sprite
-    sprite: _DV/Clothing/OuterClothing/WinterCoats/armourergreatcoat.rsi
-  - type: Clothing
-    sprite: _DV/Clothing/OuterClothing/WinterCoats/armourergreatcoat.rsi
-
-- type: entity
-  parent: [ ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatStasecWarden ]
-  id: ClothingOuterCoatStasecWardenOpen
-  name: warden's great coat
-  suffix: Opened
-
-- type: entity
   parent: [ ClothingOuterStorageFoldableBase, AllowSuitStorageClothing, BaseSecurityContraband ]
   id: ClothingOuterCoatStasecSenior
   name: security great coat
@@ -131,6 +97,41 @@
   id: ClothingOuterCoatStasecSeniorOpen
   name: security great coat
   suffix: Opened
+
+- type: entity
+  parent: [ ClothingOuterCoatStasecSenior, BaseSecurityCommandContraband ]
+  id: ClothingOuterCoatStasecHoS
+  name: head of security's coat
+  description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version is adorned with gold trim.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/hosgreatcoat.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/hosgreatcoat.rsi
+
+- type: entity
+  parent: [ ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatStasecHoS ]
+  id: ClothingOuterCoatStasecHoSOpen
+  name: head of security's great coat
+  suffix: Opened
+
+- type: entity
+  parent: [ ClothingOuterCoatStasecSenior, BaseWardenContraband ]
+  id: ClothingOuterCoatStasecWarden
+  name: warden's great coat
+  description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version features ice-white trim.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/armourergreatcoat.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/OuterClothing/WinterCoats/armourergreatcoat.rsi
+
+- type: entity
+  parent: [ ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatStasecWarden ]
+  id: ClothingOuterCoatStasecWardenOpen
+  name: warden's great coat
+  suffix: Opened
+
 
 - type: entity
   parent: ClothingOuterCoatStasec
