@@ -153,6 +153,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Disfigurement
       </Box>
     </ColorBox>
     <ColorBox Color="#453a59">
