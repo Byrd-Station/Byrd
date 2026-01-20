@@ -217,15 +217,17 @@ public sealed partial class MeleeWeaponComponent : Component
     /// <summary>
     ///     Shitmed Change: Part damage is multiplied by this amount for single-target attacks
     /// </summary>
+    // Omu start
     [DataField, AutoNetworkedField]
-    public float ClickPartDamageMultiplier = 1.25f; # Omu Buff melee dmg, so sprite is still better
+    public float ClickPartDamageMultiplier = 1.25f;
 
     /// <summary>
     ///     Shitmed Change: Part damage is multiplied by this amount for heavy swings
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float HeavyPartDamageMultiplier = 1.00f; # Omu Same as upstream
-
+    public float HeavyPartDamageMultiplier = 1.00f;
+    // Omu end
+    
     // Shitmed Change End
 
     // Goobstation
