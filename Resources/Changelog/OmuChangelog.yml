@@ -1697,3 +1697,175 @@ Entries:
       message: Fixed the Temperature Gun not working properly.
   id: 207
   time: '2026-01-02T18:33:53.0000000+00:00'
+- author: ukuleleman
+  changes:
+    - type: Tweak
+      message: Made IPCs fat again (you lost your Ozempic privileges)
+  id: 208
+  time: '2026-01-06T08:19:52.0000000+00:00'
+- author: Dot5511
+  changes:
+    - type: Add
+      message: Added two illegal cloaks in Maintenance Closets!
+  id: 209
+  time: '2026-01-06T22:48:32.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: Ventclog can now jet out any chem, enjoy.
+  id: 210
+  time: '2026-01-07T04:59:18.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Fix
+      message: Paramedics now exist in submarine again.
+  id: 211
+  time: '2026-01-10T11:52:55.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Remove
+      message: Removed abductor gravity well  gland, removed dna scrambler gland
+  id: 212
+  time: '2026-01-10T11:53:44.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Fix
+      message: Fixed changlings abilities being lost when polymorphed
+  id: 213
+  time: '2026-01-11T04:00:12.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed Heretic summons being unable to use their abilities.
+  id: 214
+  time: '2026-01-11T06:12:19.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Add
+      message: >-
+        ported the unathi mantle from einstein engines, its under trinkets.
+        lizard only!
+  id: 215
+  time: '2026-01-11T06:20:55.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: >-
+        Ported the BRDI from EE, and gave it to HoS and BSO in their set
+        selectors.
+  id: 216
+  time: '2026-01-11T08:22:00.0000000+00:00'
+- author: Sarahon
+  changes:
+    - type: Tweak
+      message: Cadet is time limited again
+  id: 217
+  time: '2026-01-11T18:58:25.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: Stealth suits can now be seen via thermals!
+  id: 218
+  time: '2026-01-12T07:25:29.0000000+00:00'
+- author: God
+  changes:
+    - type: Remove
+      message: The Devil can no longer make people immortal. Get new gimmicks.
+  id: 219
+  time: '2026-01-12T07:30:30.0000000+00:00'
+- author: Diggy0
+  changes:
+    - type: Remove
+      message: Removed Shiva's nocturine injection along with their access to security.
+  id: 220
+  time: '2026-01-12T07:33:13.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Add
+      message: Added rad and poison cartridges
+  id: 221
+  time: '2026-01-13T04:24:59.0000000+00:00'
+- author: TheSecondLord
+  changes:
+    - type: Add
+      message: Added the novelty lighter mystery box as a loadout trinket.
+    - type: Add
+      message: Added more variations of lighters to the loadout trinkets.
+  id: 222
+  time: '2026-01-14T00:36:34.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Remove
+      message: Killed insta hard grab on hand of god and ling arm claw.
+  id: 223
+  time: '2026-01-14T00:45:44.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Fix
+      message: This time midround blob is dead.
+  id: 224
+  time: '2026-01-18T05:53:44.0000000+00:00'
+- author: VictorJob, RadsammyT
+  changes:
+    - type: Add
+      message: >-
+        (PORT) A Golden MK-58 may now be selected as a round-start Job Trinket
+        for the security department. Requires 70 hours of security.
+    - type: Tweak
+      message: >-
+        The standard duty case that security officers obtain round-start is now
+        a loadout item as a Job Trinket. Please note that the Job Trinket
+        category will automatically select the standard duty case if not already
+        specified, so no action should be taken.
+  id: 225
+  time: '2026-01-18T06:36:15.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Add
+      message: ported some clothes from EE
+  id: 226
+  time: '2026-01-18T15:29:42.0000000+00:00'
+- author: raincally
+  changes:
+    - type: Tweak
+      message: 'The RCDs can now build WATER (and remove it) '
+  id: 227
+  time: '2026-01-18T20:38:26.0000000+00:00'
+- author: raincally
+  changes:
+    - type: Tweak
+      message: sec winter coats protect your arms now
+  id: 228
+  time: '2026-01-18T20:39:34.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        Making syrup involves less diona murder now, simply boil sugar and water
+        on a hotplate
+  id: 229
+  time: '2026-01-18T20:42:06.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Fix
+      message: Guidebook for devil is now readable.
+  id: 230
+  time: '2026-01-18T20:46:21.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: Plasmamen can have anything on their suit slot now
+  id: 231
+  time: '2026-01-18T20:54:41.0000000+00:00'
+- author: ArtemisYK
+  changes:
+    - type: Add
+      message: Added the Formal Blueshield Officer Suit
+  id: 232
+  time: '2026-01-18T21:15:01.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Add
+      message: Traitor onis can now buy a kanabo from their uplink. 50tc.
+  id: 233
+  time: '2026-01-20T00:04:54.0000000+00:00'
