@@ -24,3 +24,12 @@
     whitelist:
     - Clown
 
+- type: listing
+  id: UplinkFoldingShotgun
+  name: uplink-folding-shotgun-name
+  description: uplink-folding-shotgun-desc
+  productEntity: WeaponShotgunFolding
+  cost:
+    Telecrystal: 20
+  categories:
+  - UplinkWeaponry

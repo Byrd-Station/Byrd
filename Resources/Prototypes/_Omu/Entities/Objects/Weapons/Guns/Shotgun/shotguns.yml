@@ -15,8 +15,8 @@
   description: An abysmally outdated, but otherwise decently effective and compact shotgun. Chambered in 12 gauge shotgun shells.
   components:
   - type: Item
-    heldPrefix: folded
     size: Normal
+    storedRotation: -45
   - type: Sprite
     sprite: _Omu/Objects/Weapons/Guns/Shotguns/hardlight_bow.rsi
     layers:
@@ -77,5 +77,7 @@
     soundDeactivate:
       path: /Audio/Weapons/Guns/Cock/shotgun_close.ogg
   - type: ItemToggleSize
-    activatedSize: Huge
+    activatedSize: Large
+    activatedShape:
+    - 0,0,0,4
   - type: FoldingWeapon

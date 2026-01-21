@@ -5,3 +5,5 @@ uplink-hardsuit-cybersunsciencesuit-desc = A scientific reseach hardsuit meant t
 uplink-dislippler-name = Dislippler
 uplink-dislippler-desc = Standard-issue security disabler on Honk! Co. stations. Ultimate proof that God has abandoned us.
 
+uplink-folding-shotgun-name = Folding Shotgun
+uplink-folding-shotgun-desc = A 4 round capacity shotgun that can be folded up to conceal with ease. Limited accuracy and firerate for its price. Chambered in 12 gauge shotgun shells.
