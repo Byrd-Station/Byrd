@@ -36,3 +36,8 @@
     outerClothing: ClothingOuterJacketCargoTech
   groupBy: "wintercoat" #loadout cleanup
 
+#shoes
+- type: loadout
+  id: FishingBoots
+  equipment:
+    shoes: ClothingShoesBootsFishing
