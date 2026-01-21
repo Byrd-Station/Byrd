@@ -96,6 +96,13 @@
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
   canBeAntag: false
+  guides: # goobstation
+  - Security
+  - Legal SOP
+  - OfficerCadet SOP
+  - CorporateJudo
+  - Alert Levels
+  - SecurityTrainingManual # Omu
   goobcoins: 30 #Goob content
   access:
   - Security
@@ -116,7 +123,7 @@
   equipment:
     eyes: ClothingEyesGlassesSecurity
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
-    pocket1: OfficerGunCase #Omu
+    #pocket1: OfficerGunCase #Omu, item in loadout instead
   storage:
     back:
     - Flash
