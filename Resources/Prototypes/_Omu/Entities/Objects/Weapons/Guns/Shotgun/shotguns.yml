@@ -10,7 +10,7 @@
 
 - type: entity
   name: folding shotgun
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityCommandContraband]
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseMajorContraband]
   id: WeaponShotgunFolding
   description: An abysmally outdated, but otherwise decently effective and compact shotgun. Chambered in 12 gauge shotgun shells.
   components:

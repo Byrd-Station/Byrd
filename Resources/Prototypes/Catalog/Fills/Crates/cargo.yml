@@ -179,6 +179,9 @@
     - id: WeaponSniperMosin
       prob: 0.01
       orGroup: Weapons
+    - id: WeaponShotgunFoldingBeanbag
+      prob: 0.05
+      orGroup: Weapons
     - id: WeaponMakeshiftLaser
       prob: 0.001
       orGroup: Weapons

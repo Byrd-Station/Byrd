@@ -159,8 +159,9 @@
     - id: CargoSaleComputerCircuitboard
     - id: CargoShuttleConsoleCircuitboard
     - id: SalvageMagnetMachineCircuitboard
-    - id: WeaponShotgunFoldingBeanbag # Omu
-    - id: BoxBeanbag # Omu
+    # Commented incase I wanna bring it back
+    #- id: WeaponShotgunFoldingBeanbag # Omu
+    #- id: BoxBeanbag # Omu
     - id: CigPackGreen
       prob: 0.75
     - id: ClothingHeadsetAltCargo
