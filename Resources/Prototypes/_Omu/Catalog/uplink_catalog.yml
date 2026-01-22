@@ -24,3 +24,13 @@
     whitelist:
     - Clown
 
+- type: listing
+  id: UplinkBattleChameleon
+  name: uplink-battle-chameleon-name
+  description: uplink-battle-chameleon-desc
+  productEntity: ClothingBackpackBattleChameleonFill
+  icon: { sprite: /Textures/Clothing/Uniforms/Jumpsuit/rainbow.rsi, state: icon }
+  cost:
+    Telecrystal: 20
+  categories:
+    - UplinkWearables

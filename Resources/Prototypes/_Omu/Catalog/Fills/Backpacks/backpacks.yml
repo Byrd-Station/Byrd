@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingBackpackSyndicate
+  id: ClothingBackpackBattleChameleonFill
+  suffix: Fill, Chameleon
+  components:
+    - type: StorageFill
+      contents:
+        - id: BattleHandsChameleon
+        - id: BattleHeadHatChameleon
+        - id: BattleOuterChameleon
+        - id: BattleShoesChameleon
