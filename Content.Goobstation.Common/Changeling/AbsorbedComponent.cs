@@ -4,7 +4,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Robust.Shared.GameObjects;
 using Robust.Shared.GameStates;
 
 namespace Content.Goobstation.Common.Changeling;
@@ -12,5 +11,7 @@ namespace Content.Goobstation.Common.Changeling;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class AbsorbedComponent : Component
 {
-
+ // Omu edit start
+ public int examinePriority = -9;
+ // omu edit end
 }

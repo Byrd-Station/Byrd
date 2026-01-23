@@ -1,3 +1,4 @@
+using Content.Goobstation.Common.Changeling;
 using Content.Omu.Common.Changeling;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
@@ -7,6 +8,8 @@ using Content.Shared.Body.Events;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
 using Content.Shared.Examine;
+using Content.Shared.Forensics.Components;
+using Content.Shared.Humanoid;
 using Content.Shared.Traits.Assorted;
 using Robust.Server.Containers;
 
@@ -14,9 +17,8 @@ namespace Content.Omu.Server.Changeling;
 
 public sealed class ChangelingHollowRevivalSystem : OmuChangelingCommunicator
 {
-    [Dependency] private readonly ContainerSystem _container = default!;
-    [Dependency] private readonly BodySystem _bodySystem = null!; // Omu
-    [Dependency] private readonly OmuChangelingCommunicator _omuLing = null!; // Omu
+    [Dependency] private readonly BodySystem _bodySystem = null!;
+
 
     public override void Initialize()
     {
@@ -29,6 +31,10 @@ public sealed class ChangelingHollowRevivalSystem : OmuChangelingCommunicator
 
     private void OnStartup(Entity<HollowTraumaComponent> ent, ref ComponentStartup args)
     {
+        if (!TryComp<AbsorbedComponent>(ent.Owner, out var absComp))
+            return;
+
+        ent.Comp.HollowMarkupMessagePriority = absComp.examinePriority - 1;
         UpdateOrganState(ent.Owner, ent.Comp);
     }
 
@@ -87,14 +93,10 @@ public sealed class ChangelingHollowRevivalSystem : OmuChangelingCommunicator
             unrevComp.Cloneable = false;
             return;
         }
-
-
     }
 
     private HollowTraumaComponent.HollowOrganState EvaluateOrganState(EntityUid uid)
     {
-        if (!_bodySystem.TryGetBodyOrganEntityComps<BrainComponent>(uid, out _))
-            return HollowTraumaComponent.HollowOrganState.MissingBrain;
         var organCount =
             (_bodySystem.TryGetBodyOrganEntityComps<HeartComponent>(uid, out _) ? 1 : 0) +
             (_bodySystem.TryGetBodyOrganEntityComps<LungComponent>(uid, out _) ? 1 : 0) +
@@ -129,4 +131,30 @@ public sealed class ChangelingHollowRevivalSystem : OmuChangelingCommunicator
         }
     }
 
+    public override void SetupLingData(Entity<Component> ling, EntityUid lingMind, EntityUid target) // comp here is ChangelingIdentityComp
+    {
+        var htComp = EnsureComp<HollowTraumaComponent>(target);
+        var hHalComp = EnsureComp<HollowHallucinationComponent>(target);
+
+        if (!TryComp<DnaComponent>(ling, out var dnaComp) ||
+            !TryComp<HumanoidAppearanceComponent>(ling, out var hApComp))
+        {
+            return;
+        }
+
+        var kData =
+            new KillerData(
+                ling,
+                lingMind,
+                dnaComp.DNA,
+                (ling.Owner , hApComp),
+                null
+                );
+
+        hHalComp.Killers.Add(kData);
+
+        var ev = new HollowKillerAddedEvent() { Data = kData };
+        RaiseNetworkEvent(ev, target);
+
+    }
 }

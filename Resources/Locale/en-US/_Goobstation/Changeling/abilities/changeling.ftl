@@ -27,7 +27,8 @@ changeling-absorb-end-self = The organism was absorbed. We are evolving.
 changeling-absorb-end-self-ling = Another changeling was absorbed. Our body is filled with immense vigor as our cells rapidly evolve.
 changeling-absorb-end-self-ling-incompatible = Another changeling was absorbed. However, their current form prevented us from extracting their DNA sequence.
 changeling-absorb-end-partial = The organism was absorbed. We were unable to extract anything to aid in our evolution.
-changeling-absorb-onexamine = [color=red]The body feels hollow.[/color]
+# Omu edit changeling-absorb-onexamine
+changeling-absorb-onexamine = [color=red]The body feels hollow. There's a massive hole in their chest![/color]
 changeling-absorb-fail-nograb = We aren't grabbing hard enough.
 changeling-absorb-fail-onfire = The target is on fire, put them out first!
 
@@ -101,9 +102,8 @@ changeling-voidadapt-onfire = Our adaptions become too painful to maintain on fi
 changeling-rejuvenate = An strange energy pulses through our body, rejuvenating our cells and restoring our chemicals!
 
 # Omu changes start
-changeling-hollowed-onexamine-brainless = [color=purple]You can tell [/color][color=red]there's no brain.[/color][color=purple] It's pointless![/color]
-changeling-hollowed-onexamine-fullhollow = [color=red]They lack all organs! As if they've been gutted![/color]
+changeling-hollowed-onexamine-fullhollow = [color=red]They lack most organs! As if they've been gutted![/color]
 changeling-hollowed-onexamine-partialhollow = [color=yellow]They're [/color][color=red]missing[/color][color=yellow] some organs... Just needs a bit more work.[/color]
-changeling-hollowed-onexamine-filled = [color=red]All organs are there![/color][color=green] There's a chance![/color]
+changeling-hollowed-onexamine-filled = [color=green]All organs are there! There's a chance![/color]
 
 

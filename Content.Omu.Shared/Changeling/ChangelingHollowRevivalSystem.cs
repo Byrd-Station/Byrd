@@ -11,8 +11,6 @@ namespace Content.Omu.Shared.Changeling;
 
 public sealed class SharedChangelingHollowRevivalSystem : EntitySystem
 {
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly SharedBodySystem _bodySystem = null!; // Omu
     [Dependency] private readonly MobStateSystem _mobState = default!;
 
     public override void Initialize()
@@ -22,7 +20,6 @@ public sealed class SharedChangelingHollowRevivalSystem : EntitySystem
         SubscribeLocalEvent<HollowTraumaComponent, ExaminedEvent>(OnExamine);
     }
 
-
     private void OnExamine(Entity<HollowTraumaComponent> ent, ref ExaminedEvent args)
     {
         if (_mobState.IsAlive(ent))
@@ -30,8 +27,6 @@ public sealed class SharedChangelingHollowRevivalSystem : EntitySystem
 
         var text = ent.Comp.OrganState switch
         {
-            HollowTraumaComponent.HollowOrganState.MissingBrain =>
-                Loc.GetString("changeling-hollowed-onexamine-brainless"),
 
             HollowTraumaComponent.HollowOrganState.FullyHollow =>
                 Loc.GetString("changeling-hollowed-onexamine-fullhollow"),
@@ -45,8 +40,10 @@ public sealed class SharedChangelingHollowRevivalSystem : EntitySystem
             _ => null
         };
 
-        if (text != null)
-            args.PushMarkup(text, HollowTraumaComponent.HollowMarkupMessagePriority);
+        if (text == null)
+            return;
+
+        args.PushMarkup(text, ent.Comp.HollowMarkupMessagePriority);
     }
 
 }

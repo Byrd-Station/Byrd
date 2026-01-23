@@ -204,10 +204,7 @@ public sealed partial class ChangelingSystem
         EnsureComp<AbsorbedComponent>(target);
         EnsureComp<UnrevivableComponent>(target);
 
-        // Omu Start - todo marty omumod this
-        EnsureComp<HollowTraumaComponent>(target);
-        _omuLing.RemoveOrgansOnAbsorb(target);
-        // Omu End
+        var htComp = EnsureComp<HollowTraumaComponent>(target); // Omu
 
         var popup = string.Empty;
         var bonusChemicals = 0f;
@@ -266,6 +263,8 @@ public sealed partial class ChangelingSystem
 
         if (_mind.TryGetMind(uid, out var mindId, out var mind))
         {
+
+
             if (_mind.TryGetObjectiveComp<AbsorbConditionComponent>(mindId, out var absorbObj, mind)
                 && !HasComp<PartialAbsorbableComponent>(target))
                 absorbObj.Absorbed += 1;
@@ -286,6 +285,10 @@ public sealed partial class ChangelingSystem
 
             Dirty(uid, biomass);
         }
+        // Omu start
+        _omuLing.SetupLingData((uid, comp), mindId, target);
+        _omuLing.RemoveOrgansOnAbsorb(target);
+        // Omu end
 
     }
 
