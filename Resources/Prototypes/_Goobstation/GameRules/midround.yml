@@ -21,7 +21,8 @@
     earliestStart: 30
     weight: 8
     minimumPlayers: 15
-    maxOccurrences: 1
+    maxOccurrences: 3 #Omu change from 1 - better traitors than 5 lings
+    reoccurrenceDelay: 30 #Omu new - able to re-occur every 30 minutes
     startAnnouncement: station-event-communication-interception
     startAudio:
       path: /Audio/Announcements/intercept.ogg
@@ -61,7 +62,7 @@
   - type: StationEvent
     earliestStart: 20
     weight: 4
-    minimumPlayers: 15
+    minimumPlayers: 150   #Omu change - killed as per request
     maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
@@ -83,7 +84,7 @@
     - prefRoles: [ Changeling ]
       min: 1
       max: 2
-      playerRatio: 10
+      playerRatio: 25 # Omu 10 --> 25
       blacklist:
         components:
         - CommandStaff
@@ -104,7 +105,7 @@
   - type: StationEvent
     earliestStart: 20
     weight: 3
-    minimumPlayers: 30 # OMU change - lowered to 30, now they are actively a thing.
+    minimumPlayers: 150 # OMU change - killed as per request
     maxOccurrences: 1
     #startAnnouncement: station-event-communication-interception
     #startAudio:
@@ -634,7 +635,7 @@
       - type: MobThresholds
         thresholds:
           0: Alive
-          200: Dead
+          150: Dead
       - type: RandomMetadata
         nameSegments:
         - NamesSlasherTitle

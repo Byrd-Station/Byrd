@@ -257,6 +257,8 @@
         - id: ClothingNeckCloakEnby
         - id: ClothingNeckCloakPan
         - id: ClothingNeckEnsembleTrans # Goobstation - Cloak Ensemble
+        - id: ClothingNeckCloakKaijuCloak #Imported from Impstation14, Illegal Cloaks
+        - id: ClothingNeckCloakFugitiveCloak #Imported from Impstation14, Illegal Cloaks
       - id: ToySkeleton
       - id: Basketball
       - id: Football
