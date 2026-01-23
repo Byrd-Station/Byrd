@@ -74,7 +74,7 @@
   components:
   - type: Objective
     icon:
-      sprite: _Goobstation/Clothing/Hands/Gloves/knuckleduster.rsi/brassknuckleduster.png
+      sprite: _Goobstation/Clothing/Hands/Gloves/knuckleduster.rsi
       state: brassknuckleduster
 
 - type: entity
