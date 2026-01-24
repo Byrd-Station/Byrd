@@ -812,7 +812,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (channel != null && onlyWhisper)
             channel = null;
 
-        var message = TransformSpeech(source, FormattedMessage.RemoveMarkupOrThrow(originalMessage));
+        message = TransformSpeech(source, FormattedMessage.RemoveMarkupOrThrow(originalMessage), language);
         if (message.Length == 0)
             return;
         //Funky port end

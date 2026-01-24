@@ -220,31 +220,35 @@ public sealed partial class EntityHealthBarOverlay : Overlay
     /// Returns a ratio between 0 and 1, and whether the entity is in crit.
     /// </summary>
     private (float ratio, bool inCrit)? CalcProgress(EntityUid uid, MobStateComponent component, DamageableComponent dmg, MobThresholdsComponent thresholds)
-    {
+{
         var totalDamage = _mobThresholdSystem.CheckVitalDamage(uid, dmg); // GoobStation
         if (_mobStateSystem.IsAlive(uid, component))
         {
             if (dmg.HealthBarThreshold != null && totalDamage < dmg.HealthBarThreshold) // GoobStation
                 return null;
 
-            if (firstCritThreshold == 0)
-                return (1f, false);
+            if (!_mobThresholdSystem.TryGetThresholdForState(uid, MobState.Critical, out var threshold, thresholds) &&
+                !_mobThresholdSystem.TryGetThresholdForState(uid, MobState.Dead, out threshold, thresholds))
+                return (1, false);
 
             var ratio = 1 - ((FixedPoint2)(totalDamage / threshold)).Float(); // GoobStation
             return (ratio, false);
         }
 
-        if (_mobStateSystem.IsIncapacitated(uid, component) && !_mobStateSystem.IsDead(uid, component))
+        if (_mobStateSystem.IsCritical(uid, component))
         {
-            if (deadThreshold <= firstCritThreshold)
-                return (0f, true);
+            if (!_mobThresholdSystem.TryGetThresholdForState(uid, MobState.Critical, out var critThreshold, thresholds) ||
+                !_mobThresholdSystem.TryGetThresholdForState(uid, MobState.Dead, out var deadThreshold, thresholds))
+            {
+                return (1, true);
+            }
 
             var ratio = 1 - ((totalDamage - critThreshold) / (deadThreshold - critThreshold)).Value.Float(); // GoobStation
 
             return (ratio, true);
         }
 
-        return (0f, true);
+        return (0, true);
     }
 
     public Color GetProgressColor(float progress, bool crit)

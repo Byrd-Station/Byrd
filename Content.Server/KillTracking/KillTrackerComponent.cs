@@ -9,7 +9,6 @@
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Mobs;
 using Robust.Shared.Network;
-using Content.Shared.FixedPoint;
 
 namespace Content.Server.KillTracking;
 
