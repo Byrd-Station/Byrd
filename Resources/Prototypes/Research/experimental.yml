@@ -228,19 +228,19 @@
   - GravityManipulation
   # Goobstation R&D Console rework end
 
-- type: technology
-  id: BluespaceTimeManipulation
-  name: research-technology-bluespace-time-manipulation
-  icon:
-    sprite: Objects/Devices/desynchronizer.rsi
-    state: icon
-  discipline: Experimental
-  tier: 3
-  cost: 15000 # Goob 10000 -> 150000
-  recipeUnlocks:
-  - DeviceDesynchronizer
-  # Goobstation R&D Console rework start
-  position: -5,3
-  technologyPrerequisites:
-  - GravityManipulation
-  # Goobstation R&D Console rework end
+#- type: technology # omu, freak you
+#  id: BluespaceTimeManipulation
+#  name: research-technology-bluespace-time-manipulation
+#  icon:
+#    sprite: Objects/Devices/desynchronizer.rsi
+#    state: icon
+#  discipline: Experimental
+#  tier: 3
+#  cost: 15000 # Goob 10000 -> 150000
+#  recipeUnlocks:
+#  - DeviceDesynchronizer
+#  # Goobstation R&D Console rework start
+#  position: -5,3
+#  technologyPrerequisites:
+#  - GravityManipulation
+#  # Goobstation R&D Console rework end
