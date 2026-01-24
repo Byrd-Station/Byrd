@@ -176,12 +176,13 @@ public partial class MobStateSystem
                 break;
             case MobState.Critical:
                 _standing.Stand(target);
+                break;
             case MobState.SoftCritical: //Funky port
-                var forceStand = false;
-                if (TryComp<TagComponent>(target, out var tag))
-                    forceStand = _tag.HasTag(tag, ForceStandOnReviveTag);
+               // var forceStand = false;
+               // if (TryComp<TagComponent>(target, out var tag))
+               //     forceStand = _tag.HasTag(tag, ForceStandOnReviveTag);
 
-                _standing.Stand(target, force: forceStand);
+               // _standing.Stand(target, force: forceStand);
                 break;
             case MobState.HardCritical:
                 break;                  //Funky port End
