@@ -19,7 +19,7 @@
     definitions:
     - prefRoles: [ Conspirator ]
       min: 4
-      max: 7
+      max: 12 # Omu - 7 -> 12
       playerRatio: 7
       briefing:
         text: conspirator-role-greeting
