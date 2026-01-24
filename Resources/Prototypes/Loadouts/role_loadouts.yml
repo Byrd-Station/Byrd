@@ -759,7 +759,11 @@
   - MedicalGloves
   - ChemistBackpack
   - ChemistOuterClothing
-  - MedicalShoes
+  - ChemistShoes
+  - ChemistPDA
+  - ChemistEyewear
+  - ChemistBeaker
+  - ChemistLabeler
   - SurvivalMedical
   - Trinkets
   - Animals

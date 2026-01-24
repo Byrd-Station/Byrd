@@ -976,7 +976,7 @@
   name: loadout-group-cargo-technician-shoes
   loadouts:
   - BlackShoes
-  - WorkBoots 
+  - WorkBoots
   - FishingBoots
   - SalvageBoots
   - CargoWinterBoots
@@ -1641,9 +1641,11 @@
   loadouts:
   - ChemistJumpsuit
   - ChemistJumpskirt
+  - ChemistMJ # goob
   - SeniorPhysicianJumpsuit # Goobstation
   - SeniorPhysicianJumpskirt # Goobstation
-  - ChemistMJ # goob
+  - SeniorChemistJumpsuit # Starlight
+  - SeniorChemistJumpskirt #Starlight
 
 - type: loadoutGroup
   id: ChemistOuterClothing
@@ -1657,6 +1659,8 @@
   - SeniorPhysicianXelthiaJacket # Omu
   - ChemLabcoatLong # OmuStation
   - SeniorPhysicianLabCoat # Goobstation
+  - SeniorChemistLabCoat # Starlight
+  - SeniorChemistWintercoat # Starlight
 
 - type: loadoutGroup
   id: ChemistBackpack
@@ -1666,6 +1670,9 @@
   - ChemistSatchel
   - ChemistDuffel
   - ChemistMessenger # Frontier
+  - SeniorChemistBackpack # Starlight
+  - SeniorChemistSatchel # Starlight
+  - SeniorChemistDuffel # Starlight
 
 - type: loadoutGroup
   id: ParamedicHead
