@@ -109,39 +109,6 @@ public abstract class SharedTypingIndicatorSystem : EntitySystem
         _appearance.SetData(uid, TypingIndicatorVisuals.State, state, appearance);
     }
     // FUNKYSTATION EDIT START
-    private void OnTypingTypeChanged(TypingChangedTypeEvent ev, EntitySessionEventArgs args)
-    {
-        var uid = args.SenderSession.AttachedEntity;
-        if (!Exists(uid))
-        {
-            Log.Warning($"Client {args.SenderSession} sent TypingChangedTypeEvent without an attached entity.");
-            return;
-        }
-
-        // check if this entity can speak or emote
-        if (!_actionBlocker.CanEmote(uid.Value) && !_actionBlocker.CanSpeak(uid.Value, out _))
-        {
-            SetTypingIndicatorType(uid.Value, ChatSelectChannel.None, "default");
-            return;
-        }
-
-        string? overrideProto = ev.ChatType switch
-        {
-            ChatSelectChannel.LOOC => "outofcharacter",
-            ChatSelectChannel.Emotes => "emote",
-            _ => null,
-        };
-
-        if (overrideProto != null)
-        {
-            SetTypingIndicatorType(uid.Value, ev.ChatType, overrideProto);
-        }
-        else
-        {
-            // For normal chat, clear any existing overrides
-            SetTypingIndicatorType(uid.Value, ev.ChatType, null);
-        }
-    }
     private void SetTypingIndicatorType(EntityUid uid, ChatSelectChannel chatType, string? overrideProto, AppearanceComponent? appearance = null)
     {
         if (!Resolve(uid, ref appearance, false))
