@@ -13,5 +13,5 @@ public interface IBiomeSpecificMod : ISalvageMod
     /// <summary>
     /// Whitelist for biomes. If null then any biome is allowed.
     /// </summary>
-    List<ProtoId<SalvageBiomeModPrototype>>? Biomes { get; }
+    List<ProtoId<SalvageBiomeMod>>? Biomes { get; }
 }
