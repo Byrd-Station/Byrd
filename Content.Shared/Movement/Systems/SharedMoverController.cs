@@ -138,7 +138,7 @@ using Content.Shared.Physics;
 using Content.Shared._vg.TileMovement;
 using Content.Shared.Standing; // Goobstation - kil mofs
 using PullableComponent = Content.Shared.Movement.Pulling.Components.PullableComponent;
-using Content.Shared.Bed.Sleep;;
+using Content.Shared.Bed.Sleep;
 
 namespace Content.Shared.Movement.Systems;
 
@@ -260,12 +260,8 @@ public abstract partial class SharedMoverController : VirtualController
             LerpRotation(uid, mover, frameTime);
             var dirtied = false;
 
-            if (_mobState.IsImmobile(mover.Source) || //Funky port
-                TryComp<SleepingComponent>(mover.Source, out _) ||
-                !MoverQuery.TryGetComponent(mover.Source, out var relayedMover))
-            { //Funky port end
-
             if (relayTargetMover.RelativeEntity != mover.RelativeEntity)
+            {
                 relayTargetMover.RelativeEntity = mover.RelativeEntity;
                 dirtied = true;
             }

@@ -108,21 +108,4 @@ public abstract class SharedTypingIndicatorSystem : EntitySystem
 
         _appearance.SetData(uid, TypingIndicatorVisuals.State, state, appearance);
     }
-    // FUNKYSTATION EDIT START
-    private void SetTypingIndicatorType(EntityUid uid, ChatSelectChannel chatType, string? overrideProto, AppearanceComponent? appearance = null)
-    {
-        if (!Resolve(uid, ref appearance, false))
-            return;
-
-        if (overrideProto != null)
-        {
-            _appearance.SetData(uid, TypingIndicatorVisuals.OverrideIndicatorPrototype, overrideProto, appearance);
-        }
-        else
-        {
-            _appearance.RemoveData(uid, TypingIndicatorVisuals.OverrideIndicatorPrototype, appearance);
-        }
-        _appearance.SetData(uid, TypingIndicatorVisuals.ChatType, chatType, appearance);
-    }
-    // FUNKYSTATION EDIT END
 }
