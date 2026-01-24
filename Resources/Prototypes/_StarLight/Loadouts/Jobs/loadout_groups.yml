@@ -37,7 +37,7 @@
   loadouts:
   - LightBeaker
   - SilverBeakerChemist
-  - DarkBeaker #since all the beakers are the same, no harm
+  - DarkBeakerChemist #since all the beakers are the same, no harm
 
 - type: loadoutGroup
   id: ChemistLabeler
@@ -70,5 +70,5 @@
   minLimit: 0
   loadouts:
   - LightBeaker #since all the beakers are the same, no harm
-  - SilverBeakerChemist
-  - DarkBeaker
+  - SilverBeakerBrigmedic
+  - DarkBeakerBrigmedic

@@ -210,7 +210,10 @@
 
 # Beaker
 - type: loadout
-  id: DarkBeaker
+  id: DarkBeakerBrigmedic
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SkilledBrigmedic
   storage:
     back:
     - DarkBeaker

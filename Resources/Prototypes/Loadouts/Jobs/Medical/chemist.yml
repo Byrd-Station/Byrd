@@ -310,7 +310,7 @@
     - SilverBeaker
 
 - type: loadout
-  id: DarkBeaker
+  id: DarkBeakerChemist
   effects:
   - !type:GroupLoadoutEffect
     proto: SkilledChemist
