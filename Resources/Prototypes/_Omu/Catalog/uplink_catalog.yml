@@ -31,6 +31,6 @@
   productEntity: ClothingBackpackBattleChameleonFill
   icon: { sprite: /Textures/Clothing/Uniforms/Jumpsuit/rainbow.rsi, state: icon }
   cost:
-    Telecrystal: 30
+    Telecrystal: 45
   categories:
     - UplinkWearables
