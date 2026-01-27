@@ -31,7 +31,7 @@
   minHeight: 0.75
   defaultHeight: 0.8
   maxHeight: 1.2
-  minWidth: 0.75
+  minWidth: 0.70
   defaultWidth: 0.8
   maxWidth: 1.2
   # Omu edit end
