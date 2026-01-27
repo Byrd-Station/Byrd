@@ -82,6 +82,10 @@
       - type: CommandStaff
       - type: Condemned
         soulOwnedNotDevil: true
+  - !type:AddComponentSpecial
+    components:
+    - type: SurgerySpeedModifier
+      speedModifier: 1.25 #Same as Paramedic and Corpsman
 
 - type: startingGear
   id: BlueshieldOfficerGear
