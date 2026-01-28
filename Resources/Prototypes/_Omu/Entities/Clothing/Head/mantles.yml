@@ -257,7 +257,7 @@
     clothingVisuals:
       head:
       - state: helmet-medical
-      - state: helmet-internals
+      - state: helmet-internals-medical
       - state: eyes-medical
         shader: unshaded
   - type: IngestionBlocker
