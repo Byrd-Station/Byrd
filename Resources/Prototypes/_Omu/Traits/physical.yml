@@ -78,7 +78,7 @@
         Chemist: ClothingCyberneticBeastMantleMedical
         MedicalDoctor: ClothingCyberneticBeastMantleMedical
         MedicalIntern: ClothingCyberneticBeastMantleMedical
-        Paramedic: ClothingCyberneticBeastMantleMedical
+        Paramedic: ClothingCyberneticBeastMantleMedicalParamedic # paramedic mantle variant with internals
         Brigmedic: ClothingCyberneticBeastMantleMedical
         # tossup of mantles for command.
         BlueshieldOfficer: ClothingCyberneticBeastMantleBlueshieldOfficer
