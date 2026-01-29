@@ -57,7 +57,7 @@
     - SolCommon
   languagesUnderstood:
     - SolCommon
-  requirements:
+  requirements: # omu
     - !type:SpeciesRequirement
       species:
         - Human
