@@ -78,7 +78,7 @@ public sealed class WizardMirrorSystem : SharedWizardMirrorSystem
                 return;
             }
 
-            if (HasComp<BloodCrawlComponent>(target))
+            if (HasComp<ReagentCrawlComponent>(target))
             {
                 _popup.PopupEntity(Loc.GetString("wizard-mirror-blood-crawl-change-species-fail"), target, target);
                 return;

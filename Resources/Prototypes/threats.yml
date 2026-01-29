@@ -13,6 +13,7 @@
     SlaughterDemon: 1
     # Wraith: 1
     LoneOperative: 1 # Goobstation
+    Voidwalker: 1 # Omu
     #TODO When Slasher is ready Slasher: 1 # Goobstation
 
 - type: ninjaHackingThreat

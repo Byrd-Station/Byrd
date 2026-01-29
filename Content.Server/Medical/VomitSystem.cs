@@ -132,7 +132,7 @@ namespace Content.Server.Medical
         /// <summary>
         /// Make an entity vomit, if they have a stomach.
         /// </summary>
-        public void Vomit(EntityUid uid, float thirstAdded = -40f, float hungerAdded = -40f)
+        public void Vomit(EntityUid uid, float thirstAdded = -40f, float hungerAdded = -40f, string vomitProto = "Vomit") // Omu - Unhardcode vomit
         {
             // Main requirement: You have a stomach
             var stomachList = _body.GetBodyOrganEntityComps<StomachComponent>(uid);
@@ -191,7 +191,7 @@ namespace Content.Server.Medical
                 }
 
                 // Makes a vomit solution the size of 90% of the chemicals removed from the chemstream
-                solution.AddReagent(new ReagentId("Vomit", _bloodstream.GetEntityBloodData(uid)), vomitAmount); // TODO: Dehardcode vomit prototype
+                solution.AddReagent(new ReagentId(vomitProto, _bloodstream.GetEntityBloodData(uid)), vomitAmount); // Omu - Unhardcoded vomit
             }
 
             if (_puddle.TrySpillAt(uid, solution, out var puddle, false))

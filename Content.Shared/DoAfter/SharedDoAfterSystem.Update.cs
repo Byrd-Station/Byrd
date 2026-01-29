@@ -119,7 +119,8 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
         DoAfterComponent comp,
         TimeSpan time,
         EntityQuery<TransformComponent> xformQuery,
-        EntityQuery<HandsComponent> handsQuery)
+        EntityQuery<HandsComponent> handsQuery,
+        bool ignoreObstruction = false) // Omu
     {
         var dirty = false;
 
@@ -152,7 +153,7 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
                 continue;
             }
 
-            if (ShouldCancel(doAfter, xformQuery, handsQuery))
+            if (ShouldCancel(doAfter, xformQuery, handsQuery, ignoreObstruction)) // Omu - Ignore Obstruction
             {
                 InternalCancel(doAfter, comp);
                 dirty = true;
@@ -228,9 +229,12 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
 
     private bool ShouldCancel(DoAfter doAfter,
         EntityQuery<TransformComponent> xformQuery,
-        EntityQuery<HandsComponent> handsQuery)
+        EntityQuery<HandsComponent> handsQuery,
+        bool ignoreObstruction = false)
     {
         var args = doAfter.Args;
+        if (!ignoreObstruction) // Omu - If it's not set here, check if the args are setting it.
+            ignoreObstruction = args.IgnoreObstruction;
 
         //re-using xformQuery for Exists() checks.
         if (args.Used is { } used && !xformQuery.HasComponent(used))
@@ -267,7 +271,7 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
         }
 
         // Whether the user and the target are too far apart.
-        if (args.Target != null)
+        if (args.Target != null && !ignoreObstruction) // Omu
         {
             if (args.DistanceThreshold != null)
             {
