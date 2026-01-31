@@ -254,7 +254,7 @@ public sealed partial class EntityHealthBarOverlay : Overlay
     public Color GetProgressColor(float progress, bool crit)
     {
         if (crit)
-            return Red;
+            progress = 0;
 
         return _progressColor.GetProgressColor(progress);
     }
