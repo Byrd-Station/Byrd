@@ -980,7 +980,7 @@
   name: loadout-group-cargo-technician-shoes
   loadouts:
   - BlackShoes
-  - WorkBoots 
+  - WorkBoots
   - FishingBoots
   - SalvageBoots
   - CargoWinterBoots
