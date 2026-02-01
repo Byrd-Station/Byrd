@@ -229,6 +229,7 @@
   - ClothingNeckScarfStripedGenderfluid
   - ClothingNeckChameleonPride
   - BarberScissors
+  - ClothingNeckUnathiMantle
   # Omu end
   - CardBoxBlack # GoobStation
   - CardBoxNanotrasen # GoobStation
@@ -452,6 +453,7 @@
   - LightBrownMJ
   - BrownMJ
   - MaroonMJ
+  - QuarterzipJumpsuit
  # goob changes end
 
 - type: loadoutGroup
