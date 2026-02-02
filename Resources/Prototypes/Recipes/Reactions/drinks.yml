@@ -1397,6 +1397,20 @@
     TheMartinez: 6
 
 - type: reaction
+  id: TheWelles
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    Vodka:
+      amount: 4
+    JuiceLime:
+      amount: 1
+    SolDry:
+      amount: 1
+  products:
+    TheWelles: 6
+
+- type: reaction
   id: Vodka
   requiredMixerCategories:
   - Stir
