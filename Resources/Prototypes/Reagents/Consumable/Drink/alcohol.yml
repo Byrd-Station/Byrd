@@ -2389,7 +2389,7 @@
   flavor: thewelles
   color: "#CECBAD"
   metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/welles.rsi
+    sprite: Objects/Consumable/Drinks/the_welles.rsi
     state: icon_empty
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
