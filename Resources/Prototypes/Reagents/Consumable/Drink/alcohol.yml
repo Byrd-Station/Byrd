@@ -2381,6 +2381,29 @@
         amount: 0.05
 
 - type: reagent
+  id: TheWelles
+  name: reagent-name-welles
+  parent: BaseAlcohol
+  desc: reagent-desc-welles
+  physicalDesc: reagent-physical-desc-robust
+  flavor: thewelles
+  color: "#CECBAD"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/welles.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.2
+
+- type: reagent
   id: Mimeosa
   name: reagent-name-mimeosa
   parent: BaseAlcohol
