@@ -7,6 +7,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.Prototypes;
+using Content.Shared.Salvage.Expeditions.Modifiers;
 
 namespace Content.Shared.Salvage.Expeditions;
 

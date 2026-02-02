@@ -35,7 +35,7 @@ public sealed partial class SalvageAirMod : IPrototype, IBiomeSpecificMod
 
     /// <inheritdoc/>
     [DataField("biomes", customTypeSerializer: typeof(PrototypeIdListSerializer<SalvageBiomeMod>))]
-    public List<string>? Biomes { get; private set; } = null;
+    public List<ProtoId<SalvageBiomeMod>>? Biomes { get; private set; } = null;
 
     /// <summary>
     /// Set to true if this planet will have no atmosphere.

@@ -9,10 +9,6 @@ namespace Content.Shared.CCVar;
 
 public sealed partial class CCVars
 {
-    public static readonly CVarDef<bool> HolidaysEnabled = CVarDef.Create("holidays.enabled", true, CVar.SERVERONLY);
-    public static readonly CVarDef<bool> BrandingSteam = CVarDef.Create("branding.steam", false, CVar.CLIENTONLY);
-    public static readonly CVarDef<int> EntityMenuGroupingType = CVarDef.Create("entity_menu", 0, CVar.CLIENTONLY);
-
     /// <summary>
     ///     Should we pre-load all of the procgen atlasses.
     /// </summary>
@@ -25,12 +21,6 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> BiomassEasyMode =
         CVarDef.Create("biomass.easy_mode", true, CVar.SERVERONLY);
-
-    /// <summary>
-    ///     A scale factor applied to a grid's bounds when trying to find a spot to randomly generate an anomaly.
-    /// </summary>
-    public static readonly CVarDef<float> AnomalyGenerationGridBoundsScale =
-        CVarDef.Create("anomaly.generation_grid_bounds_scale", 0.6f, CVar.SERVERONLY);
 
     /// <summary>
     ///     How long a client can go without any input before being considered AFK.

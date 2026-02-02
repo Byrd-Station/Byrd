@@ -31,7 +31,7 @@ public sealed class SalvageDungeonMod : IPrototype, IBiomeSpecificMod
 
     /// <inheridoc/>
     [DataField("biomes", customTypeSerializer: typeof(PrototypeIdListSerializer<SalvageBiomeMod>))]
-    public List<string>? Biomes { get; private set; } = null;
+    public List<ProtoId<SalvageBiomeMod>>? Biomes { get; private set; } = null;
 
     /// <summary>
     /// The config to use for spawning the dungeon.
