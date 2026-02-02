@@ -4,8 +4,8 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/01/2026 18:55:08
-  entityCount: 15698
+  time: 02/02/2026 11:21:05
+  entityCount: 15703
 maps:
 - 1
 grids:
@@ -8975,7 +8975,7 @@ entities:
       pos: 28.5,-21.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -29718.086
+      secondsUntilStateChange: -29777.436
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -37792,70 +37792,6 @@ entities:
     - type: Transform
       pos: 70.44693,7.937353
       parent: 2
-- proto: ChemDispenser
-  entities:
-  - uid: 5714
-    components:
-    - type: Transform
-      pos: 49.5,-5.5
-      parent: 2
-    - type: ContainerContainer
-      containers:
-        ReagentDispenser-reagentContainerContainer: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        ReagentDispenser-beaker: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        beakerSlot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-  - uid: 5715
-    components:
-    - type: Transform
-      pos: 53.5,-3.5
-      parent: 2
-    - type: ContainerContainer
-      containers:
-        ReagentDispenser-reagentContainerContainer: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        machine_board: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        machine_parts: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        ReagentDispenser-beaker: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        beakerSlot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: ChemistryHotplate
   entities:
   - uid: 5716
@@ -44978,6 +44914,70 @@ entities:
       parent: 6743
     - type: Physics
       canCollide: False
+- proto: EnergyChemDispenser
+  entities:
+  - uid: 5714
+    components:
+    - type: Transform
+      pos: 49.5,-5.5
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        ReagentDispenser-reagentContainerContainer: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        ReagentDispenser-beaker: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        beakerSlot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        storagebase: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+  - uid: 5715
+    components:
+    - type: Transform
+      pos: 53.5,-3.5
+      parent: 2
+    - type: ContainerContainer
+      containers:
+        ReagentDispenser-reagentContainerContainer: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        machine_board: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        machine_parts: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        ReagentDispenser-beaker: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        beakerSlot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        storagebase: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
 - proto: EngiComputerComms
   entities:
   - uid: 4871
@@ -48211,10 +48211,31 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+  - uid: 13988
+    components:
+    - type: Transform
+      pos: 80.5,16.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
   - uid: 15633
     components:
     - type: Transform
       pos: 76.5,18.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 15702
+    components:
+    - type: Transform
+      pos: 84.5,16.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 15703
+    components:
+    - type: Transform
+      pos: 74.5,16.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -82285,6 +82306,18 @@ entities:
     components:
     - type: Transform
       pos: 34.5,-4.5
+      parent: 2
+- proto: SpawnPointShaftMiner
+  entities:
+  - uid: 12402
+    components:
+    - type: Transform
+      pos: 14.5,22.5
+      parent: 2
+  - uid: 12479
+    components:
+    - type: Transform
+      pos: 14.5,23.5
       parent: 2
 - proto: SpawnPointStationEngineer
   entities:
