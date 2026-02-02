@@ -89696,8 +89696,6 @@ entities:
       pos: -22.5,-36.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 23119
     - type: AtmosPipeColor
@@ -89709,8 +89707,6 @@ entities:
       pos: -26.5,-36.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 23119
     - type: AtmosPipeColor
@@ -91212,8 +91208,6 @@ entities:
       pos: -20.5,-27.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 23119
     - type: AtmosPipeColor
@@ -91225,8 +91219,6 @@ entities:
       pos: -22.5,-30.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 23119
     - type: AtmosPipeColor
@@ -91278,8 +91270,6 @@ entities:
       pos: -25.5,-32.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 23119
     - type: AtmosPipeColor
@@ -92723,8 +92713,6 @@ entities:
       pos: -23.5,-36.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 23119
     - type: AtmosPipeColor
@@ -92736,8 +92724,6 @@ entities:
       pos: -27.5,-36.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 23119
     - type: AtmosPipeColor
@@ -92749,8 +92735,6 @@ entities:
       pos: -25.5,-33.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 23119
     - type: AtmosPipeColor
@@ -92762,8 +92746,6 @@ entities:
       pos: -20.5,-28.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 23119
     - type: AtmosPipeLayers
