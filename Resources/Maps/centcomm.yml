@@ -51,8 +51,6 @@ entities:
     components:
     - type: MetaData
       name: Central Command
-    - type: Transform
-      parent: invalid
     - type: MapGrid
       chunks:
         -1,-1:
