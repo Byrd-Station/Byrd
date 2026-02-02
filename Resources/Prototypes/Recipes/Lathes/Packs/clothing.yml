@@ -27,6 +27,7 @@
   - ClothingUniformJumpsuitQMTurtleneck
   - ClothingUniformJumpskirtQMTurtleneck
   - ClothingUniformJumpsuitQMFormal
+  - ClothingUniformJumpsuitShaftMiner # Lavaland Change
   # Omu start: Courier
   - ClothingUniformCourier
   - ClothingUniformCourierLong
@@ -148,6 +149,8 @@
   - ClothingUniformJumpsuitMime
   - ClothingUniformJumpskirtMime
   - ClothingUniformJumpsuitMusician
+  - ClothingUniformJumpsuitReporterGoob # goob change
+  - ClothingUniformJumpskirtReporterGoob # goob change
 
 - type: latheRecipePack
   id: WinterCoats

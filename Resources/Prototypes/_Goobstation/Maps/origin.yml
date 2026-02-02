@@ -91,8 +91,9 @@
             TransitPrisoner: [2, 2] # Omu - Prisoner role
             #supply
             Quartermaster: [ 1, 1 ]
-            SalvageSpecialist: [ 8, 8 ]
+            SalvageSpecialist: [ 3, 3 ]
             #Courier: [ 3, 4 ] # Omu - Courier role
+            #ShaftMiner: [ 3, 3 ] # Omu, needs mapping
             CargoTechnician: [ 5, 5 ]
             #civillian
             Passenger: [ -1, -1 ]
