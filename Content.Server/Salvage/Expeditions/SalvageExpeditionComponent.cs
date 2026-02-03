@@ -20,6 +20,8 @@ using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Content.Shared.Salvage.Expeditions.Modifiers;
 using Content.Shared.Salvage;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Salvage.Expeditions;
 

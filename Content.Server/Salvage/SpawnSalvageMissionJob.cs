@@ -47,6 +47,9 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Server.Shuttles.Components;
+using Content.Shared.Random;
+using Content.Server.Shuttles.Systems;
+using Content.Server.Station.Systems;
 
 namespace Content.Server.Salvage;
 
@@ -60,7 +63,7 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
     private readonly DungeonSystem _dungeon;
     private readonly MetaDataSystem _metaData;
     private readonly SharedMapSystem _map;
-    private readonly ShuttleSystem _shuttle;
+    private readonly ShuttleSystem _shuttle = default;
     private readonly StationSystem _stationSystem;
     private readonly SalvageSystem _salvage;
 
