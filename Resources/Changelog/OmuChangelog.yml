@@ -1875,3 +1875,21 @@ Entries:
       message: Added Dispace Lobby Art
   id: 234
   time: '2026-01-29T09:10:05.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Upstream merge
+  id: 235
+  time: '2026-02-01T14:11:02.0000000+00:00'
+- author: Dishwasher0
+  changes:
+    - type: Add
+      message: Shaft miners are mapped now
+    - type: Tweak
+      message: Marathon now has virology and xenobio
+    - type: Tweak
+      message: Minor map changes
+    - type: Fix
+      message: Lifeline warp
+  id: 236
+  time: '2026-02-04T16:39:33.0000000+00:00'
