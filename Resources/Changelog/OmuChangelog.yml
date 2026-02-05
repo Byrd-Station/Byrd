@@ -1881,3 +1881,21 @@ Entries:
       message: Upstream merge
   id: 235
   time: '2026-02-01T14:11:02.0000000+00:00'
+- author: Dishwasher0
+  changes:
+    - type: Add
+      message: Shaft miners are mapped now
+    - type: Tweak
+      message: Marathon now has virology and xenobio
+    - type: Tweak
+      message: Minor map changes
+    - type: Fix
+      message: Lifeline warp
+  id: 236
+  time: '2026-02-04T16:39:33.0000000+00:00'
+- author: raincally
+  changes:
+    - type: Tweak
+      message: Harpy and Xelthia minimum sizes raised
+  id: 237
+  time: '2026-02-05T16:13:00.0000000+00:00'
