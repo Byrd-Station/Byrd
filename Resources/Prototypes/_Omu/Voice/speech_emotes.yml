@@ -1,6 +1,6 @@
 - type: emote
   id: Gekker
-  name: Gekker
+  name: "chat-emote-name-gekker"
   category: Vocal
   icon: _Goobstation/Interface/Emotes/awoo.png
   whitelist:
@@ -10,7 +10,7 @@
   blacklist:
     components:
     - BorgChassis
-  chatMessages: [awoos.]
+  chatMessages: ["chat-emote-msg-gekker"]
   chatTriggers:
     - Gekker
     - Gekkers
