@@ -1,6 +1,6 @@
 - type: emote
   id: Gekker
-  name: "chat-emote-name-gekker"
+  name: Gekker
   category: Vocal
   icon: _Goobstation/Interface/Emotes/awoo.png
   whitelist:
