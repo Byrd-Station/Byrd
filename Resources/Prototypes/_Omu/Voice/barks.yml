@@ -18,3 +18,10 @@
   speciesWhitelist:
   - IPC
   - Harpy
+
+# Gekker
+
+- type: soundCollection
+  id: VulpkaninGekker
+  files:
+  - /Audio/_Omu/Voice/Barks/Gekker/Gekker1.ogg

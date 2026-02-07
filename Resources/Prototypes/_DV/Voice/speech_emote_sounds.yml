@@ -269,6 +269,10 @@
       collection: VulpkaninHowls
     Awoo:
       collection: VulpkaninHowls
+    Yip:                        #OMU - yips!
+      collection: Yip
+    Gekker:
+      collection: VulpkaninGekker #OMU end
     CatMeow:
       collection: CatMeows # Goobstation - effect standardization
     Gasp:
@@ -319,6 +323,10 @@
       collection: VulpkaninHowls
     Awoo:
       collection: VulpkaninHowls
+    Yip:                        #OMU - yips!
+      collection: Yip
+    Gekker:
+      collection: VulpkaninGekker #OMU end
     CatMeow:
       collection: CatMeows # Goobstation - effect standardization
     Gasp:
