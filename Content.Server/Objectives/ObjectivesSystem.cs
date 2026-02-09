@@ -47,6 +47,7 @@ using Content.Goobstation.Common.CCVar;
 using Content.Goobstation.Common.ServerCurrency;
 using Content.Goobstation.Shared.ManifestListings;
 using Content.Server.Objectives.Commands;
+using Content.Shared._DV.CustomObjectiveSummary;
 using Content.Shared.CCVar;
 using Content.Shared.Prototypes;
 using Content.Shared.Roles.Jobs;
@@ -242,6 +243,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
                                     $"{username:subject} achieved {progress}% of objective {objectiveTitle}");
 
                     agentSummary.Append("- ");
+                    /* DeltaV removal - Removed Greentext
                     if (!_showGreentext)
                     {
                         agentSummary.AppendLine(objectiveTitle);
@@ -292,10 +294,38 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
                             ("progress", progress)
                         ));
                     }
+                    */
+                    // Begin DeltaV Additions - Generic objective
+                    agentSummary.AppendLine(Loc.GetString(
+                        "objectives-objective",
+                        ("objective", objectiveTitle)
+                    ));
                 }
             }
 
             var successRate = totalObjectives > 0 ? (float)completedObjectives / totalObjectives : 0f;
+                        // Begin DeltaV Additions - custom objective response.
+             if (TryComp<CustomObjectiveSummaryComponent>(mindId, out var customComp))
+             {
+                 // We have to spit it like this to make it readable. Yeah, it sucks but for some reason the entire thing
+                 // is just one long string...
+                 var words = customComp.ObjectiveSummary.Split(" ");
+                 var currentLine = "";
+                 foreach (var word in words)
+                 {
+                     currentLine += word + " ";
+
+                     // magic number
+                     if (currentLine.Length <= 50)
+                         continue;
+
+                     agentSummary.AppendLine(Loc.GetString("custom-objective-format", ("line", currentLine)));
+                     currentLine = "";
+                 }
+
+                 agentSummary.AppendLine(Loc.GetString("custom-objective-format", ("line", currentLine)));
+             }
+             // End DeltaV Additions
             agentSummaries.Add((agentSummary.ToString(), successRate, completedObjectives));
         }
 
