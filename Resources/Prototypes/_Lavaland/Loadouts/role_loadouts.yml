@@ -1,11 +1,12 @@
 - type: roleLoadout
   id: JobShaftMiner
   groups:
+  - SalvageSpecialistJumpsuit # Omu
   - GroupTankHarness
   - SalvageSpecialistNeck # TODO add a special cloak specifically for shaft miners
   - SalvageSpecialistBackpack
   - SalvageSpecialistOuterClothing
-  - SalvageSpecialistShoes
+  - CargoShoes
   - Glasses
   - Survival
   - Trinkets

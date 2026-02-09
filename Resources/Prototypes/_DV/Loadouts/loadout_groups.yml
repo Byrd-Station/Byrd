@@ -55,5 +55,7 @@
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - SalvageJumpsuit
-  - SalvageJumpskirt
+  - ShaftMinerJumpsuit
+  - ShaftMinerJumpskirt
+  - SalvageSpecialistJumpsuit
+  - MilitarySalvageJumpsuit

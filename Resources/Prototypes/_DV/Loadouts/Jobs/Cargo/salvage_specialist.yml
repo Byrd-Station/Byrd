@@ -1,12 +1,12 @@
 ﻿# Jumpsuit
 - type: loadout
-  id: SalvageJumpskirt
+  id: ShaftMinerJumpskirt
   equipment:
-    jumpsuit: ClothingUniformJumpskirtSalvageSpecialist
+    jumpsuit: ClothingUniformJumpskirtShaftMiner
   groupBy: "jumpskirt" # Omu
 
 - type: loadout
-  id: SalvageJumpsuit
+  id: ShaftMinerJumpsuit
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
+    jumpsuit: ClothingUniformJumpsuitShaftMiner # omu
   groupBy: "jumpsuit" # Omu

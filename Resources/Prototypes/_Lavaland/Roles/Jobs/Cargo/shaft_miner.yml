@@ -24,7 +24,7 @@
 - type: startingGear
   id: ShaftMinerGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitShaftMiner
+  #  jumpsuit: ClothingUniformJumpsuitShaftMiner # omu, im giving shaft miners the  salv drip and vice versa yay
     id: MinerPDA
     ears: ClothingHeadsetCargo
   storage:

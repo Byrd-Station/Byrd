@@ -90,8 +90,8 @@
 
 - type: entity
   parent: ClothingUniformSkirtBase
-  id: ClothingUniformJumpskirtSalvageSpecialist
-  name: salvage specialist's jumpskirt
+  id: ClothingUniformJumpskirtShaftMiner
+  name: shaft miner's jumpskirt
   description: It's a snappy jumpsuit with a sturdy skirt. It's very dirty.
   components:
   - type: Sprite
