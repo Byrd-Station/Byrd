@@ -1,6 +1,6 @@
 ﻿# Jumpsuit
 - type: loadout
-  id: ShaftMinerJumpskirt
+  id: ShaftMinerJumpskirt # omu, the id is different now
   equipment:
     jumpsuit: ClothingUniformJumpskirtShaftMiner
   groupBy: "jumpskirt" # Omu

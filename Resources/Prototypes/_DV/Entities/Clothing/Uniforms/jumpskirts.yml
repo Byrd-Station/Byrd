@@ -90,8 +90,8 @@
 
 - type: entity
   parent: ClothingUniformSkirtBase
-  id: ClothingUniformJumpskirtShaftMiner
-  name: shaft miner's jumpskirt
+  id: ClothingUniformJumpskirtShaftMiner # Omu they added shaft miner
+  name: shaft miner's jumpskirt # omu
   description: It's a snappy jumpsuit with a sturdy skirt. It's very dirty.
   components:
   - type: Sprite
