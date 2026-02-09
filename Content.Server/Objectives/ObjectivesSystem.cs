@@ -243,7 +243,8 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
                                     $"{username:subject} achieved {progress}% of objective {objectiveTitle}");
 
                     agentSummary.Append("- ");
-                    /* DeltaV removal - Removed Greentext
+                    // Omu: if you're going back to good ol' pinktext after green+pinktext drops,
+                    // start a multiline comment starting here.
                     if (!_showGreentext)
                     {
                         agentSummary.AppendLine(objectiveTitle);
@@ -294,12 +295,14 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
                             ("progress", progress)
                         ));
                     }
-                    */
+                    // Omu: future multiline comment ends here
                     // Begin DeltaV Additions - Generic objective
+                    /* Omu: Green+PinkText
                     agentSummary.AppendLine(Loc.GetString(
                         "objectives-objective",
                         ("objective", objectiveTitle)
                     ));
+                    */
                 }
             }
 
