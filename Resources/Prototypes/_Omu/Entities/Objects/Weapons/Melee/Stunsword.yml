@@ -31,7 +31,7 @@
     attackRate: 1
     damage:
       types:
-        Slash: 20
+        Slash: 12
       woundSeverityMultipliers:
         Slash: 1.5
     soundHit:
@@ -56,7 +56,7 @@
           attackRate: 1
           damage:
             types:
-              Slash: 20
+              Slash: 8
             woundSeverityMultipliers:
               Slash: 1.5
           soundHit:
@@ -110,7 +110,7 @@
           damage:
             types:
               Slash: 5
-              Heat: 15
+              Heat: 10
             woundSeverityMultipliers:
               Slash: 1.5
           angle: 60
