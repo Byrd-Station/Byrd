@@ -1881,3 +1881,43 @@ Entries:
       message: Upstream merge
   id: 235
   time: '2026-02-01T14:11:02.0000000+00:00'
+- author: Dishwasher0
+  changes:
+    - type: Add
+      message: Shaft miners are mapped now
+    - type: Tweak
+      message: Marathon now has virology and xenobio
+    - type: Tweak
+      message: Minor map changes
+    - type: Fix
+      message: Lifeline warp
+  id: 236
+  time: '2026-02-04T16:39:33.0000000+00:00'
+- author: raincally
+  changes:
+    - type: Tweak
+      message: Harpy and Xelthia minimum sizes raised
+  id: 237
+  time: '2026-02-05T16:13:00.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: NY-6 Grognard unpowered damage lowered (20 slash -> 12)
+    - type: Tweak
+      message: >-
+        NY-6 Grognard shock mode damage lowered (15 heat, 5 slash -> 10 heat, 5
+        slash)
+  id: 238
+  time: '2026-02-05T19:12:02.0000000+00:00'
+- author: Dishwasher0
+  changes:
+    - type: Fix
+      message: Delta now has shaft miners
+  id: 239
+  time: '2026-02-05T20:26:52.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: Clown and Mime are no longer exempt to self-antag rules.
+  id: 240
+  time: '2026-02-06T20:57:44.0000000+00:00'

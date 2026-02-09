@@ -4,7 +4,7 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/23/2026 19:53:11
+  time: 02/02/2026 15:49:18
   entityCount: 6910
 maps: []
 grids:
@@ -51,8 +51,6 @@ entities:
     components:
     - type: MetaData
       name: Central Command
-    - type: Transform
-      parent: invalid
     - type: MapGrid
       chunks:
         -1,-1:
@@ -17747,18 +17745,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -2.5,-17.5
       parent: 1668
-- proto: ChemDispenser
-  entities:
-  - uid: 824
-    components:
-    - type: Transform
-      pos: 3.5,-13.5
-      parent: 1668
-  - uid: 1297
-    components:
-    - type: Transform
-      pos: 6.5,-13.5
-      parent: 1668
 - proto: ChemistryBottleOmnizine
   entities:
   - uid: 1887
@@ -22735,6 +22721,18 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -10.452192,-5.449614
+      parent: 1668
+- proto: EnergyChemDispenser
+  entities:
+  - uid: 824
+    components:
+    - type: Transform
+      pos: 3.5,-13.5
+      parent: 1668
+  - uid: 1297
+    components:
+    - type: Transform
+      pos: 6.5,-13.5
       parent: 1668
 - proto: ExecutiveIDCard
   entities:
@@ -41552,6 +41550,15 @@ entities:
       parent: 1668
     - type: WarpPoint
       location: CentCom
+  - uid: 6797
+    components:
+    - type: Transform
+      pos: -21.5,-5.5
+      parent: 1668
+    - type: WarpPoint
+      location: CentComm
+    missingComponents:
+    - WizardTeleportWarpPoint
 - proto: WaterCooler
   entities:
   - uid: 639
@@ -42633,6 +42640,10 @@ entities:
     - type: Transform
       pos: 3.69186,-28.411167
       parent: 1668
+    - type: MeleeWeapon
+      nextAttack: -43.4492906
+    - type: EmitSoundOnCollide
+      nextSound: -43.4492906
 - proto: WizardsGrimoire
   entities:
   - uid: 5863
@@ -42644,13 +42655,13 @@ entities:
       pos: -11.5306635,4.5096507
       parent: 1668
     - type: Supermatter
-      whitelist: {}
       dustSound: !type:SoundPathSpecifier
         path: /Audio/_Goobstation/Wizard/supermatter.ogg
-      delamSound: !type:SoundPathSpecifier
-        path: /Audio/_Goobstation/Supermatter/delamming.ogg
       delamAlarm: !type:SoundPathSpecifier
         path: /Audio/Machines/alarm.ogg
+      delamSound: !type:SoundPathSpecifier
+        path: /Audio/_Goobstation/Supermatter/delamming.ogg
+      whitelist: {}
       gasStorage:
         Oxygen: 0
         Nitrogen: 0
