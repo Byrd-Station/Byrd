@@ -28,7 +28,7 @@
 
 - type: entity
   id: BulletCaselessRifle
-  name: bullet (9.5mm HP) # Goobstation edit
+  name: bullet (9.5mm) # Goobstation edit # Omu edit, no longer HP
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
