@@ -48,6 +48,10 @@
 #      inverted: true
 #      species:
 #      - Felinid #Omu, add back Felinid
+  guides:
+  - BlueshieldOfficer SOP
+  - Command
+  - Succession
   goobcoins: 45
   weight: 20
   startingGear: BlueshieldOfficerGear
@@ -91,7 +95,7 @@
   storage:
     back:
     - Flash
-    - ClothingMaskGasBSO #Omu - Replaced the security gas mask with Blue SWAT from Starlight
+    - ClothingBSOMaskGasSwat
     - CombatKnife
 
 - type: chameleonOutfit
