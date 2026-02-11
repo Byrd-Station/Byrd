@@ -853,6 +853,7 @@
   - !type:BuyerJobCondition
     whitelist:
     - SalvageSpecialist
+    - ShaftMiner # omu, i think goob forgot
 
 - type: listing
   id: UplinkGreyTide
