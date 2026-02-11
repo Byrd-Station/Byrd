@@ -1933,3 +1933,9 @@ Entries:
       message: ViroHuds to NanoMed+ and ViroDrobe
   id: 242
   time: '2026-02-09T21:11:15.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: Removed all forms of holoparasite due to them crashing the server.
+  id: 243
+  time: '2026-02-11T06:46:27.0000000+00:00'
