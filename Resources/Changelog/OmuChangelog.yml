@@ -1921,3 +1921,21 @@ Entries:
       message: Clown and Mime are no longer exempt to self-antag rules.
   id: 240
   time: '2026-02-06T20:57:44.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Ported Breaching charges and the Breaching hammer from EE.
+  id: 241
+  time: '2026-02-09T19:24:46.0000000+00:00'
+- author: maertayn
+  changes:
+    - type: Add
+      message: ViroHuds to NanoMed+ and ViroDrobe
+  id: 242
+  time: '2026-02-09T21:11:15.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: Removed all forms of holoparasite due to them crashing the server.
+  id: 243
+  time: '2026-02-11T06:46:27.0000000+00:00'
