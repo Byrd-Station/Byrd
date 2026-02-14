@@ -8,4 +8,5 @@
     damage:
       types:
         Piercing: 27.5
-    armorPenetration: 0.65
+    ignoreResistances: true # Omu
+    #armorPenetration: 0.65 # Omu, ignore res instead
