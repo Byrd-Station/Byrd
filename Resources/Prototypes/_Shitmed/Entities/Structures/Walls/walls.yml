@@ -54,8 +54,6 @@
         !type:DamageTrigger
         damage: 300
       behaviors:
-      - !type:ChangeConstructionNodeBehavior
-        node: girder
       - !type:PlaySoundBehavior
         sound:
           collection: MetalSlam
@@ -120,8 +118,6 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MetalSlam
-      - !type:ChangeConstructionNodeBehavior
-        node: girder
       - !type:DoActsBehavior
         acts: ["Destruction"]
   # Omu end
