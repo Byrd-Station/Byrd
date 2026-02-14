@@ -89,7 +89,7 @@
   components:
   - type: NpcFactionMember
     factions:
-    - HostileUniversally
+    - AllHostile # Omu, was HostileUniversally
 
 - type: entity
   parent: BallisticTurretHeavyBase

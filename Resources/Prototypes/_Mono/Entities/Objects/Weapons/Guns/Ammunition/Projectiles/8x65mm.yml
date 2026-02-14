@@ -9,4 +9,4 @@
       types:
         Piercing: 27.5
     ignoreResistances: true # Omu
-    #armorPenetration: 0.65 # Omu, ignore res instead
+      #armorPenetration: 0.65 # Omu, ignore res instead
