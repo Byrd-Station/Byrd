@@ -2,5 +2,5 @@
 
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
-  id: ClothingUniformJumpskirtSalvageSpecialist
-  result: ClothingUniformJumpskirtSalvageSpecialist
+  id: ClothingUniformJumpskirtShaftMiner #omu
+  result: ClothingUniformJumpskirtShaftMiner #omu
