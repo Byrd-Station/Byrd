@@ -20,7 +20,7 @@
   - type: Clothing
     sprite: _Omu/Clothing/Neck/Mantle/CCOmmantle.rsi
   - type: Emag
-    emagType: Access
+    emagType: All
     emagSound: /Audio/_Goobstation/Items/card_swipe.ogg
     successText: executive-card-success
   - type: Access
