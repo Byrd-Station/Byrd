@@ -16,7 +16,7 @@
     integrityThresholds:
       Normal: 28
       Damaged: 16
-      Destroyed: 0  
+      Destroyed: 0
     onAdd:
     - type: BreathingImmunity
 
@@ -31,35 +31,28 @@
     integrityThresholds:
       Normal: 21
       Damaged: 12
-      Destroyed: 0  
+      Destroyed: 0
     onAdd:
     - type: PressureImmunity
 
 - type: entity
   parent: OrganAnimalHeart
+  parent: [ OrganAnimalHeart, BaseCargoContraband ]
   id: OrganGoliathHeart
   name: goliath heart
   components:
-  - type: Organ
-    onAdd:
-    - type: GoliathTentacle
-  - type: Sprite
-    sprite: _Shitmed/Mobs/Species/Space/Goliath/organs.rsi
     state: heart-on
 
 - type: entity
   parent: OrganAnimalLungs
+  parent: [ OrganAnimalLungs, BaseMajorContraband ]
   id: OrganDragonLungs
   name: dragon lungs
   components:
-  - type: Organ
-    onAdd:
-    - type: ActionGun
-      action: ActionDragonsBreath
       gunProto: DragonsBreathGun
 
 - type: entity
-  parent: OrganHumanEyes
+  parent: [ OrganHumanEyes, BaseMajorContraband ]
   id: OrganLaserEyes
   name: laser raptor eyes
   components:
