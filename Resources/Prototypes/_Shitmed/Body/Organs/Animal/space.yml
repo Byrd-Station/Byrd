@@ -36,7 +36,7 @@
     - type: PressureImmunity
 
 - type: entity
-  parent: [ OrganAnimalHeart, BaseCargoContraband ]
+  parent: [ OrganAnimalHeart, BaseCargoContraband ] # Omu, add cargo contra
   id: OrganGoliathHeart
   name: goliath heart
   components:
@@ -48,7 +48,7 @@
     state: heart-on
 
 - type: entity
-  parent: [ OrganAnimalLungs, BaseMajorContraband ]
+  parent: [ OrganAnimalLungs, BaseMajorContraband ] # Omu, add major contra
   id: OrganDragonLungs
   name: dragon lungs
   components:
@@ -59,7 +59,7 @@
         gunProto: DragonsBreathGun
 
 - type: entity
-  parent: [ OrganHumanEyes, BaseMajorContraband ]
+  parent: [ OrganHumanEyes, BaseMajorContraband ] # Omu, add major contra
   id: OrganLaserEyes
   name: laser raptor eyes
   components:
