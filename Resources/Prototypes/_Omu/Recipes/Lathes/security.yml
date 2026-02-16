@@ -75,3 +75,33 @@
   result: MagazineBoxCaselessRifleUranium
   materials:
     Uranium: 720
+
+- type: latheRecipe
+  id: CartridgeArith
+  result: CartridgeArith
+  completetime: 1
+  materials:
+    Glass: 100
+    Plasma: 100
+
+- type: latheRecipe
+  id: CartridgeDylo
+  result: CartridgeDylo
+  completetime: 1
+  materials:
+    Glass: 100
+    Plasma: 100
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineMagnumLeverRifleEmpty
+  result: MagazineMagnumLeverRifleEmpty
+  materials:
+    Steel: 25
+
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazineMagnumLeverRifle
+  result: MagazineMagnumLeverRifle
+  materials:
+    Steel: 185
