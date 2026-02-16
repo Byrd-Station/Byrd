@@ -52,7 +52,11 @@
   id: OrganDragonLungs
   name: dragon lungs
   components:
-      gunProto: DragonsBreathGun
+    - type: Organ
+      onAdd:
+      - type: ActionGun
+        action: ActionDragonsBreath
+        gunProto: DragonsBreathGun
 
 - type: entity
   parent: [ OrganHumanEyes, BaseMajorContraband ]
