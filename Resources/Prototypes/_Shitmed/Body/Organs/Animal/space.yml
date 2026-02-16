@@ -41,6 +41,11 @@
   id: OrganGoliathHeart
   name: goliath heart
   components:
+  - type: Organ
+    onAdd:
+    - type: GoliathTentacle
+  - type: Sprite
+    sprite: _Shitmed/Mobs/Species/Space/Goliath/organs.rsi
     state: heart-on
 
 - type: entity
