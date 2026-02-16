@@ -36,7 +36,6 @@
     - type: PressureImmunity
 
 - type: entity
-  parent: OrganAnimalHeart
   parent: [ OrganAnimalHeart, BaseCargoContraband ]
   id: OrganGoliathHeart
   name: goliath heart
@@ -49,7 +48,6 @@
     state: heart-on
 
 - type: entity
-  parent: OrganAnimalLungs
   parent: [ OrganAnimalLungs, BaseMajorContraband ]
   id: OrganDragonLungs
   name: dragon lungs
