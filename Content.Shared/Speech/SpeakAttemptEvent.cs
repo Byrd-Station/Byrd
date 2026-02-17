@@ -16,6 +16,6 @@ namespace Content.Shared.Speech
         }
 
         public EntityUid Uid { get; }
-        public bool OnlyWhisper = false;
+        public bool OnlyWhisper = false;    //Funky
     }
 }
