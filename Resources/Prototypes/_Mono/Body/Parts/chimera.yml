@@ -22,7 +22,7 @@
     - Trash
 
 - type: entity
-  parent: [ PartSkeletonChimeraBase, BaseTorsoInorganic ]
+  parent: [ PartSkeletonChimeraBase, BaseChestInorganic ]
   id: TorsoSkeletonChimera
   name: chimera endoskeleton torso
 
