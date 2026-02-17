@@ -164,6 +164,7 @@ public sealed partial class MobThresholdSystem : EntitySystem
         if (!Resolve(target, ref thresholdComponent, false)) // Goobstation
             return false;
 
+        //Funky end
         if (mobState == MobState.Critical && !thresholdComponent.Thresholds.ContainsValue(mobState) &&
             thresholdComponent.Thresholds.ContainsValue(MobState.SoftCritical) && thresholdComponent.Thresholds.ContainsValue(MobState.HardCritical))
         {
@@ -190,7 +191,8 @@ public sealed partial class MobThresholdSystem : EntitySystem
 
         return false;
     }
-
+        //Funky end
+        
     /// <summary>
     /// Try to get the a percentage of the Damage Threshold for the appropriate state if it exists
     /// </summary>
