@@ -3,7 +3,6 @@
 - type: entity
   parent:
   - MobNonHumanHostileBase
-  - MobStepTriggerImmune
   id: MonoBaseMobLetoferol
   name: chimera fleshbeast
   description: A horribly mutated whatever-this-once-was.
