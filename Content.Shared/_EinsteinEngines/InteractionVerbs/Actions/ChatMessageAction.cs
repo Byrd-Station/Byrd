@@ -44,7 +44,7 @@ public sealed partial class ChatMessageAction : InteractionAction
 
     public override bool CanPerform(InteractionArgs args, InteractionVerbPrototype proto, bool beforeDelay, VerbDependencies deps)
     {
-        return deps.EntMan.System<ActionBlockerSystem>().CanSpeak(GetSpeaker(args), out _);
+        return deps.EntMan.System<ActionBlockerSystem>().CanSpeak(GetSpeaker(args), out _);        //Funky port - add out_
     }
 
     public override bool Perform(InteractionArgs args, InteractionVerbPrototype proto, VerbDependencies deps)
