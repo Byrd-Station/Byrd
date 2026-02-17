@@ -170,11 +170,11 @@ namespace Content.Server.NPC.Systems
             switch (args.NewMobState)
             {
                 case MobState.Alive:
-                case MobState.SoftCritical:
+                case MobState.SoftCritical:        //Funky port
                     WakeNPC(uid, component);
                     break;
                 case MobState.Critical:
-                case MobState.HardCritical:
+                case MobState.HardCritical:        /Funky port
                 case MobState.Dead:
                     SleepNPC(uid, component);
                     break;
