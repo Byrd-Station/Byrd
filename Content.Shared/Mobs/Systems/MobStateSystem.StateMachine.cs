@@ -126,9 +126,10 @@ public partial class MobStateSystem
     {
         var oldState = component.CurrentState;
         //make sure we are allowed to enter the new state
-        if (oldState == newState)
+        if (oldState == newState)        //Funky - removed || !component.AllowedStates.Contains(newState)
             return;
 
+        //Funky start
         if (!component.AllowedStates.Contains(newState))
         {
             if (newState != MobState.Critical)
@@ -151,6 +152,7 @@ public partial class MobStateSystem
                 }
             }
         }
+        //Funky end
 
         OnExitState(target, component, oldState);
         component.CurrentState = newState;
