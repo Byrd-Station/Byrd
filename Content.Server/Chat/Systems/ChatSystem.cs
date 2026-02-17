@@ -357,7 +357,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         // so we set this here
         // todo free me from chat code
 
-        // check if the entity is forced to whisper and convert to local whisper if yes
+        // Funky - check if the entity is forced to whisper and convert to local whisper if yes
         if (!ignoreActionBlocker && _actionBlocker.CanSpeak(source, out var onlyWhisper))
         {
             if (desiredType == InGameICChatType.Speak && onlyWhisper)
@@ -365,7 +365,8 @@ public sealed partial class ChatSystem : SharedChatSystem
                 desiredType = InGameICChatType.Whisper;
             }
         }
-
+        // Funky end
+        
         if (player != null)
         {
             _chatManager.EnsurePlayer(player.UserId).AddEntity(GetNetEntity(source));
@@ -690,7 +691,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         Color? colorOverride = null // Goobstation
         )
     {
-        if (!_actionBlocker.CanSpeak(source, out var onlyWhisper) && !ignoreActionBlocker)
+        if (!_actionBlocker.CanSpeak(source, out var onlyWhisper) && !ignoreActionBlocker)     //Funky
             return;
 
         if (onlyWhisper)
@@ -801,7 +802,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         Color? colorOverride = null // Goobstation
         )
     {
-        if (!_actionBlocker.CanSpeak(source, out var onlyWhisper) && !ignoreActionBlocker)
+        if (!_actionBlocker.CanSpeak(source, out var onlyWhisper) && !ignoreActionBlocker)    //Funky - adds onlywhisper
             return;
 
         // Goob edit start
