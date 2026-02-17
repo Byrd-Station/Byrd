@@ -205,8 +205,8 @@ public sealed class DamageOverlayUiController : UIController
                         break;
                     }
                 case MobState.SoftCritical:
-                case MobState.HardCritical:
-                case MobState.Critical:
+                case MobState.HardCritical:    //Funky port
+                case MobState.Critical:        //Funky port
                     {
                         _overlay.CritLevel = FixedPoint2.Min(1f,
                             (consciousness.Threshold - consciousness.Consciousness) / consciousness.Threshold)
