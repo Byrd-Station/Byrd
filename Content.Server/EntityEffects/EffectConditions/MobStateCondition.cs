@@ -24,11 +24,13 @@ public sealed partial class MobStateCondition : EntityEffectCondition
             if (mobState.CurrentState == Mobstate)
                 return true;
 
+            //Funky start
             if (Mobstate == MobState.Critical &&
                 (mobState.CurrentState == MobState.SoftCritical || mobState.CurrentState == MobState.HardCritical))
             {
                 return true;
             }
+            //Funky end
         }
 
         return false;
