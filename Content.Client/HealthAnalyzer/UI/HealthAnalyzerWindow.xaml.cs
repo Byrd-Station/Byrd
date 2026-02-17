@@ -485,7 +485,7 @@ namespace Content.Client.HealthAnalyzer.UI
             return mobState switch
             {
                 MobState.Alive => Loc.GetString("health-analyzer-window-entity-alive-text"),
-                MobState.Critical or MobState.SoftCritical or MobState.HardCritical => Loc.GetString("health-analyzer-window-entity-critical-text"),
+                MobState.Critical or MobState.SoftCritical or MobState.HardCritical => Loc.GetString("health-analyzer-window-entity-critical-text"), //Funky
                 MobState.Dead => Loc.GetString("health-analyzer-window-entity-dead-text"),
                 _ => Loc.GetString("health-analyzer-window-entity-unknown-text"),
             };
