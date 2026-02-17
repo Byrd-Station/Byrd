@@ -34,12 +34,12 @@
       collection: FelinidGrowls # Omu, replace Felionoid sounds.
     Trill:
       collection: Trill # Omu, replace Felionoid sounds.
-#    Scree:
-#      collection: ResomiScrees
-#    Call: # Omu, we don't have this
-#      collection: ResomiCalls
-#    Squawk:
-#      collection: ResomiSquawk
+    Scree:
+      collection: ResomiScrees
+    Call:
+      collection: ResomiCalls
+    Squawk:
+      collection: ResomiSquawk
     Warble: # Omu start
       collection: Warble
     Wurble:
@@ -49,7 +49,7 @@
     Honk:
       collection: BikeHorn
     Whistle:
-      collection: Whistles #path: /Audio/Voice/Resomi/resomi_whistle.ogg Omu, we don't have this.
+      path: /Audio/_Starlight/Voice/Resomi/resomi_whistle.ogg
     Chirp:
       collection: ResomiChirp
     Gulp: # Omu
@@ -90,12 +90,12 @@
       collection: FelinidGrowls # Omu, replace Felionoid sounds.
     Trill:
       collection: Trill # Omu, replace Felionoid sounds.
-#    Scree:
-#      collection: ResomiScrees
-#    Call: # Omu, we don't have this
-#      collection: ResomiCalls
-#    Squawk:
-#      collection: ResomiSquawk
+    Scree:
+      collection: ResomiScrees
+    Call:
+      collection: ResomiCalls
+    Squawk:
+      collection: ResomiSquawk
     Warble: # Omu start
       collection: Warble
     Wurble:
@@ -105,7 +105,7 @@
     Honk:
       collection: BikeHorn
     Whistle:
-      collection: Whistles #path: /Audio/Voice/Resomi/resomi_whistle.ogg Omu, we don't have this.
+      path: /Audio/_Starlight/Voice/Resomi/resomi_whistle.ogg
     Chirp:
       collection: ResomiChirp
     Gulp: # Omu

@@ -60,7 +60,7 @@
     Crying:
       collection: ResomiCry # Omu
     Whistle:
-      collection: Whistles
+      path: /Audio/_Starlight/Voice/Resomi/resomi_whistle.ogg # Omu, collection: Whistles
     Weh:
       collection: Weh
     Trill:
@@ -77,6 +77,12 @@
       collection: MaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Scree:
+      collection: ResomiScrees
+    Call:
+      collection: ResomiCalls
+    Squawk:
+      collection: ResomiSquawk
 
 - type: emoteSounds
   id: FemaleResomiEmote  # Omu, rename to Resomi
@@ -110,7 +116,7 @@
     Crying:
       collection: ResomiCry # Omu
     Whistle:
-      collection: Whistles
+      path: /Audio/_Starlight/Voice/Resomi/resomi_whistle.ogg # Omu, collection: Whistles
     Weh:
       collection: Weh
     Trill:
@@ -127,3 +133,9 @@
       collection: FemaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    Scree:
+      collection: ResomiScrees
+    Call:
+      collection: ResomiCalls
+    Squawk:
+      collection: ResomiSquawk
