@@ -179,7 +179,7 @@
     - type: StatusIcon # Goobstation
       bounds: -0.5,-0.5,0.5,0.5
     - type: HasJobIcons # Goobstation
-    - type: Bloodstream
+    - type: Bloodstream # omu
       damageBleedModifiers: BloodlossHuman
       bloodReagent: Oil
       bleedReductionAmount: 0
@@ -193,6 +193,7 @@
       bloodlossHealDamage:
         types:
           Heat: 0
+      bloodRefreshAmount: 0
     - type: Flammable
       fireSpread: true
       canResistFire: true

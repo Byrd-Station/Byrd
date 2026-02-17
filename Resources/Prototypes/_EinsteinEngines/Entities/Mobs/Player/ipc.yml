@@ -114,7 +114,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      115: Dead
+      100: Dead
     stateAlertDict:
       Alive: BorgHealth
       Dead: BorgDead
