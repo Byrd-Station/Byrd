@@ -177,7 +177,7 @@ namespace Content.Shared.Cuffs
         [Dependency] private readonly UseDelaySystem _delay = default!;
         [Dependency] private readonly SharedHulkSystem _hulk = default!;
         [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
-        [Dependency] private readonly MobStateSystem _mobState = default!; // Added dependency
+        [Dependency] private readonly MobStateSystem _mobState = default!; // Funky - Added dependency
 
         public override void Initialize()
         {
@@ -372,14 +372,14 @@ namespace Content.Shared.Cuffs
             if (args.User == null || !Exists(args.User.Value))
                 return;
 
-            if (args.User.Value == uid)
+            if (args.User.Value == uid)        //Funky start
             {
                 // If they are cuffed or in soft/hard critical, they cannot stop the pull
                 if (!component.CanStillInteract || _mobState.IsCritical(uid))
                 {
                     args.Cancelled = true;
                 }
-            }
+            }                                   //Funky end
         }
 
         private void OnRemoveCuffsAlert(Entity<CuffableComponent> ent, ref RemoveCuffsAlertEvent args)
