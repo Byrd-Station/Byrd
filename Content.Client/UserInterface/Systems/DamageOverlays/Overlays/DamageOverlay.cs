@@ -198,8 +198,8 @@ public sealed class DamageOverlay : Overlay
             _oldPainLevel = 0f;
         }
         // Goobstation end
-
-        level = State != MobState.Critical && State != MobState.HardCritical ? _oldOxygenLevel : 1f;
+        
+        level = State != MobState.Critical && State != MobState.HardCritical ? _oldOxygenLevel : 1f; //Funky + Omu - swaps soft crit for normal crit
 
         if (level > 0f)
         {
