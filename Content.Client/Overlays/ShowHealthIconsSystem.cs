@@ -160,6 +160,7 @@ public sealed class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealthIconsCo
             return Array.Empty<HealthIconPrototype>();
         }
 
+        //Funky
         var result = new List<HealthIconPrototype>();
 
         // Here you could check health status, diseases, mind status, etc. and pick a good icon, or multiple depending on whatever.
@@ -193,7 +194,8 @@ public sealed class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealthIconsCo
 
         return result;
     }
-
+    //Funky End
+    
     // Goobstation
     protected override void OnRefreshEquipmentHud(Entity<ShowHealthIconsComponent> ent,
         ref HeldRelayedEvent<RefreshEquipmentHudEvent<ShowHealthIconsComponent>> args)
