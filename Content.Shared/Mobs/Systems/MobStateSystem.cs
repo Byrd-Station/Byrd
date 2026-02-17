@@ -80,7 +80,7 @@ public partial class MobStateSystem : EntitySystem
     {
         if (!_mobStateQuery.Resolve(target, ref component, false))
             return false;
-        return component.CurrentState == MobState.Critical || component.CurrentState == MobState.SoftCritical || component.CurrentState == MobState.HardCritical;
+        return component.CurrentState == MobState.Critical || component.CurrentState == MobState.SoftCritical || component.CurrentState == MobState.HardCritical;    //Funky - adds soft and hard crit
     }
 
     /// <summary>
@@ -106,16 +106,18 @@ public partial class MobStateSystem : EntitySystem
     {
         if (!_mobStateQuery.Resolve(target, ref component, false))
             return false;
-        return component.CurrentState is MobState.Critical or MobState.SoftCritical or MobState.HardCritical or MobState.Dead;
+        return component.CurrentState is MobState.Critical or MobState.SoftCritical or MobState.HardCritical or MobState.Dead;        //Funky
     }
-
+    
+    //Funky start
     public bool IsImmobile(EntityUid target, MobStateComponent? component = null)
     {
         if (!_mobStateQuery.Resolve(target, ref component, false))
             return false;
         return component.CurrentState is MobState.Critical or MobState.HardCritical or MobState.Dead;
     }
-
+    //Funky end
+    
     /// <summary>
     ///  Check if a Mob is in an Invalid state
     /// </summary>
