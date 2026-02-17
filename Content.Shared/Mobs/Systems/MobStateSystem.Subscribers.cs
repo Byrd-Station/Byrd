@@ -141,7 +141,7 @@ public partial class MobStateSystem
         SubscribeLocalEvent<MobStateComponent, CombatModeShouldHandInteractEvent>(OnCombatModeShouldHandInteract);
         SubscribeLocalEvent<MobStateComponent, AttemptPacifiedAttackEvent>(OnAttemptPacifiedAttack);
         SubscribeLocalEvent<MobStateComponent, DamageModifyEvent>(OnDamageModify);
-        SubscribeLocalEvent<MobStateComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovespeed);
+        SubscribeLocalEvent<MobStateComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovespeed);    //Funky
 
         SubscribeLocalEvent<MobStateComponent, UnbuckleAttemptEvent>(OnUnbuckleAttempt);
     }
@@ -160,8 +160,8 @@ public partial class MobStateSystem
         {
             case MobState.Dead:
             case MobState.Critical:
-            case MobState.SoftCritical:
-            case MobState.HardCritical:
+            case MobState.SoftCritical:        //Funky
+            case MobState.HardCritical:        //Funky
                 args.Cancelled = true;
                 break;
         }
@@ -213,8 +213,8 @@ public partial class MobStateSystem
                 _appearance.SetData(target, MobStateVisuals.State, MobState.Alive);
                 break;
             case MobState.Critical:
-            case MobState.SoftCritical:
-            case MobState.HardCritical:
+            case MobState.SoftCritical:    //Funky
+            case MobState.HardCritical:    //Funky
                 _standing.Down(target);
                 RaiseLocalEvent(target, ref ev); // Goobstation
                 _appearance.SetData(target, MobStateVisuals.State, MobState.Critical);
@@ -235,6 +235,7 @@ public partial class MobStateSystem
 
     #region Event Subscribers
 
+    //Funky start
     private void OnRefreshMovespeed(EntityUid uid, MobStateComponent component, RefreshMovementSpeedModifiersEvent args)
     {
         if (component.CurrentState == MobState.SoftCritical)
@@ -243,6 +244,7 @@ public partial class MobStateSystem
             args.ModifySpeed(0.4f, 0.4f);
         }
     }
+    //Funky end
 
     private void OnSleepAttempt(EntityUid target, MobStateComponent component, ref TryingToSleepEvent args)
     {
@@ -267,7 +269,7 @@ public partial class MobStateSystem
             return;
         }
 
-        if (component.CurrentState == MobState.SoftCritical)
+        if (component.CurrentState == MobState.SoftCritical)        //Funky
             args.OnlyWhisper = true;
 
         CheckAct(uid, component, args);
@@ -279,7 +281,7 @@ public partial class MobStateSystem
         {
             case MobState.Dead:
             case MobState.Critical:
-            case MobState.HardCritical:
+            case MobState.HardCritical:        //Funky
                 args.Cancel();
                 break;
         }
