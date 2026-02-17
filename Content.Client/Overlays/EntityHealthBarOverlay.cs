@@ -239,7 +239,7 @@ public sealed partial class EntityHealthBarOverlay : Overlay
 
         if (_mobStateSystem.IsCritical(uid, component))
         {
-            if (!_mobThresholdSystem.TryGetThresholdForState(uid, MobState.SoftCritical, out var critThreshold, thresholds) ||
+            if (!_mobThresholdSystem.TryGetThresholdForState(uid, MobState.SoftCritical, out var critThreshold, thresholds) ||        //Funky
                 !_mobThresholdSystem.TryGetThresholdForState(uid, MobState.Dead, out var deadThreshold, thresholds))
             {
                 return (1, true);
@@ -252,7 +252,7 @@ public sealed partial class EntityHealthBarOverlay : Overlay
 
         return (0, true);
     }
-
+    //Funky
     public Color GetProgressColor(float progress, bool crit)
     {
         if (crit)
