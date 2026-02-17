@@ -170,10 +170,10 @@ public sealed partial class EntityHealthBarOverlay : Overlay
             if (damageableComponent.DamageContainerID == null || !DamageContainers.Contains(damageableComponent.DamageContainerID))
                 continue;
 
-            // we use the status icon component bounds if specified otherwise use sprite
+            // Funky - we use the status icon component bounds if specified otherwise use sprite   
             var bounds = _entManager.GetComponentOrNull<StatusIconComponent>(uid)?.Bounds ?? _spriteSystem.GetLocalBounds((uid, spriteComponent));
             var worldPos = _transform.GetWorldPosition(xform, xformQuery);
-
+            // Funky End
             if (!bounds.Translated(worldPos).Intersects(args.WorldAABB))
                 continue;
 
@@ -200,6 +200,7 @@ public sealed partial class EntityHealthBarOverlay : Overlay
 
             var xProgress = (endX - startX) * deathProgress.ratio + startX;
 
+            //Funky start
             var boxBackground = new Box2(new Vector2(startX, 0f) / EyeManager.PixelsPerMeter, new Vector2(endX, 3f) / EyeManager.PixelsPerMeter);
             boxBackground = boxBackground.Translated(position);
             handle.DrawRect(boxBackground, Black.WithAlpha(192));
@@ -211,6 +212,7 @@ public sealed partial class EntityHealthBarOverlay : Overlay
             var pixelDarken = new Box2(new Vector2(startX, 2f) / EyeManager.PixelsPerMeter, new Vector2(xProgress, 3f) / EyeManager.PixelsPerMeter);
             pixelDarken = pixelDarken.Translated(position);
             handle.DrawRect(pixelDarken, Black.WithAlpha(128));
+            //Funky End
         }
 
         handle.SetTransform(Matrix3x2.Identity);
