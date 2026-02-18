@@ -4,7 +4,7 @@
   root: torso
   slots:
     torso:
-      part: TorsoSkeleton
+      part: TorsoSkeletonChimera
       organs:
         heart: OrganChimeraHeart
         lungs: OrganChimeraLungs
@@ -24,7 +24,7 @@
         brain: OrganChimeraBrain
         eyes: OrganHumanEyes
     torso:
-      part: TorsoSkeleton
+      part: TorsoSkeletonChimera
       connections:
       - right arm
       - left arm

@@ -33,7 +33,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      200: Dead
+      150: Dead
   - type: DamageStateVisuals
     states:
       Dead:
@@ -64,7 +64,7 @@
     damage:
       types:
         Blunt: 12
-        Slash: 20
+        Slash: 15
         Structural: 50
   - type: ReplacementAccent
     accent: genericAggressive

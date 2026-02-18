@@ -74,6 +74,7 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+    - Humanoid
   - type: Hands
     handDisplacement:
       sizeMaps:
