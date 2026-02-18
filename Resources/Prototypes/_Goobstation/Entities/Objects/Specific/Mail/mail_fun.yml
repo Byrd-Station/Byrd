@@ -264,9 +264,9 @@
 #      - id: MobMousePlague # Omu, disable plague mice.
 #        orGroup: Critter
 #        prob: 0.05
-      - id: MobMouseCancer
-        orGroup: Critter
-        prob: 0.01 # Rare
+#      - id: MobMouseCancer # Omu, disable plague mice.
+#        orGroup: Critter
+#        prob: 0.01 # Rare
 
 - type: entity
   parent: BaseMail
