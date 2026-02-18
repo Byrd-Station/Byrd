@@ -15,10 +15,16 @@ public sealed partial class RevertPolymorph : EntityEffect
     [DataField("prototype", customTypeSerializer:typeof(PrototypeIdSerializer<PolymorphPrototype>))]
     public string PolymorphPrototype { get; set; }
 
-    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
-        => Loc.GetString("reagent-effect-guidebook-revert-polymorph",
+    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)         //Omu Edit to make it work
+    {
+        var entProto = prototype.Index<PolymorphPrototype>(PolymorphPrototype).Configuration.Entity;
+        if (entProto == null)
+            return null;
+        var ent = prototype.Index<EntityPrototype>(entProto.Value);
+        return Loc.GetString("reagent-effect-guidebook-revert-polymorph",
             ("chance", Probability), ("entityname",
-                prototype.Index<EntityPrototype>(prototype.Index<PolymorphPrototype>(PolymorphPrototype).Configuration.Entity).Name));
+                prototype.Index<EntityPrototype>(ent).Name));
+    }
 
     public override void Effect(EntityEffectBaseArgs args)
     {
