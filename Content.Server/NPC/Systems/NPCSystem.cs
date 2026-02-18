@@ -174,7 +174,7 @@ namespace Content.Server.NPC.Systems
                     WakeNPC(uid, component);
                     break;
                 case MobState.Critical:
-                case MobState.HardCritical:        /Funky port
+                case MobState.HardCritical:        //Funky port
                 case MobState.Dead:
                     SleepNPC(uid, component);
                     break;
