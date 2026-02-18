@@ -23,12 +23,12 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      500: Dead
+      150: Dead
     allowRevives: true
   - type: SlowOnDamage
     speedModifierThresholds:
-      350: 0.85
-      425: 0.75
+      50: 0.85
+      125: 0.75
   - type: MeleeWeapon
     autoAttack: true
     attackRate: 1.2
