@@ -216,10 +216,10 @@
     - MobMouse
     - MobMouse1
     - MobMouse2
-    rareChance: 0.12
-    offset: 0
-    rarePrototypes:
-    - MobMousePlague
+#    rareChance: 0.12
+#    offset: 0
+#    rarePrototypes:
+#    - MobMousePlague # Omu, kill plague mice.
 
 - type: entity
   parent: MarkerBase
