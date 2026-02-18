@@ -3,11 +3,6 @@
 
 Chimeras are the result of a bioweapon chemical known as [bold][color=#a84387]Letoferol[/color][/bold].
 
-  <Box>
-    <GuideEntityEmbed Entity="SyringeLetoferol"/>
-    <GuideEntityEmbed Entity="MobLetoferolHorror"/>
-  </Box>
-
 There are 2 types of Letoferol:
  - There is [italic][color=#ebba34]natural Letoferol[/color][/italic], which is the pure form made in Chimeras. It is their bloodstream, and it is injected with their spike and melee attacks.
  - However, to get your infection in the first place, there is of course the base lab-grown [italic][color=#a84387]Letoferol[/color][/italic], which is a weaker kind, but still dangerous.
@@ -45,8 +40,6 @@ Both types of Letoferol will not turn people into Chimera outside of critical co
   - Your [color=yellow]bone spike[/color] ability will fire a spread of 7 letoferol-tipped bone spikes. It may not be enough to infect, but it'll still do decent damage to your opponents from the effects of Natural Letoferol in a bloodstream.
   - Chimeras also have a few slots for storage, and have access to an internal 5x5 storage.
   - Unarmed slashing will inject 2.5u of Natural Letoferal to someone. You can do a lot of difficult to heal, lasting damage if you can stack enough Letoferal inside someone, and turn them if they fall into critical condition with enough still inside. However, both of the above cures also purge Letoferal from inside the bloodstream.
-
-  [bold][color=red]Chimeras are still affected by [textlink="faction base rules" link="MonolithRuleConflictFourPortStriking"] and [textlink="safezone rules" link="MonolithRuleRoleplaySevenSafeZones"][/color][/bold]
 
 ## Organs
 
