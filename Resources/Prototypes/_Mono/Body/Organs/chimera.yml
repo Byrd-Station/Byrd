@@ -37,14 +37,12 @@
   - type: Organ
     slotId: stomach
   - type: Metabolizer
-    maxReagents: 4
     metabolizerTypes: [ Chimera ]
     removeEmpty: true
     groups:
     - id: Food
     - id: Drink
     - id: Medicine
-    - id: Cryogenic
     - id: Poison
     - id: Narcotic
     - id: Alcohol
@@ -87,7 +85,6 @@
   description: "Takes the location of the liver in the body, and repurposes them to be used as a gland for growing bone spikes instead."
   components:
   - type: Metabolizer
-    maxReagents: 2
     metabolizerTypes: [Chimera]
     removeEmpty: true
   - type: Sprite

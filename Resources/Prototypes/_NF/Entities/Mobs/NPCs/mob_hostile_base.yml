@@ -246,7 +246,6 @@
     speedModifier: 3 # 1.5->3 Mono
     qualities:
       - Prying
-    hideQualities: true
   - type: Prying
     pryPowered: true
     force: true
