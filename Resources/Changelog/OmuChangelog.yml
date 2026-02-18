@@ -2018,3 +2018,21 @@ Entries:
       message: Salvage Mantle-beast Mantle on Shaft-Miner
   id: 252
   time: '2026-02-17T08:51:47.0000000+00:00'
+- author: nnif1
+  changes:
+    - type: Remove
+      message: Present anoms
+  id: 253
+  time: '2026-02-17T19:35:51.0000000+00:00'
+- author: PickelSilly
+  changes:
+    - type: Tweak
+      message: T-8 "Consistency" is silver now instead of red
+  id: 254
+  time: '2026-02-18T07:36:51.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Add
+      message: Revs are back. Gulp.
+  id: 255
+  time: '2026-02-18T20:22:04.0000000+00:00'
