@@ -177,6 +177,8 @@
       lowPressureMultiplier: 1000
     - type: ExplosionResistance
       damageCoefficient: 0.45
+    - type: StaminaResistance
+      damageCoefficient: 0.6 # Omu - Matches the BSO armor and hardsuit.
 
 - type: entity
   parent: ClothingModsuitBootsStandard
