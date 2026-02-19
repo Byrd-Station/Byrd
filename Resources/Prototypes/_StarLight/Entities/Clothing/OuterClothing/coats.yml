@@ -21,7 +21,7 @@
 - type: entity
   parent: [ClothingOuterStorageFoldableBase, AllowSuitStorageClothing, BaseSecurityContraband]
   id: ClothingOuterCoatLabBrigmedic
-  name: brigmedic's reminisced overcoat
+  name: corpsman's reminisced overcoat
   description: A labcoat from reminisced, peaceful days. It's been reinforced several times over.
   components:
   - type: Sprite
@@ -42,7 +42,7 @@
 - type: entity
   parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatLabBrigmedic]
   id: ClothingOuterCoatLabBrigmedicOpened
-  name: brigmedic's reminisced overcoat
+  name: corpsman's reminisced overcoat
 
 - type: entity
   parent: [ClothingOuterStorageFoldableBase, AllowSuitStorageClothing, BaseSecurityContraband]
