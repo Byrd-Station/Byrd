@@ -64,7 +64,7 @@
     damage:
       types:
         Blunt: 12
-        Slash: 15
+        Slash: 10
         Structural: 50
   - type: ReplacementAccent
     accent: genericAggressive
@@ -84,7 +84,7 @@
     solution: melee
     transferAmount: 1.5
   - type: MovementSpeedModifier
-    baseWalkSpeed : 3.5
+    baseWalkSpeed : 2.5
     baseSprintSpeed : 4.25
   - type: StatusEffects
     allowed:
