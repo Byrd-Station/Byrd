@@ -19,6 +19,7 @@
         - DoorBumpOpener
         - AnomalyHost
         - Avali
+        - Humanoid
     - type: Absorbable
     - type: HumanoidAppearance
       species: Avali
