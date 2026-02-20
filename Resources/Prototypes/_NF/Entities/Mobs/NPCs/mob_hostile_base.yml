@@ -103,7 +103,6 @@
   - NFMobAtmos
   - MobBloodstream
   - MobFlammable
-  - MobEnhancedMovement
   - MobPrying
   - MobHumanoidHostileAIComplex
   id: MobNonHumanHostileBase
