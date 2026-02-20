@@ -215,14 +215,14 @@
   - type: Ensnareable
     sprite: Objects/Misc/ensnare.rsi
     state: icon
-  - type: Storage
-    clickInsert: false
-    openOnActivate: false
-    grid:
-    - 0,0,4,4
-    maxItemSize: Huge
-    storageInsertSound:
-      path: /Audio/Voice/Slime/slime_squish.ogg
+  #- type: Storage
+  #  clickInsert: false
+  #  openOnActivate: false
+  #  grid:
+  #  - 0,0,4,4
+  #  maxItemSize: Huge
+  #  storageInsertSound:
+  #    path: /Audio/Voice/Slime/slime_squish.ogg
   - type: Tag
     tags:
     - CanPilot
