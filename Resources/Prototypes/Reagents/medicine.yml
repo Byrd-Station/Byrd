@@ -1031,9 +1031,36 @@
   physicalDesc: reagent-physical-desc-salty
   flavor: salty
   color: "#0064C8"
-  metabolisms:
-    Drink:
+  metabolisms: # Omu, reclass saline as medcine instead of a drink.
+    Medicine:
       effects:
+        - !type:HealthChange # Starlight start
+          conditions:
+          - !type:OrganType
+            type: Resomi
+            shouldHave: true
+          damage:
+            types:
+              Caustic: 2 # 30 damage per unit was ridiculous, but I'm leaving some damage to punish mistakes without risking round removal. Adding salt to water shouldn't suddenly make it the strongest toxin in the game by far.
+              Heat: 2
+        - !type:HealthChange
+          conditions:
+          - !type:OrganType
+            type: Avali
+            shouldHave: true
+          damage:
+            types:
+              Caustic: 2 # 30 damage per unit was ridiculous, but I'm leaving some damage to punish mistakes without risking round removal. Adding salt to water shouldn't suddenly make it the strongest toxin in the game by far.
+              Heat: 2 # Starlight end
+        - !type:ModifyBloodLevel
+          conditions:
+          - !type:OrganType # Startlight start
+            type: Resomi
+            shouldHave: false
+          - !type:OrganType
+            type: Avali
+            shouldHave: false # Starlight end
+          amount: 12 # Goobstation - buffed by two times due to shitmed changes
         - !type:SatiateThirst
           conditions: # DeltaV nerf of saline for Feroxi
           - !type:OrganType
@@ -1057,35 +1084,6 @@
           - !type:OrganType
             type: Feroxi
           factor: 2
-        - !type:ModifyBloodLevel
-          conditions:
-          - !type:OrganType # Startlight start
-            type: Resomi
-            shouldHave: false
-          - !type:OrganType
-            type: Avali
-            shouldHave: false # Starlight end
-          amount: 12 # Goobstation - buffed by two times due to shitmed changes
-    Medicine:
-      effects:
-        - !type:HealthChange # Starlight start
-          conditions:
-          - !type:OrganType
-            type: Resomi
-            shouldHave: true
-          damage:
-            types:
-              Caustic: 2 # 30 damage per unit was ridiculous, but I'm leaving some damage to punish mistakes without risking round removal. Adding salt to water shouldn't suddenly make it the strongest toxin in the game by far.
-              Heat: 2
-        - !type:HealthChange
-          conditions:
-          - !type:OrganType
-            type: Avali
-            shouldHave: true
-          damage:
-            types:
-              Caustic: 2 # 30 damage per unit was ridiculous, but I'm leaving some damage to punish mistakes without risking round removal. Adding salt to water shouldn't suddenly make it the strongest toxin in the game by far.
-              Heat: 2 # Starlight end
 
 
 - type: reagent
