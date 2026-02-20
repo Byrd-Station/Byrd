@@ -74,7 +74,7 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
-    - Humanoid
+    - Humanoid # Mono
   - type: Hands
     handDisplacement:
       sizeMaps:
