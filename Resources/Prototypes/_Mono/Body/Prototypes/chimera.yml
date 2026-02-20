@@ -28,12 +28,18 @@
       connections:
       - right arm
       - left arm
-      - right leg
-      - left leg
+      - groin # Omu - adds groin
       - head # Shitmed
       organs:
         heart: OrganChimeraHeart
         lungs: OrganChimeraLungs
+
+    groin:
+      part: GroinSkeletonChimera
+      connections:
+      - right leg
+      - left leg
+      organs:
         stomach: OrganChimeraStomach
         liver: OrganChimeraLiver
     right arm:
