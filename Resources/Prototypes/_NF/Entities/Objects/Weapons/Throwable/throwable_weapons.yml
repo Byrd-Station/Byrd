@@ -38,27 +38,3 @@
     damage:
       types:
         Piercing: 4
-
-- type: entity
-  id: DartAberrantFleshHorrorSpikeCluster
-  name: bone spike
-  parent: DartAberrantFleshHorrorSpike
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _NF/Mobs/Aliens/flesh.rsi
-    state: spike
-  - type: CartridgeAmmo
-    muzzleFlash: null
-    deleteOnSpawn: true
-    proto: DartAberrantFleshHorrorSpikeSpread
-
-- type: entity
-  id: DartAberrantFleshHorrorSpikeSpread
-  parent: DartAberrantFleshHorrorSpike
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: ProjectileSpread
-    proto: DartAberrantFleshHorrorSpike
-    count: 3
-    spread: 25

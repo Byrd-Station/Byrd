@@ -38,8 +38,8 @@
     animation: WeaponArcClaw
     damage:
       types:
-        Slash: 16
-        Structural: 90
+        Slash: 10 #Omu was 16
+        Structural: 20  #omu was 90
   - type: Clumsy
     clumsyDefaultCheck: 1
     gunShootFailDamage:

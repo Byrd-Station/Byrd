@@ -41,7 +41,7 @@
   - type: TrayScanReveal
   - type: Kudzu
     growthTickChance: 0.2
-    spreadChance: 0.5
+    spreadChance: 0.3 # omu change - was 0.5
     # Heals each time it manages to do a growth tick:
     damageRecovery:
       types:
@@ -58,8 +58,8 @@
         Heat: 9
   - type: AtmosExposed
   - type: SpeedModifierContacts
-    walkSpeedModifier: 0.25
-    sprintSpeedModifier: 0.25
+    walkSpeedModifier: 0.75
+    sprintSpeedModifier: 0.75
     ignoreWhitelist:
       tags:
       - Chimera
@@ -69,8 +69,6 @@
     solutions:
       food:
         reagents:
-        - ReagentId: Razorium
-          Quantity: 4
         - ReagentId: NaturalLetoferol
           Quantity: 15
         - ReagentId: Protein

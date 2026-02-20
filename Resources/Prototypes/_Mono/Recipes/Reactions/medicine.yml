@@ -1,17 +1,4 @@
 - type: reaction
-  id: Celoxradine
-  minTemp: 320
-  reactants:
-    Insuzine:
-      amount: 1.25
-    Lacerinol:
-      amount: 1
-    Arithrazine:
-      amount: 1.75
-  products:
-    Celoxradine: 2.5
-
-- type: reaction
   id: Rhymatine
   minTemp: 320
   reactants:
@@ -30,7 +17,7 @@
   reactants:
     Bicaridine:
       amount: 2.75
-    Ambuzol:
+    Omnizine:
       amount: 2
     Rhymatine:
       amount: 0.25

@@ -1,4 +1,4 @@
 - type: guideEntry
   id: Letoferol
-  name: Letoferol & Chimeras    # Omu  -im sorry i had to hardcode it
+  name: guide-entry-letoferol
   text: "/ServerInfo/_Mono/Guidebook/Chimera.xml"

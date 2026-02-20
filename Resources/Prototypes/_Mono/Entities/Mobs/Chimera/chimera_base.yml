@@ -156,7 +156,7 @@
     prototype: ChimeraBeast
     requiredLegs: 0
   - type: PlayerToolModifier
-    pryTimeMultiplier: 0.4
+    pryTimeMultiplier: 1.0
   - type: ThermalVision
     lightRadius: 15
     activateSound: null
@@ -165,6 +165,7 @@
     guides:
     - Letoferol
   - type: MovementAlwaysTouching
+  - type: LayingDown
 
 - type: entity
   parent:
