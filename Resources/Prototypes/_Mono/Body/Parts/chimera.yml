@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: BasePartInorganic
+  parent: BasePart
   id: PartSkeletonChimeraBase
   name: chimera endoskeleton body part
   components:

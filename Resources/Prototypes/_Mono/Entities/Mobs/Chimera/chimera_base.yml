@@ -230,13 +230,14 @@
     - Chimera
     - Humanoid
   - type: Puller
-    needsHands: false
+    needsHands: true
   - type: Body
     prototype: Chimera
     requiredLegs: 2
   - type: PlayerAccuracyModifier
     spreadMultiplier: 12
     maxSpreadAngle: 180
+  - type: LayingDown
   - type: BonusMeleeDamage
     damageModifierSet:
       coefficients:
