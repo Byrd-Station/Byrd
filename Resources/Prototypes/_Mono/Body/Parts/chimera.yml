@@ -27,7 +27,7 @@
   name: chimera endoskeleton torso
 
 - type: entity
-  parent: TorsoSkeletonChimera
+  parent: [ PartSkeletonChimeraBase, BaseGroin]
   id: GroinSkeletonChimera
   name: chimera endoskeleton groin
 
