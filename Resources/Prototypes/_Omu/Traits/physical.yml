@@ -231,5 +231,5 @@
     - Resomi
     - Rodentia
   - !type:WeightRequirement # too heavy for uppies
-    minimumWeight: 40
+    minimumWeight: 53
     inverted: true
