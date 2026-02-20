@@ -104,8 +104,7 @@
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
-            #Courier: [ 3, 4 ] # Omu - Courier role
-            #ShaftMiner: [ 3, 3 ] # Omu, needs mapping
+            ShaftMiner: [ 3, 3 ] # Omu 
             CargoTechnician: [ 4, 4 ]
             #civilian
             Passenger: [ -1, -1 ]
