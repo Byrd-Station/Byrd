@@ -141010,10 +141010,6 @@ entities:
       pos: -60.5,82.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 15073
   - uid: 7263
     components:
     - type: Transform
@@ -141021,8 +141017,6 @@ entities:
       pos: -60.5,70.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 15073
   - uid: 15064
@@ -141041,8 +141035,6 @@ entities:
       pos: -75.5,81.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 15073
   - uid: 15075
@@ -141052,8 +141044,6 @@ entities:
       pos: -75.5,71.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 15073
   - uid: 15076
@@ -141063,8 +141053,6 @@ entities:
       pos: -69.5,70.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 15073
   - uid: 15077
@@ -141074,8 +141062,6 @@ entities:
       pos: -69.5,82.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 15073
   - uid: 15078
