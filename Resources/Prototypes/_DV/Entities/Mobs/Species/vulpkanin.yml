@@ -155,6 +155,7 @@
     - DoorBumpOpener
     - AnomalyHost
     - VulpEmotes
+    - Humanoid
 
 - type: entity
   save: false

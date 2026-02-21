@@ -76,6 +76,7 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+    - Humanoid # Mono
     - Resomi # Starlight
   - type: Hands
     handDisplacement:

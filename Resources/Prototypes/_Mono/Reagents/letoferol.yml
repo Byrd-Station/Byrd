@@ -107,8 +107,7 @@
         prototype: LetoferolMutationBeastNatural
         conditions:
         - !type:ReagentThreshold
-          min: 10 # less for non-humanoids
-        - !type:HasComponentCondition
+          min: 10 # less for non-humanoids        - !type:HasComponentCondition
           components:
           - HumanoidAppearance
           invert: true
