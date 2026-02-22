@@ -116,6 +116,7 @@
         Brute: -1.2
         Burn: -1.2
         Genetic: -0.1
+    healAllParts: true
   - type: Targeting
   - type: Flammable
     fireSpread: true
