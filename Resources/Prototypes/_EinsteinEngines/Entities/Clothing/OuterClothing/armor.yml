@@ -35,7 +35,7 @@
   suffix: Opened
 
 - type: entity
-  parent: ClothingBlueshieldArmourVest
+  parent: [ClothingBlueshieldArmourVest, ClothingOuterStorageBase]
   id: ClothingBlueshieldArmoredMarine
   name: blueshield's armored marine vest
   description: A vest from the blueshield's time in the marines.
@@ -48,7 +48,7 @@
     size: Normal
 
 - type: entity
-  parent: ClothingBlueshieldArmourVest
+  parent: [ClothingBlueshieldArmourVest, ClothingOuterStorageBase]
   id: ClothingBlueshieldArmoredVest
   name: blueshield's armored vest
   description: A vest with sewn-in reinforcement layers.
