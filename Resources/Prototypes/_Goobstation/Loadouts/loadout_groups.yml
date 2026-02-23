@@ -17,6 +17,7 @@
 # SPDX-FileCopyrightText: 2025 grub <unalterableness@gmail.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 # SPDX-FileCopyrightText: 2025 shityaml <unalterableness@gmail.com>
+# SPDX-FileCopyrightText: 2025 jvne <juneialduncan21@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -906,6 +907,7 @@
   minLimit: 0
   loadouts:
   - ClothingNeckScarfStripedCentcom
+  - NanotrasenRepresentativeEnsemble
 
 - type: loadoutGroup
   id: NanotrasenRepresentativeBackpack
@@ -1005,6 +1007,7 @@
   - BlackBlueshieldOfficerTurtleneck # OmuStation Addon
   - BlackBlueshieldOfficerTurtleneckSkirt # OmuStation Addon
   - BlueShieldShirt #Omu - Starlight Port
+  - FormalBlueShieldJumpsuit #Omu - Starlight Port
   - EliteBlueShieldJumpsuit #Omu - Starlight Port
   - EliteBlueShieldJumpskirt #Omu - Starlight Port
 
@@ -1029,6 +1032,7 @@
   - BlueshieldOfficerOuterBlueshieldMantle
   - BlueshieldOfficerOuterBlueshieldMantleBlack # Omu
   - BlueShieldEliteCloak # Omu - Starlight Port
+  - BlueshieldOfficerEnsemble
 
 - type: loadoutGroup
   id: BlueshieldOfficerMask
@@ -1044,6 +1048,7 @@
   - JackBoots
   - BlackCowboyBoots
   - SnowjacksBso
+  - BSOAdvancedJackBoots #Omu
 
 - type: loadoutGroup
   id: BlueshieldOfficerEnvirohelm
@@ -1281,7 +1286,7 @@
   loadouts:
   - RoboticistPDA
 
-# Salvage / Miner
+# Salvage
 
 - type: loadoutGroup
   id: SalvageEnvirohelm
@@ -1313,6 +1318,7 @@
   minLimit: 0
   loadouts:
   - MinerCloak
+  - SalvageEspecialistEnsemble
 
 # Chemist
 
@@ -1324,6 +1330,10 @@
   - MedicalBeret
   - SeniorPhysicianBeret
   - ChemistUshanka # Da.
+  - ChemistryBeret # Starlight - OMU port
+  - ChemistNurseHat # Starlight - OMU port
+  - ChemistTruckersHat # Starlight - OMU port
+  - ChemistFisherCap # Starlight - OMU port
 
 - type: loadoutGroup
   id: ChemistEnvirohelm
@@ -1400,6 +1410,12 @@
   loadouts:
   - BrigmedicJumpsuit
   - BrigmedicJumpskirt
+  - CorpsmanJumpsuit #Omu
+  - CorpsmanJumpskirt #Omu
+  - CorpsmanResponse # Starlight
+  - CorpsmanTrauma # Starlight
+  - BrigmedicJumpsuitOfLife # Starlight
+  - BrigmedicJumpskirtOfLife # Starlight
 
 - type: loadoutGroup
   id: BrigmedicHead
@@ -1408,9 +1424,13 @@
   loadouts:
   - BrigmedicBeret
   - CMOMedicalHeadMirror
+  - BrigmedicNurseHat # Starlight
   - SecurityBeret
   - SecurityHat
   - TrooperHat
+  - CorpsmanBeret #Omu
+  - CorpsmanNurseHat # Starlight
+  - BrigmedicNurseHatOfLife # Starlight
 
 - type: loadoutGroup
   id: BrigmedicOuterClothing
@@ -1421,6 +1441,8 @@
   - ArmorVest
   - ArmorVestSlim
   - SecurityOfficerWintercoat
+  - BrigmedicLabCoat # Starlight
+  - CorpsmanLabCoat # Starlight
 
 - type: loadoutGroup
   id: BrigmedicBackpack
@@ -1430,6 +1452,10 @@
   - BrigmedicSatchel
   - BrigmedicDuffel
   - BrigmedicMessenger
+  - CorpsmanBackpack #Omu
+  - CorpsmanSatchel #Omu
+  - CorpsmanDuffel #Omu
+  - CorpsmanMessenger #Omy
 
 - type: loadoutGroup
   id: BrigmedicEnvirohelm
@@ -1533,3 +1559,71 @@
   hidden: true
   loadouts:
   - LoadoutSpeciesPlasma
+
+# Virologist
+
+- type: loadoutGroup
+  id: VirologistJumpsuit
+  name: loadout-group-virologist-jumpsuit
+  loadouts:
+   - VirologistJumpsuit
+   - VirologistJumpskirt
+   - VirologistMJ # goobin
+
+- type: loadoutGroup
+  id: VirologistBackpack
+  name: loadout-group-virologist-backpack
+  loadouts:
+   - VirologistBackpack
+   - VirologistSatchel
+   - VirologistDuffel
+
+- type: loadoutGroup
+  id: VirologistOuterClothing
+  name: loadout-group-virologist-outerclothing
+  minLimit: 0
+  loadouts:
+   - VirologistLabCoat
+   - VirologistWintercoat
+
+- type: loadoutGroup
+  id: VirologistPDA
+  name: loadout-group-virologist-id
+  loadouts:
+   - VirologistPDA
+
+- type: loadoutGroup
+  id: VirologyEnvirohelm
+  name: loadout-group-virology-envirohelm
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - VirologistEnvirohelm
+
+- type: loadoutGroup
+  id: VirologyEnvirosuit
+  name: loadout-group-virology-envirosuit
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - VirologistEnvirosuit
+
+- type: loadoutGroup
+  id: VirologyEnvirogloves
+  name: loadout-group-virology-envirogloves
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - WhiteEnvirogloves
+  - NitrileEnvirogloves
+
+# Radio Host
+
+- type: loadoutGroup
+  id: RadioHostJumpsuit
+  name: loadout-group-radiohost-jumpsuit
+  loadouts:
+  - JumpsuitHawaiBlack
+  - JumpsuitHawaiBlue
+  - JumpsuitHawaiRed
+  - JumpsuitHawaiYellow

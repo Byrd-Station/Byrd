@@ -1,4 +1,5 @@
-using Content.Goobstation.Common.Changeling;
+using Content.Goobstation.Common.Conversion;
+using Content.Goobstation.Shared.Changeling.Components;
 using Content.Goobstation.Shared.LightDetection.Components;
 using Content.Goobstation.Shared.LightDetection.Systems;
 using Content.Goobstation.Shared.Mindcontrol;
@@ -209,11 +210,16 @@ public abstract class SharedShadowlingSystem : EntitySystem
 
     public bool CanGlare(EntityUid target)
     {
+        var convEv = new BeforeConversionEvent();
+        RaiseLocalEvent(target, ref convEv);
+
+        if (convEv.Blocked) // make all the shit below to use the event in the future tm
+            return false;
+
         return HasComp<MobStateComponent>(target)
                && !HasComp<ShadowlingComponent>(target)
                && !HasComp<ThrallComponent>(target)
-               && !HasComp<HereticComponent>(target)
-               && !HasComp<ChangelingComponent>(target);
+               && !HasComp<HereticComponent>(target);
     }
 
     public void DoEnthrall(EntityUid uid, EntProtoId components, SimpleDoAfterEvent args)

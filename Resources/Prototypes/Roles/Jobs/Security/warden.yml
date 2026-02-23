@@ -153,6 +153,14 @@
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
   canBeAntag: false
+  guides: # goobstation
+  - SpaceLaw
+  - Legal SOP
+  - Security
+  - Warden SOP
+  - KravMaga
+  - CommandTrainingManual # Omu
+  - SecurityTrainingManual # Omu
   goobcoins: 35 #Goob content
   access:
   - Security
@@ -176,7 +184,7 @@
     eyes: ClothingEyesGlassesSecurity
     id: WardenPDA
     ears: ClothingHeadsetAltWarden # Goobstation
-    pocket1: OfficerGunCase #Omu
+    # pocket1: OfficerGunCase #Omu, item is in loadout instead
   storage:
     back:
     - Flash
