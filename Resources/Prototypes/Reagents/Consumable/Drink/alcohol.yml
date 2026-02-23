@@ -2380,7 +2380,7 @@
         reagent: Copper
         amount: 0.05
 
-- type: reagent
+- type: reagent # Omu start
   id: TheWelles
   name: reagent-name-welles
   parent: BaseAlcohol
@@ -2401,7 +2401,7 @@
         factor: 2
       - !type:AdjustReagent
         reagent: Ethanol
-        amount: 0.2
+        amount: 0.2 # Omu end
 
 - type: reagent
   id: Mimeosa

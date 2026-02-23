@@ -1396,7 +1396,7 @@
   products:
     TheMartinez: 6
 
-- type: reaction
+- type: reaction # Omu start
   id: TheWelles
   requiredMixerCategories:
   - Shake
@@ -1408,7 +1408,7 @@
     SolDry:
       amount: 1
   products:
-    TheWelles: 6
+    TheWelles: 6 # Omu end
 
 - type: reaction
   id: Vodka
