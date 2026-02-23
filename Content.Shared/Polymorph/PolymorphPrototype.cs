@@ -231,6 +231,28 @@ public sealed partial record PolymorphConfiguration
     /// </summary>
     [DataField]
     public bool SkipRevertConfirmation;
+
+    /// Mono start
+
+    /// <summary>
+    /// Whether or not the target is polymorphed above critical status.
+    /// </summary>
+    [DataField(serverOnly: true)]
+    public bool PolymorphTheLiving = true;
+
+    /// <summary>
+    /// Whether or not the target is polymorphed below critical status but above dead status.
+    /// </summary>
+    [DataField(serverOnly: true)]
+    public bool PolymorphTheCritical = true;
+
+    /// <summary>
+    /// Whether or not the target is polymorphed while dead.
+    /// </summary>
+    [DataField(serverOnly: true)]
+    public bool PolymorphTheDead = false;
+
+    /// Mono End
 }
 
 public enum PolymorphInventoryChange : byte

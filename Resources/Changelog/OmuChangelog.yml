@@ -2036,3 +2036,61 @@ Entries:
       message: Revs are back. Gulp.
   id: 255
   time: '2026-02-18T20:22:04.0000000+00:00'
+- author: 'CliveOcelot, Starlight contributors '
+  changes:
+    - type: Add
+      message: Ported Avali from Starlight
+    - type: Tweak
+      message: >-
+        Resomi are now poisoned by Dexalin, Dexalin Plus, And saline, instead
+        use Amoxla
+    - type: Tweak
+      message: Resomi and Avali now share a collective mind, this is on +n
+  id: 256
+  time: '2026-02-20T11:49:34.0000000+00:00'
+- author: madeline2323
+  changes:
+    - type: Tweak
+      message: amended metashield, crew know more and command has more freedom
+  id: 257
+  time: '2026-02-20T12:34:25.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Add
+      message: Ported Chimera (admin only for now)
+  id: 258
+  time: '2026-02-20T21:06:11.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: Chimera tweaks
+  id: 259
+  time: '2026-02-21T19:58:06.0000000+00:00'
+- author: PhosphateWithManyOs
+  changes:
+    - type: Add
+      message: 'PORT: Saving and Loading Hand Labeler Labels'
+  id: 260
+  time: '2026-02-22T06:23:36.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Fix
+      message: >-
+        You can no longer construct buildables without actually having the
+        materials to do so.
+  id: 261
+  time: '2026-02-22T12:50:24.0000000+00:00'
+- author: nnif1
+  changes:
+    - type: Add
+      message: Reclaimed the NT-Reclaimer
+    - type: Add
+      message: Expeditions Make a return
+  id: 262
+  time: '2026-02-22T12:52:23.0000000+00:00'
+- author: PhosphateWithManyOs
+  changes:
+    - type: Add
+      message: Conspirators! Ported from Harmony
+  id: 263
+  time: '2026-02-22T13:11:20.0000000+00:00'
