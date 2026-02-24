@@ -326,6 +326,16 @@ public sealed partial class PolymorphSystem : EntitySystem
             _gameTiming.CurTime < polymorphableComponent.LastPolymorphEnd + configuration.Cooldown)
             return null;
 
+        // Mono Begin - If polymorph only works in a certain life state, check that state.
+        if (!TryComp<MobStateComponent>(uid, out var mob))
+            return null;
+
+        if ((configuration.PolymorphTheLiving && _mobState.IsAlive(uid, mob) ||
+            configuration.PolymorphTheCritical && _mobState.IsIncapacitated(uid, mob) ||
+            configuration.PolymorphTheDead && _mobState.IsDead(uid, mob)) == false)
+            return null;
+        // Mono End
+
         // mostly just for vehicles
         if (TryComp(uid, out BuckleComponent? buckle)) // Goob edit
             _buckle.TryUnbuckle((uid, buckle), uid, true);
