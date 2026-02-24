@@ -124,6 +124,15 @@
     proto: robot
   - type: Destructible
     thresholds:
+    - trigger: # Omu, Make IPCs 'scream' on death
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Machines/warning_buzzer.ogg
+          params:
+            volume: 5
     - trigger:
         !type:DamageTypeTrigger
         damageType: Blunt
