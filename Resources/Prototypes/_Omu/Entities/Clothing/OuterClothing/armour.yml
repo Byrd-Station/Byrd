@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingBlueshieldArmourVest, ClothingOuterStorageBase]
+  parent: ClothingBlueshieldArmourVest
   id: ClothingOuterBlueshieldArmourKimono
   name: blueshield's armored kimono
   description: An armored vest with the badge of the blueshield. Utilizes bluespace technology to be more compact.
