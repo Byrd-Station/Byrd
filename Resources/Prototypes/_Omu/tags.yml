@@ -3,3 +3,15 @@
 
 - type: Tag
   id: AdvancedEnergyMagAmmo
+
+- type: Tag
+  id: Stunsword
+
+- type: Tag
+  id: HudChemistry
+
+- type: Tag
+  id: HudMedichem
+
+- type: Tag
+  id: Magazine

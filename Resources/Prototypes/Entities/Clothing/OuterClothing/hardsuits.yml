@@ -533,7 +533,7 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]
   id: ClothingOuterHardsuitBrigmedic
-  name: brigmedic hardsuit # Goob edit
+  name: corpsman hardsuit # Goob edit | Omu - rename Brigmedic to Corpsman 
   description: Special hardsuit of the guardian angel of the brig. It is the medical version of the security hardsuit. # Goob edit
   components:
   - type: Sprite
@@ -1001,8 +1001,8 @@
   - type: Item
     size: Huge
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 1 # goob edit
+    sprintModifier: 1 # goob edit
   - type: HeldSpeedModifier
   - type: Tag
     tags:
