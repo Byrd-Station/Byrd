@@ -56,7 +56,6 @@
     RLeg: MobReptilianRLegDigi # WWDP-Edit
     LFoot: MobReptilianLFootDigi # WWDP-Edit
     RFoot: MobReptilianRFootDigi # WWDP-Edit
-    Wings: MobHumanoidAnyMarking # Floof
 
 - type: markingPoints
   id: MobReptilianMarkingLimits
@@ -114,9 +113,6 @@
       required: false
     LeftHand:
       points: 8 # Omu Edit - "Uncapped Customizations"
-      required: false
-    Wings:
-      points: 1 # Floof Edit
       required: false
 
 - type: humanoidBaseSprite
