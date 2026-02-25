@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 OmuStation Contributors
+// SPDX-FileCopyrightText: 2026 Eponymic-sys
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
