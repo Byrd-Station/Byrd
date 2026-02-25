@@ -1,0 +1,21 @@
+## SPDX-FileCopyrightText: 2026 Eponymic-sys
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [OrganAnimalHeart, BaseMajorContraband]
+  id: CocaineSpaceBearHeart
+  name: Cocaine Space Bear Heart
+  description: A heart from a cocaine space bear. It is still beating.
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Mobs/Species/Space/Cobra/organs.rsi
+    state: icon
+    scale: 0.5, 0.5
+  - type: Organ
+    onAdd:
+    - type: ConstantReagentFeed
+      reagentsPerSecond:
+        Cocaine: .25
+        Omnizine: 1
+      updateInterval: 1

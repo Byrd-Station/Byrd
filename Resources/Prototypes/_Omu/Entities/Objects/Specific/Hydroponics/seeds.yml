@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2025 OmuStation Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: SeedBase
+  name: packet of coco seeds
+  id: CocoSeeds
+  components:
+    - type: Seed
+      seedId: coco
+    - type: Sprite
+      sprite: _Omu/Objects/Specific/Hydroponics/coco.rsi

@@ -1,0 +1,51 @@
+# SPDX-FileCopyrightText: 2025 OmuStation Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: LeavesCoco
+  parent: ProduceBase
+  name: coco leaves
+  description: "Fresh coco leaves containing stimulant alkaloids."
+  components:
+  - type: Sprite
+    sprite: _Omu/Objects/Specific/Hydroponics/coco.rsi
+  - type: Produce
+    seedId: coco
+  - type: Food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: RawCocaine
+          Quantity: 15
+  - type: FoodSequenceElement
+    sprite:
+      sprite: _Omu/Objects/Specific/Hydroponics/coco.rsi
+      state: produce
+    entries:
+      burger:
+        name: food-sequence-burger-content-coco
+      taco:
+        name: food-sequence-content-coco
+
+- type: entity
+  id: LeavesCocoDried
+  parent: BaseItem
+  name: dried coco leaves
+  description: "Dried coco leaves, ready to be ground for consumption."
+  components:
+  - type: Stack
+    stackType: LeavesCocoDried
+    count: 1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: RawCocaine
+          Quantity: 12
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Sprite
+    sprite: _Omu/Objects/Specific/Hydroponics/coco.rsi
+    state: harvest

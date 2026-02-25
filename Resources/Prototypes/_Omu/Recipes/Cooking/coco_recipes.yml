@@ -1,0 +1,9 @@
+# Coco leaf drying recipe
+- type: microwaveMealRecipe
+  id: RecipeCocoLeavesDrying
+  name: dried coco leaves recipe
+  result: LeavesCocoDried
+  time: 5
+  group: Plants
+  solids:
+    LeavesCoco: 1
