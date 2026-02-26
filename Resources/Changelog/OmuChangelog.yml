@@ -2173,3 +2173,9 @@ Entries:
         some more in the near future.
   id: 273
   time: '2026-02-23T19:57:11.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Remove
+      message: Revs are admin only again.
+  id: 274
+  time: '2026-02-25T21:02:56.0000000+00:00'
