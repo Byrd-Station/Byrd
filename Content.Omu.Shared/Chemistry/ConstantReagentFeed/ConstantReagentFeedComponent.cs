@@ -17,5 +17,16 @@ public sealed partial class ConstantReagentFeedComponent : Component
     [DataField]
     public float UpdateInterval = 1f;
 
+    /// Optional entity to pull reagents from instead of creating them.
+    /// When null, reagents are generated from nothing (original behaviour).
+    [DataField]
+    public EntityUid? SourceEntity;
+
+    /// Named solution on the source entity to draw from.
+    /// Only used when <see cref="SourceEntity"/> is set.
+    /// When null the system falls back to the drawable solution on the source.
+    [DataField]
+    public string? SourceSolutionName;
+
     public float Accumulator;
 }

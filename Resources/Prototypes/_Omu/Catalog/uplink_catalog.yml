@@ -24,3 +24,14 @@
     whitelist:
     - Clown
 
+- type: listing
+  id: UplinkCocoSeeds
+  name: uplink-coco-seeds-name
+  description: uplink-coco-seeds-desc
+  icon: { sprite: _Omu/Objects/Specific/Hydroponics/coco.rsi, state: seed }
+  productEntity: CocoSeeds
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkChemicals
+

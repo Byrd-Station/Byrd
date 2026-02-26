@@ -1,0 +1,23 @@
+- type: entity
+  name: cocaine powder
+  parent: [FoodInjectableBase, BaseMajorContraband]
+  id: CocainePowder
+  description: You know you want to.
+  components:
+  - type: Stack
+    stackType: CocainePowder
+    count: 1
+  - type: FlavorProfile
+    flavors:
+      - oily
+      - bitter
+  - type: Sprite
+    sprite: _Omu/Objects/Consumable/Narcotics/cocainepowder.rsi
+    state: cocainepowder
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Cocaine
+          Quantity: 15

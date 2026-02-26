@@ -9,9 +9,12 @@
   description: A heart from a cocaine space bear. It is still beating.
   components:
   - type: Sprite
-    sprite: _Shitmed/Mobs/Species/Space/Cobra/organs.rsi
-    state: icon
+    sprite: _Omu/Mobs/Species/CocaineBear/organs.rsi
     scale: 0.5, 0.5
+    layers:
+    - state: heart-on
+    - state: energy
+      shader: unshaded
   - type: Organ
     onAdd:
     - type: ConstantReagentFeed

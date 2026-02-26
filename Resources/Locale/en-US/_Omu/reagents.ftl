@@ -6,7 +6,12 @@
 reagent-name-cocaine = cocaine
 reagent-name-raw-cocaine = raw cocaine
 reagent-desc-cocaine = A dangerous stimulant that causes aggressive behavior patterns.
+reagent-desc-raw-cocaine = An unrefined alkaloid extract from coco leaves. Must be processed to produce cocaine.
 cocaine-effect = You feel your mind slipping away...
+raw-cocaine-effect = Your mouth goes numb and your heart quickens.
+cocaine-overdose-heartpounding = Your heart is pounding out of your chest!
+cocaine-overdose-chestpain = You feel a sharp pain in your chest!
+cocaine-overdose-cantbreathe = You can barely breathe!
 
 # Reagent Effects
 reagent-effect-guidebook-add-component = Stimulant, Applies the [color=white]{$component}[/color] component
@@ -14,3 +19,7 @@ reagent-effect-guidebook-add-component = Stimulant, Applies the [color=white]{$c
 # Coco Plant Localization
 seeds-coco-name = coco
 seeds-coco-display-name = coco plant
+
+# Coco Food Sequence
+food-sequence-burger-content-coco = coco
+food-sequence-content-coco = coco

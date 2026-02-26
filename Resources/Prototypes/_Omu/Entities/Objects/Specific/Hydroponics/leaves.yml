@@ -28,3 +28,23 @@
         name: food-sequence-burger-content-coco
       taco:
         name: food-sequence-content-coco
+
+- type: entity
+  id: LeavesCocoDried
+  parent: ProduceBase
+  name: dried coco leaves
+  description: "Dried coco leaves, ready to be ground."
+  components:
+  - type: Stack
+    stackType: LeavesCocoDried
+    count: 1
+  - type: Food
+  - type: Sprite
+    sprite: _Omu/Objects/Specific/Hydroponics/coco.rsi
+    state: dried
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: RawCocaine
+          Quantity: 10

@@ -10,3 +10,11 @@
     FoodBreadBun: 1
     FoodMeatRat: 1
     FoodButter: 1
+
+- type: microwaveMealRecipe
+  id: RecipeDriedCocoLeaves
+  name: dried coco leaves recipe
+  result: LeavesCocoDried
+  time: 5
+  solids:
+    LeavesCoco: 1

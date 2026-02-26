@@ -5,6 +5,13 @@
 - type: stack
   id: LeavesCocoDried
   name: stack-dried-coco-leaves
-  icon: { sprite: /Textures/_Omu/Objects/Specific/Hydroponics/coco.rsi, state: harvest }
+  icon: { sprite: /Textures/_Omu/Objects/Specific/Hydroponics/coco.rsi, state: dried }
   spawn: LeavesCocoDried
-  maxCount: 5
+  maxCount: 15
+
+- type: stack
+  id: CocainePowder
+  name: stack-cocaine-powder
+  icon: { sprite: /Textures/_Omu/Objects/Consumable/Narcotics/cocainepowder.rsi, state: cocainepowder }
+  spawn: CocainePowder
+  maxCount: 30

@@ -127,22 +127,31 @@
         type: SurgeryBui
   - type: Sprite
     drawdepth: Mobs
-    sprite: _Omu/Mobs/Animals/bear.rsi
+    sprite: _Omu/Mobs/Animals/coacinebear.rsi
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: bear
+      state: cocaine-bear
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
       state: glow
+      shader: unshaded
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: energy
       shader: unshaded
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: bear
+        Base: cocaine-bear
         BaseUnshaded: glow
       Critical:
-        Base: bear_dead
+        Base: cocaine-bear_dead
       Dead:
-        Base: bear_dead
+        Base: cocaine-bear_dead
+        BaseUnshaded: energy
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      60: Critical
+      120: Dead
   - type: Butcherable
     spawned:
     - id: FoodMeatBear

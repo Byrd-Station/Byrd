@@ -16,6 +16,23 @@
     Narcotic:
       metabolismRate: 0.25 # Goobstation edit
       effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        messages:
+        - cocaine-effect
+        probability: 0.1
+      - !type:PopupMessage
+        conditions:
+        - !type:ReagentThreshold
+          min: 30
+        type: Local
+        visualType: LargeCaution
+        messages:
+        - cocaine-overdose-heartpounding
+        - cocaine-overdose-chestpain
+        - cocaine-overdose-cantbreathe
+        probability: 0.2
       - !type:ModifyStatusEffect
         effectProto: StatusEffectEnraged
         time: 2.5
@@ -118,7 +135,7 @@
   id: RawCocaine
   name: reagent-name-raw-cocaine
   group: Narcotics
-  desc: reagent-desc-cocaine
+  desc: reagent-desc-raw-cocaine
   physicalDesc: reagent-physical-desc-translucent
   flavor: bitter
   color: "#c2c2c2"
@@ -149,7 +166,7 @@
           type: Yowie
           shouldHave: false
         - !type:ReagentThreshold
-          min: 20 #please wait 3 minutes before using another stimpack, also goob edit
+          min: 10 #please wait 3 minutes before using another stimpack, also goob edit
         damage:
           types:
             Poison: 1
