@@ -2199,3 +2199,17 @@ Entries:
       message: Slime brains and Humanoid brains are now interchangeable
   id: 276
   time: '2026-02-26T18:15:58.0000000+00:00'
+- author: LillRatties
+  changes:
+    - type: Add
+      message: >-
+        Added two new markings for reptilians: Dragon Wings and the Sharp Cobra
+        Hood
+  id: 277
+  time: '2026-02-27T16:04:02.0000000+00:00'
+- author: raincally
+  changes:
+    - type: Remove
+      message: Irelander no longer does 3 genetic
+  id: 278
+  time: '2026-02-27T16:06:04.0000000+00:00'
