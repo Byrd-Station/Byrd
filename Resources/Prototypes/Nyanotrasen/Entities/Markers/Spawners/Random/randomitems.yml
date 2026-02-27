@@ -85,6 +85,10 @@
         - id: GroundTobacco
           amount: !type:RangeNumberSelector
             range: 1, 6
+        - id: CocoSeeds # Omu
+        - id: LeavesCoco # Omu
+          amount: !type:RangeNumberSelector # Omu
+            range: 1, 3 # Omu
       #Dice
       - !type:GroupSelector
         children:
@@ -355,6 +359,9 @@
         - id: SmokingPipeFilledCannabis
         - id: CigarGold
           weight: 0.20
+        - id: CocainePowder # Omu
+          amount: !type:RangeNumberSelector # Omu
+            range: 1, 3 # Omu
       #Materials
       - !type:GroupSelector
         children:

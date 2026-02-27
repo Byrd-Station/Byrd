@@ -19,6 +19,6 @@
     onAdd:
     - type: ConstantReagentFeed
       reagentsPerSecond:
-        Cocaine: .25
-        Omnizine: 1
+        Cocaine: .20
+        Omnizine: .5
       updateInterval: 1

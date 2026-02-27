@@ -17,7 +17,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 15
+        maxVol: 20
         reagents:
         - ReagentId: Cocaine
-          Quantity: 15
+          Quantity: 20

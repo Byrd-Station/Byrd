@@ -18,7 +18,7 @@
       food:
         reagents:
         - ReagentId: RawCocaine
-          Quantity: 15
+          Quantity: 20
   - type: FoodSequenceElement
     sprite:
       sprite: _Omu/Objects/Specific/Hydroponics/coco.rsi
@@ -47,4 +47,4 @@
       food:
         reagents:
         - ReagentId: RawCocaine
-          Quantity: 10
+          Quantity: 15
