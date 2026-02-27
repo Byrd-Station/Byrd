@@ -47,7 +47,7 @@
   id: BattleHeadHatChameleon
   suffix: Battle Chameleon
   components:
-    - type: Armor # Same stats as the swat helmet
+    - type: Armor # Same stats as the sec helmet
       coverage:
         - Head
       traumaDeductions:

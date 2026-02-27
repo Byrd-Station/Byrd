@@ -9,3 +9,10 @@
         - id: BattleHeadHatChameleon
         - id: BattleOuterChameleon
         - id: BattleShoesChameleon
+        - id: ChameleonPDA
+        - id: ClothingUniformJumpsuitChameleon
+        - id: ClothingNeckChameleon
+        - id: ClothingMaskGasChameleon
+        - id: ClothingEyesChameleon
+        - id: ClothingHeadsetChameleon
+        - id: ChameleonControllerImplanter
