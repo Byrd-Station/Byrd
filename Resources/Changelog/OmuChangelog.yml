@@ -2173,3 +2173,29 @@ Entries:
         some more in the near future.
   id: 273
   time: '2026-02-23T19:57:11.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Remove
+      message: Revs are admin only again.
+  id: 274
+  time: '2026-02-25T21:02:56.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Fix
+      message: Conspirator can actually roll now
+  id: 275
+  time: '2026-02-26T16:56:20.0000000+00:00'
+- author: GNUtopia, Notactuallymarty
+  changes:
+    - type: Add
+      message: Added machine-man interface
+    - type: Add
+      message: Added pAI adapter
+    - type: Tweak
+      message: Allowed MMIs to function as IPC brains
+    - type: Fix
+      message: Slimes now have eyes
+    - type: Tweak
+      message: Slime brains and Humanoid brains are now interchangeable
+  id: 276
+  time: '2026-02-26T18:15:58.0000000+00:00'
