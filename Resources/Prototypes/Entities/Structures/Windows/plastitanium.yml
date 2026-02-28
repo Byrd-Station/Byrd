@@ -119,7 +119,9 @@
   - type: Sprite
     drawdepth: WallTops
     sprite: Structures/Windows/plastitanium_window.rsi
+    sprite: Structures/Windows/plastitanium_window.rsi
   - type: Icon
+    sprite: Structures/Windows/plastitanium_window.rsi
     sprite: Structures/Windows/plastitanium_window.rsi
     state: full
   - type: IconSmooth
@@ -142,6 +144,10 @@
   parent: PlastitaniumWindowSquareBase
   suffix: indestructible
   components:
+  # Frontier: colored indestructible windows
+  - type: Sprite
+    color: "#cdf3cd"
+  # End Frontier
   - type: ExaminableDamage
     messages: null
 
@@ -235,6 +241,10 @@
   parent: PlastitaniumWindowDiagonalBase
   suffix: diagonal, indestructible
   components:
+  # Frontier: colored indestructible windows
+  - type: Sprite
+    color: "#cdf3cd"
+  # End Frontier
   - type: ExaminableDamage
     messages: null
 
