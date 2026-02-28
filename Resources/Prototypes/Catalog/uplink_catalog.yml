@@ -1464,22 +1464,24 @@
 
 # Allies
 
-- type: listing
-  id: UplinkHoloparaKit
-  name: uplink-holopara-kit-name
-  description: uplink-holopara-kit-desc
-  icon: { sprite: /Textures/Objects/Misc/guardian_info.rsi, state: icon }
-  productEntity: BoxHoloparasite
-  cost:
-    Telecrystal: 70 # goob
-  categories:
-  - UplinkAllies
-  conditions:
-  - !type:StoreWhitelistCondition
-    blacklist:
-      tags:
-      - ContractorUplink
-      - NukeOpsUplink
+
+#- type: listing # Omu, remove holopara until it no longer crashes the entire server.
+#  id: UplinkHoloparaKit
+#  name: uplink-holopara-kit-name
+#  description: uplink-holopara-kit-desc
+#  icon: { sprite: /Textures/Objects/Misc/guardian_info.rsi, state: icon }
+#  productEntity: BoxHoloparasite
+#  cost:
+#    Telecrystal: 70 # goob
+#  categories:
+#  - UplinkAllies
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    blacklist:
+#      tags:
+#      - ContractorUplink
+#      - NukeOpsUplink
+
 
 
 - type: listing
@@ -2423,20 +2425,20 @@
     - Clown
 
 
-- type: listing
-  id: UplinkHoloclownKit
-  name: uplink-holoclown-kit-name
-  description: uplink-holoclown-kit-desc
-  icon: { sprite: /Textures/Objects/Fun/figurines.rsi, state: holoclown }
-  productEntity: BoxHoloclown
-  cost:
-    Telecrystal: 60 # goob
-  categories:
-  - UplinkJob
-  conditions:
-  - !type:BuyerJobCondition
-    whitelist:
-    - Clown
+#- type: listing # Omu, remove holopara until it no longer crashes the entire server.
+#  id: UplinkHoloclownKit
+#  name: uplink-holoclown-kit-name
+#  description: uplink-holoclown-kit-desc
+#  icon: { sprite: /Textures/Objects/Fun/figurines.rsi, state: holoclown }
+#  productEntity: BoxHoloclown
+#  cost:
+#    Telecrystal: 60 # goob
+#  categories:
+#  - UplinkJob
+#  conditions:
+#  - !type:BuyerJobCondition
+#    whitelist:
+#    - Clown
 
 
 - type: listing

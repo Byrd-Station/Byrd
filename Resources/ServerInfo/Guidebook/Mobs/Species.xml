@@ -47,6 +47,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   <Box>
     <GuideEntityEmbed Entity="MobXelthia" Caption="Xelthia"/>
     <GuideEntityEmbed Entity="MobShadowkin" Caption="Shadowkin"/>
+    <GuideEntityEmbed Entity="MobAvali" Caption="Avali"/> <!-- Starlight -->
   </Box>
 
 </Document>
