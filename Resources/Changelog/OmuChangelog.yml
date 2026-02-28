@@ -2232,3 +2232,69 @@ Entries:
       message: Removed the mouse egg organ from mice
   id: 280
   time: '2026-02-28T11:48:10.0000000+00:00'
+- author: raincally
+  changes:
+    - type: Add
+      message: Added leopard and tiger tail markings for felinid and tajaran
+  id: 281
+  time: '2026-02-28T15:42:28.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Add
+      message: >-
+        You can fish in lava now, butcher the orefish for raw ores. Also theres
+        a fishing set in the mining voucher
+  id: 282
+  time: '2026-02-28T15:54:07.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Tweak
+      message: Changed round xeno chaos cost
+  id: 283
+  time: '2026-02-28T15:59:03.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        Syndie holster now has chameleon now has chameleon functionality, price
+        raised to 10 telecrystals.
+  id: 284
+  time: '2026-02-28T15:59:41.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Add
+      message: >-
+        Syndie EVA slowdown removed, now listed for 10tc. I ate all of the
+        durathread. i am NOT sorry.
+  id: 285
+  time: '2026-02-28T16:02:12.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Add
+      message: IPCs bleed oil, ported oil packs from DV. Ask for them at science!
+    - type: Add
+      message: IPC synth lizard markings from DV
+    - type: Tweak
+      message: >-
+        IPCs are no longer immune to pressure in space. They do take less
+        damage, however..
+  id: 286
+  time: '2026-02-28T16:02:38.0000000+00:00'
+- author: Gab
+  changes:
+    - type: Add
+      message: >-
+        popups that show when dash weapons (rogue king's tail, warden's rapier)
+        fail to dash.
+    - type: Remove
+      message: autofire from dash weapons.
+    - type: Tweak
+      message: Warden's rapier can no longer dash while weightless. Go use a jetpack.
+  id: 287
+  time: '2026-02-28T16:02:57.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Fix
+      message: Cyborgs cant take the moth flight trait anymore
+  id: 288
+  time: '2026-02-28T16:30:56.0000000+00:00'
