@@ -123,6 +123,9 @@
     - id: MobShark
     - id: MedkitCombatFilled
     - id: MaterialGoliathHide
+    
+# Omu end
+
 # Items from Lava
 - type: entityTable
   id: LavaFishingLootTable
