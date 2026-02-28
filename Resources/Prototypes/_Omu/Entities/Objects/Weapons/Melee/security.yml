@@ -22,7 +22,6 @@
     damage:
       types:
         Slash: 10
-        Cellular: 3
         Structural: 40
   - type: StaminaDamageOnHit
     damage: 20
