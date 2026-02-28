@@ -100,6 +100,7 @@
   - NanotrasenRepresentativerMask #Omu
   - NanotrasenRepresentativeShoes
   - NanotrasenRepresentativeBelt
+  - NanotrasenRepresentativePDA # Omu
   - Glasses
   - Trinkets
   - Animals
@@ -122,6 +123,7 @@
   - BlueshieldOfficerNeck
   - BlueshieldOfficerMask
   - BlueshieldOfficerShoes
+  - BlueshieldPDA # Omu
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
