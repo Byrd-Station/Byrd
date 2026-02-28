@@ -1,0 +1,88 @@
+# SPDX-FileCopyrightText: 2026 Eponymic-sys
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: htnCompound
+  id: MartialArtsHostileCompound
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MartialArtsCombatCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompound
+
+- type: htnCompound
+  id: MartialArtsCombatCompound
+  branches:
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyMeleeTargets
+            key: Target
+            keyCoordinates: TargetCoordinates
+        - !type:HTNCompoundTask
+          task: BeforeMartialArtsAttackCompound
+
+- type: htnCompound
+  id: BeforeMartialArtsAttackCompound
+  branches:
+    - preconditions:
+        - !type:BuckledPrecondition
+          isBuckled: true
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UnbuckleOperator
+            shutdownState: TaskFinished
+
+    - preconditions:
+        - !type:PulledPrecondition
+          isPulled: true
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UnPullOperator
+            shutdownState: TaskFinished
+
+    - preconditions:
+        - !type:InContainerPrecondition
+          isInContainer: true
+      tasks:
+        - !type:HTNCompoundTask
+          task: EscapeCompound
+
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MartialArtsAttackTargetCompound
+
+- type: htnCompound
+  id: MartialArtsAttackTargetCompound
+  branches:
+    - preconditions:
+        - !type:KeyExistsPrecondition
+          key: Target
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            shutdownState: PlanFinished
+            pathfindInPlanning: true
+            removeKeyOnFinish: false
+            targetKey: TargetCoordinates
+            pathfindKey: TargetPathfind
+            rangeKey: MeleeRange
+        - !type:HTNPrimitiveTask
+          operator: !type:JukeOperator
+            jukeType: AdjacentTile
+        - !type:HTNPrimitiveTask
+          operator: !type:MartialArtsCombatOperator
+            targetKey: Target
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: Target
+            - !type:TargetInRangePrecondition
+              targetKey: Target
+              rangeKey: MeleeRange
+          services:
+            - !type:UtilityService
+              id: MartialArtsService
+              proto: NearbyMeleeTargets
+              key: Target

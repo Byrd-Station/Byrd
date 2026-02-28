@@ -1,0 +1,61 @@
+# SPDX-FileCopyrightText: 2026 Eponymic-sys
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: startingGear
+  id: MartialArtistGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    shoes: ClothingShoesColorBlack
+
+- type: startingGear
+  id: MartialArtistGearCQC
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorBlack
+    shoes: ClothingShoesBootsJack
+    gloves: ClothingHandsGlovesCombat
+    head: ClothingHeadBandBlack
+
+- type: startingGear
+  id: MartialArtistGearJudo
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerBlack
+    shoes: ClothingShoesBootsLaceup
+    gloves: ClothingHandsGlovesCombat
+
+- type: startingGear
+  id: MartialArtistGearSleepingCarp
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMonasticRobeDark
+    shoes: ClothingShoesSandals
+    gloves: ClothingHandsGlovesFingerless
+
+- type: startingGear
+  id: MartialArtistGearCapoeira
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitTrainer
+    shoes: ClothingShoesColorWhite
+    head: ClothingHeadBandGreen
+
+- type: startingGear
+  id: MartialArtistGearDragonKungFu
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitKimono
+    shoes: ClothingShoesSandals
+    gloves: ClothingHandsGlovesFingerless
+    head: ClothingHeadBandGold
+
+- type: startingGear
+  id: MartialArtistGearNinjutsu
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorBlack
+    shoes: ClothingShoesColorBlack
+    head: ClothingHeadBandBlack
+
+- type: startingGear
+  id: MartialArtistGearHellRip
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorRed
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadBandSkull
+    mask: ClothingMaskBandSkull
