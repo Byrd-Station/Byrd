@@ -109,8 +109,6 @@
       weight: 1
     - id: CdDiskSecurityPsa
       weight: 1
-    - id: CdDiskIdris
-      weight: 1
     - id: JVNECdDiskCapstien
       weight: 0.3
     - id: JVNECdDiskNinja
@@ -137,7 +135,10 @@
       weight: 0.1
     - id: CdDiskXgOnboarding4
       weight: 0.1
-
+# Omu only
+    - id: CdDiskIdris
+      weight: 1
+      
 - type: entityTable
   id: RandomVinylDisk
   table: !type:GroupSelector
