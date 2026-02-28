@@ -47,6 +47,7 @@
     - Feroxi
     - Xelthia # OMU - EE species
     - Shadowkin
+    - Avali # Starlight
 
 - type: guideEntry
   id: Arachnid
@@ -144,3 +145,8 @@
   id: Shadowkin
   name: species-name-shadowkin
   text: "/ServerInfo/Guidebook/Mobs/Shadowkin.xml"
+
+- type: guideEntry # Starlight
+  id: Avali
+  name: species-name-avali
+  text: "/ServerInfo/Guidebook/Mobs/Avali.xml"
