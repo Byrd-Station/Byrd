@@ -312,7 +312,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
              {
                  // We have to spit it like this to make it readable. Yeah, it sucks but for some reason the entire thing
                  // is just one long string...
-                 var words = customComp.ObjectiveSummary.Split(" ");
+                 var words = FormattedMessage.EscapeText(customComp.ObjectiveSummary).Split(" ");
                  var currentLine = "";
                  foreach (var word in words)
                  {
