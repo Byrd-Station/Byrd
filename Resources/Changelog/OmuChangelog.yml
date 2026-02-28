@@ -2298,3 +2298,29 @@ Entries:
       message: Cyborgs cant take the moth flight trait anymore
   id: 288
   time: '2026-02-28T16:30:56.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Fix
+      message: Reorganized security loadouts to be standardized among all jobs.
+    - type: Add
+      message: >-
+        Security may now choose different starting weapons that are included in
+        the gun case, defaulting to the gun case itself for in-game variety.
+        Each weapon will give Its ammo type and quantity respective of the
+        chosen one.
+    - type: Add
+      message: >-
+        Detective may now choose different starting weapons, defaulting to the
+        Inspector, with all other options available.
+    - type: Add
+      message: Detective now starts with a standard security melee weapon.
+    - type: Add
+      message: Detective may now start with noir glasses, available in loadout.
+    - type: Fix
+      message: Corpsman now starts with a gun, like other security officers.
+    - type: Fix
+      message: >-
+        Alt-clicking belt storage now does the default action, i.e. ejecting and
+        equipping a weapon, instead of just changing the above/under layers.
+  id: 289
+  time: '2026-02-28T17:55:32.0000000+00:00'
