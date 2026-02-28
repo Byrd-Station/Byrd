@@ -137,15 +137,6 @@
     song:
       path: /Audio/_Goobstation/RadioStation/ads/security_psa.ogg
 
-- type: entity
-  parent: BaseCdDisk
-  name: cd disk (Idris)
-  id: CdDiskIdris
-  components:
-  - type: Vinyl
-    song:
-      path: /Audio/_Goobstation/RadioStation/ads/IdrisRadioAd.ogg
-      
 # the weird stuff
 
 - type: entity
