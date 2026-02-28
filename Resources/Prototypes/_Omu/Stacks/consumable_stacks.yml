@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2026 Eponymic-sys
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: stack
+  id: LeavesCocoDried
+  name: stack-dried-coco-leaves
+  icon: { sprite: /Textures/_Omu/Objects/Specific/Hydroponics/coco.rsi, state: dried }
+  spawn: LeavesCocoDried
+  maxCount: 15
+
+- type: stack
+  id: CocainePowder
+  name: stack-cocaine-powder
+  icon: { sprite: /Textures/_Omu/Objects/Consumable/Narcotics/cocainepowder.rsi, state: cocainepowder }
+  spawn: CocainePowder
+  maxCount: 30

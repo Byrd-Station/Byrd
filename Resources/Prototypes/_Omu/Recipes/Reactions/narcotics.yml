@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2026 Eponymic-sys
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Cocaine synthesis reaction
+- type: reaction
+  id: Cocaine
+  reactants:
+    RawCocaine:
+      amount: 1
+    Ash:
+      amount: 1
+    WeldingFuel:
+      amount: 1
+      catalyst: true
+  products:
+    Cocaine: 1
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: CocainePowder
+  minTemp: 300
+  maxTemp: 450

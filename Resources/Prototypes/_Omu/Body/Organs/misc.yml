@@ -1,0 +1,27 @@
+## SPDX-FileCopyrightText: 2026 Eponymic-sys
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [OrganAnimalHeart, BaseMajorContraband]
+  id: CocaineSpaceBearHeart
+  name: Cocaine Space Bear Heart
+  description: A heart from a cocaine space bear. It is still beating.
+  components:
+  - type: Sprite
+    sprite: _Omu/Mobs/Species/CocaineBear/organs.rsi
+    scale: 0.5, 0.5
+    layers:
+    - state: heart-on
+    - state: energy
+      shader: unshaded
+  - type: Organ
+  - type: OrganReagentInjector
+    targetSolution: chemicals
+    duration: 5
+    reagents:
+      reagents:
+      - ReagentId: Cocaine
+        Quantity: 1
+      - ReagentId: Omnizine
+        Quantity: 2.5

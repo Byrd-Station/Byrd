@@ -1,0 +1,24 @@
+- type: seed
+  id: coco
+  name: seeds-coco-name
+  noun: seeds-noun-seeds
+  displayName: seeds-coco-display-name
+  plantRsi: _Omu/Objects/Specific/Hydroponics/coco.rsi
+  packetPrototype: CocoSeeds
+  productPrototypes:
+    - LeavesCoco
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    RawCocaine:
+      Min: 1
+      Max: 10
+      PotencyDivisor: 10

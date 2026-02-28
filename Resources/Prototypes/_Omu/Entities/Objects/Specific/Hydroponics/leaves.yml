@@ -1,0 +1,50 @@
+## SPDX-FileCopyrightText: 2026 Eponymic-sys
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: LeavesCoco
+  parent: ProduceBase
+  name: coco leaves
+  description: "Fresh coco leaves containing stimulant alkaloids."
+  components:
+  - type: Sprite
+    sprite: _Omu/Objects/Specific/Hydroponics/coco.rsi
+  - type: Produce
+    seedId: coco
+  - type: Food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: RawCocaine
+          Quantity: 20
+  - type: FoodSequenceElement
+    sprite:
+      sprite: _Omu/Objects/Specific/Hydroponics/coco.rsi
+      state: produce
+    entries:
+      burger:
+        name: food-sequence-burger-content-coco
+      taco:
+        name: food-sequence-content-coco
+
+- type: entity
+  id: LeavesCocoDried
+  parent: ProduceBase
+  name: dried coco leaves
+  description: "Dried coco leaves, ready to be ground."
+  components:
+  - type: Stack
+    stackType: LeavesCocoDried
+    count: 1
+  - type: Food
+  - type: Sprite
+    sprite: _Omu/Objects/Specific/Hydroponics/coco.rsi
+    state: dried
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: RawCocaine
+          Quantity: 15
