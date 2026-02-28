@@ -134,6 +134,10 @@
     modifiers:
       coefficients:
         Radiation: 0.75
+        # Blunt: 0.8 # Omu
+        # Slash: 0.8  # Omu
+        # Piercing: 0.8 # Omu
+        # Radiation: 0.5 # Omu
   - type: StaticPrice
     price: 500 # Suit is 1000
 
