@@ -147,6 +147,8 @@
     modifiers:
       coefficients:
         Radiation: 0.75
+# Omu End
+
 #Emergency EVA
 - type: entity
   parent: [ ClothingOuterEVASuitBase, ClothingOuterBaseToggleable ]
