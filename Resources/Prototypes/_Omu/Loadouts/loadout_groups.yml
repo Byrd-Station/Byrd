@@ -64,6 +64,30 @@
   - PrisonerEnviroglovesBlack
   - PrisonerEnviroglovesWhite
 
+- type: loadoutGroup
+  id: VirologistEnvirohelm
+  name: loadout-group-virologist-envirohelm
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - VirologistEnvirohelm
+
+- type: loadoutGroup
+  id: VirologistEnvirosuit
+  name: loadout-group-virologist-envirosuit
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - VirologistEnvirosuit
+
+- type: loadoutGroup
+  id: VirologistEnvirogloves
+  name: loadout-group-virologist-envirogloves
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - WhiteEnvirogloves
+  - NitrileEnvirogloves
 # NTR
 
 - type: loadoutGroup
@@ -72,6 +96,44 @@
   minLimit: 0
   loadouts:
   - NanotrasenRepresentativerMaskLollypop
+
+#New Selectable PDAs
+
+- type: loadoutGroup
+  id: HoPPDA
+  name: loadout-group-hop-id
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - HoPPDA
+  - altHoPPDA
+
+- type: loadoutGroup
+  id: CaptainPDA
+  name: loadout-group-captain-id
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - CaptainPDA
+  - altCaptainPDA
+
+- type: loadoutGroup
+  id: NanotrasenRepresentativePDA
+  name: loadout-group-ntr-id
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - NanotrasenRepresentativePDA
+  - AltNanotrasenRepresentativePDA
+
+- type: loadoutGroup
+  id: BlueshieldPDA
+  name: loadout-group-bs-id
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - BlueshieldPDA
+  - altBlueshieldPDA
 
 # Blueshield Officer
 
@@ -113,5 +175,4 @@
   loadouts:
   - BrigmedicHeadset
   - BrigmedicAltHeadset
-
 
