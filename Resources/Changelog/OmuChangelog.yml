@@ -2252,3 +2252,11 @@ Entries:
       message: Changed round xeno chaos cost
   id: 283
   time: '2026-02-28T15:59:03.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        Syndie holster now has chameleon now has chameleon functionality, price
+        raised to 10 telecrystals.
+  id: 284
+  time: '2026-02-28T15:59:41.0000000+00:00'
