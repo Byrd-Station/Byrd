@@ -116,8 +116,8 @@
   canBeAntag: false
   guides: # goobstation
   - Security
-  - OfficerCadet SOP
-  - Searches SOP
+  - OfficerCadetSOP
+  - SearchesSOP
   - SecurityTrainingManual # Omu
   goobcoins: 30 #Goob content
   access:
