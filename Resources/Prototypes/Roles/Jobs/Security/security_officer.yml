@@ -98,10 +98,10 @@
   canBeAntag: false
   guides: # goobstation
   - Security
-  - Legal SOP
-  - OfficerCadet SOP
+  - LegalSOP
+  - OfficerCadetSOP
   - CorporateJudo
-  - Alert Levels
+  - AlertLevels
   - SecurityTrainingManual # Omu
   goobcoins: 30 #Goob content
   access:
@@ -123,7 +123,7 @@
   equipment:
     eyes: ClothingEyesGlassesSecurity
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
-    pocket1: OfficerGunCase #Omu
+    #pocket1: OfficerGunCase #Omu, item in loadout instead
   storage:
     back:
     - Flash
