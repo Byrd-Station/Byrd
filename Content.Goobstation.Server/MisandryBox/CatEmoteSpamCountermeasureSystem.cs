@@ -37,7 +37,7 @@ public sealed class CatEmoteSpamCountermeasureSystem : EntitySystem
     private int _softThresholdVariance = 5; // Omu
 
     [ViewVariables(VVAccess.ReadWrite)]
-    private float _postSoftThresholdProbability = 0.16f;
+    private float _postSoftThresholdProbability = 0.16f; // Omu
 
     [ViewVariables(VVAccess.ReadWrite)]
     private float _softThresholdRefreshCooldown = 34f;
