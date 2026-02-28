@@ -215,7 +215,7 @@ uplink-holoclown-kit-desc = A joint venture between Cybersun and Honk.co. Contai
 
 # omu, chameleon
 uplink-holster-name = Shoulder Holster
-uplink-holster-desc = A deep shoulder holster capable of holding many types of ballistics. Now comes with chameleon functionality!
+uplink-holster-desc = A deep shoulder holster capable of holding many types of ballistics, of any size! Now comes with chameleon functionality!
 
 uplink-chest-rig-name = Chest Rig
 uplink-chest-rig-desc = Explosion-resistant tactical webbing used for holding traitor goods.
