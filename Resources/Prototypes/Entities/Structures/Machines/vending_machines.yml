@@ -1881,6 +1881,7 @@
     - MiningMedical
     #- MiningDrone
     - MiningConcussiveGauntlets # Omu
+    - MiningFishingSet # Omu
   - type: Wires # DeltaV: Use shop vendor wires layout
     layoutId: ShopVendor
   - type: AccessReader
