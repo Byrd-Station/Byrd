@@ -171,11 +171,11 @@
   guides: # goobstation
   - Security
   - SpaceLaw
-  - Legal SOP
+  - LegalSOP
   - Command
-  - HeadOfSecurity SOP
-  - Security SOP
-  - Alert Levels
+  - HeadOfSecuritySOP
+  - SecuritySOP
+  - AlertLevels
   - CommandTrainingManual # Omu
   - SecurityTrainingManual # Omu
   goobcoins: 45 #Goob content
@@ -205,7 +205,7 @@
     id: HoSPDA
     #gloves: ClothingHandsGlovesCombat - Goobstation, moved to loadouts
     ears: ClothingHeadsetAltSecurity
-    pocket1: OfficerGunCase #Omu
+    #pocket1: OfficerGunCase #Omu, item is in loadout instead
   storage:
     back:
     - Flash
