@@ -79,7 +79,7 @@
   guides: # goobstation
   - Forensics
   - Security
-  - Detective SOP
+  - DetectiveSOP
   - SecurityTrainingManual # Omu
   goobcoins: 30 #Goob content
   access:
