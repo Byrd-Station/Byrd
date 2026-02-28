@@ -1,6 +1,6 @@
 ﻿# Courier SOP Entry
 - type: guideEntry
-  id: Courier SOP
+  id: CourierSOP
   name: guide-entry-sop-courier
   text: "/ServerInfo/_Omu/Guidebook/SoP/Jobs/Cargo/CourierSOP.xml"
 # Corpsman SOP formerly Brigmed SOP
