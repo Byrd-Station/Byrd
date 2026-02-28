@@ -108,6 +108,7 @@
   - CargoTechnician
   - Quartermaster
   - SalvageSpecialist
+  - ShaftMiner # Lavaland Change
 
 - type: department
   id: Civilian
@@ -264,6 +265,7 @@
   color: "#9FED58"
   weight: 10
   roles:
+  - RadioHost # Goobstation
   - Boxer
   - Reporter
   - Zookeeper
