@@ -8,6 +8,8 @@
   parent: PartHuman
   abstract: true
   components:
+  - type: Damageable
+    damageModifierSet: Oni
   - type: BodyPart
     species: Oni
 
