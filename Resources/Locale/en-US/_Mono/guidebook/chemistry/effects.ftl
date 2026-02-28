@@ -468,3 +468,9 @@ reagent-effect-guidebook-add-to-chemicals =
         [1] to
         *[-1] from
     } the solution
+
+reagent-effect-guidebook-revert-polymorph =
+    { $chance ->
+        [1] Reverts
+        *[other] reverts
+    } the metabolizer from a { $entityname }
