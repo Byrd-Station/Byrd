@@ -5,6 +5,6 @@
   text: "/ServerInfo/_Omu/Guidebook/SoP/Jobs/Cargo/CourierSOP.xml"
 # Corpsman SOP formerly Brigmed SOP
 - type: guideEntry
-  id: Corpsman SOP 
+  id: CorpsmanSOP
   name: guide-entry-sop-corpsman
   text: /ServerInfo/_Omu/Guidebook/SoP/Jobs/Security/CorpsmanSOP.xml

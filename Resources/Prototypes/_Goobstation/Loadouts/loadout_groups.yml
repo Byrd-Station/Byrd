@@ -1331,6 +1331,10 @@
   - MedicalBeret
   - SeniorPhysicianBeret
   - ChemistUshanka # Da.
+  - ChemistryBeret # Starlight - OMU port
+  - ChemistNurseHat # Starlight - OMU port
+  - ChemistTruckersHat # Starlight - OMU port
+  - ChemistFisherCap # Starlight - OMU port
 
 - type: loadoutGroup
   id: ChemistEnvirohelm
@@ -1409,6 +1413,10 @@
   - BrigmedicJumpskirt
   - CorpsmanJumpsuit #Omu
   - CorpsmanJumpskirt #Omu
+  - CorpsmanResponse # Starlight
+  - CorpsmanTrauma # Starlight
+  - BrigmedicJumpsuitOfLife # Starlight
+  - BrigmedicJumpskirtOfLife # Starlight
 
 - type: loadoutGroup
   id: BrigmedicHead
@@ -1417,10 +1425,13 @@
   loadouts:
   - BrigmedicBeret
   - CMOMedicalHeadMirror
+  - BrigmedicNurseHat # Starlight
   - SecurityBeret
   - SecurityHat
   - TrooperHat
   - CorpsmanBeret #Omu
+  - CorpsmanNurseHat # Starlight
+  - BrigmedicNurseHatOfLife # Starlight
 
 - type: loadoutGroup
   id: BrigmedicOuterClothing
@@ -1431,6 +1442,8 @@
   - ArmorVest
   - ArmorVestSlim
   - SecurityOfficerWintercoat
+  - BrigmedicLabCoat # Starlight
+  - CorpsmanLabCoat # Starlight
 
 - type: loadoutGroup
   id: BrigmedicBackpack
