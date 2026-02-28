@@ -61,6 +61,7 @@
     - id: BoxZiptie
     - id: OxygenTankFilled
     - id: NitrogenTankFilled
+    - id: OmnimedTool # Omu - Re-added medical omnitool
     - id: HandheldCrewMonitorBSO
     - id: BlueshieldUndeterminedWeapon
     - id: BlueshieldUndeterminedHardsuit
