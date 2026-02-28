@@ -48,7 +48,7 @@
     cost: 400
   - id: FultonBeacon
     cost: 500
-  - id: Oilpack
+  - id: Oilpack # Omu
     cost: 500
   - id: PowerCellHigh
     cost: 500

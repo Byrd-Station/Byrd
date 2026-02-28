@@ -17,7 +17,7 @@
   - PositronicBrain
   - SciFlash
   - CyborgEndoskeleton
-  - Oilpack
+  - Oilpack # Omu
 
 - type: latheRecipePack
   id: BorgModulesStatic
