@@ -72,8 +72,8 @@
     node: diagonalshuttleWall
   #- type: RustRequiresPathStage
   #  pathStage: 10 # Ascension
-  - type: ArmorThickness
-    thickness: 10
+#  - type: ArmorThickness
+#    thickness: 10
   # Mono
 #  - type: ShipRepairable
 #    repairTime: 3
