@@ -73,7 +73,7 @@
   components:
   - type: StorageFill
     contents:
-    - id: ClothingEyesGlassesMeson
+    - id: PowerCellHigh # omu
     - id: WelderIndustrial
     - id: CableApcStack
     - id: Oilpack # omu
