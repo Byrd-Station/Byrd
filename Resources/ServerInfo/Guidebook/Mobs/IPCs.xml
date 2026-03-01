@@ -55,7 +55,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     Glass Sheets can be used to repair [color=yellow]Blindness[/color].
   </Box>
   <Box HorizontalAlignment="Stretch">
-    <GuideEntityEmbed Entity="Oilpack" Caption="Oil pack"/>
+    <GuideEntityEmbed Entity="Oilpack" Caption="Water pack"/>
     Water packs can be used to replenish [color=yellow]coolant level.[/color].
   </Box>
   <Box HorizontalAlignment="Stretch">
