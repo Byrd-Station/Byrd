@@ -98,6 +98,7 @@
         - SweepKick
         - CircleKick
         - SpinKick
+        - KickUp
 
 - type: entity
   id: MobHostileDragonKungFu

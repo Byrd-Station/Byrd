@@ -2,11 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Common.MartialArts;
 using Content.Goobstation.Shared.MartialArts.Components;
 using Content.Server.NPC.Components;
 using Content.Shared.CombatMode;
-using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.NPC;
 using Content.Shared.Weapons.Melee;
@@ -16,15 +14,19 @@ using Robust.Shared.Timing;
 namespace Content.Omu.Server.MartialArts;
 
 /// <summary>
-/// Drives NPC martial arts combat each tick.
-/// Picks combos, waits on cooldowns, and fires melee/disarm/grab attacks.
+/// Drives NPC martial arts combat each tick..
 /// </summary>
-public sealed class NpcMartialArtsCombatSystem : EntitySystem
+public sealed partial class NpcMartialArtsCombatSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedMeleeWeaponSystem _melee = default!;
     [Dependency] private readonly PullingSystem _pulling = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+    }
 
     public override void Update(float frameTime)
     {
@@ -53,9 +55,46 @@ public sealed class NpcMartialArtsCombatSystem : EntitySystem
     {
         ReleaseNonTarget(uid, martial.Target);
 
+        if (martial.ActiveCombo != null && curTime - martial.LastStepTime > martial.StepTimeout)
+        {
+            FinishCombo(uid, martial);
+            return;
+        }
+
         if (!TryComp<MeleeWeaponComponent>(uid, out var fists))
         {
             martial.Status = CombatStatus.NoWeapon;
+            return;
+        }
+
+        if (fists.NextAttack > curTime)
+            return;
+
+        if (!TryComp<CanPerformComboComponent>(uid, out var combo))
+            return;
+
+        if (martial.ActiveCombo == null && martial.FillerAttacksRemaining > 0)
+        {
+            if (!ValidateTarget(uid, martial, out var fillerDist) || fillerDist > fists.Range)
+                return;
+
+            _melee.AttemptLightAttack(uid, uid, fists, martial.Target);
+            martial.FillerAttacksRemaining--;
+            return;
+        }
+
+        if (martial.ActiveCombo == null && !TryPickCombo(uid, martial, combo))
+            return;
+
+        if (martial.StepCooldown > 0f)
+        {
+            martial.StepCooldown -= frameTime;
+            return;
+        }
+
+        if (martial.ActiveCombo!.PerformOnSelf)
+        {
+            ExecuteNextStep(uid, fists, martial, uid);
             return;
         }
 
@@ -69,23 +108,7 @@ public sealed class NpcMartialArtsCombatSystem : EntitySystem
         }
 
         martial.Status = CombatStatus.Normal;
-
-        if (fists.NextAttack > curTime)
-            return;
-
-        if (!TryComp<CanPerformComboComponent>(uid, out var combo))
-            return;
-
-        if (martial.ActiveCombo == null && !TryPickCombo(martial, combo))
-            return;
-
-        if (martial.StepCooldown > 0f)
-        {
-            martial.StepCooldown -= frameTime;
-            return;
-        }
-
-        ExecuteNextStep(uid, fists, martial);
+        ExecuteNextStep(uid, fists, martial, martial.Target);
     }
 
     private bool ValidateTarget(
@@ -111,105 +134,5 @@ public sealed class NpcMartialArtsCombatSystem : EntitySystem
         }
 
         return true;
-    }
-
-    private bool TryPickCombo(NpcMartialArtsCombatComponent martial, CanPerformComboComponent combo)
-    {
-        if (combo.AllowedCombos.Count == 0)
-            return false;
-
-        var candidates = new List<ComboPrototype>();
-        foreach (var c in combo.AllowedCombos)
-        {
-            if (!c.PerformOnSelf)
-                candidates.Add(c);
-        }
-
-        if (candidates.Count == 0)
-            return false;
-
-        martial.ActiveCombo = _random.Pick(candidates);
-        martial.StepIndex = 0;
-        martial.StepCooldown = 0f;
-        combo.LastAttacks.Clear();
-        return true;
-    }
-
-    private void ExecuteNextStep(EntityUid uid, MeleeWeaponComponent fists, NpcMartialArtsCombatComponent martial)
-    {
-        var attackType = martial.ActiveCombo!.AttackTypes[martial.StepIndex];
-
-        if (!ExecuteAttack(uid, fists, martial.Target, attackType))
-        {
-            ReleasePull(uid, martial.Target);
-            ResetCombo(martial);
-            return;
-        }
-
-        martial.StepIndex++;
-        martial.StepCooldown = martial.TimeBetweenSteps;
-
-        if (martial.StepIndex >= martial.ActiveCombo.AttackTypes.Count)
-        {
-            ReleasePull(uid, martial.Target);
-            ResetCombo(martial);
-        }
-    }
-
-    private bool ExecuteAttack(EntityUid uid, MeleeWeaponComponent fists, EntityUid target, ComboAttackType type)
-    {
-        return type switch
-        {
-            ComboAttackType.Harm or ComboAttackType.HarmLight
-                => _melee.AttemptLightAttack(uid, uid, fists, target),
-            ComboAttackType.Disarm
-                => _melee.AttemptDisarmAttack(uid, uid, fists, target),
-            ComboAttackType.Grab
-                => TryGrab(uid, target),
-            _ => false,
-        };
-    }
-
-    private bool TryGrab(EntityUid uid, EntityUid target)
-    {
-        if (!TryComp<PullerComponent>(uid, out var puller))
-            return _pulling.TryStartPull(uid, target);
-
-        if (puller.Pulling == target)
-            return _pulling.TryGrab(target, uid, ignoreCombatMode: true);
-
-        if (puller.Pulling is { } other && TryComp<PullableComponent>(other, out var pullable))
-            _pulling.TryStopPull(other, pullable, uid, true);
-
-        return _pulling.TryStartPull(uid, target);
-    }
-
-    private void ReleasePull(EntityUid uid, EntityUid target)
-    {
-        if (TryComp<PullerComponent>(uid, out var puller) &&
-            puller.Pulling == target &&
-            TryComp<PullableComponent>(target, out var pullable))
-        {
-            _pulling.TryStopPull(target, pullable, uid, true);
-        }
-    }
-
-    private void ReleaseNonTarget(EntityUid uid, EntityUid target)
-    {
-        if (!TryComp<PullerComponent>(uid, out var puller) || puller.Pulling is not { } pulled)
-            return;
-
-        if (pulled == target)
-            return;
-
-        if (TryComp<PullableComponent>(pulled, out var pullable))
-            _pulling.TryStopPull(pulled, pullable, uid, true);
-    }
-
-    private static void ResetCombo(NpcMartialArtsCombatComponent martial)
-    {
-        martial.ActiveCombo = null;
-        martial.StepIndex = 0;
-        martial.StepCooldown = 0f;
     }
 }

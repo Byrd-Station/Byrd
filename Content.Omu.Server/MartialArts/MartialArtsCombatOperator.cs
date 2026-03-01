@@ -86,9 +86,10 @@ public sealed partial class MartialArtsCombatOperator : HTNOperator, IHtnConditi
             return HTNOperatorStatus.Failed;
         }
 
-        combat.Target = target;
+        if (combat.ActiveCombo == null)
+            combat.Target = target;
 
-        if (_entManager.TryGetComponent<MobStateComponent>(target, out var mob) &&
+        if (_entManager.TryGetComponent<MobStateComponent>(combat.Target, out var mob) &&
             mob.CurrentState > TargetState)
         {
             return HTNOperatorStatus.Finished;

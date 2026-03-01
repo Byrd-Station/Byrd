@@ -31,4 +31,19 @@ public sealed partial class NpcMartialArtsCombatComponent : Component
 
     [DataField]
     public float TimeBetweenSteps = 0.45f;
+
+    [ViewVariables]
+    public TimeSpan LastStepTime;
+
+    [DataField]
+    public TimeSpan StepTimeout = TimeSpan.FromSeconds(2);
+
+    [ViewVariables]
+    public int FillerAttacksRemaining;
+
+    [DataField]
+    public int FillerAttacksMin = 1;
+
+    [DataField]
+    public int FillerAttacksMax = 3;
 }
