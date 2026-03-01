@@ -30,6 +30,7 @@
         - MedicalPatch # Goobstation
         - AutoinjectorCartridge # Goobstation
         - HandheldCrewMonitor # Goobstation
+        - Medkit # Omustation, for BSO's medical set
       components:
         - Flash
         - Handcuff
@@ -113,3 +114,53 @@
   - type: Clothing
     sprite: _Omu/Clothing/Belt/corpsman.rsi
 
+- type: entity
+  parent: [ ChemBag, BaseCentcommContraband ]
+  id: ClothingBeltChemBagBSO
+  name: blueshield officer's medical pouch
+  description: A robust pouch for medical supplies worn by Blueshield Officers fond of chemical based medicinals.
+  components:
+  - type: Sprite 
+    sprite: 
+  - type: Clothing
+    sprite: 
+  - type: ExplosionResistance
+    damageCoefficient: 0.01
+  - type: Storage
+    whitelist: # Yeah so I kinda just copied everything from the syndie one nukie corpsman gets
+      tags:
+        - PillCanister
+        - Syringe
+        - Dropper
+        - MedicalPatch
+        - Brutepack
+        - Bloodpack
+        - Gauze
+        - Ointment
+        - CigPack
+        - Cigarette
+      components:
+        - Pill
+        - Hypospray
+        - SyringeGun
+        - SurgeryTool
+        - Defibrillator
+        - SolutionTransfer
+        - GunApplySolution # Dart gun
+
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltExtractionRigBSO
+  name: extraction rig
+  description: 
+  components:
+  - type: Sprite #tbd
+    sprite: Clothing/Belt/salvagewebbing.rsi
+  - type: Clothing #tbd
+    sprite: Clothing/Belt/salvagewebbing.rsi
+  
+- type: entity 
+  parent: ClothingBeltBlueshieldElite
+  id: ClothingBeltBlueshieldEliteSurgical
+  name:
+  description:

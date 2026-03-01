@@ -1,0 +1,58 @@
+# Stack
+- type: stack
+  id: FultonBlueshield
+  name: stack-fulton-blueshield
+  icon:
+    sprite:
+    state:
+  spawn: FultonBlueshield1
+  maxCount: 20
+
+# Entities
+
+- type: entity
+  id: FultonBeaconBlueshield
+  parent: FultonBeacon
+  name: bso fulton beacon # temp name
+  description: fancy fulton beacon # and desc
+  components:
+    - type: GenericVisualizer #yeah idk might need this
+      visuals:
+        enum.FoldedVisuals.State:
+          foldedLayer:
+            True: { state: folded_extraction }
+            False: { state: extraction_point }
+    - type: Sprite #tbd
+      sprite: Objects/Tools/fulton.rsi
+      drawdepth: SmallObjects
+      noRot: true
+      layers:
+        - state: extraction_point
+          map: [ "foldedLayer" ]
+
+- type: entity
+  id: FultonBlueshield
+  parent: Fulton
+  suffix: Full
+  name: bso fulton # temp name
+  description: fancy fultons # and desc
+  components:
+  - type: Fulton
+    FultonDuration: 10
+  - type: Stack
+    stackType: FultonBlueshield
+    count: 20
+  - type: Sprite #tbd
+    drawdepth: SmallObjects
+    sprite: Objects/Tools/fulton.rsi
+    state: extraction_pack
+
+- type: entity
+  id: FultonBlueshield1
+  parent: FultonBlueshield
+  name: bso fulton # temp name
+  suffix: One
+  components:
+  - type: Stack
+    count: 1
+

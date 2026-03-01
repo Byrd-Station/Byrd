@@ -1,0 +1,68 @@
+- type: entity
+  id: BlueshieldRollerBed
+  parent: RollerBed
+  name: bluespace rollerbed
+  description:
+  components:
+  - type: Item
+    size: Small
+    heldPrefix: rollerbed
+  - type: Sprite #tbd
+    layers:
+    - state: emergency_rollerbed
+      map: ["unfoldedLayer"]
+    - state: emergency_rollerbed_folded
+      map: ["foldedLayer"]
+      visible: false
+    - state: emergency_rollerbed_buckled
+      map: ["buckledLayer"]
+      visible: false
+  - type: Appearance
+
+- type: entity
+  parent: BlueshieldRollerBed
+  id: BlueshieldRollerBedSpawnFolded
+  suffix: folded
+  components:
+  - type: Foldable
+    folded: true
+  - type: Strap
+    enabled: False
+
+- type: entity
+  id: BlueshieldRollerBedStasis
+  parent: RollerBed
+  name: bluespace stasis rollerbed
+  description:
+  components:
+  - type: Item
+    size: Small
+    heldPrefix: rollerbed
+  - type: StasisBed # this
+  - type: AntiRotOnBuckle # this
+  - type: HealOnBuckle # and this is copied from the stasis bed
+    damage:
+      types:
+        Poison: -0.001
+        Blunt: -0.001
+  - type: Sprite #tbd
+    layers:
+    - state: emergency_rollerbed
+      map: ["unfoldedLayer"]
+    - state: emergency_rollerbed_folded
+      map: ["foldedLayer"]
+      visible: false
+    - state: emergency_rollerbed_buckled
+      map: ["buckledLayer"]
+      visible: false
+  - type: Appearance
+
+- type: entity
+  parent: BlueshieldRollerBedStasis
+  id: BlueshieldRollerBedStasisSpawnFolded
+  suffix: folded
+  components:
+  - type: Foldable
+    folded: true
+  - type: Strap
+    enabled: False

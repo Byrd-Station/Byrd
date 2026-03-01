@@ -254,7 +254,7 @@
     - id: EnergySpeedloaderLethal
     - id: EnergySpeedloaderLethal
     - id: EnergySpeedloaderDisabler
-
+    - id: EnergySpeedloaderDisabler # Omu, 2nd disabler speedloader
 - type: entity
   id: ClothingBeltMilitaryRigGrenadierFilled
   parent: ClothingBeltMilitaryRigGrenadier

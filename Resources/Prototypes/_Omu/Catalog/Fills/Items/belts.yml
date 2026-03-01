@@ -17,3 +17,48 @@
 - type: entity
   id: ClothingBeltCorpsmanFilled
   parent: [ClothingBeltCorpsman, ClothingBeltCorpsmanWebbingFilled]
+
+- type: entity
+  parent: ClothingBeltChemBagBSO
+  id: ClothingBeltChemBagBSOFilled
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: CombatInjector
+      amount: 1
+    - id: ProcenylLazideChemistryVial
+      amount: 1
+    - id: EbifinlLazideChemistryVial
+      amount: 1
+    - id: SyriniverChemistryVial
+      amount: 1
+    - id: TirimolChemistryVial
+      amount: 1
+    - id: ArtiplatesChemistryVial
+      amount: 1
+    - id: OmnizineChemistryVial
+      amount: 1
+
+- type: entity
+  parent: ClothingBeltMilitaryWebbingBSO
+  id: ClothingBeltMilitaryWebbingBSOFilledMed
+  suffix: Filled, Medical Set
+  components:
+  - type: StorageFill
+    contents:
+    - id: MedkitCombatFilled
+      amount: 2
+    - id: DefibrillatorCompact
+
+- type: entity
+  parent: ClothingBeltExtractionRigBSO
+  id: ClothingBeltExtractionRigBSOFilled
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: FultonBeaconBlueshield
+    - id: FultonBlueshield
+      amount: 20
+    - id: MedkitCombatBlueFilled
