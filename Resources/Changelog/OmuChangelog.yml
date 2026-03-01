@@ -2338,3 +2338,11 @@ Entries:
         loadout.
   id: 291
   time: '2026-02-28T18:47:29.0000000+00:00'
+- author: Dishwasher0
+  changes:
+    - type: Fix
+      message: 'Marathon: Xenobio APC lacking MV'
+    - type: Fix
+      message: Kettle has shaft miners
+  id: 292
+  time: '2026-03-01T00:31:43.0000000+00:00'
