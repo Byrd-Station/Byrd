@@ -1,8 +1,8 @@
 - type: entity
   parent: CentcomPDA
   id: CentCommInternPDA
-  name: CentComm Intern's PDA
-  description: A standard-issue CentComm Intern PDA.
+  name: CentComm intern PDA
+  description: A standard-issue CentComm intern PDA.
   components:
   - type: Pda
     id: CentralCommandInternIDCard
@@ -10,8 +10,8 @@
 - type: entity
   parent: CentcomPDA
   id: CentCommDireggtorPDA
-  name: CentComm Direggtor's PDA
-  description: A standard-issue CentComm Direggtor PDA.
+  name: CentComm direggtor PDA
+  description: A grade-A PDA. Smells like protein.
   components:
   - type: Pda
     id: CentralCommandDireggtorIDCard
@@ -19,8 +19,135 @@
 - type: entity
   parent: ClearPDA
   id: TransitPrisonerPDA
-  name: Prisoner PDA
+  name: prisoner PDA
   description: 99 and 44/100ths percent pure plastic.
   components:
   - type: Pda
     id: PrisonerIDCardPerma
+
+- type: entity
+  parent: ERTChaplainPDA
+  id: ERTChaplainPDABlue
+  suffix: Chaplain, Blue alert
+  components:
+  - type: Pda
+    id: ERTChaplainIDCardBlue
+
+- type: entity
+  parent: ERTEngineerPDA
+  id: ERTEngineerPDABlue
+  suffix: Engineer, Blue alert
+  components:
+  - type: Pda
+    id: ERTEngineerIDCardBlue
+
+- type: entity
+  parent: ERTJanitorPDA
+  id: ERTJanitorPDABlue
+  suffix: Janitor, Blue alert
+  components:
+  - type: Pda
+    id: ERTJanitorIDCardBlue
+
+- type: entity
+  parent: ERTMedicPDA
+  id: ERTMedicPDABlue
+  suffix: Medic, Blue alert
+  components:
+  - type: Pda
+    id: ERTMedicIDCardBlue
+
+- type: entity
+  parent: ERTSecurityPDA
+  id: ERTSecurityPDABlue
+  suffix: Security, Blue alert
+  components:
+  - type: Pda
+    id: ERTSecurityIDCardBlue
+
+#New PDAs for command!
+
+- type: entity
+  parent: [NanotrasenRepresentativePDA, BaseWidePDA]
+  id: AltNanotrasenRepresentativePDA
+  name: nanotrasen representative's PDA
+  description: Slick design for the one who walks among the crew.
+  components:
+  - type: Pda
+    id: NanotrasenRepresentativeIDCard
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-altnanorep
+  - type: Sprite
+    sprite: _Omu/Objects/Devices/pda.rsi
+    state: pda-altnanorep
+  - type: Icon
+    sprite: _Omu/Objects/Devices/pda.rsi
+    state: pda-altnanorep
+  - type: PdaBorderColor
+    borderColor: "#0d140d"
+
+- type: entity
+  parent: HoPPDA
+  id: altHoPPDA
+  name: head of personnel PDA
+  description: Themed after everyone's favorite pet.
+  components:
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-althop
+  - type: PdaBorderColor
+    borderColor: "#103152"
+    accentVColor: "#aca54b"
+    accentHColor: "#4e0607"
+  - type: Sprite
+    sprite: _Omu/Objects/Devices/pda.rsi
+    state: pda-althop
+  - type: Icon
+    sprite: _Omu/Objects/Devices/pda.rsi
+    state: pda-althop
+
+- type: entity
+  parent: CaptainPDA
+  id: altCaptainPDA
+  name: captain PDA
+  description: Same as your PDA, but with more style.
+  components:
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-altcaptain
+  - type: Sprite
+    sprite: _Omu/Objects/Devices/pda.rsi
+    state: pda-altcaptain
+  - type: Icon
+    sprite: _Omu/Objects/Devices/pda.rsi
+    state: pda-altcaptain
+  - type: PdaBorderColor
+    borderColor: "#103152"
+    accentVColor: "#e6a345"
+
+- type: entity
+  parent: BlueshieldPDA
+  id: altBlueshieldPDA
+  name: blueshield officer PDA
+  description: This one can take a bullet.
+  components:
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-altblueshield
+  - type: PdaBorderColor
+    borderColor: "#2569b0"
+  - type: Sprite
+    sprite: _Omu/Objects/Devices/pda.rsi
+    state: pda-altblueshield
+  - type: Icon
+    sprite: _Omu/Objects/Devices/pda.rsi
+    state: pda-altblueshield

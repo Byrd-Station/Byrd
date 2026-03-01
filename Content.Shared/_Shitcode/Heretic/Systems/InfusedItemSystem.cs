@@ -55,7 +55,7 @@ public sealed class InfusedItemSystem : EntitySystem
         if (HasComp<StatusEffectsComponent>(target))
         {
             _audio.PlayPvs(new SoundPathSpecifier("/Audio/Items/welder.ogg"), target);
-            _stun.TryParalyze(target, TimeSpan.FromSeconds(5f), true);
+            _stun.TryUpdateParalyzeDuration(target, TimeSpan.FromSeconds(5f));
             _language.DoRatvarian(target, TimeSpan.FromSeconds(10f), true);
         }
 
@@ -83,7 +83,7 @@ public sealed class InfusedItemSystem : EntitySystem
             if ((TryComp<HereticComponent>(target, out var th) && th.CurrentPath == heretic.CurrentPath))
                 continue;
 
-            if (!_grasp.TryApplyGraspEffectAndMark(args.User, heretic, target, null))
+            if (!_grasp.TryApplyGraspEffectAndMark(args.User, heretic, target, null, out _))
                 continue;
 
             success = true;

@@ -1,16 +1,21 @@
+using Content.Goobstation.Common.Conversion;
+using Content.Goobstation.Shared.Changeling.Components;
 using Content.Goobstation.Shared.LightDetection.Components;
 using Content.Goobstation.Shared.LightDetection.Systems;
 using Content.Goobstation.Shared.Mindcontrol;
 using Content.Goobstation.Shared.Shadowling.Components;
+using Content.Shared._Starlight.CollectiveMind;
 using Content.Shared.Actions;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
+using Content.Shared.Heretic;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Stunnable;
@@ -30,6 +35,7 @@ public abstract class SharedShadowlingSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly MovementModStatusSystem _movementMod = default!;
 
     public override void Initialize()
     {
@@ -83,9 +89,12 @@ public abstract class SharedShadowlingSystem : EntitySystem
         _lightDamage.AddResistance((ent.Owner, lightDet), -ent.Comp.LightResistanceModifier);
     }
 
+    public ProtoId<CollectiveMindPrototype> ShadowMind = "Shadowmind";
     private void OnInit(EntityUid uid, ShadowlingComponent component, ref MapInitEvent args)
     {
         _actions.AddAction(uid, ref component.ActionHatchEntity, component.ActionHatch);
+
+        EnsureComp<CollectiveMindComponent>(uid).Channels.Add(ShadowMind);
     }
 
     private void OnHatch(Entity<ShadowlingComponent> ent, ref HatchEvent args)
@@ -138,7 +147,8 @@ public abstract class SharedShadowlingSystem : EntitySystem
                 EntityManager.RemoveComponents(uid, _protoMan.Index(component.ObtainableComponents));
 
                 // this is such a big L that even the code is losing and all variables are hardcoded.
-                EnsureComp<SlowedDownComponent>(uid);
+                // upstreaming note - on god slowdowncomponent no longer exists so im straight up slowing the shadowlings for a DAY fuck it.
+                _movementMod.TryUpdateMovementSpeedModDuration(uid, SharedStunSystem.StunId, TimeSpan.FromDays(1), 0.5f, 0.5f);
                 _appearance.AddMarking(uid, "AbominationTorso");
                 _appearance.AddMarking(uid, "AbominationHorns");
 
@@ -203,9 +213,16 @@ public abstract class SharedShadowlingSystem : EntitySystem
 
     public bool CanGlare(EntityUid target)
     {
+        var convEv = new BeforeConversionEvent();
+        RaiseLocalEvent(target, ref convEv);
+
+        if (convEv.Blocked) // make all the shit below to use the event in the future tm
+            return false;
+
         return HasComp<MobStateComponent>(target)
                && !HasComp<ShadowlingComponent>(target)
-               && !HasComp<ThrallComponent>(target);
+               && !HasComp<ThrallComponent>(target)
+               && !HasComp<HereticComponent>(target);
     }
 
     public void DoEnthrall(EntityUid uid, EntProtoId components, SimpleDoAfterEvent args)

@@ -75,11 +75,13 @@
       enum.WizardTeleportUiKey.Key: # Goobstation - wizard
         type: WizardTeleportBoundUserInterface
         requireInputValidation: false
+      enum.RadarConsoleUiKey.Key: #goob - contractor
+        type: RadarConsoleBoundUserInterface
   - type: Sprite
     # scale: 0.9, 0.9 # Goobstation: port EE height/width sliders
     layers:
-      - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Groin" ]
+      - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
       - map: [ "enum.HumanoidVisualLayers.Eyes" ]
@@ -109,7 +111,7 @@
       - map: [ "beltalt" ] # Omu
       - map: [ "eyes" ]
       - map: [ "back" ] # Moved it to render under the neck stuff because it felt weird to see duffels be above cloaks? Dunno, this is a easy thing to change anyway.
-      - map: [ "neck" ] 
+      - map: [ "neck" ]
       - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
@@ -139,7 +141,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.32
-        density: 90
+        density: 130 # Omu Edit - Reversing the nerf on harpies by EE
         restitution: 0.0
         mask:
         - MobMask
@@ -159,7 +161,7 @@
   - type: Speech
     speechSounds: Harpy
     speechVerb: Harpy
-    allowedEmotes: ['Chirp', 'Trill', 'Warble', 'Wurble', 'Mars', 'Chitter', 'Squeak', 'Flap'] # Omu (Chitter, Squeak, Flap)
+    allowedEmotes: ['Chirp', 'Trill', 'Warble', 'Wurble', 'Mars', 'Chitter', 'Squeak', 'Flap', 'Scree', 'Call', 'Squawk'] # Omu (Chitter, Squeak, Flap, 'Scree', 'Call', 'Squawk')
   - type: Vocal
     sounds:
       Male: SoundsHarpyMale

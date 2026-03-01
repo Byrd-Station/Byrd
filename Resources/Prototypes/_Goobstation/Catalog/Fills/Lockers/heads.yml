@@ -28,7 +28,7 @@
     - id: WeaponDisablerAdvanced
     - id: BedsheetCentcom
     - id: CaneSheathFilledNanotrasen
-    - id: HandheldFaxNanorep
+    - id: HandheldFaxOfficial
     - id: RubberStampNanorep
     - id: ExecutiveBriefcaseEmpty # nanorep update
     - id: ComputerNTRTasksFlatpack # nanorep update
@@ -36,6 +36,7 @@
       amount: !type:ConstantNumberSelector
         value: 5
     - id: NanoRepStationReport # Goobstation
+    - id: Multitool # Omu - Added for tasks flatpack
 
 - type: entity
   id: LockerNanorepFilled
@@ -60,7 +61,6 @@
     - id: BoxZiptie
     - id: OxygenTankFilled
     - id: NitrogenTankFilled
-    - id: OmnimedTool
     - id: HandheldCrewMonitorBSO
     - id: BlueshieldUndeterminedWeapon
     - id: BlueshieldUndeterminedHardsuit

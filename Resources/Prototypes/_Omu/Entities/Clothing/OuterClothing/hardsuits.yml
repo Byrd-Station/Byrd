@@ -1,28 +1,28 @@
 - type: entity
   parent: ClothingOuterHardsuitVoidParamed
   id: ClothingOuterHardsuitCybersunParamedic
-  name: CSI-122M "Xiézhù" hardsuit 
-  description: A less armored and legal version of the "Guānlián" hardsuit, used by medical technicians, promoted by Interdyne.
+  name: CSI-122M "Xiézhù" hardsuit
+  description: A less armored and more legal version of the "Guānlián" hardsuit, used by medical technicians, promoted by Interdyne.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/OuterClothing/Hardsuits/cybersunparamedhardsuit.rsi
   - type: Clothing
     sprite: _Omu/Clothing/OuterClothing/Hardsuits/cybersunparamedhardsuit.rsi
-  - type: ToggleableClothing 
+  - type: ToggleableClothing
     clothingPrototypes:
       head: ClothingHeadHelmetCybersunParamedic
 
 - type: entity
   parent: [ ClothingOuterHardsuitBase, BaseSyndicateContraband ]
   id: ClothingOuterHardsuitCybersunScience
-  name: CSI-128X "Guānlián" hardsuit 
+  name: CSI-128X "Guānlián" hardsuit
   description: Designed with scientific research in mind, this hardsuit designed by Cybersun Industries protects from most enviromental hazards, with the downside of less physical protection.
   components:
   - type: Sprite
     sprite: _Omu/Clothing/OuterClothing/Hardsuits/cybersunscientisthardsuit.rsi
   - type: Clothing
     sprite: _Omu/Clothing/OuterClothing/Hardsuits/cybersunscientisthardsuit.rsi
-  - type: ToggleableClothing 
+  - type: ToggleableClothing
     clothingPrototypes:
       head: ClothingHeadHelmetCybersunScience
   - type: PressureProtection
@@ -59,4 +59,3 @@
 
 
 
-  

@@ -177,6 +177,7 @@
   - PlushieSpaceLizard
   - PersonalAI # Goobstation
   - GoldenPersonalAI # Goobstation
+  - CrewCassette # Goobstation
   - ThreeCandles
   - Lighter
   - CigPackGreen
@@ -202,6 +203,20 @@
   - ClothingNeckGenderfluidPin
   - ClothingNeckTransPin
   - ClothingNeckAutismPin
+  - ClothingNeckGoldAutismPin
+  - OffsetCane
+  - OffsetCaneWood
+  - OffsetCaneClown
+  - OffsetCaneMime
+  - OffsetCaneNT
+  - Cane
+  # GoobStation Start
+  - CardBoxBlack
+  - CardBoxNanotrasen
+  - FoodSnackLollypopWrapped
+  - FoodSnackLollypopWrappedRainbow
+  - FoodSnackLollypopWrappedCarp
+  # Goobstation End
   # Omu start
   - ClothingNeckCloakProgressPride
   - ClothingNeckCloakTrans
@@ -227,6 +242,12 @@
   - ClothingNeckScarfStripedTrans
   - ClothingNeckScarfStripedGenderfluid
   - ClothingNeckChameleonPride
+  - BarberScissors
+  - ClothingNeckUnathiMantle
+  - MysteryLighterBox
+  - DiscountDanLighter
+  - CheapLighter
+  - FlippoLighter
   # Omu end
   - CardBoxBlack # GoobStation
   - CardBoxNanotrasen # GoobStation
@@ -336,6 +357,7 @@
   loadouts:
   - CaptainHead
   - CaptainCap
+  - CaptainCapcapSenior # goob
 
 - type: loadoutGroup
   id: CaptainJumpsuit
@@ -356,6 +378,8 @@
   - CaptainCloak
   - CaptainCloakFormal
   - CaptainMantle
+  - VeteranCaptainCloak # goob
+  - CaptainEnsemble # goob
 
 - type: loadoutGroup
   id: CaptainBackpack
@@ -401,6 +425,7 @@
   loadouts:
   - HoPCloak
   - HoPMantle
+  - HeadOfPersonnelEnsemble # goob
 
 - type: loadoutGroup
   id: HoPBackpack
@@ -433,6 +458,7 @@
   - AncientJumpsuit
   - RainbowJumpsuit
   - RainbowJumpskirt
+  - Loungewear # omu
  # goob changes start
   - GreyMJ
   - BlackMJ
@@ -449,6 +475,7 @@
   - LightBrownMJ
   - BrownMJ
   - MaroonMJ
+  - QuarterzipJumpsuit
  # goob changes end
 
 - type: loadoutGroup
@@ -903,6 +930,7 @@
   loadouts:
   - QuartermasterCloak
   - QuartermasterMantle
+  - QuartermasterEnsemble # goob
 
 - type: loadoutGroup
   id: QuartermasterOuterClothing
@@ -937,6 +965,7 @@
   - CargoTechnicianSweaterSkirt
   - CargoTechnicianShortPantsIfuckinghateyouifyouwearthisbtw
   - CargoTechnicianShortSkirtsInsteadofPants
+  - CargoTechnicianUniformTopInsteadOfJumpsuit
   # OmuStation End
   - CargoTechnicianJumpsuitMail # Goob/DeltaV - Mail
   - CargoTechnicianJumpskirtMail # Goob/DeltaV - Mail
@@ -960,11 +989,14 @@
   - CargoTechnicianJacket # OmuStation
   - CargoTechnicianWintercoatMail # Goob/DeltaV - Mail
 
-- type: loadoutGroup
-  id: CargoTechnicianShoes
+- type: loadoutGroup # omu, more cargo shoes, all cargo jobs use the same loadoutgroup
+  id: CargoShoes
   name: loadout-group-cargo-technician-shoes
   loadouts:
   - BlackShoes
+  - WorkBoots
+  - FishingBoots
+  - SalvageBoots
   - CargoWinterBoots
 
 - type: loadoutGroup
@@ -1017,6 +1049,7 @@
   loadouts:
   - ChiefEngineerCloak
   - ChiefEngineerMantle
+  - ChiefEngineerEnsemble # goob
 
 - type: loadoutGroup
   id: ChiefEngineerOuterClothing
@@ -1024,6 +1057,8 @@
   minLimit: 0
   loadouts:
   - ChiefEngineerWintercoat
+  - SeniorEngineerXelthiaJacket
+  - ClothingOuterXelthiaInsulated
 
 - type: loadoutGroup
   id: ChiefEngineerShoes
@@ -1077,6 +1112,8 @@
   loadouts:
   - StationEngineerOuterVest
   - StationEngineerWintercoat
+  - SeniorEngineerXelthiaJacket
+  - ClothingOuterXelthiaInsulated
 
 - type: loadoutGroup
   id: StationEngineerShoes
@@ -1116,7 +1153,8 @@
   minLimit: 0
   loadouts:
   - AtmosphericTechnicianWintercoat
-
+  - SeniorEngineerXelthiaJacket
+  - ClothingOuterXelthiaInsulated
 - type: loadoutGroup
   id: AtmosphericTechnicianBackpack
   name: loadout-group-atmospheric-technician-backpack
@@ -1154,6 +1192,7 @@
   minLimit: 0
   loadouts:
   - ResearchDirectorBeret
+  - MystaHat # omu
 
 - type: loadoutGroup
   id: ResearchDirectorNeck
@@ -1163,6 +1202,7 @@
   - ResearchDirectorMantle
   - ResearchDirectorCloak
   - ResearchDirectorDecoratedCloak
+  - ResearchDirectorEnsemble # goob
 
 - type: loadoutGroup
   id: ResearchDirectorJumpsuit
@@ -1181,6 +1221,7 @@
   - ResearchDirectorLabCoat
   - ResearchDirectorWintercoat
   - LongScienceCoat # OmuStation
+  - MystaLabcoat # Omu
   - ResearchDirectorLabCoatPurple #goob
 
 - type: loadoutGroup
@@ -1195,8 +1236,8 @@
   name: loadout-group-scientist-head
   minLimit: 0
   loadouts:
-  - RoboticistCap
-  - SkullBandana
+  #- RoboticistCap
+  #- SkullBandana
   - ScientificBeret
 
 - type: loadoutGroup
@@ -1212,8 +1253,8 @@
   loadouts:
   - ScientistJumpsuit
   - ScientistJumpskirt
-  - RoboticistJumpsuit
-  - RoboticistJumpskirt
+  #- RoboticistJumpsuit
+  #- RoboticistJumpskirt
   - SeniorResearcherJumpsuit
   - SeniorResearcherJumpskirt
   - ResearchMJ # goob
@@ -1233,6 +1274,7 @@
   minLimit: 0
   loadouts:
   - RegularLabCoat
+  - EpiLabcoat # omu
   - ScienceLabCoat
   - ScienceWintercoat
   - RoboticistLabCoat
@@ -1295,6 +1337,10 @@
   - HoSParadeUniformMale # Omu
   - HoSParadeUniformFemale # Omu
   - HoSSummerShirt # goob
+  - HeadofSecurityBlueSuitDV # Omu
+  - HeadofSecurityBlueSkirtDV # Omu
+  - HeadofSecurityGreySuitDV # Omu
+  - HeadofSecurityGreySkirtDV # Omu
 
 - type: loadoutGroup
   id: HeadofSecurityNeck
@@ -1304,6 +1350,7 @@
   - HeadofSecurityCloak
   - HeadofSecurityMantle
   - Bodycam # Goobstation - Body cameras
+  - HeadOfSecurityEnsemble # goob
 
 - type: loadoutGroup
   id: HeadofSecurityOuterClothing
@@ -1329,6 +1376,10 @@
   loadouts:
   - WardenJumpsuit
   - WardenJumpskirt
+  - WardenJumpsuitBlueDV # Omu
+  - WardenJumpskirtBlueDV # Omu
+  - WardenJumpsuitGreyDV # Omu
+  - WardenJumpskirtGreyDV # Omu
 
 - type: loadoutGroup
   id: WardenOuterClothing
@@ -1361,6 +1412,10 @@
   - SeniorOfficerJumpskirt
   - TrooperUniform
   - BlackRedUniform # OmuStation Addon
+  - SecurityJumpsuitBlueDV # Omu
+  - SecurityJumpskirtBlueDV # Omu
+  - SecurityJumpsuitGreyDV # Omu
+  - SecurityJumpskirtGreyDV # Omu
 
 - type: loadoutGroup
   id: SecurityBackpack
@@ -1377,6 +1432,8 @@
   loadouts:
   - SecurityBelt
   - SecurityWebbing
+  - SecuritySwordBelt # Omu
+  - SecurityJudoBelt # Goobstation - Martial Arts
 
 - type: loadoutGroup
   id: SecurityOuterClothing
@@ -1491,6 +1548,8 @@
   loadouts:
   - ChiefMedicalOfficerLabCoat
   - ChiefMedicalOfficerWintercoat
+  - ClothingOuterXelthiaSurgical # Omu
+  - SeniorPhysicianXelthiaJacket # Omu
   - CMOVetLabCoat #Omu
 
 - type: loadoutGroup
@@ -1500,6 +1559,9 @@
   loadouts:
   - ChiefMedicalOfficerCloak
   - ChiefMedicalOfficerMantle
+  - ChiefMedicalOfficerDecoratedCloak # Omu
+  - ChiefMedicalOfficerModernMantle # Omu
+  - ChiefMedicalOfficerEnsemble # goob
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerShoes
@@ -1544,6 +1606,8 @@
   - RegularLabCoat
   - MedicalDoctorWintercoat
   - ClothingLabcoatLong # OmuStation
+  - ClothingOuterXelthiaSurgical # Omu
+  - SeniorPhysicianXelthiaJacket # Omu
   - SeniorPhysicianLabCoat
 
 - type: loadoutGroup
@@ -1599,9 +1663,11 @@
   loadouts:
   - ChemistJumpsuit
   - ChemistJumpskirt
+  - ChemistMJ # goob
   - SeniorPhysicianJumpsuit # Goobstation
   - SeniorPhysicianJumpskirt # Goobstation
-  - ChemistMJ # goob
+  - SeniorChemistJumpsuit # Starlight
+  - SeniorChemistJumpskirt #Starlight
 
 - type: loadoutGroup
   id: ChemistOuterClothing
@@ -1611,8 +1677,12 @@
   - RegularLabCoat
   - ChemistLabCoat
   - ChemistWintercoat
+  - ClothingOuterXelthiaSurgical # Omu
+  - SeniorPhysicianXelthiaJacket # Omu
   - ChemLabcoatLong # OmuStation
   - SeniorPhysicianLabCoat # Goobstation
+  - SeniorChemistLabCoat # Starlight
+  - SeniorChemistWintercoat # Starlight
 
 - type: loadoutGroup
   id: ChemistBackpack
@@ -1622,6 +1692,9 @@
   - ChemistSatchel
   - ChemistDuffel
   - ChemistMessenger # Frontier
+  - SeniorChemistBackpack # Starlight
+  - SeniorChemistSatchel # Starlight
+  - SeniorChemistDuffel # Starlight
 
 - type: loadoutGroup
   id: ParamedicHead
@@ -1657,6 +1730,8 @@
   - ClothingJacketParamedBlue # OmuStation
   - ParamedicDavidsJacket # Goobstation
   - SeniorPhysicianLabCoat # Goobstation
+  - SeniorPhysicianXelthiaJacket # Omu
+  - ClothingOuterXelthiaSurgical # Omu
 
 - type: loadoutGroup
   id: ParamedicShoes

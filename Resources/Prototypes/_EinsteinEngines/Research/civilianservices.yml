@@ -30,9 +30,27 @@
   - ChevalTranslatorImplanter
   - NewKinPidginTranslator
   - SchechiTranslator
+  - GruntishTranslator
+  - YowKriolTranslator # goob edit - yowie language
   position: -4, 4
   technologyPrerequisites:
   - AdvancedEntertainment
+
+- type: technology
+  id: PositronicInterfacing
+  name: research-technology-positronic-interfacing
+  icon:
+    sprite: _EinsteinEngines/Objects/Specific/Robotics/reversemmi.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+  - ReverseMMI
+  position: -5,5
+  technologyPrerequisites:
+  - BasicAugmentation
+  - BasicRobotics
 
 # Tier 3
 - type: technology
@@ -61,6 +79,8 @@
   - NewKinPidginTranslatorImplanter
   - AnimalTranslator
   - XenoTranslator
+  - GruntishTranslatorImplanter
+  - YowKriolTranslatorImplanter # goob edit - yowie language
   position: -4, 5
   technologyPrerequisites:
   - BasicTranslation

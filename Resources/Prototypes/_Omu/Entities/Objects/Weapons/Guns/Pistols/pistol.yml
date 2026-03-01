@@ -1,0 +1,9 @@
+- type: entity
+  id: WeaponPistolAnacondaCentComm
+  parent: WeaponPistolAnaconda
+  description: A heavy pistol capable of supplying itself with the ammo on the way using a built-in fabricator. A NanoTrasen Logo is stamped on the barrel.
+  suffix: CentComm
+  components:
+  - type: Contraband
+    allowedDepartments: [ CentralCommand ]
+    severity: Restricted

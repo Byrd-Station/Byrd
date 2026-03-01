@@ -66,6 +66,7 @@
             Lawyer: [ 2, 3 ]
             Zookeeper: [ 1, 1 ]
             ServiceWorker: [ 4, 4 ]
+            RadioHost: [ 1, 1 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
@@ -77,6 +78,7 @@
             Paramedic: [ 2, 2 ]
             MedicalDoctor: [ 3, 5 ]
             MedicalIntern: [ 8, 8 ]
+            Virologist: [ 1, 1 ]
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 4, 6 ]
@@ -92,7 +94,8 @@
             TransitPrisoner: [2, 2] # Omu - Prisoner role
             #supply
             Quartermaster: [ 1, 1 ]
-            SalvageSpecialist: [ 6, 6 ]
+            SalvageSpecialist: [ 3, 3 ]
+            ShaftMiner: [ 3, 3 ] # Omu
             CargoTechnician: [ 3, 3 ]
             #civillian
             Passenger: [ -1, -1 ]

@@ -1,5 +1,5 @@
 - type: entity
-  name: CentComm Intern rubber stamp
+  name: CentComm intern rubber stamp
   parent: RubberStampBase
   id: RubberStampCentcomIntern
   categories: [ DoNotMap ]

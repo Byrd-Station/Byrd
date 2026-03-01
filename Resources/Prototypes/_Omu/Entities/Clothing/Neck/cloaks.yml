@@ -39,3 +39,17 @@
         whitelist:
           tags:
           - WardenRapier
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
+  id: ClothingNeckCloakCMOFancy
+  name: decorated chief medical officer's cloak
+  description: A sterile blue cloak with a green cross, now decorated with a comfortable, white furred collar, as well as an attatched golden pin at the front, appropriate for a chief medical officer.
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Neck/Cloaks/cmocloakdecorated.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Neck/Cloaks/cmocloakdecorated.rsi
+  - type: StealTarget
+    stealGroup: HeadCloak
+  

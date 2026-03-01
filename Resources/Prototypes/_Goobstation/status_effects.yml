@@ -65,11 +65,13 @@
   alwaysAllowed: true
 
 - type: statusEffect
-  id: ShadowCloak
-  alert: ShadowCloak
+  id: ShadowCloakAlertSE
+  alert: ShadowCloakAlert
   alwaysAllowed: true
 
-- type: statusEffect
-  id: Fleshmend
-  alert: Fleshmend
-  alwaysAllowed: true
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectStaminaResistanceModifier
+  name: stamina resistance modifier
+  components:
+  - type: StaminaResistanceModifierStatusEffect
