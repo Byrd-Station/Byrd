@@ -166,10 +166,10 @@
   id: TunnelClownMidround
   components:
   - type: StationEvent
-    weight: 1
+    weight: 1 # Omu, was 4
     duration: null
     earliestStart: 15
-    minimumPlayers: 30
+    minimumPlayers: 30 # Omu, was 20
     chaos:
       Hostile: 15
       Combat: 20
@@ -241,7 +241,7 @@
     weight: 2
     duration: null
     earliestStart: 30
-    minimumPlayers: 50
+    minimumPlayers: 50 # Omu, was 30
     chaos:
       Death: 100
       Combat: 85
