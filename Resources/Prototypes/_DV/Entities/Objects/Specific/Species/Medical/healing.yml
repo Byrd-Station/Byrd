@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseHealingItem
   id: Oilpack
-  name: oil pack
+  name: water pack
   suffix: Full
-  description: Fit with a proprietary and disposable connector, oil can easily be injected to top off a bleeding IPC
+  description: Fit with a proprietary and disposable connector, water can easily be injected to top off a bleeding IPC
   components:
   - type: Sprite
     sprite: _DV/Objects/Medical/Oilpack.rsi
