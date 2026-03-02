@@ -7,7 +7,7 @@
 
 - type: entity
   id: BaseFish
-  parent: [SimpleMobBase, BaseItem]
+  parent: [BaseSimpleMob, BaseItem]
   abstract: true
   name: fish
   description: Water-born creature from the infinite sea... Or toilet.
@@ -46,6 +46,9 @@
     bloodMaxVolume: 20
     bloodReagent: Blood
   - type: ZombieImmune
+  - type: Body
+    bodyType: Simple
+    prototype: Animal
 
 - type: entity
   id: BaseFishRare
