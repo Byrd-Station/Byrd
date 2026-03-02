@@ -82,7 +82,7 @@
       reagents:
       - ReagentId: Sugar
         Quantity: 5
-#  - type: Lollypop # Omu, this causes errors
+  - type: Lollypop
 
 # Syndicate
 
@@ -423,8 +423,8 @@
       map: [ "enum.AmmoVisualLayers.Base" ]
     - state: lollypop-captain
       map: [ "enum.AmmoVisualLayers.Tip" ]
-#  - type: Lollypop # Omu, this causes errors
-#    deleteOnEmpty: false
+  - type: Lollypop
+    deleteOnEmpty: false
 
 # CentComm
 
