@@ -119,3 +119,7 @@ selectable-set-corpsman-combathardsuit-desc =
     Older model of corpsman's hardsuit.
     Built based on designs recovered from Regalis sector.
     Offers much better armor then newer models.
+
+# BSO
+bso-non-lethal-kit-name =   Non-lethal Kit
+bso-non-lethal-kit-desc =   A set designed specifically for non-lethal disposal of threats.

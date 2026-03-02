@@ -244,3 +244,17 @@
     state: icon
   content:
   - ClothingOuterHardsuitCorpsman
+
+#bso
+- type: selectableSet
+  id: BSONonLethalSet
+  name: bso-non-lethal-kit-name
+  description:  bso-non-lethal-kit-desc
+  sprite:
+    sprite: _Goobstation/Objects/Weapons/Melee/telebaton.rsi
+    state:  icon
+  content:
+  - WeaponAdvancedDisablerSMG
+  - TelescopicBatonAdvanced
+  - WeaponDisablerAdvanced
+  - HyperFlash

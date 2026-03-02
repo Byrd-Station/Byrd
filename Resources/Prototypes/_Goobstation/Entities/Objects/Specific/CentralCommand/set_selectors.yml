@@ -32,6 +32,7 @@
     - BSOChesterSet
     - BSOSyringeSet
     - BSOBRDISet # Omu
+    - BSONonLethalSet # 
     maxSelectedSets: 2
 
 
