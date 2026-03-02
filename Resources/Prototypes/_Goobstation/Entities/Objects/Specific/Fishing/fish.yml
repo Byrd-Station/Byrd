@@ -45,6 +45,14 @@
   - type: Bloodstream
     bloodMaxVolume: 20
     bloodReagent: Blood
+    bloodlossDamage:
+      types:
+        Bloodloss:
+          0.5
+    bloodlossHealDamage:
+      types:
+        Bloodloss:
+          1
   - type: ZombieImmune
   - type: Body
     bodyType: Simple
