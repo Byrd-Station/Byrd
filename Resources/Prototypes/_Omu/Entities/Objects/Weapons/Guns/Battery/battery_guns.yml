@@ -66,7 +66,7 @@
       shader: unshaded
   - type: ProjectileBatteryAmmoProvider
     proto:  BulletDisablerSmg
-    firecost: 25
+    fireCost: 25
   - type: PacifismAllowedGun
   - type: BatterySelfRecharger
     autoRecharge: true
