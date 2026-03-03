@@ -2346,3 +2346,15 @@ Entries:
       message: Kettle has shaft miners
   id: 292
   time: '2026-03-01T00:31:43.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Fix
+      message: oil packs should actually work now lol
+  id: 293
+  time: '2026-03-01T15:43:59.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: You no longer automatically eat lollypops in your mask slot.
+  id: 294
+  time: '2026-03-01T18:42:07.0000000+00:00'
