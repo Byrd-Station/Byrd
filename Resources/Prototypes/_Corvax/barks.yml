@@ -192,6 +192,7 @@
     collection: MaleAvaliBark
   speciesWhitelist:
     - Resomi
+    - Avali # Omu
 
 # FemaleAvali
 - type: soundCollection
@@ -210,6 +211,7 @@
     collection: FemaleAvaliBark
   speciesWhitelist:
     - Resomi
+    - Avali # Omu
 
 # Pai
 - type: soundCollection
