@@ -299,6 +299,7 @@
   - Mouse
   - Mothroach
   - Goldfish
+  - MobMoproach
 
 - type: loadoutGroup
   id: GroupTankHarness
@@ -696,7 +697,6 @@
   minLimit: 0
   loadouts:
   - JanitorGoldenPlunger
-  - MobMoproach
 
 - type: loadoutGroup
   id: BotanistHead
