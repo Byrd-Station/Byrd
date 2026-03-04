@@ -691,11 +691,12 @@
   - JanitorWintercoat
 
 - type: loadoutGroup
-  id: JanitorPlunger
-  name: loadout-group-janitor-plunger
+  id: JanitorTrinkets 
+  name: loadout-group-janitor-trinkets
   minLimit: 0
   loadouts:
   - JanitorGoldenPlunger
+  - MobMoproach
 
 - type: loadoutGroup
   id: BotanistHead
