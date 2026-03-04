@@ -73,6 +73,10 @@
     - id: DrinkBottleBeer
       amount: !type:BinomialNumberSelector
         trials: 3
+    - id: CocainePowder #OMU Start
+      prob: 0.01
+      amount: !type:RangeNumberSelector
+        range: 30, 30 #OMU End
     - !type:AllSelector
       rolls: 2
       children:

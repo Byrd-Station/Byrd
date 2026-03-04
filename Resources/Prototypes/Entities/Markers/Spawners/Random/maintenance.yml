@@ -323,6 +323,13 @@
       - id: FoodSnackLollypopWrappedMysteryEvil # Goobstation - Lollypops!
       - id: MysteryLighterBox
       - id: GoldenPersonalAI
+      - id: CocainePowder #OMU Start
+        amount: !type:RangeNumberSelector
+          range: 1, 2
+      - id: LeavesCoco
+        amount: !type:RangeNumberSelector
+          range: 1, 2
+      - id: CocoSeeds #OMU End
 
 - type: entity
   name: Maint Loot Spawner
