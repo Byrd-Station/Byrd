@@ -193,6 +193,7 @@
   speciesWhitelist:
     - Resomi
     - Avali # Omu
+    - Harpy # Omu End
 
 # FemaleAvali
 - type: soundCollection
@@ -212,6 +213,7 @@
   speciesWhitelist:
     - Resomi
     - Avali # Omu
+    - Harpy # Omu end 
 
 # Pai
 - type: soundCollection
