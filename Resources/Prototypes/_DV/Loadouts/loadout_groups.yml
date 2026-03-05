@@ -13,6 +13,7 @@
   minLimit: 0
   loadouts:
   - AdminAssistanthat
+  - MimeFrenchBeret
 
 - type: loadoutGroup
   id: AdminAssistantShoes
@@ -21,9 +22,10 @@
   - BlackShoes
   - BrownShoes
   - WhiteShoes
+  - AdminAssistantLacedShoes # Omu
+  - AdminAssistantLeatherShoes # Also, infact, omu
   # - BrownLeatherShoes
   # - WhiteLeatherShoes
-  # - LaceupShoes
 
 - type: loadoutGroup
   id: AdminAssistantOuter
