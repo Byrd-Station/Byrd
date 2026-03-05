@@ -1,0 +1,19 @@
+- type: Proficiency
+  id: SecurityOfficer
+  proficiencyMultiplier: 1.2
+  reloadSpeedProficiency: 0.8
+
+- type: Proficiency
+  id: Detective
+  proficiencyMultiplier: 1.2
+  reloadSpeedProficiency: 0.9
+
+- type: Proficiency
+  id: Warden
+  proficiencyMultiplier: 1.2
+  reloadSpeedProficiency: 0.7
+
+- type: Proficiency
+  id: HeadOfSecurity
+  proficiencyMultiplier: 1.2
+  reloadSpeedProficiency: 0.7
