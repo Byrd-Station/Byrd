@@ -1,0 +1,30 @@
+- type: Proficiency
+  id: ResearchDirector
+  items:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool
+    - WelderExperimental
+    - PowerDrill
+    #jaws probably too good to buff for rd tbh
+    #- JawsOfLife
+  # better stats than base scientist
+  proficiencyMultiplier: 1.4
+  # give sci a minor surgery speed buff, robotics exists and needs surgery to function
+  surgeryProficiency: 1.2
+
+- type: Proficiency
+  id: Scientist
+  items:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool
+  proficiencyMultiplier: 1.2
+  # give sci a minor surgery speed buff, robotics exists and needs surgery to function
+  surgeryProficiency: 1.1

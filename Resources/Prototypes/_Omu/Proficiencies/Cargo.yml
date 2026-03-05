@@ -1,0 +1,43 @@
+- type: Proficiency
+  id: CargoTechnician
+  items:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool
+  proficiencyMultiplier: 1.1
+
+- type: Proficiency
+  id: ShaftMiner
+  items:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool
+  proficiencyMultiplier: 1.2
+
+- type: Proficiency
+  id: SalvageSpecialist
+  items:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool
+  proficiencyMultiplier: 1.2
+
+- type: Proficiency
+  id: Quartermaster
+  items:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool
+  proficiencyMultiplier: 1.4

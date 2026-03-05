@@ -1,0 +1,33 @@
+
+- type: Proficiency
+  id: Captain
+  items:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool
+  proficiencyMultiplier: 1.2
+
+- type: Proficiency
+  id: AdministrativeAssistant
+  items:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool
+  proficiencyMultiplier: 1.1
+
+- type: Proficiency
+  id: Assistant
+  items:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool
+  proficiencyMultiplier: 1.1

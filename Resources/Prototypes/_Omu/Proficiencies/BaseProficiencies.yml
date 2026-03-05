@@ -1,0 +1,44 @@
+- type: Proficiency
+  id: BaseTools
+  items:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool
+
+- type: Proficiency
+  id: advancedTools
+  items:
+    - WelderExperimental
+    - PowerDrill
+    - JawsOfLife
+
+- type: Proficiency
+  id: BaseSci
+  items:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool
+  proficiencyMultiplier: 1.2
+  # give sci a minor surgery speed buff, robotics exists and needs surgery to function
+  surgeryProficiency: 1.1
+
+- type: Proficiency
+  id: BaseEngi
+  items:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - WelderIndustrial
+    - Multitool
+    - WelderExperimental
+    - PowerDrill
+    - JawsOfLife
+  proficiencyMultiplier: 1.2

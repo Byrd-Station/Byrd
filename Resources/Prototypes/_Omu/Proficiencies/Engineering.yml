@@ -1,0 +1,45 @@
+- type: Proficiency
+  id: StationEngineer
+  items:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool
+    - WelderExperimental
+    - PowerDrill
+    #- JawsOfLife
+  #so many buffs we can't have them ALL be fast
+  proficiencyMultiplier: 1.15
+
+- type: Proficiency
+  #basically just engi+
+  id: AtmosphericsTechnician
+  items:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool
+    - WelderExperimental
+    - PowerDrill
+    #- JawsOfLife
+  proficiencyMultiplier: 1.25
+
+- type: Proficiency
+  #basically just engi+
+  id: ChiefEngineer
+  items:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder
+    - Multitool
+    - WelderExperimental
+    - PowerDrill
+    #- JawsOfLife
+  #same as RD
+  proficiencyMultiplier: 1.4
