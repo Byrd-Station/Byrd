@@ -2338,3 +2338,39 @@ Entries:
         loadout.
   id: 291
   time: '2026-02-28T18:47:29.0000000+00:00'
+- author: Dishwasher0
+  changes:
+    - type: Fix
+      message: 'Marathon: Xenobio APC lacking MV'
+    - type: Fix
+      message: Kettle has shaft miners
+  id: 292
+  time: '2026-03-01T00:31:43.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Fix
+      message: oil packs should actually work now lol
+  id: 293
+  time: '2026-03-01T15:43:59.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Remove
+      message: You no longer automatically eat lollypops in your mask slot.
+  id: 294
+  time: '2026-03-01T18:42:07.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Changed the sprite of most walls
+  id: 295
+  time: '2026-03-03T17:51:36.0000000+00:00'
+- author: ShieldAcrados
+  changes:
+    - type: Add
+      message: ERT Janitor Variant of "Savior" Shuttle
+    - type: Tweak
+      message: Adjusted ERT locker contents
+    - type: Tweak
+      message: Adjusted ERT crew makeup.
+  id: 296
+  time: '2026-03-04T19:23:04.0000000+00:00'
