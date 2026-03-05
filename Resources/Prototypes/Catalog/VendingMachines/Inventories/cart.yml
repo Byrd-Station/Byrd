@@ -94,5 +94,5 @@
   emaggedInventory: # Goobstation
     AgentIDCard: 1
     # Below this comment - Omustation
-    SyndiePDA: 1
+    SyndiPDA: 1
     ClothingHeadsetAltSyndicate: 1
