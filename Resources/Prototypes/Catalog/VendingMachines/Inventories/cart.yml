@@ -88,7 +88,7 @@
     HoPPDA: 1
     altHoPPDA: 1
     HoSPDA: 2
-    Quartermaster: 2
+    QuartermasterPDA: 2
     RnDPDA: 2
     WardenPDA: 2
   emaggedInventory: # Goobstation
