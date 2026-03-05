@@ -80,6 +80,7 @@
   contrabandInventory:
     BalloonNT: 2
     LuxuryPen: 1
+    # Below this comment - Omustation
     CaptainPDA: 1
     altCaptainPDA: 1
     CEPDA: 2
@@ -92,3 +93,6 @@
     WardenPDA: 2
   emaggedInventory: # Goobstation
     AgentIDCard: 1
+    # Below this comment - Omustation
+    SyndiePDA: 1
+    ClothingHeadsetAltSyndicate: 1
