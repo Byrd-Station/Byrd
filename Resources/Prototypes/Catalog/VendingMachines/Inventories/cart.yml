@@ -63,7 +63,7 @@
     MinerPDA: 2
     MusicianPDA: 2
     ParamedicPDA: 2
-    PsycologistPDA: 2
+    PsychologistPDA: 2
     RadioHostPDA: 2
     ReporterPDA: 2
     ResearchAssistantPDA: 2
@@ -73,7 +73,7 @@
     SecurityPDA: 2
     SecurityCadetPDA: 2
     TechnicalAssistantPDA: 2
-    VirologyPDA: 2
+    VirologistPDA: 2
     ZookeeperPDA: 2
 
   contrabandInventory:
