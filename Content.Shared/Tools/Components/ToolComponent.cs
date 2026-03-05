@@ -42,11 +42,14 @@ using Content.Shared.Tools.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Utility;
+using Content.Shared._Omu.Proficiencies;
 
 namespace Content.Shared.Tools.Components;
 
 [RegisterComponent, NetworkedComponent]
-[Access(typeof(SharedToolSystem))]
+
+//Omu edit, added proficiency modifiers to tool speed
+[Access(typeof(SharedToolSystem), typeof(ProficiencySystem))]
 public sealed partial class ToolComponent : Component
 {
     [DataField]
