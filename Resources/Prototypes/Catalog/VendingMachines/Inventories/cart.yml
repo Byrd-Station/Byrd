@@ -42,7 +42,6 @@
     EncryptionKeySecurity: 1
     EncryptionKeyService: 3
     # Below this comment - Omustation
-    AdminAssistantPDA: 2
     AtmosPDA: 2
     BartenderPDA: 2
     BotanistPDA: 2
@@ -81,6 +80,7 @@
     BalloonNT: 2
     LuxuryPen: 1
     # Below this comment - Omustation
+    AdminAssistantPDA: 2
     CaptainPDA: 1
     altCaptainPDA: 1
     CEPDA: 2
