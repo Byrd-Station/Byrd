@@ -21,4 +21,8 @@ public sealed partial class ProficiencyPrototype : IPrototype
 
     [DataField]
     public float surgeryProficiency { get; private set; } = 1f;
+
+    //the lower the reloadspeed modifier the faster it goes
+    [DataField]
+    public float reloadSpeedProficiency { get; private set; } = 1f;
 }

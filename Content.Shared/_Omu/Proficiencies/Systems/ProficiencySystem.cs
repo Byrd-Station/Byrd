@@ -3,7 +3,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.Hands;
 using Content.Shared.Tools.Components;
 using Robust.Shared.Prototypes;
-
+using Content.Shared.Weapons.Ranged.Components;
 namespace Content.Shared._Omu.Proficiencies;
 
 public sealed class ProficiencySystem : EntitySystem
@@ -26,6 +26,11 @@ public sealed class ProficiencySystem : EntitySystem
         {
         bool handled = false;
 
+        if(TryComp<BallisticAmmoProviderComponent>(args.Equipped, out var ammoComp))
+        {
+            ammoComp.FillDelay *= proto.reloadSpeedProficiency;
+        }
+
         foreach (var Item in proto.Items){
             if(TryComp<MetaDataComponent>(args.Equipped, out var data) && data.EntityPrototype != null)
             {
@@ -37,6 +42,7 @@ public sealed class ProficiencySystem : EntitySystem
 
                         Dirty(args.Equipped, toolComp);
                     }
+
                 }
             }
         }
@@ -66,6 +72,10 @@ public sealed class ProficiencySystem : EntitySystem
                     Dirty(args.Unequipped, toolComp);
                 }
 
+            }
+            if (TryComp<BallisticAmmoProviderComponent>(args.Unequipped, out var ammoComp))
+            {
+                ammoComp.FillDelay *= MathF.Pow(proto.reloadSpeedProficiency, -1);
             }
         }
     }
