@@ -19,6 +19,23 @@
   equipment:
     ears: ClothingHeadsetAltAdminAssistant
 
+# Outer clothing
+- type: loadout
+  id: AdminAssistantCoat
+  equipment:
+    outerClothing: ClothingOuterCoatAA
+
+- type: loadout
+  id: AdminAssistantVetCoat
+  equipment:
+    outerClothing: ClothingOuterCoatAASeasoned
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobAdminAssistant
+      time: 54000 #15 hrs
+
 # Head
 - type: loadout
   id: AdminAssistanthat

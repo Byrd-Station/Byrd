@@ -724,6 +724,28 @@
     sprite: Clothing/OuterClothing/Coats/space_asshole.rsi
 
 - type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatAASeasoned
+  name: administrative assistant's seasoned trenchcoat
+  description: Belongs to an AA who has seen plenty of paperwork and coffee. It's been visibly washed many times, due to the amount of coffee spills it's been through, but it looks posh regardless. Smells like a brand new book.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/aa_coat_seasoned.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/aa_coat_seasoned.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatAA
+  name: administrative assistant's trenchcoat
+  description: The Administrative Assistant's coat. The inside of the coat has been scribbled on and filled with sticky notes, but luckily that can't be seen while worn. Smells like coffee.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Coats/aa_coat.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Coats/aa_coat.rsi
+
+- type: entity
   parent: ClothingOuterStorageFoldableBase
   id: ClothingOuterCoatExpensive
   name: expensive coat
