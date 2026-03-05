@@ -79,18 +79,6 @@
   contrabandInventory:
     BalloonNT: 2
     LuxuryPen: 1
-    # Below this comment - Omustation
-    AdminAssistantPDA: 2
-    CaptainPDA: 1
-    altCaptainPDA: 1
-    CEPDA: 2
-    CMOPDA: 2
-    HoPPDA: 1
-    altHoPPDA: 1
-    HoSPDA: 2
-    QuartermasterPDA: 2
-    RnDPDA: 2
-    WardenPDA: 2
   emaggedInventory: # Goobstation
     AgentIDCard: 1
     # Below this comment - Omustation
