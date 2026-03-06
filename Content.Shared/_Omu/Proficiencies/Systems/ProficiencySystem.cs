@@ -82,8 +82,6 @@ public sealed class ProficiencySystem : EntitySystem
     {
         entity.Comp.proficiencyID = args.JobId;
 
-        entity.Comp = null;
-
         if (entity.Comp.proficiencyID == null)
         {
             return;
