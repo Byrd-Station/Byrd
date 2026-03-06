@@ -18,4 +18,7 @@ public sealed partial class ProficiencyComponent : Component
     //the lower the reloadspeed modifier the faster it goes
     [DataField]
     public float reloadSpeedProficiency { get; set; } = 1f;
+
+    [DataField]
+    public string? proficiencyID;
 }
