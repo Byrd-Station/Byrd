@@ -52,7 +52,7 @@ jobs:
           labels: "S: Approved"
 
       - name: Remove Other Labels on Approved
-        if: steps.check-approvals.outputs.approval >= 2
+        if: steps.check-approvals.outputs.approvals >= 2
         uses: actions-ecosystem/action-remove-labels@v1
         env:
           github_token: ${{ secrets.GITHUB_TOKEN }}
