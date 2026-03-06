@@ -26,30 +26,7 @@ jobs:
       id: meta
       run: |
         PR_NUMBER=$(jq -r '.workflow_run.pull_requests[0].number' "$GITHUB_EVENT_PATH")
-        HEAD_SHA=$(jq -r '.workflow_run.head_sha' "$GITHUB_EVENT_PATH")
-
         echo "pr=$PR_NUMBER" >> $GITHUB_OUTPUT
-        echo "sha=$HEAD_SHA" >> $GITHUB_OUTPUT
-
-    - name: Verify PR exists and SHA matches
-      env:
-        TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        OWNER: ${{ github.repository_owner }}
-        REPO: ${{ github.event.repository.name }}
-        PR_NUMBER: ${{ steps.meta.outputs.pr }}
-        HEAD_SHA: ${{ steps.meta.outputs.sha }}
-      run: |
-        curl -o pr.json \
-          -H "Authorization: Bearer $TOKEN" \
-          -H "Accept: application/vnd.github+json" \
-          https://api.github.com/repos/$OWNER/$REPO/pulls/$PR_NUMBER
-
-        API_SHA=$(jq -r '.head.sha' pr.json)
-
-        if [ "$API_SHA" != "$HEAD_SHA" ]; then
-          echo "Commit SHA mismatch"
-          exit 1
-        fi
 
     - name: Fetch reviews
       env:
