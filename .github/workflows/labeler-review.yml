@@ -8,6 +8,11 @@ on:
     workflows: ["Review Trigger"]
     types: [completed]
 
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
 jobs:
   label-on-approval:
     if: |
@@ -16,82 +21,57 @@ jobs:
       github.event.workflow_run.repository.full_name == github.repository
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-      issues: write
-      pull-requests: write
-
     steps:
-    - name: Resolve PR from workflow commit
-      id: meta
+
+    - name: Get PR context
+      id: pr-context
       env:
-        TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        OWNER: ${{ github.repository_owner }}
-        REPO: ${{ github.event.repository.name }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PR_TARGET_REPO: ${{ github.repository }}
+        PR_BRANCH: |-
+          ${{
+            (github.event.workflow_run.head_repository.owner.login != github.event.workflow_run.repository.owner.login)
+              && format('{0}:{1}', github.event.workflow_run.head_repository.owner.login, github.event.workflow_run.head_branch)
+              || github.event.workflow_run.head_branch
+          }}
       run: |
-        HEAD_SHA=$(jq -r '.workflow_run.head_sha' "$GITHUB_EVENT_PATH")
-
-        if [ -z "$HEAD_SHA" ] || [ "$HEAD_SHA" = "null" ]; then
-        echo "No head_sha in workflow_run"
-        exit 1
-        fi
-
-        curl -L \
-        -H "Authorization: Bearer $TOKEN" \
-        -H "Accept: application/vnd.github+json" \
-        https://api.github.com/repos/$OWNER/$REPO/commits/$HEAD_SHA/pulls \
-        -o prs.json
-
-        TYPE=$(jq -r 'type' prs.json)
-
-        if [ "$TYPE" != "array" ]; then
-          echo "Unexpected response:"
-          cat prs.json
-          exit 1
-        fi
-
-        PR_NUMBER=$(jq -r '.[0].number' prs.json)
-
-        if [ -z "$PR_NUMBER" ] || [ "$PR_NUMBER" = "null" ]; then
-          echo "No PR associated with commit"
-          cat prs.json
-          exit 1
-        fi
-
-        REPO_NAME=$(jq -r '.[0].base.repo.full_name' prs.json)
-
-        if [ "$REPO_NAME" != "$OWNER/$REPO" ]; then
-        echo "PR belongs to different repository"
-        exit 1
-        fi
-
-        echo "Resolved PR: $PR_NUMBER"
-        echo "pr=$PR_NUMBER" >> $GITHUB_OUTPUT
+        gh pr view --repo "${PR_TARGET_REPO}" "${PR_BRANCH}" \
+          --json number --jq '"number=\(.number)"' \
+          >> "$GITHUB_OUTPUT"
 
     - name: Fetch reviews
       env:
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
         OWNER: ${{ github.repository_owner }}
         REPO: ${{ github.event.repository.name }}
-        PR_NUMBER: ${{ steps.meta.outputs.pr }}
+        PR_NUMBER: ${{ steps.pr-context.outputs.number }}
       run: |
-        curl -o reviews.json -L \
+        curl -s -o reviews.json -L \
           -H "Authorization: Bearer $TOKEN" \
           -H "Accept: application/vnd.github+json" \
           https://api.github.com/repos/$OWNER/$REPO/pulls/$PR_NUMBER/reviews
+
+        TYPE=$(jq -r 'type' reviews.json)
+
+        if [ "$TYPE" != "array" ]; then
+          echo "Unexpected API response:"
+          cat reviews.json
+          exit 1
+        fi
 
     - name: Count approvals
       id: check-approvals
       run: |
         APPROVALS=$(jq '
-          group_by(.user.login)
+          sort_by(.submitted_at)
+          | group_by(.user.login)
           | map(last)
           | map(select(.state=="APPROVED" and .user.type=="User"))
           | length
         ' reviews.json)
 
         echo "Number of approvals: $APPROVALS"
-        echo "approvals=$APPROVALS" >> $GITHUB_OUTPUT
+        echo "approvals=$APPROVALS" >> "$GITHUB_OUTPUT"
 
     - name: Add Approved Label if Enough Approvals
       if: steps.check-approvals.outputs.approvals >= 2
@@ -99,7 +79,7 @@ jobs:
       env:
         github_token: ${{ secrets.GITHUB_TOKEN }}
       with:
-        number: ${{ steps.meta.outputs.pr }}
+        number: ${{ steps.pr-context.outputs.number }}
         labels: "S: Approved"
 
     - name: Remove Other Labels on Approved
@@ -108,7 +88,7 @@ jobs:
       env:
         github_token: ${{ secrets.GITHUB_TOKEN }}
       with:
-        number: ${{ steps.meta.outputs.pr }}
+        number: ${{ steps.pr-context.outputs.number }}
         labels: |
           "S: Needs Review"
           "S: Needs Second Approval"
@@ -119,7 +99,7 @@ jobs:
       env:
         github_token: ${{ secrets.GITHUB_TOKEN }}
       with:
-        number: ${{ steps.meta.outputs.pr }}
+        number: ${{ steps.pr-context.outputs.number }}
         labels: |
           "S: Needs Second Approval"
           "S: Needs Review"
@@ -130,7 +110,7 @@ jobs:
       env:
         github_token: ${{ secrets.GITHUB_TOKEN }}
       with:
-        number: ${{ steps.meta.outputs.pr }}
+        number: ${{ steps.pr-context.outputs.number }}
         labels: "S: Approved"
 
     - name: Remove All Other Labels if No Approval
@@ -139,7 +119,8 @@ jobs:
       env:
         github_token: ${{ secrets.GITHUB_TOKEN }}
       with:
-        number: ${{ steps.meta.outputs.pr }}
+        number: ${{ steps.pr-context.outputs.number }}
         labels: |
           "S: Approved"
           "S: Needs Second Approval"
+
