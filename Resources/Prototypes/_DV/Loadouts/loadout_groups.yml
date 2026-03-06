@@ -6,6 +6,10 @@
   loadouts:
   - AdminAssistantJumpsuit
   - AdminAssistantJumpskirt
+  - AdminAssistantSuit
+  - AdminAssistantRuinedSuit
+  - AdminAssistantTurtleneck
+  - AdminAssistantTurtleskirt
 
 - type: loadoutGroup
   id: AdminAssistantHead
@@ -37,6 +41,12 @@
   # - WinterCoatBlack
   # - WinterCoatBrown
   # - CorporateJacket
+
+- type: loadoutGroup
+  id: AdminAssistantNeck
+  name: loadout-group-admin-assistant-neck
+  loadouts:
+  - AACloak
 
 - type: loadoutGroup
   id: AdminAssistantEar
