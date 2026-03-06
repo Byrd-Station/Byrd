@@ -90,7 +90,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-using Content.Shared._Omu.Proficiencies;
+using Content.Shared._Omu.Proficiencies.Systems;
 namespace Content.Shared.Weapons.Ranged.Components;
 
 //Omu edit, added proficiency modifiers to reload speed
