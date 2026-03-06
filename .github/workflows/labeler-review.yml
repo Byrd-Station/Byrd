@@ -95,7 +95,9 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
       with:
         number: ${{ steps.pr-context.outputs.number }}
-        labels: "S: Needs Review,S: Needs Second Approval"
+        labels: |
+          S: Needs Review
+          S: Needs Second Approval
 
     - name: Add Second Approval Requirement
       if: steps.check-approvals.outputs.approvals == 1
@@ -104,7 +106,9 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
       with:
         number: ${{ steps.pr-context.outputs.number }}
-        labels: "S: Needs Review,S: Needs Second Approval"
+        labels: |
+          S: Needs Review
+          S: Needs Second Approval
 
     - name: Remove Other Labels on Second Approval
       if: steps.check-approvals.outputs.approvals == 1
@@ -122,5 +126,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
       with:
         number: ${{ steps.pr-context.outputs.number }}
-        labels: "S: Needs Review,S: Needs Second Approval"
+        labels: |
+          S: Needs Review
+          S: Needs Second Approval
 
