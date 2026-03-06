@@ -26,18 +26,24 @@ jobs:
     - name: Get PR context
       id: pr-context
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ github.token }}
         PR_TARGET_REPO: ${{ github.repository }}
-        PR_BRANCH: |-
-          ${{
-            (github.event.workflow_run.head_repository.owner.login != github.event.workflow_run.repository.owner.login)
-              && format('{0}:{1}', github.event.workflow_run.head_repository.owner.login, github.event.workflow_run.head_branch)
-              || github.event.workflow_run.head_branch
-          }}
+        HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
       run: |
-        gh pr view --repo "${PR_TARGET_REPO}" "${PR_BRANCH}" \
-          --json number --jq '"number=\(.number)"' \
-          >> "$GITHUB_OUTPUT"
+        PR_NUMBER=$(gh pr list \
+        --repo "${PR_TARGET_REPO}" \
+        --search "${HEAD_SHA}" \
+        --state all \
+        --json number \
+        --jq '.[0].number')
+
+          if [ -z "$PR_NUMBER" ] || [ "$PR_NUMBER" = "null" ]; then
+            echo "Could not resolve PR for commit ${HEAD_SHA}"
+            exit 1
+          fi
+
+          echo "Resolved PR: $PR_NUMBER"
+          echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
 
     - name: Fetch reviews
       env:
