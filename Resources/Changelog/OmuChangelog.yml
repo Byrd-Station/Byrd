@@ -2364,3 +2364,13 @@ Entries:
       message: Changed the sprite of most walls
   id: 295
   time: '2026-03-03T17:51:36.0000000+00:00'
+- author: ShieldAcrados
+  changes:
+    - type: Add
+      message: ERT Janitor Variant of "Savior" Shuttle
+    - type: Tweak
+      message: Adjusted ERT locker contents
+    - type: Tweak
+      message: Adjusted ERT crew makeup.
+  id: 296
+  time: '2026-03-04T19:23:04.0000000+00:00'
