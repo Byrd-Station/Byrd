@@ -1,90 +1,129 @@
-# SPDX-FileCopyrightText: 2024 Myra <vasilis@pikachu.systems>
-# SPDX-FileCopyrightText: 2024 Saphire Lattice <lattice@saphi.re>
-# SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
+# This is shit and needs cleanup but since we are technically running this after a workflow that runs on the fork and not master i kinda want to make sure we use nothing from that workflow
+# Forgive me for the mess. This is overkill.
+# I am future planning against shit that will never end up mattering.
 name: "Labels: Approved"
 
 on:
-  pull_request_review:
-    types: [submitted]
+  workflow_run:
+    workflows: ["Review Trigger"]
+    types: [completed]
 
 jobs:
   label-on-approval:
+    if: |
+      github.event.workflow_run.name == 'Review Trigger' &&
+      github.event.workflow_run.event == 'pull_request_review' &&
+      github.event.workflow_run.repository.full_name == github.repository &&
+      github.event.workflow_run.pull_requests[0].number != null
+    runs-on: ubuntu-latest
+
     permissions:
       contents: read
       issues: write
       pull-requests: write
-    runs-on: ubuntu-latest
+
     steps:
-      - name: Create JSON File
-        id: curling-reviews
-        run: |
-          PR_NUMBER=${{ github.event.pull_request.number }}
-          OWNER=${{ github.repository_owner }}
-          REPO=${{ github.event.repository.name }}
-          TOKEN=${{ secrets.GITHUB_TOKEN }}
+    - name: Extract PR metadata
+      id: meta
+      run: |
+        PR_NUMBER=$(jq -r '.workflow_run.pull_requests[0].number' "$GITHUB_EVENT_PATH")
+        HEAD_SHA=$(jq -r '.workflow_run.head_sha' "$GITHUB_EVENT_PATH")
 
-          # Fetch the reviews and place them into a json file.
-          curl -o reviews.json -L \
-                -H "Accept: application/vnd.github+json" \
-                -H "Authorization: Bearer $TOKEN" \
-                -H "X-GitHub-Api-Version: 2022-11-28" \
-                https://api.github.com/repos/$OWNER/$REPO/pulls/$PR_NUMBER/reviews
+        echo "pr=$PR_NUMBER" >> $GITHUB_OUTPUT
+        echo "sha=$HEAD_SHA" >> $GITHUB_OUTPUT
 
-      - name: Check for Approvals
-        id: check-approvals
-        run: |
-          # Count the number of approvals
-          APPROVALS=$(jq '[.[] | select(.state=="APPROVED")] | length' reviews.json)
+    - name: Verify PR exists and SHA matches
+      env:
+        TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        OWNER: ${{ github.repository_owner }}
+        REPO: ${{ github.event.repository.name }}
+        PR_NUMBER: ${{ steps.meta.outputs.pr }}
+        HEAD_SHA: ${{ steps.meta.outputs.sha }}
+      run: |
+        curl -o pr.json \
+          -H "Authorization: Bearer $TOKEN" \
+          -H "Accept: application/vnd.github+json" \
+          https://api.github.com/repos/$OWNER/$REPO/pulls/$PR_NUMBER
 
-          echo "Number of approvals: $APPROVALS"
-          echo "::set-output name=approvals::$APPROVALS"
+        API_SHA=$(jq -r '.head.sha' pr.json)
 
-      - name: Add Approved Label if Enough Approvals
-        if: steps.check-approvals.outputs.approvals >= 2  # Change the threshold here
-        uses: actions-ecosystem/action-add-labels@v1
-        env:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          labels: "S: Approved"
+        if [ "$API_SHA" != "$HEAD_SHA" ]; then
+          echo "Commit SHA mismatch"
+          exit 1
+        fi
 
-      - name: Remove Other Labels on Approved
-        if: steps.check-approvals.outputs.approvals >= 2
-        uses: actions-ecosystem/action-remove-labels@v1
-        env:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          labels: |
-            "S: Needs Review"
-            "S: Needs Second Approval"
+    - name: Fetch reviews
+      env:
+        TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        OWNER: ${{ github.repository_owner }}
+        REPO: ${{ github.event.repository.name }}
+        PR_NUMBER: ${{ steps.meta.outputs.pr }}
+      run: |
+        curl -o reviews.json -L \
+          -H "Authorization: Bearer $TOKEN" \
+          -H "Accept: application/vnd.github+json" \
+          https://api.github.com/repos/$OWNER/$REPO/pulls/$PR_NUMBER/reviews
 
-      - name: Add Second Approval Requirement on Approval
-        if: steps.check-approvals.outputs.approvals == 1
-        uses: actions-ecosystem/action-add-labels@v1
-        env:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          labels: |
-            "S: Needs Second Approval"
-            "S: Needs Review"
+    - name: Count approvals
+      id: check-approvals
+      run: |
+        APPROVALS=$(jq '
+          group_by(.user.login)
+          | map(last)
+          | map(select(.state=="APPROVED" and .user.type=="User"))
+          | length
+        ' reviews.json)
 
-      - name: Remove Other Labels on Second Approval Requirement
-        if: steps.check-approvals.outputs.approvals == 1
-        uses: actions-ecosystem/action-remove-labels@v1
-        env:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          labels: "S: Approved"
+        echo "Number of approvals: $APPROVALS"
+        echo "approvals=$APPROVALS" >> $GITHUB_OUTPUT
 
-      - name: Remove All Other Labels if No Approval
-        if: steps.check-approvals.outputs.approvals < 1
-        uses: actions-ecosystem/action-remove-labels@v1
-        env:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          labels: |
-            "S: Approved"
-            "S: Needs Second Approval"
+    - name: Add Approved Label if Enough Approvals
+      if: steps.check-approvals.outputs.approvals >= 2
+      uses: actions-ecosystem/action-add-labels@v1
+      env:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        number: ${{ steps.meta.outputs.pr }}
+        labels: "S: Approved"
+
+    - name: Remove Other Labels on Approved
+      if: steps.check-approvals.outputs.approvals >= 2
+      uses: actions-ecosystem/action-remove-labels@v1
+      env:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        number: ${{ steps.meta.outputs.pr }}
+        labels: |
+          "S: Needs Review"
+          "S: Needs Second Approval"
+
+    - name: Add Second Approval Requirement
+      if: steps.check-approvals.outputs.approvals == 1
+      uses: actions-ecosystem/action-add-labels@v1
+      env:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        number: ${{ steps.meta.outputs.pr }}
+        labels: |
+          "S: Needs Second Approval"
+          "S: Needs Review"
+
+    - name: Remove Other Labels on Second Approval
+      if: steps.check-approvals.outputs.approvals == 1
+      uses: actions-ecosystem/action-remove-labels@v1
+      env:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        number: ${{ steps.meta.outputs.pr }}
+        labels: "S: Approved"
+
+    - name: Remove All Other Labels if No Approval
+      if: steps.check-approvals.outputs.approvals < 1
+      uses: actions-ecosystem/action-remove-labels@v1
+      env:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        number: ${{ steps.meta.outputs.pr }}
+        labels: |
+          "S: Approved"
+          "S: Needs Second Approval"
