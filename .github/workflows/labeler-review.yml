@@ -22,10 +22,50 @@ jobs:
       pull-requests: write
 
     steps:
-    - name: Extract PR metadata
+    - name: Resolve PR from workflow commit
       id: meta
+      env:
+        TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        OWNER: ${{ github.repository_owner }}
+        REPO: ${{ github.event.repository.name }}
       run: |
-        PR_NUMBER=$(jq -r '.workflow_run.pull_requests[0].number' "$GITHUB_EVENT_PATH")
+        HEAD_SHA=$(jq -r '.workflow_run.head_sha' "$GITHUB_EVENT_PATH")
+
+        if [ -z "$HEAD_SHA" ] || [ "$HEAD_SHA" = "null" ]; then
+        echo "No head_sha in workflow_run"
+        exit 1
+        fi
+
+        curl -L \
+        -H "Authorization: Bearer $TOKEN" \
+        -H "Accept: application/vnd.github+json" \
+        https://api.github.com/repos/$OWNER/$REPO/commits/$HEAD_SHA/pulls \
+        -o prs.json
+
+        TYPE=$(jq -r 'type' prs.json)
+
+        if [ "$TYPE" != "array" ]; then
+          echo "Unexpected response:"
+          cat prs.json
+          exit 1
+        fi
+
+        PR_NUMBER=$(jq -r '.[0].number' prs.json)
+
+        if [ -z "$PR_NUMBER" ] || [ "$PR_NUMBER" = "null" ]; then
+          echo "No PR associated with commit"
+          cat prs.json
+          exit 1
+        fi
+
+        REPO_NAME=$(jq -r '.[0].base.repo.full_name' prs.json)
+
+        if [ "$REPO_NAME" != "$OWNER/$REPO" ]; then
+        echo "PR belongs to different repository"
+        exit 1
+        fi
+
+        echo "Resolved PR: $PR_NUMBER"
         echo "pr=$PR_NUMBER" >> $GITHUB_OUTPUT
 
     - name: Fetch reviews
