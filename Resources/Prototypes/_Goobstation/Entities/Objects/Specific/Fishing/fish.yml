@@ -52,7 +52,7 @@
     bloodlossHealDamage:
       types:
         Bloodloss:
-          1
+          -1
   - type: ZombieImmune
   - type: Body
     bodyType: Simple
