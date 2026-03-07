@@ -2442,3 +2442,13 @@ Entries:
         well as retaliating against attackers.
   id: 306
   time: '2026-03-07T18:30:01.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Fix
+      message: Lollypops can be put in your mouth again.
+    - type: Tweak
+      message: >-
+        Fish are stupider, no longer space immune, and now rot. This applies to
+        fishing, not carp.
+  id: 307
+  time: '2026-03-07T21:48:00.0000000+00:00'
