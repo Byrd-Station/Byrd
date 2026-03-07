@@ -49,7 +49,7 @@ namespace Content.Shared.Tools.Components;
 [RegisterComponent, NetworkedComponent]
 
 //Omu edit, added proficiency modifiers to tool speed
-[Access(typeof(SharedToolSystem), typeof(ProficiencySystem))]
+[Access(typeof(SharedToolSystem), typeof(CommonProficiencySystem))]
 public sealed partial class ToolComponent : Component
 {
     [DataField]

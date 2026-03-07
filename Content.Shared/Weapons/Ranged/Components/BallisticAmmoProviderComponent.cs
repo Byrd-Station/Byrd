@@ -94,7 +94,7 @@ using Content.Omu.Common.Proficiencies;
 namespace Content.Shared.Weapons.Ranged.Components;
 
 //Omu edit, added proficiency modifiers to reload speed
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true), Access(typeof(SharedGunSystem), typeof(ProficiencySystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true), Access(typeof(SharedGunSystem), typeof(CommonProficiencySystem))]
 
 public sealed partial class BallisticAmmoProviderComponent : Component
 {

@@ -1,24 +1,22 @@
 using Robust.Shared.Prototypes;
-using Content.Omu.Shared.Proficiencies.Systems;
-
 namespace Content.Omu.Shared.Proficiencies;
 
-[RegisterComponent, Access(typeof(ProficiencySystem))]
+[RegisterComponent]
 public sealed partial class ProficiencyComponent : Component
 {
     [DataField]
     public List<EntProtoId>? Items;
 
     [DataField]
-    public float proficiencyMultiplier { get; set; } = 1f;
+    public float ProficiencyMultiplier { get; set; } = 1f;
 
     [DataField]
-    public float surgeryProficiency { get; set; } = 1f;
+    public float SurgeryProficiency { get; set; } = 1f;
 
     //the lower the reloadspeed modifier the faster it goes
     [DataField]
-    public float reloadSpeedProficiency { get; set; } = 1f;
+    public float ReloadSpeedProficiency { get; set; } = 1f;
 
     [DataField]
-    public string? proficiencyID;
+    public string? ProficiencyID;
 }

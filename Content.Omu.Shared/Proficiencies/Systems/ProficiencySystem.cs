@@ -4,9 +4,11 @@ using Content.Shared.Hands;
 using Content.Shared.Tools.Components;
 using Robust.Shared.Prototypes;
 using Content.Shared.Weapons.Ranged.Components;
+using Content.Omu.Common.Proficiencies;
+
 namespace Content.Omu.Shared.Proficiencies.Systems;
 
-public sealed class ProficiencySystem : EntitySystem
+public sealed class ProficiencySystem : CommonProficiencySystem
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
@@ -20,13 +22,13 @@ public sealed class ProficiencySystem : EntitySystem
 
 
     private void OnEquip(Entity<ProficiencyComponent> entity, ref DidEquipHandEvent args){
-        if(entity.Comp != null && entity.Comp.Items != null)
+        if(entity.Comp.Items != null)
         {
         bool handled = false;
 
         if(TryComp<BallisticAmmoProviderComponent>(args.Equipped, out var ammoComp))
         {
-            ammoComp.FillDelay *= entity.Comp.reloadSpeedProficiency;
+            ammoComp.FillDelay *= entity.Comp.ReloadSpeedProficiency;
         }
 
         foreach (var Item in entity.Comp.Items){
@@ -36,7 +38,7 @@ public sealed class ProficiencySystem : EntitySystem
                     handled = true;
 
                     if(TryComp<ToolComponent>(args.Equipped, out var toolComp)){
-                        toolComp.SpeedModifier *= entity.Comp.proficiencyMultiplier;
+                        toolComp.SpeedModifier *= entity.Comp.ProficiencyMultiplier;
 
                         Dirty(args.Equipped, toolComp);
                     }
@@ -49,7 +51,7 @@ public sealed class ProficiencySystem : EntitySystem
         {
                 if(TryComp<ToolComponent>(args.Equipped, out var toolComp))
                 {
-                    toolComp.SpeedModifier *= MathF.Pow(entity.Comp.proficiencyMultiplier, -1);
+                    toolComp.SpeedModifier *= MathF.Pow(entity.Comp.ProficiencyMultiplier, -1);
 
                     Dirty(args.Equipped, toolComp);
                 }
@@ -73,31 +75,31 @@ public sealed class ProficiencySystem : EntitySystem
             }
             if (TryComp<BallisticAmmoProviderComponent>(args.Unequipped, out var ammoComp))
             {
-                ammoComp.FillDelay *= MathF.Pow(entity.Comp.reloadSpeedProficiency, -1);
+                ammoComp.FillDelay *= MathF.Pow(entity.Comp.ReloadSpeedProficiency, -1);
             }
         }
     }
 
     private void OnPlayerSpawnComplete(Entity<ProficiencyComponent> entity, ref PlayerSpawnCompleteEvent args)
     {
-        entity.Comp.proficiencyID = args.JobId;
+        entity.Comp.ProficiencyID = args.JobId;
 
-        if (entity.Comp.proficiencyID == null)
+        if (entity.Comp.ProficiencyID == null)
         {
             return;
         }
 
-        if (entity.Comp.proficiencyID != null && args.JobId != null && _prototypeManager.TryIndex<ProficiencyPrototype>(args.JobId, out var proficiencyPrototype))
+        if (entity.Comp.ProficiencyID != null && args.JobId != null && _prototypeManager.TryIndex<ProficiencyPrototype>(args.JobId, out var proficiencyPrototype))
         {
             entity.Comp.Items = proficiencyPrototype.Items;
-            entity.Comp.proficiencyMultiplier = proficiencyPrototype.proficiencyMultiplier;
-            entity.Comp.surgeryProficiency = proficiencyPrototype.surgeryProficiency;
-            entity.Comp.reloadSpeedProficiency = proficiencyPrototype.reloadSpeedProficiency;
+            entity.Comp.ProficiencyMultiplier = proficiencyPrototype.proficiencyMultiplier;
+            entity.Comp.SurgeryProficiency = proficiencyPrototype.surgeryProficiency;
+            entity.Comp.ReloadSpeedProficiency = proficiencyPrototype.reloadSpeedProficiency;
 
-            if (entity.Comp.surgeryProficiency != 1f)
+            if (entity.Comp.SurgeryProficiency != 1f)
             {
                 var surgerySpeedComp = _entityManager.EnsureComponent<SurgerySpeedModifierComponent>(args.Mob);
-                surgerySpeedComp.SpeedModifier *= entity.Comp.surgeryProficiency;
+                surgerySpeedComp.SpeedModifier *= entity.Comp.SurgeryProficiency;
 
                 Dirty(args.Mob, surgerySpeedComp);
             }
