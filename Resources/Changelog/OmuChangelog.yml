@@ -2380,3 +2380,9 @@ Entries:
       message: Removed the XenoVac's emag interaction.
   id: 297
   time: '2026-03-07T06:20:41.0000000+00:00'
+- author: Pgriha
+  changes:
+    - type: Add
+      message: Avali voices for Avalis and Harpies!
+  id: 298
+  time: '2026-03-07T15:02:16.0000000+00:00'
