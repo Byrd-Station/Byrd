@@ -40,7 +40,7 @@
   name: R6 "Slammer" trench gun
   parent: [BaseWeaponRevolver, BaseGunWieldable, BaseGrandTheftContraband]
   id: WeaponWardenRevolverShotgun
-  description: The semi-automatic R6 trench gun, designed for clearing corners. Designed to shoot 12 gauge slugs, fits in your jackboots.
+  description: The semi-automatic R6 trench gun, designed for clearing corners. It has the punch of a 12 gauge slug while being small enough to fit in your boots!
   components:
   - type: Sprite
     sprite: _Omu/Objects/Weapons/Guns/Revolvers/R6.rsi
@@ -54,7 +54,7 @@
   - type: AmmoCounter
   - type: Gun
     selectedMode: SemiAuto
-    fireRate: 1.8
+    fireRate: 1.5
     availableModes:
     - SemiAuto
     soundGunshot:
