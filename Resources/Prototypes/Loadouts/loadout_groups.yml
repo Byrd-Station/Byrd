@@ -299,7 +299,7 @@
   - Mouse
   - Mothroach
   - Goldfish
-  - MobMoproach
+  - MobMoproach # Omu
 
 - type: loadoutGroup
   id: GroupTankHarness
@@ -692,8 +692,8 @@
   - JanitorWintercoat
 
 - type: loadoutGroup
-  id: JanitorTrinkets 
-  name: loadout-group-janitor-trinkets
+  id: JanitorPlunger
+  name: loadout-group-janitor-plunger
   minLimit: 0
   loadouts:
   - JanitorGoldenPlunger
