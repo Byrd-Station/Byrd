@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/06/2026 18:30:04
-  entityCount: 22495
+  time: 03/07/2026 09:46:41
+  entityCount: 22488
 maps:
 - 1
 grids:
@@ -11423,7 +11423,7 @@ entities:
       pos: -15.5,21.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -12701.312
+      secondsUntilStateChange: -12783.278
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12539,7 +12539,7 @@ entities:
       pos: 3.5,39.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -12402.512
+      secondsUntilStateChange: -12484.479
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -97609,6 +97609,67 @@ entities:
     components:
     - type: Transform
       pos: -55.502846,-1.2079115
+      parent: 2
+- proto: LampBanana
+  entities:
+  - uid: 13702
+    components:
+    - type: Transform
+      pos: 9.2312565,10.9702215
+      parent: 2
+- proto: LampGold
+  entities:
+  - uid: 6
+    components:
+    - type: Transform
+      pos: 7.612573,33.740444
+      parent: 2
+  - uid: 8776
+    components:
+    - type: Transform
+      pos: 4.474407,45.917553
+      parent: 2
+  - uid: 8777
+    components:
+    - type: Transform
+      pos: -12.748703,37.857666
+      parent: 2
+  - uid: 8779
+    components:
+    - type: Transform
+      pos: -9.676407,61.35792
+      parent: 2
+  - uid: 8780
+    components:
+    - type: Transform
+      pos: -12.760042,77.837364
+      parent: 2
+  - uid: 8781
+    components:
+    - type: Transform
+      pos: 11.671097,22.892496
+      parent: 2
+  - uid: 10991
+    components:
+    - type: Transform
+      pos: 21.349426,7.4799747
+      parent: 2
+  - uid: 14005
+    components:
+    - type: Transform
+      pos: 13.338435,-2.2633624
+      parent: 2
+  - uid: 14006
+    components:
+    - type: Transform
+      pos: 7.379455,-14.3124895
+      parent: 2
+- proto: LampInterrogator
+  entities:
+  - uid: 5
+    components:
+    - type: Transform
+      pos: 17.498405,29.808243
       parent: 2
 - proto: LandMineExplosive
   entities:
