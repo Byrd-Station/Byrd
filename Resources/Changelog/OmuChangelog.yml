@@ -2386,3 +2386,37 @@ Entries:
       message: Avali voices for Avalis and Harpies!
   id: 298
   time: '2026-03-07T15:02:16.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: 'Fixed Plastitanium windows not linking to adjacent walls. '
+  id: 299
+  time: '2026-03-07T17:32:48.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added corpsman access, which is now used by their locker.
+    - type: Tweak
+      message: Paramedic access is now used for parameds locker.
+  id: 300
+  time: '2026-03-07T17:34:04.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Corpsman's armor now allows items in the suit storage slot.
+  id: 301
+  time: '2026-03-07T17:37:27.0000000+00:00'
+- author: 'JustOrdinaryPao '
+  changes:
+    - type: Tweak
+      message: PTech can now dispense other PDAs
+    - type: Tweak
+      message: PTech now dispenses syndie PDA and headset when emagged
+  id: 302
+  time: '2026-03-07T17:40:28.0000000+00:00'
+- author: Giltsmith
+  changes:
+    - type: Add
+      message: Added a moproach to animals loadout category with jani time req.
+  id: 303
+  time: '2026-03-07T17:40:53.0000000+00:00'
