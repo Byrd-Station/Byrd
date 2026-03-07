@@ -3,7 +3,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 
 
 
-namespace Content.Shared._Omu.Proficiencies;
+namespace Content.Omu.Shared.Proficiencies;
 
 [Prototype("Proficiency")]
 [DataDefinition]

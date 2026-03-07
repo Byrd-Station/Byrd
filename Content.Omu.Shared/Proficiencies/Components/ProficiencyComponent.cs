@@ -1,7 +1,7 @@
 using Robust.Shared.Prototypes;
-using Content.Shared._Omu.Proficiencies.Systems;
+using Content.Omu.Shared.Proficiencies.Systems;
 
-namespace Content.Shared._Omu.Proficiencies;
+namespace Content.Omu.Shared.Proficiencies;
 
 [RegisterComponent, Access(typeof(ProficiencySystem))]
 public sealed partial class ProficiencyComponent : Component

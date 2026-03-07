@@ -42,7 +42,7 @@ using Content.Shared.Tools.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Utility;
-using Content.Shared._Omu.Proficiencies.Systems;
+using Content.Omu.Common.Proficiencies;
 
 namespace Content.Shared.Tools.Components;
 

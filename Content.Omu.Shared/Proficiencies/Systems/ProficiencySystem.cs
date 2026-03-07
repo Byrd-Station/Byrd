@@ -4,7 +4,7 @@ using Content.Shared.Hands;
 using Content.Shared.Tools.Components;
 using Robust.Shared.Prototypes;
 using Content.Shared.Weapons.Ranged.Components;
-namespace Content.Shared._Omu.Proficiencies.Systems;
+namespace Content.Omu.Shared.Proficiencies.Systems;
 
 public sealed class ProficiencySystem : EntitySystem
 {
