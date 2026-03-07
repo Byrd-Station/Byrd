@@ -7713,12 +7713,6 @@ entities:
     - type: Transform
       pos: 14.549229,-26.422525
       parent: 2
-- proto: ActionToggleLight
-  entities:
-  - uid: 6
-    components:
-    - type: Transform
-      parent: 5
 - proto: AirAlarm
   entities:
   - uid: 13
