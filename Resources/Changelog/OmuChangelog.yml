@@ -2420,3 +2420,25 @@ Entries:
       message: Added a moproach to animals loadout category with jani time req.
   id: 303
   time: '2026-03-07T17:40:53.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Changed the sprites of most doors.
+    - type: Fix
+      message: 'Secret doors are now actually secret. '
+  id: 304
+  time: '2026-03-07T18:25:12.0000000+00:00'
+- author: jellygato
+  changes:
+    - type: Add
+      message: Recipes for lazy tiramisu and fancy tiramisu are now available.
+  id: 305
+  time: '2026-03-07T18:28:46.0000000+00:00'
+- author: TheSecondLord
+  changes:
+    - type: Tweak
+      message: >-
+        Homunculi will now bond with their parent and follow them around, as
+        well as retaliating against attackers.
+  id: 306
+  time: '2026-03-07T18:30:01.0000000+00:00'
