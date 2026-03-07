@@ -219,19 +219,6 @@
     - id: Syringe
 
 - type: entity
-  parent: SeniorChemBag
-  id: SeniorChemBagFilled
-  suffix: Filled
-  components:
-  - type: StorageFill
-    contents:
-    - id: Jug
-    - id: LargeBeaker
-    - id: Beaker
-    - id: BaseChemistryEmptyVial
-    - id: Syringe
-
-- type: entity
   parent: ClothingBeltChemBagSyndi
   id: ClothingBeltChemBagSyndiFilled
   suffix: Filled
