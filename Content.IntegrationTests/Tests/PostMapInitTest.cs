@@ -223,6 +223,7 @@ namespace Content.IntegrationTests.Tests
             "Lambda",         // Not in pool
             "Lavatest",       // Dev map
             "Leonid",
+            "Lighthouse",     // Omu
             "Loop",
             "Marathon",
             "Meta",
@@ -266,6 +267,7 @@ namespace Content.IntegrationTests.Tests
             //"Lambda",         // Not in pool
               "Lavatest",       //Dev map
               "Leonid",
+              "Lighthouse",     // Omu
               "Loop",
               "Marathon",
               "Meta",
@@ -279,7 +281,7 @@ namespace Content.IntegrationTests.Tests
             //"Train",          //Not in pool
               "Packed",
               "Reach",
-              "Saltern",
+              "Saltern
             //"Serpentcrest", Omu No
         };
         // Goobstation edit end
