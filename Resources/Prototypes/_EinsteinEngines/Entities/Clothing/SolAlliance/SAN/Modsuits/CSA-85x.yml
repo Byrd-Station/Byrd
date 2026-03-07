@@ -74,7 +74,8 @@
           Heat: 0.85
           Radiation: 0.95
     - type: SealableClothingVisuals
-      visualLayers:
+      spriteLayer: sealed
+      clothingVisuals:
         head:
           - state: equipped-HEAD-sealed
             shader: unshaded
