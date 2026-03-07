@@ -54,7 +54,7 @@
   - type: AmmoCounter
   - type: Gun
     selectedMode: SemiAuto
-    fireRate: 1.5
+    fireRate: 1.8
     availableModes:
     - SemiAuto
     soundGunshot:
