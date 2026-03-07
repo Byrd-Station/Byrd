@@ -75,7 +75,7 @@
     TechnicalAssistantPDA: 2
     VirologistPDA: 2
     ZookeeperPDA: 2
-  # Omu end
+    # Omu end
   contrabandInventory:
     BalloonNT: 2
     LuxuryPen: 1
