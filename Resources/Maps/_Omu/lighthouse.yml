@@ -59779,18 +59779,6 @@ entities:
     - type: Transform
       pos: 14.246622,45.491707
       parent: 2
-- proto: FlashlightLantern
-  entities:
-  - uid: 8776
-    components:
-    - type: Transform
-      pos: -49.61639,54.682938
-      parent: 2
-  - uid: 8777
-    components:
-    - type: Transform
-      pos: -45.44929,-29.413708
-      parent: 2
 - proto: FlashPayload
   entities:
   - uid: 8778
