@@ -2420,3 +2420,57 @@ Entries:
       message: Added a moproach to animals loadout category with jani time req.
   id: 303
   time: '2026-03-07T17:40:53.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Changed the sprites of most doors.
+    - type: Fix
+      message: 'Secret doors are now actually secret. '
+  id: 304
+  time: '2026-03-07T18:25:12.0000000+00:00'
+- author: jellygato
+  changes:
+    - type: Add
+      message: Recipes for lazy tiramisu and fancy tiramisu are now available.
+  id: 305
+  time: '2026-03-07T18:28:46.0000000+00:00'
+- author: TheSecondLord
+  changes:
+    - type: Tweak
+      message: >-
+        Homunculi will now bond with their parent and follow them around, as
+        well as retaliating against attackers.
+  id: 306
+  time: '2026-03-07T18:30:01.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Fix
+      message: Lollypops can be put in your mouth again.
+    - type: Tweak
+      message: >-
+        Fish are stupider, no longer space immune, and now rot. This applies to
+        fishing, not carp.
+  id: 307
+  time: '2026-03-07T21:48:00.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Add
+      message: Wawa wa waaa waaawa War.
+    - type: Add
+      message: scurret reinforcement
+  id: 308
+  time: '2026-03-08T10:13:54.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        Changed the warden's trench gun to 12 gauge, lowered the firing rate by
+        alot...
+  id: 309
+  time: '2026-03-08T10:15:10.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Remove
+      message: Removed the nexus from Avali and Resomi.
+  id: 310
+  time: '2026-03-08T10:46:18.0000000+00:00'
