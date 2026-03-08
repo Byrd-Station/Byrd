@@ -19,8 +19,6 @@
   - type: PowerCellDraw
     drawRate: 0.4
   - type: ToggleCellDraw
-
-  # buh
   - type: ActivatableUI
     key: enum.EnergyReagentDispenserUiKey.Key
   - type: UserInterface
@@ -29,7 +27,7 @@
         type: EnergyReagentDispenserBoundUserInterface
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
-  - type: EnergyReagentDispenser #Keep on bottom for view's sake, format is reagentProto: Cost
+  - type: EnergyReagentDispenser
     energyBeakerSlot:
       whitelistFailPopup: reagent-dispenser-component-cannot-put-entity-message
       whitelist:
