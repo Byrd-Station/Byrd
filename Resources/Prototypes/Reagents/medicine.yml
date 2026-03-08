@@ -1929,6 +1929,8 @@
         reagent: MindbreakerToxin
         amount: -3.0
 
+# Omu
+
 - type: reagent
   id: Destressium
   name: reagent-name-destressium

@@ -132,9 +132,11 @@
     heldOnly: true
     examinableWhileClosed: false
 
-- type: entity
+# Omu start
+
+- type: entity 
   parent: BaseItem
-  id: BluespaceDrinkShaker # Omu item
+  id: BluespaceDrinkShaker 
   name: bluespace shaker
   description: A marvel of bartending, made for the Administrative Assistant.
   components:
@@ -179,6 +181,8 @@
     solution: drink
     heldOnly: true
     examinableWhileClosed: false
+
+#Omu end
 
 - type: entity
   parent: DrinkGlassBase

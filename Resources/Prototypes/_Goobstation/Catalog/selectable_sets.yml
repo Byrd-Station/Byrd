@@ -652,7 +652,7 @@
   content:
   - ClothingModsuitResearchDirectorPowerCell
 
-# Administrative Assistant AA (Omu)
+# Administrative Assistant AA (Omu Start) 
 
 - type: selectableSet
   id: AAHospitalityKit
@@ -664,6 +664,7 @@
   content:
   - BluespaceDrinkShaker
   - DrinkMugAA
+  - BarSpoon
 
 - type: selectableSet
   id: AABureaucracyKit
@@ -685,3 +686,5 @@
     state: icon
   content:
   - HandheldStationMap
+
+  # OmuEnd
