@@ -5,4 +5,4 @@
   description: A standard issue webbing for SAN marines.
   components:
     - type: Item
-      size: normal
+      size: Normal
