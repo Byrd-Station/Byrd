@@ -1,8 +1,8 @@
 - type: entity
-  name: Faca de Cozinha de Ouro
+  name: golden kitchen knife
   parent: BaseKnife
   id: GoldKitchenKnife
-  description: Banhada a ouro apenas para os chefs mais refinados. Uma faca de chef de uso geral, fabricada pela Asters Merchant Guild.
+  description: A general purpose gold-plated Chef's Knife made by Asters Merchant Guild's greatest artisans. Guaranteed to impress the whole crew.
   components:
   - type: Tag
     tags:
@@ -27,10 +27,10 @@
         Slash: 10
 
 - type: entity
-  name: Cutelo de Açougueiro de Ouro
+  name: golden butcher's cleaver
   parent: BaseKnife
   id: GoldButchCleaver
-  description: Banhada a ouro, exclusiva para os chefs mais refinados. Uma lâmina enorme usada para picar e desfiar carne.
+  description: A huge gold-plated blade for chopping up meat. Cuts up clowns with twice the efficiency.
   components:
   - type: Tag
     tags:
