@@ -1,0 +1,26 @@
+- type: entity
+  parent: BaseCigar
+  id: SupermatterShardSmoke
+  name: supermatter shard smoke
+  description: A cigarette infused with a sliver of supermatter. The air around it crackles with energy.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Smokeables/Cigars/cigar.rsi
+    state: unlit-icon
+  - type: Clothing
+    sprite: Objects/Consumable/Smokeables/Cigars/cigar.rsi
+    slots: [ mask ]
+    equippedPrefix: unlit
+  - type: Item
+    size: Tiny
+    sprite: Objects/Consumable/Smokeables/Cigars/cigar.rsi
+    heldPrefix: unlit
+  - type: PointLight
+    enabled: true
+    radius: 1.5
+    energy: 2
+    color: "#61D5FF"
+  - type: SupermatterSmoke
+  - type: Construction
+    graph: SupermatterShardSmoke
+    node: supermatterShardSmoke

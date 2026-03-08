@@ -29,4 +29,5 @@
     - type: Tag
       tags:
         - HighRiskItem
+        - SupermatterSliver # Omu
     - type: SupermatterImmune

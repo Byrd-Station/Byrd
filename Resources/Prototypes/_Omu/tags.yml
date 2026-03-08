@@ -2,6 +2,9 @@
   id: WardenRapier
 
 - type: Tag
+  id: SupermatterSliver
+
+- type: Tag
   id: AdvancedEnergyMagAmmo
 
 - type: Tag

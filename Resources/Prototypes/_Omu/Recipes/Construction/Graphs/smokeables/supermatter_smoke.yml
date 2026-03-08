@@ -1,0 +1,14 @@
+- type: constructionGraph
+  id: SupermatterShardSmoke
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: supermatterShardSmoke
+      steps:
+      - material: PaperRolling
+      - material: CigaretteFilter
+      - tag: SupermatterSliver
+        doAfter: 5
+  - node: supermatterShardSmoke
+    entity: SupermatterShardSmoke

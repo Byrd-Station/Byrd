@@ -1,0 +1,12 @@
+- type: construction
+  id: SupermatterShardSmoke
+  name: supermatter shard smoke
+  description: A cigarette infused with supermatter energy. Extremely dangerous.
+  graph: SupermatterShardSmoke
+  startNode: start
+  targetNode: supermatterShardSmoke
+  category: construction-category-misc
+  objectType: Item
+  icon:
+    sprite: Objects/Consumable/Smokeables/Cigars/cigar.rsi
+    state: unlit-icon
