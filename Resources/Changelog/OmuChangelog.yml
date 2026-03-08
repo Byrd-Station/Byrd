@@ -2452,3 +2452,31 @@ Entries:
         fishing, not carp.
   id: 307
   time: '2026-03-07T21:48:00.0000000+00:00'
+- author: harryhulse12-alt
+  changes:
+    - type: Add
+      message: Wawa wa waaa waaawa War.
+    - type: Add
+      message: scurret reinforcement
+  id: 308
+  time: '2026-03-08T10:13:54.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        Changed the warden's trench gun to 12 gauge, lowered the firing rate by
+        alot...
+  id: 309
+  time: '2026-03-08T10:15:10.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Remove
+      message: Removed the nexus from Avali and Resomi.
+  id: 310
+  time: '2026-03-08T10:46:18.0000000+00:00'
+- author: PhosphateWithManyOs
+  changes:
+    - type: Fix
+      message: Chemists get their beltbag back.
+  id: 311
+  time: '2026-03-08T17:55:49.0000000+00:00'
