@@ -5,7 +5,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChef
-      time: 180000 # 50hr
+      time: 252000 # 70hr
   storage:
     back:
     - GoldKitchenKnife
@@ -17,7 +17,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChef
-      time: 180000 # 50hr
+      time: 252000 # 70hr
   storage:
     back:
     - GoldButchCleaver
