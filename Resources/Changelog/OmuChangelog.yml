@@ -2468,3 +2468,9 @@ Entries:
         alot...
   id: 309
   time: '2026-03-08T10:15:10.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Remove
+      message: Removed the nexus from Avali and Resomi.
+  id: 310
+  time: '2026-03-08T10:46:18.0000000+00:00'
