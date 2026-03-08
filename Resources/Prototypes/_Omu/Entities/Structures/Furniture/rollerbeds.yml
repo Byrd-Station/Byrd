@@ -6,15 +6,17 @@
   components:
   - type: Item
     size: Small
-    heldPrefix: rollerbed
-  - type: Sprite #tbd
+    heldPrefix: bluespace_rollerbed # the inhands are also the same as stasis but renamed
+  - type: Sprite
+    sprite: _Omu/Structures/Furniture/rollerbeds.rsi
+    noRot: true
     layers:
-    - state: emergency_rollerbed
+    - state: bluespace_rollerbed
       map: ["unfoldedLayer"]
-    - state: emergency_rollerbed_folded
+    - state: bluespace_rollerbed_folded # this is just the same as stasis folded but renamed
       map: ["foldedLayer"]
       visible: false
-    - state: emergency_rollerbed_buckled
+    - state: bluespace_rollerbed_buckled
       map: ["buckledLayer"]
       visible: false
   - type: Appearance
@@ -31,13 +33,25 @@
 
 - type: entity
   id: BlueshieldRollerBedStasis
-  parent: RollerBed
+  parent: BlueshieldRollerBed
   name: bluespace stasis rollerbed
   description:
   components:
   - type: Item
     size: Small
-    heldPrefix: rollerbed
+    heldPrefix: bluespace_stasis_rollerbed
+  - type: Sprite
+    sprite: _Omu/Structures/Furniture/rollerbeds.rsi
+    noRot: true
+    layers:
+    - state: bluespace_stasis_rollerbed
+      map: ["unfoldedLayer"]
+    - state: bluespace_stasis_rollerbed_folded
+      map: ["foldedLayer"]
+      visible: false
+    - state: bluespace_stasis_rollerbed_buckled
+      map: ["buckledLayer"]
+      visible: false
   - type: StasisBed # this
   - type: AntiRotOnBuckle # this
   - type: HealOnBuckle # and this is copied from the stasis bed
@@ -45,16 +59,6 @@
       types:
         Poison: -0.001
         Blunt: -0.001
-  - type: Sprite #tbd
-    layers:
-    - state: emergency_rollerbed
-      map: ["unfoldedLayer"]
-    - state: emergency_rollerbed_folded
-      map: ["foldedLayer"]
-      visible: false
-    - state: emergency_rollerbed_buckled
-      map: ["buckledLayer"]
-      visible: false
   - type: Appearance
 
 - type: entity

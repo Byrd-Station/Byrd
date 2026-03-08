@@ -35,11 +35,6 @@ selectable-set-hos-brdi-description=
     Once wielded by an unknown member of the Biesel Foreign Legion,
     this beloved rifle has seen battle with Sol on every world in the colonies.
 
-selectable-set-bso-brdi-name = BRDI R-25
-selectable-set-bso-brdi-description=
-    An iconic weapon used by members of the Biesel Republic Foreign Legion.
-    Repainted for Blueshield Officers.
-
 selectable-set-mk58-name = Mk58 Pistol
 selectable-set-mk58-description =
     The standard duty pistol for Nanotrasen security.
@@ -119,3 +114,25 @@ selectable-set-corpsman-combathardsuit-desc =
     Older model of corpsman's hardsuit.
     Built based on designs recovered from Regalis sector.
     Offers much better armor then newer models.
+
+# BSO
+selectable-set-bso-brdi-name = BRDI R-25
+selectable-set-bso-brdi-description =
+    An iconic weapon used by members of the Biesel Republic Foreign Legion.
+    Repainted for Blueshield Officers.
+
+selectable-set-bso-extraction-name = Extraction kit
+selectable-set-bso-extraction-description =
+    description goes here
+
+selectable-set-bso-surgical-name = Surgical kit
+selectable-set-bso-surgical-description =
+    description goes here
+
+selectable-set-bso-medical-name = Medical kit
+selectable-set-bso-medical-description =
+    description goes here
+
+selectable-set-bso-chemical-name = Chemical kit
+selectable-set-bso-chemical-description =
+    description goes here

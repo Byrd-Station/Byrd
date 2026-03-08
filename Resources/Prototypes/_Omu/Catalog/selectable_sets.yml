@@ -249,36 +249,40 @@
 
 - type: selectableSet
   id: BSOExtractionSet
-  name: selectable-set-bso-extraction-description
+  name: selectable-set-bso-extraction-name
+  description: selectable-set-bso-extraction-description
   sprite:
-    sprite:
-    state: 
+    sprite: _Omu/Objects/Tools/bluespace_fulton.rsi
+    state: extraction_pack
   content:
   - ClothingBeltExtractionRigBSOFilled
 
 - type: selectableSet
   id: BSOSurgicalSet
-  name: selectable-set-bso-extraction-description
+  name: selectable-set-bso-surgical-name
+  description: selectable-set-bso-surgical-description
   sprite:
-    sprite:
-    state: 
+    sprite: _Shitmed/Objects/Specific/Medical/Surgery/omnimed.rsi
+    state: omnimed
   content:
-  -
+  - ClothingBeltBlueshieldEliteWebbingSurgicalFilled
 
 - type: selectableSet
   id: BSOMedicalSet
-  name: selectable-set-bso-extraction-description
+  name: selectable-set-bso-medical-name
+  description: selectable-set-bso-medical-description
   sprite:
-    sprite:
-    state: 
+    sprite: Objects/Specific/Medical/medical.rsi
+    state: medicated-suture
   content:
   - ClothingBeltMilitaryWebbingBSOFilledMed
 
 - type: selectableSet
   id: BSOChemicalSet
-  name: selectable-set-bso-chemical-description
+  name: selectable-set-bso-chemical-name
+  description: selectable-set-bso-chemical-description
   sprite:
-    sprite:
-    state: 
+    sprite: _Goobstation/Objects/Weapons/Melee/blueshield_knife.rsi
+    state: icon
   content:
   - ClothingBeltChemBagBSOFilled

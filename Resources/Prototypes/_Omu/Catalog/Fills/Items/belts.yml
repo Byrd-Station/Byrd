@@ -18,6 +18,7 @@
   id: ClothingBeltCorpsmanFilled
   parent: [ClothingBeltCorpsman, ClothingBeltCorpsmanWebbingFilled]
 
+- type: entity
   id: ClothingBeltHolsterMagazinePistolFilled
   parent: ClothingBeltHolster
   suffix: Filled, MagazinePistol
@@ -38,8 +39,8 @@
       amount: 2
 
 - type: entity
-  parent: ClothingBeltChemBagBSO
   id: ClothingBeltChemBagBSOFilled
+  parent: ClothingBeltChemBagBSO
   suffix: Filled
   components:
   - type: StorageFill
@@ -60,24 +61,33 @@
       amount: 1
 
 - type: entity
-  parent: ClothingBeltMilitaryWebbingBSO
   id: ClothingBeltMilitaryWebbingBSOFilledMed
+  parent: ClothingBeltMilitaryWebbingBSO
   suffix: Filled, Medical Set
   components:
   - type: StorageFill
     contents:
+    - id: DefibrillatorCompact
     - id: MedkitCombatFilled
       amount: 2
-    - id: DefibrillatorCompact
 
 - type: entity
-  parent: ClothingBeltExtractionRigBSO
   id: ClothingBeltExtractionRigBSOFilled
+  parent: ClothingBeltExtractionRigBSO
   suffix: Filled
   components:
   - type: StorageFill
     contents:
     - id: FultonBeaconBlueshield
     - id: FultonBlueshield
-      amount: 20
     - id: MedkitCombatBlueFilled
+
+- type: entity
+  id: ClothingBeltBlueshieldEliteWebbingSurgicalFilled
+  parent: ClothingBeltBlueshieldEliteWebbingSurgical
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: OmnimedTool
+    - id: BodyBagBluespaceBSO

@@ -13,7 +13,7 @@
     possibleSets:
     - BSOBRDISet
     - BSOChesterSet
-    - BSORevolverSet # Might have to modify speedloader amount
+    - BSORevolverSet
     - BSOBlueshieldSet
     - BSOCQCSet
     maxSelectedSets: 1

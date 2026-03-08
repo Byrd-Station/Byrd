@@ -3,8 +3,8 @@
   id: FultonBlueshield
   name: stack-fulton-blueshield
   icon:
-    sprite:
-    state:
+    sprite: /Textures/_Omu/Objects/Tools/bluespace_fulton.rsi
+    state: extraction_pack
   spawn: FultonBlueshield1
   maxCount: 20
 
@@ -13,17 +13,17 @@
 - type: entity
   id: FultonBeaconBlueshield
   parent: FultonBeacon
-  name: bso fulton beacon # temp name
+  name: bluespace fulton beacon 
   description: fancy fulton beacon # and desc
   components:
-    - type: GenericVisualizer #yeah idk might need this
+    - type: GenericVisualizer # yeah idk might need this
       visuals:
         enum.FoldedVisuals.State:
           foldedLayer:
             True: { state: folded_extraction }
             False: { state: extraction_point }
-    - type: Sprite #tbd
-      sprite: Objects/Tools/fulton.rsi
+    - type: Sprite
+      sprite: _Omu/Objects/Tools/bluespace_fulton.rsi
       drawdepth: SmallObjects
       noRot: true
       layers:
@@ -34,17 +34,18 @@
   id: FultonBlueshield
   parent: Fulton
   suffix: Full
-  name: bso fulton # temp name
+  name: bluespace fulton 
   description: fancy fultons # and desc
   components:
   - type: Fulton
-    FultonDuration: 10
+    duration: 5
+    applyDuration: 1.5 # Half of apply duration for normal fultons
   - type: Stack
     stackType: FultonBlueshield
     count: 20
-  - type: Sprite #tbd
+  - type: Sprite
     drawdepth: SmallObjects
-    sprite: Objects/Tools/fulton.rsi
+    sprite: _Omu/Objects/Tools/bluespace_fulton.rsi
     state: extraction_pack
 
 - type: entity
@@ -55,4 +56,3 @@
   components:
   - type: Stack
     count: 1
-

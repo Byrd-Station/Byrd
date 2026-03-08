@@ -1,7 +1,7 @@
 - type: entity
-  parent: [ ClothingBeltMilitaryWebbingCMO, BaseCentcommContraband ]
   id: ClothingBeltMilitaryWebbingBSO
-  name: blueshield chest rig
+  parent: [ ClothingBeltMilitaryWebbingCMO, BaseCentcommContraband ]
+  name: blueshield officer's medical chest rig # renamed for medical set
   description: A robust chest rig with deep pockets and hooks, for use by a Blueshield Officer.
   components:
   - type: Sprite
@@ -10,7 +10,7 @@
     sprite: _Omu/Clothing/Belt/blueshieldwebbing.rsi
   - type: Storage
     grid:
-    - 0,0,4,2
+    - 0,0,6,2
     whitelist: # I have no idea why is, say, wrench here, but it's just copied from medical belt.
       tags:
         - Wrench
@@ -31,6 +31,7 @@
         - AutoinjectorCartridge # Goobstation
         - HandheldCrewMonitor # Goobstation
         - Medkit # Omustation, for BSO's medical set
+        - BodyBag # Omustation, for BSO's surgical set
       components:
         - Flash
         - Handcuff
@@ -114,6 +115,7 @@
   - type: Clothing
     sprite: _Omu/Clothing/Belt/corpsman.rsi
 
+- type: entity
   id: ClothingBeltChameleonHolster
   name: syndicate shoulder holster
   suffix: Chameleon
@@ -157,19 +159,19 @@
   - type: HideContrabandContent #Goobstation-Contraband detector
 
 - type: entity
-  parent: [ ChemBag, BaseCentcommContraband ]
   id: ClothingBeltChemBagBSO
+  parent: [ ChemBag, BaseCentcommContraband ]
   name: blueshield officer's medical pouch
   description: A robust pouch for medical supplies worn by Blueshield Officers fond of chemical based medicinals.
   components:
   - type: Sprite 
-    sprite: 
+    sprite: _Goobstation/Clothing/Belt/evil_chem_bag.rsi
   - type: Clothing
-    sprite: 
+    sprite: _Goobstation/Clothing/Belt/evil_chem_bag.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.01
   - type: Storage
-    whitelist: # Yeah so I kinda just copied everything from the syndie one nukie corpsman gets
+    whitelist: # Yeah so I kinda just copied everything from the syndie one nukie corpsman gets and then also combined it with the BSO webbing whitelist on request
       tags:
         - PillCanister
         - Syringe
@@ -181,6 +183,15 @@
         - Ointment
         - CigPack
         - Cigarette
+        - Bottle
+        - Spray
+        - Radio
+        - DiscreteHealthAnalyzer
+        - SurgeryTool
+        - Tourniquet #Goobstation
+        - AutoinjectorCartridge # Goobstation
+        - HandheldCrewMonitor # Goobstation
+        - Medkit # Omustation, for BSO's medical set
       components:
         - Pill
         - Hypospray
@@ -189,21 +200,34 @@
         - Defibrillator
         - SolutionTransfer
         - GunApplySolution # Dart gun
+        - Flash
+        - Handcuff
+        - Whistle
+        - Injector
+        - HandLabeler
+        - FitsInDispenser
 
 - type: entity
-  parent: ClothingBeltStorageBase
   id: ClothingBeltExtractionRigBSO
-  name: extraction rig
-  description: 
+  parent: ClothingBeltStorageBase
+  name: blueshield officer's extraction rig
+  description: salvagewebbing.rsi, but blue.... #temp
   components:
-  - type: Sprite #tbd
-    sprite: Clothing/Belt/salvagewebbing.rsi
-  - type: Clothing #tbd
-    sprite: Clothing/Belt/salvagewebbing.rsi
+  - type: Sprite
+    sprite: _Omu/Clothing/Belt/blueshieldextractionwebbing.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Belt/blueshieldextractionwebbing.rsi
+  - type: Storage
+    grid:
+    - 0,0,10,1
   
 - type: entity 
-  parent: ClothingBeltBlueshieldElite
-  id: ClothingBeltBlueshieldEliteSurgical #tbd
-  name:
-  description:
-  parent: ClothingBeltStorageBase
+  id: ClothingBeltBlueshieldEliteWebbingSurgical
+  parent: ClothingBeltMilitaryWebbingBSO # this is to share the same whitelist
+  name: blueshield officer's surgical chest rig
+  description: no longer elite.... # also temp
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Belt/blueshieldwebbing.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Belt/blueshieldwebbing.rsi
