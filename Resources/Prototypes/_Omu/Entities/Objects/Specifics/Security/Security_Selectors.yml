@@ -86,7 +86,7 @@
     - WeaponMk58Set
     - WeaponT8Set
     - WeaponTerminusSet
-    - WeaponRelicMosinSet
+    - WeaponCeremonialRifleSet
     maxSelectedSets: 1
 
 - type: entity
