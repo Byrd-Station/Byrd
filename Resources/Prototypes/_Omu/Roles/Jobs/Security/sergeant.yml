@@ -1,0 +1,53 @@
+- type: job
+  id: SecuritySergeant
+  name: job-name-security-sergeant
+  description: job-description-security
+  playTimeTracker: JobSecuritySergeant
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 360000 #100 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 360000 #100 hours
+    - !type:RoleTimeRequirement
+      role: JobHeadOfSecurity
+      time: 36000 #10 hrs
+    - !type:RoleTimeRequirement
+      role: JobWarden
+      time: 36000 #10 hrs
+  startingGear: SecuritySergeantGear
+  icon: "JobIconSecurityOfficer"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  guides: # goobstation
+  - Security
+  - LegalSOP
+  - OfficerCadetSOP
+  - CorporateJudo
+  - AlertLevels
+  - SecurityTrainingManual # Omu
+  goobcoins: 30 #Goob content
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+  - Cryogenics
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial # goobstation
+    components:
+      - type: SecurityStaff
+
+- type: startingGear
+  id: SecuritySergeantGear
+  equipment:
+    eyes: ClothingEyesGlassesSecurity
+    ears: ClothingHeadsetAltSecurityRegular # Goobstation
+    #pocket1: OfficerGunCase #Omu, item in loadout instead
+  storage:
+    back:
+    - Flash
+    - SecuritySergeantWhistle
