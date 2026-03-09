@@ -28,7 +28,7 @@ namespace Content.Server._Omu.Saboteur.Systems;
 /// Handles saboteur operation lifecycle: objective assignment, completion detection,
 /// reputation tracking, TC grants, tier progression, and exposure checks.
 /// </summary>
-public sealed class SaboteurOperationSystem : EntitySystem
+public sealed class SaboteurOperationSystem : EntitySystem, Content.Shared._Omu.Saboteur.ISaboteurOperationSystem
 {
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
@@ -707,7 +707,7 @@ public sealed class SaboteurOperationSystem : EntitySystem
         }
     }
 
-    private bool AssignObjectiveFromWeightedGroup(EntityUid saboteur, string groupId)
+    public bool AssignObjectiveFromWeightedGroup(EntityUid saboteur, string groupId)
     {
         if (!_mind.TryGetMind(saboteur, out var mindId, out var mind))
             return false;

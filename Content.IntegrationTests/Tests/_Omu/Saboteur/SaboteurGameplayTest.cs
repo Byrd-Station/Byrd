@@ -1690,6 +1690,61 @@ public sealed class SaboteurGameplayTest
 
     #endregion
 
+    #region Test: Fallback Objective Assignment
+
+    /// <summary>
+    /// Verifies that when primary saboteur objectives cannot be assigned (e.g., all completed or unavailable),
+    /// the fallback objective is correctly assigned to the saboteur.
+    /// </summary>
+    [Test]
+    public async Task TestFallbackObjectiveAssignment()
+    {
+        await using var ctx = await SetupRoundWithSaboteur();
+        var mindId = await MakePlayerSaboteur(ctx);
+
+        await ctx.Server.WaitAssertion(() =>
+        {
+            Assert.That(ctx.EntMan.TryGetComponent<SaboteurMindComponent>(mindId, out var mindComp),
+                "Mind missing SaboteurMindComponent.");
+            Assert.That(ctx.MindSys.TryGetMind(ctx.PlayerEntity, out _, out var mind),
+                "Could not get mind component.");
+
+            // Simulate all primary objectives being completed
+            foreach (var obj in mind!.Objectives.ToList())
+            {
+                if (ctx.EntMan.TryGetComponent<SaboteurOperationComponent>(obj, out var opComp))
+                {
+                    ctx.SabOpsSys.CompleteOperation(
+                        (ctx.PlayerEntity, null), (ctx.RuleEnt, null),
+                        opComp.OperationId, opComp.ReputationGain, opComp.IsMajor);
+                }
+            }
+
+            // Now attempt to assign fallback objectives repeatedly and count unique assignments
+            var fallbackGroup = ctx.RuleComp.TraitorFallbackGroup;
+            Assert.That(!string.IsNullOrEmpty(fallbackGroup), "Fallback group must be defined.");
+
+            var assignedFallbackObjectives = new HashSet<EntityUid>();
+            int assignAttempts = 10;
+            for (int i = 0; i < assignAttempts; i++)
+            {
+                var sabOpsSys = (Content.Shared._Omu.Saboteur.ISaboteurOperationSystem) ctx.SabOpsSys;
+                var result = sabOpsSys.AssignObjectiveFromWeightedGroup(ctx.PlayerEntity, fallbackGroup);
+                Assert.That(result, $"AssignObjectiveFromWeightedGroup failed on attempt {i+1}.");
+                Assert.That(ctx.MindSys.TryGetMind(ctx.PlayerEntity, out _, out var mind2), "Could not get mind after fallback assignment.");
+                var fallbackObj = mind2!.Objectives.Last();
+                assignedFallbackObjectives.Add(fallbackObj);
+            }
+
+            Assert.That(assignedFallbackObjectives.Count >= 5,
+                $"Expected at least 5 unique fallback objectives, got {assignedFallbackObjectives.Count}.");
+        });
+
+        await ctx.Pair.CleanReturnAsync();
+    }
+
+    #endregion
+
     #region Test Context
 
     /// <summary>

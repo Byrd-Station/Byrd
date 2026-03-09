@@ -327,5 +327,8 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", conspiratorName, Loc.GetString("admin-verb-make-conspirator")),
         };
         args.Verbs.Add(conspirator);
+
+        // OmuStation — Saboteur admin verb
+        AddSaboteurAntagVerb(args, targetPlayer);
     }
 }

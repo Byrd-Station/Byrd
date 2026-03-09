@@ -100,6 +100,7 @@
   - type: RoleRequirement
     roles:
     - TraitorRole
+    - SaboteurRole #Omu
 
 - type: entity
   abstract: true
@@ -238,6 +239,7 @@
       whitelist:
         components:
         - TraitorRole
+        - SaboteurRole #Omu
     # Can't have multiple objectives to help/save the same person
     - !type:TargetObjectiveMindFilter
       blacklist:
@@ -260,6 +262,7 @@
       whitelist:
         components:
         - TraitorRole
+        - SaboteurRole #Omu
     # Can't help anyone who is tasked with helping:
     # 1. thats boring
     # 2. no cyclic progress dependencies!!!
