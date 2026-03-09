@@ -1,0 +1,133 @@
+# SPDX-FileCopyrightText: 2026 Eponymic-sys
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: Saboteur
+  parent: BaseGameRule
+  components:
+  - type: GameRule
+    minPlayers: 10
+  - type: SaboteurRule
+    # === Tier Configuration ===
+    tiers:
+    - threshold: 0
+      locId: saboteur-tier-novice
+      minorTcReward: 10
+      majorTcReward: 25
+    - threshold: 20
+      locId: saboteur-tier-trusted
+      minorTcReward: 15
+      majorTcReward: 45
+    - threshold: 50
+      locId: saboteur-tier-respected
+      minorTcReward: 25
+      majorTcReward: 55
+    - threshold: 75
+      locId: saboteur-tier-ultimate
+      minorTcReward: 35
+      majorTcReward: 70
+    highTierTimeGate: 10m
+
+    # === Exposure Penalties (SecurityStatus → multiplier) ===
+    exposureMultipliers:
+      Suspected: 0.85
+      Search: 0.85
+      Wanted: 0.65
+      Detained: 0.50
+      Dangerous: 0.25
+      Perma: 0.25
+
+    # === Codeword Configuration ===
+    codewordFaction: Traitor
+    codewordColor: "#cc3b3b"
+
+    # === Store Configuration ===
+    storeCategories:
+    - UplinkWeaponry
+    - UplinkAmmo
+    - UplinkExplosives
+    - UplinkChemicals
+    - UplinkDeception
+    - UplinkDisruption
+    - UplinkImplants
+    - UplinkAllies
+    - UplinkWearables
+    - UplinkJob
+    - UplinkPointless
+    categoryTierMap:
+      UplinkPointless: 0
+      UplinkJob: 0
+      UplinkDeception: 0
+      UplinkWearables: 0
+      UplinkDisruption: 1
+      UplinkImplants: 2
+      UplinkChemicals: 2
+      UplinkAllies: 3
+      UplinkWeaponry: 3
+      UplinkAmmo: 3
+      UplinkExplosives: 3
+    telecrystalCurrency: Telecrystal
+    # Intentionally 0: saboteurs earn TC by completing operations. They start with
+    # an empty uplink and must complete their first objective to unlock any purchases.
+    startingTc: 0
+
+    # === Late-Join Catch-Up ===
+    lateJoinRepPerMinute: 1
+    maxLateJoinRep: 20
+    lateJoinTcPerInterval: 3
+    lateJoinTcIntervalMinutes: 5
+    lateJoinMinMinutes: 5
+
+    exposureFloorMultiplier: 0.25
+    defaultOperationRepGain: 10
+
+    # === Objective Assignment ===
+    traitorFallbackGroup: TraitorObjectiveGroups
+    gloriousDeathObjectiveId: SaboteurDieGloriousDeathObjective
+    maxActiveObjectives: 3
+    highTierMinimum: 2
+
+    # === Fallback Objective Rewards (scaled by objective difficulty) ===
+    fallbackTcPerDifficulty: 6
+    fallbackRepPerDifficulty: 4
+  - type: SaboteurDepartmentConfig
+    # === Department & Access Configuration ===
+    commandAccessTag: Command
+    commandDepartmentId: Command
+    departmentAccessTags:
+      Engineering: Engineering
+      Medical: Medical
+      Science: Science
+      Security: Security
+      Service: Service
+      Cargo: Cargo
+      Command: Command
+
+    # Maps primary department → head-of-department job prototype (SeizePoliticalControl)
+    departmentHeadMap:
+      Engineering: ChiefEngineer
+      Medical: ChiefMedicalOfficer
+      Security: HeadOfSecurity
+      Science: ResearchDirector
+      Cargo: Quartermaster
+      Civilian: HeadOfPersonnel
+  # Admin spawning only; automatic selection disabled.
+  #- type: AntagSelection
+  #  agentName: saboteur-round-end-agent-name
+  #  selectionTime: PostPlayerSpawn
+  #  definitions:
+  #  - prefRoles: [ Saboteur ]
+  #    max: 1
+  #    playerRatio: 25
+  #    chaosScore: 200
+  #    blacklist:
+  #      components:
+  #      - CommandStaff
+  #      - AntagImmune
+  #    lateJoinAdditional: true
+  #    briefing:
+  #      text: saboteur-role-greeting
+  #      color: "#c93030"
+  #      sound: /Audio/Ambience/Antag/traitor_start.ogg
+  #    mindRoles:
+  #    - MindRoleSaboteur

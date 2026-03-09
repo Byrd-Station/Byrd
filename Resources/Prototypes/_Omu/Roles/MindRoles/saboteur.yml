@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2026 Eponymic-sys
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleSaboteur
+  name: Saboteur Role
+  components:
+  - type: MindRole
+    antagPrototype: Saboteur
+    exclusiveAntag: true
+    roleType: SoloAntagonist
+    subtype: role-subtype-saboteur
+  - type: SaboteurRole

@@ -1,0 +1,25 @@
+<Document>
+  # Saboteurs
+
+  [color=#c93030]A Syndicate deep-cover operative embedded among the crew, carrying out covert operations to build influence and undermine the station from within.[/color]
+
+  Saboteurs blend in as regular crew members while completing objectives assigned by the Syndicate. Unlike traitors, saboteurs follow a structured progression system - earning reputation and unlocking tools as they prove themselves.
+
+  ## Reputation and Tiers
+
+  Every completed operation earns [bold]reputation[/bold] and [bold]telecrystals[/bold]. Your reputation determines your tier, which unlocks new operations and store equipment.
+
+  - [bold]Tier 0 - Novice[/bold] (0-19 rep): Simple sabotage and evidence planting. Low-risk, low-reward.
+  - [bold]Tier 1 - Trusted[/bold] (20-49 rep): Framing heads, sabotaging infrastructure, manipulating personnel.
+  - [bold]Tier 2 - Respected[/bold] (50-74 rep): Demoting command, seizing bridge control, disabling gravity.
+  - [bold]Tier 3 - Ultimate[/bold] (75-100 rep): Political takeover, AI subversion, total station isolation.
+
+  ## Exposure
+
+  [color=red][bold]Stay hidden.[/bold][/color] If security flags you in criminal records, your reputation gains are [bold]permanently[/bold] reduced. The worse your security status, the harsher the penalty. This damage never recovers - once exposed, you're compromised for the rest of the round.
+
+  ## The Store
+
+  Access your uplink to spend telecrystals on Syndicate equipment. Higher-tier items require reaching the corresponding reputation tier before they become available.
+
+</Document>

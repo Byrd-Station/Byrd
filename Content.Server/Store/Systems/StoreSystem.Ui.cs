@@ -48,6 +48,7 @@ using Content.Shared.Heretic; // Goob
 using Content.Shared.Heretic.Prototypes; // Goob
 using Content.Shared.Mind;
 using Content.Shared.PDA.Ringer;
+using Content.Shared._Omu.Store; // OmuStation: store listing filter event
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
 using Content.Shared.UserInterface;
@@ -140,6 +141,10 @@ public sealed partial class StoreSystem
         if (user != null) //if we have no "buyer" for this update, then don't update the listings
         {
             component.LastAvailableListings = GetAvailableListings(component.AccountOwner ?? user.Value, store, component).ToHashSet();
+
+            // OmuStation: allow modules to inject additional listings (e.g. tier-locked items)
+            var postFilterEv = new StoreListingsPostFilterEvent(component.AccountOwner ?? user.Value, store, component, component.LastAvailableListings);
+            RaiseLocalEvent(ref postFilterEv);
         }
 
         //dictionary for all currencies, including 0 values for currencies on the whitelist

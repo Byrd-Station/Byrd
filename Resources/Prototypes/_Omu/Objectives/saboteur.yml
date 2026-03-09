@@ -1,0 +1,403 @@
+# SPDX-FileCopyrightText: 2026 Eponymic-sys
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseSaboteurObjective
+  components:
+  - type: Objective
+    issuer: objective-issuer-syndicate
+  - type: RoleRequirement
+    roles:
+    - SaboteurRole
+
+- type: entity
+  abstract: true
+  parent: BaseSaboteurObjective
+  id: BaseSaboteurNotCommandObjective
+  components:
+  - type: NotCommandRequirement
+
+- type: entity
+  parent: BaseSaboteurObjective
+  id: SaboteurSabotageCommsObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Structures/Machines/telecomms.rsi
+      state: telecom-nopower
+  - type: SaboteurOperation
+    operationId: SabotageComms
+    tier: 0
+    reputationGain: 7
+    isMajor: false
+  - type: SaboteurMapThresholdCondition
+    targetComponent: TelecomServer
+    sabotageCheck: KeysEmpty
+    threshold: 0.5
+
+- type: entity
+  parent: BaseSaboteurObjective
+  id: SaboteurPlantEvidenceObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Objects/Specific/Detective/evidence_marker.rsi
+      state: one
+  - type: SaboteurOperation
+    operationId: PlantEvidence
+    tier: 0
+    reputationGain: 8
+    isMajor: true
+  - type: SaboteurPlantEvidenceCondition
+    contrabandSeverity: Syndicate
+
+- type: entity
+  parent: BaseSaboteurObjective
+  id: SaboteurDisableSecurityObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Objects/Devices/camera_bug.rsi
+      state: camera_bug
+  - type: SaboteurOperation
+    operationId: DisableSecurity
+    tier: 0
+    reputationGain: 8
+    isMajor: true
+  - type: SaboteurMapThresholdCondition
+    targetComponent: SurveillanceCamera
+    sabotageCheck: CameraInactive
+    threshold: 0.3
+
+- type: entity
+  parent: BaseSaboteurObjective
+  id: SaboteurLockdownDepartmentObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Structures/Doors/Airlocks/Standard/basic.rsi
+      state: bolted_lit
+  - type: SaboteurOperation
+    operationId: LockdownDepartment
+    tier: 0
+    reputationGain: 7
+    isMajor: false
+  - type: SaboteurMapThresholdCondition
+    targetComponent: DoorBolt
+    sabotageCheck: DoorBolted
+    groupByDepartment: true
+    threshold: 0.5
+    minGroupCount: 5
+
+- type: entity
+  parent: BaseSaboteurObjective
+  id: SaboteurEmagBorgObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Objects/Tools/emag.rsi
+      state: icon
+  - type: SaboteurOperation
+    operationId: EmagBorg
+    tier: 0
+    reputationGain: 8
+    isMajor: false
+  - type: SaboteurEmagBorgCondition
+
+- type: entity
+  parent: BaseSaboteurNotCommandObjective
+  id: SaboteurFrameHeadObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Objects/Misc/id_cards.rsi
+      state: gold
+  - type: SaboteurOperation
+    operationId: FrameHead
+    tier: 1
+    reputationGain: 12
+    isMajor: true
+  - type: SaboteurFlaggedRecordsCondition
+    requiredCount: 1
+    commandOnly: true
+
+- type: entity
+  parent: BaseSaboteurObjective
+  id: SaboteurSabotagePowerGridObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Structures/Power/apc.rsi
+      state: broken
+  - type: SaboteurOperation
+    operationId: SabotagePowerGrid
+    tier: 1
+    reputationGain: 10
+    isMajor: false
+  - type: SaboteurMapThresholdCondition
+    targetComponent: Apc
+    sabotageCheck: ApcDisabled
+    threshold: 0.3
+
+- type: entity
+  parent: BaseSaboteurObjective
+  id: SaboteurDestroyCargoConsolesObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Structures/Machines/computers.rsi
+      state: supply
+  - type: SaboteurOperation
+    operationId: DestroyCargoConsoles
+    tier: 1
+    reputationGain: 10
+    isMajor: false
+  - type: SaboteurMapThresholdCondition
+    targetComponent: CargoOrderConsole
+    sabotageCheck: Destroyed
+    threshold: 1.0
+
+- type: entity
+  parent: BaseSaboteurObjective
+  id: SaboteurSabotageEmergencyObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Structures/Wallmounts/air_monitors.rsi
+      state: fire0
+  - type: SaboteurOperation
+    operationId: SabotageEmergency
+    tier: 1
+    reputationGain: 11
+    isMajor: true
+  - type: SaboteurMapThresholdCondition
+    targetComponent: FireAlarm
+    sabotageCheck: Unpowered
+    threshold: 0.3
+
+- type: entity
+  parent: BaseSaboteurObjective
+  id: SaboteurManipulateTransfersObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Objects/Misc/id_cards.rsi
+      state: idheadofpersonnel
+  - type: SaboteurOperation
+    operationId: ManipulateTransfers
+    tier: 1
+    reputationGain: 11
+    isMajor: true
+  - type: SaboteurJobMismatchCondition
+    mismatchMode: AnyDifference
+    requiredCount: 2
+
+- type: entity
+  parent: BaseSaboteurNotCommandObjective
+  id: SaboteurGetCommandDemotedObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Markers/jobs.rsi
+      state: captain
+  - type: SaboteurOperation
+    operationId: GetCommandDemoted
+    tier: 2
+    reputationGain: 10
+    isMajor: true
+  - type: SaboteurJobMismatchCondition
+    filterToCommandRecords: true
+    mismatchMode: DemotedFromCommand
+    requiredCount: 1
+
+- type: entity
+  parent: BaseSaboteurObjective
+  id: SaboteurTakeBridgeControlObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Structures/Machines/computers.rsi
+      state: comm
+  - type: SaboteurOperation
+    operationId: TakeBridgeControl
+    tier: 2
+    reputationGain: 10
+    isMajor: false
+  - type: SaboteurTakeBridgeControlCondition
+    requiredCount: 1
+
+- type: entity
+  parent: BaseSaboteurObjective
+  id: SaboteurDisableGravityObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Structures/Machines/gravity_generator.rsi
+      state: off
+  - type: SaboteurOperation
+    operationId: DisableGravity
+    tier: 2
+    reputationGain: 10
+    isMajor: false
+  - type: SaboteurMapThresholdCondition
+    targetComponent: GravityGenerator
+    sabotageCheck: Destroyed
+    threshold: 1.0
+
+- type: entity
+  parent: BaseSaboteurObjective
+  id: SaboteurHijackBudgetObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Objects/Economy/cash.rsi
+      state: cash_5000
+  - type: SaboteurOperation
+    operationId: HijackBudget
+    tier: 2
+    reputationGain: 12
+    isMajor: true
+  - type: SaboteurHijackBudgetCondition
+    departmentOverrideMap:
+      Civilian: Service
+
+- type: entity
+  parent: BaseSaboteurObjective
+  id: SaboteurChainOfFoolsObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Objects/Weapons/Melee/stunbaton.rsi
+      state: stunbaton_on
+  - type: SaboteurOperation
+    operationId: ChainOfFools
+    tier: 2
+    reputationGain: 15
+    isMajor: true
+  - type: SaboteurChainOfFoolsCondition
+    requiredCount: 2
+
+- type: entity
+  parent: BaseSaboteurNotCommandObjective
+  id: SaboteurSeizePoliticalControlObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Objects/Misc/folders.rsi
+      state: folder-white
+  - type: SaboteurOperation
+    operationId: SeizePoliticalControl
+    tier: 3
+    reputationGain: 15
+    isMajor: true
+  - type: SaboteurFakeAgentCondition
+    mode: SelfSoleHolder
+
+- type: entity
+  parent: BaseSaboteurNotCommandObjective
+  id: SaboteurInstallSyndicatePuppetObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Objects/Tools/emag.rsi
+      state: icon
+  - type: SaboteurOperation
+    operationId: InstallSyndicatePuppet
+    tier: 3
+    reputationGain: 15
+    isMajor: true
+  - type: SaboteurFakeAgentCondition
+    mode: PuppetInJob
+    targetJobs:
+    - Captain
+
+- type: entity
+  parent: BaseSaboteurObjective
+  id: SaboteurSubvertStationAIObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Mobs/Silicon/station_ai.rsi
+      state: ai
+  - type: SaboteurOperation
+    operationId: SubvertStationAi
+    tier: 3
+    reputationGain: 15
+    isMajor: true
+  - type: SaboteurSubvertAICondition
+
+- type: entity
+  parent: BaseSaboteurObjective
+  id: SaboteurIsolateStationObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Structures/Machines/telecomms.rsi
+      state: telecom-nopower
+  - type: SaboteurOperation
+    operationId: IsolateStation
+    tier: 3
+    reputationGain: 14
+    isMajor: true
+  - type: SaboteurMapThresholdCondition
+    targetComponent: FaxMachine
+    sabotageCheck: Unpowered
+    threshold: 1.0
+    secondaryTargetComponent: EncryptionKey
+    secondarySabotageCheck: Destroyed
+    secondaryChannelFilter: CentCom
+
+- type: entity
+  parent: BaseSaboteurNotCommandObjective
+  id: SaboteurAuthorityInRuinsObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Structures/Machines/computers.rsi
+      state: broken
+  - type: SaboteurOperation
+    operationId: AuthorityInRuins
+    tier: 3
+    reputationGain: 18
+    isMajor: true
+  - type: SaboteurFakeAgentCondition
+    mode: CoverAllJobs
+    targetJobs:
+    - Captain
+    - HeadOfSecurity
+    - HeadOfPersonnel
+
+- type: entity
+  parent: BaseSaboteurObjective
+  id: SaboteurDieGloriousDeathObjective
+  name: Die a glorious death
+  description: Die.
+  components:
+  - type: Objective
+    difficulty: 0.5
+    icon:
+      sprite: Mobs/Ghosts/ghost_human.rsi
+      state: icon
+  - type: DieCondition

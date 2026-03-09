@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2026 Eponymic-sys
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: antag
+  id: Saboteur
+  name: roles-antag-saboteur-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-saboteur-objective
+  guides: [ Saboteurs ]

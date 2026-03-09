@@ -1,0 +1,89 @@
+# SPDX-FileCopyrightText: 2026 Eponymic-sys
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Saboteur operation IDs, validated by SaboteurOperationPrototype.
+# Each ID corresponds to a unique covert objective the saboteur can complete.
+
+# Tier 0 (Novice)
+- type: saboteurOperation
+  id: SabotageComms
+  locId: objective-saboteur-sabotage-comms
+
+- type: saboteurOperation
+  id: PlantEvidence
+  locId: objective-saboteur-plant-evidence
+
+- type: saboteurOperation
+  id: DisableSecurity
+  locId: objective-saboteur-disable-security
+
+- type: saboteurOperation
+  id: LockdownDepartment
+  locId: objective-saboteur-lockdown-department
+
+- type: saboteurOperation
+  id: EmagBorg
+  locId: objective-saboteur-emag-borg
+
+# Tier 1 (Trusted)
+- type: saboteurOperation
+  id: FrameHead
+  locId: objective-saboteur-frame-head
+
+- type: saboteurOperation
+  id: SabotagePowerGrid
+  locId: objective-saboteur-sabotage-power-grid
+
+- type: saboteurOperation
+  id: DestroyCargoConsoles
+  locId: objective-saboteur-destroy-cargo-consoles
+
+- type: saboteurOperation
+  id: SabotageEmergency
+  locId: objective-saboteur-sabotage-emergency
+
+- type: saboteurOperation
+  id: ManipulateTransfers
+  locId: objective-saboteur-manipulate-transfers
+
+# Tier 2 (Respected)
+- type: saboteurOperation
+  id: GetCommandDemoted
+  locId: objective-saboteur-get-command-demoted
+
+- type: saboteurOperation
+  id: TakeBridgeControl
+  locId: objective-saboteur-take-bridge-control
+
+- type: saboteurOperation
+  id: DisableGravity
+  locId: objective-saboteur-disable-gravity
+
+- type: saboteurOperation
+  id: HijackBudget
+  locId: objective-saboteur-hijack-budget
+
+- type: saboteurOperation
+  id: ChainOfFools
+  locId: objective-saboteur-chain-of-fools
+
+# Tier 3 (Ultimate)
+- type: saboteurOperation
+  id: SeizePoliticalControl
+  locId: objective-saboteur-seize-political-control
+
+- type: saboteurOperation
+  id: InstallSyndicatePuppet
+  locId: objective-saboteur-install-syndicate-puppet
+
+- type: saboteurOperation
+  id: SubvertStationAi
+  locId: objective-saboteur-subvert-station-ai
+
+- type: saboteurOperation
+  id: IsolateStation
+  locId: objective-saboteur-isolate-station
+
+- type: saboteurOperation
+  id: AuthorityInRuins
+  locId: objective-saboteur-authority-in-ruins
