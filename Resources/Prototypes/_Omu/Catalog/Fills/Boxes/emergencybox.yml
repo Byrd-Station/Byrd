@@ -60,7 +60,7 @@
       tank:
       - ExtendedEmergencyOxygenTankFilled
       mask:
-      - ClothingMaskBreath
+      - ClothingMaskGasSecurity
       emergencypen:
       - EmergencyMedipen
       spacepen:
