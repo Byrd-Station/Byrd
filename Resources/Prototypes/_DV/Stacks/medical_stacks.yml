@@ -1,6 +1,6 @@
 - type: stack
   id: Oilpack
-  name: oil pack
+  name: stack-oil-pack
   icon: { sprite: "/Textures/_DV/Objects/Medical/Oilpack.rsi", state: icon }
   spawn: Oilpack
   maxCount: 15
