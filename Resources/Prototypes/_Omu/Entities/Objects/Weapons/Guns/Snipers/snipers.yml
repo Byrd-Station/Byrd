@@ -1,11 +1,14 @@
 - type: entity
-  name: Relic Kardashev-Mosin
+  name: Ceremonial Rifle
   parent: [BaseWeaponSniper, BaseGunWieldable, BaseSecurityContraband]
   id: WeaponSniperMosinSergeant
-  description: A true relic, the Kardashev-Mosin has served in nearly every armed conflict since its creation 670 years ago. The bolt-action design of the rifle remains virtually identical to its original design, whether used for hunting, sniping, or endless trench warfare. Loads 10 rounds of .30 Rifle.
+  description: A true relic, this has served in nearly every armed conflict since its creation 670 years ago. The bolt-action design of the rifle remains virtually identical to its original design, whether used for hunting, sniping, or endless trench warfare. Loads 10 rounds of .30 Rifle.
+  suffix: sergeant, ceremonial rifle
   components:
+  - type: Clothing
+    sprite: _Omu/Objects/Weapons/Guns/Snipers/ceremonial_rifle.rsi
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
+    sprite: _Omu/Objects/Weapons/Guns/Snipers/ceremonial_rifle.rsi
     layers:
     - state: base
     - state: base1

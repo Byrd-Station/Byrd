@@ -117,11 +117,11 @@
   - SpeedLoaderRevolverLightRifle
 
 - type: selectableSet
-  id: WeaponRelicMosinSet
-  name: selectable-set-relic-mosin-name
-  description: selectable-set-relic-mosin-description
+  id: WeaponCeremonialRifleSet
+  name: selectable-set-ceremonial-rifle-name
+  description: selectable-set-ceremonial-rifle-description
   sprite:
-    sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
+    sprite: _Omu/Objects/Weapons/Guns/Snipers/ceremonial_rifle.rsi
     state: base
   content:
   - WeaponSniperMosinSergeant
