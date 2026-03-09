@@ -75,21 +75,3 @@
   storage:
     back:
     - BoxSurvivalSlotsSyndicateMeat
-
-# Full EVA Tank, Any Species
-- type: loadout
-  id: LoadoutSpeciesEVAOxygenMeat
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: OxygenMeatEater
-  equipment:
-    suitstorage: OxygenTankFilled
-
-# Species-appropriate Double Emergency Tank in Pocket 1
-- type: loadout
-  id: LoadoutSpeciesPocketOxygenMeat
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: OxygenMeatEater
-  equipment:
-    pocket1: DoubleEmergencyOxygenTankFilled
