@@ -14,4 +14,17 @@
     - VoidsuitSelectorCorpsmanCombatHardsuit
     - VoidsuitSelectorSecurityHardsuit
 
-
+# cmo
+- type: entity
+  id: UndeterminedVoidsuitCMO
+  name: chief medical officer hardsuit selector
+  description: A small remote utilizing bluespace technology to drop in a hardsuit or modsuit of your choosing.
+  parent: [ BaseItem, BaseSetSelector, BaseCommandContraband ]
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Devices/unique_teleporters.rsi
+    state: standard
+  - type: SetSelector
+    possibleSets:
+    - VoidsuitSelectorCMOHardsuit
+    - VoidsuitSelectorCMOModsuit

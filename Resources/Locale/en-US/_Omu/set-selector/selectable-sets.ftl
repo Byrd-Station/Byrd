@@ -119,3 +119,16 @@ selectable-set-corpsman-combathardsuit-desc =
     Older model of corpsman's hardsuit.
     Built based on designs recovered from Regalis sector.
     Offers much better armor then newer models.
+
+selectable-set-cmo-hardsuit-name = Chief Medical Officer's hardsuit
+selectable-set-cmo-hardsuit-desc =
+    A lightweight hardsuit designed for the
+    Chief Medical Officer to be able to hastily
+    fetch people as function of a paramedic.
+
+selectable-set-cmo-modsuit-name = Chief Medical Officer's "Fumigator" modsuit
+selectable-set-cmo-modsuit-desc =
+    Perfection, Hubris, Purity - It's not a sin if you're clean.
+    A Modsuit designed with cleanliness in mind. It is very bulky,
+    however equipped with protective platings and designed to prevent
+    infections when worn.
