@@ -19,6 +19,8 @@ using Content.Shared.Objectives.Components;
 using Content.Shared.Roles;
 using Content.Shared.Security;
 using Content.Shared.Store.Components;
+using Content.Shared.StationRecords;
+using Content.Server.StationRecords.Systems;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
@@ -488,8 +490,10 @@ public sealed class SaboteurGameplayTest
     }
 
     /// <summary>
-    /// Verifies that RunExposureChecks does not alter the multiplier when
-    /// the saboteur has no criminal record.
+    /// Verifies that a RecordModifiedEvent for an unrelated key does not alter the
+    /// saboteur's exposure multiplier. Exposure is now event-driven: only a
+    /// RecordModifiedEvent whose key matches the saboteur's OriginalRecordKey triggers
+    /// CheckExposure. A non-matching key (including the empty default) is a no-op.
     /// </summary>
     [Test]
     public async Task TestExposureCheckPreservesCleanState()
@@ -505,12 +509,14 @@ public sealed class SaboteurGameplayTest
 
             var multiplierBefore = mindComp!.ExposurePenaltyMultiplier;
 
-            // Run exposure checks — saboteur has no criminal record in test env
-            ctx.SabOpsSys.RunExposureChecks((ctx.RuleEnt, null));
+            // Raise a RecordModifiedEvent with a key that does not match the saboteur.
+            // The event-driven handler should skip it, leaving exposure unchanged.
+            var unrelatedKey = new StationRecordKey(uint.MaxValue, ctx.RuleEnt);
+            ctx.EntMan.EventBus.RaiseLocalEvent(ctx.RuleEnt, new RecordModifiedEvent(unrelatedKey), broadcast: true);
 
-            // Multiplier should remain unchanged (no record = no penalty)
+            // Multiplier should remain unchanged — unrelated key triggers no exposure update.
             Assert.That(mindComp.ExposurePenaltyMultiplier, Is.EqualTo(multiplierBefore),
-                "Exposure multiplier should not change when no criminal record exists.");
+                "Exposure multiplier should not change for a non-matching record key.");
         });
 
         await ctx.Pair.CleanReturnAsync();
@@ -974,8 +980,8 @@ public sealed class SaboteurGameplayTest
     #region Test: Exposure Check Integration
 
     /// <summary>
-    /// Verifies that RunExposureChecks works without errors when saboteurs exist
-    /// (even if they don't have criminal records set up in the test environment).
+    /// Verifies that the event-driven exposure handler does not throw when
+    /// a RecordModifiedEvent is raised for a key that does not belong to any saboteur.
     /// </summary>
     [Test]
     public async Task TestExposureCheckDoesNotThrow()
@@ -986,10 +992,12 @@ public sealed class SaboteurGameplayTest
 
         await ctx.Server.WaitAssertion(() =>
         {
-            // This should not throw, even without criminal record infrastructure
+            // Raising a RecordModifiedEvent with an unmatched key should be a safe no-op.
+            var unrelatedKey = new StationRecordKey(uint.MaxValue, ctx.RuleEnt);
             Assert.DoesNotThrow(() =>
-                ctx.SabOpsSys.RunExposureChecks((ctx.RuleEnt, null)),
-                "RunExposureChecks should not throw for saboteurs without criminal records.");
+                ctx.EntMan.EventBus.RaiseLocalEvent(
+                    ctx.RuleEnt, new RecordModifiedEvent(unrelatedKey), broadcast: true),
+                "Event-driven exposure handler should not throw for a non-matching record key.");
         });
 
         await ctx.Pair.CleanReturnAsync();
@@ -1045,8 +1053,9 @@ public sealed class SaboteurGameplayTest
     #region Test: Active Tick
 
     /// <summary>
-    /// Verifies that the rule's ActiveTick runs completion and exposure sweeps
-    /// only when the dirty-tracking flags are set, rather than on fixed timers.
+    /// Verifies that the rule's ActiveTick runs the completion sweep only when
+    /// CompletionSweepNeeded is set. Exposure checks are now event-driven
+    /// (via RecordModifiedEvent) and no longer require a tick-based flag.
     /// </summary>
     [Test]
     public async Task TestActiveTickScheduling()
@@ -1057,31 +1066,26 @@ public sealed class SaboteurGameplayTest
 
         await ctx.Server.WaitAssertion(() =>
         {
-            // With no dirty domains, the flags should be false after ticks
             Assert.That(ctx.CondCore.TryGetDirtyTracking(out var dirty), Is.True,
                 "Dirty tracking component should exist on the rule entity.");
 
-            // Mark the Records domain dirty — this should set both flags
+            // Mark any domain dirty — this should set the completion sweep flag
             ctx.CondCore.MarkDirty(SaboteurDirtyDomain.Records);
 
             Assert.That(dirty!.CompletionSweepNeeded, Is.True,
                 "CompletionSweepNeeded should be set after MarkDirty.");
-            Assert.That(dirty.ExposureCheckNeeded, Is.True,
-                "ExposureCheckNeeded should be set when Records domain is dirtied.");
         });
 
-        // Let a tick run so ActiveTick processes the flags
+        // Let a tick run so ActiveTick processes the flag
         await ctx.Pair.RunTicksSync(3);
 
         await ctx.Server.WaitAssertion(() =>
         {
             Assert.That(ctx.CondCore.TryGetDirtyTracking(out var dirty), Is.True);
 
-            // After ActiveTick processes them, the flags should be cleared
+            // After ActiveTick processes it, the flag should be cleared
             Assert.That(dirty!.CompletionSweepNeeded, Is.False,
                 "CompletionSweepNeeded should be cleared after ActiveTick.");
-            Assert.That(dirty.ExposureCheckNeeded, Is.False,
-                "ExposureCheckNeeded should be cleared after ActiveTick.");
         });
 
         await ctx.Pair.CleanReturnAsync();
@@ -1431,7 +1435,7 @@ public sealed class SaboteurGameplayTest
 
     #endregion
 
-    #region Test: RunCompletionSweep / RunExposureChecks with No Saboteurs
+    #region Test: RunCompletionSweep / Exposure Event with No Saboteurs
 
     /// <summary>
     /// Verifies that RunCompletionSweep with no saboteurs in the world is a safe no-op.
@@ -1454,18 +1458,21 @@ public sealed class SaboteurGameplayTest
     }
 
     /// <summary>
-    /// Verifies that RunExposureChecks with no saboteurs in the world is a safe no-op.
+    /// Verifies that a RecordModifiedEvent with no saboteurs in the world is a safe no-op.
     /// </summary>
     [Test]
     public async Task TestExposureCheckWithNoSaboteurs()
     {
         await using var ctx = await SetupRoundWithSaboteur();
 
+        // Do NOT make anyone a saboteur
         await ctx.Server.WaitAssertion(() =>
         {
+            var unrelatedKey = new StationRecordKey(uint.MaxValue, ctx.RuleEnt);
             Assert.DoesNotThrow(() =>
-                ctx.SabOpsSys.RunExposureChecks((ctx.RuleEnt, null)),
-                "RunExposureChecks should not throw when no saboteurs exist.");
+                ctx.EntMan.EventBus.RaiseLocalEvent(
+                    ctx.RuleEnt, new RecordModifiedEvent(unrelatedKey), broadcast: true),
+                "Exposure event handler should not throw when no saboteurs exist.");
         });
 
         await ctx.Pair.CleanReturnAsync();
@@ -1518,26 +1525,32 @@ public sealed class SaboteurGameplayTest
     #region Test: Dirty Domain Does Not Set Exposure When Not Records
 
     /// <summary>
-    /// Verifies that dirtying a non-Records domain (e.g. Power) sets
-    /// CompletionSweepNeeded but NOT ExposureCheckNeeded.
+    /// Verifies that dirtying a non-Records domain (e.g. Power) sets CompletionSweepNeeded
+    /// and that the saboteur's exposure multiplier is unaffected. Exposure is now
+    /// purely event-driven via RecordModifiedEvent — dirty-domain flags no longer gate it.
     /// </summary>
     [Test]
     public async Task TestNonRecordsDomainDoesNotTriggerExposure()
     {
         await using var ctx = await SetupRoundWithSaboteur();
 
-        await MakePlayerSaboteur(ctx);
+        var mindId = await MakePlayerSaboteur(ctx);
 
         await ctx.Server.WaitAssertion(() =>
         {
             Assert.That(ctx.CondCore.TryGetDirtyTracking(out var dirty));
+            Assert.That(ctx.EntMan.TryGetComponent<SaboteurMindComponent>(mindId, out var mindComp));
+
+            var multiplierBefore = mindComp!.ExposurePenaltyMultiplier;
 
             ctx.CondCore.MarkDirty(SaboteurDirtyDomain.Power);
 
             Assert.That(dirty!.CompletionSweepNeeded, Is.True,
                 "CompletionSweepNeeded should be set after dirtying Power.");
-            Assert.That(dirty.ExposureCheckNeeded, Is.False,
-                "ExposureCheckNeeded should NOT be set for non-Records domain.");
+
+            // Dirtying Power does not trigger exposure — multiplier must not change.
+            Assert.That(mindComp.ExposurePenaltyMultiplier, Is.EqualTo(multiplierBefore),
+                "Exposure multiplier must not change when a non-Records domain is dirtied.");
         });
 
         await ctx.Pair.CleanReturnAsync();

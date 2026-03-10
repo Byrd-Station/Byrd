@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 using System.Text;
 using Content.Server.Chat.Managers;
-using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
 using Content.Server.Objectives;
 using Content.Server.StationRecords.Systems;
@@ -31,7 +30,6 @@ namespace Content.Server._Omu.Saboteur.Systems;
 public sealed class SaboteurOperationSystem : EntitySystem, Content.Shared._Omu.Saboteur.ISaboteurOperationSystem
 {
     [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly ObjectivesSystem _objectives = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
@@ -76,8 +74,33 @@ public sealed class SaboteurOperationSystem : EntitySystem, Content.Shared._Omu.
         SubscribeLocalEvent<SaboteurOperationComponent, ObjectiveGetProgressEvent>(OnObjectiveGetProgress);
         SubscribeLocalEvent<SaboteurOperationComponent, RequirementCheckEvent>(OnRequirementCheck);
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
+        SubscribeLocalEvent<RecordModifiedEvent>(OnRecordModified);
 
         RebuildTierObjectivesIndex();
+    }
+
+    /// <summary>
+    /// Reacts to any station-record modification by checking whether the changed record
+    /// belongs to a saboteur and updating their exposure penalty if so.
+    /// This is the sole exposure-escalation path — no polling needed.
+    /// </summary>
+    private void OnRecordModified(RecordModifiedEvent ev)
+    {
+        if (!_conditionCore.TryGetRuleEntity(out var rule))
+            return;
+
+        var saboteurQuery = EntityQueryEnumerator<SaboteurComponent>();
+        while (saboteurQuery.MoveNext(out var saboteurUid, out _))
+        {
+            if (!TryGetMindComp(saboteurUid, out _, out var mindComp))
+                continue;
+
+            if (!mindComp.OriginalRecordKey.HasValue || !mindComp.OriginalRecordKey.Value.Equals(ev.Key))
+                continue;
+
+            CheckExposure(saboteurUid, rule);
+            return; // Only one saboteur can own a given record key.
+        }
     }
 
     private void OnSaboteurRemoved(Entity<SaboteurComponent> entity, ref ComponentRemove args)
@@ -151,19 +174,6 @@ public sealed class SaboteurOperationSystem : EntitySystem, Content.Shared._Omu.
         if (!_mind.TryGetMind(saboteur, out mindId, out mind))
             return false;
         return TryComp(mindId, out mindComp);
-    }
-
-    /// <summary>
-    /// Checks every saboteur's criminal record and applies permanent exposure penalties.
-    /// </summary>
-    public void RunExposureChecks(Entity<SaboteurRuleComponent?> rule)
-    {
-        if (!Resolve(rule, ref rule.Comp))
-            return;
-
-        var exposureQuery = EntityQueryEnumerator<SaboteurComponent>();
-        while (exposureQuery.MoveNext(out var uid, out _))
-            CheckExposure(uid, (rule.Owner, rule.Comp));
     }
 
     /// <summary>
@@ -255,6 +265,11 @@ public sealed class SaboteurOperationSystem : EntitySystem, Content.Shared._Omu.
             if (HasComp<SaboteurOperationComponent>(objective))
                 continue;
 
+            // Skip the terminal "Die a Glorious Death" objective — it is not a traitor fallback
+            // and should not grant TC/rep rewards when completed.
+            if (mindComp.GloriousDeathActive)
+                continue;
+
             if (!TryComp<ObjectiveComponent>(objective, out var objComp))
                 continue;
 
@@ -295,11 +310,13 @@ public sealed class SaboteurOperationSystem : EntitySystem, Content.Shared._Omu.
     {
         if (!TryGetMindComp(saboteur, out var mindId, out var mindComp))
             return;
-
-        if (mindComp.ExposurePenaltyMultiplier <= rule.Comp.ExposureFloorMultiplier)
+        if (!mindComp.OriginalRecordKey.HasValue)
+            return;
+        var key = mindComp.OriginalRecordKey.Value;
+        if (!TryGetCriminalStatus(key, out var currentStatus))
             return;
 
-        if (!TryGetCriminalStatus(saboteur, out var currentStatus))
+        if (mindComp.ExposurePenaltyMultiplier <= rule.Comp.ExposureFloorMultiplier)
             return;
 
         if (GetSeverity(currentStatus) > GetSeverity(mindComp.HighestObservedStatus))
@@ -323,7 +340,7 @@ public sealed class SaboteurOperationSystem : EntitySystem, Content.Shared._Omu.
                      $"{mindComp.HighestObservedStatus} (rep multiplier: {worstMultiplier})");
 
             var exposureEv = new SaboteurExposureUpdatedEvent(mindId, oldMultiplier, worstMultiplier);
-            RaiseLocalEvent(rule.Owner, ref exposureEv);
+            RaiseLocalEvent(rule, ref exposureEv);
         }
     }
 
@@ -688,7 +705,14 @@ public sealed class SaboteurOperationSystem : EntitySystem, Content.Shared._Omu.
         if (!_conditionCore.TryGetRule(out var rule))
             return;
 
-        var slotsToFill = rule.MaxActiveObjectives - CountActiveSaboteurObjectives(saboteur);
+        // Use total objective count (saboteur ops + fallback traitor objectives) so that
+        // outstanding fallbacks are not invisible to the slot calculation. Using only the
+        // saboteur-op count would cause each fallback completion to spawn MaxActiveObjectives
+        // new objectives instead of just the one that was freed.
+        if (!_mind.TryGetMind(saboteur, out _, out var mind))
+            return;
+
+        var slotsToFill = rule.MaxActiveObjectives - mind.Objectives.Count;
 
         for (var slot = 0; slot < slotsToFill; slot++)
         {
@@ -741,8 +765,35 @@ public sealed class SaboteurOperationSystem : EntitySystem, Content.Shared._Omu.
         NotifyPlayer(saboteur, Loc.GetString("saboteur-glorious-death-assigned"));
         Log.Info($"Saboteur {ToPrettyString(saboteur)} assigned DAGD (all pools exhausted)");
 
-        if (TryGetMindComp(saboteur, out _, out var mindComp))
+        SaboteurMindComponent? mindComp = null;
+        if (TryGetMindComp(saboteur, out _, out mindComp))
             mindComp.GloriousDeathActive = true;
+
+        // Grant fallback rep and TC 10 times, then send summary notification
+        if (mindComp != null)
+        {
+            int repPer = (int) rule.FallbackRepPerDifficulty;
+            int tcPer = (int) rule.FallbackTcPerDifficulty;
+            int totalRep = 0;
+            int totalTc = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                if (repPer > 0)
+                {
+                    AddReputation((saboteur, null), (rule.Owner, rule), repPer, mindId, mindComp);
+                    totalRep += (int) Math.Round(repPer * mindComp.ExposurePenaltyMultiplier);
+                }
+                if (tcPer > 0)
+                {
+                    GrantTelecrystals((saboteur, null), (rule.Owner, rule), tcPer, mindComp);
+                    totalTc += tcPer;
+                }
+            }
+            if (totalRep > 0 || totalTc > 0)
+            {
+                NotifyPlayer(saboteur, Loc.GetString("saboteur-glorious-death-reward", ("totalRep", totalRep), ("totalTc", totalTc)));
+            }
+        }
     }
 
     /// <summary>
@@ -765,16 +816,11 @@ public sealed class SaboteurOperationSystem : EntitySystem, Content.Shared._Omu.
         AssignNextObjective(ent, mindComp);
     }
 
-    private bool TryGetCriminalStatus(EntityUid saboteur, out SecurityStatus status)
+    private bool TryGetCriminalStatus(StationRecordKey key, out SecurityStatus status)
     {
         status = SecurityStatus.None;
 
-        if (!TryGetMindComp(saboteur, out _, out var mindComp))
-            return false;
-
-        if (mindComp.OriginalRecordKey is not { } key)
-            return false;
-
+        // Use StationRecordKey to look up criminal record
         if (!_stationRecords.TryGetRecord<CriminalRecord>(key, out var criminal))
             return false;
 

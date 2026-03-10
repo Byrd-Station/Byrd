@@ -82,7 +82,7 @@
     difficulty: 1
     icon:
       sprite: Structures/Doors/Airlocks/Standard/basic.rsi
-      state: bolted_lit
+      state: closed
   - type: SaboteurOperation
     operationId: LockdownDepartment
     tier: 0
@@ -225,7 +225,7 @@
 
 - type: entity
   parent: BaseSaboteurObjective
-  id: SaboteurTakeBridgeControlObjective
+  id: SaboteurTakeDepartmentControlObjective
   components:
   - type: Objective
     difficulty: 1
@@ -233,11 +233,11 @@
       sprite: Structures/Machines/computers.rsi
       state: comm
   - type: SaboteurOperation
-    operationId: TakeBridgeControl
+    operationId: TakeDepartmentControl
     tier: 2
     reputationGain: 10
     isMajor: false
-  - type: SaboteurTakeBridgeControlCondition
+  - type: SaboteurDepartmentControlConditionComponent
     requiredCount: 1
 
 - type: entity
@@ -284,8 +284,8 @@
   - type: Objective
     difficulty: 1
     icon:
-      sprite: Objects/Weapons/Melee/stunbaton.rsi
-      state: stunbaton_on
+      sprite: _Goobstation/Clothing/Neck/Misc/fellforitaward.rsi
+      state: icon
   - type: SaboteurOperation
     operationId: ChainOfFools
     tier: 2

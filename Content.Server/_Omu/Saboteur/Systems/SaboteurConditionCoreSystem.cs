@@ -68,6 +68,21 @@ public sealed class SaboteurConditionCoreSystem : EntitySystem
     /// Looks up the active saboteur rule using the cached entity UID
     /// and a pre-resolved <see cref="EntityQuery{T}"/> for fast access on hot paths.
     /// </summary>
+    /// <summary>
+    /// Looks up the active saboteur rule as a full <see cref="Entity{T}"/> pair,
+    /// for callers that need both the UID and the component.
+    /// </summary>
+    public bool TryGetRuleEntity(out Entity<SaboteurRuleComponent> rule)
+    {
+        if (_cachedRuleUid is { } uid && _ruleQuery.TryGetComponent(uid, out var comp))
+        {
+            rule = (uid, comp);
+            return true;
+        }
+        rule = default;
+        return false;
+    }
+
     public bool TryGetRule([NotNullWhen(true)] out SaboteurRuleComponent? rule)
     {
         if (_cachedRuleUid is { } uid)
@@ -154,9 +169,6 @@ public sealed class SaboteurConditionCoreSystem : EntitySystem
 
         dirty.PendingDirtyDomains |= domain;
         dirty.CompletionSweepNeeded = true;
-
-        if (domain == SaboteurDirtyDomain.Records)
-            dirty.ExposureCheckNeeded = true;
     }
 
     /// <summary>

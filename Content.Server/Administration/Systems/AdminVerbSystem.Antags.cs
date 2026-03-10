@@ -98,7 +98,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Content.Server._Harmony.GameTicking.Rules.Components;
-
+using Content.Server._Omu.Saboteur.Components; // OmuStation
 namespace Content.Server.Administration.Systems;
 
 public sealed partial class AdminVerbSystem
@@ -327,8 +327,20 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", conspiratorName, Loc.GetString("admin-verb-make-conspirator")),
         };
         args.Verbs.Add(conspirator);
-
-        // OmuStation — Saboteur admin verb
-        AddSaboteurAntagVerb(args, targetPlayer);
-    }
+// OmuStation
+        var saboteurName = Loc.GetString("admin-verb-text-make-saboteur");
+        Verb saboteurVerb = new()
+        {
+            Text = saboteurName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/job_icons.rsi"), "Syndicate"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<SaboteurRuleComponent>(targetPlayer, "Saboteur");
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", saboteurName, Loc.GetString("admin-verb-make-saboteur")),
+        };
+        args.Verbs.Add(saboteurVerb);
+    }// OmuStation
 }

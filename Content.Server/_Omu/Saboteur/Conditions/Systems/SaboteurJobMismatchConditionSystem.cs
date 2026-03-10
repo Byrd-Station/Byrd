@@ -29,7 +29,7 @@ public sealed class SaboteurJobMismatchConditionSystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly SharedIdCardSystem _idCard = default!;
 
-    /// <remarks>Not reentrant-safe — must not be used from callbacks that also use this buffer.</remarks>
+    /// <remarks>Not reentrant-safe - must not be used from callbacks that also use this buffer.</remarks>
     private readonly List<CrewTarget> _scratchCrewTargets = new();
 
     public override void Initialize()
@@ -95,6 +95,30 @@ public sealed class SaboteurJobMismatchConditionSystem : EntitySystem
         if (!_deptConfig.TryGetDeptConfig(out var dept))
             return;
 
+        if (comp.MismatchMode == JobMismatchMode.AnyDifference)
+        {
+            comp.CacheKey = _core.MakeCacheKey(uid);
+            var data = EnsureComp<SaboteurCrewTargetDataComponent>(uid);
+            _crewTargeting.InitializeAssignment(uid, args, dirty,
+                SaboteurDirtyDomain.Records | SaboteurDirtyDomain.IdCard);
+
+            comp.TrackedHolders.Clear();
+            foreach (var holderUid in data.FlagTargets)
+            {
+                if (!_idCard.TryFindIdCard(holderUid, out var card))
+                    continue;
+
+                var originalJob = card.Comp.JobPrototype?.Id;
+                if (!string.IsNullOrEmpty(originalJob))
+                    comp.TrackedHolders[holderUid] = originalJob;
+            }
+
+            _crewTargeting.UpdateCrewTargetDescription(uid, data, args.Meta,
+                static names => new[] { ("targets", (object) string.Join(", ", names)) });
+            return;
+        }
+
+        // DemotedFromCommand: broad tracking of all command crew
         comp.CacheKey = _core.MakeCacheKey(uid);
         _core.RegisterInterest(dirty, uid, SaboteurDirtyDomain.Records | SaboteurDirtyDomain.IdCard);
 
@@ -145,6 +169,23 @@ public sealed class SaboteurJobMismatchConditionSystem : EntitySystem
             return;
         }
 
+        if (comp.MismatchMode == JobMismatchMode.AnyDifference)
+        {
+            var data = EnsureComp<SaboteurCrewTargetDataComponent>(uid);
+            if (!_crewTargeting.TryPickCrewTargets(
+                    args.MindId,
+                    args.Mind.OwnedEntity,
+                    data.FlagTargets,
+                    comp.RequiredCount,
+                    static (ct, _) => ct.IdCard.FullName != null && ct.IdCard.JobPrototype != null,
+                    0))
+            {
+                args.Cancelled = true;
+            }
+            return;
+        }
+
+        // DemotedFromCommand: verify candidate count without picking specific targets
         _scratchCrewTargets.Clear();
         _crewTargeting.CollectEligibleCrew(args.Mind.OwnedEntity, _scratchCrewTargets);
 

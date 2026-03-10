@@ -21,7 +21,7 @@ public sealed partial class SaboteurDepartmentConfigComponent : Component
     /// <summary>
     /// Maps an access tag (e.g. "Engineering") to its department ID.
     /// </summary>
-    [DataField]
+    [DataField(required: true)]
     public Dictionary<string, ProtoId<DepartmentPrototype>> DepartmentAccessTags = new();
 
     /// <summary>
@@ -34,20 +34,14 @@ public sealed partial class SaboteurDepartmentConfigComponent : Component
     /// <summary>
     /// The access tag that identifies command-level access.
     /// </summary>
-    [DataField]
-    public string CommandAccessTag = "Command";
-
-    /// <summary>
-    /// NavMap beacon keyword used to identify the bridge area.
-    /// </summary>
-    [DataField]
-    public string BridgeBeaconKeyword = "Bridge";
+    [DataField(required: true)]
+    public string CommandAccessTag = string.Empty;
 
     /// <summary>
     /// Prototype ID of the command department, used to populate <see cref="CommandJobs"/>.
     /// </summary>
-    [DataField]
-    public ProtoId<DepartmentPrototype> CommandDepartmentId = "Command";
+    [DataField(required: true)]
+    public ProtoId<DepartmentPrototype> CommandDepartmentId;
 
     /// <summary>
     /// Runtime-populated set of job IDs that belong to the command department.

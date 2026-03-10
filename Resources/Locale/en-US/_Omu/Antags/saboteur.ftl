@@ -1,3 +1,5 @@
+# Glorious Death Reward Summary
+saboteur-glorious-death-reward = [color=#eebb00]+{totalRep}[/color] reputation, [color=#eebb00]+{totalTc}[/color] telecrystals awarded for your glorious death.
 # Saboteur antagonist localization strings
 
 # Role
@@ -18,8 +20,8 @@ objective-saboteur-disable-security-desc = Disable at least 30% of the station's
 objective-saboteur-lockdown-department = Lock Down {$department}
 objective-saboteur-lockdown-department-desc = Bolt down at least 50% of the airlocks in {$department} (minimum 5 bolted doors).
 
-objective-saboteur-emag-borg = Emag a Borg
-objective-saboteur-emag-borg-desc = Use a cryptographic sequencer on any cyborg to subvert it. The station's own silicon, now compromised.
+objective-saboteur-emag-borg = Subvert a Borg
+objective-saboteur-emag-borg-desc = Hack the metal. The station's own silicon, working for you.
 
 # Tier 1 Objectives (Trusted)
 objective-saboteur-frame-head = Frame Command Staff
@@ -35,14 +37,14 @@ objective-saboteur-sabotage-emergency = Sabotage Emergency Systems
 objective-saboteur-sabotage-emergency-desc = Cut power to at least 30% of the station's fire alarms. When the fires start, nobody gets a warning.
 
 objective-saboteur-manipulate-transfers = Manipulate Personnel Transfers
-objective-saboteur-manipulate-transfers-desc = Get at least 2 crew members reassigned to a different job than the one on their station records. Bureaucratic chaos.
+objective-saboteur-manipulate-transfers-desc = Get {$targets} reassigned to different roles. Use your connections to redraw the org chart.
 
 # Tier 2 Objectives (Respected)
 objective-saboteur-get-command-demoted = Get Command Staff Demoted
 objective-saboteur-get-command-demoted-desc = Get at least 1 command staff member demoted out of their command position. Their ID should no longer reflect a command role.
 
-objective-saboteur-take-bridge-control = Take Bridge Control
-objective-saboteur-take-bridge-control-desc = Make at least 1 station announcement from a communications console. Address the crew in your own words.
+objective-saboteur-take-department-control = Take Department Control
+objective-saboteur-take-department-control-desc = Make at least 1 station announcement from a {$department} communications console. Speak with the authority of their department.
 
 objective-saboteur-disable-gravity = Disable Gravity
 objective-saboteur-disable-gravity-desc = Destroy every gravity generator on the station. Let them float.

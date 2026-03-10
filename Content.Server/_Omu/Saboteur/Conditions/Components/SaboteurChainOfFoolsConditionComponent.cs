@@ -10,14 +10,14 @@ using Content.Server._Omu.Saboteur.Components;
 namespace Content.Server._Omu.Saboteur.Conditions.Components;
 
 /// <summary>
-/// Objective condition requiring the saboteur to create a chain of N crew members
-/// with modified criminal records in succession.
+/// Objective condition requiring the saboteur to have N crew members simultaneously
+/// under their mind control.
 /// </summary>
 [RegisterComponent, Access(typeof(SaboteurChainOfFoolsConditionSystem))]
 public sealed partial class SaboteurChainOfFoolsConditionComponent : Component
 {
     /// <summary>
-    /// Number of chained record modifications required.
+    /// Number of crew members that must be simultaneously mind-controlled.
     /// </summary>
     [DataField(required: true)]
     public int RequiredCount;

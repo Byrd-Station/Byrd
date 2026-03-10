@@ -170,7 +170,7 @@ public sealed class SaboteurConditionCoreSystemTest
         {
             var domains = _sys.GetDomainsForCheckMode(mode);
             Assert.That(domains, Is.Not.EqualTo(SaboteurDirtyDomain.None),
-                $"SabotageMode.{mode} returned None — every mode should map to a domain.");
+                    $"SabotageMode.{mode} returned None - every mode should map to a domain.");
         }
     }
 

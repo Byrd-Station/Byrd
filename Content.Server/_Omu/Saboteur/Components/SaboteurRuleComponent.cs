@@ -14,7 +14,7 @@ using Content.Server._Omu.Saboteur.Systems;
 namespace Content.Server._Omu.Saboteur.Components;
 
 /// <summary>
-/// Game rule component that configures the saboteur antag — tier thresholds,
+/// Game rule component that configures the saboteur antag - tier thresholds,
 /// TC rewards, exposure penalties, store categories, and timing intervals.
 /// </summary>
 [RegisterComponent, Access(typeof(SaboteurRuleSystem), typeof(SaboteurConditionCoreSystem))]
@@ -30,7 +30,7 @@ public sealed partial class SaboteurRuleComponent : Component
     /// <summary>
     /// Minimum round duration before high-tier objectives can be assigned.
     /// </summary>
-    [DataField]
+    [DataField(required: true)]
     public TimeSpan HighTierTimeGate;
 
     /// <summary>
@@ -48,7 +48,7 @@ public sealed partial class SaboteurRuleComponent : Component
     /// <summary>
     /// Colour used to display codewords in the character briefing.
     /// </summary>
-    [DataField]
+    [DataField(required: true)]
     public Color CodewordColor;
 
     /// <summary>
@@ -67,93 +67,92 @@ public sealed partial class SaboteurRuleComponent : Component
     /// Currency prototype used for telecrystals in the saboteur store.
     /// </summary>
     [DataField(required: true)]
-    public ProtoId<CurrencyPrototype> TelecrystalCurrency = string.Empty;
+    public ProtoId<CurrencyPrototype> TelecrystalCurrency;
 
     /// <summary>
-    /// How many TC the saboteur starts with (typically 0 — earned via operations).
+    /// How many TC the saboteur starts with (typically 0 - earned via operations).
     /// </summary>
-    [DataField]
+    [DataField(required: true)]
     public int StartingTc;
 
     /// <summary>
     /// Catch-up reputation granted per elapsed minute for late-joining saboteurs.
     /// </summary>
-    [DataField]
+    [DataField(required: true)]
     public int LateJoinRepPerMinute;
 
     /// <summary>
     /// Maximum catch-up reputation a late-joining saboteur can receive.
     /// </summary>
-    [DataField]
+    [DataField(required: true)]
     public int MaxLateJoinRep;
 
     /// <summary>
     /// Catch-up TC granted per completed interval for late-joining saboteurs.
     /// </summary>
-    [DataField]
+    [DataField(required: true)]
     public int LateJoinTcPerInterval;
 
     /// <summary>
     /// How many minutes each late-join TC interval lasts.
     /// </summary>
-    [DataField]
+    [DataField(required: true)]
     public int LateJoinTcIntervalMinutes;
 
     /// <summary>
     /// Minimum elapsed round minutes before late-join catch-up kicks in.
     /// </summary>
-    [DataField]
+    [DataField(required: true)]
     public int LateJoinMinMinutes;
 
     /// <summary>
-    /// Hard floor for the exposure reputation multiplier — exposure can never reduce it below this.
+    /// Hard floor for the exposure reputation multiplier - exposure can never reduce it below this.
     /// </summary>
-    [DataField]
-    public float ExposureFloorMultiplier = 0.25f;
+    [DataField(required: true)]
+    public float ExposureFloorMultiplier;
 
     /// <summary>
     /// Default reputation gain when an operation does not specify its own.
     /// </summary>
-    [DataField]
-    public int DefaultOperationRepGain = 10;
+    [DataField(required: true)]
+    public int DefaultOperationRepGain;
 
     /// <summary>
     /// Weighted random group used to assign fallback (traitor-style) objectives
     /// when all saboteur-specific objectives are exhausted.
     /// </summary>
     [DataField(required: true)]
-    public ProtoId<WeightedRandomPrototype> TraitorFallbackGroup = string.Empty;
+    public ProtoId<WeightedRandomPrototype> TraitorFallbackGroup;
 
     /// <summary>
     /// Entity prototype ID for the "Die a Glorious Death" last-resort objective.
     /// </summary>
     [DataField(required: true)]
-    public EntProtoId GloriousDeathObjectiveId = string.Empty;
+    public EntProtoId GloriousDeathObjectiveId;
 
     /// <summary>
     /// TC awarded per unit of difficulty when a fallback (traitor-style) objective is completed.
     /// The total TC reward is <c>floor(Difficulty × FallbackTcPerDifficulty)</c>.
     /// </summary>
-    [DataField]
-    public float FallbackTcPerDifficulty = 6f;
+    [DataField(required: true)]
+    public float FallbackTcPerDifficulty;
 
     /// <summary>
     /// Reputation awarded per unit of difficulty when a fallback objective is completed.
     /// The total reputation gain is <c>floor(Difficulty × FallbackRepPerDifficulty)</c>.
     /// </summary>
-    [DataField]
-    public float FallbackRepPerDifficulty = 4f;
+    [DataField(required: true)]
+    public float FallbackRepPerDifficulty;
 
     /// <summary>
     /// Maximum number of saboteur objectives a player may have active simultaneously.
     /// </summary>
-    [DataField]
-    public int MaxActiveObjectives = 3;
+    [DataField(required: true)]
+    public int MaxActiveObjectives;
 
     /// <summary>
     /// Minimum tier number considered "high-tier" for the purposes of the time gate.
     /// </summary>
-    [DataField]
+    [DataField(required: true)]
     public int HighTierMinimum;
-
 }

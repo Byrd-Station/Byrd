@@ -52,8 +52,8 @@
   locId: objective-saboteur-get-command-demoted
 
 - type: saboteurOperation
-  id: TakeBridgeControl
-  locId: objective-saboteur-take-bridge-control
+  id: TakeDepartmentControl
+  locId: objective-saboteur-take-department-control
 
 - type: saboteurOperation
   id: DisableGravity

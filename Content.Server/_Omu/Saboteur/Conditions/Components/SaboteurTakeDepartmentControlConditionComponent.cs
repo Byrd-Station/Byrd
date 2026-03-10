@@ -4,15 +4,15 @@
 using Robust.Shared.GameObjects;
 
 using Content.Server._Omu.Saboteur.Conditions.Systems;
-using Content.Server._Omu.Saboteur.Components;
 
 namespace Content.Server._Omu.Saboteur.Conditions.Components;
 
 /// <summary>
-/// Objective condition requiring the saboteur to make station announcements from the bridge.
+/// Objective condition requiring the saboteur to make station announcements from
+/// a department communications console.
 /// </summary>
-[RegisterComponent, Access(typeof(SaboteurBridgeControlConditionSystem))]
-public sealed partial class SaboteurTakeBridgeControlConditionComponent : Component
+[RegisterComponent, Access(typeof(SaboteurDepartmentControlConditionSystem))]
+public sealed partial class SaboteurDepartmentControlConditionComponent : Component
 {
     /// <summary>
     /// Number of announcements the saboteur must make.
@@ -25,6 +25,13 @@ public sealed partial class SaboteurTakeBridgeControlConditionComponent : Compon
     /// </summary>
     [ViewVariables]
     public int AnnouncementCount;
+
+    /// <summary>
+    /// The access tag assigned at objective-assignment time.
+    /// The saboteur must use a console whose reader contains this tag.
+    /// </summary>
+    [ViewVariables]
+    public string AssignedDepartmentAccessTag = string.Empty;
 
     /// <summary>
     /// Dirty-domain cache key for re-evaluation tracking.

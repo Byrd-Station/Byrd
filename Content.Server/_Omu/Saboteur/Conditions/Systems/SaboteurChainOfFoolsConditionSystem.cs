@@ -12,7 +12,8 @@ using Content.Server._Omu.Saboteur.Components;
 namespace Content.Server._Omu.Saboteur.Conditions.Systems;
 
 /// <summary>
-/// Evaluates chain-of-fools objectives by counting sequential criminal record modifications.
+/// Evaluates chain-of-fools objectives by counting crew members currently under
+/// the saboteur's mind control simultaneously.
 /// </summary>
 public sealed class SaboteurChainOfFoolsConditionSystem : EntitySystem
 {

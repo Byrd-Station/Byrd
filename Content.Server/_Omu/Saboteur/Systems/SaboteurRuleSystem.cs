@@ -66,12 +66,6 @@ public sealed class SaboteurRuleSystem : GameRuleSystem<SaboteurRuleComponent>
         if (!_conditionCore.TryGetDirtyTracking(out var dirty))
             return;
 
-        if (dirty.ExposureCheckNeeded)
-        {
-            dirty.ExposureCheckNeeded = false;
-            _saboteurOps.RunExposureChecks((uid, comp));
-        }
-
         if (dirty.CompletionSweepNeeded)
         {
             dirty.CompletionSweepNeeded = false;

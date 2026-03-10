@@ -5,8 +5,6 @@
   id: Saboteur
   parent: BaseGameRule
   components:
-  - type: GameRule
-    minPlayers: 10
   - type: SaboteurRule
     # === Tier Configuration ===
     tiers:
@@ -104,6 +102,7 @@
       Command: Command
 
     # Maps primary department → head-of-department job prototype (SeizePoliticalControl)
+
     departmentHeadMap:
       Engineering: ChiefEngineer
       Medical: ChiefMedicalOfficer
@@ -111,23 +110,18 @@
       Science: ResearchDirector
       Cargo: Quartermaster
       Civilian: HeadOfPersonnel
-  # Admin spawning only; automatic selection disabled.
-  #- type: AntagSelection
-  #  agentName: saboteur-round-end-agent-name
-  #  selectionTime: PostPlayerSpawn
-  #  definitions:
-  #  - prefRoles: [ Saboteur ]
-  #    max: 1
-  #    playerRatio: 25
-  #    chaosScore: 200
-  #    blacklist:
-  #      components:
-  #      - CommandStaff
-  #      - AntagImmune
-  #    lateJoinAdditional: true
-  #    briefing:
-  #      text: saboteur-role-greeting
-  #      color: "#c93030"
-  #      sound: /Audio/Ambience/Antag/traitor_start.ogg
-  #    mindRoles:
-  #    - MindRoleSaboteur
+  - type: AntagSelection
+    agentName: saboteur-round-end-agent-name
+    selectionTime: PostPlayerSpawn
+    definitions:
+    - prefRoles: [ Saboteur ]
+      min: 0 #Admin Only
+      max: 0 #Admin Only
+      playerRatio: 999 #Admin Only
+      chaosScore: 9999 #Admin Only
+      blacklist:
+        components:
+        - CommandStaff
+      lateJoinAdditional: true
+      mindRoles:
+      - MindRoleSaboteur

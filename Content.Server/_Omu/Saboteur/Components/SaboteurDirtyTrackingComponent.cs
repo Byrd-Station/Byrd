@@ -55,11 +55,4 @@ public sealed partial class SaboteurDirtyTrackingComponent : Component
     [DataField, ViewVariables]
     public bool CompletionSweepNeeded;
 
-    /// <summary>
-    /// Set by <see cref="SaboteurConditionCoreSystem.MarkDirty"/> when the
-    /// <see cref="SaboteurDirtyDomain.Records"/> domain becomes dirty.
-    /// The rule system clears this after running exposure checks.
-    /// </summary>
-    [DataField, ViewVariables]
-    public bool ExposureCheckNeeded;
 }

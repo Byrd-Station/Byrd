@@ -58,6 +58,7 @@ public sealed class SaboteurRuleTest
                 "Saboteur game rule entity missing SaboteurDepartmentConfigComponent.");
             Assert.That(deptConfig!.CommandAccessTag, Is.Not.Empty, "CommandAccessTag must not be empty.");
             Assert.That(deptConfig.CommandDepartmentId, Is.Not.Empty, "CommandDepartmentId must not be empty.");
+            Assert.That(deptConfig.DepartmentAccessTags, Is.Not.Empty, "DepartmentAccessTags must not be empty.");
             Assert.That(deptConfig.DepartmentHeadMap, Is.Not.Empty, "DepartmentHeadMap must not be empty.");
         });
 
@@ -78,7 +79,7 @@ public sealed class SaboteurRuleTest
             typeof(SaboteurFlaggedRecordsConditionComponent),
             typeof(SaboteurPlantEvidenceConditionComponent),
             typeof(SaboteurJobMismatchConditionComponent),
-            typeof(SaboteurTakeBridgeControlConditionComponent),
+            typeof(SaboteurDepartmentControlConditionComponent),
             typeof(SaboteurHijackBudgetConditionComponent),
             typeof(SaboteurChainOfFoolsConditionComponent),
             typeof(SaboteurFakeAgentConditionComponent),
@@ -307,7 +308,7 @@ public sealed class SaboteurRuleTest
     }
 
     [Test]
-    public async Task TestBridgeControlConditionPrototypeValidity()
+    public async Task TestDepartmentControlConditionPrototypeValidity()
     {
         await using var pair = await PoolManager.GetServerClient();
         var server = pair.Server;
@@ -318,14 +319,14 @@ public sealed class SaboteurRuleTest
         {
             foreach (var proto in protoMan.EnumeratePrototypes<EntityPrototype>())
             {
-                var compName = compFact.GetComponentName(typeof(SaboteurTakeBridgeControlConditionComponent));
+                var compName = compFact.GetComponentName(typeof(SaboteurDepartmentControlConditionComponent));
                 if (!proto.Components.TryGetValue(compName, out var reg))
                     continue;
 
-                var comp = (SaboteurTakeBridgeControlConditionComponent) reg.Component;
+                var comp = (SaboteurDepartmentControlConditionComponent) reg.Component;
 
                 Assert.That(comp.RequiredCount, Is.GreaterThan(0),
-                    $"BridgeControl objective '{proto.ID}' must have RequiredCount > 0.");
+                    $"DepartmentControl objective '{proto.ID}' must have RequiredCount > 0.");
             }
         });
 
@@ -488,7 +489,7 @@ public sealed class SaboteurRuleTest
                 if (!proto.TryGetComponent<SaboteurOperationComponent>(out _, compFact))
                     continue;
 
-                // FakeAgent PuppetInJob / CoverAllJobs legitimately pass — tested separately.
+                // FakeAgent PuppetInJob / CoverAllJobs legitimately pass - tested separately.
                 if (proto.Components.TryGetValue(fakeAgentCompName, out var fakeReg))
                 {
                     var fakeComp = (SaboteurFakeAgentConditionComponent) fakeReg.Component;
@@ -505,7 +506,7 @@ public sealed class SaboteurRuleTest
                 entMan.EventBus.RaiseLocalEvent(objUid, ref ev);
 
                 Assert.That(ev.Cancelled, Is.True,
-                    $"Objective '{proto.ID}' was NOT cancelled in an empty server — " +
+                    $"Objective '{proto.ID}' was NOT cancelled in an empty server - " +
                     "its condition system is likely missing a RequirementCheckEvent handler.");
 
                 entMan.DeleteEntity(objUid);
@@ -573,7 +574,7 @@ public sealed class SaboteurRuleTest
 
                 Assert.That(ev.Cancelled, Is.True,
                     $"FakeAgent objective '{proto.ID}' ({protoComp.Mode}) was NOT cancelled " +
-                    "with empty TargetJobs — handler should reject this state.");
+                    "with empty TargetJobs - handler should reject this state.");
 
                 entMan.DeleteEntity(objUid);
                 entMan.DeleteEntity(mindUid);
@@ -601,7 +602,7 @@ public sealed class SaboteurRuleTest
 
         await server.WaitAssertion(() =>
         {
-            // Bare entity with only the operation component — no condition handler fires.
+            // Bare entity with only the operation component - no condition handler fires.
             var objUid = entMan.SpawnEntity(null, MapCoordinates.Nullspace);
             entMan.AddComponent<SaboteurOperationComponent>(objUid);
             var opComp = entMan.GetComponent<SaboteurOperationComponent>(objUid);

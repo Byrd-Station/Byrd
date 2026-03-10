@@ -41,22 +41,16 @@ public sealed class SaboteurPlantEvidenceConditionSystem : EntitySystem
 
     private void OnGetProgress(EntityUid uid, SaboteurPlantEvidenceConditionComponent comp, ref ObjectiveGetProgressEvent args)
     {
-        if (!_core.TryBeginProgressCheck(uid, ref args, out var saboteur, out var dirty))
-            return;
-
         if (!TryComp<SaboteurCrewTargetDataComponent>(uid, out var data))
             return;
 
         var cacheKey = data.CacheKey;
-        if (_core.TryGetCached(dirty, uid, cacheKey, out var cached))
-        {
-            args.Progress = cached;
+        if (SaboteurConditionUtils.TryStandardProgress(_core, uid, ref args, cacheKey, out var saboteur, out var dirty))
             return;
-        }
 
         if (data.FlagTargets.Count == 0)
         {
-            args.Progress = _core.CacheAndReturn(dirty, uid, cacheKey, 0f);
+            SaboteurConditionUtils.AssignProgressIfNotNull(_core, dirty, uid, cacheKey, ref args, 0f);
             return;
         }
 
@@ -72,28 +66,29 @@ public sealed class SaboteurPlantEvidenceConditionSystem : EntitySystem
 
             if (data.FlagTargets.Count == 0 || !EntityManager.EntityExists(data.FlagTargets[0]))
             {
-                args.Progress = _core.CacheAndReturn(dirty, uid, cacheKey, 0f);
+                SaboteurConditionUtils.AssignProgressIfNotNull(_core, dirty, uid, cacheKey, ref args, 0f);
                 return;
             }
+
             target = data.FlagTargets[0];
         }
 
         if (!HasContrabandImplant(target, comp.ContrabandSeverity))
         {
-            args.Progress = _core.CacheAndReturn(dirty, uid, cacheKey, 0f);
+            SaboteurConditionUtils.AssignProgressIfNotNull(_core, dirty, uid, cacheKey, ref args, 0f);
             return;
         }
 
         if (!_idCard.TryFindIdCard(target, out var idCard))
         {
-            args.Progress = _core.CacheAndReturn(dirty, uid, cacheKey, 0f);
+            SaboteurConditionUtils.AssignProgressIfNotNull(_core, dirty, uid, cacheKey, ref args, 0f);
             return;
         }
 
         if (!TryComp<StationRecordKeyStorageComponent>(idCard, out var keyStorage)
             || keyStorage.Key is not { } key)
         {
-            args.Progress = _core.CacheAndReturn(dirty, uid, cacheKey, 0f);
+            SaboteurConditionUtils.AssignProgressIfNotNull(_core, dirty, uid, cacheKey, ref args, 0f);
             return;
         }
 
@@ -101,11 +96,11 @@ public sealed class SaboteurPlantEvidenceConditionSystem : EntitySystem
             && criminal.Status == SecurityStatus.Suspected
             && !string.Equals(criminal.InitiatorName, data.SnapshottedName, StringComparison.OrdinalIgnoreCase))
         {
-            args.Progress = _core.CacheAndReturn(dirty, uid, cacheKey, 1f);
+            SaboteurConditionUtils.AssignProgressIfNotNull(_core, dirty, uid, cacheKey, ref args, 1f);
             return;
         }
 
-        args.Progress = _core.CacheAndReturn(dirty, uid, cacheKey, 0f);
+        SaboteurConditionUtils.AssignProgressIfNotNull(_core, dirty, uid, cacheKey, ref args, 0f);
     }
 
     private void OnAfterAssign(EntityUid uid, SaboteurPlantEvidenceConditionComponent comp, ref ObjectiveAfterAssignEvent args)
