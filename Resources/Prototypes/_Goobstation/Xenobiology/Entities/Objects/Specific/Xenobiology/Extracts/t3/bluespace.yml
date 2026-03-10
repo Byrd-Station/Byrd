@@ -34,8 +34,8 @@
       - !type:PlaySoundEffect
         sound: /Audio/Effects/Chemistry/bubbles.ogg
       - !type:CreateEntityReactionEffect
-        entity: MaterialBSCrystal1
-        number: 5
+        entity: MaterialBSCrystal5
+        count: 1
     - reagents: [ Blood ]
       methods: [ Touch, Injection ]
       effects:

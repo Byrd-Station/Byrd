@@ -60,6 +60,14 @@
 
 - type: entity
   parent: MaterialBSCrystal
+  id: MaterialBSCrystal5
+  suffix: Single
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent: MaterialBSCrystal
   id: MaterialBSCrystalUnprocessed
   name: unprocessed bluespace crystal
   suffix: Full
