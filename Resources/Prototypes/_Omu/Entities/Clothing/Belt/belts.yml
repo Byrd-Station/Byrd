@@ -193,7 +193,7 @@
         - AutoinjectorCartridge # Goobstation
         - HandheldCrewMonitor # Goobstation
         - Medkit # Omustation, for BSO's medical set
-        - Bodybag # Omustation, for BSO's surgical set
+        - BodyBag # Omustation, for BSO's surgical set
       components:
         - Pill
         - Hypospray
