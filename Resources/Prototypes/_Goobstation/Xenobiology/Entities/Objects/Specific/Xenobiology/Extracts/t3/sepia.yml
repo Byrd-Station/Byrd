@@ -50,8 +50,8 @@
       - !type:PlaySoundEffect
         sound: /Audio/Effects/Chemistry/bubbles.ogg
       - !type:CreateEntityReactionEffect
-        entity: FloorTileItemSepia
-        number: 30
+        entity: FloorTileItemSepia30
+        count: 1
   - type: Tag
     tags:
     - XenobiologySepiaExtract

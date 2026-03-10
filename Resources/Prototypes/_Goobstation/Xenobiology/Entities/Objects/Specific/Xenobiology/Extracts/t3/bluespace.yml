@@ -22,8 +22,8 @@
       - !type:PlaySoundEffect
         sound: /Audio/Effects/Chemistry/bubbles.ogg
       - !type:CreateEntityReactionEffect
-        entity: FloorTileItemBluespace
-        number: 30
+        entity: FloorTileItemBluespace30
+        count: 1
     - reagents: [ Plasma ]
       methods: [ Touch, Injection ]
       effects:

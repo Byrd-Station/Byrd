@@ -9,3 +9,20 @@
   name: stack-sepia-tile
   spawn: FloorTileItemSepia
   maxCount: 30
+
+  # This is a bodge, but I cannot find a way to make these things stack to thirty when spawning them, except by making a new prototype for them. 
+- type: entity
+  parent: FloorTileItemBluespace
+  id: FloorTileItemBluespace30
+  suffix: 30
+  components:
+  - type: Stack
+    count: 30
+
+- type: entity
+  parent: FloorTileItemSepia
+  id: FloorTileItemSepia30
+  suffix: 30
+  components:
+  - type: Stack
+    count: 30
