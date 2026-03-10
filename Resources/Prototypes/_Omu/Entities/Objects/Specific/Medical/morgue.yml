@@ -2,7 +2,7 @@
   id: BodyBagBluespaceBSO
   parent: BodyBag
   name: bluespace body bag
-  description: body bag, but bluespace...
+  description: A synthetically made bluespace bag, designed for Blueshield Officer's to store and transport multiple dead VIPs at a time, capable of holding their bodies, limbs and even organs.
   components:
   - type: Sprite
     drawdepth: SmallObjects # I guess body bags need appear above a coroner's table?
@@ -33,3 +33,13 @@
       - CanPilot
       components:
       - BodyPart
+
+- type: entity
+  id: BodyBagBluespaceBSOFolded
+  name: bluespace body bag
+  description: A synthetically made bluespace bag, designed for Blueshield Officer's to store and transport multiple dead VIPs at a time, capable of holding their bodies, limbs and even organs.
+  parent: BodyBagBluespaceBSO
+  suffix: folded
+  components:
+  - type: Foldable
+    folded: true

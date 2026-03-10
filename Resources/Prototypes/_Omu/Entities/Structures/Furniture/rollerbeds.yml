@@ -2,9 +2,10 @@
   id: BlueshieldRollerBed
   parent: RollerBed
   name: bluespace rollerbed
-  description:
+  description: A robust looking rollerbed enchanced with bluespace technology to better fit in the bags of Blueshield Officer's.
   components:
   - type: Item
+    sprite: _Omu/Structures/Furniture/rollerbeds.rsi
     size: Small
     heldPrefix: bluespace_rollerbed # the inhands are also the same as stasis but renamed
   - type: Sprite
@@ -35,9 +36,10 @@
   id: BlueshieldRollerBedStasis
   parent: BlueshieldRollerBed
   name: bluespace stasis rollerbed
-  description:
+  description: A technological breakthrough, enchancing an already advanced bluespace rollerbed by outfitting it with a stasis function. Massively slows down the patient's metabolism and rate of bodily decay.
   components:
   - type: Item
+    sprite: _Omu/Structures/Furniture/rollerbeds.rsi
     size: Small
     heldPrefix: bluespace_stasis_rollerbed
   - type: Sprite

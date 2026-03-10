@@ -14,8 +14,10 @@
   id: FultonBeaconBlueshield
   parent: FultonBeacon
   name: bluespace fulton beacon 
-  description: fancy fulton beacon # and desc
+  description: A beacon to receive fulton extractions, outfitted with a much more potent bluespace signal.
   components:
+    - type: Item
+      sprite: _Omu/Objects/Tools/bluespace_fulton.rsi
     - type: GenericVisualizer # yeah idk might need this
       visuals:
         enum.FoldedVisuals.State:
@@ -35,11 +37,13 @@
   parent: Fulton
   suffix: Full
   name: bluespace fulton 
-  description: fancy fultons # and desc
+  description: A bluespace enchanced fulton, easily applied to any rollerbed or item of choice, capable of homing in on a bluespace signal nearly instantly, for extremely quick extraction.
   components:
   - type: Fulton
     duration: 5
     applyDuration: 1.5 # Half of apply duration for normal fultons
+  - type: Item
+    sprite: _Omu/Objects/Tools/bluespace_fulton.rsi
   - type: Stack
     stackType: FultonBlueshield
     count: 20
@@ -51,7 +55,7 @@
 - type: entity
   id: FultonBlueshield1
   parent: FultonBlueshield
-  name: bso fulton # temp name
+  name: bluespace fulton
   suffix: One
   components:
   - type: Stack

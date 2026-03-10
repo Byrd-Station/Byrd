@@ -122,17 +122,24 @@ selectable-set-bso-brdi-description =
     Repainted for Blueshield Officers.
 
 selectable-set-bso-extraction-name = Extraction kit
-selectable-set-bso-extraction-description =
-    description goes here
+selectable-set-bso-extraction-description = 
+    A swift extraction guarantees safety, you stand by those words.
+    Includes: A webbing rig with a ridiculous amount of pouches and pockets, capable of holding many items.
+    The rig is prepacked with 20 bluespace-enchanced fultons, easily attachable to any rollerbed, a beacon for these fultons and a combat medical kit with various medicines in pill form.
 
 selectable-set-bso-surgical-name = Surgical kit
 selectable-set-bso-surgical-description =
-    description goes here
+    You've seen those that you protect disected into multiple pieces and giblets far too many times.
+    Includes: A spatial general use chest rig, packed with a surgical omntitool and a bluespace body bag, capable of holding multiple cadavers, organs, pieces and giblets.
 
 selectable-set-bso-medical-name = Medical kit
 selectable-set-bso-medical-description =
-    description goes here
+    Sometimes, the classic and simple option is the best option.
+    Includes: A spatial general use chest rig, packed with a compact defibrillator and two combat medical kits.
 
 selectable-set-bso-chemical-name = Chemical kit
 selectable-set-bso-chemical-description =
-    description goes here
+    Perfect for healing allies or poisoning foes in a pinch,
+    for the Blueshield Officer especially fond of chemical efficiency.
+    Includes: A robust pouch for general use, 
+    packed with several vials of advanced medicine and a combat injector that instantly injects its contents upon forceful stabbing.

@@ -7,7 +7,7 @@
   parent: [ BaseItem, BaseSetSelector, BaseCentcommContraband ]
   components:
   - type: Sprite
-    sprite: _Goobstation/Objects/Specific/Security/blueshieldundetermined.rsi
+    sprite: _Omu/Objects/Misc/GunCases/blueshieldoffensivecase.rsi
     state: icon
   - type: SetSelector
     possibleSets:
@@ -25,7 +25,7 @@
   parent: [ BaseItem, BaseSetSelector, BaseCentcommContraband ]
   components:
   - type: Sprite
-    sprite: _Goobstation/Objects/Specific/Security/blueshieldundetermined.rsi
+    sprite: _Omu/Objects/Misc/GunCases/blueshieldsupportcase.rsi
     state: icon
   - type: SetSelector
     possibleSets:
