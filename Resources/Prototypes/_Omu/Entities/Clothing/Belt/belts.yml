@@ -116,6 +116,7 @@
     sprite: _Omu/Clothing/Belt/corpsman.rsi
 
 - type: entity
+  parent: ClothingBeltStorageBase
   id: ClothingBeltChameleonHolster
   name: syndicate shoulder holster
   suffix: Chameleon
