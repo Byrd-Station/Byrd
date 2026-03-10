@@ -172,9 +172,9 @@
     appearanceDataInit:
      enum.PdaVisuals.PdaType:
        !type:String
-       pda-seniorofficer
+       pda-securitysergeant
   - type: PdaBorderColor
     borderColor: "#A32D26"
     accentVColor: "#DFDFDF"
   - type: Icon
-    state: pda-seniorofficer
+    state: pda-securitysergeant
