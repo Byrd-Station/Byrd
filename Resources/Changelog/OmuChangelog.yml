@@ -2532,3 +2532,9 @@ Entries:
       message: Fixed syringes interaction with Syringe guns
   id: 319
   time: '2026-03-10T08:49:12.0000000+00:00'
+- author: Thesia000
+  changes:
+    - type: Tweak
+      message: minor rework of CC, actually MAJOR rework
+  id: 320
+  time: '2026-03-10T18:12:25.0000000+00:00'
