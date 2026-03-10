@@ -165,6 +165,7 @@
   - SecurityTrainingManual # Omu
   goobcoins: 35 #Goob content
   access:
+  - Corpsman # Omu
   - Security
   - Brig
   - Armory
