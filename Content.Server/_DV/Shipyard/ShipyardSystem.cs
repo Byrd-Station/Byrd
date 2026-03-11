@@ -2,12 +2,16 @@ using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
-using Content.Shared.DeltaV.CCVars;
+using Content.Shared.Station.Components;
+using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
+using Robust.Shared.EntitySerialization.Systems;
+using Content.Shared._DV.CCVars;
 using Content.Shared.Tag;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 
-namespace Content.Server.Shipyard;
+namespace Content.Server._DV.Shipyard;
 
 /// <summary>
 /// Handles spawning and ftling ships.
@@ -44,7 +48,7 @@ public sealed class ShipyardSystem : EntitySystem
         var map = _map.CreateMap(out var mapId);
         _map.SetPaused(map, false);
 
-        if (!_mapLoader.TryLoad(mapId, path, out var grids))
+        if (!_mapLoader.TryLoadGrid(mapId, path, out var grids))
         {
             Log.Error($"Failed to load shuttle {path}");
             Del(map);
