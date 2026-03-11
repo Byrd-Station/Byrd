@@ -94,8 +94,6 @@ using Content.Shared.Interaction;
 using Content.Shared.StatusEffect;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-
-
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Pulling.Events;
 using Content.Shared.Movement.Pulling.Components;
