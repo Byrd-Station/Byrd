@@ -1,11 +1,11 @@
 using Content.Server.Cargo.Systems;
-using Content.Server.Shipyard;
+using Content.Server._DV.Shipyard;
 using Content.Server.Shuttles.Components;
-using Content.Shared.Shipyard.Prototypes;
+using Content.Shared._DV.Shipyard.Prototypes;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
 
-namespace Content.IntegrationTests.Tests.DeltaV;
+namespace Content.IntegrationTests.Tests._DV;
 
 [TestFixture]
 [TestOf(typeof(ShipyardSystem))]
@@ -28,7 +28,9 @@ public sealed class ShipyardTest
             {
                 foreach (var vessel in proto.EnumeratePrototypes<VesselPrototype>())
                 {
-                    var shuttle = shipyard.TryCreateShuttle(vessel.Path.ToString());
+                    var shuttleCreated = shipyard.TryCreateShuttle(vessel.Path, out var shuttle);
+
+                    Assert.That(shuttleCreated, Is.True, $"TryCreateShuttle returned false for {vessel.ID}!");
                     Assert.That(shuttle, Is.Not.Null, $"Failed to spawn shuttle {vessel.ID}!");
 
                     var value = pricing.AppraiseGrid(shuttle.Value);
@@ -57,7 +59,9 @@ public sealed class ShipyardTest
             {
                 foreach (var vessel in proto.EnumeratePrototypes<VesselPrototype>())
                 {
-                    var shuttle = shipyard.TryCreateShuttle(vessel.Path.ToString());
+                    var shuttleCreated = shipyard.TryCreateShuttle(vessel.Path, out var shuttle);
+
+                    Assert.That(shuttleCreated, Is.True, $"TryCreateShuttle returned false for {vessel.ID}!");
                     Assert.That(shuttle, Is.Not.Null, $"Failed to spawn shuttle {vessel.ID}!");
 
                     var console = FindComponent<ShuttleConsoleComponent>(entities, shuttle.Value);

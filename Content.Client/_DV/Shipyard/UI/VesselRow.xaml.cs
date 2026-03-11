@@ -12,18 +12,21 @@ public sealed partial class VesselRow : PanelContainer
 {
     public event Action? OnPurchasePressed;
 
-    public VesselRow(VesselPrototype vessel, bool access)
+    public VesselRow(VesselPrototype vessel, bool access = false, bool isFree = false)
     {
         RobustXamlLoader.Load(this);
 
         VesselName.Text = vessel.Name;
 
         var tooltip = new Tooltip();
-        tooltip.SetMessage(FormattedMessage.FromMarkup(vessel.Description));
+        tooltip.SetMessage(FormattedMessage.FromMarkupOrThrow(vessel.Description));
         Purchase.TooltipSupplier = _ => tooltip;
         Purchase.Disabled = !access;
         Purchase.OnPressed += _ => OnPurchasePressed?.Invoke();
 
-        Price.Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", vessel.Price));
+        if (isFree)
+            Purchase.Text = Loc.GetString("shipyard-console-price-free");
+        else
+            Purchase.Text = Loc.GetString("cargo-console-menu-points-amount", ("amount", vessel.Price));
     }
 }

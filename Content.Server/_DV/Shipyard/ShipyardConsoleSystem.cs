@@ -1,8 +1,8 @@
-using Content.Server.Cargo.Components;
 using Content.Server.Cargo.Systems;
-using Content.Shared.Cargo.Components;
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Station.Systems;
+using Content.Shared.Cargo.Components;
+using Content.Shared.Popups;
 using Content.Shared._DV.Shipyard;
 using Content.Shared._DV.Shipyard.Prototypes;
 using Content.Shared.Whitelist;
@@ -25,7 +25,9 @@ public sealed class ShipyardConsoleSystem : SharedShipyardConsoleSystem
     {
         base.Initialize();
 
-        Subs.BuiEvents<ShipyardConsoleComponent>(ShipyardConsoleUiKey.Key, subs =>
+        SubscribeLocalEvent<BankBalanceUpdatedEvent>(OnBalanceUpdated);
+        Subs.BuiEvents<ShipyardConsoleComponent>(ShipyardConsoleUiKey.Key,
+            subs =>
         {
             subs.Event<BoundUIOpenedEvent>(OnOpened);
         });
@@ -37,36 +39,60 @@ public sealed class ShipyardConsoleSystem : SharedShipyardConsoleSystem
         if (_whitelist.IsWhitelistFail(vessel.Whitelist, ent))
             return;
 
-        if (GetBankAccount(ent) is not {} bank)
-            return;
-
-        if (bank.Comp.Balance < vessel.Price)
+        var purchasingGrid = Transform(ent).GridUid;
+        Entity<StationBankAccountComponent>? bankAccount = null;
+        if (ent.Comp.UseStationFunds)
         {
-            var popup = Loc.GetString("cargo-console-insufficient-funds", ("cost", vessel.Price));
-            Popup.PopupEntity(popup, ent, user);
-            Audio.PlayPvs(ent.Comp.DenySound, ent);
-            return;
+            bankAccount = GetBankAccount(ent);
+            if (!bankAccount.HasValue)
+            {
+                var popup = Loc.GetString("shipyard-console-error-bank");
+                Popup.PopupEntity(popup, ent, user, PopupType.SmallCaution);
+                Audio.PlayPvs(ent.Comp.DenySound, ent);
+                return;
+            }
+
+            if (bankAccount.Value.Comp.Accounts[bankAccount.Value.Comp.PrimaryAccount] < vessel.Price)
+            {
+                var popup = Loc.GetString("cargo-console-insufficient-funds", ("cost", vessel.Price));
+                Popup.PopupEntity(popup, ent, user, PopupType.SmallCaution);
+                Audio.PlayPvs(ent.Comp.DenySound, ent);
+                return;
+            }
+
+            purchasingGrid = bankAccount.Value.Owner;
         }
 
-        if (_shipyard.TrySendShuttle(bank.Owner, vessel.Path) is not {} shuttle)
+        if (purchasingGrid is not { } grid
+            || !_shipyard.TrySendShuttle(grid, vessel.Path, out var shuttle))
         {
             var popup = Loc.GetString("shipyard-console-error");
-            Popup.PopupEntity(popup, ent, user);
+            Popup.PopupEntity(popup, ent, user, PopupType.SmallCaution);
             Audio.PlayPvs(ent.Comp.DenySound, ent);
             return;
         }
 
-        _meta.SetEntityName(shuttle, $"{vessel.Name} {_random.Next(1000):000}");
+        if (bankAccount.HasValue)
+            _cargo.UpdateBankAccount(bankAccount.Value.Owner, -vessel.Price, _cargo.CreateAccountDistribution(bankAccount.Value));
 
-        _cargo.UpdateBankAccount(bank, bank.Comp, -vessel.Price);
-
-        var message = Loc.GetString("shipyard-console-docking", ("vessel", vessel.Name.ToString()));
+        _meta.SetEntityName(shuttle.Value, $"{vessel.Name} {_random.Next(1000):000}");
+        var message = Loc.GetString("shipyard-console-docking", ("vessel", vessel.Name));
         _radio.SendRadioMessage(ent, message, ent.Comp.Channel, ent);
         Audio.PlayPvs(ent.Comp.ConfirmSound, ent);
+    }
 
-        // TODO: make the ui updating more robust, make pr upstream to have UpdateBankAccount support things that arent ordering consoles
-        // TODO: then have shipyard have that component and update the ui when it changes balance
-        UpdateUI(ent, bank.Comp.Balance);
+    private void OnBalanceUpdated(ref BankBalanceUpdatedEvent args)
+    {
+        var query = EntityQueryEnumerator<ShipyardConsoleComponent>();
+
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            if (!_ui.IsUiOpen(uid, ShipyardConsoleUiKey.Key))
+                return;
+
+            if (GetBankAccount(uid) is { } bank)
+                UpdateUI(uid, args.Balance[bank.Comp.PrimaryAccount]);
+        }
     }
 
     private void OnOpened(Entity<ShipyardConsoleComponent> ent, ref BoundUIOpenedEvent args)
@@ -76,8 +102,8 @@ public sealed class ShipyardConsoleSystem : SharedShipyardConsoleSystem
 
     private void UpdateUI(EntityUid uid)
     {
-        if (GetBankAccount(uid) is {} bank)
-            UpdateUI(uid, bank.Comp.Balance);
+        if (GetBankAccount(uid) is { } bank)
+            UpdateUI(uid, bank.Comp.Accounts[bank.Comp.PrimaryAccount]);
     }
 
     private void UpdateUI(EntityUid uid, int balance)
@@ -91,7 +117,7 @@ public sealed class ShipyardConsoleSystem : SharedShipyardConsoleSystem
 
     private Entity<StationBankAccountComponent>? GetBankAccount(EntityUid console)
     {
-        if (_station.GetOwningStation(console) is not {} station)
+        if (_station.GetOwningStation(console) is not { } station)
             return null;
 
         if (!TryComp<StationBankAccountComponent>(station, out var bank))
