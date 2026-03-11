@@ -19,6 +19,9 @@
   - Maintenance
   - Command
   special:
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
   - !type:GiveItemOnHolidaySpecial
     holiday: GarbageDay
     prototype: WeaponRevolverInspector
