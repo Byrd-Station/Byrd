@@ -2538,3 +2538,17 @@ Entries:
       message: minor rework of CC, actually MAJOR rework
   id: 320
   time: '2026-03-10T18:12:25.0000000+00:00'
+- author: Aureu
+  changes:
+    - type: Tweak
+      message: Command maid role now spawns with a mind shield.
+    - type: Tweak
+      message: Command maid role now can be tracked by BSO.
+  id: 321
+  time: '2026-03-11T10:39:45.0000000+00:00'
+- author: distraughtcat
+  changes:
+    - type: Tweak
+      message: Resprited chimera and chimera biomass textures.
+  id: 322
+  time: '2026-03-12T00:39:21.0000000+00:00'
