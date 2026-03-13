@@ -287,7 +287,19 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Vulpkanin, Human]
+  layering:
+    vulp_BACK: TailBehind
+    vulp-fade_BACK: TailBehind
+    vulp: TailOversuit
+    vulp-fade: TailOversuit
+    colorLinks:
+      vulp_BACK: vulp
+      vulp-fade_BACK: vulp-fade
   sprites:
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_BACK
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp-fade_BACK
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
@@ -298,7 +310,19 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Vulpkanin]
+  layering:
+    vulp_BACK: TailBehind
+    vulp-tip_BACK: TailBehind
+    vulp: TailOversuit
+    vulp-tip: TailOversuit
+    colorLinks:
+      vulp_BACK: vulp
+      vulp-fade_BACK: vulp-tip
   sprites:
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_BACK
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp-tip_BACK
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
@@ -309,18 +333,42 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Vulpkanin]
+  layering:
+    vulp_wag_BACK: TailBehind
+    vulp_wag-fade_BACK: TailBehind
+    vulp_wag: TailOversuit
+    vulp_wag-fade: TailOversuit
+  colorLinks:
+      vulp_BACK: vulp_wag
+      vulp-fade_BACK: vulp_wag-fade
   sprites:
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag_BACK
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag-fade_BACK
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_wag
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp_wag-tip #fade
+      state: vulp_wag-fade #fade
 
 - type: marking
   id: VulpTailWagTip
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Vulpkanin]
+  layering:
+    vulp_wag_BACK: TailBehind
+    vulp_wag-tip_BACK: TailBehind
+    vulp_wag: TailOversuit
+    vulp_wag-tip: TailOversuit
+  colorLinks:
+      vulp_BACK: vulp_wag
+      vulp-fade_BACK: vulp_wag-tip
   sprites:
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag_BACK
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag-tip_BACK
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_wag
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
@@ -331,7 +379,19 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Vulpkanin]
+  layering:
+    vulp_alt_BACK: TailBehind
+    vulp_alt-fade_BACK: TailBehind
+    vulp_alt: TailOversuit
+    vulp_alt-fade: TailOversuit
+  colorLinks:
+      vulp_BACK: vulp_alt
+      vulp-fade_BACK: vulp_alt-fade
   sprites:
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_alt_BACK
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_alt-fade_BACK
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_alt
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
@@ -342,7 +402,19 @@
   bodyPart: Tail
   markingCategory: Tail
   speciesRestriction: [Vulpkanin]
+  layering:
+    vulp_alt_BACK: TailBehind
+    vulp_alt-tip_BACK: TailBehind
+    vulp_alt: TailOversuit
+    vulp_alt-tip: TailOversuit
+  colorLinks:
+      vulp_BACK: vulp_alt
+      vulp-fade_BACK: vulp_alt-tip
   sprites:
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_alt_BACK
+    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_alt-tip_BACK
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_alt
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi

@@ -285,6 +285,7 @@
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
+    - map: [ "enum.HumanoidVisualLayers.Tail" ]
     - map: [ "outerClothing" ]
     - map: [ "beltalt" ] # Omu change.
     - map: [ "back" ]
@@ -295,7 +296,7 @@
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "mask" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
-    - map: [ "enum.HumanoidVisualLayers.Tail" ]
+
     - map: [ "enum.HumanoidVisualLayers.Wings" ] # For IPC wings porting from SimpleStation
     - map: [ "head" ]
     - map: [ "pocket1" ]
@@ -610,6 +611,7 @@
     noRot: true
     # TODO BODY Turn these into individual body parts?
     layers:
+    - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Omustation Floof/Pirate PR port custom layers
     - map: [ "enum.HumanoidVisualLayers.Groin" ]
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
     - map: [ "enum.HumanoidVisualLayers.Head" ]
@@ -637,6 +639,7 @@
     - map: [ "ears" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
+    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Omustation Floof/Pirate PR port custom layers
     - map: [ "id" ]
     - map: [ "outerClothing" ]
     - map: [ "back" ]

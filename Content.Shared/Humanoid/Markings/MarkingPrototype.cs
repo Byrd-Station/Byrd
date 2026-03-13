@@ -65,6 +65,15 @@ namespace Content.Shared.Humanoid.Markings
         public string? Shader { get; private set; } = null;
         /// Impstation end
 
+        ///Floof/Pirate PR port Omustation custom layers start
+        [DataField("layering")]
+        public Dictionary<string, string?>? Layering { get; private set; }
+
+        [DataField("colorLinks")]
+        public Dictionary<string, string?>? ColorLinks { get; private set; }
+        ///Floof/Pirate PR port Omustation custom layers end
+
+
         public Marking AsMarking()
         {
             return new Marking(ID, Sprites.Count);

@@ -11,7 +11,7 @@
 - type: entity
   parent: [ BaseCentcommContraband , ClothingBackpack ]
   id: ClothingBackpackCentcomm
-  name: centcomm backpack
+  name: centcomm backpack test
   description: A luxurious backpack, smells like money.
   components:
   - type: Sprite
