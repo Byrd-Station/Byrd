@@ -48,6 +48,7 @@
       tags:
         - Cartridge
         - Trash
+        - Organ
   - type: UseDelay
     delay: 0.5
   - type: Tag
