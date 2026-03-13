@@ -37,7 +37,11 @@
       amount: 1
     IrishBool:
       amount: 1
+    IrishCarBomb:
+      amount: 1
     JackRose:
+      amount: 1
+    ManhattanProject:
       amount: 1
     Mayojito:
       amount: 1
