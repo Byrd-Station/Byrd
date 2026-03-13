@@ -68,7 +68,6 @@ public sealed class ShipyardSystem : EntitySystem
     public bool TrySendShuttle(Entity<ShuttleComponent?> shuttleDestination, ResPath path, [NotNullWhen(true)] out Entity<ShuttleComponent>? shuttle)
     {
         shuttle = null;
-        if (!Resolve(shuttleDestination, ref shuttleDestination.Comp))
 
         if (!TryCreateShuttle(path, out shuttle))
             return false;
