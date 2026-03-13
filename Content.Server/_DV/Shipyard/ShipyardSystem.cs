@@ -69,7 +69,6 @@ public sealed class ShipyardSystem : EntitySystem
     {
         shuttle = null;
         if (!Resolve(shuttleDestination, ref shuttleDestination.Comp))
-            return false;
 
         if (!TryCreateShuttle(path, out shuttle))
             return false;
