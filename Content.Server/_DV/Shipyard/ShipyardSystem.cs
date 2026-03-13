@@ -65,7 +65,7 @@ public sealed class ShipyardSystem : EntitySystem
     /// <summary>
     /// Adds a ship to the shipyard and attempts to ftl-dock it to the given grid.
     /// </summary>
-    public bool TrySendShuttle(Entity<ShuttleComponent?> shuttleDestination, ResPath path, [NotNullWhen(true)] out Entity<ShuttleComponent>? shuttle)
+    public bool TrySendShuttle(EntityUid shuttleDestination, ResPath path, [NotNullWhen(true)] out Entity<ShuttleComponent>? shuttle)
     {
         shuttle = null;
 
