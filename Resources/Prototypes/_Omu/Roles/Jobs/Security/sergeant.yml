@@ -51,3 +51,13 @@
     back:
     - Flash
     - SecuritySergeantWhistle
+
+- type: chameleonOutfit
+  id: SecuritySergeantChameleonOutfit
+  job: SecuritySergeant
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatBeretSecurity
+    mask: ClothingMaskGasSecurity
+    neck: Dinkystar
+    gloves: ClothingHandsGlovesColorBlack
