@@ -58,7 +58,7 @@
   id: Tote
   name: NTSV Tote
   description: A small shipping vessel, adapted from the Nomad line of shuttles with room for 2 passengers.
-  price: 24000 # Omu
+  price: 25000 # Omu
   path: /Maps/_DV/Shuttles/ntsv-tote.yml
   categories:
   - Civilian
