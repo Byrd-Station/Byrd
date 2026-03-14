@@ -2560,3 +2560,11 @@ Entries:
         more.
   id: 323
   time: '2026-03-13T01:57:22.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        Trash bags can pick up organs now... You should take the biomass at
+        dispos to med please thanks
+  id: 324
+  time: '2026-03-14T02:12:26.0000000+00:00'
