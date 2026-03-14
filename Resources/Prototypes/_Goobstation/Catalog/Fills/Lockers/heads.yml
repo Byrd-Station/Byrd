@@ -30,8 +30,8 @@
     - id: CaneSheathFilledNanotrasen
     - id: HandheldFaxOfficial
     - id: RubberStampNanorep
-    - id: ExecutiveBriefcaseEmpty # nanorep update
-    - id: ComputerNTRTasksFlatpack # nanorep update
+    #- id: ExecutiveBriefcaseEmpty # nanorep update # omu refocus on RP 
+    #- id: ComputerNTRTasksFlatpack # nanorep update # omu refocus on RP
     - id: Paper
       amount: !type:ConstantNumberSelector
         value: 5
