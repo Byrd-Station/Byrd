@@ -2582,3 +2582,9 @@ Entries:
       message: Central Command is now indestructible.
   id: 326
   time: '2026-03-14T16:29:14.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed people being able to Amag doors on protected grids.
+  id: 327
+  time: '2026-03-14T18:14:03.0000000+00:00'
