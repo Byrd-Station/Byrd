@@ -144,7 +144,7 @@ namespace Content.Server.Construction
         /// <returns>The result of this interaction with the entity.</returns>
         private HandleResult HandleEvent(EntityUid uid, object ev, bool validation, ConstructionComponent? construction = null)
         {
-            if (HasComp<NoDeconstructComponent>(uid))
+            if (HasComp<NoDeconstructComponent>(uid)) // Monolith
                 return HandleResult.False;
 
             if (!Resolve(uid, ref construction))
