@@ -60,7 +60,7 @@ public sealed class ShipyardConsoleSystem : SharedShipyardConsoleSystem
                 return;
             }
 
-            purchasingGrid = bankAccount.Value.Owner;
+            //purchasingGrid = bankAccount.Value.Owner; // Omu, disable this bit
         }
 
         if (purchasingGrid is not { } grid
