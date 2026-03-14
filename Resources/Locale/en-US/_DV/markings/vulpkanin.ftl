@@ -104,39 +104,27 @@ marking-VulpHeadSlash = Vulpkanin Slash
 
 
 marking-VulpTail-vulp = Vulpkanin tail (base)
-marking-VulpTail-vulp_BACK = Vulpkanin tail (base)
 marking-VulpTail-vulp-fade = Vulpkanin tail (fade)
-marking-VulpTail-vulp-fade_BACK = Vulpkanin tail (fade)
 marking-VulpTail = Vulpkanin
 
 marking-VulpTailTip-vulp = Vulpkanin tail (base)
-marking-VulpTailTip-vulp_BACK = Vulpkanin tail (base)
 marking-VulpTailTip-vulp-tip = Vulpkanin tail (tip)
-marking-VulpTailTip-vulp-tip_BACK = Vulpkanin tail (tip)
 marking-VulpTailTip = Vulpkanin (tip)
 
 marking-VulpTailWag-vulp_wag = Vulpkanin tail (base)
-marking-VulpTailWag-vulp_wag_BACK = Vulpkanin tail (base)
 marking-VulpTailWag-vulp_wag-fade = Vulpkanin tail (fade)
-marking-VulpTailWag-vulp_wag-fade_BACK = Vulpkanin tail (fade)
 marking-VulpTailWag = Vulpkanin (wag)
 
 marking-VulpTailWagTip-vulp_wag = Vulpkanin tail (base)
-marking-VulpTailWagTip-vulp_wag_BACK = Vulpkanin tail (base)
 marking-VulpTailWagTip-vulp_wag-tip = Vulpkanin tail (tip)
-marking-VulpTailWagTip-vulp_wag-tip_BACK = Vulpkanin tail (tip)
 marking-VulpTailWagTip = Vulpkanin (wag, tip)
 
 marking-VulpTailAlt-vulp_alt = Vulpkanin tail (base)
-marking-VulpTailAlt-vulp_alt_BACK = Vulpkanin tail (base)
 marking-VulpTailAlt-vulp_alt-fade = Vulpkanin tail (fade)
-marking-VulpTailAlt-vulp_alt-fade_BACK = Vulpkanin tail (fade)
 marking-VulpTailAlt = Vulpkanin (alt)
 
 marking-VulpTailAltTip-vulp_alt = Vulpkanin tail (base)
-marking-VulpTailAltTip-vulp_alt_BACK = Vulpkanin tail (base)
 marking-VulpTailAltTip-vulp_alt-tip = Vulpkanin tail (tip)
-marking-VulpTailAltTip-vulp_alt-tip_BACK = Vulpkanin tail (tip)
 marking-VulpTailAltTip = Vulpkanin (alt, tip)
 
 marking-VulpTailLong-long = Long tail (base)
