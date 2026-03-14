@@ -16,7 +16,7 @@
       role: JobWarden
       time: 36000 #10 hrs
   startingGear: SecuritySergeantGear
-  icon: "JobIconSecurityOfficer"
+  icon: "JobIconSecuritySergeant"
   supervisors: job-supervisors-hos
   canBeAntag: false
   guides: # goobstation

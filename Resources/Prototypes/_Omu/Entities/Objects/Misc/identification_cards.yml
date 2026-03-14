@@ -151,3 +151,6 @@
     - state: idseniorofficer
   - type: PresetIdCard
     job: SecuritySergeant
+  - type: IdCard
+    jobTitle: job-name-security-sergeant
+    jobIcon: JobIconSecuritySergeant
