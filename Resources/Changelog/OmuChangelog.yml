@@ -2576,3 +2576,9 @@ Entries:
         butcher into organs
   id: 325
   time: '2026-03-14T06:04:04.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Central Command is now indestructible.
+  id: 326
+  time: '2026-03-14T16:29:14.0000000+00:00'
