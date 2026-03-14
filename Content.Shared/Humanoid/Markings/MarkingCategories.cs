@@ -25,7 +25,6 @@ namespace Content.Shared.Humanoid.Markings
         Hair,
         FacialHair,
         Head,
-        Tail,
         HeadTop,
         HeadSide,
         Face, // Plasmeme Port
@@ -45,7 +44,7 @@ namespace Content.Shared.Humanoid.Markings
         Wings, // For IPC wings porting from SimpleStation
         Underwear,
         Undershirt,
-
+        Tail,
         Overlay
     }
 
