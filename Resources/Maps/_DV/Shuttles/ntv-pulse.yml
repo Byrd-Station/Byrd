@@ -2625,7 +2625,7 @@ entities:
       parent: 1
     - type: ApcPowerReceiver
       powerLoad: 0
-- proto: PoweredLightColoredFrostyBlue
+- proto: PoweredLightBlueInterior
   entities:
   - uid: 358
     components:
@@ -2758,7 +2758,7 @@ entities:
     - type: Transform
       pos: 5.5,7.5
       parent: 1
-- proto: SchoolgirlUniformSpawner
+- proto: ClothingUniformJumpskirtColorBlack
   entities:
   - uid: 381
     components:
