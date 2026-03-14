@@ -47,8 +47,8 @@ namespace Content.Shared.Humanoid
         Snout,
         HeadSide, // side parts (i.e., frills)
         HeadTop,  // top parts (i.e., ears)
-        TailBehind, // Omustation Floof/Pirate PR port  custom layers: For tails that render behind the body, such as when wearing a tail slot item
-        TailOversuit, // Omustation Floof/Pirate PR port  custom layers: For tails that render over the body, such as when not wearing a tail slot item
+        TailBehind, // Omustation Floof/Pirate PR port  custom layers: For tails that render behind the body
+        TailOversuit, // Omustation Floof/Pirate PR port  custom layers: For tails that render over the body
         Eyes,
         RArm,
         LArm,

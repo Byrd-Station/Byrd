@@ -433,6 +433,7 @@ public sealed partial class MarkingPicker : Control
 
                 if (name != null && prototype.ColorLinks.ContainsKey(name))
                 {
+                    // this layer is colored by another layer, so skip it
                     skipDraw = true;
                 }
             }

@@ -292,9 +292,9 @@
     vulp-fade_BACK: TailBehind
     vulp: TailOversuit
     vulp-fade: TailOversuit
-    colorLinks:
-      vulp_BACK: vulp
-      vulp-fade_BACK: vulp-fade
+  colorLinks:
+    vulp_BACK: vulp
+    vulp-fade_BACK: vulp-fade
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_BACK
@@ -315,9 +315,9 @@
     vulp-tip_BACK: TailBehind
     vulp: TailOversuit
     vulp-tip: TailOversuit
-    colorLinks:
-      vulp_BACK: vulp
-      vulp-fade_BACK: vulp-tip
+  colorLinks:
+    vulp_BACK: vulp
+    vulp-tip_BACK: vulp-tip
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_BACK
@@ -339,8 +339,8 @@
     vulp_wag: TailOversuit
     vulp_wag-fade: TailOversuit
   colorLinks:
-      vulp_BACK: vulp_wag
-      vulp-fade_BACK: vulp_wag-fade
+    vulp_wag_BACK: vulp_wag
+    vulp_wag-fade_BACK: vulp_wag-fade
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_wag_BACK
@@ -362,8 +362,8 @@
     vulp_wag: TailOversuit
     vulp_wag-tip: TailOversuit
   colorLinks:
-      vulp_BACK: vulp_wag
-      vulp-fade_BACK: vulp_wag-tip
+    vulp_wag_BACK: vulp_wag
+    vulp_wag-tip_BACK: vulp_wag-tip
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_wag_BACK
@@ -385,8 +385,8 @@
     vulp_alt: TailOversuit
     vulp_alt-fade: TailOversuit
   colorLinks:
-      vulp_BACK: vulp_alt
-      vulp-fade_BACK: vulp_alt-fade
+    vulp_alt_BACK: vulp_alt
+    vulp_alt-fade_BACK: vulp_alt-fade
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_alt_BACK
@@ -408,8 +408,8 @@
     vulp_alt: TailOversuit
     vulp_alt-tip: TailOversuit
   colorLinks:
-      vulp_BACK: vulp_alt
-      vulp-fade_BACK: vulp_alt-tip
+    vulp_alt_BACK: vulp_alt
+    vulp_alt-tip_BACK: vulp_alt-tip
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
       state: vulp_alt_BACK
