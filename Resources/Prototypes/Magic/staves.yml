@@ -96,7 +96,6 @@
   parent: BaseAction
   id: ActionRgbLight
   components:
-components:
 - type: TargetAction # Omu
 - type: EntityTargetAction
     whitelist: { components: [ PointLight ] }
