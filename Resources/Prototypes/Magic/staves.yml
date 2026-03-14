@@ -18,10 +18,10 @@
   name: RGB staff
   description: Helps fix the underabundance of RGB gear on the station.
   components:
-#  - type: LimitedCharges # Omu start
-#    maxCharges: 25
-#  - type: AutoRecharge
-#    rechargeDuration: 30 # Omu end
+  - type: LimitedCharges
+    maxCharges: 25
+  - type: AutoRecharge
+    rechargeDuration: 30
   - type: Sprite
     sprite: Objects/Weapons/Guns/Basic/staves.rsi
     layers:
