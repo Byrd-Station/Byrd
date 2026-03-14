@@ -134,7 +134,17 @@
     - type: ShowHealthBars
       damageContainers:
       - Biological
-
+    - type: DiseaseProtection
+      incoming:
+        powerModifiers:
+          Aerial: -0.9
+        chanceMultipliers:
+          Aerial: 0.5
+      outgoing:
+        powerModifiers:
+          Aerial: -0.9
+        chanceMultipliers:
+          Aerial: 0.5
 
 
 - type: entity
@@ -177,7 +187,12 @@
       reduction: .5
     - type: ZombificationResistance
       zombificationResistanceCoefficient: 0.2
-
+    - type: DiseaseProtection
+      incoming:
+        powerModifiers:
+          Blood: -1 # immune to plague mice
+        chanceMultipliers:
+          Blood: 0.5
 
 - type: entity
   parent: ClothingModsuitBootsStandard
