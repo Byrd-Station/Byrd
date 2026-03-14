@@ -28,10 +28,10 @@
     - state: nothing
     - state: nothing-unshaded
       shader: unshaded
-#  - type: ActionOnInteract # Omu start
-#    requiresCharge: true
-#    actions:
-#    - ActionRgbLight # Omu end
+  - type: ActionOnInteract
+    requiresCharge: true
+    actions:
+    - ActionRgbLight
   - type: Item
     size: Normal
     inhandVisuals:
