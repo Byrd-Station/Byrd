@@ -119,7 +119,7 @@
     - BasicCybernetics
     - AdvancedCybernetics
     # secfab - real guns and mech weapons 1984'd
-    - SecurityEquipmentStatic
+    #- SecurityEquipmentStatic  Omu removed with 8 gauge
     - SecurityEquipmentStaticGoob
     - SecurityBoardsStaticGoob
     - SecurityPracticeStatic

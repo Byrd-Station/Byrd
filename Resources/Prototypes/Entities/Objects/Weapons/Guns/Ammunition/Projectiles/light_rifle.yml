@@ -41,7 +41,7 @@
     damage:
       types:
         Piercing: 19
-      armorPenetration: 0.4 # Goobstation
+#      armorPenetration: 0.4 # Omu removed AP on .30
 
 - type: entity
   id: BulletLightRiflePractice

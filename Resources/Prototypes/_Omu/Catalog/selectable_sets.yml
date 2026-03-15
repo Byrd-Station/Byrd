@@ -178,18 +178,18 @@
 
 # ERT
 
-- type: selectableSet
-  id: ERTShotgunSet
-  name: selectable-set-ert-shotgun-name
-  description: selectable-set-ert-shotgun-description
-  sprite:
-    sprite: _Goobstation/Objects/Weapons/Guns/Lever/combatshotgun.rsi
-    state: icon
-  content:
-  - WeaponShotgunCombatCentComm
-  - MagazineBoxShotgunHighCaliber
-  - MagazineBoxShotgunHighCaliber
-  - WeaponPistolAnacondaCentComm
+#- type: selectableSet
+#  id: ERTShotgunSet
+#  name: selectable-set-ert-shotgun-name
+#  description: selectable-set-ert-shotgun-description
+#  sprite:
+#    sprite: _Goobstation/Objects/Weapons/Guns/Lever/combatshotgun.rsi
+#    state: icon
+#  content:
+#  - WeaponShotgunCombatCentComm
+#  - MagazineBoxShotgunHighCaliber
+#  - MagazineBoxShotgunHighCaliber
+#  - WeaponPistolAnacondaCentComm
 
 - type: selectableSet
   id: ERTSMGSet

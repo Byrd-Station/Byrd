@@ -323,7 +323,7 @@
       runningState: icon
       staticPacks:
       - SecurityAmmoStatic
-      - SecurityAmmoStaticGoob
+     # - SecurityAmmoStaticGoob   Omu killed with 8 gauge
       - ERTAmmoStaticGoob
       - SecurityHypoStatic
       - SecurityEquipmentStaticGoob

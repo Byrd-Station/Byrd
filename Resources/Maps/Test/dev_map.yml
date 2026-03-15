@@ -24859,13 +24859,13 @@ entities:
     - type: Transform
       pos: 67.5,41.5
       parent: 1
-- proto: WeaponShotgunCombat
-  entities:
-  - uid: 3506
-    components:
-    - type: Transform
-      pos: 73.5,49.5
-      parent: 1
+#- proto: WeaponShotgunCombat
+#  entities:
+#  - uid: 3506
+#    components:
+#    - type: Transform
+#      pos: 73.5,49.5
+#      parent: 1
 - proto: WeaponShotgunEnforcer
   entities:
   - uid: 2159

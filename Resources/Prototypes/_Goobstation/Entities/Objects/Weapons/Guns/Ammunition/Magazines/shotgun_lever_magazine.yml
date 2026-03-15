@@ -14,7 +14,7 @@
 # Empty mags
 - type: entity
   id: BaseMagazineShotgunLeverRifle
-  name: "magazine (8 Gauge)"
+  name: "magazine (12 Gauge)"
   parent: [ BaseItem, BaseSecurityContraband ]
   abstract: true
   components:
@@ -25,8 +25,8 @@
     mayTransfer: true
     whitelist:
       tags:
-        - ShellShotgunHeavy
-    proto: ShellShotgunHighCaliber
+        - ShellShotgun    # Omu killed 8 gauge
+    proto: ShellShotgun   # Omu killed 8 gauge
     capacity: 8
   - type: Item
     size: Small
@@ -48,7 +48,7 @@
 
 - type: entity
   id: MagazineShotgunLeverRifle
-  name: "lever rifle magazine (8 Gauge)"
+  name: "lever rifle magazine (12 Gauge)"     # Omu kill 8 gauge
   parent: BaseMagazineShotgunLeverRifle
   components:
   - type: Tag

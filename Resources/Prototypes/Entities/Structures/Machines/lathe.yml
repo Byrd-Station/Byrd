@@ -447,7 +447,7 @@
     - SecurityAmmoStaticOmu # Omu
     # Goobstation
     - SecurityWeaponsStaticGoob
-    - SecurityAmmoStaticGoob
+    #- SecurityAmmoStaticGoob Omu removed with 8 gauge
     - SyndicateAmmoLightStatic
     - ScienceExplosives
   - type: BlueprintReceiver
@@ -762,7 +762,7 @@
     - SecurityAmmoStatic
     - SecurityWeaponsStatic
     # Goobstation
-    - SecurityAmmoStaticGoob
+    #- SecurityAmmoStaticGoob Omu removed with 8 gauge
     - SecurityEquipmentStaticGoob
     - SecurityHypoStatic
     - MechWeaponsSecurityStatic
@@ -832,7 +832,7 @@
       staticPacks:
       - SecurityAmmoStatic
       # Goobstation Packs
-      - SecurityAmmoStaticGoob
+      #- SecurityAmmoStaticGoob Omu removed with 8 gauge
       - SecurityAmmoStaticOmu # Omu
     - type: EmagLatheRecipes # Goobstation Packs
       emagStaticPacks:
