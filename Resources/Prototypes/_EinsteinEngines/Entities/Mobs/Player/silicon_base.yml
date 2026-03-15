@@ -181,7 +181,7 @@
     - type: HasJobIcons # Goobstation
     - type: Bloodstream # omu
       damageBleedModifiers: BloodlossHuman
-      bloodReagent: Oil
+      bloodReagent: CoolantIPC # Omu
       bleedReductionAmount: 0
       bloodMaxVolume: 500
       chemicalMaxVolume: 0
