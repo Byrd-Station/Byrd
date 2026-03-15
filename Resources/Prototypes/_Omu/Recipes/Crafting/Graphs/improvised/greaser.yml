@@ -92,7 +92,6 @@
       - to: greaser
         steps: 
         - tag: Lubricant
-          amount: 1
           icon:
             sprite: Objects/Consumable/Drinks/lube-tube.rsi
             state: icon
