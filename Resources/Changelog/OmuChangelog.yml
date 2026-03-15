@@ -2608,3 +2608,9 @@ Entries:
         alot of it
   id: 330
   time: '2026-03-15T06:47:22.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: QM's Digiboard can now be linked to cargo telepads.
+  id: 331
+  time: '2026-03-15T17:55:37.0000000+00:00'
