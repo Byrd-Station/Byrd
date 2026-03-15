@@ -2600,3 +2600,11 @@ Entries:
       message: Increased overall time requirement for Command (and Warden)
   id: 329
   time: '2026-03-15T00:19:27.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        Each training manual has their own guidebook entry now, also reworded
+        alot of it
+  id: 330
+  time: '2026-03-15T06:47:22.0000000+00:00'
