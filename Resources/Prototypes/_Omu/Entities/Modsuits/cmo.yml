@@ -204,14 +204,14 @@
     - type: Appearance
     - type: Sprite
       sprite: _Omu/Clothing/Modsuits/cmo.rsi
+      layers:
+      - state: boots
+      - state: boots-sealed
+        map: [ "sealed" ]
     - type: SealableClothingVisuals
       spriteLayer: sealed
       clothingVisuals:
         shoes:
         - state: equipped-FEET-sealed
-      layers:
-      - state: boots
-      - state: boots-sealed
-        map: [ "sealed" ]
 
 
