@@ -76,6 +76,8 @@ entities:
   entities:
   - uid: 1668
     components:
+    - type: GridGodMode
+    - type: GridRaider
     - type: MetaData
       name: Central Command
     - type: MapGrid
@@ -48980,9 +48982,9 @@ entities:
 
         [color=#1e7f28]────────────────────⋆⋅☆⋅⋆──────────────────[/color]
 
-        [head=2][bold]SUBJECT: [/head][head=3][color=#babac2]The Vail[/color][/bold][/head] 
+        [head=2][bold]SUBJECT: [/head][head=3][color=#babac2]The Vail[/color][/bold][/head]
 
-        [head=2][bold]ID: [/head][head=3][color=#babac2][#NT-0570][/color][/bold][/head] 
+        [head=2][bold]ID: [/head][head=3][color=#babac2][#NT-0570][/color][/bold][/head]
 
         [color=#1e7f28]────────────────────⋆⋅☆⋅⋆──────────────────[/color]
 
@@ -48997,7 +48999,7 @@ entities:
         The vail a pittiful construct to be honest, if it wherent for the 5th fleet incident and the ripples caused by its utter destruction and destruction of our dedicated blacksite we would not be back to square one but here we are.
 
 
-        At least the cosmic cult was so nice and dontated all this facinating equipment to us, There so called "GOD" seems to be nothing more than a minor entity that breaks some laws of physics nothing we cant handle with modern bluespace technologie. Granted them acctually succeeding would destroy the local station, This research board advices that we install additonal sensors to detect such activities aboard our station. 
+        At least the cosmic cult was so nice and dontated all this facinating equipment to us, There so called "GOD" seems to be nothing more than a minor entity that breaks some laws of physics nothing we cant handle with modern bluespace technologie. Granted them acctually succeeding would destroy the local station, This research board advices that we install additonal sensors to detect such activities aboard our station.
 
 
         IN case of a summoning success it is best to wait 4 to 5 days for the local area to have cooled off before sending in a team to destroy the minor avator of the so called "god" and then take the converted material in for study.
@@ -49036,9 +49038,9 @@ entities:
 
         [color=#1e7f28]────────────────────⋆⋅☆⋅⋆──────────────────[/color]
 
-        [head=2][bold]SUBJECT: [/head][head=3][color=#babac2]Changeling[/color][/bold][/head] 
+        [head=2][bold]SUBJECT: [/head][head=3][color=#babac2]Changeling[/color][/bold][/head]
 
-        [head=2][bold]ID: [/head][head=3][color=#babac2][#NT-0570][/color][/bold][/head] 
+        [head=2][bold]ID: [/head][head=3][color=#babac2][#NT-0570][/color][/bold][/head]
 
         [color=#1e7f28]────────────────────⋆⋅☆⋅⋆──────────────────[/color]
 
@@ -49104,9 +49106,9 @@ entities:
 
         [color=#1e7f28]────────────────────⋆⋅☆⋅⋆──────────────────[/color]
 
-        [head=2][bold]SUBJECT: [/head][head=3][color=#babac2]Progress Update on NT Bioweapons[/color][/bold][/head] 
+        [head=2][bold]SUBJECT: [/head][head=3][color=#babac2]Progress Update on NT Bioweapons[/color][/bold][/head]
 
-        [head=2][bold]ID: [/head][head=3][color=#babac2][#NT-0570][/color][/bold][/head] 
+        [head=2][bold]ID: [/head][head=3][color=#babac2][#NT-0570][/color][/bold][/head]
 
         [color=#1e7f28]────────────────────⋆⋅☆⋅⋆──────────────────[/color]
 
@@ -49157,9 +49159,9 @@ entities:
 
         [color=#1e7f28]────────────────────⋆⋅☆⋅⋆──────────────────[/color]
 
-        [head=2][bold]SUBJECT: [/head][head=3][color=#babac2]Heratic blade analisi[/color][/bold][/head] 
+        [head=2][bold]SUBJECT: [/head][head=3][color=#babac2]Heratic blade analisi[/color][/bold][/head]
 
-        [head=2][bold]ID: [/head][head=3][color=#babac2][#NT-0570][/color][/bold][/head] 
+        [head=2][bold]ID: [/head][head=3][color=#babac2][#NT-0570][/color][/bold][/head]
 
         [color=#1e7f28]────────────────────⋆⋅☆⋅⋆──────────────────[/color]
 

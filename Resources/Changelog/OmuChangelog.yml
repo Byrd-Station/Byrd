@@ -2552,3 +2552,65 @@ Entries:
       message: Resprited chimera and chimera biomass textures.
   id: 322
   time: '2026-03-12T00:39:21.0000000+00:00'
+- author: Thesia000
+  changes:
+    - type: Remove
+      message: >-
+        NTR, task console and briefcase. NTR focus on RP please and fax us at CC
+        more.
+  id: 323
+  time: '2026-03-13T01:57:22.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        Trash bags can pick up organs now... You should take the biomass at
+        dispos to med please thanks
+  id: 324
+  time: '2026-03-14T02:12:26.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        Fish (that you fish up with a fishing rod) are items now and they dont
+        butcher into organs
+  id: 325
+  time: '2026-03-14T06:04:04.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Central Command is now indestructible.
+  id: 326
+  time: '2026-03-14T16:29:14.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed people being able to Amag doors on protected grids.
+  id: 327
+  time: '2026-03-14T18:14:03.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixes the RGB staff causing the server to lag when used.
+  id: 328
+  time: '2026-03-15T00:17:07.0000000+00:00'
+- author: JustOrdinaryPao
+  changes:
+    - type: Tweak
+      message: Increased overall time requirement for Command (and Warden)
+  id: 329
+  time: '2026-03-15T00:19:27.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        Each training manual has their own guidebook entry now, also reworded
+        alot of it
+  id: 330
+  time: '2026-03-15T06:47:22.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: QM's Digiboard can now be linked to cargo telepads.
+  id: 331
+  time: '2026-03-15T17:55:37.0000000+00:00'
