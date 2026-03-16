@@ -40,10 +40,10 @@
       quickEquip: false
       slots:
       - Belt
-      - suitStorage
+      - suitStorage #Omu start
       clothingVisuals:
         suitstorage:
-            - state: equipped-BACKPACK
+            - state: equipped-BACKPACK #Omu end
     - type: ComponentToggler
       components:
       - type: DisarmMalus
@@ -70,10 +70,10 @@
         right:
           - state: inhand-right-on
             shader: unshaded
-      clothingVisuals:
+      clothingVisuals: #Omu start
         suitstorage:
           - state: equipped-BACKPACK-on
-            shader: unshaded
+            shader: unshaded #Omu end
     - type: PointLight
       netsync: false
       enabled: false

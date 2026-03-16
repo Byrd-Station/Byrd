@@ -227,7 +227,7 @@
   components:
     - type: Sprite
       state: riot_laser-icon
-    - type: Clothing
+    - type: Clothing #gabystation
       sprite: Objects/Weapons/Melee/shields.rsi
       slots:
       - suitStorage
@@ -255,7 +255,7 @@
     - type: Sprite
       sprite: _Goobstation/Objects/Shields/riotbulletshield.rsi # Goobstation
       state: ballistic-icon
-    - type: Clothing
+    - type: Clothing #gabystation
       sprite: _Goobstation/Objects/Shields/riotbulletshield.rsi
       slots:
       - suitStorage
@@ -284,7 +284,7 @@
   components:
     - type: Sprite
       state: buckler-icon
-    - type: Clothing
+    - type: Clothing #gabystation
       sprite: Objects/Weapons/Melee/shields.rsi
       slots:
       - suitStorage
@@ -404,7 +404,7 @@
        - MakeshiftShield
     - type: Sprite
       state: makeshift-icon
-    - type: Clothing
+    - type: Clothing #gabystation
       sprite: Objects/Weapons/Melee/shields.rsi
       slots:
       - suitStorage
@@ -520,7 +520,7 @@
   components:
     - type: Sprite
       state: ratvarian-icon
-    - type: Clothing
+    - type: Clothing #gabystation
       sprite: Objects/Weapons/Melee/shields.rsi
       slots:
       - suitStorage
