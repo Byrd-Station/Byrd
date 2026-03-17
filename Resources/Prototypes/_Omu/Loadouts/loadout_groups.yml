@@ -176,6 +176,16 @@
   - BrigmedicHeadset
   - BrigmedicAltHeadset
 
+# tide
+
+- type: loadoutGroup
+  id: TrinketsAssistant
+  name: loadout-group-trinkets-job
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - GreyTideStamp
+  
 # Security
 
 - type: loadoutGroup

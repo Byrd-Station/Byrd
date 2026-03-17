@@ -183,6 +183,7 @@
   - Survival
   - Trinkets
   - Animals
+  - TrinketsAssistant # Omu
   - GroupSpeciesBreathTool
   # Goobstation - EE Plasmeme Change.
   - AssistantEnvirohelm
@@ -237,6 +238,7 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  - TrinketsChef #Gabystation
   # Goobstation - EE Plasmeme Change.
   - ChefEnvirohelm
   - ChefEnvirosuit
@@ -768,6 +770,7 @@
   - ChemistEyewear
   - ChemistBeaker
   - ChemistLabeler
+  - ChemistBag # Omu
   - SurvivalMedical
   - Trinkets
   - Animals
