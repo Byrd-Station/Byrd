@@ -241,6 +241,7 @@
       color: "#CCFFCC"
     - type: ShowHealthBars
     - type: ShowHealthIcons
+    - type: ShowDiseaseIcons
 
 # medical mantle with internals and pressure protection for paramedics.
 - type: entity
@@ -274,6 +275,7 @@
     - type: BreathMask
     - type: ShowHealthBars
     - type: ShowHealthIcons
+    - type: ShowDiseaseIcons
 
 # Mantle for the BSO
 - type: entity
