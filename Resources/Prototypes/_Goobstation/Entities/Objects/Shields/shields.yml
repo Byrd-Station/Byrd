@@ -31,7 +31,7 @@
     - type: ItemToggleActiveSound
       activeSound:
         path: /Audio/_Goobstation/Weapons/Effects/nanotrasenenergyhum.ogg
-        params:
+        params: # Omu
           volume: -3
     - type: ItemToggleSize
       activatedSize: Ginormous
