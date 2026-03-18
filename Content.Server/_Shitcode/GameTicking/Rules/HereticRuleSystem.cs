@@ -30,6 +30,7 @@ using System.Text;
 using Content.Server.Station.Components;
 using Content.Server._Goobstation.Objectives.Components;
 using Content.Server._Goobstation.Heretic.EntitySystems; //imp
+using Content.Shared.Station.Components;
 
 namespace Content.Server.GameTicking.Rules;
 
