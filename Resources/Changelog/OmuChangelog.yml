@@ -2632,3 +2632,11 @@ Entries:
       message: Added viro icons to the Medical and Paramedic beast mantles.
   id: 334
   time: '2026-03-17T06:16:10.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: Corpsman nostalgic and reminisced coats now have medical gown stats
+    - type: Fix
+      message: Corpsman should only spawn with 1 pda now
+  id: 335
+  time: '2026-03-17T18:56:05.0000000+00:00'
