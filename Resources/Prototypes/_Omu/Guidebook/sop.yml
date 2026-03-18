@@ -1,4 +1,13 @@
 - type: guideEntry
-  id: Corpsman SOP 
+  id: CorpsmanSOP
   name: guide-entry-sop-corpsman
   text: /ServerInfo/_Omu/Guidebook/SoP/Jobs/Security/CorpsmanSOP.xml
+
+- type: guideEntry
+  id: TrainingManuals
+  name: guide-entry-training-manuals
+  text: /ServerInfo/_Omu/Guidebook/TrainingManuals/TrainingManuals.xml
+  children:
+  - CommandTrainingManual
+  - SecurityTrainingManual
+  - CrewTrainingManual

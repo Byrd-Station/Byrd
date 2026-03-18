@@ -409,6 +409,10 @@
   - type: UseDelay
   - type: IgnitionSource
     ignited: false
+  # Goobstation
+  - type: Tag
+    tags:
+    - Lighter
 
 - type: entity
   parent: [BaseBrandedLighter, BaseSyndicateContraband]
@@ -735,7 +739,7 @@
     tags:
     - DonkPocket
     - Meat
-    - Lighter #Omustation - whitelisted cig pack strorage (added tag)
+    - Lighter # Goobstation
   - type: SolutionContainerManager
     solutions:
       Welder:
