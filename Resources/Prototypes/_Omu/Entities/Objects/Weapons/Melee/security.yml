@@ -71,6 +71,7 @@
   - type: MeleeDash
     emoteOnDash: null
     length: 2
+    canDashWhileWeightless: false # Omu
   - type: UseDelay
     delay: 1.5
   - type: Tag
