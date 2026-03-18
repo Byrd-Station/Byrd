@@ -28,10 +28,10 @@
     - id: WeaponDisablerAdvanced
     - id: BedsheetCentcom
     - id: CaneSheathFilledNanotrasen
-    - id: HandheldFaxNanorep
+    - id: HandheldFaxOfficial
     - id: RubberStampNanorep
-    - id: ExecutiveBriefcaseEmpty # nanorep update
-    - id: ComputerNTRTasksFlatpack # nanorep update
+    #- id: ExecutiveBriefcaseEmpty # nanorep update # omu refocus on RP 
+    #- id: ComputerNTRTasksFlatpack # nanorep update # omu refocus on RP
     - id: Paper
       amount: !type:ConstantNumberSelector
         value: 5
@@ -61,12 +61,10 @@
     - id: BoxZiptie
     - id: OxygenTankFilled
     - id: NitrogenTankFilled
-    - id: OmnimedTool
     - id: HandheldCrewMonitorBSO
     - id: BlueshieldUndeterminedWeapon
     - id: BlueshieldUndeterminedHardsuit
     - id: FlashlightSeclite
-    # Omu no second skin - id: SecondSkinSecurity
 
 - type: entity
   id: LockerBlueshieldOfficerFilled

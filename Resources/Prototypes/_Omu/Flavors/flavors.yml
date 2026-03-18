@@ -17,3 +17,16 @@
   id: dwarfgrudge
   flavorType: Complex
   description: flavor-complex-dwarfgrudge
+  id: rawshrimp
+  flavorType: Complex
+  description: flavor-complex-rawshrimp
+
+- type: flavor
+  id: shrimp
+  flavorType: Complex
+  description: flavor-complex-shrimp
+
+- type: flavor
+  id: thewelles
+  flavorType: Complex
+  description: flavor-complex-thewelles
