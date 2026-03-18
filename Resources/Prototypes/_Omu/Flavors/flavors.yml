@@ -17,6 +17,8 @@
   id: dwarfgrudge
   flavorType: Complex
   description: flavor-complex-dwarfgrudge
+
+- type: flavor
   id: rawshrimp
   flavorType: Complex
   description: flavor-complex-rawshrimp
