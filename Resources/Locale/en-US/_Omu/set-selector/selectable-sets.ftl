@@ -30,6 +30,16 @@ selectable-set-hos-lawbringer-name = Lawbringer Multirole Energy Pistol
 selectable-set-hos-lawbringer-description =
     The classic. This pistol is capable of many different combat functions.
 
+selectable-set-hos-brdi-name = Antique BRDI R-25
+selectable-set-hos-brdi-description=
+    Once wielded by an unknown member of the Biesel Foreign Legion,
+    this beloved rifle has seen battle with Sol on every world in the colonies.
+
+selectable-set-bso-brdi-name = BRDI R-25
+selectable-set-bso-brdi-description=
+    An iconic weapon used by members of the Biesel Republic Foreign Legion.
+    Repainted for Blueshield Officers.
+
 selectable-set-mk58-name = Mk58 Pistol
 selectable-set-mk58-description =
     The standard duty pistol for Nanotrasen security.
@@ -96,3 +106,16 @@ selectable-set-ert-light-energy-description =
     infrastructure and recharging stations.
     Includes a CR-9 energy rifle, an EG-4 energy revolver,
     and 3 self-recharging magazines for each.
+
+# Corpsman
+selectable-set-corpsman-lighthardsuit-name = Corpsman hardsuit
+selectable-set-corpsman-lighthardsuit-desc =
+    Standard issue corpsman hardsuit.
+    Lighter then security variants offering greater mobility
+    while sacrificing protection.
+
+selectable-set-corpsman-combathardsuit-name = Corpsman combat hardsuit
+selectable-set-corpsman-combathardsuit-desc =
+    Older model of corpsman's hardsuit.
+    Built based on designs recovered from Regalis sector.
+    Offers much better armor then newer models.

@@ -7,6 +7,8 @@
   components:
   - type: HumanoidAppearance
     species: Feroxi
+    hideLayersOnEquip:
+    - Snout
   - type: Hunger
   # - type: Carriable # ShibaStation - disabled because broken, for now.
   - type: Inventory
@@ -21,12 +23,14 @@
   - type: Speech
     speechSounds: Tenor
     speechVerb: Feroxi
-    allowedEmotes: [ "Gnash" ]
+    allowedEmotes: [ "Gnash", "Thump" ] #goob edit
   - type: Vocal
     sounds:
       Male: MaleFeroxi
       Female: FemaleFeroxi
       Unsexed: MaleFeroxi
+  - type: BodyEmotes #goob edit
+    soundsId: FeroxiBodyEmotes
   - type: Sprite
     netsync: false
     noRot: true
@@ -119,6 +123,8 @@
   components:
   - type: HumanoidAppearance
     species: Feroxi
+    hideLayersOnEquip:
+    - Snout
   - type: Sprite # Why does feroxi redefine sprites in basemob but NOT in dummy (lobby) ???, fixing that - Omu 120
     netsync: false
     noRot: true

@@ -24,6 +24,8 @@
   - CartridgeBicaridine
   - CartridgeDermaline
   - CartridgeSaline
+  - CartridgeArith # Omu
+  - CartridgeDylo # Omu
   - ParamedHypo
 
 - type: latheRecipePack
@@ -33,6 +35,7 @@
   - MedicalPatchRapid
   - MedicalPatchTherapeutic
   - MedicalPatchLarge
+  - MedicalCigPack
 
 - type: latheRecipePack
   id: SurgeryStaticGoob
@@ -72,6 +75,7 @@
   recipes:
   - PrescriptionGlasses
   - VehicleHoverchairSci
+  - TinfoilHats
 
 - type: latheRecipePack
   id: MedicalMiscRestricted

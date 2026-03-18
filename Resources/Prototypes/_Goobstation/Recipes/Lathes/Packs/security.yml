@@ -36,9 +36,25 @@
   - SecHypo
 
 - type: latheRecipePack
+  id: SecurityWeaponsStaticGoob
+  recipes:
+  - PolymerBaton
+  - SpearTelescopic
+
+- type: latheRecipePack
   id: SecurityWeaponsNonEmaggableStaticGoob # At some point Terminus should be mapped and not printable, at least without research.
   recipes:
   - Terminus
+
+- type: latheRecipePack
+  id: ERTAmmoStaticGoob
+  recipes:
+  - MagazineBoxLightRifle
+  - MagazineLightRifleEmpty
+  - MagazineLightRifle
+  - MagazineMagnumEmpty
+  - MagazineMagnum
+  - MagazineBoxShotgunHighCaliber
 
 ## Dynamic
 - type: latheRecipePack
@@ -76,6 +92,10 @@
   - PowerCellXraySniper
   - PowerCellOverchargedSniper
   - MilitaryPowerCellLMG
+  - PowerCellBluespaceRevolver
+  - PowerCellBluespaceSMG
+  - PowerCellBluespaceSniper
+  - MilitaryPowerCellBluespaceLMG
 
 - type: latheRecipePack
   id: SecurityEquipmentDynamicGoob

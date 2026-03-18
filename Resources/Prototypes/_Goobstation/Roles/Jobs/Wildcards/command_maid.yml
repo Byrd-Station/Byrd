@@ -19,6 +19,13 @@
   - Maintenance
   - Command
   special:
+  #Omu Start
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: CommandStaff
+  #Omu End
   - !type:GiveItemOnHolidaySpecial
     holiday: GarbageDay
     prototype: WeaponRevolverInspector
@@ -26,19 +33,24 @@
 - type: startingGear
   id: CommandMaidGear
   equipment:
-    jumpsuit: ClothingUniformJumpskirtJanimaid
+    jumpsuit: ClothingUniformJumpskirtCommandMaid
     id: CommandMaidPDA
-    gloves: ClothingHandsGlovesJanitor
+    gloves: ClothingHandsGlovesLatex
     ears: ClothingHeadsetCommandService
+    eyes: ClothingEyesGlassesCommand
     belt: ClothingBeltJanitorFilled
-    shoes: ClothingShoesGaloshes
+    shoes: ClothingShoesBootsJackGaloshes
+  inhand:
+  - AdvMopItem
 
 - type: chameleonOutfit
   id: CommandMaidChameleonOutfit
   job: CommandMaid
   equipment:
-    jumpsuit: ClothingUniformJumpskirtJanimaid
+    jumpsuit: ClothingUniformJumpskirtCommandMaid
     id: CommandMaidPDA
-    gloves: ClothingHandsGlovesJanitor
+    gloves: ClothingHandsGlovesLatex
     ears: ClothingHeadsetCommandService
-    shoes: ClothingShoesGaloshes
+    eyes: ClothingEyesGlassesCommand
+    belt: ClothingBeltJanitor
+    shoes: ClothingShoesBootsJackGaloshes

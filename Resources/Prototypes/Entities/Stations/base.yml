@@ -81,6 +81,7 @@
         Security: [ ]
         Service: [ ]
     - type: StationCargoBountyDatabase
+    - type: StationXenobiologyBountyDatabase # Goobstaton
 
 - type: entity
   id: BaseStationJobsSpawning
@@ -128,8 +129,12 @@
             - type: ProtectedGrid
             - type: TradeStation
           paths:
-            - /Maps/Shuttles/trading_outpost.yml
+            - /Maps/_Goobstation/Shuttles/trading_outpost.yml #Goobstation
           nameDataset: TradeStationNames
+        mining: !type:GridSpawnGroup # omu edit start
+          paths:
+          - /Maps/Shuttles/mining.yml
+          nameDataset: MiningShuttleNames # omu edit end
         # Spawn last
         ruins: !type:GridSpawnGroup
           hide: true
@@ -143,7 +148,7 @@
           - /Maps/Ruins/chunked_tcomms.yml
           - /Maps/Ruins/biodome_satellite.yml
           - /Maps/Ruins/derelict.yml
-          - /Maps/Ruins/djstation.yml
+          - /Maps/_Goobstation/Ruins/goobdjstation.yml # goob - this was so fucking bad
           - /Maps/Ruins/empty_flagship.yml
           - /Maps/Ruins/hydro_outpost.yml
           - /Maps/Ruins/old_ai_sat.yml

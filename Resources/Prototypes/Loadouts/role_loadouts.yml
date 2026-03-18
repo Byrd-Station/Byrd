@@ -125,6 +125,7 @@
   - CaptainMask # Goobstation - Lollypops!
   - CaptainBackpack
   - CaptainOuterClothing
+  - CaptainPDA # Omu
   - Survival
   - Trinkets
   - Animals
@@ -144,6 +145,7 @@
   - HoPJumpsuit
   - HoPBackpack
   - HoPOuterClothing
+  - HoPPDA # Omu
   - Glasses
   - Survival
   - Trinkets
@@ -181,6 +183,7 @@
   - Survival
   - Trinkets
   - Animals
+  - TrinketsAssistant # Omu
   - GroupSpeciesBreathTool
   # Goobstation - EE Plasmeme Change.
   - AssistantEnvirohelm
@@ -235,6 +238,7 @@
   - Trinkets
   - Animals
   - GroupSpeciesBreathTool
+  - TrinketsChef #Gabystation
   # Goobstation - EE Plasmeme Change.
   - ChefEnvirohelm
   - ChefEnvirosuit
@@ -399,7 +403,7 @@
   - QuartermasterJumpsuit
   - CargoTechnicianBackpack
   - QuartermasterOuterClothing
-  - QuartermasterShoes
+  - CargoShoes # omu
   - Glasses
   - Survival
   - Trinkets
@@ -418,7 +422,7 @@
   - CargoTechnicianJumpsuit
   - CargoTechnicianBackpack
   - CargoTechnicianOuterClothing
-  - CargoTechnicianShoes
+  - CargoShoes # omu
   - Glasses
   - Survival
   - Trinkets
@@ -432,11 +436,12 @@
 - type: roleLoadout
   id: JobSalvageSpecialist
   groups:
+  - SalvageSpecialistJumpsuit # DeltaV - more jumpskirts
   - GroupTankHarness
   - SalvageSpecialistNeck # Goobstation
   - SalvageSpecialistBackpack
   - SalvageSpecialistOuterClothing
-  - SalvageSpecialistShoes
+  - CargoShoes # omu
   - Glasses
   - Survival
   - Trinkets
@@ -593,6 +598,7 @@
   - HeadofSecurityOuterClothing
   - HeadofSecurityShoes # Goobstation edit
   - SurvivalSecurity
+  - TrinketsSecurity # Omu Edit
   - Trinkets
   - SecurityStar
   - Animals
@@ -610,6 +616,7 @@
   - WardenJumpsuit
   - SecurityBackpack
   - SecurityMelee # Goobstation
+  - TrinketsSecurity # Omu Edit
   - SecurityNeck
   - SecurityBelt
   - WardenOuterClothing
@@ -631,6 +638,7 @@
   - SecurityJumpsuit
   - SecurityBackpack
   - SecurityMelee # Goobstation
+  - TrinketsSecurity # Omu Edit
   - SecurityOuterClothing
   - SecurityShoes
   - SecurityNeck
@@ -650,9 +658,12 @@
   id: JobDetective
   groups:
   - DetectiveHead
+  - DetectiveEyes # Omu edit
   - DetectiveNeck
   - DetectiveJumpsuit
   - SecurityBackpack
+  - SecurityMelee # Omu edit
+  - TrinketsSecurityDetective # Omu Edit
   - DetectiveOuterClothing
   - SecurityShoes
   - SurvivalSecurity
@@ -754,7 +765,12 @@
   - MedicalGloves
   - ChemistBackpack
   - ChemistOuterClothing
-  - MedicalShoes
+  - ChemistShoes
+  - ChemistPDA
+  - ChemistEyewear
+  - ChemistBeaker
+  - ChemistLabeler
+  - ChemistBag # Omu
   - SurvivalMedical
   - Trinkets
   - Animals

@@ -275,7 +275,7 @@
     requirements:
     - !type:RoleTimeRequirement
       role: JobBorg
-      time: 3600 #1 hour
+      time: 18000 #5 hrs - Omu Edit
   - type: GhostTakeoverAvailable
 
 - type: entity
@@ -292,5 +292,5 @@
     requirements:
     - !type:RoleTimeRequirement
       role: JobBorg
-      time: 3600 #1 hour
+      time: 18000 #5 hrs - Omu Edit
   - type: GhostTakeoverAvailable

@@ -69,16 +69,17 @@
         TechnicalAssistant: ClothingCyberneticBeastMantleWorkEngineering
         # salvage mantle for salvagers
         SalvageSpecialist: ClothingCyberneticBeastMantleWorkSalvage
+        ShaftMiner: ClothingCyberneticBeastMantleWorkSalvage
         # sec mantle for secoffs
         Detective: ClothingCyberneticBeastMantleSecurity
         SecurityCadet: ClothingCyberneticBeastMantleSecurity
         SecurityOfficer: ClothingCyberneticBeastMantleSecurity
         Warden: ClothingCyberneticBeastMantleSecurity
-        # med mantle for doctors (and brigmedic)
+        # med mantle for doctors (and brigmedic, actually corpsman)
         Chemist: ClothingCyberneticBeastMantleMedical
         MedicalDoctor: ClothingCyberneticBeastMantleMedical
         MedicalIntern: ClothingCyberneticBeastMantleMedical
-        Paramedic: ClothingCyberneticBeastMantleMedical
+        Paramedic: ClothingCyberneticBeastMantleMedicalParamedic # paramedic mantle variant with internals
         Brigmedic: ClothingCyberneticBeastMantleMedical
         # tossup of mantles for command.
         BlueshieldOfficer: ClothingCyberneticBeastMantleBlueshieldOfficer
@@ -106,6 +107,9 @@
   name: trait-moth-flight-name
   description: trait-moth-flight-desc
   category: PhysicalTraits
+  blacklist:
+    components:
+      - BorgChassis
   components:
   - type: Flight
     isLayerAnimated: true
@@ -230,5 +234,5 @@
     - Resomi
     - Rodentia
   - !type:WeightRequirement # too heavy for uppies
-    minimumWeight: 40
+    minimumWeight: 53
     inverted: true

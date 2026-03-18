@@ -126,7 +126,7 @@
 - type: entity
   parent: [ClothingBackpackDuffel, BaseSecurityContraband]
   id: ClothingBackpackDuffelBrigmedic
-  name: brigmedic duffel bag
+  name: corpsman duffel bag # Omu - rename Brigmedic to Corpsman
   description: A large duffel bag for holding extra medical related goods.
   components:
   - type: Sprite
@@ -297,7 +297,7 @@
   - type: Storage
     maxItemSize: Huge
     grid:
-    - 0,0,19,9
+    - 0,0,14,5 #Goob
   - type: ClothingSpeedModifier
     sprintModifier: 1 # makes its stats identical to other variants of bag of holding
   - type: HeldSpeedModifier
