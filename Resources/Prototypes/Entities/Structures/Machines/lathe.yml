@@ -671,6 +671,8 @@
     - PowerAugments
     - ToolAugments
     - PowerCells
+    # EE Recipe packs
+    - ReverseMMiRecipeEE
   - type: EmagLatheRecipes # Goobstation
     emagStaticPacks:
     - MechWeaponsSecurityStatic
@@ -770,7 +772,6 @@
     - ScienceExplosives
     - GrenadeTriggersStatic
     - SecurityWeaponsStaticGoob
-    - SecurityWeaponsNonEmaggableStaticGoob
     - SecurityAmmoStaticOmu # Omu
     dynamicPacks:
     - SalvageSecurityBoards
