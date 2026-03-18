@@ -35,7 +35,7 @@ public sealed class LoadoutSpeciesSystem : EntitySystem
             foreach (var slotDef in inv.Slots)
             {
                 if (_inventory.TryGetSlotEntity(uid, slotDef.Name, out var oldItem))
-                    EntityManager.DeleteEntity(oldItem.Value);
+                    EntityManager.QueueDeleteEntity(oldItem.Value);
             }
             Dirty(uid, component);
             component.Overridden = true;
@@ -50,7 +50,7 @@ public sealed class LoadoutSpeciesSystem : EntitySystem
         {
             if (_inventory.TryGetSlotEntity(uid, slot, out var oldItem))
             {
-                EntityManager.DeleteEntity(oldItem.Value);
+                EntityManager.QueueDeleteEntity(oldItem.Value);
             }
             _inventory.SpawnItemInSlot(uid, slot, protoId);
         }
