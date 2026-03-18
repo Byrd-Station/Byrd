@@ -1,6 +1,6 @@
 - type: entity
   name: O'Connaburr, the Irelander
-  parent: [BaseItem, BaseSecurityContraband]
+  parent: [BaseItem, BaseGrandTheftContraband]
   id: HosIreLander
   description: An antique copper greatsword, said to have once been wielded to end a great trouble.
   components:
@@ -22,7 +22,6 @@
     damage:
       types:
         Slash: 10
-        Cellular: 3
         Structural: 40
   - type: StaminaDamageOnHit
     damage: 20
@@ -49,7 +48,7 @@
 
 - type: entity
   name: warden's rapier
-  parent: [ BaseSword, BaseWardenContraband ]
+  parent: [ BaseSword, BaseGrandTheftContraband ]
   id: WardenRapier
   description: A thin, elegant sword made for lunging over banana peels.
   components:
@@ -72,6 +71,7 @@
   - type: MeleeDash
     emoteOnDash: null
     length: 2
+    canDashWhileWeightless: false # Omu
   - type: UseDelay
     delay: 1.5
   - type: Tag

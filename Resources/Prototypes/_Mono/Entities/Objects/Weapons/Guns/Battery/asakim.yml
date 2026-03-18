@@ -3,10 +3,10 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  name: plasma autopulser # DeltaV - simplify name
+  name: kunisa-pattern autopulser
   parent: [BaseWeaponBattery, BaseGunWieldable]
   id: WeaponRifleAsakimAutopulser
-  description: An advanced handheld plasma rifle. # DeltaV - no fracture here
+  description: An advanced handheld plasma rifle. The design superficially resembles old plasma weapons. # Omu - SAME as Mono but changing pre-fracture for "old"
   components:
   - type: Sprite
     sprite: _Mono/Objects/Weapons/Guns/Battery/asakimrifle.rsi

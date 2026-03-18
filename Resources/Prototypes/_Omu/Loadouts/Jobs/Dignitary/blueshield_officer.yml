@@ -49,4 +49,37 @@
   equipment:
     neck: ClothingNeckMantleTwoBlueshield
 
+#PDA
 
+- type: loadout
+  id: BlueshieldPDA
+  equipment:
+    id: BlueshieldPDA
+
+- type: loadout
+  id: altBlueshieldPDA
+  equipment:
+    id: altBlueshieldPDA
+
+# Belt
+- type: loadout #BSO's belt - Moved to Loadout
+  id: BeltAssaultFilled
+  equipment:
+    belt: ClothingBeltAssaultFilled
+
+- type: loadout
+  id: BsoSwordBelt
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorOfficer
+  equipment:
+    belt: ClothingBeltSheathStunswordFilled
+
+# boots
+- type: loadout
+  id: BSOAdvancedJackBoots
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorBlueshieldOfficer
+  equipment:
+    shoes: ClothingShoesBootsBSOJackAdvancedFilled

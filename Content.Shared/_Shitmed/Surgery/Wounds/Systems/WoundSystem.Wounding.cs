@@ -8,7 +8,6 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Content.Goobstation.Common.Changeling;
 using Content.Shared._Shitmed.CCVar;
 using Content.Shared._Shitmed.DoAfter;
 using Content.Shared._Shitmed.Medical.Surgery.Pain.Components;
@@ -34,6 +33,8 @@ using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Goobstation.Common.Medical;
+
 namespace Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
 
 public sealed partial class WoundSystem
@@ -231,40 +232,43 @@ public sealed partial class WoundSystem
 
         if (TerminatingOrDeleted(uid)
             || TerminatingOrDeleted(component.HoldingWoundable)
-            || !TryComp<TraumaInflicterComponent>(uid, out var traumaInflicter)
+            // || !TryComp<TraumaInflicterComponent>(uid, out var traumaInflicter) // Goob edit
             || !TryComp<WoundableComponent>(component.HoldingWoundable, out var woundable)
             || woundable.WoundableSeverity != WoundableSeverity.Mangled
             || !TryComp<BodyPartComponent>(component.HoldingWoundable, out var bodyPart))
             return;
 
-        if (bodyPart.Body is not null
-            && (delta < traumaInflicter.SeverityThreshold * _cfg.GetCVar(SurgeryCVars.DestroySeverityMultiplier)
+        // Goob edit start - can't destroy attached body parts, must sever first
+        if (bodyPart.Body is not null)
+            return;
+        /*    && (delta < traumaInflicter.SeverityThreshold * _cfg.GetCVar(SurgeryCVars.DestroySeverityMultiplier)
                 || woundable.Bone.ContainedEntities.FirstOrNull() is not { } bone
                 || !TryComp(bone, out BoneComponent? boneComp)
                 || boneComp.BoneSeverity != BoneSeverity.Broken))
-            return;
+            return;*/
 
-        if (!IsWoundableRoot(component.HoldingWoundable, woundable) // We need to add a check because the root woundable is set to the bodypart itself on removal (why wulf?????)
+        /*if (!IsWoundableRoot(component.HoldingWoundable, woundable) // We need to add a check because the root woundable is set to the bodypart itself on removal (why wulf?????)
             || bodyPart.Body is null)
         {
             if (woundable.ParentWoundable != null
                 && bodyPart.Body != null)
                 DestroyWoundable(woundable.ParentWoundable.Value, component.HoldingWoundable, woundable);
-            else
-                DestroyWoundable(component.HoldingWoundable, component.HoldingWoundable, woundable);
-        }
+            else*/
+        DestroyWoundable(component.HoldingWoundable, component.HoldingWoundable, woundable);
+        //}
+        // Goob edit end
     }
 
     private void OnDamageChanged(EntityUid uid, WoundableComponent component, ref DamageChangedEvent args)
     {
         // Skip if there was no damage delta or if wounds aren't allowed
-        if (args.DamageDelta == null
+        if (args.UncappedDamage == null // Goobstation
             || !component.AllowWounds
             || !_net.IsServer)
             return;
 
         // Create or update wounds based on damage changes
-        foreach (var (damageType, damageValue) in args.DamageDelta.DamageDict)
+        foreach (var (damageType, damageValue) in args.UncappedDamage.DamageDict)
         {
             if (damageValue == 0)
                 continue; // Only create wounds for damage or healing
@@ -279,7 +283,12 @@ public sealed partial class WoundSystem
                 if (!IsWoundPrototypeValid(damageType))
                     continue;
 
-                TryInduceWound(uid, damageType, damageValue, out _, component);
+                TryInduceWound(uid,
+                    damageType,
+                    damageValue *
+                    args.UncappedDamage.WoundSeverityMultipliers.GetValueOrDefault(damageType, 1),
+                    out _,
+                    component);
             }
         }
 
@@ -346,7 +355,8 @@ public sealed partial class WoundSystem
 
         foreach (var woundToInduce in damage.DamageDict)
         {
-            if (!TryInduceWound(uid, woundToInduce.Key, woundToInduce.Value, out var woundInduced, woundable))
+            if (!TryInduceWound(uid, woundToInduce.Key, woundToInduce.Value *
+                damage.WoundSeverityMultipliers.GetValueOrDefault(woundToInduce.Key, 1), out var woundInduced, woundable))
                 return false;
 
             woundsInduced.Add(woundInduced.Value);
@@ -780,6 +790,14 @@ public sealed partial class WoundSystem
                     TraumaType.Dismemberment,
                     15f,
                     (bodyPart.PartType, bodyPart.Symmetry));
+
+                // Goobstation start
+                var bleedInflicter = EnsureComp<BleedInflicterComponent>(woundInduced.Value.Owner);
+                bleedInflicter.BleedingAmountRaw += 20f;
+                bleedInflicter.Scaling = 1f;
+                bleedInflicter.ScalingLimit = 1f;
+                bleedInflicter.IsBleeding = true;
+                // Goobstation end
             }
 
             Dirty(woundableEntity, woundableComp);
@@ -829,9 +847,17 @@ public sealed partial class WoundSystem
                         (woundEnt.Value.Owner, EnsureComp<TraumaInflicterComponent>(woundEnt.Value.Owner)),
                         TraumaType.Dismemberment,
                         15f);
-                }
 
-                foreach (var wound in GetWoundableWounds(parentWoundableEntity))
+                    // Goobstation start
+                    var bleedInflicter = EnsureComp<BleedInflicterComponent>(parentWoundableEntity);
+                    bleedInflicter.BleedingAmountRaw += 20f;
+                    bleedInflicter.Scaling = 1f;
+                    bleedInflicter.ScalingLimit = 1f;
+                    bleedInflicter.IsBleeding = true;
+                    // Goobstation end
+                }
+                // Goobstation start - commented out
+                /*foreach (var wound in GetWoundableWounds(parentWoundableEntity))
                 {
                     if (!TryComp<BleedInflicterComponent>(wound, out var bleeds)
                         || !TryComp<WoundableComponent>(parentWoundableEntity, out var parentWoundable)
@@ -839,8 +865,9 @@ public sealed partial class WoundSystem
                         continue;
 
                     // Bleeding :3
-                    bleeds.ScalingLimit += 6;
-                }
+                    //bleeds.ScalingLimit += 6;
+                }*/
+                // Goobstation end
 
                 _body.DetachPart(parentWoundableEntity, bodyPartId.Remove(0, 15), woundableEntity);
                 DestroyWoundableChildren(woundableEntity, woundableComp);
@@ -875,9 +902,13 @@ public sealed partial class WoundSystem
 
         _audio.PlayPvs(woundableComp.WoundableDelimbedSound, bodyPart.Body.Value);
 
+        // goob edit
+        var ampEv = new BeforeAmputationDamageEvent();
+        RaiseLocalEvent(bodyPart.Body.Value, ref ampEv);
+
         if (woundableComp.DamageOnAmputate != null
             && _body.TryGetRootPart(bodyPart.Body.Value, out var rootPart)
-            && !HasComp<ChangelingComponent>(bodyPart.Body.Value)) // Shitcod Alert!!!!
+            && !ampEv.Cancelled) // goob edit
             _damageable.TryChangeDamage(bodyPart.Body.Value,
                 woundableComp.DamageOnAmputate,
                 targetPart: _body.GetTargetBodyPart(rootPart));
@@ -894,7 +925,13 @@ public sealed partial class WoundSystem
                 || !parentWoundable.CanBleed)
                 continue;
 
-            bleeds.ScalingLimit += 6;
+            // Goobstation start
+            bleeds.BleedingAmountRaw += 20f;
+            bleeds.Scaling = 1f;
+            bleeds.ScalingLimit = 1f;
+            bleeds.IsBleeding = true;
+            //bleeds.ScalingLimit += 6;
+            // Goobstation end
         }
 
 
@@ -1018,7 +1055,8 @@ public sealed partial class WoundSystem
         WoundComponent? woundComp = null,
         BodyComponent? bodyComp = null)
     {
-        if (!Resolve(parent, ref woundableComp, false)
+        // Goobstation start - commented out
+        /*if (!Resolve(parent, ref woundableComp, false)
             || !Resolve(wound, ref woundComp, false)
             || !Resolve(body, ref bodyComp, false)
             || !_prototype.TryIndex(woundComp.DamageType, out DamageTypePrototype? damageType))
@@ -1044,7 +1082,8 @@ public sealed partial class WoundSystem
             var tourniquetable = EnsureComp<TourniquetableComponent>(woundEnt);
             tourniquetable.SeveredSymmetry = bodyPart.Symmetry;
             tourniquetable.SeveredPartType = bodyPart.PartType;
-        }
+        }*/
+        // Goobstation end
     }
 
     /// <summary>

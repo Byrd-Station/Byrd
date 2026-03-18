@@ -5,7 +5,19 @@
   playTimeTracker: JobAdminAssistant
   requirements:
   - !type:OverallPlaytimeRequirement # DeltaV - Playtime requirement
-    time: 36000 # 10 hours - Goob Edit
+    time: 36000 # 10 hours - Omu start - around 5 full shifts, since they are mostly RP in addition to granting command hours.
+  - !type:DepartmentTimeRequirement
+    department: Engineering
+    time: 18000 #5 hours - Omu edit
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 18000 #5 hours - Omu edit
+  - !type:DepartmentTimeRequirement
+    department: Science
+    time: 18000 #5 hours - Omu edit
+  - !type:DepartmentTimeRequirement
+    department: Medical
+    time: 18000 #5 hours - Omu edit end
   goobcoins: 20 # Goob Content
   startingGear: AdminAssistantGear
   icon: "JobIconAdminAssitant"

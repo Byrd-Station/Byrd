@@ -33,6 +33,7 @@
   children:
   - Traitors
   - CorporateAgents # Goobstation - Corporate Agents
+  - Conspirators # Harmony
   - Changelings # Goobstation - changelings
   - Heretics # Goobstation - heretics
   - Blob # Goobstation - Blob
@@ -51,6 +52,9 @@
   - SlaughterDemon # Goob content
   - Xenomorphs # WD - Xenomorphs
   - Wraith
+  - Slasher # Goob content
+  - Letoferol # Mono content
+
 
 - type: guideEntry
   id: Traitors
@@ -86,3 +90,8 @@
   id: Thieves
   name: guide-entry-thieves
   text: "/ServerInfo/Guidebook/Antagonist/Thieves.xml"
+
+- type: guideEntry
+  id: Conspirators
+  name: guide-entry-conspirators
+  text: "/ServerInfo/_Harmony/Guidebook/Antagonist/Conspirators.xml"
