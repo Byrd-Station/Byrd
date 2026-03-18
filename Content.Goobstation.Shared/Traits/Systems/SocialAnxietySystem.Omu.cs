@@ -11,7 +11,7 @@ public sealed partial class SocialAnxietySystem
     private void OnHug(EntityUid uid, SocialAnxietyComponent component, ref InteractionSuccessEvent args)
     {
         _standingSystem.Down(uid);
-        _stunSystem.TryStun(uid, TimeSpan.FromSeconds(component.DownedTime), true);
+        _stunSystem.TryUpdateStunDuration(uid, TimeSpan.FromSeconds(component.DownedTime));
         var mobName = Identity.Name(uid, EntityManager);
         if(_net.IsServer)
             _popupSystem.PopupEntity(Loc.GetString("social-anxiety-hugged", ("user", mobName)), uid, PopupType.MediumCaution);
@@ -32,7 +32,7 @@ public sealed partial class SocialAnxietySystem
                 continue;
             var uid = args.Target.Value;
             _standingSystem.Down(uid);
-            _stunSystem.TryStun(uid, TimeSpan.FromSeconds(component.DownedTime), true);
+            _stunSystem.TryUpdateStunDuration(uid, TimeSpan.FromSeconds(component.DownedTime));
             var mobName = Identity.Name(uid, EntityManager);
             if(_net.IsServer)
             {
