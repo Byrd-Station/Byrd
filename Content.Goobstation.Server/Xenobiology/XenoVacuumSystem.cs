@@ -12,8 +12,8 @@ using Content.Server.Storage.Components;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared.Coordinates;
 using Content.Shared.Destructible;
-using Content.Shared.Emag.Components;
-using Content.Shared.Emag.Systems;
+//using Content.Shared.Emag.Components; // Omu, remove xenovac emag
+//using Content.Shared.Emag.Systems; // Omu, remove xenovac emag
 using Content.Shared.Examine;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
@@ -22,6 +22,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Popups;
+using Content.Shared.Storage.Components;
 using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
 using Content.Shared.Timing;
@@ -38,7 +39,7 @@ namespace Content.Goobstation.Server.Xenobiology;
 public sealed partial class XenoVacuumSystem : EntitySystem
 {
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
-    [Dependency] private readonly EmagSystem _emag = default!;
+    //[Dependency] private readonly EmagSystem _emag = default!;  Omu, remove xenovac emag
     [Dependency] private readonly ThrowingSystem _throw = default!;
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
@@ -60,7 +61,7 @@ public sealed partial class XenoVacuumSystem : EntitySystem
         SubscribeLocalEvent<XenoVacuumTankComponent, ExaminedEvent>(OnTankExamined);
         SubscribeLocalEvent<XenoVacuumTankComponent, DestructionEventArgs>(OnDestruction);
 
-        SubscribeLocalEvent<XenoVacuumComponent, GotEmaggedEvent>(OnGotEmagged);
+        //SubscribeLocalEvent<XenoVacuumComponent, GotEmaggedEvent>(OnGotEmagged); // Omu, remove xenovac emag
         SubscribeLocalEvent<XenoVacuumComponent, GotEquippedHandEvent>(OnEquippedHand);
         SubscribeLocalEvent<XenoVacuumComponent, GotUnequippedHandEvent>(OnUnequippedHand);
         SubscribeLocalEvent<XenoVacuumComponent, AfterInteractEvent>(OnAfterInteract);
@@ -111,7 +112,7 @@ public sealed partial class XenoVacuumSystem : EntitySystem
         Dirty(ent);
         Dirty(tank.Value, tankComp);
     }
-
+    /*  Omu, remove xenovac emag
     private void OnGotEmagged(Entity<XenoVacuumComponent> ent, ref GotEmaggedEvent args)
     {
         if (!_emag.CompareFlag(args.Type, EmagType.Interaction)
@@ -121,7 +122,7 @@ public sealed partial class XenoVacuumSystem : EntitySystem
 
         args.Handled = true;
     }
-
+    */ 
     private void OnAfterInteract(Entity<XenoVacuumComponent> ent, ref AfterInteractEvent args)
     {
         var ud = Comp<UseDelayComponent>(ent);
@@ -146,11 +147,12 @@ public sealed partial class XenoVacuumSystem : EntitySystem
             var popup = Loc.GetString("xeno-vacuum-clear-popup", ("ent", removedEnt));
             _popup.PopupEntity(popup, ent, args.User);
 
-            if (args.Target is { } thrown) _throw.TryThrow(removedEnt, thrown.ToCoordinates());
-            else _throw.TryThrow(removedEnt, args.ClickLocation);
-
-            _stun.TryKnockdown(removedEnt, TimeSpan.FromSeconds(1), true);
-            _htn.SetHTNEnabled(removedEnt, true, 1f);
+            if (args.Target is { } thrown)
+                _throw.TryThrow(removedEnt, thrown.ToCoordinates());
+            else
+                _throw.TryThrow(removedEnt, args.ClickLocation);
+            _stun.TryUpdateParalyzeDuration(removedEnt, TimeSpan.FromSeconds(2));
+            _htn.SetHTNEnabled(removedEnt, true,2f);
         }
 
         if (ud != null) _useDelay.TryResetDelay((ent, ud), false, ReleaseDelayId);
@@ -205,7 +207,7 @@ public sealed partial class XenoVacuumSystem : EntitySystem
 
         var tankComp = tank.Value.Comp;
 
-        if (!HasComp<EmaggedComponent>(vacuum) && !_whitelist.IsWhitelistPass(vacuum.Comp.EntityWhitelist, target))
+        if (!_whitelist.IsWhitelistPass(vacuum.Comp.EntityWhitelist, target)) // Omu, remove "!HasComp<EmaggedComponent>(vacuum) && "
         {
             var invalidEntityPopup = Loc.GetString("xeno-vacuum-suction-fail-invalid-entity-popup", ("ent", target));
             _popup.PopupEntity(invalidEntityPopup, vacuum, user);

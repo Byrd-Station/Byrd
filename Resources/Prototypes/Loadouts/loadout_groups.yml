@@ -203,6 +203,20 @@
   - ClothingNeckGenderfluidPin
   - ClothingNeckTransPin
   - ClothingNeckAutismPin
+  - ClothingNeckGoldAutismPin
+  - OffsetCane
+  - OffsetCaneWood
+  - OffsetCaneClown
+  - OffsetCaneMime
+  - OffsetCaneNT
+  - Cane
+  # GoobStation Start
+  - CardBoxBlack
+  - CardBoxNanotrasen
+  - FoodSnackLollypopWrapped
+  - FoodSnackLollypopWrappedRainbow
+  - FoodSnackLollypopWrappedCarp
+  # Goobstation End
   # Omu start
   - ClothingNeckCloakProgressPride
   - ClothingNeckCloakTrans
@@ -285,6 +299,7 @@
   - Mouse
   - Mothroach
   - Goldfish
+  - MobMoproach # Omu
 
 - type: loadoutGroup
   id: GroupTankHarness
@@ -307,6 +322,7 @@
   - LoadoutSpeciesPlasma # Goobstation
   - EmergencyWaterVapor # Delta-V
   - EmergencySilicon
+  - EmergencyOxygenCarnivore # Omu
 
 # nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup
@@ -773,6 +789,7 @@
   - LoadoutSpeciesPlasma # Goobstation
   - EmergencyWaterVaporClown # Delta-V
   - EmergencySilicon
+  - EmergencyOxygenCarnivoreClown # Omu
 
 - type: loadoutGroup
   id: MimeHead
@@ -835,6 +852,7 @@
   - LoadoutSpeciesPlasma # Goobstation
   - EmergencyWaterVaporMime # Delta-V
   - EmergencySilicon
+  - EmergencyOxygenCarnivoreMime # Omu
 
 - type: loadoutGroup
   id: MusicianJumpsuit
@@ -1170,6 +1188,7 @@
   - LoadoutSpeciesPlasma # Goobstation
   - EmergencyWaterVaporExtended # Delta-V
   - EmergencySilicon
+  - EmergencyOxygenCarnivoreExtended # Omu
 
 # Science
 - type: loadoutGroup
@@ -1498,6 +1517,7 @@
   - LoadoutSpeciesPlasma # Goobstation
   - EmergencyWaterVaporSecurity # Delta-V
   - EmergencySilicon
+  - EmergencyOxygenCarnivoreSecurity # Omu
 
 - type: loadoutGroup
   id: SecurityStar
@@ -1649,9 +1669,11 @@
   loadouts:
   - ChemistJumpsuit
   - ChemistJumpskirt
+  - ChemistMJ # goob
   - SeniorPhysicianJumpsuit # Goobstation
   - SeniorPhysicianJumpskirt # Goobstation
-  - ChemistMJ # goob
+  - SeniorChemistJumpsuit # Starlight
+  - SeniorChemistJumpskirt #Starlight
 
 - type: loadoutGroup
   id: ChemistOuterClothing
@@ -1665,6 +1687,8 @@
   - SeniorPhysicianXelthiaJacket # Omu
   - ChemLabcoatLong # OmuStation
   - SeniorPhysicianLabCoat # Goobstation
+  - SeniorChemistLabCoat # Starlight
+  - SeniorChemistWintercoat # Starlight
 
 - type: loadoutGroup
   id: ChemistBackpack
@@ -1674,6 +1698,9 @@
   - ChemistSatchel
   - ChemistDuffel
   - ChemistMessenger # Frontier
+  - SeniorChemistBackpack # Starlight
+  - SeniorChemistSatchel # Starlight
+  - SeniorChemistDuffel # Starlight
 
 - type: loadoutGroup
   id: ParamedicHead
@@ -1744,6 +1771,7 @@
   - LoadoutSpeciesPlasma # Goobstation
   - EmergencyWaterVaporMedical # Delta-V
   - EmergencySilicon
+  - EmergencyOxygenCarnivoreMedical # Omu
 
 # Wildcards
 - type: loadoutGroup
@@ -1791,6 +1819,7 @@
   - LoadoutSpeciesPlasma # Goobstation
   - EmergencyWaterVaporSyndicate # Delta-V
   - EmergencySilicon
+  - EmergencyOxygenCarnivoreSyndicate # Omu
 
 - type: loadoutGroup
   id: GroupSpeciesBreathTool
