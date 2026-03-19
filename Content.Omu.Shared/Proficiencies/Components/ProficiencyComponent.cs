@@ -1,5 +1,5 @@
 using Robust.Shared.Prototypes;
-namespace Content.Omu.Shared.Proficiencies;
+namespace Content.Omu.Shared.Proficiencies.Components;
 
 [RegisterComponent]
 public sealed partial class ProficiencyComponent : Component

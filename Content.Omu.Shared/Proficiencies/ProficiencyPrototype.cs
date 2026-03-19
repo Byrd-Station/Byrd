@@ -17,12 +17,14 @@ public sealed partial class ProficiencyPrototype : IPrototype
     public List<EntProtoId>? Items;
 
     [DataField]
-    public float proficiencyMultiplier { get; private set; } = 1f;
-
+    public float ProficiencyMultiplier { get; private set; } = 1f;
+   
     [DataField]
-    public float surgeryProficiency { get; private set; } = 1f;
+    public float SurgeryProficiency { get; private set; } = 1f;
 
-    //the lower the reloadspeed modifier the faster it goes
+    /// <summary>
+    /// The lower the Reload speed modifier the faster it goes
+    /// </summary>
     [DataField]
-    public float reloadSpeedProficiency { get; private set; } = 1f;
+    public float ReloadSpeedProficiency { get; private set; } = 1f;
 }
