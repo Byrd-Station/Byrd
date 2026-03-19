@@ -95,10 +95,10 @@
     - type: Armor
       modifiers:
         coefficients:
-          Blunt: 0.75
-          Slash: 0.75
-          Piercing: 0.85
-          Heat: 0.8
+          Blunt: 0.7
+          Slash: 0.7
+          Piercing: 0.8
+          Heat: 0.75
           Cellular: 0.8
           Radiation: 0.8
           Caustic: 0.1
@@ -138,7 +138,17 @@
     - type: ShowHealthBars
       damageContainers:
       - Biological
-
+    - type: DiseaseProtection
+      incoming:
+        powerModifiers:
+          Aerial: -0.9
+        chanceMultipliers:
+          Aerial: 0.5
+      outgoing:
+        powerModifiers:
+          Aerial: -0.9
+        chanceMultipliers:
+          Aerial: 0.5
 
 
 - type: entity
@@ -181,7 +191,12 @@
       reduction: .5
     - type: ZombificationResistance
       zombificationResistanceCoefficient: 0.2
-
+    - type: DiseaseProtection
+      incoming:
+        powerModifiers:
+          Blood: -1 # immune to plague mice
+        chanceMultipliers:
+          Blood: 0.5
 
 - type: entity
   parent: ClothingModsuitBootsStandard
@@ -193,14 +208,14 @@
     - type: Appearance
     - type: Sprite
       sprite: _Omu/Clothing/Modsuits/cmo.rsi
+      layers:
+      - state: boots
+      - state: boots-sealed
+        map: [ "sealed" ]
     - type: SealableClothingVisuals
       spriteLayer: sealed
       clothingVisuals:
         shoes:
         - state: equipped-FEET-sealed
-      layers:
-      - state: boots
-      - state: boots-sealed
-        map: [ "sealed" ]
 
 
