@@ -92,7 +92,7 @@ namespace Content.Server._Goobstation.Heretic.EntitySystems
                     //and then revive the old body
                     _rejuvenate.PerformRejuvenate(uid);
                     // Omu - stun them briefly when they snap back to reality
-                    _stun.TryParalyze(uid, victimComp.StunTime, true);
+                    _stun.TryUpdateStunDuration(uid, victimComp.StunTime);
                 }
             }
         }
