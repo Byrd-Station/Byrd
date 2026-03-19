@@ -208,11 +208,7 @@
   maxLimit: 1
   loadouts:
   - DetectiveWeaponRevolverInspector # Default for det should be their revolver
- # - DetectiveOfficerGunCase
- # - DetectiveMk58
- #  - DetectiveSecurityDutyRevolver
   - DetectiveTerminus
- #  - DetectiveWeaponPistolMk58Gold
 
 - type: loadoutGroup
   id: DetectiveEyes
