@@ -9,7 +9,8 @@
   - type: MeleeWeapon
     soundHit:
       path: /Audio/_Omu/Weapons/shredderhit.ogg
-      variation: 0.125
+      params:
+        variation: 0.125
     wideAnimationRotation: -135
     animationRotation: 180
     attackRate: 1.25
