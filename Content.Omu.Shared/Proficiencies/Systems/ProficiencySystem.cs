@@ -9,6 +9,7 @@ using Content.Omu.Shared.Proficiencies.Components;
 
 namespace Content.Omu.Shared.Proficiencies.Systems;
 public sealed class ProficiencySystem : CommonProficiencySystem
+{
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     
     public override void Initialize()
