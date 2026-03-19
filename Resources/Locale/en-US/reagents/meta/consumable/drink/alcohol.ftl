@@ -374,6 +374,9 @@ reagent-desc-moscow-mule = A surpsingly strong and refreshing mixed drink, serve
 # Omu start
 reagent-name-welles = the welles
 reagent-desc-welles = A smooth drink for the big dreamers from the lower classes in Night City. Made with love and mourning.
+
+reagent-name-wolfs-milk = Wolf's Milk
+reagent-desc-wolfs-milk = Rancid combination for a rancid human being. Best served in a vacuum flask, assuming you consider this drinkable.
 # Omu end
 
 reagent-name-the-sun-also-rises = the sun also rises
@@ -387,3 +390,5 @@ reagent-desc-zombiecocktail = It gets in your head. Your he-eyeh-ead.
 
 reagent-name-bacchus-blessing = bacchus's blessing
 reagent-desc-bacchus-blessing = You didn't think it was possible for a liquid to be so utterly revolting. Are you sure about this...?
+
+

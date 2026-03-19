@@ -1621,3 +1621,17 @@
       amount: 1
   products:
     BacchusBlessing: 4
+
+- type: reaction
+  id: WolfsMilk
+  reactants:
+    Milk:
+      amount: 2
+    Egg:
+      amount: 1
+    Gin:
+      amount: 2
+    CoffeeLiqueur:
+      amount: 1
+  products:
+    WolfsMilk: 6
