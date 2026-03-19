@@ -7,8 +7,8 @@ using Content.Shared.Weapons.Ranged.Components;
 using Content.Omu.Common.Proficiencies;
 using Content.Omu.Shared.Proficiencies.Components;
 
+namespace Content.Omu.Shared.Proficiencies.Systems;
 public sealed class ProficiencySystem : CommonProficiencySystem
-{
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     
     public override void Initialize()
@@ -85,10 +85,9 @@ public sealed class ProficiencySystem : CommonProficiencySystem
             return;
 
         entity.Comp.Items = proficiencyPrototype.Items;
-        entity.Comp.ProficiencyMultiplier = proficiencyPrototype.proficiencyMultiplier;
-        entity.Comp.SurgeryProficiency = proficiencyPrototype.surgeryProficiency;
-        entity.Comp.ReloadSpeedProficiency = proficiencyPrototype.reloadSpeedProficiency;
-
+        entity.Comp.ProficiencyMultiplier = proficiencyPrototype.ProficiencyMultiplier;
+        entity.Comp.SurgeryProficiency = proficiencyPrototype.SurgeryProficiency;
+        entity.Comp.ReloadSpeedProficiency = proficiencyPrototype.ReloadSpeedProficiency;
         if (entity.Comp.SurgeryProficiency == 1f)
             return;
 
