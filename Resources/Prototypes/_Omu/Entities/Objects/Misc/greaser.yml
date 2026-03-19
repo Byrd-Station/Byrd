@@ -28,7 +28,7 @@
     sprite: _Omu/Objects/Weapons/Guns/SMGs/greaser.rsi
   - type: Construction
     graph: GreaserGraph
-    node: greasermachinedframe
+    node: machinedgreaserframe
 
 - type: entity
   name: Bolt-Fitted Receiver
