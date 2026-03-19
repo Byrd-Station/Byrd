@@ -7,7 +7,7 @@
   name: reagent-name-cocaine
   group: Narcotics
   desc: reagent-desc-cocaine
-  physicalDesc: reagent-physical-desc-translucent
+  physicalDesc: reagent-physical-desc-powdery
   flavor: bitter
   color: "#c2c2c2"
   boilingPoint: 150.0
@@ -111,8 +111,8 @@
         amount: -10
         immediate: true
       - !type:SuppressPain
-          amount: 1.2
-          time: 30 # it accumulated 1.2*quantity and then exists for 30 seconds.
+        amount: 1.2
+        time: 30 # it accumulated 1.2*quantity and then exists for 30 seconds.
     Medicine:
       metabolismRate: 0.25 # Goobstation edit
       effects:
@@ -136,14 +136,14 @@
   name: reagent-name-raw-cocaine
   group: Narcotics
   desc: reagent-desc-raw-cocaine
-  physicalDesc: reagent-physical-desc-translucent
+  physicalDesc: reagent-physical-desc-powdery
   flavor: bitter
   color: "#c2c2c2"
   boilingPoint: 150.0
   meltingPoint: -10.0
   metabolisms:
     Narcotic:
-      metabolismRate: 0.25 # Goobstation edit
+      metabolismRate: 0.25
       effects:
       - !type:HealthChange
         conditions:
@@ -158,25 +158,41 @@
             Cold: -0.5
             Radiation: -0.5
       - !type:MovespeedModifier
-        walkSpeedModifier: 1.3
-        sprintSpeedModifier: 1.3
+        walkSpeedModifier: 1.15
+        sprintSpeedModifier: 1.15
+      - !type:HealthChange # impurities cause constant low toxin damage
+        conditions:
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false
+        damage:
+          types:
+            Poison: 0.25
       - !type:HealthChange
         conditions:
         - !type:OrganType
           type: Yowie
           shouldHave: false
         - !type:ReagentThreshold
-          min: 10 #please wait 3 minutes before using another stimpack, also goob edit
+          min: 10
         damage:
           types:
-            Poison: 1
+            Poison: 1.5
+      - !type:Jitter # unrefined stimulant makes you jittery
+        ticksOfJitter: 3
+      - !type:PopupMessage # nausea from impurities
+        type: Local
+        visualType: MediumCaution
+        messages:
+        - raw-cocaine-nausea
+        probability: 0.2
       - !type:AdjustReagent
         conditions:
         - !type:ReagentThreshold
           reagent: ChloralHydrate
           min: 1
         reagent: ChloralHydrate
-        amount: -5
+        amount: -2
       - !type:GenericStatusEffect
         key: Stun
         time: 1
@@ -213,21 +229,5 @@
         amount: -5
         immediate: true
       - !type:SuppressPain
-          amount: .6
-          time: 30 # it accumulated .6*quantity and then exists for 30 seconds.
-    Medicine:
-      metabolismRate: 0.25 # Goobstation edit
-      effects:
-        - !type:ResetNarcolepsy
-        - !type:SatiateHunger
-          factor: 1
-        - !type:SatiateThirst
-          factor: 1
-        - !type:HealthChange
-          conditions:
-          - !type:TotalDamage
-            min: 70 # only heals when you're more dead than alive
-          damage: # heals at the same rate as tricordrazine, doesn't heal poison because if you OD'd I'm not giving you a safety net
-            groups:
-              Burn: -1
-              Brute: -1
+        amount: 0.3
+        time: 15

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Eponymic-sys
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: seed
   id: coco
   name: seeds-coco-name

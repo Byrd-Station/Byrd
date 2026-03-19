@@ -2,7 +2,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# Cocaine synthesis reaction
+
+# The reagent product is for the guidebook.
 - type: reaction
   id: Cocaine
   reactants:

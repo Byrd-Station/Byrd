@@ -12,9 +12,7 @@ raw-cocaine-effect = Your mouth goes numb and your heart quickens.
 cocaine-overdose-heartpounding = Your heart is pounding out of your chest!
 cocaine-overdose-chestpain = You feel a sharp pain in your chest!
 cocaine-overdose-cantbreathe = You can barely breathe!
-
-# Reagent Effects
-reagent-effect-guidebook-add-component = Stimulant, Applies the [color=white]{$component}[/color] component
+raw-cocaine-nausea = Your stomach churns and you feel nauseous...
 
 # Coco Plant Localization
 seeds-coco-name = coco

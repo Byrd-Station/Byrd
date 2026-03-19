@@ -127,7 +127,7 @@
         type: SurgeryBui
   - type: Sprite
     drawdepth: Mobs
-    sprite: _Omu/Mobs/Animals/coacinebear.rsi
+    sprite: _Omu/Mobs/Animals/cocainebear.rsi
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: cocaine-bear
