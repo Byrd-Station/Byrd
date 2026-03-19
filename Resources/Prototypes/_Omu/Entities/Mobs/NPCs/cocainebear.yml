@@ -134,8 +134,7 @@
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
       state: glow
       shader: unshaded
-    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-      state: energy
+    - state: energy
       shader: unshaded
   - type: DamageStateVisuals
     states:

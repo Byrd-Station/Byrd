@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2026 Eponymic-sys
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: foodSequenceElement
+  id: CocoBurger
+  name: food-sequence-burger-content-coco
+  sprites:
+  - sprite: _Omu/Objects/Specific/Hydroponics/coco.rsi
+    state: produce
+
+- type: foodSequenceElement
+  id: CocoTaco
+  name: food-sequence-content-coco
+  sprites:
+  - sprite: _Omu/Objects/Specific/Hydroponics/coco.rsi
+    state: produce

@@ -20,14 +20,9 @@
         - ReagentId: RawCocaine
           Quantity: 20
   - type: FoodSequenceElement
-    sprite:
-      sprite: _Omu/Objects/Specific/Hydroponics/coco.rsi
-      state: produce
     entries:
-      burger:
-        name: food-sequence-burger-content-coco
-      taco:
-        name: food-sequence-content-coco
+      Burger: CocoBurger
+      Taco: CocoTaco
 
 - type: entity
   id: LeavesCocoDried
