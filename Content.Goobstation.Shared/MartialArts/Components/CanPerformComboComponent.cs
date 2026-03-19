@@ -21,7 +21,7 @@ public sealed partial class CanPerformComboComponent : Component
     public EntityUid? CurrentTarget;
 
     [DataField, AutoNetworkedField]
-    public ProtoId<ComboPrototype> BeingPerformed;
+    public ProtoId<ComboPrototype>? BeingPerformed;// Omu, needs to be nullable, to pass serialization round-trip.
 
     [DataField]
     public int LastAttacksLimit = 4;
