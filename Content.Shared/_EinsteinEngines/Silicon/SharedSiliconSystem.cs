@@ -11,6 +11,9 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.Containers.ItemSlots;
 using Content.Goobstation.Common.Mind;
 
+using Content.Goobstation.Common.Mind;
+using Content.Shared.PowerCell.Components;
+
 namespace Content.Shared._EinsteinEngines.Silicon.Systems;
 
 
