@@ -94,10 +94,6 @@ using Content.Shared.Interaction;
 using Content.Shared.StatusEffect;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using Content.Shared.Movement.Pulling.Systems;
-using Content.Shared.Pulling.Events;
-using Content.Shared.Movement.Pulling.Components;
-using Content.Shared.Movement.Pulling.Events;
 
 namespace Content.Shared.Stunnable;
 
@@ -138,7 +134,6 @@ public abstract partial class SharedStunSystem : EntitySystem
         SubscribeLocalEvent<StunnedComponent, PickupAttemptEvent>(OnAttempt);
         SubscribeLocalEvent<StunnedComponent, IsEquippingAttemptEvent>(OnEquipAttempt);
         SubscribeLocalEvent<StunnedComponent, IsUnequippingAttemptEvent>(OnUnequipAttempt);
-        SubscribeLocalEvent<StunnedComponent, AttemptStopPullingEvent>(HandleStopPull);
         SubscribeLocalEvent<MobStateComponent, MobStateChangedEvent>(OnMobStateChanged);
 
         // New Status Effect subscriptions
@@ -523,21 +518,6 @@ public abstract partial class SharedStunSystem : EntitySystem
         // is this a self-equip, or are they being stripped?
         if (args.Unequipee == uid)
             args.Cancel();
-    }
-
-    
-    private void HandleStopPull(EntityUid uid, StunnedComponent stunned, ref AttemptStopPullingEvent args)
-    {
-        if (args.User == null || !Exists(args.User.Value))
-            return;
-
-        if (args.User.Value == uid)
-        {
-            //TODO: UX feedback. Simply blocking the normal interaction feels like an interface bug
-
-            args.Cancelled = true;
-        }
-
     }
 
     #endregion
