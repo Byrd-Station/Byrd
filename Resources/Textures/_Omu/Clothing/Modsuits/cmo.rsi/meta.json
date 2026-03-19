@@ -24,6 +24,10 @@
       "directions": 4
     },
     {
+      "name": "equipped-HEAD-sealed-vox",
+      "directions": 4
+    },
+    {
       "name": "equipped-HEAD-sealed-vulpkanin",
       "directions": 4
     },
@@ -45,6 +49,10 @@
     },
     {
       "name": "equipped-HEAD-reptilian",
+      "directions": 4
+    },
+    {
+      "name": "equipped-HEAD-vox",
       "directions": 4
     },
     {
