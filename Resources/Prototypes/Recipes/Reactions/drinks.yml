@@ -1408,7 +1408,21 @@
     SolDry:
       amount: 1
   products:
-    TheWelles: 6 # Omu end
+    TheWelles: 6
+
+    - type: reaction
+      id: WolfsMilk
+      reactants:
+        Milk:
+          amount: 2
+        Egg:
+          amount: 1
+        Gin:
+          amount: 2
+        CoffeeLiqueur:
+          amount: 1
+      products:
+        WolfsMilk: 6 # Omu end
 
 - type: reaction
   id: Vodka
@@ -1621,17 +1635,3 @@
       amount: 1
   products:
     BacchusBlessing: 4
-
-- type: reaction
-  id: WolfsMilk
-  reactants:
-    Milk:
-      amount: 2
-    Egg:
-      amount: 1
-    Gin:
-      amount: 2
-    CoffeeLiqueur:
-      amount: 1
-  products:
-    WolfsMilk: 6

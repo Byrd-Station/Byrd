@@ -2939,7 +2939,7 @@
     sprite: Objects/Consumable/Drinks/bacchusblessing.rsi
     state: icon
 
-- type: entity
+- type: entity # Omu start
   parent: DrinkGlass
   id: DrinkWolfsMilk
   suffix: Wolf's Milk
@@ -2954,4 +2954,4 @@
           Quantity: 30
   - type: Icon
     sprite: Objects/Consumable/Drinks/eggnogglass.rsi
-    state: icon
+    state: icon # Omu end
