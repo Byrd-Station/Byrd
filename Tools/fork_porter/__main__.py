@@ -13,8 +13,12 @@ Commands:
     update-ported  Refresh already-ported fork-scoped files from upstreams
     cherry-pick    Apply specific upstream commits to this repository
     pull           Pull a prototype and all dependencies from upstreams
+    pull-path      Pull arbitrary files by path from an upstream
     dedup          Remove duplicate prototypes across forks (priority-based)
     resolve        Discover & pull missing prototypes + textures from upstreams
+    diff           Show diffs between local ported files and upstream
+    where-from     Show provenance of local files / entity IDs
+    log            Show upstream commits touching ported files since last sync
     audit-patches  Scan source files for inline fork-edit markers and report
     status         Show fork health dashboard (dupes, missing, patch count)
     clean          Remove .fork_porter_cache/ directory
@@ -27,6 +31,9 @@ Global flags:
 from __future__ import annotations
 
 import argparse
+import difflib
+import fnmatch
+import json
 import logging
 import re
 import shutil
@@ -79,13 +86,96 @@ def _load_config(config_path: Path) -> dict[str, Any]:
     cfg["_proto_root"] = cfg["_workspace"] / "Resources" / "Prototypes"
     cfg["_tex_root"] = cfg["_workspace"] / "Resources" / "Textures"
     cfg["_cache_dir"] = cfg["_workspace"] / ".fork_porter_cache"
+    cfg["_provenance_path"] = cfg["_cache_dir"] / "provenance.json"
     return cfg
+
+
+# ── Provenance metadata ─────────────────────────────────────────────────────
+
+def _load_provenance(cfg: dict) -> dict[str, Any]:
+    """Load provenance metadata from the cache directory."""
+    path = cfg.get("_provenance_path")
+    if path and path.is_file():
+        try:
+            return json.loads(path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            return {}
+    return {}
+
+
+def _save_provenance(cfg: dict, prov: dict[str, Any]) -> None:
+    """Persist provenance metadata to the cache directory."""
+    path = cfg.get("_provenance_path")
+    if not path:
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(prov, indent=2, sort_keys=True), encoding="utf-8")
+
+
+def _record_provenance(cfg: dict, command_name: str, touched: set[Path],
+                       upstream_name: str | None = None) -> None:
+    """Record provenance for touched files: upstream, timestamp, commit SHA."""
+    if not touched:
+        return
+    workspace = cfg["_workspace"]
+    cache_dir = cfg["_cache_dir"]
+    prov = _load_provenance(cfg)
+
+    # Get upstream HEAD sha if available.
+    up_sha = None
+    if upstream_name:
+        up_path = cache_dir / upstream_name
+        if up_path.is_dir():
+            result = subprocess.run(
+                ["git", "rev-parse", "HEAD"],
+                cwd=up_path, capture_output=True, text=True, check=False,
+            )
+            if result.returncode == 0:
+                up_sha = result.stdout.strip()
+
+    import datetime
+    ts = datetime.datetime.now(datetime.timezone.utc).isoformat()
+
+    files_section = prov.setdefault("files", {})
+    for p in sorted(touched):
+        try:
+            rel = p.relative_to(workspace).as_posix()
+        except ValueError:
+            continue
+        files_section[rel] = {
+            "upstream": upstream_name or "unknown",
+            "upstream_sha": up_sha,
+            "synced_at": ts,
+            "command": command_name,
+        }
+
+    _save_provenance(cfg, prov)
+
+
+# ── Interactive prompt helper ────────────────────────────────────────────────
+
+def _interactive_confirm(prompt: str) -> bool:
+    """Ask a yes/no question on stdin. Returns True for yes."""
+    try:
+        answer = input(f"{prompt} [y/N] ").strip().lower()
+        return answer in ("y", "yes")
+    except (EOFError, KeyboardInterrupt):
+        return False
 
 
 # ── Upstream repo management ────────────────────────────────────────────────
 
-def _ensure_upstream(name: str, info: dict, cache_dir: Path) -> Path:
-    """Ensure an upstream repo is cloned and up-to-date. Returns local path."""
+def _ensure_upstream(
+    name: str,
+    info: dict,
+    cache_dir: Path,
+    *,
+    refresh: bool = False,
+) -> Path:
+    """Ensure an upstream repo is present locally.
+
+    When *refresh* is true, fetch latest upstream state into the cache.
+    """
     # Support legacy `path` key for local overrides.
     if "path" in info:
         p = Path(info["path"]).resolve()
@@ -101,42 +191,42 @@ def _ensure_upstream(name: str, info: dict, cache_dir: Path) -> Path:
     repo_dir = cache_dir / name
 
     if repo_dir.is_dir():
-        # Pull latest (fast -- already a sparse/shallow clone).
-        log.info("Updating upstream '%s' (%s)...", name, branch)
-        subprocess.run(
-            ["git", "fetch", "--depth=1", "origin", branch],
-            cwd=repo_dir, check=True, capture_output=True,
-        )
-        # Checkout paths that exist (some upstreams may lack test dirs).
-        for checkout_path in ("Resources/Prototypes", "Resources/Textures",
-                              "Content.Tests", "Content.IntegrationTests"):
+        if refresh:
+            # Pull latest (full clone).
+            log.info("Updating upstream '%s' (%s)...", name, branch)
             subprocess.run(
-                ["git", "checkout", f"origin/{branch}", "--", checkout_path],
-                cwd=repo_dir, capture_output=True,  # no check -- path may not exist
+                ["git", "fetch", "origin", branch],
+                cwd=repo_dir, check=True, capture_output=True,
+            )
+            # Refresh whatever is currently included in sparse-checkout.
+            # This preserves any prior expansion done by other commands.
+            subprocess.run(
+                ["git", "checkout", f"origin/{branch}", "--", "."],
+                cwd=repo_dir, check=True, capture_output=True,
             )
     else:
-        # Shallow clone with sparse checkout -- only grab Resources/.
+        # Full clone repository contents.
         log.info("Cloning upstream '%s' from %s (branch: %s)...", name, repo_url, branch)
         cache_dir.mkdir(parents=True, exist_ok=True)
         subprocess.run(
-            ["git", "clone", "--depth=1", "--branch", branch,
-             "--filter=blob:none", "--sparse", repo_url, str(repo_dir)],
-            check=True, capture_output=True,
-        )
-        subprocess.run(
-            ["git", "sparse-checkout", "set",
-             "Resources/Prototypes", "Resources/Textures",
-             "Content.Tests", "Content.IntegrationTests"],
-            cwd=repo_dir, check=True, capture_output=True,
+            ["git", "clone", "--branch", branch, repo_url, str(repo_dir)],
+            check=True,
+            capture_output=True,
         )
 
     return repo_dir
 
 
-def _resolve_upstream_path(name: str, info: dict, cache_dir: Path) -> Path:
-    """Get the local path for an upstream, cloning/updating as needed."""
+def _resolve_upstream_path(
+    name: str,
+    info: dict,
+    cache_dir: Path,
+    *,
+    refresh: bool = False,
+) -> Path:
+    """Get local upstream path, optionally refreshing cache from remote."""
     try:
-        return _ensure_upstream(name, info, cache_dir)
+        return _ensure_upstream(name, info, cache_dir, refresh=refresh)
     except subprocess.CalledProcessError as e:
         stderr = e.stderr.decode(errors="replace").strip() if e.stderr else ""
         log.error("Git operation failed for upstream '%s': %s", name, stderr)
@@ -157,6 +247,49 @@ def _classify_fork(filepath: Path, forks: dict[str, dict]) -> str | None:
             if f"/{alt}/" in fp:
                 return key
     return None
+
+
+def _log_table(title: str, headers: list[str], rows: list[list[Any]]) -> None:
+    """Log a column-aligned table for CLI output."""
+    if not headers:
+        return
+    ncols = len(headers)
+    # Normalize rows.
+    str_rows: list[list[str]] = []
+    for row in rows:
+        cells = [str(c).replace("\n", " ") for c in row]
+        while len(cells) < ncols:
+            cells.append("")
+        str_rows.append(cells[:ncols])
+    # Column widths.
+    widths = [len(h) for h in headers]
+    for cells in str_rows:
+        for i, c in enumerate(cells):
+            widths[i] = max(widths[i], len(c))
+    # Detect numeric columns for right-alignment.
+    numeric = [False] * ncols
+    for i in range(ncols):
+        if str_rows and all(c[i].lstrip("-").replace(".", "", 1).isdigit() or c[i] == "" for c in str_rows):
+            numeric[i] = True
+    def _fmt(cells: list[str], bold: bool = False) -> str:
+        parts: list[str] = []
+        for i, c in enumerate(cells):
+            # Last column: skip left-padding but still right-align numbers.
+            if i == ncols - 1 and not numeric[i]:
+                parts.append(c)
+            elif numeric[i]:
+                parts.append(c.rjust(widths[i]))
+            else:
+                parts.append(c.ljust(widths[i]))
+        return "  ".join(parts)
+    log.info("%s", title)
+    log.info("  %s", _fmt(headers))
+    # Last column separator: full width if numeric, header width if text.
+    seps = ["─" * widths[i] for i in range(ncols - 1)]
+    seps.append("─" * (widths[-1] if numeric[-1] else len(headers[-1])))
+    log.info("  %s", "  ".join(seps))
+    for cells in str_rows:
+        log.info("  %s", _fmt(cells))
 
 
 # ── Entity index ─────────────────────────────────────────────────────────────
@@ -269,29 +402,8 @@ def _extract_component_stems(text: str) -> set[str]:
 
 
 def _ensure_upstream_full(name: str, info: dict, cache_dir: Path) -> Path:
-    """Like _ensure_upstream but also checks out Locale and C# source dirs."""
-    path = _ensure_upstream(name, info, cache_dir)
-    branch = info.get("branch", "main")
-    has_locale = (path / "Resources" / "Locale").is_dir()
-    has_cs = any((path / d).is_dir() for d in ("Content.Shared", "Content.Server", "Content.Client"))
-    if not has_locale or not has_cs:
-        log.info("Expanding checkout for '%s' (adding Locale + C# source)...", name)
-        # Start with well-known dirs.
-        dirs_to_add = ["Resources/Locale", "Content.Shared", "Content.Server", "Content.Client"]
-        # Discover fork-specific assemblies (Content.Goobstation.Shared, etc.).
-        result = subprocess.run(
-            ["git", "ls-tree", "--name-only", f"origin/{branch}"],
-            cwd=path, capture_output=True, text=True,
-        )
-        if result.returncode == 0:
-            for d in result.stdout.splitlines():
-                if d.startswith("Content.") and d not in dirs_to_add:
-                    dirs_to_add.append(d)
-        subprocess.run(
-            ["git", "sparse-checkout", "add"] + dirs_to_add,
-            cwd=path, check=True, capture_output=True,
-        )
-    return path
+    """Ensure full upstream repo is available locally."""
+    return _ensure_upstream(name, info, cache_dir)
 
 
 _TEST_DIRS = ["Content.Tests", "Content.IntegrationTests"]
@@ -480,10 +592,99 @@ def _commit_touched_paths(cfg: dict, command_name: str, touched: set[Path]) -> N
         log.warning("Auto-commit skipped for '%s': %s", command_name, stderr or e)
 
 
+# ── Non-entity prototype indexing ────────────────────────────────────────────
+
+# Prototype types that are *not* entity but define cross-referenced content.
+_NON_ENTITY_TYPE_RE = re.compile(
+    r"^\s*-?\s*type:\s+(latheRecipe|reaction|technology|constructionGraph|"
+    r"loadout|startingGear|job|gameMap|gamePreset|"
+    r"reagent|constructionPrototype|decal|tile)\b",
+    re.MULTILINE,
+)
+_NON_ENTITY_ID_RE = re.compile(r"^\s+id:\s+(\S+)", re.MULTILINE)
+
+# Map file references beyond proto:
+_TILE_REF_RE = re.compile(r"\btiles:\s*\n((?:\s+-.*\n)*)", re.MULTILINE)
+_TILE_ID_RE = re.compile(r"\b(\w+):\s*\d+")  # "FloorSteel: 42"
+_DECAL_REF_RE = re.compile(r"id:\s+(\S+)", re.MULTILINE)  # in decal chunks
+
+
+def _index_non_entity_prototypes(root: Path) -> dict[str, tuple[str, Path]]:
+    """Build {proto_id: (proto_type, file_path)} for non-entity prototypes."""
+    index: dict[str, tuple[str, Path]] = {}
+    for yml in sorted(root.rglob("*.yml")):
+        try:
+            text = yml.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        blocks = text.split("\n- ")
+        for i, block in enumerate(blocks):
+            chunk = block if i == 0 else "- " + block
+            type_m = re.search(r"type:\s+(\w+)", chunk)
+            id_m = re.search(r"id:\s+(\S+)", chunk)
+            if type_m and id_m:
+                ptype = type_m.group(1)
+                pid = id_m.group(1)
+                if ptype != "entity" and pid not in index:
+                    index[pid] = (ptype, yml)
+    return index
+
+
+def _extract_non_entity_block(text: str, target_id: str) -> str:
+    """Extract a single YAML block with the given id from text."""
+    lines = text.split("\n")
+    blocks: list[list[str]] = []
+    current: list[str] = []
+    for line in lines:
+        if line.startswith("- ") and current:
+            blocks.append(current)
+            current = []
+        current.append(line)
+    if current:
+        blocks.append(current)
+
+    for block in blocks:
+        joined = "\n".join(block)
+        m = re.search(r"id:\s+(\S+)", joined)
+        if m and m.group(1) == target_id:
+            while block and block[-1].strip() == "":
+                block.pop()
+            return "\n".join(block) + "\n"
+    return ""
+
+
+def _extract_tile_refs_from_map(text: str) -> set[str]:
+    """Extract tile definition names from map file tile grids."""
+    tiles: set[str] = set()
+    for m in _TILE_ID_RE.finditer(text):
+        name = m.group(1)
+        if name and not name.isdigit() and name[0].isupper():
+            tiles.add(name)
+    return tiles
+
+
+def _extract_decal_refs_from_map(text: str) -> set[str]:
+    """Extract decal prototype IDs from map files."""
+    decals: set[str] = set()
+    for m in re.finditer(r"(?:decalId|id):\s+(\S+)", text):
+        val = m.group(1).strip("'\"")
+        if val and not val.isdigit():
+            decals.add(val)
+    return decals
+
+
+def _extract_audio_refs_from_map(text: str) -> set[str]:
+    """Extract audio file paths referenced in map/prototype files."""
+    audio: set[str] = set()
+    for m in re.finditer(r"(?:path|sound):\s+(/Audio/\S+)", text):
+        audio.add(m.group(1).lstrip("/"))
+    return audio
+
+
 # ── Commands ─────────────────────────────────────────────────────────────────
 
 
-def cmd_dedup(cfg: dict, dry_run: bool) -> int:
+def cmd_dedup(cfg: dict, dry_run: bool, interactive: bool = False) -> int:
     """Remove duplicate entity IDs across forks based on priority."""
     forks = cfg["forks"]
     proto_root = cfg["_proto_root"]
@@ -529,8 +730,15 @@ def cmd_dedup(cfg: dict, dry_run: bool) -> int:
     # 3. Apply removals.
     files_modified = 0
     files_deleted = 0
+    skipped_interactive = 0
     touched: set[Path] = set()
     for fpath, ids_to_remove in removals.items():
+        # Interactive mode: ask before each file.
+        if interactive and not dry_run:
+            if not _interactive_confirm(f"  Dedup {len(ids_to_remove)} ID(s) from {fpath.relative_to(proto_root)}?"):
+                skipped_interactive += 1
+                continue
+
         try:
             text = fpath.read_text(encoding="utf-8")
         except OSError:
@@ -557,10 +765,15 @@ def cmd_dedup(cfg: dict, dry_run: bool) -> int:
             touched.add(fpath)
 
     action = "Would modify" if dry_run else "Modified"
-    log.info(
-        "Dedup complete: %d duplicate IDs found, %s %d files, deleted %d empty files.",
-        dupes_found, action, files_modified, files_deleted,
-    )
+    summary_rows = [
+        ["Duplicate IDs", dupes_found],
+        ["Action", action],
+        ["Files modified", files_modified],
+        ["Empty files deleted", files_deleted],
+    ]
+    if interactive:
+        summary_rows.append(["Skipped (interactive)", skipped_interactive])
+    _log_table("Dedup summary:", ["Metric", "Value"], summary_rows)
     if not dry_run:
         _commit_touched_paths(cfg, "dedup", touched)
     return 0
@@ -677,22 +890,27 @@ def cmd_update(cfg: dict, names: list[str] | None = None) -> int:
     log.info("=== Updating %d upstream repos ===", len(targets))
     succeeded = 0
     failed = 0
+    rows: list[list[Any]] = []
 
     for name, info in targets.items():
         if "path" in info:
-            log.info("  %-20s (local path -- skipped)", name)
+            rows.append([name, "skipped", "local path", "-"])
             continue
         try:
-            path = _resolve_upstream_path(name, info, cache_dir)
+            path = _resolve_upstream_path(name, info, cache_dir, refresh=True)
             proto_count = sum(1 for _ in (path / "Resources" / "Prototypes").rglob("*.yml")) if (path / "Resources" / "Prototypes").is_dir() else 0
-            log.info("  %-20s OK  (%d proto files)", name, proto_count)
+            rows.append([name, "ok", "-", proto_count])
             succeeded += 1
         except (subprocess.CalledProcessError, FileNotFoundError, ValueError) as e:
-            log.error("  %-20s FAILED: %s", name, e)
+            rows.append([name, "failed", str(e), "-"])
             failed += 1
 
-    log.info("")
-    log.info("Update complete: %d succeeded, %d failed.", succeeded, failed)
+    _log_table("Update results:", ["Upstream", "Status", "Details", "Proto files"], rows)
+    _log_table(
+        "Update summary:",
+        ["Metric", "Value"],
+        [["Succeeded", succeeded], ["Failed", failed]],
+    )
     return 1 if failed else 0
 
 
@@ -786,7 +1004,9 @@ def _rewrite_namespace_for_destination(src: Path, up_root: Path, dest: Path, wor
     return text
 
 
-def cmd_update_ported(cfg: dict, forks_filter: list[str] | None, dry_run: bool = False) -> int:
+def cmd_update_ported(cfg: dict, forks_filter: list[str] | None, dry_run: bool = False,
+                      path_filter: list[str] | None = None, strategy: str = "overwrite",
+                      interactive: bool = False) -> int:
     """Refresh already-ported fork-scoped files from their configured upstreams."""
     workspace = cfg["_workspace"]
     forks = cfg.get("forks", {})
@@ -804,8 +1024,10 @@ def cmd_update_ported(cfg: dict, forks_filter: list[str] | None, dry_run: bool =
     updated = 0
     unchanged = 0
     missing_src = 0
+    skipped = 0
     scanned = 0
     touched: set[Path] = set()
+    source_upstream: str | None = None
 
     log.info("=== Updating already-ported content (%d forks) ===", len(selected_forks))
 
@@ -831,6 +1053,7 @@ def cmd_update_ported(cfg: dict, forks_filter: list[str] | None, dry_run: bool =
             log.warning("Skipping fork '%s' -- upstream '%s' unavailable: %s", fk, up_name, e)
             continue
 
+        source_upstream = up_name
         aliases = local_aliases
 
         log.info("Fork '%s' -> upstream '%s'", fk, up_name)
@@ -858,12 +1081,21 @@ def cmd_update_ported(cfg: dict, forks_filter: list[str] | None, dry_run: bool =
         for local_root, up_base_prefix in roots:
             if not local_root.is_dir():
                 continue
-            for local_file in local_root.rglob("*"):
+            for local_file in sorted(local_root.rglob("*")):
                 if not local_file.is_file():
                     continue
                 if local_file in seen_local:
                     continue
                 seen_local.add(local_file)
+
+                # Apply path filter (feature 2).
+                if path_filter:
+                    rel_str = local_file.relative_to(workspace).as_posix()
+                    rel_tail_str = local_file.relative_to(local_root).as_posix()
+                    if not any(fnmatch.fnmatch(rel_str, pat) or fnmatch.fnmatch(rel_tail_str, pat)
+                               for pat in path_filter):
+                        continue
+
                 scanned += 1
                 rel_tail = local_file.relative_to(local_root)
                 candidates = _build_update_ported_candidates(up_root, up_base_prefix, rel_tail, aliases)
@@ -882,11 +1114,43 @@ def cmd_update_ported(cfg: dict, forks_filter: list[str] | None, dry_run: bool =
                     unchanged += 1
                     continue
 
+                rel_display = local_file.relative_to(workspace)
+
+                # Interactive mode: ask before each file.
+                if interactive and not dry_run:
+                    if not _interactive_confirm(f"  Update {rel_display}?"):
+                        skipped += 1
+                        continue
+
                 if dry_run:
-                    log.info("  Would update %s <- %s", local_file.relative_to(workspace), src.relative_to(up_root))
+                    log.info("  Would update %s <- %s", rel_display, src.relative_to(up_root))
                     updated += 1
                     continue
 
+                # Strategy handling (feature 7).
+                if strategy == "diff":
+                    # Show diff only, don't write.
+                    try:
+                        local_text = local_file.read_text(encoding="utf-8", errors="replace")
+                        src_text = src.read_text(encoding="utf-8", errors="replace")
+                        diff_lines = difflib.unified_diff(
+                            local_text.splitlines(keepends=True),
+                            src_text.splitlines(keepends=True),
+                            fromfile=str(rel_display),
+                            tofile=f"upstream/{src.relative_to(up_root)}",
+                        )
+                        sys.stdout.writelines(diff_lines)
+                    except OSError:
+                        pass
+                    updated += 1
+                    continue
+
+                if strategy == "ours":
+                    # Keep local version, skip.
+                    skipped += 1
+                    continue
+
+                # Default "overwrite" or "theirs" strategy: replace with upstream.
                 if local_file.suffix == ".cs":
                     try:
                         text = src.read_text(encoding="utf-8", errors="replace")
@@ -898,12 +1162,24 @@ def cmd_update_ported(cfg: dict, forks_filter: list[str] | None, dry_run: bool =
                     shutil.copy2(src, local_file)
                 updated += 1
                 touched.add(local_file)
-                log.info("  Updated %s <- %s", local_file.relative_to(workspace), src.relative_to(up_root))
+                log.info("  Updated %s <- %s", rel_display, src.relative_to(up_root))
 
     verb = "Would update" if dry_run else "Updated"
-    log.info("%s %d file(s), %d unchanged, %d missing upstream match (scanned %d).",
-             verb, updated, unchanged, missing_src, scanned)
+    _log_table(
+        "Update-ported summary:",
+        ["Metric", "Value"],
+        [
+            ["Action", verb],
+            ["Strategy", strategy],
+            ["Updated files", updated],
+            ["Unchanged files", unchanged],
+            ["Skipped (interactive/ours)", skipped],
+            ["Missing upstream match", missing_src],
+            ["Scanned files", scanned],
+        ],
+    )
     if not dry_run:
+        _record_provenance(cfg, "update-ported", touched, source_upstream)
         _commit_touched_paths(cfg, "update-ported", touched)
     return 0
 
@@ -938,7 +1214,8 @@ def _ensure_upstream_full_history(name: str, info: dict, cache_dir: Path) -> Pat
     return path
 
 
-def cmd_cherry_pick(cfg: dict, from_upstream: str, commits: list[str], dry_run: bool = False) -> int:
+def cmd_cherry_pick(cfg: dict, from_upstream: str, commits: list[str],
+                    dry_run: bool = False, strategy: str = "3way") -> int:
     """Apply specific commit(s) from a configured upstream repository."""
     workspace = cfg["_workspace"]
     upstreams = cfg.get("upstreams", {})
@@ -979,6 +1256,7 @@ def cmd_cherry_pick(cfg: dict, from_upstream: str, commits: list[str], dry_run: 
 
     applied = 0
     failed = 0
+    rows: list[list[Any]] = []
     for commit in commits:
         verify = subprocess.run(
             ["git", "rev-parse", "--verify", f"{commit}^{{commit}}"],
@@ -988,7 +1266,7 @@ def cmd_cherry_pick(cfg: dict, from_upstream: str, commits: list[str], dry_run: 
             check=False,
         )
         if verify.returncode != 0:
-            log.warning("Commit not found in upstream '%s': %s", from_upstream, commit)
+            rows.append([commit, "not-found", from_upstream, "commit missing in upstream"])
             failed += 1
             continue
 
@@ -999,7 +1277,7 @@ def cmd_cherry_pick(cfg: dict, from_upstream: str, commits: list[str], dry_run: 
             check=False,
         )
         if patch.returncode != 0 or not patch.stdout:
-            log.warning("Failed to export patch for commit: %s", commit)
+            rows.append([commit, "failed", from_upstream, "failed to export patch"])
             failed += 1
             continue
 
@@ -1012,42 +1290,61 @@ def cmd_cherry_pick(cfg: dict, from_upstream: str, commits: list[str], dry_run: 
                 check=False,
             )
             if check_apply.returncode != 0:
-                log.warning("Would fail to apply %s", commit)
+                rows.append([commit, "would-fail", from_upstream, "git apply --check failed"])
                 failed += 1
             else:
-                log.info("Would apply commit %s from '%s'", commit, from_upstream)
+                rows.append([commit, "would-apply", from_upstream, "ok"])
                 applied += 1
             continue
 
+        # Build git am flags based on strategy (feature 7).
+        am_flags = ["git", "am", "--keep-non-patch"]
+        if strategy == "theirs":
+            am_flags.extend(["--3way", "--strategy-option=theirs"])
+        elif strategy == "ours":
+            am_flags.extend(["--3way", "--strategy-option=ours"])
+        else:
+            am_flags.append("-3")
+        am_flags.append("-")
+
         am = subprocess.run(
-            ["git", "am", "-3", "--keep-non-patch", "-"],
+            am_flags,
             cwd=workspace,
             input=patch.stdout,
             capture_output=True,
             check=False,
         )
         if am.returncode != 0:
-            log.warning("Failed to apply commit %s; aborting current am session.", commit)
+            rows.append([commit, "failed", from_upstream, "git am failed"])
             subprocess.run(["git", "am", "--abort"], cwd=workspace, capture_output=True, check=False)
             failed += 1
             continue
 
         applied += 1
-        log.info("Applied commit %s from '%s'", commit, from_upstream)
+        rows.append([commit, "applied", from_upstream, "ok"])
 
+    _log_table("Cherry-pick results:", ["Commit", "Status", "Upstream", "Details"], rows)
     verb = "Would apply" if dry_run else "Applied"
-    log.info("%s %d/%d commit(s).", verb, applied, len(commits))
+    _log_table(
+        "Cherry-pick summary:",
+        ["Metric", "Value"],
+        [[verb, f"{applied}/{len(commits)}"], ["Failed", failed]],
+    )
     return 1 if failed else 0
 
 
 def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
              to_fork: str | None, dry_run: bool,
              skip_code: bool, skip_locale: bool,
-             skip_test: bool = False) -> int:
+             skip_test: bool = False,
+             interactive: bool = False,
+             include_non_entity: bool = False) -> int:
     """Pull entity prototypes and all their dependencies from upstreams.
 
     Resolves the full dependency tree: parent prototypes, textures/sprites,
     C# component/system source files, and FTL locale entries.
+    When include_non_entity is True, also resolves non-entity prototype
+    dependencies like lathe recipes, reactions, and technologies (feature 9).
     """
     workspace = cfg["_workspace"]
     proto_root = cfg["_proto_root"]
@@ -1321,16 +1618,55 @@ def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
     elif skip_locale:
         log.info("Skipping locale resolution (--no-locale).")
 
+    # ── Phase 4b: Non-entity prototype resolution (feature 9) ────────────
+    non_entity_files: dict[Path, tuple[str, Path]] = {}
+    if include_non_entity and all_entity_ids:
+        log.info("Searching for non-entity prototypes referencing pulled entities...")
+        # Build index of non-entity prototypes in upstreams.
+        for up_name, (up_path, _) in upstream_data.items():
+            up_proto = up_path / "Resources" / "Prototypes"
+            if not up_proto.is_dir():
+                continue
+            for yml in up_proto.rglob("*.yml"):
+                try:
+                    text = yml.read_text(encoding="utf-8", errors="replace")
+                except OSError:
+                    continue
+                # Check if any pulled entity ID is referenced.
+                refs_any = False
+                for eid in all_entity_ids:
+                    if eid in text:
+                        refs_any = True
+                        break
+                if not refs_any:
+                    continue
+                # Check if this file has non-entity prototypes.
+                if not _NON_ENTITY_TYPE_RE.search(text):
+                    continue
+                rel = yml.relative_to(up_path / "Resources" / "Prototypes")
+                parts = rel.parts
+                if parts and parts[0].startswith("_"):
+                    rel = Path(*parts[1:]) if len(parts) > 1 else rel
+                dest = (proto_root / fork_dir / rel) if fork_dir else (proto_root / rel)
+                if not dest.exists() and dest not in non_entity_files and dest not in proto_files:
+                    non_entity_files[dest] = (up_name, yml)
+                    log.info("    Non-entity proto: %s ← %s", rel, up_name)
+
     # ── Phase 5: Summary and copy ─────────────────────────────────────────
-    total = len(proto_files) + len(tex_dirs) + len(cs_files) + len(test_files) + len(locale_entries)
-    log.info("")
-    log.info("=== Pull Summary ===")
-    log.info("  Prototype files:  %d", len(proto_files))
-    log.info("  Texture dirs:     %d", len(tex_dirs))
-    log.info("  C# source files:  %d", len(cs_files))
-    log.info("  Test files:       %d", len(test_files))
-    log.info("  Locale files:     %d", len(locale_entries))
-    log.info("  Total:            %d", total)
+    total = len(proto_files) + len(tex_dirs) + len(cs_files) + len(test_files) + len(locale_entries) + len(non_entity_files)
+    _log_table(
+        "Pull summary:",
+        ["Category", "Count"],
+        [
+            ["Prototype files", len(proto_files)],
+            ["Non-entity protos", len(non_entity_files)],
+            ["Texture dirs", len(tex_dirs)],
+            ["C# source files", len(cs_files)],
+            ["Test files", len(test_files)],
+            ["Locale files", len(locale_entries)],
+            ["Total", total],
+        ],
+    )
 
     if total == 0:
         log.info("Nothing new to copy.")
@@ -1338,10 +1674,64 @@ def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
 
     action = "Would copy" if dry_run else "Copying"
     touched: set[Path] = set()
-    log.info("")
+
+    op_rows: list[list[Any]] = []
+    for dest, (up_name, _) in sorted(proto_files.items()):
+        op_rows.append(["proto", dest.relative_to(proto_root), up_name])
+    for dest, (up_name, _) in sorted(non_entity_files.items()):
+        op_rows.append(["non-entity", dest.relative_to(proto_root), up_name])
+    for dest, (up_name, _) in sorted(tex_dirs.items()):
+        op_rows.append(["texture", dest.relative_to(tex_root), up_name])
+    for dest, (up_name, _) in sorted(cs_files.items()):
+        op_rows.append(["csharp", dest.relative_to(workspace), up_name])
+    for dest, (up_name, _) in sorted(test_files.items()):
+        op_rows.append(["test", dest.relative_to(workspace), up_name])
+    for dest in sorted(locale_entries):
+        op_rows.append(["locale", dest.relative_to(locale_root), "mixed"])
+
+    _log_table(f"{action} operations:", ["Type", "Path", "Upstream"], op_rows)
+
+    # Interactive mode: let user pick which operations to apply (feature 10).
+    if interactive and not dry_run:
+        filtered_proto: dict[Path, tuple[str, Path]] = {}
+        for dest, val in sorted(proto_files.items()):
+            if _interactive_confirm(f"  Copy proto {dest.relative_to(proto_root)}?"):
+                filtered_proto[dest] = val
+        proto_files = filtered_proto
+
+        filtered_ne: dict[Path, tuple[str, Path]] = {}
+        for dest, val in sorted(non_entity_files.items()):
+            if _interactive_confirm(f"  Copy non-entity {dest.relative_to(proto_root)}?"):
+                filtered_ne[dest] = val
+        non_entity_files = filtered_ne
+
+        filtered_tex: dict[Path, tuple[str, Path]] = {}
+        for dest, val in sorted(tex_dirs.items()):
+            if _interactive_confirm(f"  Copy texture {dest.relative_to(tex_root)}?"):
+                filtered_tex[dest] = val
+        tex_dirs = filtered_tex
+
+        filtered_cs: dict[Path, tuple[str, Path]] = {}
+        for dest, val in sorted(cs_files.items()):
+            if _interactive_confirm(f"  Copy C# {dest.relative_to(workspace)}?"):
+                filtered_cs[dest] = val
+        cs_files = filtered_cs
+
+        filtered_test: dict[Path, tuple[str, Path]] = {}
+        for dest, val in sorted(test_files.items()):
+            if _interactive_confirm(f"  Copy test {dest.relative_to(workspace)}?"):
+                filtered_test[dest] = val
+        test_files = filtered_test
+
+        filtered_locale: dict[Path, str] = {}
+        for dest, content in sorted(locale_entries.items()):
+            if _interactive_confirm(f"  Copy locale {dest.relative_to(locale_root)}?"):
+                filtered_locale[dest] = content
+        locale_entries = filtered_locale
+
+        total = len(proto_files) + len(non_entity_files) + len(tex_dirs) + len(cs_files) + len(test_files) + len(locale_entries)
 
     for dest, (up_name, src) in sorted(proto_files.items()):
-        log.info("  %s proto  %s ← %s", action, dest.relative_to(proto_root), up_name)
         if not dry_run:
             dest.parent.mkdir(parents=True, exist_ok=True)
             text = src.read_text(encoding="utf-8", errors="replace")
@@ -1358,14 +1748,12 @@ def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
             touched.add(dest)
 
     for dest, (up_name, src) in sorted(tex_dirs.items()):
-        log.info("  %s texture %s ← %s", action, dest.relative_to(tex_root), up_name)
         if not dry_run:
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copytree(src, dest)
             touched.add(dest)
 
     for dest, (up_name, src) in sorted(cs_files.items()):
-        log.info("  %s C#     %s ← %s", action, dest.relative_to(workspace), up_name)
         if not dry_run:
             dest.parent.mkdir(parents=True, exist_ok=True)
             text = src.read_text(encoding="utf-8", errors="replace")
@@ -1383,7 +1771,6 @@ def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
             touched.add(dest)
 
     for dest, (up_name, src) in sorted(test_files.items()):
-        log.info("  %s test   %s ← %s", action, dest.relative_to(workspace), up_name)
         if not dry_run:
             dest.parent.mkdir(parents=True, exist_ok=True)
             text = src.read_text(encoding="utf-8", errors="replace")
@@ -1400,8 +1787,6 @@ def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
             touched.add(dest)
 
     for dest, content in sorted(locale_entries.items()):
-        mode = "append locale" if dest.exists() else "locale"
-        log.info("  %s %s %s", action, mode, dest.relative_to(locale_root))
         if not dry_run:
             dest.parent.mkdir(parents=True, exist_ok=True)
             if dest.exists():
@@ -1414,18 +1799,30 @@ def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
                 dest.write_text(content, encoding="utf-8")
                 touched.add(dest)
 
+    # Copy non-entity prototype files (feature 9).
+    for dest, (up_name, src) in sorted(non_entity_files.items()):
+        if not dry_run:
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, dest)
+            touched.add(dest)
+
     if dry_run:
         log.info("\nDry run -- no files written. Remove --dry-run to apply.")
     else:
         log.info("\nPull complete. %d files written.", total)
         if cs_files:
             log.info("NOTE: C# namespaces were updated automatically -- review for correctness.")
+        _record_provenance(cfg, "pull", touched, source_upstream)
         _commit_touched_paths(cfg, "pull", touched)
     return 0
 
 
-def cmd_resolve(cfg: dict, dry_run: bool) -> int:
-    """Discover missing prototypes in map files and pull from upstreams."""
+def cmd_resolve(cfg: dict, dry_run: bool, interactive: bool = False) -> int:
+    """Discover missing prototypes in map files and pull from upstreams.
+
+    Also resolves tile definitions, decal prototypes, and audio paths
+    referenced by map files (feature 6).
+    """
     proto_root = cfg["_proto_root"]
     tex_root = cfg["_tex_root"]
     workspace = cfg["_workspace"]
@@ -1439,9 +1836,14 @@ def cmd_resolve(cfg: dict, dry_run: bool) -> int:
     local_index = _index_prototypes(proto_root)
     log.info("  %d local entities indexed.", len(local_index))
 
+    # Also build local non-entity index for tile/decal resolution (feature 6).
+    local_non_entity = _index_non_entity_prototypes(proto_root)
+    log.info("  %d local non-entity prototypes indexed.", len(local_non_entity))
+
     # 2. Build upstream indexes (full checkout for C#/locale).
     upstream_paths: dict[str, Path] = {}
     upstream_indexes: dict[str, dict[str, Path]] = {}
+    upstream_ne_indexes: dict[str, dict[str, tuple[str, Path]]] = {}
     cache_dir = cfg["_cache_dir"]
     for name in source_order:
         info = upstreams.get(name)
@@ -1457,10 +1859,16 @@ def cmd_resolve(cfg: dict, dry_run: bool) -> int:
             log.info("Indexing upstream '%s' at %s ...", name, up_proto)
             upstream_paths[name] = up_path
             upstream_indexes[name] = _index_prototypes(up_proto)
-            log.info("  %d entities.", len(upstream_indexes[name]))
+            upstream_ne_indexes[name] = _index_non_entity_prototypes(up_proto)
+            log.info("  %d entities, %d non-entity.", len(upstream_indexes[name]), len(upstream_ne_indexes[name]))
 
     # 3. Collect entity refs from map files.
     missing: set[str] = set()
+    missing_refs: dict[str, set[str]] = defaultdict(set)
+    # Also collect tile/decal/audio refs (feature 6).
+    missing_tiles: set[str] = set()
+    missing_decals: set[str] = set()
+    missing_audio: set[str] = set()
     proto_ref_re = re.compile(r"proto:\s+(\S+)")
     for scan_dir in scan_dirs:
         maps_dir = workspace / "Resources" / scan_dir
@@ -1473,10 +1881,29 @@ def cmd_resolve(cfg: dict, dry_run: bool) -> int:
                 continue
             for m in proto_ref_re.finditer(text):
                 eid = m.group(1).strip("'\"")
-                if eid not in local_index:
+                if eid and eid not in local_index:
                     missing.add(eid)
+                    missing_refs[eid].add(mapfile.relative_to(workspace).as_posix())
+
+            # Feature 6: Extract tile/decal/audio references.
+            for tile_name in _extract_tile_refs_from_map(text):
+                if tile_name not in local_non_entity and tile_name not in local_index:
+                    missing_tiles.add(tile_name)
+            for decal_id in _extract_decal_refs_from_map(text):
+                if decal_id not in local_non_entity and decal_id not in local_index:
+                    missing_decals.add(decal_id)
+            for audio_path in _extract_audio_refs_from_map(text):
+                full = workspace / "Resources" / audio_path
+                if not full.exists():
+                    missing_audio.add(audio_path)
 
     log.info("Found %d missing prototype references in maps.", len(missing))
+    if missing_tiles:
+        log.info("Found %d missing tile definitions.", len(missing_tiles))
+    if missing_decals:
+        log.info("Found %d missing decal prototypes.", len(missing_decals))
+    if missing_audio:
+        log.info("Found %d missing audio files.", len(missing_audio))
 
     # 4. Recursive resolution.
     files_to_copy: dict[Path, tuple[str, Path]]  = {}  # dest → (upstream_name, src)
@@ -1588,11 +2015,48 @@ def cmd_resolve(cfg: dict, dry_run: bool) -> int:
                     else:
                         locale_entries[dest] = extracted
 
+    # 6b. Resolve missing tiles and decals from upstreams (feature 6).
+    ne_files_to_copy: dict[Path, tuple[str, Path]] = {}
+    audio_to_copy: dict[Path, tuple[str, Path]] = {}
+    resolved_tiles: set[str] = set()
+    resolved_decals: set[str] = set()
+    resolved_audio: set[str] = set()
+
+    all_missing_ne = missing_tiles | missing_decals
+    if all_missing_ne:
+        for ne_id in all_missing_ne:
+            for up_name, ne_idx in upstream_ne_indexes.items():
+                if ne_id in ne_idx:
+                    ptype, src_file = ne_idx[ne_id]
+                    up_root = upstream_paths[up_name]
+                    rel = src_file.relative_to(up_root / "Resources" / "Prototypes")
+                    dest = proto_root / rel
+                    if not dest.exists() and dest not in ne_files_to_copy:
+                        ne_files_to_copy[dest] = (up_name, src_file)
+                    if ne_id in missing_tiles:
+                        resolved_tiles.add(ne_id)
+                    if ne_id in missing_decals:
+                        resolved_decals.add(ne_id)
+                    break
+
+    if missing_audio:
+        for audio_path in missing_audio:
+            for up_name, up_path in upstream_paths.items():
+                src = up_path / "Resources" / audio_path
+                if src.is_file():
+                    dest = workspace / "Resources" / audio_path
+                    if not dest.exists() and dest not in audio_to_copy:
+                        audio_to_copy[dest] = (up_name, src)
+                        resolved_audio.add(audio_path)
+                    break
+
     # 7. Copy all files.
     copied_files = 0
     copied_tex = 0
     copied_cs = 0
     copied_locale = 0
+    copied_ne = 0
+    copied_audio = 0
     touched: set[Path] = set()
     for dest, (up_name, src) in files_to_copy.items():
         if dest.exists():
@@ -1630,6 +2094,8 @@ def cmd_resolve(cfg: dict, dry_run: bool) -> int:
     for dest, content in locale_entries.items():
         if dest.exists():
             continue
+        if interactive and not _interactive_confirm(f"  Copy locale {dest.relative_to(locale_root)}?"):
+            continue
         if dry_run:
             log.info("  Would copy locale %s", dest.relative_to(locale_root))
         else:
@@ -1638,16 +2104,64 @@ def cmd_resolve(cfg: dict, dry_run: bool) -> int:
             touched.add(dest)
         copied_locale += 1
 
+    # Copy non-entity (tile/decal) prototype files (feature 6).
+    for dest, (up_name, src) in ne_files_to_copy.items():
+        if dest.exists():
+            continue
+        if interactive and not _interactive_confirm(f"  Copy tile/decal {dest.relative_to(proto_root)}?"):
+            continue
+        if dry_run:
+            log.info("  Would copy tile/decal %s ← %s", dest.relative_to(proto_root), up_name)
+        else:
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, dest)
+            touched.add(dest)
+        copied_ne += 1
+
+    # Copy audio files (feature 6).
+    for dest, (up_name, src) in audio_to_copy.items():
+        if dest.exists():
+            continue
+        if interactive and not _interactive_confirm(f"  Copy audio {dest.relative_to(workspace)}?"):
+            continue
+        if dry_run:
+            log.info("  Would copy audio %s ← %s", dest.relative_to(workspace), up_name)
+        else:
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, dest)
+            touched.add(dest)
+        copied_audio += 1
+
     action = "Would copy" if dry_run else "Copied"
     log.info(
-        "Resolve complete: %s %d proto files, %d textures, %d C# files, %d locale files. "
-        "%d unresolvable IDs.",
-        action, copied_files, copied_tex, copied_cs, copied_locale, len(unresolvable),
+        "Resolve complete: %s %d proto files, %d textures, %d C# files, %d locale files, "
+        "%d tile/decal files, %d audio files. %d unresolvable IDs.",
+        action, copied_files, copied_tex, copied_cs, copied_locale,
+        copied_ne, copied_audio, len(unresolvable),
     )
-    if unresolvable:
-        for eid in sorted(unresolvable):
-            log.warning("  Unresolvable: %s", eid)
+    # Summary for feature 6 non-entity resolution.
+    if missing_tiles or missing_decals or missing_audio:
+        ne_rows: list[list[Any]] = []
+        ne_rows.append(["Missing tiles", len(missing_tiles)])
+        ne_rows.append(["Resolved tiles", len(resolved_tiles)])
+        ne_rows.append(["Missing decals", len(missing_decals)])
+        ne_rows.append(["Resolved decals", len(resolved_decals)])
+        ne_rows.append(["Missing audio", len(missing_audio)])
+        ne_rows.append(["Resolved audio", len(resolved_audio)])
+        _log_table("Non-entity resolution:", ["Metric", "Count"], ne_rows)
+    if missing_refs:
+        resolve_rows: list[list[Any]] = []
+        for eid in sorted(missing_refs):
+            refs = sorted(missing_refs[eid])
+            status = "unresolvable" if eid in unresolvable else "resolved"
+            if not refs:
+                resolve_rows.append([eid, status, "(none)"])
+                continue
+            for idx, map_path in enumerate(refs):
+                resolve_rows.append([eid if idx == 0 else "", status if idx == 0 else "", map_path])
+        _log_table("Missing prototype references:", ["Prototype ID", "Status", "Map"], resolve_rows)
     if not dry_run:
+        _record_provenance(cfg, "resolve", touched)
         _commit_touched_paths(cfg, "resolve", touched)
     return 0
 
@@ -1806,6 +2320,7 @@ def cmd_audit_patches(
     cfg: dict,
     include_forks: bool = False,
     namespaces: list[str] | None = None,
+    detect_orphans: bool = False,
 ) -> int:
     """Scan source files for inline fork-edit markers and produce a report."""
     workspace = cfg["_workspace"]
@@ -1916,18 +2431,27 @@ def cmd_audit_patches(
             log.info("Fork scope filter: (raw) %s", ", ".join(namespace_filters))
         if unresolved_scopes:
             log.warning("Unknown fork scopes: %s", ", ".join(unresolved_scopes))
-    log.info("Found %d inline patch markers across %d files.", total, len(report))
-    log.info("  Block pairs (start+end):  %d", block_pairs)
-    log.info("  Point markers (single):   %d", total - block_pairs * 2)
-    log.info("")
+    _log_table(
+        "Audit summary:",
+        ["Metric", "Value"],
+        [
+            ["Total markers", total],
+            ["Files with markers", len(report)],
+            ["Block pairs", block_pairs],
+            ["Point markers", total - block_pairs * 2],
+        ],
+    )
 
+    detail_rows: list[list[Any]] = []
     for filepath, patches in sorted(report.items()):
-        log.info("  %s (%d markers)", filepath, len(patches))
         for p in patches:
-            tag = f"[{p['fork']}]"
-            if p["type"] != "point":
-                tag = f"[{p['fork']} {p['type']}]"
-            log.info("    L%d %s: %s", p["line"], tag, p["text"])
+            detail_rows.append([filepath, p["line"], p["fork"], p["type"], p["text"]])
+    if detail_rows:
+        _log_table(
+            "Audit marker details:",
+            ["File", "Line", "Fork", "Type", "Marker"],
+            detail_rows,
+        )
 
     # ── Summary by fork ──────────────────────────────────────────────────
     log.info("\n--- Summary by fork ---")
@@ -1939,23 +2463,478 @@ def cmd_audit_patches(
             by_fork[p["fork"]][p["type"]] += 1
             by_format[ext] += 1
 
+    by_fork_rows: list[list[Any]] = []
     for fk, counts in sorted(by_fork.items(), key=lambda x: -sum(x[1].values())):
         t = sum(counts.values())
         blocks = min(counts["start"], counts["end"])
         pts = counts["point"]
-        log.info("  %-20s %4d total  (%d blocks, %d point)", fk, t, blocks, pts)
+        by_fork_rows.append([fk, t, blocks, pts])
+    if by_fork_rows:
+        _log_table("Summary by fork:", ["Fork", "Total", "Blocks", "Point"], by_fork_rows)
 
-    log.info("\n--- Summary by file type ---")
-    for ext, count in sorted(by_format.items(), key=lambda x: -x[1]):
-        log.info("  .%-6s %4d markers", ext, count)
+    by_type_rows = [[f".{ext}", count] for ext, count in sorted(by_format.items(), key=lambda x: -x[1])]
+    if by_type_rows:
+        _log_table("Summary by file type:", ["Type", "Markers"], by_type_rows)
 
     # ── Warn about unmatched blocks ──────────────────────────────────────
     if unmatched_starts or unmatched_ends:
-        log.info("\n--- Unmatched block markers (possible bugs) ---")
+        unmatched_rows: list[list[Any]] = []
         for u in unmatched_starts:
-            log.warning("  UNMATCHED START: %s L%d [%s]", u["file"], u["line"], u["fork"])
+            unmatched_rows.append(["start", u["file"], u["line"], u["fork"]])
         for u in unmatched_ends:
-            log.warning("  UNMATCHED END:   %s L%d [%s]", u["file"], u["line"], u["fork"])
+            unmatched_rows.append(["end", u["file"], u["line"], u["fork"]])
+        _log_table(
+            "Unmatched block markers:",
+            ["Kind", "File", "Line", "Fork"],
+            unmatched_rows,
+        )
+
+    # ── Feature 8: Orphan detection ──────────────────────────────────────
+    if detect_orphans:
+        log.info("\n--- Orphan Detection ---")
+        # Collect all fork marker stems found in base-game files.
+        base_markers_by_fork: dict[str, set[str]] = defaultdict(set)
+        for filepath, patches in report.items():
+            # Only consider markers in base-game files (no /_ForkName/).
+            if "/_" in filepath:
+                continue
+            for p in patches:
+                base_markers_by_fork[p["fork"]].add(filepath)
+
+        # Now scan fork-scoped files for references to base files that have markers.
+        orphan_rows: list[list[Any]] = []
+        for fork_key, base_files_with_markers in base_markers_by_fork.items():
+            fork_info = forks.get(fork_key, {})
+            fork_dirs: list[str] = []
+            if fork_info.get("directory"):
+                fork_dirs.append(str(fork_info["directory"]))
+            fork_dirs.extend(str(x) for x in fork_info.get("alt_directories", []) or [])
+            if not fork_dirs:
+                continue
+
+            # Collect class/type names from base-game marker files.
+            base_symbols: set[str] = set()
+            for base_file_rel in base_files_with_markers:
+                base_path = workspace / base_file_rel
+                if not base_path.is_file():
+                    continue
+                try:
+                    text = base_path.read_text(encoding="utf-8", errors="replace")
+                except OSError:
+                    continue
+                for m in _CLASS_DEF_RE.finditer(text):
+                    base_symbols.add(m.group(1))
+
+            if not base_symbols:
+                continue
+
+            # Scan fork-scoped files for references to these symbols.
+            for fork_dir in fork_dirs:
+                for scan_base in ("Content.Client", "Content.Server", "Content.Shared"):
+                    fork_path = workspace / scan_base / fork_dir
+                    if not fork_path.is_dir():
+                        continue
+                    for cs_file in fork_path.rglob("*.cs"):
+                        try:
+                            text = cs_file.read_text(encoding="utf-8", errors="replace")
+                        except OSError:
+                            continue
+                        for sym in base_symbols:
+                            if sym in text:
+                                orphan_rows.append([
+                                    cs_file.relative_to(workspace).as_posix(),
+                                    fork_key,
+                                    sym,
+                                    "references base-game patched class",
+                                ])
+                                break
+
+        if orphan_rows:
+            _log_table(
+                "Potential orphan dependencies (fork files → base patches):",
+                ["Fork File", "Fork", "Referenced Symbol", "Note"],
+                orphan_rows,
+            )
+        else:
+            log.info("No orphan dependencies detected.")
+
+    return 0
+
+
+# ── Feature 1: diff command ─────────────────────────────────────────────────
+
+
+def cmd_diff(cfg: dict, forks_filter: list[str] | None, path_filter: list[str] | None,
+             stat_only: bool = False) -> int:
+    """Show unified diffs between local ported files and their upstream versions."""
+    workspace = cfg["_workspace"]
+    forks = cfg.get("forks", {})
+    upstreams = cfg.get("upstreams", {})
+    cache_dir = cfg["_cache_dir"]
+
+    selected_forks, unknown = _resolve_fork_names(forks, forks_filter)
+    if unknown:
+        log.warning("Unknown fork selector(s): %s", ", ".join(unknown))
+    if not selected_forks:
+        log.info("No matching forks selected.")
+        return 1
+
+    changed = 0
+    identical = 0
+    missing_src = 0
+    diff_rows: list[list[Any]] = []
+
+    for fk in selected_forks:
+        info = forks.get(fk, {})
+        local_aliases: list[str] = []
+        if info.get("directory"):
+            local_aliases.append(str(info["directory"]))
+        local_aliases.extend(str(x) for x in info.get("alt_directories", []) or [])
+        local_aliases = list(dict.fromkeys(local_aliases))
+        if not local_aliases:
+            continue
+
+        up_name = info.get("upstream") or _guess_upstream_for_fork(fk, info, upstreams)
+        if not up_name or up_name not in upstreams:
+            continue
+
+        try:
+            up_root = _ensure_upstream_full(up_name, upstreams[up_name], cache_dir)
+        except Exception:
+            continue
+
+        # Scan all file types.
+        roots: list[tuple[Path, Path]] = []
+        for alias in local_aliases:
+            roots.append((workspace / "Resources" / "Prototypes" / alias, Path("Resources") / "Prototypes"))
+            roots.append((workspace / "Resources" / "Textures" / alias, Path("Resources") / "Textures"))
+        locale_root = workspace / "Resources" / "Locale"
+        if locale_root.is_dir():
+            for lang_dir in locale_root.iterdir():
+                if lang_dir.is_dir():
+                    for alias in local_aliases:
+                        roots.append((lang_dir / alias, Path("Resources") / "Locale" / lang_dir.name))
+        for p in sorted(workspace.iterdir()):
+            if p.is_dir() and p.name.startswith("Content."):
+                for alias in local_aliases:
+                    roots.append((p / alias, Path(p.name)))
+
+        for local_root, up_base in roots:
+            if not local_root.is_dir():
+                continue
+            for local_file in sorted(local_root.rglob("*")):
+                if not local_file.is_file():
+                    continue
+                rel_tail = local_file.relative_to(local_root)
+                # Apply path filter.
+                if path_filter:
+                    rel_str = local_file.relative_to(workspace).as_posix()
+                    if not any(fnmatch.fnmatch(rel_str, pat) or fnmatch.fnmatch(rel_tail.as_posix(), pat)
+                               for pat in path_filter):
+                        continue
+
+                candidates = _build_update_ported_candidates(up_root, up_base, rel_tail, local_aliases)
+                src = _first_existing_path(candidates)
+                if src is None:
+                    missing_src += 1
+                    continue
+
+                try:
+                    local_text = local_file.read_text(encoding="utf-8", errors="replace")
+                    upstream_text = src.read_text(encoding="utf-8", errors="replace")
+                except OSError:
+                    continue
+
+                if local_text == upstream_text:
+                    identical += 1
+                    continue
+
+                changed += 1
+                rel_display = local_file.relative_to(workspace).as_posix()
+                diff_rows.append([rel_display, fk, up_name, "changed"])
+
+                if not stat_only:
+                    # Print unified diff.
+                    diff_lines = difflib.unified_diff(
+                        upstream_text.splitlines(keepends=True),
+                        local_text.splitlines(keepends=True),
+                        fromfile=f"upstream/{up_name}/{rel_tail}",
+                        tofile=rel_display,
+                    )
+                    sys.stdout.writelines(diff_lines)
+                    sys.stdout.write("\n")
+
+    _log_table(
+        "Diff summary:",
+        ["Metric", "Value"],
+        [
+            ["Changed files", changed],
+            ["Identical files", identical],
+            ["No upstream match", missing_src],
+        ],
+    )
+    if stat_only and diff_rows:
+        _log_table("Changed files:", ["File", "Fork", "Upstream", "Status"], diff_rows)
+    return 0
+
+
+# ── Feature 4: where-from command ───────────────────────────────────────────
+
+
+def cmd_where_from(cfg: dict, targets: list[str]) -> int:
+    """Show provenance of local files or entity IDs."""
+    workspace = cfg["_workspace"]
+    proto_root = cfg["_proto_root"]
+    forks = cfg.get("forks", {})
+    upstreams = cfg.get("upstreams", {})
+    cache_dir = cfg["_cache_dir"]
+    prov = _load_provenance(cfg)
+    files_prov = prov.get("files", {})
+
+    rows: list[list[Any]] = []
+    for target in targets:
+        # Check if it's a file path.
+        target_path = workspace / target
+        if target_path.is_file():
+            rel = target_path.relative_to(workspace).as_posix()
+            fk = _classify_fork(target_path, forks) or "base"
+            entry = files_prov.get(rel, {})
+            rows.append([
+                rel,
+                fk,
+                entry.get("upstream", "unknown"),
+                entry.get("synced_at", "unknown"),
+                entry.get("upstream_sha", "unknown")[:12] if entry.get("upstream_sha") else "unknown",
+            ])
+            continue
+
+        # Check if it's an entity ID.
+        local_index = _index_prototypes(proto_root)
+        if target in local_index:
+            fpath = local_index[target]
+            rel = fpath.relative_to(workspace).as_posix()
+            fk = _classify_fork(fpath, forks) or "base"
+            entry = files_prov.get(rel, {})
+
+            # Also search upstreams.
+            found_in: list[str] = []
+            for up_name, up_info in upstreams.items():
+                try:
+                    up_path = _resolve_upstream_path(up_name, up_info, cache_dir)
+                    up_proto = up_path / "Resources" / "Prototypes"
+                    if up_proto.is_dir():
+                        up_idx = _index_prototypes(up_proto)
+                        if target in up_idx:
+                            found_in.append(up_name)
+                except Exception:
+                    continue
+
+            rows.append([
+                f"{target} → {rel}",
+                fk,
+                entry.get("upstream", ", ".join(found_in) if found_in else "unknown"),
+                entry.get("synced_at", "unknown"),
+                entry.get("upstream_sha", "unknown")[:12] if entry.get("upstream_sha") else "unknown",
+            ])
+            continue
+
+        rows.append([target, "?", "not found", "-", "-"])
+
+    _log_table(
+        "Provenance:",
+        ["Target", "Fork", "Upstream", "Last Synced", "Upstream SHA"],
+        rows,
+    )
+    return 0
+
+
+# ── Feature 5: log command (stale/upstream changelog) ───────────────────────
+
+
+def cmd_log(cfg: dict, forks_filter: list[str] | None, limit: int = 20) -> int:
+    """Show upstream commits touching ported files since last sync."""
+    workspace = cfg["_workspace"]
+    forks = cfg.get("forks", {})
+    upstreams = cfg.get("upstreams", {})
+    cache_dir = cfg["_cache_dir"]
+    prov = _load_provenance(cfg)
+    files_prov = prov.get("files", {})
+
+    selected_forks, unknown = _resolve_fork_names(forks, forks_filter)
+    if unknown:
+        log.warning("Unknown fork selector(s): %s", ", ".join(unknown))
+
+    # Group files by upstream with their last-synced sha.
+    upstream_files: dict[str, dict[str, str | None]] = defaultdict(dict)
+    for rel, entry in files_prov.items():
+        up = entry.get("upstream")
+        sha = entry.get("upstream_sha")
+        if up:
+            upstream_files[up][rel] = sha
+
+    if not upstream_files:
+        log.info("No provenance data available. Run 'pull' or 'update-ported' to populate.")
+        return 0
+
+    total_commits = 0
+    for up_name, file_shas in upstream_files.items():
+        if up_name not in upstreams:
+            continue
+
+        # Find oldest sha among synced files.
+        shas = [s for s in file_shas.values() if s]
+        if not shas:
+            log.info("Upstream '%s': no SHA recorded, cannot determine changes.", up_name)
+            continue
+
+        try:
+            up_path = _ensure_upstream_full_history(up_name, upstreams[up_name], cache_dir)
+        except Exception as e:
+            log.warning("Cannot access upstream '%s': %s", up_name, e)
+            continue
+
+        # Use the oldest SHA as the since-point.
+        since_sha = shas[0]
+
+        result = subprocess.run(
+            ["git", "log", "--oneline", f"--max-count={limit}", f"{since_sha}..HEAD"],
+            cwd=up_path, capture_output=True, text=True, check=False,
+        )
+        if result.returncode != 0:
+            log.warning("Could not get log for upstream '%s' since %s", up_name, since_sha[:12])
+            continue
+
+        commits = result.stdout.strip().splitlines()
+        if not commits:
+            log.info("Upstream '%s': up-to-date (no new commits since %s).", up_name, since_sha[:12])
+            continue
+
+        total_commits += len(commits)
+        log.info("Upstream '%s': %d new commit(s) since %s:", up_name, len(commits), since_sha[:12])
+        for line in commits:
+            log.info("  %s", line)
+
+    if total_commits == 0:
+        log.info("All tracked upstreams appear up-to-date.")
+    else:
+        log.info("Total: %d new upstream commit(s).", total_commits)
+    return 0
+
+
+# ── Feature 3: pull-path command ────────────────────────────────────────────
+
+
+def cmd_pull_path(cfg: dict, paths: list[str], from_upstream: str | None,
+                  to_fork: str | None, dry_run: bool) -> int:
+    """Pull arbitrary files/directories by path from an upstream."""
+    workspace = cfg["_workspace"]
+    cache_dir = cfg["_cache_dir"]
+    upstreams = cfg.get("upstreams", {})
+    forks = cfg.get("forks", {})
+    source_order = cfg.get("resolve_source_order", list(upstreams.keys()))
+    search_order = [from_upstream] if from_upstream else source_order
+
+    # Determine target fork dir.
+    fork_dir: str | None = None
+    if to_fork:
+        fork_info = forks.get(to_fork, {})
+        fork_dir = fork_info.get("directory") if "directory" in fork_info else f"_{to_fork}"
+
+    copied = 0
+    touched: set[Path] = set()
+    source_upstream_name: str | None = None
+
+    for rel_path_str in paths:
+        rel_path = Path(rel_path_str)
+        found = False
+
+        for up_name in search_order:
+            info = upstreams.get(up_name)
+            if not info:
+                continue
+            try:
+                up_path = _resolve_upstream_path(up_name, info, cache_dir)
+            except Exception:
+                continue
+
+            src = up_path / rel_path
+            if not src.exists():
+                continue
+
+            source_upstream_name = up_name
+            # Auto-detect fork dir from upstream if not specified.
+            if not fork_dir and not to_fork:
+                parts = rel_path.parts
+                for i, part in enumerate(parts):
+                    if part.startswith("_"):
+                        fork_dir = part
+                        break
+
+            if src.is_file():
+                # Determine destination.
+                if fork_dir:
+                    parts = list(rel_path.parts)
+                    # Strip upstream fork dir, insert ours.
+                    stripped = [p for p in parts if not p.startswith("_")]
+                    # Insert fork_dir after the first directory (e.g., Content.Shared/_Omu/...)
+                    if stripped:
+                        dest = workspace / Path(stripped[0]) / fork_dir / Path(*stripped[1:])
+                    else:
+                        dest = workspace / fork_dir / rel_path
+                else:
+                    dest = workspace / rel_path
+
+                if dest.exists():
+                    log.info("  Skipping (exists): %s", dest.relative_to(workspace))
+                else:
+                    if dry_run:
+                        log.info("  Would copy: %s ← %s/%s", dest.relative_to(workspace), up_name, rel_path)
+                    else:
+                        dest.parent.mkdir(parents=True, exist_ok=True)
+                        text = src.read_text(encoding="utf-8", errors="replace")
+                        if src.suffix == ".cs":
+                            text = _rewrite_namespace_for_destination(src, up_path, dest, workspace, text)
+                        dest.write_text(text, encoding="utf-8")
+                        touched.add(dest)
+                    copied += 1
+            elif src.is_dir():
+                for src_file in sorted(src.rglob("*")):
+                    if not src_file.is_file():
+                        continue
+                    file_rel = src_file.relative_to(up_path)
+                    if fork_dir:
+                        parts = list(file_rel.parts)
+                        stripped = [p for p in parts if not p.startswith("_")]
+                        if stripped:
+                            dest = workspace / Path(stripped[0]) / fork_dir / Path(*stripped[1:])
+                        else:
+                            dest = workspace / fork_dir / file_rel
+                    else:
+                        dest = workspace / file_rel
+
+                    if dest.exists():
+                        continue
+                    if dry_run:
+                        log.info("  Would copy: %s ← %s/%s", dest.relative_to(workspace), up_name, file_rel)
+                    else:
+                        dest.parent.mkdir(parents=True, exist_ok=True)
+                        shutil.copy2(src_file, dest)
+                        touched.add(dest)
+                    copied += 1
+
+            found = True
+            log.info("Found '%s' in upstream '%s'.", rel_path_str, up_name)
+            break
+
+        if not found:
+            log.warning("'%s' not found in any upstream.", rel_path_str)
+
+    action = "Would copy" if dry_run else "Copied"
+    log.info("%s %d file(s).", action, copied)
+
+    if not dry_run and touched:
+        _record_provenance(cfg, "pull-path", touched, source_upstream_name)
+        _commit_touched_paths(cfg, "pull-path", touched)
     return 0
 
 
@@ -1964,9 +2943,9 @@ def cmd_clean(cfg: dict) -> int:
     cache_dir = cfg["_cache_dir"]
     if cache_dir.is_dir():
         shutil.rmtree(cache_dir)
-        log.info("Removed cache directory: %s", cache_dir)
+        log.info("Removed cache: %s", cache_dir)
     else:
-        log.info("Cache directory does not exist: %s", cache_dir)
+        log.info("No cache directory to remove.")
     return 0
 
 
@@ -2009,7 +2988,8 @@ def cmd_status(cfg: dict) -> int:
             except OSError:
                 continue
             for m in proto_ref_re.finditer(text):
-                if m.group(1).strip("'\"") not in local_ids:
+                eid = m.group(1).strip("'\"")
+                if eid and eid not in local_ids:
                     missing_map_refs += 1
 
     # Count inline patch markers (quick scan of base-game C# files).
@@ -2033,21 +3013,21 @@ def cmd_status(cfg: dict) -> int:
                     patch_counts[fk] += 1
 
     log.info("=== OmuStation Fork Status ===")
-    log.info("")
-    log.info("Entity prototypes by fork:")
-    for fk, count in sorted(fork_counts.items(), key=lambda x: -x[1]):
-        log.info("  %-20s %5d entities", fk, count)
-    log.info("  %-20s %5d total", "TOTAL", sum(fork_counts.values()))
-    log.info("")
-    log.info("Duplicate IDs across forks:  %d", dupes)
-    log.info("Missing map prototype refs:  %d", missing_map_refs)
+    fork_rows = [[fk, count] for fk, count in sorted(fork_counts.items(), key=lambda x: -x[1])]
+    fork_rows.append(["TOTAL", sum(fork_counts.values())])
+    _log_table("Entity prototypes by fork:", ["Fork", "Entities"], fork_rows)
+    _log_table(
+        "Health summary:",
+        ["Metric", "Value"],
+        [["Duplicate IDs across forks", dupes], ["Missing map prototype refs", missing_map_refs]],
+    )
     if patch_counts:
         total_patches = sum(patch_counts.values())
-        log.info("Inline patch markers:        %d", total_patches)
-        for fk, count in sorted(patch_counts.items(), key=lambda x: -x[1]):
-            log.info("  %-20s %5d markers", fk, count)
+        patch_rows = [["TOTAL", total_patches]]
+        patch_rows.extend([[fk, count] for fk, count in sorted(patch_counts.items(), key=lambda x: -x[1])])
+        _log_table("Inline patch markers:", ["Fork", "Markers"], patch_rows)
     else:
-        log.info("Inline patch markers:        (no marker_names configured)")
+        _log_table("Inline patch markers:", ["Fork", "Markers"], [["-", "no marker_names configured"]])
     return 0
 
 
@@ -2072,9 +3052,13 @@ def main(argv: list[str] | None = None) -> int:
 
     dedup_p = sub.add_parser("dedup", help="Remove duplicate prototypes across forks.")
     dedup_p.add_argument(*_dry["args"], **_dry["kwargs"])
+    dedup_p.add_argument("--interactive", action="store_true",
+                         help="Prompt before each file modification.")
 
     resolve_p = sub.add_parser("resolve", help="Pull missing prototypes from upstreams.")
     resolve_p.add_argument(*_dry["args"], **_dry["kwargs"])
+    resolve_p.add_argument("--interactive", action="store_true",
+                           help="Prompt before copying each file.")
 
     update_p = sub.add_parser("update", help="Fetch/clone upstream repos.")
     update_p.add_argument("names", nargs="*",
@@ -2090,11 +3074,25 @@ def main(argv: list[str] | None = None) -> int:
         help="Optional fork selector(s): fork key, directory, or alt directory.",
     )
     update_ported_p.add_argument(*_dry["args"], **_dry["kwargs"])
+    update_ported_p.add_argument(
+        "--path", dest="path_filter", nargs="+",
+        help="Only update files matching these path patterns (fnmatch globs).",
+    )
+    update_ported_p.add_argument(
+        "--strategy", choices=["overwrite", "diff", "ours", "theirs"],
+        default="overwrite",
+        help="Merge strategy: overwrite (default), diff (show only), ours (keep local), theirs (take upstream).",
+    )
+    update_ported_p.add_argument("--interactive", action="store_true",
+                                  help="Prompt before each file update.")
 
     cherry_p = sub.add_parser("cherry-pick", help="Apply specific upstream commits to this repository.")
     cherry_p.add_argument("commits", nargs="+", help="Upstream commit SHA(s) to apply.")
     cherry_p.add_argument("--from", dest="from_upstream", required=True,
                           help="Configured upstream name to cherry-pick from.")
+    cherry_p.add_argument("--strategy", choices=["3way", "theirs", "ours"],
+                          default="3way",
+                          help="Git apply strategy: 3way (default), theirs, ours.")
     cherry_p.add_argument(*_dry["args"], **_dry["kwargs"])
 
     pull_p = sub.add_parser("pull", help="Pull a prototype and its dependencies from upstreams.")
@@ -2109,6 +3107,10 @@ def main(argv: list[str] | None = None) -> int:
                         help="Skip FTL locale resolution.")
     pull_p.add_argument("--no-test", action="store_true",
                         help="Skip test file resolution.")
+    pull_p.add_argument("--interactive", action="store_true",
+                        help="Prompt before copying each file.")
+    pull_p.add_argument("--include-non-entity", action="store_true",
+                        help="Also pull non-entity prototypes (recipes, reactions, etc.).")
     pull_p.add_argument(*_dry["args"], **_dry["kwargs"])
 
     audit_p = sub.add_parser("audit-patches", help="Report inline fork-edit markers in source files.")
@@ -2123,14 +3125,52 @@ def main(argv: list[str] | None = None) -> int:
             "Repeatable and accepts comma-separated values."
         ),
     )
+    audit_p.add_argument("--detect-orphans", action="store_true",
+                         help="Also detect fork-scoped files that reference patched base-game classes.")
+
+    # -- New commands --
+    diff_p = sub.add_parser("diff", help="Show unified diffs between local ported files and upstream.")
+    diff_p.add_argument("forks", nargs="*",
+                        help="Optional fork selector(s) to limit scope.")
+    diff_p.add_argument("--path", dest="path_filter", nargs="+",
+                        help="Only diff files matching these path patterns (fnmatch globs).")
+    diff_p.add_argument("--stat", action="store_true",
+                        help="Show diffstat summary instead of full diffs.")
+
+    where_from_p = sub.add_parser("where-from", help="Show provenance for files or entity IDs.")
+    where_from_p.add_argument("targets", nargs="+",
+                              help="File path(s) or entity prototype ID(s) to look up.")
+
+    log_p = sub.add_parser("log", help="Show upstream commit changelog since last sync.")
+    log_p.add_argument("forks", nargs="*",
+                       help="Optional fork selector(s) to limit scope.")
+    log_p.add_argument("-n", "--limit", type=int, default=20,
+                       help="Max commits to show per upstream (default: 20).")
+
+    pull_path_p = sub.add_parser("pull-path", help="Pull arbitrary files/directories by path from upstreams.")
+    pull_path_p.add_argument("paths", nargs="+",
+                             help="Upstream-relative file or directory path(s) to pull.")
+    pull_path_p.add_argument("--from", dest="from_upstream",
+                             help="Upstream to pull from (default: search all).")
+    pull_path_p.add_argument("--to", dest="to_fork",
+                             help="Target fork key for destination directory.")
+    pull_path_p.add_argument(*_dry["args"], **_dry["kwargs"])
     sub.add_parser("status", help="Fork health dashboard.")
     sub.add_parser("clean", help="Remove .fork_porter_cache/ directory.")
 
     args = parser.parse_args(argv)
 
+    class _Formatter(logging.Formatter):
+        def format(self, record: logging.LogRecord) -> str:
+            if record.levelno <= logging.INFO:
+                return record.getMessage()
+            return f"{record.levelname:<7s} {record.getMessage()}"
+
+    handler = logging.StreamHandler()
+    handler.setFormatter(_Formatter())
     logging.basicConfig(
         level=logging.DEBUG if args.verbose else logging.INFO,
-        format="%(levelname)-7s %(message)s",
+        handlers=[handler],
     )
 
     if not args.command:
@@ -2152,18 +3192,35 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "update":
         status = cmd_update(cfg, args.names)
     elif args.command == "update-ported":
-        status = cmd_update_ported(cfg, args.forks, args.dry_run)
+        status = cmd_update_ported(cfg, args.forks, args.dry_run,
+                                   path_filter=args.path_filter,
+                                   strategy=args.strategy,
+                                   interactive=args.interactive)
     elif args.command == "cherry-pick":
-        status = cmd_cherry_pick(cfg, args.from_upstream, args.commits, args.dry_run)
+        status = cmd_cherry_pick(cfg, args.from_upstream, args.commits,
+                                 args.dry_run, strategy=args.strategy)
     elif args.command == "pull":
         status = cmd_pull(cfg, args.entities, args.from_upstream, args.to_fork,
-                          args.dry_run, args.no_code, args.no_locale, args.no_test)
+                          args.dry_run, args.no_code, args.no_locale, args.no_test,
+                          interactive=args.interactive,
+                          include_non_entity=args.include_non_entity)
     elif args.command == "dedup":
-        status = cmd_dedup(cfg, args.dry_run)
+        status = cmd_dedup(cfg, args.dry_run, interactive=args.interactive)
     elif args.command == "resolve":
-        status = cmd_resolve(cfg, args.dry_run)
+        status = cmd_resolve(cfg, args.dry_run, interactive=args.interactive)
     elif args.command == "audit-patches":
-        status = cmd_audit_patches(cfg, args.include_forks, args.namespaces)
+        status = cmd_audit_patches(cfg, args.include_forks, args.namespaces,
+                                   detect_orphans=args.detect_orphans)
+    elif args.command == "diff":
+        status = cmd_diff(cfg, args.forks or None, args.path_filter,
+                          stat_only=args.stat)
+    elif args.command == "where-from":
+        status = cmd_where_from(cfg, args.targets)
+    elif args.command == "log":
+        status = cmd_log(cfg, args.forks or None, limit=args.limit)
+    elif args.command == "pull-path":
+        status = cmd_pull_path(cfg, args.paths, args.from_upstream,
+                               args.to_fork, args.dry_run)
     elif args.command == "status":
         status = cmd_status(cfg)
     elif args.command == "clean":
