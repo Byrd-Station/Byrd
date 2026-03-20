@@ -217,6 +217,26 @@ def _ensure_upstream(
     return repo_dir
 
 
+def _expand_sparse_checkout(repo_dir: Path, directory: str) -> None:
+    """Add *directory* to a repo's sparse-checkout if sparse checkout is active."""
+    try:
+        result = subprocess.run(
+            ["git", "config", "core.sparseCheckout"],
+            cwd=repo_dir, capture_output=True, text=True,
+        )
+        if result.returncode != 0 or result.stdout.strip() != "true":
+            return  # Not sparse — nothing to do.
+        # Add the directory and re-checkout.
+        subprocess.run(
+            ["git", "sparse-checkout", "add", directory],
+            cwd=repo_dir, check=True, capture_output=True,
+        )
+        log.info("  Expanded sparse checkout to include '%s'", directory)
+    except subprocess.CalledProcessError as e:
+        log.warning("  Failed to expand sparse checkout for '%s': %s",
+                     directory, e.stderr.decode(errors="replace").strip() if e.stderr else e)
+
+
 def _resolve_upstream_path(
     name: str,
     info: dict,
@@ -337,6 +357,50 @@ def _index_prototypes(root: Path) -> dict[str, Path]:
             if eid not in index:
                 index[eid] = yml
     return index
+
+
+_ANY_TYPE_RE = re.compile(r"^[-\s]*type:\s+\w+", re.MULTILINE)
+
+
+def _iter_prototype_ids(text: str) -> list[tuple[str, str]]:
+    """Return (type, id) pairs for ALL prototype blocks in YAML text."""
+    results: list[tuple[str, str]] = []
+    current_type: str | None = None
+    for line in text.split("\n"):
+        if line.startswith("- "):
+            m = re.match(r"^-\s*type:\s+(\w+)", line)
+            current_type = m.group(1) if m else None
+            continue
+        if current_type is None:
+            continue
+        m = re.match(r"^\s+id:\s+(\S+)", line)
+        if m and m.group(1):
+            results.append((current_type, m.group(1)))
+    return results
+
+
+def _index_prototypes_broad(root: Path) -> tuple[dict[str, Path], dict[str, tuple[str, Path]]]:
+    """Build entity index AND full prototype index in one pass.
+
+    Returns (entity_index, full_index) where:
+      entity_index: {id: path} — only ``type: entity`` blocks
+      full_index:   {id: (type, path)} — all prototype types
+    """
+    entity_index: dict[str, Path] = {}
+    full_index: dict[str, tuple[str, Path]] = {}
+    for yml in sorted(root.rglob("*.yml")):
+        try:
+            text = yml.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        if not _ANY_TYPE_RE.search(text):
+            continue
+        for ptype, pid in _iter_prototype_ids(text):
+            if pid not in full_index:
+                full_index[pid] = (ptype, yml)
+            if ptype == "entity" and pid not in entity_index:
+                entity_index[pid] = yml
+    return entity_index, full_index
 
 
 # Matches multi-line YAML list items under a `parent:` key:
@@ -596,7 +660,7 @@ def _commit_touched_paths(cfg: dict, command_name: str, touched: set[Path]) -> N
 
 # Prototype types that are *not* entity but define cross-referenced content.
 _NON_ENTITY_TYPE_RE = re.compile(
-    r"^\s*-?\s*type:\s+(latheRecipe|reaction|technology|constructionGraph|"
+    r"^\s*-?\s*type:\s+(vessel|latheRecipe|reaction|technology|constructionGraph|"
     r"loadout|startingGear|job|gameMap|gamePreset|"
     r"reagent|constructionPrototype|decal|tile)\b",
     re.MULTILINE,
@@ -1362,6 +1426,7 @@ def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
     # Prepare upstreams (full checkout if we need C#/locale).
     log.info("Preparing upstreams...")
     upstream_data: dict[str, tuple[Path, dict[str, Path]]] = {}
+    upstream_broad: dict[str, dict[str, tuple[str, Path]]] = {}
     need_full = not skip_code or not skip_locale
     for name in search_order:
         info = upstreams.get(name)
@@ -1376,7 +1441,9 @@ def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
             up_proto = path / "Resources" / "Prototypes"
             if up_proto.is_dir():
                 log.info("  Indexing '%s'...", name)
-                upstream_data[name] = (path, _index_prototypes(up_proto))
+                eidx, fidx = _index_prototypes_broad(up_proto)
+                upstream_data[name] = (path, eidx)
+                upstream_broad[name] = fidx
         except Exception as e:
             log.warning("  Skipping upstream '%s': %s", name, e)
 
@@ -1387,29 +1454,53 @@ def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
     # Index local prototypes.
     log.info("Indexing local prototypes...")
     local_index = _index_prototypes(proto_root)
+    _, local_broad = _index_prototypes_broad(proto_root)
 
-    # ── Phase 1: Find target entities ─────────────────────────────────────
+    # ── Phase 1: Find target prototypes ───────────────────────────────────
     log.info("=== Pulling %d prototype(s) ===", len(entity_ids))
     source_upstream: str | None = None
     entity_sources: dict[str, tuple[str, Path]] = {}
+    non_entity_sources: dict[str, tuple[str, str, Path]] = {}  # id → (upstream, type, path)
 
     for eid in entity_ids:
+        # Check local entity index first.
         if eid in local_index:
             log.info("  '%s' already exists locally at %s", eid,
                      local_index[eid].relative_to(proto_root))
             continue
+        # Check local broad index (non-entity types).
+        if eid in local_broad:
+            ptype, lpath = local_broad[eid]
+            log.info("  '%s' (type: %s) already exists locally at %s", eid, ptype,
+                     lpath.relative_to(proto_root))
+            continue
+        # Search entity indexes in upstreams.
+        found = False
         for name, (path, index) in upstream_data.items():
             if eid in index:
                 entity_sources[eid] = (name, index[eid])
                 if source_upstream is None:
                     source_upstream = name
                 log.info("  Found '%s' in upstream '%s'", eid, name)
+                found = True
                 break
-        else:
+        if found:
+            continue
+        # Fallback: search broad prototype indexes.
+        for name, fidx in upstream_broad.items():
+            if eid in fidx:
+                ptype, src_file = fidx[eid]
+                non_entity_sources[eid] = (name, ptype, src_file)
+                if source_upstream is None:
+                    source_upstream = name
+                log.info("  Found '%s' (type: %s) in upstream '%s'", eid, ptype, name)
+                found = True
+                break
+        if not found:
             log.warning("  '%s' not found in any upstream.", eid)
 
-    if not entity_sources:
-        log.info("Nothing to pull -- all entities exist locally or weren't found.")
+    if not entity_sources and not non_entity_sources:
+        log.info("Nothing to pull -- all prototypes exist locally or weren't found.")
         return 0
 
     # Determine target fork directory.
@@ -1620,6 +1711,44 @@ def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
 
     # ── Phase 4b: Non-entity prototype resolution (feature 9) ────────────
     non_entity_files: dict[Path, tuple[str, Path]] = {}
+    map_files: dict[Path, tuple[str, Path]] = {}  # dest → (upstream, src)
+
+    # Collect non-entity prototypes that were explicitly requested by name.
+    _MAP_PATH_RE = re.compile(r"^\s+(?:mapPath|shuttlePath):\s+(/\S+)", re.MULTILINE)
+    for pid, (up_name, ptype, src_file) in non_entity_sources.items():
+        up_path = upstream_data[up_name][0]
+        rel = src_file.relative_to(up_path / "Resources" / "Prototypes")
+        parts = rel.parts
+        if parts and parts[0].startswith("_"):
+            rel = Path(*parts[1:]) if len(parts) > 1 else rel
+        dest = (proto_root / fork_dir / rel) if fork_dir else (proto_root / rel)
+        if not dest.exists() and dest not in non_entity_files:
+            non_entity_files[dest] = (up_name, src_file)
+        # Follow mapPath / shuttlePath references.
+        try:
+            text = src_file.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        for m in _MAP_PATH_RE.finditer(text):
+            map_rel = m.group(1).lstrip("/")   # e.g. "Maps/_Mono/Shuttles/archer.yml"
+            map_src = up_path / "Resources" / map_rel
+            if not map_src.exists():
+                # Map dir may not be checked out — expand sparse checkout.
+                _expand_sparse_checkout(up_path, "Resources/" + str(Path(map_rel).parts[0]))
+            if map_src.exists():
+                map_parts = Path(map_rel).parts
+                # Strip fork dirs from map path.
+                stripped = [p for p in map_parts if not p.startswith("_")]
+                if fork_dir and len(stripped) > 1:
+                    map_dest = workspace / "Resources" / stripped[0] / fork_dir / Path(*stripped[1:])
+                else:
+                    map_dest = workspace / "Resources" / map_rel
+                if not map_dest.exists() and map_dest not in map_files:
+                    map_files[map_dest] = (up_name, map_src)
+                    log.info("    Map file: %s ← %s", Path(map_rel), up_name)
+            else:
+                log.warning("    Map file not found in upstream '%s': %s", up_name, map_rel)
+
     if include_non_entity and all_entity_ids:
         log.info("Searching for non-entity prototypes referencing pulled entities...")
         # Build index of non-entity prototypes in upstreams.
@@ -1653,13 +1782,14 @@ def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
                     log.info("    Non-entity proto: %s ← %s", rel, up_name)
 
     # ── Phase 5: Summary and copy ─────────────────────────────────────────
-    total = len(proto_files) + len(tex_dirs) + len(cs_files) + len(test_files) + len(locale_entries) + len(non_entity_files)
+    total = len(proto_files) + len(non_entity_files) + len(map_files) + len(tex_dirs) + len(cs_files) + len(test_files) + len(locale_entries)
     _log_table(
         "Pull summary:",
         ["Category", "Count"],
         [
             ["Prototype files", len(proto_files)],
             ["Non-entity protos", len(non_entity_files)],
+            ["Map files", len(map_files)],
             ["Texture dirs", len(tex_dirs)],
             ["C# source files", len(cs_files)],
             ["Test files", len(test_files)],
@@ -1680,6 +1810,8 @@ def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
         op_rows.append(["proto", dest.relative_to(proto_root), up_name])
     for dest, (up_name, _) in sorted(non_entity_files.items()):
         op_rows.append(["non-entity", dest.relative_to(proto_root), up_name])
+    for dest, (up_name, _) in sorted(map_files.items()):
+        op_rows.append(["map", dest.relative_to(workspace / "Resources"), up_name])
     for dest, (up_name, _) in sorted(tex_dirs.items()):
         op_rows.append(["texture", dest.relative_to(tex_root), up_name])
     for dest, (up_name, _) in sorted(cs_files.items()):
@@ -1705,6 +1837,12 @@ def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
                 filtered_ne[dest] = val
         non_entity_files = filtered_ne
 
+        filtered_map: dict[Path, tuple[str, Path]] = {}
+        for dest, val in sorted(map_files.items()):
+            if _interactive_confirm(f"  Copy map {dest.relative_to(workspace / 'Resources')}?"):
+                filtered_map[dest] = val
+        map_files = filtered_map
+
         filtered_tex: dict[Path, tuple[str, Path]] = {}
         for dest, val in sorted(tex_dirs.items()):
             if _interactive_confirm(f"  Copy texture {dest.relative_to(tex_root)}?"):
@@ -1729,7 +1867,7 @@ def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
                 filtered_locale[dest] = content
         locale_entries = filtered_locale
 
-        total = len(proto_files) + len(non_entity_files) + len(tex_dirs) + len(cs_files) + len(test_files) + len(locale_entries)
+        total = len(proto_files) + len(non_entity_files) + len(map_files) + len(tex_dirs) + len(cs_files) + len(test_files) + len(locale_entries)
 
     for dest, (up_name, src) in sorted(proto_files.items()):
         if not dry_run:
@@ -1801,6 +1939,13 @@ def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
 
     # Copy non-entity prototype files (feature 9).
     for dest, (up_name, src) in sorted(non_entity_files.items()):
+        if not dry_run:
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, dest)
+            touched.add(dest)
+
+    # Copy map files referenced by vessel/gameMap prototypes.
+    for dest, (up_name, src) in sorted(map_files.items()):
         if not dry_run:
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(src, dest)
