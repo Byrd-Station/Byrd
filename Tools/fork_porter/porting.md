@@ -83,12 +83,21 @@ python -m Tools.fork_porter cherry-pick --from goobstation --strategy theirs abc
 
 ### pull
 
-Pull entity prototypes and all their dependencies from upstreams.
+Pull prototypes and all their dependencies from upstreams.
 
 ```
-python -m Tools.fork_porter pull [options] <entity_id> [entity_id ...]
+python -m Tools.fork_porter pull [options] <prototype_id> [prototype_id ...]
 ```
-Resolves the full dependency tree for each entity, including parent prototypes, referenced textures, C# classes, test files, and locale entries. Files are placed under the target fork's `_ForkName/` directory with upstream fork prefixes stripped. C# namespaces are updated automatically.
+Accepts any prototype ID — entity, vessel, gameMap, or other types. Resolves
+the full dependency tree: parent prototypes, referenced textures, C# classes,
+test files, and locale entries. Files are placed under the target fork's
+`_ForkName/` directory with upstream fork prefixes stripped. C# namespaces
+are updated automatically.
+
+For vessel/gameMap prototypes, `pull` also follows `mapPath` and `shuttlePath`
+references to copy the associated map file, then scans the map for `proto:`
+entity references and resolves those entities' full dependency trees
+(prototypes, textures, C#, tests, locale).
 
 **Options:**
 
@@ -110,6 +119,7 @@ python -m Tools.fork_porter pull CoolGun
 python -m Tools.fork_porter pull --from frontier --to nf CoolGun CoolAmmo
 python -m Tools.fork_porter pull --no-test SomeEntity
 python -m Tools.fork_porter pull --dry-run --no-code SomeEntity
+python -m Tools.fork_porter pull --from monolith Archer
 ```
 
 ### dedup

@@ -1531,13 +1531,66 @@ def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
 
     log.info("Target fork directory: %s (fork: %s)", fork_dir or "(root)", to_fork)
 
+    # ── Phase 1b: Collect non-entity protos and map files ──────────────────
+    non_entity_files: dict[Path, tuple[str, Path]] = {}
+    map_files: dict[Path, tuple[str, Path]] = {}  # dest → (upstream, src)
+
+    _MAP_PATH_RE = re.compile(r"^\s+(?:mapPath|shuttlePath):\s+(/\S+)", re.MULTILINE)
+    _PROTO_REF_RE = re.compile(r"proto:\s+(\S+)")
+    map_entity_ids: set[str] = set()
+
+    for pid, (up_name, ptype, src_file) in non_entity_sources.items():
+        up_path = upstream_data[up_name][0]
+        rel = src_file.relative_to(up_path / "Resources" / "Prototypes")
+        parts = rel.parts
+        if parts and parts[0].startswith("_"):
+            rel = Path(*parts[1:]) if len(parts) > 1 else rel
+        dest = (proto_root / fork_dir / rel) if fork_dir else (proto_root / rel)
+        if not dest.exists() and dest not in non_entity_files:
+            non_entity_files[dest] = (up_name, src_file)
+        # Follow mapPath / shuttlePath references.
+        try:
+            text = src_file.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            continue
+        for m in _MAP_PATH_RE.finditer(text):
+            map_rel = m.group(1).lstrip("/")
+            map_src = up_path / "Resources" / map_rel
+            if not map_src.exists():
+                _expand_sparse_checkout(up_path, "Resources/" + str(Path(map_rel).parts[0]))
+            if map_src.exists():
+                map_parts = Path(map_rel).parts
+                stripped = [p for p in map_parts if not p.startswith("_")]
+                if fork_dir and len(stripped) > 1:
+                    map_dest = workspace / "Resources" / stripped[0] / fork_dir / Path(*stripped[1:])
+                else:
+                    map_dest = workspace / "Resources" / map_rel
+                if not map_dest.exists() and map_dest not in map_files:
+                    map_files[map_dest] = (up_name, map_src)
+                    log.info("    Map file: %s ← %s", Path(map_rel), up_name)
+                # Scan map for proto: references to seed entity resolution.
+                try:
+                    map_text = map_src.read_text(encoding="utf-8", errors="replace")
+                except OSError:
+                    map_text = ""
+                for pm in _PROTO_REF_RE.finditer(map_text):
+                    ref_id = pm.group(1).strip("'\"")
+                    if ref_id and ref_id not in local_index:
+                        map_entity_ids.add(ref_id)
+            else:
+                log.warning("    Map file not found in upstream '%s': %s", up_name, map_rel)
+
+    if map_entity_ids:
+        log.info("  %d entity references found on map(s) (excluding local).",
+                 len(map_entity_ids))
+
     # ── Phase 2: Recursively resolve prototype dependencies ───────────────
     proto_files: dict[Path, tuple[str, Path]] = {}   # dest → (upstream, src)
     tex_dirs: dict[Path, tuple[str, Path]] = {}
     component_stems: set[str] = set()
     all_entity_ids: set[str] = set()
 
-    queue = set(entity_sources.keys())
+    queue = set(entity_sources.keys()) | map_entity_ids
     visited: set[str] = set()
 
     for _iteration in range(max_depth):
@@ -1710,45 +1763,6 @@ def cmd_pull(cfg: dict, entity_ids: list[str], from_upstream: str | None,
         log.info("Skipping locale resolution (--no-locale).")
 
     # ── Phase 4b: Non-entity prototype resolution (feature 9) ────────────
-    non_entity_files: dict[Path, tuple[str, Path]] = {}
-    map_files: dict[Path, tuple[str, Path]] = {}  # dest → (upstream, src)
-
-    # Collect non-entity prototypes that were explicitly requested by name.
-    _MAP_PATH_RE = re.compile(r"^\s+(?:mapPath|shuttlePath):\s+(/\S+)", re.MULTILINE)
-    for pid, (up_name, ptype, src_file) in non_entity_sources.items():
-        up_path = upstream_data[up_name][0]
-        rel = src_file.relative_to(up_path / "Resources" / "Prototypes")
-        parts = rel.parts
-        if parts and parts[0].startswith("_"):
-            rel = Path(*parts[1:]) if len(parts) > 1 else rel
-        dest = (proto_root / fork_dir / rel) if fork_dir else (proto_root / rel)
-        if not dest.exists() and dest not in non_entity_files:
-            non_entity_files[dest] = (up_name, src_file)
-        # Follow mapPath / shuttlePath references.
-        try:
-            text = src_file.read_text(encoding="utf-8", errors="replace")
-        except OSError:
-            continue
-        for m in _MAP_PATH_RE.finditer(text):
-            map_rel = m.group(1).lstrip("/")   # e.g. "Maps/_Mono/Shuttles/archer.yml"
-            map_src = up_path / "Resources" / map_rel
-            if not map_src.exists():
-                # Map dir may not be checked out — expand sparse checkout.
-                _expand_sparse_checkout(up_path, "Resources/" + str(Path(map_rel).parts[0]))
-            if map_src.exists():
-                map_parts = Path(map_rel).parts
-                # Strip fork dirs from map path.
-                stripped = [p for p in map_parts if not p.startswith("_")]
-                if fork_dir and len(stripped) > 1:
-                    map_dest = workspace / "Resources" / stripped[0] / fork_dir / Path(*stripped[1:])
-                else:
-                    map_dest = workspace / "Resources" / map_rel
-                if not map_dest.exists() and map_dest not in map_files:
-                    map_files[map_dest] = (up_name, map_src)
-                    log.info("    Map file: %s ← %s", Path(map_rel), up_name)
-            else:
-                log.warning("    Map file not found in upstream '%s': %s", up_name, map_rel)
-
     if include_non_entity and all_entity_ids:
         log.info("Searching for non-entity prototypes referencing pulled entities...")
         # Build index of non-entity prototypes in upstreams.
@@ -3241,7 +3255,7 @@ def main(argv: list[str] | None = None) -> int:
     cherry_p.add_argument(*_dry["args"], **_dry["kwargs"])
 
     pull_p = sub.add_parser("pull", help="Pull a prototype and its dependencies from upstreams.")
-    pull_p.add_argument("entities", nargs="+", help="Entity prototype ID(s) to pull.")
+    pull_p.add_argument("entities", nargs="+", help="Prototype ID(s) to pull (entity, vessel, gameMap, etc.).")
     pull_p.add_argument("--from", dest="from_upstream",
                         help="Upstream to pull from (default: search all).")
     pull_p.add_argument("--to", dest="to_fork",
