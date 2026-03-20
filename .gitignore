@@ -309,3 +309,6 @@ Resources/MapImages
 
 config.json
 .github/workflows/update-prs.yaml
+
+# Fork porter cache
+.fork_porter_cache/

@@ -1,0 +1,436 @@
+# =============================================================================
+# OmuStation Fork Porting Configuration
+# =============================================================================
+# Central configuration for managing upstream fork sources, priority rules,
+# and prototype resolution. Edit this file instead of modifying scripts.
+
+# Where this repo lives (resolved relative to this config file by default)
+workspace: ../..
+
+# External upstream repositories used for dependency resolution.
+# Each upstream needs a `repo` (GitHub URL) and optionally a `branch`.
+# Repos are shallow-cloned into .fork_porter_cache/ on first use and
+# updated automatically on subsequent runs.
+upstreams:
+  # ── Base game ───────────────────────────────────────────────────────────
+  wizden:
+    repo: https://github.com/space-wizards/space-station-14.git
+    branch: master
+    label: Space Station 14 (Wizden)
+
+  # ── Primary upstream ────────────────────────────────────────────────────
+  goobstation:
+    repo: https://github.com/Goob-Station/Goob-Station.git
+    branch: master
+    label: Goob Station
+
+  # ── Major forks ─────────────────────────────────────────────────────────
+  frontier:
+    repo: https://github.com/new-frontiers-14/frontier-station-14.git
+    branch: master
+    label: Frontier Station 14
+
+  monolith:
+    repo: https://github.com/Monolith-Station/Monolith.git
+    branch: main
+    label: Monolith
+
+  deltav:
+    repo: https://github.com/DeltaV-Station/Delta-v.git
+    branch: master
+    label: Delta-V
+
+  einstein:
+    repo: https://github.com/Simple-Station/Einstein-Engines.git
+    branch: master
+    label: Einstein Engines
+
+  rmc14:
+    repo: https://github.com/RMC-14/RMC-14.git
+    branch: master
+    label: RMC-14
+
+  # ── Medium forks ────────────────────────────────────────────────────────
+  harmony:
+    repo: https://github.com/ss14-harmony/ss14-harmony.git
+    branch: master
+    label: Harmony
+
+  impstation:
+    repo: https://github.com/impstation/imp-station-14.git
+    branch: master
+    label: Impstation
+
+  funkystation:
+    repo: https://github.com/funky-station/funky-station.git
+    branch: master
+    label: Funky Station
+
+  starlight:
+    repo: https://github.com/ss14Starlight/space-station-14.git
+    branch: starlight-dev
+    label: Starlight
+
+  floofstation:
+    repo: https://github.com/Floof-Station/Floof-Station.git
+    branch: master
+    label: Floof Station (archived)
+
+  nyanotrasen:
+    repo: https://github.com/Nyanotrasen/Nyanotrasen.git
+    branch: master
+    label: Nyanotrasen (legacy)
+
+  # ── Russian / international forks ───────────────────────────────────────
+  corvax:
+    repo: https://github.com/space-syndicate/space-station-14.git
+    branch: master
+    label: Corvax
+
+  white:
+    repo: https://github.com/WWhiteDreamProject/wwdpublic.git
+    branch: master
+    label: White Dream (WWDP)
+
+  adt:
+    repo: https://github.com/AdventureTimeSS14/space_station_ADT.git
+    branch: master
+    label: Adventure Time (ADT)
+
+  # ── Smaller / niche forks ───────────────────────────────────────────────
+  den:
+    repo: https://github.com/TheDenSS14/TheDen.git
+    branch: master
+    label: The Den
+
+  estacao_pirata:
+    repo: https://github.com/Day-OS/estacao-pirata-14.git
+    branch: pirata
+    label: Estacao Pirata
+
+  cosmatic_drift:
+    repo: https://github.com/cosmatic-drift-14/cosmatic-drift.git
+    branch: master
+    label: Cosmatic Drift
+
+  trauma:
+    repo: https://github.com/Trauma-Station/Trauma-Station.git
+    branch: master
+    label: Trauma Station
+
+  nuclear14:
+    repo: https://github.com/Vault-Overseers/nuclear-14.git
+    branch: master
+    label: Nuclear 14
+
+  gabystation:
+    repo: https://github.com/Gaby-Station/Gaby-Station.git
+    branch: master
+    label: Gaby Station
+
+  corvaxnext:
+    repo: https://github.com/pofitlo-Git/Corvax-Next.git
+    branch: master
+    label: Corvax Next
+
+  crescent:
+    repo: https://github.com/Sector-Crescent/Hullrot.git
+    branch: master
+    label: Crescent (Hullrot)
+
+  # ── Forks with no known public repo or content only ──────────────────────
+  # shitmed        -- medical rework module
+  # lavaland       -- lavaland mining module
+  # corvaxgoob     -- which one is the real one?
+  # devilstation   -- I know it's an impstation fork but I can't find it
+  # simplestation  -- I know it EE related, but I'm tired of tracking down forks.
+  # shitchap       -- I hate this
+  # shitcode       -- I hate this
+  # vg             -- SS13, not pulling anything from here directly (/vg/station)
+
+# ---------------------------------------------------------------------------
+# Fork registry
+# ---------------------------------------------------------------------------
+# Each fork that contributes content to OmuStation is listed here.
+# `priority` controls deduplication: higher number wins when two forks
+# define the same prototype ID.  The special priority 0 means "base game".
+#
+# `marker_names` lists short name-stems used to identify inline fork markers
+# in comments.  The tool auto-builds patterns that match all common formats:
+#   // <Name> edit …    // <Name> - …    // <Name>: …
+#   // begin <Name> …   // end <Name> …  // <Name> start … // <Name> end
+#   #  <Name> …         (YAML/FTL comments)
+# No need to list every variation -- just the canonical names / common aliases.
+
+forks:
+  base:
+    priority: 0
+    directory: null          # base game files live at the prototype root
+    upstream: wizden         # upstream repo that provides base-game content
+
+  # ── Primary upstream ────────────────────────────────────────────────────
+  goobstation:
+    priority: 85
+    directory: _Goobstation
+    marker_names:
+      - Goob
+      - Goobstation
+      - "Goob station"
+      - "Goob Station"
+      - Goob-fix              # hyphenated variant
+      - Gooobstation          # common typo
+
+  omu:
+    priority: 100
+    directory: _Omu
+    marker_names:
+      - Omu
+      - Omustation
+
+  # ── Major integrated forks ──────────────────────────────────────────────
+  shitmed:
+    priority: 80
+    directory: _Shitmed
+    marker_names:
+      - Shitmed
+
+  mono:
+    priority: 70
+    directory: _Mono
+    marker_names:
+      - Mono
+      - Monolith
+
+  nf:
+    priority: 60
+    directory: _NF
+    marker_names:
+      - Frontier
+      - NF
+
+  lavaland:
+    priority: 55
+    directory: _Lavaland
+    marker_names:
+      - Lavaland
+
+  dv:
+    priority: 50
+    directory: _DV
+    marker_names:
+      - DeltaV
+      - Delta-V
+
+  einstein:
+    priority: 50
+    directory: _EinsteinEngines
+    marker_names:
+      - EE
+
+  # ── Medium integration forks ────────────────────────────────────────────
+  harmony:
+    priority: 50
+    directory: _Harmony
+    marker_names:
+      - Harmony
+
+  crescent:
+    priority: 50
+    directory: _Crescent
+
+  estacao_pirata:
+    priority: 50
+    directory: _EstacaoPirata
+    alt_directories:          # non-underscore directory used in Prototypes/Textures
+      - EstacaoPirata
+
+  rmc14:
+    priority: 45
+    directory: _RMC14
+    marker_names:
+      - RMC
+
+  imp:                        #Why!?!?
+    priority: 45
+    directory: _Imp
+
+  impstation:
+    priority: 45
+    directory: _Impstation
+    marker_names:
+      - Impstation
+
+  funkystation:
+    priority: 45
+    directory: _Funkystation
+    marker_names:
+      - Funky
+      - "Funky Station"
+      - Funkystation
+
+  starlight:
+    priority: 40
+    directory: _StarLight
+    marker_names:
+      - Starlight
+    alt_directories:
+      - _Starlight            # lowercase variant in C# and Locale
+
+  floofstation:
+    priority: 40
+    directory: _Floofstation
+    marker_names:
+      - Floof
+      - Floofstation
+
+  # ── Nyanotrasen / DeltaV legacy ─────────────────────────────────────────
+  nyanotrasen:
+    priority: 40
+    directory: null           # uses non-underscore "Nyanotrasen" in Prototypes
+    marker_names:
+      - Nyano
+      - Nyanotrasen
+    alt_directories:
+      - Nyanotrasen
+
+  deltav_legacy:              #inconsistency makes my eyes bleed.
+    priority: 35
+    directory: null           # uses non-underscore "DeltaV" in Prototypes (legacy)
+    alt_directories:
+      - DeltaV
+
+  # ── Smaller forks ─────────────────────────────────────────────
+  shitcode:
+    priority: 40
+    directory: _Shitcode
+
+  corvax:
+    priority: 35
+    directory: _Corvax
+    marker_names:
+      - Corvax
+      - Corvax-Next
+
+  corvaxgoob:
+    priority: 35
+    directory: _CorvaxGoob
+
+  corvaxnext:
+    priority: 30
+    directory: _CorvaxNext
+    alt_directories:
+      - _corvaxnext           # lowercase variant in Locale
+
+  white:
+    priority: 30
+    directory: _White
+    marker_names:
+      - WD
+      - WWDP
+    alt_directories:
+      - _white                # lowercase variant in Locale
+
+  gabystation:
+    priority: 30
+    directory: _Gabystation
+    marker_names:
+      - GabyStation
+
+  devilstation:
+    priority: 30
+    directory: _Devilstation
+
+  den:
+    priority: 25
+    directory: _DEN
+
+  cosmatic_drift:
+    priority: 25
+    directory: _CosmaticDrift
+    marker_names:
+      - CosmaticDrift
+      - "Cosmatic Drift"
+
+  nuclear14:
+    priority: 25
+    directory: _Nuclear14
+
+  simplestation:
+    priority: 25
+    directory: _SimpleStation
+
+  trauma:
+    priority: 25
+    directory: _Trauma
+
+  shitchap:
+    priority: 20
+    directory: null
+    alt_directories:
+      - _Shitchap
+      - _ShitChap
+
+  adt:
+    priority: 20
+    directory: _ADT
+
+  vg:
+    priority: 20
+    directory: _vg
+
+# ---------------------------------------------------------------------------
+# Deduplication settings
+# ---------------------------------------------------------------------------
+dedup:
+  # When two forks define the same entity ID, the fork with the HIGHER
+  # priority wins and the lower-priority copy is removed.
+  # Set to true to also delete files that become empty after dedup.
+  delete_empty_files: true
+
+# ---------------------------------------------------------------------------
+# Map prototype resolution
+# ---------------------------------------------------------------------------
+# Directories (relative to Resources/) that are scanned for `proto:` refs
+# when resolving missing prototypes for shuttle maps.
+map_scan_dirs:
+  - Maps/_Mono
+  - Maps/_NF
+  - Maps/_DV
+  - Maps/_Goobstation
+  - Maps/_Lavaland
+  - Maps/_Omu
+  - Maps/_Shitmed
+
+# Source preference order when pulling missing prototypes.
+# First match wins.
+resolve_source_order:
+  - goobstation
+  - frontier
+  - monolith
+  - deltav
+  - einstein
+  - harmony
+  - impstation
+  - funkystation
+  - starlight
+  - rmc14
+  - corvax
+  - white
+  - den
+  - floofstation
+  - nyanotrasen
+  - adt
+  - estacao_pirata
+  - cosmatic_drift
+  - wizden
+
+# Maximum parent-chain recursion depth (prevents infinite loops).
+max_resolve_depth: 25
+
+# ---------------------------------------------------------------------------
+# History preservation
+# ---------------------------------------------------------------------------
+# When enabled, mutating commands (pull/resolve/update-ported/dedup)
+# will auto-commit touched paths in the local workspace repository.
+history:
+  auto_commit: true
