@@ -71,10 +71,14 @@ public sealed partial class DungeonJob
             {
                 var newStart = remaining.First();
                 frontier.Enqueue(newStart, 0f);
+                costSoFar[newStart]    = 0f;
                 lastDirection[newStart] = Direction.Invalid;
             }
 
-            var node = frontier.Dequeue();
+            frontier.TryDequeue(out var node, out var dequeuedCost);
+            // Skip stale entries: a cheaper path to this node was already processed.
+            if (costSoFar.TryGetValue(node, out var recordedCost) && dequeuedCost > recordedCost)
+                continue;
 
             if (remaining.Remove(node))
             {

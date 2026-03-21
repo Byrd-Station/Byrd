@@ -7,6 +7,6 @@ namespace Content.Shared.Procedural.PostGeneration;
 /// </summary>
 public sealed partial class AutoCablingDunGen : IDunGenLayer
 {
-    [DataField(required: true)]
-    public EntProtoId Entity;
+    [DataField]
+    public EntProtoId Entity = "CableApcExtension";
 }

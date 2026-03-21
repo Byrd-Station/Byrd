@@ -1,0 +1,129 @@
+# Entity table prototypes for procedural ship department loot.
+
+- type: entityTable
+  id: OmuShipDepartmentMixedTable
+  table: !type:GroupSelector
+    children:
+    - id: LootSpawnerIndustrial
+    - id: LootSpawnerIndustrialFluff
+    - id: CrateFilledSpawner
+    - id: LootSpawnerCableCoil
+    - id: LootSpawnerMedicalMinor
+    - id: LootSpawnerSecurityBasic
+    - id: LootSpawnerScienceMinor
+    - id: LootSpawnerMaterials
+
+- type: entityTable
+  id: OmuShipDepartmentCargoTable
+  table: !type:GroupSelector
+    children:
+    - id: CrateMaterialSteel
+    - id: CrateMaterialGlass
+    - id: CrateMaterialPlastic
+    - id: CrateMaterialPlasteel
+    - id: CrateMaterialWood
+    - id: CrateFilledSpawner
+    - id: LootSpawnerMaterials
+    - id: LootSpawnerMaterialsSupplementary
+
+- type: entityTable
+  id: OmuShipDepartmentEngineeringTable
+  table: !type:GroupSelector
+    children:
+    - id: LootSpawnerRandomCrateEngineering
+    - id: LootSpawnerCableCoil
+    - id: LootSpawnerMaterials
+    - id: ToolboxElectricalFilled
+    - id: ToolboxMechanicalFilled
+    - id: CrateElectrical
+
+- type: entityTable
+  id: OmuShipDepartmentSecurityTable
+  table: !type:GroupSelector
+    children:
+    - id: LootSpawnerSecurityBasic
+    - id: LootSpawnerSecurity
+    - id: LootSpawnerArmory
+    - id: LootSpawnerRandomCrateSecurity
+
+- type: entityTable
+  id: OmuShipDepartmentMedicalTable
+  table: !type:GroupSelector
+    children:
+    - id: LootSpawnerMedicalMinor
+    - id: LootSpawnerMedicalClassy
+    - id: CrateMedical
+    - id: CrateMedicalSurgery
+
+- type: entityTable
+  id: OmuShipDepartmentScienceTable
+  table: !type:GroupSelector
+    children:
+    - id: LootSpawnerScienceMinor
+    - id: LootSpawnerScienceMajor
+    - id: CrateScience
+
+- type: entityTable
+  id: OmuShipDepartmentSalvageTable
+  table: !type:GroupSelector
+    children:
+    - id: SalvageMaterialCrateSpawner
+    - id: LootSpawnerMaterialsHighValue
+    - id: LootSpawnerMaterials
+    - id: LootSpawnerMaterialsSurplus
+
+# --- Kitchen / Bathroom tables (tiered by ship size) ---
+
+- type: entityTable
+  id: OmuShipDepartmentGalleyTable
+  table: !type:GroupSelector
+    children:
+    - id: KitchenMicrowave
+    - id: VendingMachineSustenance
+    - id: CrateFoodMRE
+    - id: CrateFoodCooking
+    - id: TableCounterMetal
+    - id: StoolBar
+
+- type: entityTable
+  id: OmuShipDepartmentKitchenTable
+  table: !type:GroupSelector
+    children:
+    - id: KitchenMicrowave
+    - id: KitchenElectricGrill
+    - id: KitchenReagentGrinder
+    - id: SmartFridge
+    - id: VendingMachineChefvend
+    - id: VendingMachineDinnerware
+    - id: VendingMachineCoffee
+    - id: CrateFoodPizza
+    - id: CrateFoodCooking
+    - id: CrateFoodBarSupply
+    - id: TableCounterMetal
+    - id: TableCounterWood
+    - id: StoolBar
+    - id: BoozeDispenserEmpty
+    - id: ShelfKitchen
+
+- type: entityTable
+  id: OmuShipDepartmentHeadTable
+  table: !type:GroupSelector
+    children:
+    - id: ToiletEmpty
+    - id: Sink
+    - id: Mirror
+    - id: WaterCooler
+
+- type: entityTable
+  id: OmuShipDepartmentWashroomTable
+  table: !type:GroupSelector
+    children:
+    - id: ToiletEmpty
+    - id: ToiletDirtyWater
+    - id: Sink
+    - id: SinkWide
+    - id: SinkStemless
+    - id: Mirror
+    - id: CurtainsBlue
+    - id: FloorDrain
+    - id: WaterCooler

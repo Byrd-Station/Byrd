@@ -314,6 +314,28 @@ public sealed partial class DungeonJob : Job<List<Dungeon>>
             case WormCorridorDunGen worm:
                 await PostGen(worm, dungeons[^1], reservedTiles, random);
                 break;
+            // --- Procedural ship layers (Omu) ---
+            case ShipHullDunGen shipHull:
+                dungeons.Add(await GenerateShipHullDunGen(position, shipHull, reservedTiles, _seed, random));
+                break;
+            case MediumShipDunGen mediumShip:
+                dungeons.Add(await GenerateShipHullDunGen(position, mediumShip.ToShipHull(), reservedTiles, _seed, random));
+                break;
+            case SmallShipDunGen smallShip:
+                dungeons.Add(await GenerateShipHullDunGen(position, smallShip.ToShipHull(), reservedTiles, _seed, random));
+                break;
+            case DepartmentAnchorsDunGen deptAnchors:
+                await PostGen(deptAnchors, dungeons[^1], reservedTiles, random);
+                break;
+            case ShipInteriorDunGen shipInterior:
+                await PostGen(shipInterior, dungeons[^1], reservedTiles, random);
+                break;
+            case ShipSystemsDunGen shipSystems:
+                await PostGen(shipSystems, dungeons[^1], reservedTiles, random);
+                break;
+            case ScrapShipDunGen scrapShip:
+                await PostGen(scrapShip, random);
+                break;
             default:
                 throw new NotImplementedException();
         }

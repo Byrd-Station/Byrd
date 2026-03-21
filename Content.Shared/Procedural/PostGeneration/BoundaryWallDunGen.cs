@@ -20,6 +20,14 @@ public sealed partial class BoundaryWallDunGen : IDunGenLayer
     [DataField(required: true)]
     public EntProtoId Wall;
 
+    /// <summary>
+    /// Optional wall entity used for the bow (front/north) hull section.
+    /// When set, exterior tiles adjacent to the northernmost interior tiles use this
+    /// instead of <see cref="Wall"/>.
+    /// </summary>
+    [DataField]
+    public EntProtoId? BowWall;
+
     [DataField]
     public EntProtoId? CornerWall;
 

@@ -1,0 +1,700 @@
+# Procedural ship generation configs (compact format).
+# Uses type: shipConfig with flat fields + inheritance.
+# Defaults: Ellipse profile, FloorSteel, Plating, WallShuttle, ShuttleWindow bow,
+#   bowTaper 0.45, sternTaper 0.2, noise 1.0, 4 thrusters/vents/scrubbers.
+
+# ============================================================================
+# ABSTRACT BASES
+# ============================================================================
+
+- type: shipConfig
+  abstract: true
+  id: BaseSmallShip
+  halfLength: 6
+  halfWidth: 3
+
+- type: shipConfig
+  abstract: true
+  id: BaseMediumShip
+  generator: AmeController
+  generatorShielding: AmeShielding
+  generatorFuel: AmeJar
+
+- type: shipConfig
+  abstract: true
+  id: BaseLargeShip
+  halfLength: 18
+  halfWidth: 10
+  generator: AmeController
+  generatorShielding: AmeShielding
+  generatorFuel: AmeJar
+
+# ============================================================================
+# SMALL SHIPS
+# ============================================================================
+
+- type: shipConfig
+  parent: BaseSmallShip
+  id: SmallShipFreighter
+  bowTaper: 0.35
+  sternTaper: 0.15
+  edgeNoiseAmplitude: 0.8
+  thrustersPerDirection: 5
+  ventCount: 5
+  bowAnchors: [ComputerRadar, ComputerPowerMonitoring, ComputerCargoOrders]
+  portBowAnchors: [CrateMaterialSteel, WardrobeCargo]
+  starboardBowAnchors: [CrateMaterialPlasteel, CrateFilledSpawner]
+  midAnchors: [OreProcessor, ClosetTool]
+  portSternAnchors: [SubstationBasic, SolarPanel]
+  starboardSternAnchors: [VendingMachineEngivend]
+  sternAnchors: [Autolathe]
+  tables:
+    - id: OmuShipDepartmentCargoTable
+      min: 10
+      max: 14
+    - id: OmuShipDepartmentEngineeringTable
+      min: 6
+      max: 10
+
+- type: shipConfig
+  parent: BaseSmallShip
+  id: SmallShipSkirmisher
+  bowTaper: 0.55
+  sternTaper: 0.25
+  edgeNoiseAmplitude: 1.1
+  thrustersPerDirection: 5
+  bowAnchors: [LootSpawnerSecurityBasic, BrigTimer]
+  portBowAnchors: [ComputerCriminalRecords]
+  starboardBowAnchors: [VendingMachineSec]
+  midAnchors: [LootSpawnerSecurity, LootSpawnerArmory]
+  portSternAnchors: [ClosetL3Security]
+  starboardSternAnchors: [WardrobeSecurity]
+  sternAnchors: [LootSpawnerRandomCrateSecurity, VendingMachineSustenance]
+  tables:
+    - id: OmuShipDepartmentSecurityTable
+      min: 8
+      max: 12
+
+- type: shipConfig
+  parent: BaseSmallShip
+  id: SmallShipMedical
+  bowTaper: 0.4
+  edgeNoiseAmplitude: 0.8
+  ventCount: 5
+  scrubberCount: 5
+  bowAnchors: [MedicalBed, ComputerCrewMonitoring]
+  portBowAnchors: [DefibrillatorCabinetFilled, SmartFridgeMedical]
+  starboardBowAnchors: [MedicalScanner, ChemMaster]
+  midAnchors: [VendingMachineMedical]
+  portSternAnchors: [WardrobeMedicalDoctor, ClosetRadiationSuit]
+  starboardSternAnchors: [Bed]
+  sternAnchors: [LootSpawnerMedicalClassy, LootSpawnerMedicalMinor]
+  tables:
+    - id: OmuShipDepartmentMedicalTable
+      min: 10
+      max: 14
+
+- type: shipConfig
+  parent: BaseSmallShip
+  id: SmallShipScience
+  edgeNoiseAmplitude: 0.9
+  bowAnchors: [ComputerRadar, ComputerResearchAndDevelopment]
+  portBowAnchors: [MachineArtifactAnalyzer]
+  starboardBowAnchors: [ResearchAndDevelopmentServer]
+  midAnchors: [CircuitImprinter, Autolathe]
+  portSternAnchors: [Protolathe, ClosetL3Science]
+  starboardSternAnchors: [VendingMachineSustenance]
+  sternAnchors: [CrateArtifactContainer, HandheldArtifactContainer]
+  tables:
+    - id: OmuShipDepartmentScienceTable
+      min: 10
+      max: 14
+
+- type: shipConfig
+  parent: BaseSmallShip
+  id: SmallShipSalvage
+  thrustersPerDirection: 5
+  bowAnchors: [SalvageLocator, ComputerSalvageExpedition]
+  portBowAnchors: [CrateSalvageEquipment]
+  starboardBowAnchors: [SalvageMaterialCrateSpawner]
+  midAnchors: [SalvageMagnet, OreProcessor]
+  portSternAnchors: [ClosetTool, WardrobeSalvage]
+  starboardSternAnchors: [VendingMachineSustenance]
+  sternAnchors: [SalvageLootSpawner, CrateMaterialSteel]
+  tables:
+    - id: OmuShipDepartmentSalvageTable
+      min: 10
+      max: 15
+
+# --- Box Freighter: boxy silhouette, lanes interior, dirty steel ---
+- type: shipConfig
+  parent: BaseSmallShip
+  id: SmallShipBoxFreighter
+  halfLength: 7
+  halfWidth: 4
+  profile: Box
+  bowTaper: 0.2
+  sternTaper: 0.1
+  edgeNoiseAmplitude: 0.6
+  floorTile: FloorSteelMono
+  interiorLayout: Lanes
+  minRooms: 2
+  maxRooms: 3
+  thrustersPerDirection: 4
+  ventCount: 5
+  bowAnchors: [ComputerRadar, ComputerPowerMonitoring, ComputerCargoOrders]
+  portBowAnchors: [CrateMaterialSteel, CrateMaterialPlasteel]
+  starboardBowAnchors: [CrateFilledSpawner, Autolathe]
+  midAnchors: [VendingMachineSustenance, OreProcessor]
+  portSternAnchors: [WardrobeCargo, ClosetTool]
+  starboardSternAnchors: [SubstationBasic, SolarPanel]
+  sternAnchors: [ToiletEmpty, Sink, filingCabinetRandom]
+  tables:
+    - id: OmuShipDepartmentCargoTable
+      min: 10
+      max: 16
+
+# --- Diamond Raider: aggressive pointed silhouette ---
+- type: shipConfig
+  parent: BaseSmallShip
+  id: SmallShipDiamondRaider
+  halfLength: 7
+  halfWidth: 3
+  profile: Diamond
+  bowTaper: 0.6
+  sternTaper: 0.3
+  edgeNoiseAmplitude: 1.2
+  floorTile: FloorDark
+  wall: WallPlastitanium
+  thrustersPerDirection: 5
+  scrubberCount: 3
+  bowAnchors: [LootSpawnerSecurityBasic, ComputerRadar]
+  portBowAnchors: [BrigTimer]
+  starboardBowAnchors: [VendingMachineSec]
+  midAnchors: [LootSpawnerArmory, LootSpawnerSecurity]
+  portSternAnchors: [ClosetL3Security]
+  starboardSternAnchors: [WardrobeSecurity]
+  sternAnchors: [LootSpawnerRandomCrateSecurity, Bed]
+  tables:
+    - id: OmuShipDepartmentSecurityTable
+      min: 8
+      max: 12
+
+# --- Asymmetric Scout: lopsided exploration vessel ---
+- type: shipConfig
+  parent: BaseSmallShip
+  id: SmallShipAsymmetricScout
+  profile: Asymmetric
+  asymmetry: 0.35
+  bowTaper: 0.5
+  floorTile: FloorSteelCheckerLight
+  bowAnchors: [ComputerRadar, ComputerResearchAndDevelopment]
+  portBowAnchors: [MachineArtifactAnalyzer]
+  starboardBowAnchors: [Protolathe]
+  midAnchors: [HandheldArtifactContainer]
+  portSternAnchors: [ClosetL3Science]
+  starboardSternAnchors: [VendingMachineSustenance]
+  sternAnchors: [CrateArtifactContainer, ResearchAndDevelopmentServer]
+  tables:
+    - id: OmuShipDepartmentScienceTable
+      min: 8
+      max: 12
+
+# --- Engine-Block Hauler: ellipse with protruding engine section ---
+- type: shipConfig
+  parent: BaseSmallShip
+  id: SmallShipEngineHauler
+  bowTaper: 0.35
+  sternTaper: 0.15
+  edgeNoiseAmplitude: 0.7
+  engineBlockWidth: 4
+  engineBlockLength: 3
+  accentFloorTile: FloorTechMaint
+  interiorLayout: Lanes
+  minRooms: 2
+  maxRooms: 3
+  thrustersPerDirection: 5
+  ventCount: 5
+  bowAnchors: [ComputerRadar, ComputerSalvageExpedition]
+  portBowAnchors: [CrateSalvageEquipment]
+  starboardBowAnchors: [SalvageMaterialCrateSpawner]
+  midAnchors: [SalvageMagnet, OreProcessor]
+  portSternAnchors: [ClosetTool, VendingMachineEngivend]
+  starboardSternAnchors: [WardrobeSalvage]
+  sternAnchors: [SalvageLootSpawner]
+  tables:
+    - id: OmuShipDepartmentSalvageTable
+      min: 10
+      max: 14
+
+# --- Pod Runner: tiny ellipse with side pods, medical emergency responder ---
+- type: shipConfig
+  parent: BaseSmallShip
+  id: SmallShipPodRunner
+  halfLength: 5
+  halfWidth: 2
+  bowTaper: 0.5
+  edgeNoiseAmplitude: 0.8
+  sidePodWidth: 1
+  sidePodLength: 3
+  floorTile: FloorWhite
+  accentFloorTile: FloorSteelCheckerLight
+  ventCount: 5
+  scrubberCount: 5
+  bowAnchors: [MedicalBed, ComputerCrewMonitoring]
+  portBowAnchors: [DefibrillatorCabinetFilled]
+  starboardBowAnchors: [MedicalScanner]
+  midAnchors: [SmartFridgeMedical]
+  portSternAnchors: [ClosetRadiationSuit]
+  starboardSternAnchors: [WardrobeMedicalDoctor]
+  sternAnchors: [LootSpawnerMedicalClassy, VendingMachineMedical]
+  tables:
+    - id: OmuShipDepartmentMedicalTable
+      min: 8
+      max: 12
+
+# --- Small Diner: compact galley + head ---
+- type: shipConfig
+  parent: BaseSmallShip
+  id: SmallShipDiner
+  halfLength: 7
+  halfWidth: 4
+  bowTaper: 0.4
+  edgeNoiseAmplitude: 0.7
+  floorTile: FloorBar
+  bowAnchors: [ComputerRadar, Bookshelf]
+  portBowAnchors: [VendingMachineCoffee, StoolBar]
+  starboardBowAnchors: [VendingMachineSnack, StoolBar]
+  midAnchors: [KitchenMicrowave, VendingMachineSustenance, TableCounterMetal]
+  portSternAnchors: [CurtainsBlue]
+  sternAnchors: [ToiletEmpty, Sink]
+  tables:
+    - id: OmuShipDepartmentGalleyTable
+      min: 8
+      max: 12
+
+# ============================================================================
+# MEDIUM SHIPS
+# ============================================================================
+
+- type: shipConfig
+  parent: BaseMediumShip
+  id: MediumShipFreighter
+  halfLength: 14
+  halfWidth: 8
+  bowTaper: 0.35
+  sternTaper: 0.15
+  edgeNoiseAmplitude: 0.8
+  thrustersPerDirection: 5
+  ventCount: 5
+  bowAnchors: [ComputerRadar, ComputerPowerMonitoring, ComputerCargoOrders]
+  portBowAnchors: [CrateMaterialSteel, CrateMaterialPlasteel]
+  starboardBowAnchors: [CrateFilledSpawner, OreProcessor]
+  midAnchors: [VendingMachineSustenance, WardrobeCargo]
+  portSternAnchors: [ClosetTool, VendingMachineEngivend]
+  starboardSternAnchors: [SubstationBasic, SolarPanel]
+  sternAnchors: [Autolathe, filingCabinetRandom, ClosetEmergency]
+  tables:
+    - id: OmuShipDepartmentCargoTable
+      min: 10
+      max: 14
+    - id: OmuShipDepartmentEngineeringTable
+      min: 6
+      max: 10
+
+- type: shipConfig
+  parent: BaseMediumShip
+  id: MediumShipSkirmisher
+  halfLength: 13
+  halfWidth: 6
+  bowTaper: 0.55
+  sternTaper: 0.25
+  edgeNoiseAmplitude: 1.1
+  thrustersPerDirection: 5
+  scrubberCount: 3
+  bowAnchors: [LootSpawnerSecurityBasic, ComputerCriminalRecords, ComputerRadar]
+  portBowAnchors: [BrigTimer]
+  starboardBowAnchors: [VendingMachineSec]
+  midAnchors: [LootSpawnerSecurity, LootSpawnerArmory]
+  portSternAnchors: [ClosetL3Security, ClosetEmergency]
+  starboardSternAnchors: [WardrobeSecurity, Bed]
+  sternAnchors: [LootSpawnerRandomCrateSecurity, VendingMachineSustenance]
+  tables:
+    - id: OmuShipDepartmentSecurityTable
+      min: 8
+      max: 12
+
+- type: shipConfig
+  parent: BaseMediumShip
+  id: MediumShipMedical
+  halfWidth: 7
+  bowTaper: 0.4
+  edgeNoiseAmplitude: 0.8
+  ventCount: 5
+  scrubberCount: 5
+  bowAnchors: [MedicalBed, ComputerCrewMonitoring, ComputerRadar]
+  portBowAnchors: [DefibrillatorCabinetFilled]
+  starboardBowAnchors: [MedicalScanner]
+  midAnchors: [ChemMaster, SmartFridgeMedical, Bed]
+  portSternAnchors: [VendingMachineMedical, ClosetRadiationSuit]
+  starboardSternAnchors: [WardrobeMedicalDoctor, LootSpawnerMedicalMinor]
+  sternAnchors: [LootSpawnerMedicalClassy, ToiletEmpty, Sink]
+  tables:
+    - id: OmuShipDepartmentMedicalTable
+      min: 10
+      max: 14
+
+- type: shipConfig
+  parent: BaseMediumShip
+  id: MediumShipScience
+  halfWidth: 7
+  edgeNoiseAmplitude: 0.9
+  bowAnchors: [ComputerRadar, ComputerResearchAndDevelopment]
+  portBowAnchors: [MachineArtifactAnalyzer, CircuitImprinter]
+  starboardBowAnchors: [ResearchAndDevelopmentServer, Protolathe]
+  midAnchors: [Autolathe, VendingMachineSustenance]
+  portSternAnchors: [ClosetL3Science]
+  starboardSternAnchors: [WardrobeRobotics, Bookshelf]
+  sternAnchors: [CrateArtifactContainer, HandheldArtifactContainer]
+  tables:
+    - id: OmuShipDepartmentScienceTable
+      min: 10
+      max: 14
+
+- type: shipConfig
+  parent: BaseMediumShip
+  id: MediumShipSalvage
+  halfLength: 13
+  halfWidth: 7
+  thrustersPerDirection: 5
+  bowAnchors: [SalvageLocator, ComputerSalvageExpedition, ComputerRadar]
+  portBowAnchors: [CrateSalvageEquipment, SalvageMaterialCrateSpawner]
+  starboardBowAnchors: [OreProcessor]
+  midAnchors: [SalvageMagnet, VendingMachineSustenance]
+  portSternAnchors: [ClosetTool, ClosetEmergency]
+  starboardSternAnchors: [WardrobeSalvage, CrateMaterialSteel]
+  sternAnchors: [SalvageLootSpawner]
+  tables:
+    - id: OmuShipDepartmentSalvageTable
+      min: 10
+      max: 15
+
+# --- Box Freighter (Medium): large boxy cargo hauler with corridor interior ---
+- type: shipConfig
+  parent: BaseMediumShip
+  id: MediumShipBoxFreighter
+  halfLength: 14
+  halfWidth: 8
+  profile: Box
+  cornerRadius: 3
+  bowTaper: 0.15
+  sternTaper: 0.1
+  edgeNoiseAmplitude: 0.5
+  floorTile: FloorSteelMono
+  interiorLayout: Corridor
+  minRooms: 3
+  maxRooms: 5
+  corridorFloorTile: FloorSteelCheckerDark
+  thrustersPerDirection: 5
+  ventCount: 6
+  scrubberCount: 5
+  bowAnchors: [ComputerRadar, ComputerPowerMonitoring, ComputerCargoOrders]
+  portBowAnchors: [CrateMaterialSteel, CrateMaterialPlasteel]
+  starboardBowAnchors: [CrateMaterialGlass, CrateFilledSpawner]
+  midAnchors: [Autolathe, OreProcessor, VendingMachineEngivend]
+  portSternAnchors: [WardrobeCargo, ClosetTool]
+  starboardSternAnchors: [SubstationBasic, SolarPanel]
+  sternAnchors: [filingCabinetRandom, ClosetFire, VendingMachineSustenance]
+  tables:
+    - id: OmuShipDepartmentCargoTable
+      min: 14
+      max: 20
+    - id: OmuShipDepartmentEngineeringTable
+      min: 6
+      max: 10
+
+# --- Diamond Warship: aggressive pointed military vessel ---
+- type: shipConfig
+  parent: BaseMediumShip
+  id: MediumShipDiamondWarship
+  halfLength: 14
+  halfWidth: 6
+  profile: Diamond
+  bowTaper: 0.55
+  sternTaper: 0.25
+  floorTile: FloorDark
+  wall: WallPlastitanium
+  interiorLayout: Lanes
+  minRooms: 3
+  maxRooms: 4
+  thrustersPerDirection: 5
+  ventCount: 5
+  bowAnchors: [LootSpawnerSecurityBasic, ComputerCriminalRecords, ComputerRadar]
+  portBowAnchors: [BrigTimer, LootSpawnerArmory]
+  starboardBowAnchors: [VendingMachineSec, LootSpawnerSecurity]
+  midAnchors: [LootSpawnerRandomCrateSecurity, WardrobeSecurity]
+  portSternAnchors: [ClosetL3Security]
+  starboardSternAnchors: [ClosetEmergency, Bed]
+  sternAnchors: [LootSpawnerSecurityBasic, VendingMachineSustenance]
+  tables:
+    - id: OmuShipDepartmentSecurityTable
+      min: 12
+      max: 16
+
+# --- Asymmetric Research Vessel: lopsided science platform ---
+- type: shipConfig
+  parent: BaseMediumShip
+  id: MediumShipAsymmetricResearch
+  halfLength: 13
+  halfWidth: 7
+  profile: Asymmetric
+  asymmetry: 0.3
+  bowTaper: 0.4
+  edgeNoiseAmplitude: 0.9
+  floorTile: FloorWhite
+  interiorLayout: Ring
+  partitionWall: WallReinforced
+  minRooms: 3
+  maxRooms: 4
+  corridorFloorTile: FloorSteelCheckerLight
+  ventCount: 5
+  scrubberCount: 5
+  bowAnchors: [ComputerRadar, ComputerResearchAndDevelopment]
+  portBowAnchors: [MachineArtifactAnalyzer, CircuitImprinter]
+  starboardBowAnchors: [Autolathe, Protolathe]
+  midAnchors: [ResearchAndDevelopmentServer, VendingMachineSustenance]
+  portSternAnchors: [ClosetL3Science, WardrobeRobotics]
+  starboardSternAnchors: [Bookshelf, filingCabinetRandom]
+  sternAnchors: [CrateArtifactContainer, HandheldArtifactContainer]
+  tables:
+    - id: OmuShipDepartmentScienceTable
+      min: 12
+      max: 16
+
+# --- Engine Block Tug: ellipse hull with heavy stern engine block ---
+- type: shipConfig
+  parent: BaseMediumShip
+  id: MediumShipEngineTug
+  halfWidth: 7
+  edgeNoiseAmplitude: 0.9
+  engineBlockWidth: 6
+  engineBlockLength: 4
+  accentFloorTile: FloorTechMaint
+  interiorLayout: Lanes
+  minRooms: 3
+  maxRooms: 4
+  thrustersPerDirection: 5
+  ventCount: 5
+  bowAnchors: [SalvageLocator, ComputerSalvageExpedition]
+  portBowAnchors: [CrateSalvageEquipment]
+  starboardBowAnchors: [SalvageMaterialCrateSpawner]
+  midAnchors: [SalvageMagnet, OreProcessor]
+  portSternAnchors: [ClosetTool, VendingMachineEngivend]
+  starboardSternAnchors: [WardrobeSalvage, ClosetEmergency]
+  sternAnchors: [SalvageLootSpawner, CrateMaterialSteel, VendingMachineSustenance]
+  tables:
+    - id: OmuShipDepartmentSalvageTable
+      min: 12
+      max: 18
+
+# --- Side-Pod Hospital: ellipse with medical pods extending from each side ---
+- type: shipConfig
+  parent: BaseMediumShip
+  id: MediumShipPodHospital
+  halfWidth: 6
+  bowTaper: 0.4
+  edgeNoiseAmplitude: 0.7
+  sidePodWidth: 2
+  sidePodLength: 6
+  floorTile: FloorWhite
+  accentFloorTile: FloorSteelCheckerLight
+  interiorLayout: Corridor
+  minRooms: 3
+  maxRooms: 5
+  corridorFloorTile: FloorSteelCheckerLight
+  ventCount: 6
+  scrubberCount: 6
+  bowAnchors: [MedicalBed, ComputerCrewMonitoring]
+  portBowAnchors: [DefibrillatorCabinetFilled, MedicalBed]
+  starboardBowAnchors: [MedicalScanner, ChemMaster]
+  midAnchors: [SmartFridgeMedical, VendingMachineMedical, Bed]
+  portSternAnchors: [WardrobeMedicalDoctor, ClosetRadiationSuit]
+  starboardSternAnchors: [LootSpawnerMedicalMinor]
+  sternAnchors: [LootSpawnerMedicalClassy, ToiletEmpty, Sink]
+  tables:
+    - id: OmuShipDepartmentMedicalTable
+      min: 12
+      max: 18
+
+# --- Pirate Raider: asymmetric combat vessel, dark theme, scrap damage ---
+- type: shipConfig
+  parent: BaseMediumShip
+  id: MediumShipPirateRaider
+  halfLength: 13
+  halfWidth: 6
+  profile: Asymmetric
+  asymmetry: -0.25
+  bowTaper: 0.55
+  sternTaper: 0.3
+  edgeNoiseAmplitude: 1.1
+  floorTile: FloorDarkMono
+  wall: WallPlastitanium
+  interiorLayout: Lanes
+  minRooms: 2
+  maxRooms: 3
+  thrustersPerDirection: 5
+  scrubberCount: 3
+  bowAnchors: [LootSpawnerSecurityBasic]
+  portBowAnchors: [LootSpawnerArmory]
+  starboardBowAnchors: [LootSpawnerSecurity]
+  midAnchors: [LootSpawnerRandomCrateSecurity]
+  sternAnchors: [LootSpawnerMaterialsHighValue]
+  tables:
+    - id: OmuShipDepartmentSecurityTable
+      min: 10
+      max: 14
+  scrap:
+    noise:
+      noiseType: Perlin
+      frequency: 0.15
+    tileDamageThreshold: -0.1
+    damagedTile: FloorSteelDirty
+    hullBreachThreshold: 0.8
+    wallRemovalThreshold: 0.7
+    entityRemovalChance: 0.2
+    entityRemovalThreshold: 0.3
+
+# --- Medium Liner: full kitchen forward, washroom aft, corridor interior ---
+- type: shipConfig
+  parent: BaseMediumShip
+  id: MediumShipLiner
+  halfLength: 14
+  halfWidth: 8
+  profile: Box
+  cornerRadius: 3
+  bowTaper: 0.15
+  sternTaper: 0.1
+  edgeNoiseAmplitude: 0.5
+  floorTile: FloorKitchen
+  interiorLayout: Corridor
+  minRooms: 3
+  maxRooms: 5
+  corridorFloorTile: FloorSteelCheckerDark
+  thrustersPerDirection: 5
+  ventCount: 6
+  scrubberCount: 5
+  bowAnchors: [ComputerRadar]
+  portBowAnchors: [KitchenMicrowave, KitchenElectricGrill]
+  starboardBowAnchors: [SmartFridge, VendingMachineChefvend]
+  midAnchors: [TableCounterMetal, StoolBar, StoolBar]
+  portSternAnchors: [ToiletEmpty, Sink]
+  starboardSternAnchors: [ToiletEmpty, SinkWide]
+  sternAnchors: [Mirror, CurtainsBlue]
+  tables:
+    - id: OmuShipDepartmentKitchenTable
+      min: 12
+      max: 18
+    - id: OmuShipDepartmentWashroomTable
+      min: 6
+      max: 10
+
+# ============================================================================
+# LARGE SHIPS
+# ============================================================================
+
+# --- Ring Station: biggest hull, ring interior, mixed department ---
+- type: shipConfig
+  parent: BaseLargeShip
+  id: LargeShipRingStation
+  bowTaper: 0.4
+  edgeNoiseAmplitude: 0.8
+  interiorLayout: Ring
+  minRooms: 4
+  maxRooms: 6
+  corridorFloorTile: FloorSteelCheckerDark
+  thrustersPerDirection: 6
+  ventCount: 8
+  scrubberCount: 6
+  bowAnchors: [ComputerRadar, ComputerPowerMonitoring]
+  portBowAnchors: [LootSpawnerSecurityBasic, LootSpawnerMedicalMinor]
+  starboardBowAnchors: [LootSpawnerScienceMinor, LootSpawnerRandomCrateEngineering]
+  midAnchors: [CrateFilledSpawner, Autolathe, VendingMachineSustenance]
+  portSternAnchors: [SalvageMaterialCrateSpawner, KitchenMicrowave]
+  starboardSternAnchors: [SubstationBasic, Mirror]
+  sternAnchors: [ToiletEmpty, Sink]
+  tables:
+    - id: OmuShipDepartmentMixedTable
+      min: 16
+      max: 24
+
+# --- Box Carrier: massive boxy carrier with corridor layout ---
+- type: shipConfig
+  parent: BaseLargeShip
+  id: LargeShipBoxCarrier
+  halfLength: 20
+  profile: Box
+  cornerRadius: 3
+  bowTaper: 0.15
+  sternTaper: 0.1
+  edgeNoiseAmplitude: 0.5
+  floorTile: FloorSteelMono
+  engineBlockWidth: 8
+  engineBlockLength: 4
+  accentFloorTile: FloorTechMaint
+  interiorLayout: Corridor
+  minRooms: 4
+  maxRooms: 6
+  corridorFloorTile: FloorSteelCheckerDark
+  thrustersPerDirection: 6
+  ventCount: 8
+  scrubberCount: 6
+  bowAnchors: [ComputerRadar, ComputerPowerMonitoring]
+  portBowAnchors: [CrateMaterialSteel, CrateMaterialPlasteel]
+  starboardBowAnchors: [CrateMaterialGlass, CrateFilledSpawner]
+  midAnchors: [Autolathe, VendingMachineSustenance, VendingMachineCoffee]
+  portSternAnchors: [SubstationBasic, SolarPanel]
+  starboardSternAnchors: [SolarPanel]
+  sternAnchors: [ToiletEmpty, Sink]
+  tables:
+    - id: OmuShipDepartmentCargoTable
+      min: 18
+      max: 28
+    - id: OmuShipDepartmentEngineeringTable
+      min: 8
+      max: 14
+
+# --- Large Liner: massive hospitality vessel, side-pod layout, ring interior ---
+- type: shipConfig
+  parent: BaseLargeShip
+  id: LargeShipLiner
+  halfLength: 20
+  profile: Box
+  cornerRadius: 3
+  bowTaper: 0.15
+  sternTaper: 0.1
+  edgeNoiseAmplitude: 0.5
+  floorTile: FloorKitchen
+  sidePodWidth: 2
+  sidePodLength: 8
+  accentFloorTile: FloorBar
+  interiorLayout: Ring
+  minRooms: 4
+  maxRooms: 6
+  corridorFloorTile: FloorSteelCheckerDark
+  thrustersPerDirection: 6
+  ventCount: 8
+  scrubberCount: 6
+  bowAnchors: [ComputerRadar, ComputerPowerMonitoring]
+  portBowAnchors: [KitchenMicrowave, KitchenElectricGrill, KitchenReagentGrinder]
+  starboardBowAnchors: [SmartFridge, VendingMachineChefvend, VendingMachineDinnerware]
+  midAnchors: [VendingMachineCoffee, BoozeDispenserEmpty, TableCounterMetal, TableCounterWood, StoolBar, StoolBar]
+  portSternAnchors: [ToiletEmpty, ToiletEmpty, SinkWide, CurtainsBlue]
+  starboardSternAnchors: [ToiletDirtyWater, SinkWide, CurtainsBlue]
+  sternAnchors: [Mirror, Mirror, FloorDrain]
+  tables:
+    - id: OmuShipDepartmentKitchenTable
+      min: 16
+      max: 24
+    - id: OmuShipDepartmentWashroomTable
+      min: 8
+      max: 14

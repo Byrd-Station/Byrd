@@ -1,0 +1,48 @@
+using Content.Shared.Maps;
+using Robust.Shared.Noise;
+using Robust.Shared.Prototypes;
+
+namespace Content.Shared.Procedural.DungeonGenerators;
+
+/// <summary>
+/// Generates a small ship hull shape on an empty grid.
+/// Deprecated - use <see cref="ShipHullDunGen"/> instead.
+/// </summary>
+public sealed partial class SmallShipDunGen : IDunGenLayer
+{
+    [DataField]
+    public int HalfLength = 7;
+
+    [DataField]
+    public int HalfWidth = 4;
+
+    [DataField]
+    public FastNoiseLite? EdgeNoise;
+
+    [DataField]
+    public float EdgeNoiseAmplitude = 1.2f;
+
+    [DataField]
+    public float BowTaper = 0.5f;
+
+    [DataField]
+    public float SternTaper = 0.2f;
+
+    [DataField]
+    public ProtoId<ContentTileDefinition> FloorTile = "FloorSteel";
+
+    [DataField]
+    public ProtoId<ContentTileDefinition> HullTile = "Plating";
+
+    public ShipHullDunGen ToShipHull() => new()
+    {
+        HalfLength = HalfLength,
+        HalfWidth = HalfWidth,
+        EdgeNoise = EdgeNoise,
+        EdgeNoiseAmplitude = EdgeNoiseAmplitude,
+        BowTaper = BowTaper,
+        SternTaper = SternTaper,
+        FloorTile = FloorTile,
+        HullTile = HullTile,
+    };
+}

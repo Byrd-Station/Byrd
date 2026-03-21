@@ -25,6 +25,22 @@ public sealed partial class DungeonJob
         var wall = gen.Wall;
         var cornerWall = gen.CornerWall ?? gen.Wall;
 
+        // Determine bow wall threshold: exterior tiles adjacent to the top 25% of interior Y range
+        // use the bow wall entity instead of the standard wall.
+        var bowWall = gen.BowWall ?? wall;
+        var bowThresholdY = int.MaxValue;
+        if (gen.BowWall != null && dungeon.RoomTiles.Count > 0)
+        {
+            var minY = int.MaxValue;
+            var maxY = int.MinValue;
+            foreach (var t in dungeon.RoomTiles)
+            {
+                if (t.Y < minY) minY = t.Y;
+                if (t.Y > maxY) maxY = t.Y;
+            }
+            bowThresholdY = maxY - (maxY - minY) / 4;
+        }
+
         // Spawn wall outline
         // - Tiles first
         foreach (var neighbor in dungeon.RoomExteriorTiles)
@@ -90,7 +106,11 @@ public sealed partial class DungeonJob
                 _entManager.SpawnEntity(cornerWall, _maps.GridTileToLocal(_gridUid, _grid, index.Index));
 
             if (!isCorner)
-                _entManager.SpawnEntity(wall, _maps.GridTileToLocal(_gridUid, _grid, index.Index));
+            {
+                // Use bow wall for tiles in the northernmost section of the ship.
+                var useBow = gen.BowWall != null && index.Index.Y >= bowThresholdY;
+                _entManager.SpawnEntity(useBow ? bowWall : wall, _maps.GridTileToLocal(_gridUid, _grid, index.Index));
+            }
 
             if (i % 20 == 0)
             {
