@@ -64,8 +64,10 @@
       enum.WizardTeleportUiKey.Key: # Goobstation - wizard
         type: WizardTeleportBoundUserInterface
         requireInputValidation: false
-      enum.SurgeryUIKey.Key: # Shitmed
-        type: SurgeryBui
+enum.SurgeryUIKey.Key: # Shitmed
+type: SurgeryBui
+enum.RadarConsoleUiKey.Key: #goob - contractor
+type: RadarConsoleBoundUserInterface
   # Omustation Start - Free them
   - type: PowerCellSlot
     cellSlotId: cell_slot
