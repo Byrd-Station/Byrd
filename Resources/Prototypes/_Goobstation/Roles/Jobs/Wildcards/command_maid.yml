@@ -22,7 +22,6 @@
   #Omu Start
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
-  - !type:AddComponentSpecial
   #Omu End
   - !type:GiveItemOnHolidaySpecial
     holiday: GarbageDay
