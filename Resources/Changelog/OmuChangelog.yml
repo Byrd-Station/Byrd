@@ -2654,3 +2654,47 @@ Entries:
       message: Additional lizard screams and emotes!
   id: 337
   time: '2026-03-18T23:23:50.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Add
+      message: Departmental Jamjar glasses! Check your crafting recipes :)
+  id: 338
+  time: '2026-03-21T19:07:29.0000000+00:00'
+- author: nnif1
+  changes:
+    - type: Tweak
+      message: >-
+        buffed the particle decelerator's damage to the tesla and singlo by 5
+        times
+  id: 339
+  time: '2026-03-21T19:13:14.0000000+00:00'
+- author: RadsammyT
+  changes:
+    - type: Add
+      message: Central Command shades have been added to the NTR locker.
+  id: 340
+  time: '2026-03-21T19:26:58.0000000+00:00'
+- author: beckthompson, RadsammyT
+  changes:
+    - type: Add
+      message: >-
+        (PORT) Pinktext. This adds a custom objective summary written by the
+        antagonist. Unlike other implementations, Greentext remains intact. If
+        you are one, check your character menu to make your evil-doings known in
+        the round-end summary!
+  id: 341
+  time: '2026-03-21T20:08:06.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: >-
+        Changed silicon rule 8 to clarify that Prisoners and Syndicate icons are
+        not crew.
+  id: 342
+  time: '2026-03-21T20:28:23.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: Cargo sop demands you ask CE before you smes farm... Beware...
+  id: 343
+  time: '2026-03-21T20:34:35.0000000+00:00'
