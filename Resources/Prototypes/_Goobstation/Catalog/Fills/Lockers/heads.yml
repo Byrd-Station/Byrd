@@ -27,10 +27,11 @@
     # - id: BriefcaseBrownFilled
     - id: WeaponDisablerAdvanced
     - id: BedsheetCentcom
-    - id: CaneSheathFilledNanotrasen
+    #- id: CaneSheathFilledNanotrasen # Omu, replace with NT cane
+    - id: CaneNT
     - id: HandheldFaxOfficial
     - id: RubberStampNanorep
-    #- id: ExecutiveBriefcaseEmpty # nanorep update # omu refocus on RP 
+    #- id: ExecutiveBriefcaseEmpty # nanorep update # omu refocus on RP
     #- id: ComputerNTRTasksFlatpack # nanorep update # omu refocus on RP
     - id: Paper
       amount: !type:ConstantNumberSelector

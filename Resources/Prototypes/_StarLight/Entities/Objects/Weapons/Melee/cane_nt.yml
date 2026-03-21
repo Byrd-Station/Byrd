@@ -70,5 +70,6 @@
   - type: DrawableSolution
     solution: battery
 #  - type: MobilityAid
+  - type: MovementImpairedCorrection # Omu
   - type: Prying
     speedModifier: 0.25
