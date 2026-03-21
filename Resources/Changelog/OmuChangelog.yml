@@ -2654,3 +2654,9 @@ Entries:
       message: Additional lizard screams and emotes!
   id: 337
   time: '2026-03-18T23:23:50.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Add
+      message: Departmental Jamjar glasses! Check your crafting recipes :)
+  id: 338
+  time: '2026-03-21T19:07:29.0000000+00:00'
