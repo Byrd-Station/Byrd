@@ -86,6 +86,7 @@
         - BorgModuleChemical
         - BorgModuleRescue
         - BorgModuleTopicals
+        - BorgModuleSyndicateMedicalBeamGun # Omu
   - type: ItemSlots
     slots:
       cell_slot:

@@ -190,12 +190,13 @@
           map: ["light"]
           visible: false
     - type: BorgChassis
-      maxModules: 3
+      maxModules: 5 # Omu, was 3
       moduleWhitelist:
         tags:
           - BorgModuleGeneric
           - BorgModuleMedical
           - BorgModuleSyndicate
+          - BorgModuleSyndicateMedical # Omu
       hasMindState: synd_medical_e
       noMindState: synd_medical
     - type: ShowHealthBars
