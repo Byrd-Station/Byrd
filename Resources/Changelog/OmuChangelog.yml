@@ -2760,3 +2760,11 @@ Entries:
         Voxes....
   id: 351
   time: '2026-03-21T21:16:52.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Ported the NT cane from Starlight, and replaced the caneblade with it.
+    - type: Fix
+      message: Fixes the nanorep getting a CCO fax.
+  id: 352
+  time: '2026-03-21T21:23:45.0000000+00:00'
