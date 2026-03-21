@@ -1,12 +1,5 @@
-using System.Linq;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 using Content.Shared.Stunnable;
-
-using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Pulling.Events;
-using Content.Shared.Movement.Pulling.Components;
-using Content.Shared.Movement.Pulling.Events;
 
 namespace Content.Omu.Shared.Stunnable;
 
