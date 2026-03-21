@@ -12,3 +12,8 @@
   id: thewelles
   flavorType: Complex
   description: flavor-complex-thewelles
+
+- type: flavor
+  id: wolfsmilk
+  flavorType: Base
+  description: flavor-complex-wolfs-milk

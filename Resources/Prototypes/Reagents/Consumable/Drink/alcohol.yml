@@ -2719,7 +2719,7 @@
           type: Oni
           shouldHave: false
 
-- type: reagent
+- type: reagent # Omu stuff
   id: WolfsMilk
   name: reagent-name-wolfs-milk
   parent: BaseAlcohol
