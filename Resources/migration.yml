@@ -192,7 +192,6 @@ BoxMaintenanceLightbulb: BoxLightMixed
 BoxPDAPrisoner: BoxPDA
 ClothingBeltMartialBlack: null
 ClothingCostumeArcDress: null
-ClothingHeadCourier: null
 ClothingHeadHatFedoraBlack: null
 ClothingHeadHatFedoraChoc: null
 ClothingHeadHatFezMantis: null
@@ -200,7 +199,6 @@ ClothingHeadPrisonGuard: null
 ClothingUniformMartialGi: null
 ClothingUniformTShirtKhakiPants: null
 ComputerShipyard: null
-CourierBag: null
 CryogenicSleepUnitSpawnerPrisoner: null
 DefaultStationBeaconBoxing: null
 DefaultStationBeaconCameraServerRoom: null
@@ -287,7 +285,6 @@ SpareIdCabinetFilled: null
 SpawnMobArcticFoxSiobhan: null
 SpawnMobFerret: null
 SpawnMobMothroach: null
-SpawnPointCourier: null
 SpawnPointForensicMantis: null
 SpawnPointLocationMidRoundAntag: null
 SpawnPointMartialArtist: null
@@ -303,7 +300,6 @@ ToyRenault: null
 ToySiobhan: null
 VendingMachineBoozeUnlocked: null
 VendingMachineBoxingDrobe: null
-VendingMachineCourierDrobe: null
 VendingMachineMNKDrobe: null
 VendingMachineRepDrobe: null
 WallPaper: null
@@ -1133,6 +1129,8 @@ LockableButtonRobotics: null
 # 2025-10-09
 FoodDonutJellySlugcat: FoodDonutJellyScurret
 
+# 2026-01-07 - Omu
+SpawnPointCourier: null
 # 2026-01-04
 # GhostBarSpawner: null # Omu
 

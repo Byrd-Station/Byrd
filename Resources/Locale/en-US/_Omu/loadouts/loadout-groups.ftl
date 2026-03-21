@@ -16,3 +16,7 @@ loadout-group-virologist-envirogloves = Virologist envirogloves
 
 # Detective
 loadout-group-detective-eyes = Detective Glasses
+loadout-group-detective-gun = Detective Gun
+
+# Security
+loadout-group-security-gun = Security Gun
