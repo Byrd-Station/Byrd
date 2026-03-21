@@ -2576,3 +2576,125 @@ Entries:
         butcher into organs
   id: 325
   time: '2026-03-14T06:04:04.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Central Command is now indestructible.
+  id: 326
+  time: '2026-03-14T16:29:14.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed people being able to Amag doors on protected grids.
+  id: 327
+  time: '2026-03-14T18:14:03.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixes the RGB staff causing the server to lag when used.
+  id: 328
+  time: '2026-03-15T00:17:07.0000000+00:00'
+- author: JustOrdinaryPao
+  changes:
+    - type: Tweak
+      message: Increased overall time requirement for Command (and Warden)
+  id: 329
+  time: '2026-03-15T00:19:27.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        Each training manual has their own guidebook entry now, also reworded
+        alot of it
+  id: 330
+  time: '2026-03-15T06:47:22.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: QM's Digiboard can now be linked to cargo telepads.
+  id: 331
+  time: '2026-03-15T17:55:37.0000000+00:00'
+- author: PickelSilly
+  changes:
+    - type: Add
+      message: IdiotVibes' Glory to Cardonia artwork now in lobby art rotation!
+  id: 332
+  time: '2026-03-16T17:46:29.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed CC modsuits displaying an error when a vulp was wearing them
+  id: 333
+  time: '2026-03-17T05:51:46.0000000+00:00'
+- author: Willzile1
+  changes:
+    - type: Fix
+      message: Added viro icons to the Medical and Paramedic beast mantles.
+  id: 334
+  time: '2026-03-17T06:16:10.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: Corpsman nostalgic and reminisced coats now have medical gown stats
+    - type: Fix
+      message: Corpsman should only spawn with 1 pda now
+  id: 335
+  time: '2026-03-17T18:56:05.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Add
+      message: Emote spam causes your emotes to be muted for some time.
+    - type: Remove
+      message: Smite on emote spam removed.
+  id: 336
+  time: '2026-03-18T22:26:27.0000000+00:00'
+- author: PhosphateWithManyOs
+  changes:
+    - type: Add
+      message: Additional lizard screams and emotes!
+  id: 337
+  time: '2026-03-18T23:23:50.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Add
+      message: Departmental Jamjar glasses! Check your crafting recipes :)
+  id: 338
+  time: '2026-03-21T19:07:29.0000000+00:00'
+- author: nnif1
+  changes:
+    - type: Tweak
+      message: >-
+        buffed the particle decelerator's damage to the tesla and singlo by 5
+        times
+  id: 339
+  time: '2026-03-21T19:13:14.0000000+00:00'
+- author: RadsammyT
+  changes:
+    - type: Add
+      message: Central Command shades have been added to the NTR locker.
+  id: 340
+  time: '2026-03-21T19:26:58.0000000+00:00'
+- author: beckthompson, RadsammyT
+  changes:
+    - type: Add
+      message: >-
+        (PORT) Pinktext. This adds a custom objective summary written by the
+        antagonist. Unlike other implementations, Greentext remains intact. If
+        you are one, check your character menu to make your evil-doings known in
+        the round-end summary!
+  id: 341
+  time: '2026-03-21T20:08:06.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: >-
+        Changed silicon rule 8 to clarify that Prisoners and Syndicate icons are
+        not crew.
+  id: 342
+  time: '2026-03-21T20:28:23.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: Cargo sop demands you ask CE before you smes farm... Beware...
+  id: 343
+  time: '2026-03-21T20:34:35.0000000+00:00'
