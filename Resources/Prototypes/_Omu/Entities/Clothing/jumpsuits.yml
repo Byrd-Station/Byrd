@@ -66,6 +66,30 @@
 
 - type: entity
   parent: ClothingUniformBase
+  id: ClothingUniformMailCarrierLong
+  name: mail carrier's uniform
+  suffix: long
+  description: Friendly blue overall and white shirt. The mail always arrives!
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Uniforms/Jumpsuit/mailcarrier.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Uniforms/Jumpsuit/mailcarrier.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformCourierLong
+  name: courier's uniform
+  description: Makes you feel like a wanderer, plus your legs are safe from bug bites.
+  suffix: long
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Uniforms/Jumpsuit/courier.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Uniforms/Jumpsuit/courier.rsi
+
+- type: entity
+  parent: ClothingUniformBase
   id: ClothingUniformJumpsuitParamedUniform
   name: paramedic uniform
   description: It's made of a special fiber that provides minor protection against caustic hazards. It has a dark blue cross on the chest denoting that the wearer is a trained paramedic.
