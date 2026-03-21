@@ -2640,3 +2640,37 @@ Entries:
       message: Corpsman should only spawn with 1 pda now
   id: 335
   time: '2026-03-17T18:56:05.0000000+00:00'
+- author: Tuerk
+  changes:
+    - type: Add
+      message: Emote spam causes your emotes to be muted for some time.
+    - type: Remove
+      message: Smite on emote spam removed.
+  id: 336
+  time: '2026-03-18T22:26:27.0000000+00:00'
+- author: PhosphateWithManyOs
+  changes:
+    - type: Add
+      message: Additional lizard screams and emotes!
+  id: 337
+  time: '2026-03-18T23:23:50.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Add
+      message: Departmental Jamjar glasses! Check your crafting recipes :)
+  id: 338
+  time: '2026-03-21T19:07:29.0000000+00:00'
+- author: nnif1
+  changes:
+    - type: Tweak
+      message: >-
+        buffed the particle decelerator's damage to the tesla and singlo by 5
+        times
+  id: 339
+  time: '2026-03-21T19:13:14.0000000+00:00'
+- author: RadsammyT
+  changes:
+    - type: Add
+      message: Central Command shades have been added to the NTR locker.
+  id: 340
+  time: '2026-03-21T19:26:58.0000000+00:00'

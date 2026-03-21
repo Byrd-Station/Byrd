@@ -30,11 +30,12 @@
     - id: CaneSheathFilledNanotrasen
     - id: HandheldFaxOfficial
     - id: RubberStampNanorep
-    #- id: ExecutiveBriefcaseEmpty # nanorep update # omu refocus on RP 
+    #- id: ExecutiveBriefcaseEmpty # nanorep update # omu refocus on RP
     #- id: ComputerNTRTasksFlatpack # nanorep update # omu refocus on RP
     - id: Paper
       amount: !type:ConstantNumberSelector
         value: 5
+    - id: ClothingEyesGlassesCentCommNoThermal
     - id: NanoRepStationReport # Goobstation
     - id: Multitool # Omu - Added for tasks flatpack
 
