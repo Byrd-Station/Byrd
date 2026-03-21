@@ -101,6 +101,7 @@
   - CargoTechSOP
   - SalvageSpecialistSOP
   - ShaftMinerSOP
+  - CourierSOP #Omu
 
 - type: guideEntry
   id: CommandSOP
