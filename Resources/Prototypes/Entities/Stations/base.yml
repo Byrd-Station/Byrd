@@ -132,7 +132,7 @@
             - /Maps/_Goobstation/Shuttles/trading_outpost.yml #Goobstation
           nameDataset: TradeStationNames
           # Omu  start
-          #minimumDistance: 1000 # - Commented out cause i'm not actually using this. Change these if you want to change ATS spawn distance (and then remove this comment)
+          minimumDistance: 750# - Commented out cause i'm not actually using this. Change these if you want to change ATS spawn distance (and then remove this comment)
           #maximumDistance: 3000
 
         mining: !type:GridSpawnGroup
