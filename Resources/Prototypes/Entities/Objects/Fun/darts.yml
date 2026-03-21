@@ -282,6 +282,10 @@
           path: /Audio/Effects/tree_fell.ogg
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: Armor
+    modifiers:
+      flatReductions:
+        Piercing: 5
 
 - type: entity
   parent: [ BaseItem, BaseSyndicateContraband ]
