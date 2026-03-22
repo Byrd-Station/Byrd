@@ -4,7 +4,7 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/22/2026 13:46:12
+  time: 03/22/2026 15:51:56
   entityCount: 15717
 maps:
 - 1
@@ -9011,14 +9011,6 @@ entities:
     - type: Transform
       pos: 109.5,-17.5
       parent: 2
-  - uid: 341
-    components:
-    - type: Transform
-      pos: 53.5,7.5
-      parent: 2
-    - type: AccessReader
-      access:
-      - - Robotics
 - proto: AirlockMaintAtmoLocked
   entities:
   - uid: 284
@@ -9119,7 +9111,7 @@ entities:
       pos: 28.5,-21.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -29938.877
+      secondsUntilStateChange: -29953.252
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9353,6 +9345,13 @@ entities:
     components:
     - type: Transform
       pos: 56.5,4.5
+      parent: 2
+- proto: AirlockMaintRoboticsLocked
+  entities:
+  - uid: 341
+    components:
+    - type: Transform
+      pos: 53.5,7.5
       parent: 2
 - proto: AirlockMaintSecLocked
   entities:

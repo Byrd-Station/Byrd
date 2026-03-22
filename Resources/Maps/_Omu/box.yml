@@ -4,7 +4,7 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/22/2026 13:23:30
+  time: 03/22/2026 15:41:32
   entityCount: 27675
 maps:
 - 1
@@ -11945,7 +11945,7 @@ entities:
       pos: 24.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -45901.152
+      secondsUntilStateChange: -45926.23
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12124,7 +12124,7 @@ entities:
       pos: -19.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3228.7976
+      secondsUntilStateChange: -3253.8743
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12456,15 +12456,6 @@ entities:
     - type: Transform
       pos: -16.5,50.5
       parent: 2
-  - uid: 523
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 50.5,-16.5
-      parent: 2
-    - type: AccessReader
-      access:
-      - - Robotics
 - proto: AirlockMaintAtmoLocked
   entities:
   - uid: 393
@@ -12997,6 +12988,13 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 83.5,-40.5
       parent: 2
+- proto: AirlockMaintRoboticsLocked
+  entities:
+  - uid: 523
+    components:
+    - type: Transform
+      pos: 50.5,-16.5
+      parent: 2
 - proto: AirlockMaintSecLocked
   entities:
   - uid: 480
@@ -13288,7 +13286,7 @@ entities:
       pos: 75.5,-40.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4106.4297
+      secondsUntilStateChange: -4131.5063
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -83873,7 +83871,7 @@ entities:
       pos: -34.5,-14.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -40089.69
+      secondsUntilStateChange: -40114.77
       state: Closing
   - uid: 13101
     components:
@@ -84366,7 +84364,7 @@ entities:
       pos: -4.5,-71.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -31837.432
+      secondsUntilStateChange: -31862.508
       state: Closing
   - uid: 13199
     components:

@@ -4,7 +4,7 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/22/2026 13:43:09
+  time: 03/22/2026 15:50:20
   entityCount: 30416
 maps:
 - 1
@@ -13127,7 +13127,7 @@ entities:
       pos: 0.5,48.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -47446.863
+      secondsUntilStateChange: -47567.965
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13305,14 +13305,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -48.5,-29.5
       parent: 2
-  - uid: 401
-    components:
-    - type: Transform
-      pos: -9.5,-53.5
-      parent: 2
-    - type: AccessReader
-      access:
-      - - Robotics
   - uid: 722
     components:
     - type: Transform
@@ -13323,14 +13315,6 @@ entities:
     - type: Transform
       pos: -64.5,-37.5
       parent: 2
-  - uid: 3035
-    components:
-    - type: Transform
-      pos: -9.5,-44.5
-      parent: 2
-    - type: AccessReader
-      access:
-      - - Robotics
 - proto: AirlockMaintAtmoLocked
   entities:
   - uid: 384
@@ -13724,6 +13708,18 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -18.5,-44.5
       parent: 2
+- proto: AirlockMaintRoboticsLocked
+  entities:
+  - uid: 401
+    components:
+    - type: Transform
+      pos: -9.5,-53.5
+      parent: 2
+  - uid: 3035
+    components:
+    - type: Transform
+      pos: -9.5,-44.5
+      parent: 2
 - proto: AirlockMaintSecLocked
   entities:
   - uid: 405
@@ -13787,7 +13783,7 @@ entities:
       pos: -3.5,-35.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -649091.7
+      secondsUntilStateChange: -649212.8
       state: Opening
   - uid: 422
     components:
@@ -94525,7 +94521,7 @@ entities:
       pos: -1.5,-16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -15871.3125
+      secondsUntilStateChange: -15992.412
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -191153,7 +191149,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -72795.89
+      secondsUntilStateChange: -72916.99
       state: Opening
     - type: Airlock
       autoClose: False
@@ -192552,7 +192548,7 @@ entities:
       pos: 24.5,2.5
       parent: 22618
     - type: Door
-      secondsUntilStateChange: -427223.28
+      secondsUntilStateChange: -427344.38
       state: Opening
   - uid: 29025
     components:
@@ -192561,7 +192557,7 @@ entities:
       pos: -46.5,28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -81179.65
+      secondsUntilStateChange: -81300.75
       state: Opening
 - proto: WoodenBench
   entities:

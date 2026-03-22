@@ -4,7 +4,7 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/22/2026 14:20:33
+  time: 03/22/2026 15:40:47
   entityCount: 25163
 maps:
 - 1
@@ -13303,10 +13303,11 @@ entities:
     - type: Transform
       pos: -44.5,17.5
       parent: 2
+- proto: AirlockMaintRoboticsLocked
+  entities:
   - uid: 24711
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -33.5,16.5
       parent: 2
 - proto: AirlockMaintSalvageLocked
