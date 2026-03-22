@@ -4,3 +4,6 @@
   name: shredder buff
   components:
   - type: ShredderStatusEffect
+  - type: MovementModStatusEffect
+    sprintSpeedModifier: 1.2
+    walkSpeedModifier: 1.2

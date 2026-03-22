@@ -1,7 +1,6 @@
 using Content.Shared._Omu.RadiusBuff.Components;
 using Content.Shared.Wieldable;
 using Content.Shared.Wieldable.Components;
-using System.Security.Cryptography;
 
 namespace Content.Shared._Omu.RadiusBuff.Systems;
 
