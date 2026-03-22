@@ -11,7 +11,7 @@
   id: AdminEventExtended
   name: adminevent-title
   showInVote: false #admin only
-  description: adminevent-title
+  description: adminevent-description
   rules:
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
