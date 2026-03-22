@@ -2823,3 +2823,9 @@ Entries:
       message: 'AutoDrobe now dispenses fake blue wizard clothes! '
   id: 359
   time: '2026-03-22T05:48:06.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Changed the Robotics airlock to use the proper sprite
+  id: 360
+  time: '2026-03-22T12:58:11.0000000+00:00'
