@@ -2811,3 +2811,35 @@ Entries:
       message: Dark lord, Dark priest, and Grey tide midround spawns.
   id: 357
   time: '2026-03-22T02:22:09.0000000+00:00'
+- author: Aureu
+  changes:
+    - type: Remove
+      message: Mention of Nexus from the Avali guidebook.
+  id: 358
+  time: '2026-03-22T03:48:35.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Tweak
+      message: 'AutoDrobe now dispenses fake blue wizard clothes! '
+  id: 359
+  time: '2026-03-22T05:48:06.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: Changed the Robotics airlock to use the proper sprite
+  id: 360
+  time: '2026-03-22T12:58:11.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixes Courier spawn deleting itself
+    - type: Add
+      message: Adds a robotics maints airlock for mapping
+  id: 361
+  time: '2026-03-22T13:38:31.0000000+00:00'
+- author: Dishwasher0
+  changes:
+    - type: Add
+      message: Robo and Courier are mapped now rejoice !
+  id: 362
+  time: '2026-03-22T16:59:18.0000000+00:00'
