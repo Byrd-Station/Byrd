@@ -1,7 +1,7 @@
 - type: job
   id: SecuritySergeant
   name: job-name-security-sergeant
-  description: job-description-security
+  description: job-description-security-sergeant
   playTimeTracker: JobSecuritySergeant
   requirements:
     - !type:OverallPlaytimeRequirement
@@ -19,14 +19,15 @@
   icon: "JobIconSecuritySergeant"
   supervisors: job-supervisors-hos
   canBeAntag: false
-  guides: # goobstation
+  guides:
   - Security
   - LegalSOP
   - OfficerCadetSOP
+  - SecuritySergeantSOP
   - CorporateJudo
   - AlertLevels
-  - SecurityTrainingManual # Omu
-  goobcoins: 30 #Goob content
+  - SecurityTrainingManual
+  goobcoins: 45 #Goob content
   access:
   - Security
   - Brig
