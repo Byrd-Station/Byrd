@@ -4,7 +4,7 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/22/2026 10:35:00
+  time: 03/22/2026 13:39:01
   entityCount: 27055
 maps:
 - 1
@@ -14245,6 +14245,20 @@ entities:
     - type: Transform
       pos: 16.5,64.5
       parent: 2
+- proto: AirlockRoboticsLocked
+  entities:
+  - uid: 497
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 17.5,56.5
+      parent: 2
+  - uid: 498
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 17.5,55.5
+      parent: 2
 - proto: AirlockSalvageGlassLocked
   entities:
   - uid: 486
@@ -14257,24 +14271,6 @@ entities:
     - type: Transform
       pos: 44.5,31.5
       parent: 2
-- proto: AirlockScience
-  entities:
-  - uid: 497
-    components:
-    - type: Transform
-      pos: 17.5,56.5
-      parent: 2
-    - type: AccessReader
-      access:
-      - - Robotics
-  - uid: 498
-    components:
-    - type: Transform
-      pos: 17.5,55.5
-      parent: 2
-    - type: AccessReader
-      access:
-      - - Robotics
 - proto: AirlockScienceGlassLocked
   entities:
   - uid: 489

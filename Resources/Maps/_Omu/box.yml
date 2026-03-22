@@ -4,7 +4,7 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/22/2026 09:26:00
+  time: 03/22/2026 13:23:30
   entityCount: 27675
 maps:
 - 1
@@ -8713,8 +8713,8 @@ entities:
           id: docking46345
           localAnchorB: -0.5,-1
           localAnchorA: -66.5,22
-          damping: 42.400772
-          stiffness: 380.58847
+          damping: 42.40077
+          stiffness: 380.58844
     - type: OccluderTree
     - type: Shuttle
       dampingModifiers:
@@ -11945,7 +11945,7 @@ entities:
       pos: 24.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -45773.5
+      secondsUntilStateChange: -45901.152
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12124,7 +12124,7 @@ entities:
       pos: -19.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3101.1448
+      secondsUntilStateChange: -3228.7976
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13215,37 +13215,38 @@ entities:
     - type: Transform
       pos: 55.5,-28.5
       parent: 2
-- proto: AirlockScience
-  entities:
-  - uid: 478
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 58.5,-15.5
-      parent: 2
-    - type: AccessReader
-      access:
-      - - Robotics
-  - uid: 508
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 53.5,-25.5
-      parent: 2
-    - type: AccessReader
-      access:
-      - - Robotics
-- proto: AirlockScienceGlass
+- proto: AirlockRoboticsLocked
   entities:
   - uid: 245
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
+      pos: 58.5,-15.5
+      parent: 2
+  - uid: 518
+    components:
+    - type: Transform
+      pos: 56.5,-18.5
+      parent: 2
+  - uid: 519
+    components:
+    - type: Transform
+      pos: 56.5,-17.5
+      parent: 2
+  - uid: 521
+    components:
+    - type: Transform
+      pos: 56.5,-19.5
+      parent: 2
+  - uid: 10450
+    components:
+    - type: Transform
       pos: 62.5,-25.5
       parent: 2
-    - type: AccessReader
-      access:
-      - - Robotics
+  - uid: 10451
+    components:
+    - type: Transform
+      pos: 53.5,-25.5
+      parent: 2
 - proto: AirlockScienceGlassLocked
   entities:
   - uid: 516
@@ -13260,27 +13261,12 @@ entities:
     - type: Transform
       pos: 66.5,-49.5
       parent: 2
-  - uid: 518
-    components:
-    - type: Transform
-      pos: 56.5,-18.5
-      parent: 2
-  - uid: 519
-    components:
-    - type: Transform
-      pos: 56.5,-17.5
-      parent: 2
   - uid: 520
     components:
     - type: MetaData
       name: Toxins Lab
     - type: Transform
       pos: 69.5,-45.5
-      parent: 2
-  - uid: 521
-    components:
-    - type: Transform
-      pos: 56.5,-19.5
       parent: 2
   - uid: 522
     components:
@@ -13302,7 +13288,7 @@ entities:
       pos: 75.5,-40.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3978.777
+      secondsUntilStateChange: -4106.4297
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -83887,7 +83873,7 @@ entities:
       pos: -34.5,-14.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -39962.04
+      secondsUntilStateChange: -40089.69
       state: Closing
   - uid: 13101
     components:
@@ -84380,7 +84366,7 @@ entities:
       pos: -4.5,-71.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -31709.78
+      secondsUntilStateChange: -31837.432
       state: Closing
   - uid: 13199
     components:
@@ -145203,15 +145189,15 @@ entities:
       parent: 2
 - proto: SpawnPointCourier
   entities:
-  - uid: 10451
+  - uid: 10449
     components:
     - type: Transform
-      pos: -20.5,-16.5
+      pos: -22.5,-17.5
       parent: 2
   - uid: 10452
     components:
     - type: Transform
-      pos: -22.5,-19.5
+      pos: -20.5,-17.5
       parent: 2
 - proto: SpawnPointDetective
   entities:
@@ -174067,23 +174053,6 @@ entities:
       parent: 2
 - proto: WindoorSecure
   entities:
-  - uid: 10449
-    components:
-    - type: Transform
-      pos: 62.5,-16.5
-      parent: 2
-    - type: AccessReader
-      access:
-      - - Robotics
-  - uid: 10450
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 64.5,-23.5
-      parent: 2
-    - type: AccessReader
-      access:
-      - - Robotics
   - uid: 27352
     components:
     - type: Transform
@@ -174295,6 +174264,19 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 32.5,-19.5
+      parent: 2
+- proto: WindoorSecureRoboticsLocked
+  entities:
+  - uid: 478
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 64.5,-23.5
+      parent: 2
+  - uid: 508
+    components:
+    - type: Transform
+      pos: 62.5,-16.5
       parent: 2
 - proto: WindoorSecureScienceLocked
   entities:

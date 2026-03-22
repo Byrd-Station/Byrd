@@ -4,7 +4,7 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/22/2026 08:56:55
+  time: 03/22/2026 13:19:12
   entityCount: 23742
 maps:
 - 1
@@ -19392,7 +19392,7 @@ entities:
       pos: -25.5,-25.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -12566.864
+      secondsUntilStateChange: -12681.688
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -19463,6 +19463,13 @@ entities:
     - type: Transform
       pos: 29.5,-36.5
       parent: 2
+- proto: AirlockRoboticsLocked
+  entities:
+  - uid: 2201
+    components:
+    - type: Transform
+      pos: 31.5,-25.5
+      parent: 2
 - proto: AirlockSalvageLocked
   entities:
   - uid: 488
@@ -19495,16 +19502,6 @@ entities:
     - type: Transform
       pos: 10.5,25.5
       parent: 2
-- proto: AirlockScience
-  entities:
-  - uid: 2201
-    components:
-    - type: Transform
-      pos: 31.5,-25.5
-      parent: 2
-    - type: AccessReader
-      access:
-      - - Robotics
 - proto: AirlockScienceGlassLocked
   entities:
   - uid: 495
@@ -112768,21 +112765,6 @@ entities:
       fixtures: {}
 - proto: LockableButtonResearch
   entities:
-  - uid: 15926
-    components:
-    - type: Transform
-      pos: 35.5,-23.5
-      parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        18605:
-        - - Pressed
-          - Toggle
-        18607:
-        - - Pressed
-          - Toggle
-    - type: Fixtures
-      fixtures: {}
   - uid: 15927
     components:
     - type: Transform
@@ -112827,6 +112809,23 @@ entities:
         - - Pressed
           - Toggle
         18664:
+        - - Pressed
+          - Toggle
+    - type: Fixtures
+      fixtures: {}
+- proto: LockableButtonRobotics
+  entities:
+  - uid: 15926
+    components:
+    - type: Transform
+      pos: 35.5,-23.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        18605:
+        - - Pressed
+          - Toggle
+        18607:
         - - Pressed
           - Toggle
     - type: Fixtures
@@ -132566,7 +132565,7 @@ entities:
       parent: 2
 - proto: SpawnPointCourier
   entities:
-  - uid: 23741
+  - uid: 23325
     components:
     - type: Transform
       pos: 18.5,13.5
@@ -155263,6 +155262,13 @@ entities:
       rot: 3.141592653589793 rad
       pos: -28.5,-26.5
       parent: 2
+- proto: WindoorSecureRoboticsLocked
+  entities:
+  - uid: 23741
+    components:
+    - type: Transform
+      pos: 39.5,-26.5
+      parent: 2
 - proto: WindoorSecureSalvageLocked
   entities:
   - uid: 23319
@@ -155292,11 +155298,6 @@ entities:
     components:
     - type: Transform
       pos: 20.5,-27.5
-      parent: 2
-  - uid: 23325
-    components:
-    - type: Transform
-      pos: 39.5,-26.5
       parent: 2
   - uid: 23326
     components:

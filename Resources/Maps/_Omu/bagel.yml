@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/22/2026 09:18:51
-  entityCount: 25162
+  time: 03/22/2026 13:21:11
+  entityCount: 25161
 maps:
 - 1
 grids:
@@ -11421,13 +11421,6 @@ entities:
     - type: Transform
       pos: 4.5,-1.5
       parent: 2
-- proto: AirlockCorpsmanGlassLocked
-  entities:
-  - uid: 16665
-    components:
-    - type: Transform
-      pos: -31.5,-10.5
-      parent: 2
 - proto: AirlockDetectiveGlassLocked
   entities:
   - uid: 178
@@ -12912,14 +12905,6 @@ entities:
     - type: Transform
       pos: -65.5,5.5
       parent: 2
-  - uid: 24711
-    components:
-    - type: Transform
-      pos: -33.5,16.5
-      parent: 2
-    - type: AccessReader
-      access:
-      - - Robotics
 - proto: AirlockMaintBarLocked
   entities:
   - uid: 384
@@ -13318,6 +13303,12 @@ entities:
     - type: Transform
       pos: -44.5,17.5
       parent: 2
+  - uid: 24711
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -33.5,16.5
+      parent: 2
 - proto: AirlockMaintSalvageLocked
   entities:
   - uid: 446
@@ -13477,6 +13468,27 @@ entities:
     - type: Transform
       pos: -50.5,10.5
       parent: 2
+- proto: AirlockRoboticsGlass
+  entities:
+  - uid: 443
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -35.5,13.5
+      parent: 2
+- proto: AirlockRoboticsLocked
+  entities:
+  - uid: 24710
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -38.5,10.5
+      parent: 2
+  - uid: 24713
+    components:
+    - type: Transform
+      pos: -43.5,13.5
+      parent: 2
 - proto: AirlockSalvageLocked
   entities:
   - uid: 470
@@ -13492,34 +13504,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 54.5,-6.5
       parent: 2
-- proto: AirlockScience
-  entities:
-  - uid: 443
-    components:
-    - type: Transform
-      pos: -43.5,13.5
-      parent: 2
-    - type: AccessReader
-      access:
-      - - Robotics
-  - uid: 475
-    components:
-    - type: Transform
-      pos: -38.5,10.5
-      parent: 2
-    - type: AccessReader
-      access:
-      - - Robotics
-- proto: AirlockScienceGlass
-  entities:
-  - uid: 24710
-    components:
-    - type: Transform
-      pos: -35.5,13.5
-      parent: 2
-    - type: AccessReader
-      access:
-      - - Robotics
 - proto: AirlockScienceGlassLocked
   entities:
   - uid: 471
@@ -13705,6 +13689,11 @@ entities:
     - type: AccessReader
       access:
       - - Journalism
+  - uid: 16665
+    components:
+    - type: Transform
+      pos: -31.5,-10.5
+      parent: 2
 - proto: AirlockServiceLocked
   entities:
   - uid: 493
@@ -113475,6 +113464,13 @@ entities:
     - type: Transform
       pos: -109.8086,8.492023
       parent: 2
+- proto: Oilpack
+  entities:
+  - uid: 24712
+    components:
+    - type: Transform
+      pos: -36.742386,12.914767
+      parent: 2
 - proto: OperatingTable
   entities:
   - uid: 16891
@@ -133517,18 +133513,6 @@ entities:
     components:
     - type: Transform
       pos: 20.5,-12.5
-      parent: 2
-- proto: SpawnPointCourier
-  entities:
-  - uid: 24713
-    components:
-    - type: Transform
-      pos: 48.5,17.5
-      parent: 2
-  - uid: 24718
-    components:
-    - type: Transform
-      pos: 50.5,17.5
       parent: 2
 - proto: SpawnPointDetective
   entities:
@@ -157581,15 +157565,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 50.5,19.5
       parent: 2
-  - uid: 24712
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -37.5,10.5
-      parent: 2
-    - type: AccessReader
-      access:
-      - - Robotics
   - uid: 25269
     components:
     - type: Transform
@@ -157778,6 +157753,14 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 46.5,-17.5
+      parent: 2
+- proto: WindoorSecureRoboticsLocked
+  entities:
+  - uid: 475
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -37.5,10.5
       parent: 2
 - proto: WindoorSecureScienceLocked
   entities:
