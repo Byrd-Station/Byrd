@@ -2790,3 +2790,36 @@ Entries:
       message: CourierSpawners for a later mapping PR
   id: 354
   time: '2026-03-21T21:28:44.0000000+00:00'
+- author: BramvanZijp
+  changes:
+    - type: Fix
+      message: You can no longer break out of a grab while stunned.
+  id: 355
+  time: '2026-03-21T23:17:56.0000000+00:00'
+- author: Redrover1760
+  changes:
+    - type: Tweak
+      message: >-
+        Natural Letoferol guidebook description updated to note Mesotaxinide or
+        Mesophenerol is used to cure Chimera infections instead of being
+        permanent.
+  id: 356
+  time: '2026-03-22T01:25:10.0000000+00:00'
+- author: Aureu
+  changes:
+    - type: Remove
+      message: Dark lord, Dark priest, and Grey tide midround spawns.
+  id: 357
+  time: '2026-03-22T02:22:09.0000000+00:00'
+- author: Aureu
+  changes:
+    - type: Remove
+      message: Mention of Nexus from the Avali guidebook.
+  id: 358
+  time: '2026-03-22T03:48:35.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Tweak
+      message: 'AutoDrobe now dispenses fake blue wizard clothes! '
+  id: 359
+  time: '2026-03-22T05:48:06.0000000+00:00'
