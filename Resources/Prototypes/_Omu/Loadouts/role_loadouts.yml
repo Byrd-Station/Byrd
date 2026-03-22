@@ -37,3 +37,23 @@
   - SecurityOfficerEnvirohelm
   - SecurityOfficerEnvirosuit
   - SecurityOfficerEnvirogloves
+  
+- type: roleLoadout
+  id: JobCourier
+  groups:
+  - CourierHead
+  - CourierJumpsuit
+  - CourierOuterClothing
+  - CourierShoes
+  - CourierBackpack
+  - CourierPDA
+  # Needs Jumpsuit, Outerclothing, shoes, backpack, hat
+  - Glasses
+  - Survival
+  - Trinkets
+  - Animals
+  - GroupSpeciesBreathTool
+  # Goobstation - EE Plasmeme Change.
+  - CourierEnvirohelm
+  - CourierEnvirosuit
+  - CourierEnvirogloves

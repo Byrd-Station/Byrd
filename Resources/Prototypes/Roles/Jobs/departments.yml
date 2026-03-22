@@ -109,6 +109,7 @@
   - Quartermaster
   - SalvageSpecialist
   - ShaftMiner # Lavaland Change
+  - Courier # Omu
 
 - type: department
   id: Civilian

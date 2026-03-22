@@ -13,3 +13,11 @@
     sprite: /Textures/_Omu/Interface/Misc/job_icons.rsi
     state: securitysergeant
   jobName: job-name-security-sergeant
+  
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconCourier
+  icon:
+    sprite: /Textures/_Omu/Interface/Misc/job_icons.rsi
+    state: Courier
+  jobName: job-name-courier
