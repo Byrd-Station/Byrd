@@ -2746,3 +2746,68 @@ Entries:
       message: Detectives can only pick the inspector or terminus in their loadout now.
   id: 349
   time: '2026-03-21T21:11:31.0000000+00:00'
+- author: NotActuallyMarty
+  changes:
+    - type: Tweak
+      message: The Automated Trade Station now spawns further away from the station.
+  id: 350
+  time: '2026-03-21T21:15:55.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        Ipcs bleed coolant instead of oil now... New tasty beverage for the
+        Voxes....
+  id: 351
+  time: '2026-03-21T21:16:52.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Ported the NT cane from Starlight, and replaced the caneblade with it.
+    - type: Fix
+      message: Fixes the nanorep getting a CCO fax.
+  id: 352
+  time: '2026-03-21T21:23:45.0000000+00:00'
+- author: BramvanZijp
+  changes:
+    - type: Add
+      message: >-
+        Added a toggleable light to the BSO's ensemble, which is identical to
+        that of the Elite BSO Cloak.
+  id: 353
+  time: '2026-03-21T21:28:03.0000000+00:00'
+- author: Benevolent Tuerk
+  changes:
+    - type: Add
+      message: >-
+        The Courier role has been added to omu code. Please wait 3 to 4 business
+        months for em to be mapped.
+    - type: Add
+      message: >-
+        Courier Outfits from EE and DeltaV! Check the loadout screen and the
+        MailDrobe for all the goodies!
+    - type: Add
+      message: CourierSpawners for a later mapping PR
+  id: 354
+  time: '2026-03-21T21:28:44.0000000+00:00'
+- author: BramvanZijp
+  changes:
+    - type: Fix
+      message: You can no longer break out of a grab while stunned.
+  id: 355
+  time: '2026-03-21T23:17:56.0000000+00:00'
+- author: Redrover1760
+  changes:
+    - type: Tweak
+      message: >-
+        Natural Letoferol guidebook description updated to note Mesotaxinide or
+        Mesophenerol is used to cure Chimera infections instead of being
+        permanent.
+  id: 356
+  time: '2026-03-22T01:25:10.0000000+00:00'
+- author: Aureu
+  changes:
+    - type: Remove
+      message: Dark lord, Dark priest, and Grey tide midround spawns.
+  id: 357
+  time: '2026-03-22T02:22:09.0000000+00:00'

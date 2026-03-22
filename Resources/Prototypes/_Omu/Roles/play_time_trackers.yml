@@ -6,7 +6,10 @@
 
 - type: playTimeTracker
   id: JobTransitPrisoner
-  
+
+- type: playTimeTracker
+  id: JobCourier
+
 - type: playTimeTracker
   id: JobNanoTrasenSpectre
 
