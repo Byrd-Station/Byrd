@@ -2829,3 +2829,11 @@ Entries:
       message: Changed the Robotics airlock to use the proper sprite
   id: 360
   time: '2026-03-22T12:58:11.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixes Courier spawn deleting itself
+    - type: Add
+      message: Adds a robotics maints airlock for mapping
+  id: 361
+  time: '2026-03-22T13:38:31.0000000+00:00'
