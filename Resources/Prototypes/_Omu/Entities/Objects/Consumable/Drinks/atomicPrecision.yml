@@ -37,8 +37,11 @@
     Drink:
       effects:
         - !type:GenericStatusEffect
-          key: ScrambleDnaEffect
-          component: ScrambleDnaEffect
+           key: ScrambleDnaEffect
+           component: ScrambleDnaEffect
+           conditions:
+           - !type:ReagentThreshold
+             min: 25
         - !type:HealthChange
           damage:
             groups:
