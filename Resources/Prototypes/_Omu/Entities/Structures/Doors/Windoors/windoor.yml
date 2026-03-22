@@ -553,7 +553,7 @@
 
 - type: entity
   parent: WindoorSecurePlasma
-  id: WindoorPlasmaRoboticsLocked
+  id: WindoorSecurePlasmaRoboticsLocked
   suffix: Robotics, Locked, Plasma
   components:
   - type: ContainerFill
