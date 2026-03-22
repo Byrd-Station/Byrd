@@ -5,7 +5,7 @@
     LoneOperative: 1
     ShuttleInstigator: 0.8
     VoxRaiders: 0.8
-    GreyTide: 0.65
+    #GreyTide: 0.65
     #TODO When Slasher is ready Slasher: 0.6 # Goobstation
     Blob: 0.5
     Dragon: 0.3
@@ -44,10 +44,10 @@
   announcement: terror-lone-operative
   rule: UnknownShuttleInstigator
 
-- type: ninjaHackingThreat
-  id: GreyTide
-  announcement: terror-grey-tide
-  rule: GreyTideAntagMidround
+#- type: ninjaHackingThreat
+#  id: GreyTide
+#  announcement: terror-grey-tide
+#  rule: GreyTideAntagMidround
 
 
 #- type: ninjaHackingThreat
