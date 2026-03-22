@@ -1396,34 +1396,6 @@
   products:
     TheMartinez: 6
 
-- type: reaction # Omu start
-  id: TheWelles
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    Vodka:
-      amount: 4
-    JuiceLime:
-      amount: 1
-    SolDry:
-      amount: 1
-  products:
-    TheWelles: 6
-
-- type: reaction
-  id: WolfsMilk
-  reactants:
-    Egg:
-      amount: 1
-    Gin:
-      amount: 2
-    CoffeeLiqueur:
-      amount: 1
-    Milk:
-      amount: 2
-  products:
-    WolfsMilk: 6 # end omu
-
 - type: reaction
   id: Vodka
   requiredMixerCategories:
@@ -1621,31 +1593,3 @@
       amount: 1
   products:
     ZombieCocktail: 4
-
-- type: reaction
-  id: BacchusBlessing
-  reactants:
-    Hooch:
-      amount: 1
-    Absinthe:
-      amount: 1
-    ManlyDorf:
-      amount: 1
-    SyndicateBomb:
-      amount: 1
-  products:
-    BacchusBlessing: 4
-
-- type: reaction
-  id: BacchusBlessing
-  reactants:
-    Hooch:
-      amount: 1
-    Absinthe:
-      amount: 1
-    ManlyDorf:
-      amount: 1
-    SyndicateBomb:
-      amount: 1
-  products:
-    BacchusBlessing: 4

@@ -2718,18 +2718,3 @@
         - !type:OrganType # Delta V - Same as above
           type: Oni
           shouldHave: false
-
-- type: reagent # Omu stuff
-  id: WolfsMilk
-  name: reagent-name-wolfs-milk
-  parent: BaseAlcohol
-  desc: reagent-desc-wolfs-milk
-  physicalDesc: reagent-physical-desc-chunky
-  flavor: wolfsmilk
-  color: "#C1C2AE"
-  metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/wolfsmilk.rsi
-    state: icon_empty
-  metamorphicMaxFillLevels: 4
-  metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false

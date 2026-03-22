@@ -1,0 +1,16 @@
+﻿- type: entity
+  parent: DrinkGlass
+  id: DrinkWolfsMilk
+  suffix: Wolf's Milk
+  description: Nasty!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Wolf's Milk
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/eggnogglass.rsi
+    state: icon
