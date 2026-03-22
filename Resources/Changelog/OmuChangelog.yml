@@ -2837,3 +2837,17 @@ Entries:
       message: Adds a robotics maints airlock for mapping
   id: 361
   time: '2026-03-22T13:38:31.0000000+00:00'
+- author: Dishwasher0
+  changes:
+    - type: Add
+      message: Robo and Courier are mapped now rejoice !
+  id: 362
+  time: '2026-03-22T16:59:18.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: >-
+        Fixed people being able to break into areas on Protected grids. Stop
+        trying to bypass this.
+  id: 363
+  time: '2026-03-22T20:41:33.0000000+00:00'
