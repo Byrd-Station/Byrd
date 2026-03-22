@@ -16,7 +16,6 @@
 using System.Linq;
 using Content.Server.Administration;
 using Content.Server.EUI;
-using Content.Server.Silicons.StationAi;
 using Content.Server.Station.Systems;
 using Content.Server.StationRecords;
 using Content.Server.StationRecords.Systems;
@@ -25,8 +24,6 @@ using Content.Shared.CCVar;
 using Content.Shared.CrewManifest;
 using Content.Shared.GameTicking;
 using Content.Shared.Roles;
-using Content.Shared.Silicons.Borgs.Components;
-using Content.Shared.Silicons.StationAi;
 using Content.Shared.Station.Components;
 using Content.Shared.StationRecords;
 using Robust.Shared.Configuration;
@@ -40,7 +37,6 @@ public sealed class CrewManifestSystem : EntitySystem
 {
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly StationRecordsSystem _recordsSystem = default!;
-    [Dependency] private readonly StationAiSystem _stationAiSystem = default!;
     [Dependency] private readonly EuiManager _euiManager = default!;
     [Dependency] private readonly IConfigurationManager _configManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -245,9 +241,6 @@ public sealed class CrewManifestSystem : EntitySystem
         var iter = _recordsSystem.GetRecordsOfType<GeneralStationRecord>(station);
 
         var entries = new CrewManifestEntries();
-        var borgJob = _prototypeManager.Index<JobPrototype>("Borg");
-        var stationAiJob = _prototypeManager.Index<JobPrototype>("StationAi");
-
         var entriesSort = new List<(JobPrototype? job, CrewManifestEntry entry)>();
         foreach (var recordObject in iter)
         {
@@ -258,29 +251,9 @@ public sealed class CrewManifestSystem : EntitySystem
             entriesSort.Add((job, entry));
         }
 
-        var borgQuery = EntityQueryEnumerator<BorgChassisComponent>();
-        while (borgQuery.MoveNext(out var uid, out var chassis))
-        {
-            if (_stationSystem.GetOwningStation(uid) != station)
-                continue;
-
-            if (chassis.BrainEntity == null)
-                continue;
-
-            entriesSort.Add((borgJob, BuildSiliconEntry(uid, borgJob)));
-        }
-
-        var aiQuery = EntityQueryEnumerator<StationAiCoreComponent>();
-        while (aiQuery.MoveNext(out var uid, out var core))
-        {
-            if (_stationSystem.GetOwningStation(uid) != station)
-                continue;
-
-            if (!_stationAiSystem.TryGetHeld((uid, core), out var held))
-                continue;
-
-            entriesSort.Add((stationAiJob, BuildSiliconEntry(held, stationAiJob)));
-        }
+        // Allow downstream modules to inject extra manifest rows without rewriting this system.
+        var ev = new CrewManifestEntriesCollectEvent(station, entriesSort);
+        RaiseLocalEvent(ev);
 
         entriesSort.Sort((a, b) =>
         {
@@ -293,15 +266,6 @@ public sealed class CrewManifestSystem : EntitySystem
 
         entries.Entries = entriesSort.Select(x => x.entry).ToArray();
         _cachedEntries[station] = entries;
-    }
-
-    private CrewManifestEntry BuildSiliconEntry(EntityUid uid, JobPrototype job)
-    {
-        return new CrewManifestEntry(
-            MetaData(uid).EntityName,
-            job.LocalizedName,
-            job.Icon.ToString(),
-            job.ID);
     }
 }
 
