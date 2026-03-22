@@ -1,10 +1,10 @@
 using Content.Shared.CrewManifest;
 using Content.Shared.Roles;
 
-namespace Content.Server.CrewManifest;
+namespace Content.Omu.Server.CrewManifest;
 
 /// <summary>
-/// Allows fork modules to append extra crew manifest rows before the final sort/cache step.
+/// Allows Omu systems to append extra crew manifest rows before the final sort/cache step.
 /// </summary>
 public readonly record struct CrewManifestEntriesCollectEvent(
     EntityUid Station,

@@ -19,6 +19,7 @@ using Content.Server.EUI;
 using Content.Server.Station.Systems;
 using Content.Server.StationRecords;
 using Content.Server.StationRecords.Systems;
+using Content.Omu.Server.CrewManifest;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.CrewManifest;
@@ -129,7 +130,7 @@ public sealed class CrewManifestSystem : EntitySystem
     /// <returns>The name and crew manifest entries (unordered) of the station.</returns>
     public (string name, CrewManifestEntries? entries) GetCrewManifest(EntityUid station)
     {
-        BuildCrewManifest(station);
+        BuildCrewManifest(station); // Omu
 
         var valid = _cachedEntries.TryGetValue(station, out var manifest);
         return (valid ? MetaData(station).EntityName : string.Empty, valid ? manifest : null);
@@ -251,9 +252,11 @@ public sealed class CrewManifestSystem : EntitySystem
             entriesSort.Add((job, entry));
         }
 
+        // Omu start
         // Allow downstream modules to inject extra manifest rows without rewriting this system.
         var ev = new CrewManifestEntriesCollectEvent(station, entriesSort);
         RaiseLocalEvent(ev);
+        // Omu end
 
         entriesSort.Sort((a, b) =>
         {
