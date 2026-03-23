@@ -16,6 +16,29 @@
   - PrisonerEnvirogloves
 
 - type: roleLoadout
+  id: JobSecuritySergeant
+  groups:
+  - SecurityHead
+  - SecurityJumpsuit
+  - SecurityBackpack
+  - SecurityMelee # Goobstation
+  - TrinketsSecuritySergeant # Actually is their guns, not trinkets.
+  - SecurityOuterClothing
+  - SecurityShoes
+  - SecurityNeck
+  - SecuritySergeantPDA
+  - SecurityBelt
+  - SurvivalSecurity
+  - Trinkets
+  - SecurityStar
+  - Animals
+  - GroupSpeciesBreathToolSecurity
+  # Goobstation - EE Plasmeme Change.
+  - SecurityOfficerEnvirohelm
+  - SecurityOfficerEnvirosuit
+  - SecurityOfficerEnvirogloves
+  
+- type: roleLoadout
   id: JobCourier
   groups:
   - CourierHead

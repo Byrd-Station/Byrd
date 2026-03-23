@@ -152,6 +152,7 @@
   - OfficerCadetSOP
   - DetectiveSOP
   - CorpsmanSOP # Omu - rename Brigmedic to Corpsman
+  - SecuritySergeantSOP # Omu
 
 - type: guideEntry
   id: ServiceSOP

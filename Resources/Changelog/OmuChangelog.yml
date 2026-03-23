@@ -2843,3 +2843,37 @@ Entries:
       message: Robo and Courier are mapped now rejoice !
   id: 362
   time: '2026-03-22T16:59:18.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: >-
+        Fixed people being able to break into areas on Protected grids. Stop
+        trying to bypass this.
+  id: 363
+  time: '2026-03-22T20:41:33.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: Atomic Precision only dna scrambles at 25u now. It also adds ethanol now
+  id: 364
+  time: '2026-03-22T21:50:08.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added a new job to security, the Sergeant
+  id: 365
+  time: '2026-03-22T21:52:56.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Remove
+      message: >-
+        Removed the swat gas mask from the maildrobe.. Dont know how that got
+        approved..
+  id: 366
+  time: '2026-03-23T01:25:56.0000000+00:00'
+- author: Thesia000
+  changes:
+    - type: Add
+      message: Dedicated roundtype for tokens and admin events
+  id: 367
+  time: '2026-03-23T01:26:26.0000000+00:00'
