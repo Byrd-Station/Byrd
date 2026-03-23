@@ -179,3 +179,14 @@
     sprite: _Omu/Clothing/Uniforms/Jumpsuit/cybersunparamed.rsi
   - type: Clothing
     sprite: _Omu/Clothing/Uniforms/Jumpsuit/cybersunparamed.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband]
+  id: ClothingUniformSergeantUniform
+  name: sergeant's jumpsuit
+  description: The jumpsuit of a highly skilled member of security. They're the guiding light for this station's safety.
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Uniforms/Jumpsuit/sergeant.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Uniforms/Jumpsuit/sergeant.rsi
