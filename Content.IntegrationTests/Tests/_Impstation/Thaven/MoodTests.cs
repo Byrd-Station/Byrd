@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Content.IntegrationTests;
-using Content.Server._Impstation.Thaven;
+using Content.Omu.Server._Impstation.Thaven;
 using Content.Shared.Dataset;
-using Content.Shared._Impstation.Thaven;
+using Content.Omu.Shared._Impstation.Thaven;
 using NUnit.Framework;
 using Robust.Shared.ContentPack;
 using Robust.Shared.GameObjects;
@@ -93,3 +93,4 @@ public sealed class ThavenMoodTests
         await pair.CleanReturnAsync();
     }
 }
+
