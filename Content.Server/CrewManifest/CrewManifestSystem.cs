@@ -19,7 +19,7 @@ using Content.Server.EUI;
 using Content.Server.Station.Systems;
 using Content.Server.StationRecords;
 using Content.Server.StationRecords.Systems;
-using Content.Omu.Server.CrewManifest;
+using Content.Server._Omu.CrewManifest;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.CrewManifest;

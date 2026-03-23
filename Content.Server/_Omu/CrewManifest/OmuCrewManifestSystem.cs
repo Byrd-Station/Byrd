@@ -13,7 +13,7 @@ using Content.Shared.Silicons.StationAi;
 using Content.Shared._DV.Silicons.Laws;
 using Robust.Shared.Prototypes;
 
-namespace Content.Omu.Server.CrewManifest;
+namespace Content.Server._Omu.CrewManifest;
 
 /// <summary>
 /// Omu-specific manifest additions for silicon crew that do not create normal station records.
