@@ -118,7 +118,7 @@
   moodName: thaven-mood-pet-god-name
   moodDesc: thaven-mood-pet-god-desc
   moodVars:
-    pet: Pets
+    pet: ThavenMoodPets
 
 # [ROOM] is a holy place.
 - type: thavenMood
@@ -126,7 +126,7 @@
   moodName: thaven-mood-room-holy-name
   moodDesc: thaven-mood-room-holy-desc
   moodVars:
-    room: Rooms
+    room: ThavenMoodRooms
 
 # Just Like Mom Used To Make: [EDIBLE] is a traditional thaven delicacy. All thaven aboard the station should gather as many as possible and organize a feast.
 - type: thavenMood
@@ -136,7 +136,7 @@
   conflicts:
   - FoodRestrict
   moodVars:
-    edible: Edibles
+    edible: ThavenMoodEdibles
 
 # Today is [HOLIDAY]. You think you remember the traditional celebrations...
 - type: thavenMood
@@ -144,7 +144,7 @@
   moodName: thaven-mood-holiday-name
   moodDesc: thaven-mood-holiday-desc
   moodVars:
-    day: Holidays
+    day: ThavenMoodHolidays
 
 # The circus is in town and you are part of it!
 - type: thavenMood

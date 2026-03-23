@@ -215,7 +215,7 @@
   moodName: thaven-mood-aye-aye-name
   moodDesc: thaven-mood-aye-aye-desc
   moodVars:
-    command: CommandRoles
+    command: ThavenMoodCommandRoles
 
 # Your current job is disgusting to you. You must endeavor to get a new one. - this is in wildcard now cause its annoying 4 ppl who just wanna play a certain role
 - type: thavenMood

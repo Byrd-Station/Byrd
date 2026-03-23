@@ -226,7 +226,7 @@
   moodName: thaven-mood-item-good-name
   moodDesc: thaven-mood-item-good-desc
   moodVars:
-    item: Items
+    item: ThavenMoodItems
 
 # Eye For An Eye: You must treat every living being the way that it treats you.
 - type: thavenMood
@@ -266,7 +266,7 @@
   moodName: thaven-mood-speech-restriction-name
   moodDesc: thaven-mood-speech-restriction-desc
   moodVars:
-    speechType: SpeechRestrictions
+    speechType: ThavenMoodSpeechRestrictions
 
 # Fan of clowns: Clowns are such whimsical things, just seeing one makes you breakout into fits of laughter! - removed, clown players must work for their laughs. also the ftl isnt real for this one.
 #- type: thavenMood

@@ -47,7 +47,7 @@
   moodName: thaven-mood-department-disapproval-name
   moodDesc: thaven-mood-department-disapproval-desc
   moodVars:
-    department: Departments
+    department: ThavenMoodDepartments
 
 # You detest mind-altering drugs, including alcohol, and must abstain from them.
 - type: thavenMood
@@ -155,7 +155,7 @@
   moodName: thaven-mood-hardsuits-bad-name
   moodDesc: thaven-mood-hardsuits-bad-desc
   moodVars:
-    clothes: Clothes
+    clothes: ThavenMoodClothes
 
 # Hats and helmets make your hair look bad. You cannot wear them.
 - type: thavenMood
@@ -200,7 +200,7 @@
   moodName: thaven-mood-food-restrict-name
   moodDesc: thaven-mood-food-restrict-desc
   moodVars:
-    food: FoodRestrictions
+    food: ThavenMoodFoodRestrictions
   conflicts:
   - PlantPacifist
 

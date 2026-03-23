@@ -1,5 +1,5 @@
 - type: dataset
-  id: Departments
+  id: ThavenMoodDepartments
   values:
   - Command
   - Security
@@ -10,7 +10,7 @@
   - Service
 
 - type: dataset
-  id: Clothes
+  id: ThavenMoodClothes
   values:
   - hardsuits
   - uniforms
@@ -20,7 +20,7 @@
   - cloaks
 
 - type: dataset
-  id: FoodRestrictions
+  id: ThavenMoodFoodRestrictions
   values:
   - vegetarian
   - vegan
@@ -30,7 +30,7 @@
   - dairy-free diet
 
 - type: dataset
-  id: Pets
+  id: ThavenMoodPets
   values:
   - Ian
   - Runtime
@@ -39,7 +39,7 @@
   - Morticia
 
 - type: dataset
-  id: Rooms
+  id: ThavenMoodRooms
   values:
   - the chapel
   - the bar
@@ -49,7 +49,7 @@
   - the arrivals shuttle
 
 - type: dataset
-  id: Edibles
+  id: ThavenMoodEdibles
   values:
   - pizza
   - soup
@@ -59,7 +59,7 @@
   - pie
 
 - type: dataset
-  id: Holidays
+  id: ThavenMoodHolidays
   values:
   - Remembrance Day
   - Founding Day
@@ -68,7 +68,7 @@
   - Feast of Returning
 
 - type: dataset
-  id: Items
+  id: ThavenMoodItems
   values:
   - hats
   - stamps
@@ -78,7 +78,7 @@
   - glasses
 
 - type: dataset
-  id: CommandRoles
+  id: ThavenMoodCommandRoles
   values:
   - Captain
   - Head of Personnel
@@ -88,7 +88,7 @@
   - Head of Security
 
 - type: dataset
-  id: SpeechRestrictions
+  id: ThavenMoodSpeechRestrictions
   values:
   - in whispers only
   - only in questions
