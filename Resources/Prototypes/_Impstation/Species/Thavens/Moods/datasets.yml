@@ -1,0 +1,98 @@
+- type: dataset
+  id: Departments
+  values:
+  - Command
+  - Security
+  - Medical
+  - Science
+  - Engineering
+  - Cargo
+  - Service
+
+- type: dataset
+  id: Clothes
+  values:
+  - hardsuits
+  - uniforms
+  - helmets
+  - gloves
+  - boots
+  - cloaks
+
+- type: dataset
+  id: FoodRestrictions
+  values:
+  - vegetarian
+  - vegan
+  - pescetarian
+  - fruitarian
+  - gluten-free diet
+  - dairy-free diet
+
+- type: dataset
+  id: Pets
+  values:
+  - Ian
+  - Runtime
+  - Pun Pun
+  - McGriff
+  - Morticia
+
+- type: dataset
+  id: Rooms
+  values:
+  - the chapel
+  - the bar
+  - medbay
+  - the bridge
+  - the courtroom
+  - the arrivals shuttle
+
+- type: dataset
+  id: Edibles
+  values:
+  - pizza
+  - soup
+  - burger
+  - tacos
+  - noodles
+  - pie
+
+- type: dataset
+  id: Holidays
+  values:
+  - Remembrance Day
+  - Founding Day
+  - Lantern Night
+  - Long Vigil
+  - Feast of Returning
+
+- type: dataset
+  id: Items
+  values:
+  - hats
+  - stamps
+  - pens
+  - shoes
+  - plushies
+  - glasses
+
+- type: dataset
+  id: CommandRoles
+  values:
+  - Captain
+  - Head of Personnel
+  - Chief Engineer
+  - Chief Medical Officer
+  - Research Director
+  - Head of Security
+
+- type: dataset
+  id: SpeechRestrictions
+  values:
+  - in whispers only
+  - only in questions
+  - only in rhymes
+  - without contractions
+  - only in third person
+  - only in formal titles
