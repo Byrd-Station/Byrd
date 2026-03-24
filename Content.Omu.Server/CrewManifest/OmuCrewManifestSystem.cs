@@ -1,3 +1,4 @@
+using Content.Server._Omu.CrewManifest;
 using Content.Server.Roles;
 using Content.Server.Roles.Jobs;
 using Content.Server.Silicons.StationAi;
@@ -13,7 +14,7 @@ using Content.Shared.Silicons.StationAi;
 using Content.Shared._DV.Silicons.Laws;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._Omu.CrewManifest;
+namespace Content.Omu.Server.CrewManifest;
 
 /// <summary>
 /// Omu-specific manifest additions for silicon crew that do not create normal station records.
