@@ -25,6 +25,15 @@
   - StationAiHologramKobold
   - StationAiHologramMonkey
   - StationAiHologramScurret # goob
+  - StationAiHologramAlgalone # part of bugborg pr
+  - StationAiHologramFractalsnowflake
+  - StationAiHologramHensonsnode
+  - StationAiHologramLongrun
+  - StationAiHologramNtpaint
+  - StationAiHologramPuredata
+  - StationAiHologramRorschach
+  - StationAiHologramSeraphim
+  - StationAiHologramTripleaffirmative
 
 # Iconography
 - type: stationAiCustomization
