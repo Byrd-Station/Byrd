@@ -5,6 +5,7 @@ using Content.Server.Chat.Managers;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Dataset;
+using Content.Shared.Emag.Systems;
 using Content.Shared.GameTicking;
 using Content.Shared._Omu.Thaven;
 using Content.Shared._Omu.Thaven.Components;
@@ -363,5 +364,14 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
         TryAddRandomMood(ent.Owner, WildcardDataset, ent.Comp);
     }
     // End DeltaV: thaven mood upsets
+
+    protected override void OnEmagged(Entity<ThavenMoodsComponent> ent, ref GotEmaggedEvent args)
+    {
+        base.OnEmagged(ent, ref args);
+        if (!args.Handled)
+            return;
+
+        AddWildcardMood(ent);
+    }
 }
 
