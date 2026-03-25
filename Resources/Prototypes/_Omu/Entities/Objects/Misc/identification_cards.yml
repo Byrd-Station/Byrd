@@ -156,3 +156,18 @@
   components:
   - type: PresetIdCard
     job: NanoTrasenSpectre
+
+- type: entity
+  parent: SecurityIDCard
+  id: SecuritySergeantIDCard
+  name: sergeant ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idseniorofficer
+  - type: PresetIdCard
+    job: SecuritySergeant
+  - type: IdCard
+    jobTitle: job-name-security-sergeant
+    jobIcon: JobIconSecuritySergeant
