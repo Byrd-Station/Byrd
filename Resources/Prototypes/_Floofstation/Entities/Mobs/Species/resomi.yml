@@ -74,7 +74,7 @@
   - type: Nesting
     enterNestAction: ActionResomiEnterNest
     exitNestAction: ActionResomiExitNest
-    nestCooldown: 120
+    nestCooldown: 300
     updateInterval: 2
     bleedHealPerUpdate: 0.5
     critHealingModifier: 1.5
