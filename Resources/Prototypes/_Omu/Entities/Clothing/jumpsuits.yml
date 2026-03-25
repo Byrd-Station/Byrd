@@ -181,7 +181,6 @@
     sprite: _Omu/Clothing/Uniforms/Jumpsuit/cybersunparamed.rsi
 
 - type: entity
-<<<<<<< HEAD
   parent: [ClothingUniformBase, BaseSecurityContraband]
   id: ClothingUniformSergeantUniform
   name: sergeant's uniform
@@ -203,7 +202,7 @@
   - type: Clothing
     sprite: _Omu/Clothing/Uniforms/Jumpskirt/sergeantskirt.rsi
 
-=======
+- type: entity
   parent: ClothingUniformBase
   id: ClothingUniformCentComCasualEgg
   name: sector commander's eggsercise wear
@@ -214,4 +213,3 @@
     sprite: _Omu/Clothing/Uniforms/Jumpsuit/eggsercisewear.rsi
   - type: Clothing
     sprite: _Omu/Clothing/Uniforms/Jumpsuit/eggsercisewear.rsi
->>>>>>> upstream/master
