@@ -52,6 +52,7 @@
     - WeaponEnergyShotgunSet
     - WeaponWardenRevolverShotgunSet
     - WardenRapierSet
+    - WardenAxeSet
     maxSelectedSets: 1
   - type: StealTarget
     stealGroup: WeaponEnergyShotgun

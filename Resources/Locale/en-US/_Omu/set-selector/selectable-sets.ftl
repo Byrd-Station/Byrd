@@ -119,3 +119,6 @@ selectable-set-corpsman-combathardsuit-desc =
     Older model of corpsman's hardsuit.
     Built based on designs recovered from Regalis sector.
     Offers much better armor then newer models.
+
+selectable-set-warden-axe-name = Warden's Axe
+selectable-set-warden-axe-desc = A weapon as heavy as the duty you bear.  
