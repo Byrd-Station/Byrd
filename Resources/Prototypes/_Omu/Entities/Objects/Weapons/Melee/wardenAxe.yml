@@ -1,5 +1,5 @@
 - type: entity
-  name: warden's axe
+  name: Warden's Axe
   id: WardenAxe
   parent: [BaseWardenContraband,  FireAxe]
   description:  A bloodstained weapon made for an executioner. The handle and blade are engraved with a Warden's sacred operating procedure.
@@ -31,7 +31,7 @@
     attackRate: 0.7
     damage:
       types:
-        Blunt:  5
+        Blunt:  7
         Slash:  14
       woundSeverityMultipliers:
         Slash:  2
