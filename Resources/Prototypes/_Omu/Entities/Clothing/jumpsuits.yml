@@ -179,3 +179,15 @@
     sprite: _Omu/Clothing/Uniforms/Jumpsuit/cybersunparamed.rsi
   - type: Clothing
     sprite: _Omu/Clothing/Uniforms/Jumpsuit/cybersunparamed.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformCentComCasualEgg
+  name: sector commander's eggsercise wear
+  description: A gym suit for active eggs seeking to not be fried through even the most demanding workouts.
+  suffix: ADMEME
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Uniforms/Jumpsuit/eggsercisewear.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Uniforms/Jumpsuit/eggsercisewear.rsi

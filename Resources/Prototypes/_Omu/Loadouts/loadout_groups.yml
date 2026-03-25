@@ -277,7 +277,7 @@
   maxLimit: 1
   loadouts:
   - GreyTideStamp
-  
+
 # Security
 
 - type: loadoutGroup
@@ -291,6 +291,25 @@
   - SecurityOfficerSecurityDutyRevolver
   - SecurityOfficerTerminus
   - WeaponPistolMk58Gold
+
+- type: loadoutGroup
+  id: TrinketsSecuritySergeant
+  name: loadout-group-trinkets-job
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - SecuritySergeantGunCase
+  - SecurityOfficerMk58
+  - SecurityOfficerSecurityDutyRevolver
+  - SecurityOfficerTerminus
+  - WeaponPistolMk58Gold
+  - SecuritySergeantMosin
+
+- type: loadoutGroup
+  id: SecuritySergeantPDA
+  name: loadout-group-security-id
+  loadouts:
+  - SecuritySergeantPDA
 
 # We have a separate one for detective cause holster
 - type: loadoutGroup

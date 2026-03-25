@@ -84,6 +84,7 @@
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 10, 10 ]
             ResearchAssistant: [ -1, -1 ]
+            Roboticist: [ 2, 2 ] #Omu
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
@@ -97,6 +98,7 @@
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 4, 4 ]
             ShaftMiner: [ 4, 4 ] # Omu
+            Courier: [ 2, 2 ] #Omu
             #civilian
             Passenger: [ -1, -1 ]
             Clown: [ 2, 2 ]

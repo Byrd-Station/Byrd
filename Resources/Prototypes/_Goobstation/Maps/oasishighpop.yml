@@ -82,6 +82,7 @@
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 10, 10 ]
             ResearchAssistant: [ -1, -1 ]
+            Roboticist: [ 2, 2 ] #Omu
             Borg: [ 4, 4 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
@@ -95,8 +96,8 @@
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 4, 4 ]
-            #Courier: [ 3, 4 ] # Omu - Courier role
-            #ShaftMiner: [ 4, 4 ] # Omu, needs mapping
+            Courier: [ 3, 4 ] # Omu - Courier role
+            ShaftMiner: [ 4, 4 ] # Omu, needs mapping
             CargoTechnician: [ -1, -1 ]
             #civilian
             Passenger: [ -1, -1 ]

@@ -30,3 +30,6 @@
 
 - type: playTimeTracker
   id: JobERTSecurityBlue
+
+- type: playTimeTracker
+  id: JobSecuritySergeant
