@@ -3,10 +3,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._Omu.Resomi.Components;
+using Content.Shared._Shitmed.Weapons.Ranged.Events;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Weapons.Melee.Events;
-using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
-using Robust.Shared.GameObjects;
 
 namespace Content.Shared._Omu.Resomi.EntitySystems;
 
@@ -18,19 +18,26 @@ namespace Content.Shared._Omu.Resomi.EntitySystems;
 /// Debuffs applied:
 /// - 15% less outgoing melee damage (lighter body mass, weaker strikes)
 /// - Increased bullet spread (small frame makes handling large weapons unstable)
-/// - Increased camera recoil (amplifies felt kickback from the same instability)
+/// - Heavy stamina drain when firing rifles, shotguns, snipers, launchers, HMGs and LMGs
+///   (pistols, revolvers and SMGs are exempt — Resomis can still use sidearms effectively)
 /// </summary>
 public sealed class ResomiCombatDebuffSystem : EntitySystem
 {
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
+
     public override void Initialize()
     {
         SubscribeLocalEvent<ResomiCombatDebuffComponent, GetUserMeleeDamageEvent>(OnMeleeDamage);
 
-        // GunRefreshModifiersEvent is raised directed on the GUN entity, not the shooter.
-        // We subscribe on GunComponent and check args.User to apply the debuff only to Resomis.
-        // This is the correct SS14 pattern — subscribing on ResomiCombatDebuffComponent here
-        // would never fire because Resomis do not have a GunComponent themselves.
-        SubscribeLocalEvent<GunComponent, GunRefreshModifiersEvent>(OnGunRefresh);
+        // DeltaV's SharedGunSystem.Holder.cs raises GunRefreshModifiersEvent on the holder (user)
+        // entity whenever the gun's modifiers are refreshed. By subscribing here on the Resomi
+        // component we cleanly intercept those events without duplicating GunComponent subscriptions.
+        SubscribeLocalEvent<ResomiCombatDebuffComponent, GunRefreshModifiersEvent>(OnGunRefresh);
+
+        // GunShotBodyEvent is raised on the shooter (user) by SharedGunSystem after every shot.
+        // We check if the gun has ResomiGunStaminaDrainComponent (present on heavy weapons only)
+        // and drain stamina accordingly.
+        SubscribeLocalEvent<ResomiCombatDebuffComponent, GunShotBodyEvent>(OnGunShot);
     }
 
     /// <summary>
@@ -43,26 +50,34 @@ public sealed class ResomiCombatDebuffSystem : EntitySystem
     }
 
     /// <summary>
-    /// Increases bullet spread and camera recoil when a Resomi fires any gun.
-    /// Only applies if the shooter (<see cref="GunRefreshModifiersEvent.User"/>) has
-    /// <see cref="ResomiCombatDebuffComponent"/> — all other species are unaffected.
+    /// Applies bullet spread debuff whenever a Resomi holds a gun.
+    /// SharedGunSystem raises this event on gun.Comp.Holder (the wielder),
+    /// so we receive it here without needing separate equip/unequip hooks.
     ///
     /// Spread is added to both MinAngle and MaxAngle so every shot is affected,
     /// not just the worst-case cone. This makes the penalty visible even on the first shot.
     /// </summary>
-    private void OnGunRefresh(Entity<GunComponent> ent, ref GunRefreshModifiersEvent args)
+    private void OnGunRefresh(Entity<ResomiCombatDebuffComponent> ent, ref GunRefreshModifiersEvent args)
     {
-        if (args.User == null || !TryComp<ResomiCombatDebuffComponent>(args.User, out var debuff))
-            return;
-
         // Add flat degree spread to both angle bounds.
         // At 8 degrees the inaccuracy is clearly noticeable at medium range without
         // making point-blank self-defence completely useless.
-        var spread = Angle.FromDegrees(debuff.SpreadIncreaseDegrees);
+        var spread = Angle.FromDegrees(ent.Comp.SpreadIncreaseDegrees);
         args.MinAngle += spread;
         args.MaxAngle += spread;
+    }
 
-        // Scale camera shake on top of spread so the feedback matches the inaccuracy.
-        args.CameraRecoilScalar *= debuff.RecoilMultiplier;
+    /// <summary>
+    /// Drains heavy stamina from a Resomi when they fire a heavy weapon.
+    /// Only guns with <see cref="ResomiGunStaminaDrainComponent"/> trigger the drain —
+    /// pistols, revolvers, and SMGs are deliberately exempt so Resomis still have viable sidearms.
+    /// </summary>
+    private void OnGunShot(EntityUid uid, ResomiCombatDebuffComponent comp, GunShotBodyEvent args)
+    {
+        // Only drain for guns that carry the heavy-weapon marker.
+        if (!TryComp<ResomiGunStaminaDrainComponent>(args.GunUid, out var drain))
+            return;
+
+        _stamina.TakeStaminaDamage(uid, drain.StaminaDrain);
     }
 }

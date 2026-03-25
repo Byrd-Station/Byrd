@@ -24,17 +24,8 @@ public sealed partial class ResomiCombatDebuffComponent : Component
     public float MeleeDamageMultiplier = 0.85f;
 
     /// <summary>
-    /// Multiplier applied to camera recoil shake when firing a gun.
-    /// Default 1.75 = 75% more recoil feedback.
-    /// Combined with SpreadIncreaseDegrees for a full "bad handling" feel.
-    /// </summary>
-    [DataField]
-    public float RecoilMultiplier = 1.75f;
-
-    /// <summary>
     /// Flat degrees added to both MinAngle and MaxAngle on every gun refresh.
     /// Default 8 degrees — clearly noticeable at range, not crippling up close.
-    /// Raise to 10+ for a more severe penalty; lower to 4–5 for a subtle one.
     /// </summary>
     [DataField]
     public float SpreadIncreaseDegrees = 8f;
