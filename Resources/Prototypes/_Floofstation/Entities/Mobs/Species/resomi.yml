@@ -80,16 +80,37 @@
     critHealingModifier: 1.5
     healingPerUpdate:
       types:
-        Blunt: -0.3
-        Slash: -0.3
-        Piercing: -0.3
-        Heat: -0.3
-        Cold: -0.3
-        Shock: -0.3
-        Poison: -0.3
-        Asphyxiation: -0.3
-        Bloodloss: -0.3
-        Caustic: -0.3
+        Blunt: 0.2
+        Slash: 0.2
+        Piercing: 0.2
+        Heat: 0.2
+        Cold: 0.2
+        Shock: 0.2
+        Poison: 0.2
+        Asphyxiation: 0.2
+        Bloodloss: 0.2
+        Caustic: 0.2
+  # Omu - Resomi combat debuffs: -15% melee damage, +75% recoil
+  - type: ResomiCombatDebuff
+    meleeDamageMultiplier: 0.85
+    recoilMultiplier: 1.75
+  # Omu - Resomi Call ability
+  - type: ResomiCall
+    callAction: ActionResomiCall
+    callCooldown: 60
+  # Omu - Resomi Sprint/Impulse ability
+  - type: ResomiImpulse
+    sprintToggleAction: ActionResomiToggleSprint
+    sprintSpeedMultiplier: 1.5
+    exhaustionSpeedMultiplier: 0.4
+    exhaustionDuration: 20
+  # Omu - Resomi Energy bar (drains over time, recharges in nest)
+  - type: ResomiEnergy
+    energy: 100
+    maxEnergy: 100
+    drainRate: 0.1111  # ~15 minutes to empty
+    rechargeRate: 0.8333 # ~2 minutes to fill
+    exhaustionSpeedMultiplier: 0.70
   - type: Tag
     tags:         # Goob - What the fuck is FootstepSound and DoorBumpOpener for if they work without them - rest fixes anoms though.
     - CanPilot

@@ -25,3 +25,29 @@
       state: unnest
   - type: InstantAction
     event: !type:ExitNestActionEvent
+
+- type: entity
+  id: ActionResomiToggleSprint
+  name: Sprint
+  description: Channel your raptor instincts and sprint at high speed. Drains stamina. If you run out you will be left completely exhausted.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Omu/Interface/Actions/actions_resomi.rsi
+      state: sprint
+  - type: InstantAction
+    event: !type:ToggleSprintActionEvent
+
+- type: entity
+  id: ActionResomiCall
+  name: Call
+  description: Let out a piercing raptor call. Other Resomis on the station will hear it and know which direction it came from.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Omu/Interface/Actions/actions_resomi.rsi
+      state: bird_call
+  - type: InstantAction
+    event: !type:ResomiCallActionEvent

@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Raze500
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Damage;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -78,4 +82,35 @@ public sealed partial class NestingComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public SoundSpecifier NestExitSound = new SoundCollectionSpecifier("ResomiChirp");
+
+    /// <summary>
+    /// Flat damage reduction multiplier applied to all incoming positive damage while nesting.
+    /// 0.5 = 50% reduction (pain tolerance).
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public float NestDamageReduction = 0.5f;
+
+    /// <summary>
+    /// Effect spawned when entering the nest.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public EntProtoId NestEnterEffect = "EffectResomiNestEnter";
+
+    /// <summary>
+    /// Effect spawned while the nest is active (continuous).
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public EntProtoId NestContinuousEffect = "EffectResomiNestCurrent";
+
+    /// <summary>
+    /// Effect spawned when exiting the nest.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public EntProtoId NestExitEffect = "EffectResomiNestExit";
+
+    /// <summary>
+    /// Tracks the currently spawned continuous nest effect entity.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public EntityUid? ContinuousEffectEntity;
 }

@@ -7,11 +7,10 @@
     "y": 32
   },
   "states": [
-    {
-      "name": "nest"
-    },
-    {
-      "name": "unnest"
-    }
+    { "name": "nest" },
+    { "name": "unnest" },
+    { "name": "bird_call" },
+    { "name": "sprint" },
+    { "name": "sprint-stop" }
   ]
 }

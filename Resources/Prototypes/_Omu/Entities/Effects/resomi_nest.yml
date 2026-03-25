@@ -1,0 +1,94 @@
+# Visual effects for Resomi nesting - ported from Starlight SS14 (avali_nanites)
+
+- type: entity
+  id: EffectResomiNestEnter
+  categories: [ HideSpawnMenu ]
+  name: nest shell (building)
+  components:
+  - type: Transform
+    anchored: false
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Sprite
+    sprite: _Omu/Effects/resomi_nest.rsi
+    state: nest-building
+    scale: 0.9, 0.9
+  - type: TimedDespawn
+    lifetime: 2.0
+  - type: PointLight
+    color: "#FFCBB8"
+    radius: 1.7
+    energy: 2.0
+    turnOnBehaviourID: turn_on
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: turn_on
+        enabled: true
+        interpolate: Linear
+        startValue: 0
+        endValue: 2
+        maxDuration: 1.8
+        property: Energy
+
+- type: entity
+  id: EffectResomiNestCurrent
+  categories: [ HideSpawnMenu ]
+  name: nest shell
+  components:
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Sprite
+    sprite: _Omu/Effects/resomi_nest.rsi
+    state: shell
+    scale: 0.9, 0.9
+  - type: PointLight
+    color: "#FFCBB8"
+    radius: 2.0
+    energy: 2.0
+    blinkingBehaviourId: blinking
+  - type: LightBehaviour
+    behaviours:
+      - !type:PulseBehaviour
+        id: blinking
+        enabled: true
+        interpolate: Cubic
+        startValue: 1.7
+        endValue: 2.0
+        isLooped: true
+        maxDuration: 2
+        minDuration: -0.7
+
+- type: entity
+  id: EffectResomiNestExit
+  categories: [ HideSpawnMenu ]
+  name: nest shell (deconstructing)
+  components:
+  - type: Transform
+    anchored: false
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Sprite
+    sprite: _Omu/Effects/resomi_nest.rsi
+    state: nest-deconstructing
+    scale: 0.9, 0.9
+  - type: TimedDespawn
+    lifetime: 2.0
+  - type: PointLight
+    color: "#FFCBB8"
+    radius: 1.85
+    energy: 2.0
+    fadeOutBehaviourID: fade_out
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: fade_out
+        enabled: true
+        interpolate: Linear
+        startValue: 2
+        endValue: 0
+        maxDuration: 1.8
+        property: Energy

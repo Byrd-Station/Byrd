@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Raze500
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Body.Systems;
 using Content.Shared.Actions;
 using Content.Shared.Damage;
@@ -28,6 +32,7 @@ public sealed class NestingSystem : SharedNestingSystem
         SubscribeLocalEvent<NestingComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<NestingComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<NestingComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<NestingComponent, DamageModifyEvent>(OnDamageModify);
         SubscribeLocalEvent<NestingComponent, EnterNestActionEvent>(OnEnterNest);
         SubscribeLocalEvent<NestingComponent, ExitNestActionEvent>(OnExitNest);
     }
@@ -42,6 +47,14 @@ public sealed class NestingSystem : SharedNestingSystem
         {
             if (!comp.IsNesting || comp.NextHeal > curTime)
                 continue;
+
+            // Stop healing if entity is somehow moving (left the nest position)
+            if (!HasComp<NestingFrozenComponent>(uid))
+            {
+                comp.IsNesting = false;
+                Dirty(uid, comp);
+                continue;
+            }
 
             var modifier = _mobState.IsCritical(uid) ? -comp.CritHealingModifier : -1.0f;
             _damageable.TryChangeDamage(uid, modifier * comp.HealingPerUpdate, true, origin: uid);
@@ -59,20 +72,37 @@ public sealed class NestingSystem : SharedNestingSystem
     {
         _actions.RemoveAction(uid, comp.EnterNestActionEntity);
         _actions.RemoveAction(uid, comp.ExitNestActionEntity);
+
+        if (comp.ContinuousEffectEntity.HasValue)
+            QueueDel(comp.ContinuousEffectEntity.Value);
     }
 
     private void OnMobStateChanged(Entity<NestingComponent> ent, ref MobStateChangedEvent args)
     {
-        // Force exit nest if the Resomi dies
         if (args.NewMobState == MobState.Dead && ent.Comp.IsNesting)
             RaiseLocalEvent(ent.Owner, new ExitNestActionEvent());
+    }
+
+    /// <summary>
+    /// Reduces all incoming positive damage by NestDamageReduction while nesting (pain tolerance).
+    /// </summary>
+    private void OnDamageModify(Entity<NestingComponent> ent, ref DamageModifyEvent args)
+    {
+        if (!ent.Comp.IsNesting || args.Origin == ent.Owner)
+            return;
+
+        var updated = new DamageSpecifier();
+        foreach (var (type, value) in args.Damage.DamageDict)
+        {
+            updated.DamageDict[type] = value > 0 ? ent.Comp.NestDamageReduction * value : value;
+        }
+        args.Damage = updated;
     }
 
     private void OnEnterNest(EntityUid uid, NestingComponent comp, EnterNestActionEvent args)
     {
         comp.IsNesting = true;
         comp.NextHeal = _timing.CurTime;
-        Dirty(uid, comp);
 
         EnsureComp<NestingFrozenComponent>(uid);
 
@@ -81,14 +111,22 @@ public sealed class NestingSystem : SharedNestingSystem
 
         _audio.PlayPvs(comp.NestEnterSound, uid);
 
-        var ev = new NestingAnimationEvent(GetNetEntity(uid), GetNetCoordinates(Transform(uid).Coordinates), NestingAnimationType.Enter);
+        // Spawn enter animation effect
+        var coords = Transform(uid).Coordinates;
+        Spawn(comp.NestEnterEffect, coords);
+
+        // Spawn continuous effect and track it
+        comp.ContinuousEffectEntity = Spawn(comp.NestContinuousEffect, coords);
+
+        Dirty(uid, comp);
+
+        var ev = new NestingAnimationEvent(GetNetEntity(uid), GetNetCoordinates(coords), NestingAnimationType.Enter);
         RaiseNetworkEvent(ev, Filter.Pvs(uid, entityManager: EntityManager));
     }
 
     private void OnExitNest(EntityUid uid, NestingComponent comp, ExitNestActionEvent args)
     {
         comp.IsNesting = false;
-        Dirty(uid, comp);
 
         RemComp<NestingFrozenComponent>(uid);
 
@@ -98,7 +136,20 @@ public sealed class NestingSystem : SharedNestingSystem
 
         _audio.PlayPvs(comp.NestExitSound, uid);
 
-        var ev = new NestingAnimationEvent(GetNetEntity(uid), GetNetCoordinates(Transform(uid).Coordinates), NestingAnimationType.Exit);
+        var coords = Transform(uid).Coordinates;
+
+        // Remove the continuous effect and spawn exit animation
+        if (comp.ContinuousEffectEntity.HasValue)
+        {
+            QueueDel(comp.ContinuousEffectEntity.Value);
+            comp.ContinuousEffectEntity = null;
+        }
+
+        Spawn(comp.NestExitEffect, coords);
+
+        Dirty(uid, comp);
+
+        var ev = new NestingAnimationEvent(GetNetEntity(uid), GetNetCoordinates(coords), NestingAnimationType.Exit);
         RaiseNetworkEvent(ev, Filter.Pvs(uid, entityManager: EntityManager));
     }
 }

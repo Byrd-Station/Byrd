@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Raze500
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.ActionBlocker;
 using Content.Shared.Emoting;
 using Content.Shared.Interaction.Events;
@@ -33,7 +37,7 @@ public abstract class SharedNestingFrozenSystem : EntitySystem
         SubscribeLocalEvent<NestingFrozenComponent, UpdateCanMoveEvent>(OnUpdateCanMove);
         SubscribeLocalEvent<NestingFrozenComponent, PullAttemptEvent>(OnPullAttempt);
         SubscribeLocalEvent<NestingFrozenComponent, AttackAttemptEvent>(OnCancellableAttempt);
-        SubscribeLocalEvent<NestingFrozenComponent, ChangeDirectionAttemptEvent>(OnCancellableAttempt);
+        // Note: ChangeDirectionAttemptEvent is NOT blocked — Resomi can rotate while nesting.
         // Note: EmoteAttemptEvent and SpeakAttemptEvent are NOT blocked so Resomi can chirp from nest.
     }
 
