@@ -1,0 +1,27 @@
+# Resomi species actions
+
+- type: entity
+  id: ActionResomiEnterNest
+  name: Curl into nest
+  description: Curl up and rest. You become immobile but slowly heal and feel at ease. You can still chirp from the nest.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Omu/Interface/Actions/actions_resomi.rsi
+      state: nest
+  - type: InstantAction
+    event: !type:EnterNestActionEvent
+
+- type: entity
+  id: ActionResomiExitNest
+  name: Get up from nest
+  description: Get up and resume normal activity.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Omu/Interface/Actions/actions_resomi.rsi
+      state: unnest
+  - type: InstantAction
+    event: !type:ExitNestActionEvent

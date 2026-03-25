@@ -70,6 +70,20 @@
       Unsexed: MaleResomiEmote
       Female: FemaleResomiEmote
 # Omu end
+  # Omu - Resomi Nesting ability
+  - type: Nesting
+    enterNestAction: ActionResomiEnterNest
+    exitNestAction: ActionResomiExitNest
+    nestCooldown: 120
+    updateInterval: 2
+    bleedHealPerUpdate: 0.5
+    critHealingModifier: 1.5
+    healingPerUpdate:
+      types:
+        Blunt: -0.3
+        Slash: -0.3
+        Piercing: -0.3
+        Heat: -0.3
   - type: Tag
     tags:         # Goob - What the fuck is FootstepSound and DoorBumpOpener for if they work without them - rest fixes anoms though.
     - CanPilot
