@@ -18,6 +18,7 @@
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 # SPDX-FileCopyrightText: 2025 shityaml <unalterableness@gmail.com>
 # SPDX-FileCopyrightText: 2025 jvne <juneialduncan21@gmail.com>
+# SPDX-FileCopyrightText: 2026 ThanosDeGraf <richardgirgindontstop@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -246,7 +247,7 @@
   maxLimit: 1
   loadouts:
   - CargoTechnicianEnvirohelm
-  - MailCarrierEnvirohelm
+  #- MailCarrierEnvirohelm # Omu - Moved to courier
 
 - type: loadoutGroup
   id: CargoTechnicianEnvirosuit
@@ -255,7 +256,7 @@
   maxLimit: 1
   loadouts:
   - CargoTechnicianEnvirosuit
-  - MailCarrierEnvirosuit
+  #- MailCarrierEnvirosuit # Omu - Moved to courier
 
 - type: loadoutGroup
   id: CargoTechnicianEnvirogloves
@@ -264,7 +265,7 @@
   maxLimit: 1
   loadouts:
   - CargoTechnicianEnvirogloves
-  - WhiteEnvirogloves
+  #- WhiteEnvirogloves # Omu - Moved to courier
 
 # Quartermaster
 
@@ -1330,6 +1331,10 @@
   - MedicalBeret
   - SeniorPhysicianBeret
   - ChemistUshanka # Da.
+  - ChemistryBeret # Starlight - OMU port
+  - ChemistNurseHat # Starlight - OMU port
+  - ChemistTruckersHat # Starlight - OMU port
+  - ChemistFisherCap # Starlight - OMU port
 
 - type: loadoutGroup
   id: ChemistEnvirohelm
@@ -1408,6 +1413,10 @@
   - BrigmedicJumpskirt
   - CorpsmanJumpsuit #Omu
   - CorpsmanJumpskirt #Omu
+  - CorpsmanResponse # Starlight
+  - CorpsmanTrauma # Starlight
+  - BrigmedicJumpsuitOfLife # Starlight
+  - BrigmedicJumpskirtOfLife # Starlight
 
 - type: loadoutGroup
   id: BrigmedicHead
@@ -1416,10 +1425,13 @@
   loadouts:
   - BrigmedicBeret
   - CMOMedicalHeadMirror
+  - BrigmedicNurseHat # Starlight
   - SecurityBeret
   - SecurityHat
   - TrooperHat
   - CorpsmanBeret #Omu
+  - CorpsmanNurseHat # Starlight
+  - BrigmedicNurseHatOfLife # Starlight
 
 - type: loadoutGroup
   id: BrigmedicOuterClothing
@@ -1430,6 +1442,9 @@
   - ArmorVest
   - ArmorVestSlim
   - SecurityOfficerWintercoat
+  - CorpsmanWinterCoatDV # Omu
+  - BrigmedicLabCoat # Starlight
+  - CorpsmanLabCoat # Starlight
 
 - type: loadoutGroup
   id: BrigmedicBackpack

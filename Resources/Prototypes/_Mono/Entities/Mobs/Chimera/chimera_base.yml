@@ -166,7 +166,7 @@
     guides:
     - Letoferol
   - type: MovementAlwaysTouching
-  - type: LayingDown
+  - type: Crawler
 
 - type: entity
   parent:
@@ -239,7 +239,7 @@
   - type: PlayerAccuracyModifier
     spreadMultiplier: 12
     maxSpreadAngle: 180
-  - type: LayingDown
+  - type: Crawler
   - type: BonusMeleeDamage
     damageModifierSet:
       coefficients:
