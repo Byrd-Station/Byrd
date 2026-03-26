@@ -276,6 +276,65 @@
     - type: ShowHealthBars
     - type: ShowHealthIcons
     - type: ShowDiseaseIcons
+# medical mantle with medichem glasses for CMO.
+- type: entity
+  id: ClothingCyberneticBeastMantleMedicalCMO
+  parent: ClothingCyberneticBeastMantleMedical
+  name: beast's chief medical mantle
+  description: A modified version of a cybernetic beast's mantle. This one comes with integrated medichem glasses.
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-paramedic
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-medical
+      - state: eyes-medical
+        shader: unshaded
+  - type: ComponentToggler
+    components:
+    - type: VisionCorrection
+      correctionPower: 16
+    - type: NightVision
+      isEquipment: true
+      color: "#CCFFCC"
+    - type: HudChemistry
+    - type: ShowHealthBars
+    - type: ShowHealthIcons
+    - type: ShowDiseaseIcons
+    - type: FlashImmunity
+    - type: FlashSoundSuppression
+
+# medical mantle with chemical analysis goggles for chemists.
+- type: entity
+  id: ClothingCyberneticBeastMantleMedicalChemist
+  parent: ClothingCyberneticBeastMantleMedical
+  name: beast's chemistry mantle
+  description: A modified version of a cybernetic beast's mantle. This one comes with integrated chemical analysis goggles.
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-paramedic
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-medical
+      - state: eyes-medical
+        shader: unshaded
+  - type: ComponentToggler
+    components:
+    - type: VisionCorrection
+      correctionPower: 16
+    - type: NightVision
+      isEquipment: true
+      color: "#CCFFCC"
+    - type: SolutionScanner
+  - type: Tag
+    tags:
+    - HudChemistry #There was some change to chem googles for Omu, that requires me to add the chem goggle tag. No fucking clue why, I hate it.
 
 # Mantle for the BSO
 - type: entity
