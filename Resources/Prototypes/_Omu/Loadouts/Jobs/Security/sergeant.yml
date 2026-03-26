@@ -20,3 +20,34 @@
   equipment:
     id: SecuritySergeantPDA
   groupBy: "ID"
+
+# Sergeant Jumpsuits
+
+- type: loadout
+  id: SergeantJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformSergeantUniform
+
+- type: loadout
+  id: SergeantJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformSergeantSkirt
+
+# Sergeant Hats
+
+- type: loadout
+  id: SergeantBeret
+  equipment:
+    head: ClothingHeadHatBeretSergeant
+
+- type: loadout
+  id: SergeantHat
+  equipment:
+    head: ClothingHeadHatCapSergeant
+
+# Sergeant Neck
+
+- type: loadout
+  id: SergeantCloak
+  equipment:
+    head: ClothingNeckCloakSergeant

@@ -18,14 +18,14 @@
 - type: roleLoadout
   id: JobSecuritySergeant
   groups:
-  - SecurityHead
-  - SecurityJumpsuit
+  - SergeantHead
+  - SergeantJumpsuit
   - SecurityBackpack
   - SecurityMelee # Goobstation
   - TrinketsSecuritySergeant # Actually is their guns, not trinkets.
   - SecurityOuterClothing
   - SecurityShoes
-  - SecurityNeck
+  - SergeantNeck
   - SecuritySergeantPDA
   - SecurityBelt
   - SurvivalSecurity
@@ -37,7 +37,7 @@
   - SecurityOfficerEnvirohelm
   - SecurityOfficerEnvirosuit
   - SecurityOfficerEnvirogloves
-  
+
 - type: roleLoadout
   id: JobCourier
   groups:
