@@ -311,6 +311,35 @@
   loadouts:
   - SecuritySergeantPDA
 
+- type: loadoutGroup
+  id: SergeantJumpsuit
+  name: loadout-group-sergeant-jumpsuit
+  loadouts:
+  - SecurityJumpsuit
+  - SecurityJumpskirt
+  - SeniorOfficerJumpsuit
+  - SeniorOfficerJumpskirt
+  - SergeantJumpsuit
+  - SergeantJumpskirt
+
+- type: loadoutGroup
+  id: SergeantHead
+  name: loadout-group-sergeant-head
+  minLimit: 0
+  loadouts:
+  - SergeantHat
+  - SergeantBeret
+  - SecurityHelmet
+  - SecurityHelmetAlt
+  - SecurityBeret
+
+- type: loadoutGroup
+  id: SergeantNeck
+  name: loadout-group-sergeant-neck
+  loadouts:
+  - SergeantCloak
+  - ClothingNeckCWPSec
+
 # We have a separate one for detective cause holster
 - type: loadoutGroup
   id: TrinketsSecurityDetective
