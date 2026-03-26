@@ -17,8 +17,8 @@ public sealed partial class ResomiGunStaminaDrainComponent : Component
 {
     /// <summary>
     /// How much stamina is drained from the Resomi per shot fired.
-    /// With a max of 100 stamina, 30 = stamcrit after roughly 3–4 shots.
+    /// With a max of 100 stamina, 10 = stamcrit after roughly 10 shots.
     /// </summary>
     [DataField]
-    public float StaminaDrain = 30f;
+    public float StaminaDrain = 10f;
 }
