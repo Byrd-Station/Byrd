@@ -2877,3 +2877,9 @@ Entries:
       message: Dedicated roundtype for tokens and admin events
   id: 367
   time: '2026-03-23T01:26:26.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Add
+      message: 'Jumpsuit for CC direggtor '
+  id: 368
+  time: '2026-03-24T23:03:36.0000000+00:00'
