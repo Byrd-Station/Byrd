@@ -15,33 +15,6 @@
         },
         {
             "name": "ai_kobold"
-        },
-        {
-            "name": "ai_algalone"
-        },
-        {
-            "name": "ai_fractalsnowflake"
-        },
-        {
-            "name": "ai_hensonsnode"
-        },
-        {
-            "name": "ai_longrun"
-        },
-        {
-            "name": "ai_ntpaint"
-        },
-        {
-            "name": "ai_puredata"
-        },
-        {
-            "name": "ai_rorschach"
-        },
-        {
-            "name": "ai_seraphim"
-        },
-        {
-            "name": "ai_tripleaffirmative"
         }
     ]
 }
