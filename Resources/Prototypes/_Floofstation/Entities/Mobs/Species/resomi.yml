@@ -90,10 +90,9 @@
         Asphyxiation: 0.2
         Bloodloss: 0.2
         Caustic: 0.2
-  # Omu - Resomi combat debuffs: -15% melee damage, +75% recoil
+  # Omu - Resomi combat debuffs: -15% melee damage, +8 deg spread, heavy weapon stamina drain
   - type: ResomiCombatDebuff
     meleeDamageMultiplier: 0.85
-    recoilMultiplier: 1.75
   # Omu - Resomi Call ability
   - type: ResomiCall
     callAction: ActionResomiCall
