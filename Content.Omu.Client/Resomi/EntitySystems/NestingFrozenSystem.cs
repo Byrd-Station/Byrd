@@ -1,6 +1,6 @@
-using Content.Shared._Omu.Resomi.EntitySystems;
+using Content.Omu.Shared.Resomi.EntitySystems;
 
-namespace Content.Client._Omu.Resomi.EntitySystems;
+namespace Content.Omu.Client.Resomi.EntitySystems;
 
 /// <summary>
 /// Client-side concrete implementation of SharedNestingFrozenSystem.

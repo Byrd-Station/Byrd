@@ -6,7 +6,7 @@ using Content.Shared.Alert;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Omu.Resomi.Components;
+namespace Content.Omu.Shared.Resomi.Components;
 
 /// <summary>
 /// Tracks a Resomi's Energy bar — a passive resource that drains over time

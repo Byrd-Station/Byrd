@@ -1,10 +1,10 @@
 using Content.Shared.Popups;
-using Content.Shared._Omu.Resomi.EntitySystems;
-using Content.Shared._Omu.Resomi.Events;
+using Content.Omu.Shared.Resomi.EntitySystems;
+using Content.Omu.Shared.Resomi.Events;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
 
-namespace Content.Client._Omu.Resomi.EntitySystems;
+namespace Content.Omu.Client.Resomi.EntitySystems;
 
 /// <summary>
 /// Client-side system for Resomi nesting — shows popups when entering/exiting.

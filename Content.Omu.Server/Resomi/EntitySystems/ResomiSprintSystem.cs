@@ -8,12 +8,12 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Systems;
-using Content.Shared._Omu.Resomi.Components;
-using Content.Shared._Omu.Resomi.EntitySystems;
-using Content.Shared._Omu.Resomi.Events;
+using Content.Omu.Shared.Resomi.Components;
+using Content.Omu.Shared.Resomi.EntitySystems;
+using Content.Omu.Shared.Resomi.Events;
 using Robust.Shared.Timing;
 
-namespace Content.Server._Omu.Resomi.EntitySystems;
+namespace Content.Omu.Server.Resomi.EntitySystems;
 
 /// <summary>
 /// Server-side Resomi sprint system.

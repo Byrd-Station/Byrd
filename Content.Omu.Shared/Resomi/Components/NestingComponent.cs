@@ -8,7 +8,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Shared._Omu.Resomi.Components;
+namespace Content.Omu.Shared.Resomi.Components;
 
 /// <summary>
 /// Allows a Resomi to curl up in a nest, becoming immobile but slowly healing.

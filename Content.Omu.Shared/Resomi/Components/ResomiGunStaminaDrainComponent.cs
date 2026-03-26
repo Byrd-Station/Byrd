@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace Content.Shared._Omu.Resomi.Components;
+namespace Content.Omu.Shared.Resomi.Components;
 
 /// <summary>
 /// Marker component for guns that drain a Resomi's stamina when fired.

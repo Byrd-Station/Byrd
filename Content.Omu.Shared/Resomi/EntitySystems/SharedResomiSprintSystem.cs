@@ -2,11 +2,11 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Omu.Resomi.Components;
+using Content.Omu.Shared.Resomi.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Movement.Events;
 
-namespace Content.Shared._Omu.Resomi.EntitySystems;
+namespace Content.Omu.Shared.Resomi.EntitySystems;
 
 /// <summary>
 /// Shared side of the Resomi sprint/impulse system.

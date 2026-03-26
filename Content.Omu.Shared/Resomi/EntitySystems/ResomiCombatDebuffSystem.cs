@@ -2,13 +2,13 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Omu.Resomi.Components;
+using Content.Omu.Shared.Resomi.Components;
 using Content.Shared._Shitmed.Weapons.Ranged.Events;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Events;
 
-namespace Content.Shared._Omu.Resomi.EntitySystems;
+namespace Content.Omu.Shared.Resomi.EntitySystems;
 
 /// <summary>
 /// Applies passive combat debuffs to Resomis to reflect their small, agile-but-fragile physique.

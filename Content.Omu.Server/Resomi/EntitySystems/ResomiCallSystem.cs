@@ -6,14 +6,14 @@ using System.Numerics;
 using Content.Shared.Actions;
 using Content.Shared.Audio;
 using Content.Shared.Popups;
-using Content.Shared._Omu.Resomi.Components;
-using Content.Shared._Omu.Resomi.Events;
+using Content.Omu.Shared.Resomi.Components;
+using Content.Omu.Shared.Resomi.Events;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 
-namespace Content.Server._Omu.Resomi.EntitySystems;
+namespace Content.Omu.Server.Resomi.EntitySystems;
 
 /// <summary>
 /// Handles the Resomi Calling ability.

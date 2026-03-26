@@ -5,7 +5,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Omu.Resomi.Components;
+namespace Content.Omu.Shared.Resomi.Components;
 
 /// <summary>
 /// Gives a Resomi the ability to emit a directional call that all other

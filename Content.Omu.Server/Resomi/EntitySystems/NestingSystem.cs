@@ -7,14 +7,14 @@ using Content.Shared.Actions;
 using Content.Shared.Damage;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
-using Content.Shared._Omu.Resomi.Components;
-using Content.Shared._Omu.Resomi.EntitySystems;
-using Content.Shared._Omu.Resomi.Events;
+using Content.Omu.Shared.Resomi.Components;
+using Content.Omu.Shared.Resomi.EntitySystems;
+using Content.Omu.Shared.Resomi.Events;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
-namespace Content.Server._Omu.Resomi.EntitySystems;
+namespace Content.Omu.Server.Resomi.EntitySystems;
 
 public sealed class NestingSystem : SharedNestingSystem
 {

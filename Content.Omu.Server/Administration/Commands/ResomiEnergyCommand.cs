@@ -5,10 +5,10 @@
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Shared.Movement.Systems;
-using Content.Shared._Omu.Resomi.Components;
+using Content.Omu.Shared.Resomi.Components;
 using Robust.Shared.Console;
 
-namespace Content.Server._Omu.Administration.Commands;
+namespace Content.Omu.Server.Administration.Commands;
 
 /// <summary>
 /// Debug command to set a Resomi's energy level for testing.

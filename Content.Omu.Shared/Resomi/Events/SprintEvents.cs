@@ -4,7 +4,7 @@
 
 using Content.Shared.Actions;
 
-namespace Content.Shared._Omu.Resomi.Events;
+namespace Content.Omu.Shared.Resomi.Events;
 
 /// <summary>Fired when the Resomi toggles sprint on or off.</summary>
 public sealed partial class ToggleSprintActionEvent : InstantActionEvent;

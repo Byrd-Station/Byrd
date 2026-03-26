@@ -6,7 +6,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Shared._Omu.Resomi.Components;
+namespace Content.Omu.Shared.Resomi.Components;
 
 /// <summary>
 /// Gives a Resomi a sprint ability that drains the entity's real stamina.

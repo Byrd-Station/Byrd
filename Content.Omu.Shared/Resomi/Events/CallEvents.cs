@@ -4,7 +4,7 @@
 
 using Content.Shared.Actions;
 
-namespace Content.Shared._Omu.Resomi.Events;
+namespace Content.Omu.Shared.Resomi.Events;
 
 /// <summary>Fired when a Resomi uses the Call action.</summary>
 public sealed partial class ResomiCallActionEvent : InstantActionEvent;

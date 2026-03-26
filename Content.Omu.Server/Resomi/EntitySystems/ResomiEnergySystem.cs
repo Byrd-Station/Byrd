@@ -5,10 +5,10 @@
 using Content.Shared.Alert;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
-using Content.Shared._Omu.Resomi.Components;
+using Content.Omu.Shared.Resomi.Components;
 using Robust.Shared.Timing;
 
-namespace Content.Server._Omu.Resomi.EntitySystems;
+namespace Content.Omu.Server.Resomi.EntitySystems;
 
 /// <summary>
 /// Manages the Resomi Energy bar.

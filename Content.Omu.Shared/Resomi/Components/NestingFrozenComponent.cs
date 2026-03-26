@@ -4,7 +4,7 @@
 
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._Omu.Resomi.Components;
+namespace Content.Omu.Shared.Resomi.Components;
 
 /// <summary>
 /// Added to a Resomi when it enters nesting state.

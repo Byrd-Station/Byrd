@@ -4,7 +4,7 @@
 
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._Omu.Resomi.Components;
+namespace Content.Omu.Shared.Resomi.Components;
 
 /// <summary>
 /// Marks a Resomi as subject to combat debuffs that reflect their small, fragile build.

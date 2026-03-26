@@ -4,7 +4,7 @@
 
 using Content.Shared.Actions;
 
-namespace Content.Shared._Omu.Resomi.EntitySystems;
+namespace Content.Omu.Shared.Resomi.EntitySystems;
 
 /// <summary>
 /// Allows Resomi to curl up and rest in a nest, healing slowly while immobile.

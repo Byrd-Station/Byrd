@@ -11,9 +11,9 @@ using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Events;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Throwing;
-using Content.Shared._Omu.Resomi.Components;
+using Content.Omu.Shared.Resomi.Components;
 
-namespace Content.Shared._Omu.Resomi.EntitySystems;
+namespace Content.Omu.Shared.Resomi.EntitySystems;
 
 /// <summary>
 /// Prevents a nesting Resomi from moving or interacting with the world.

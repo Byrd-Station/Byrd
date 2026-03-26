@@ -5,7 +5,7 @@
 using Robust.Shared.Serialization;
 using Robust.Shared.Map;
 
-namespace Content.Shared._Omu.Resomi.Events;
+namespace Content.Omu.Shared.Resomi.Events;
 
 [Serializable, NetSerializable]
 public enum NestingAnimationType
