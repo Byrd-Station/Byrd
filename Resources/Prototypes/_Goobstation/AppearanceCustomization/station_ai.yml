@@ -26,5 +26,3 @@
     Hologram:
       sprite: _Goobstation/Mobs/Silicon/holograms.rsi
       state: ai_monkey
-
-
