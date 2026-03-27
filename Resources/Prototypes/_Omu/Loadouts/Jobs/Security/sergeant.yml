@@ -57,4 +57,4 @@
 - type: loadout
   id: SergeantBelt
   equipment:
-    belt: WaitBeltSergeantBelt
+    belt: WaistBeltSergeantBelt

@@ -86,10 +86,10 @@
 
 
 - type: entity
-  id: WaitBeltSergeantBelt
+  id: WaistBeltSergeantBelt
   parent: [BaseSecurityContraband, DisciplinaryBeltBase]
   name: disciplinary belt
-  description: "Look what you've done! Cadet, give me five NOW!"
+  description: A very heavy belt. "Look what you've done! Cadet, give me five NOW!"
   components:
   # sprites
   - type: Sprite
@@ -105,13 +105,23 @@
     damage:
       types:
         Blunt: 12
-    attackRate: 0.4
+    attackRate: 0.7
     soundHit:
       path: /Audio/_Goobstation/Weapons/Baton/woodhit.ogg
       params:
         variation: 0.25
+  - type: TelescopicBaton
   - type: KnockdownOnHit
-    duration: .2
+    duration: .1
     dropItems: false
   - type: StaminaDamageOnHit
-    damage: 20
+    damage: 15
+  - type: UseDelay
+    delays:
+      default:
+        length: 3
+      telebaton:
+        length: 3
+  - type: UseDelayBlockMelee
+    delays:
+    - default
