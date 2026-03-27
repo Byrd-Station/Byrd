@@ -3,9 +3,9 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # Stops Emotes
-#- type: entity
-#  parent: MobStatusEffectBase
-#  id: StatusEffectEmoteMuted
-#  name: emote muted
-#  components:
-#  - type: EmoteMutedStatusEffect
+- type: entity
+  parent: MobStatusEffectBase
+  id: StatusEffectEmoteMuted
+  name: emote muted
+  components:
+  - type: EmoteMutedStatusEffect
