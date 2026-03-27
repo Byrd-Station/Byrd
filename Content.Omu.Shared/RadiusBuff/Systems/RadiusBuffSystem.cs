@@ -1,10 +1,10 @@
-using Content.Shared._Omu.RadiusBuff.Components;
+using Content.Omu.Shared.RadiusBuff.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.Whitelist;
 using Robust.Shared.Timing;
 
-namespace Content.Shared._Omu.RadiusBuff.Systems;
+namespace Content.Omu.Shared.RadiusBuff.Systems;
 
 public sealed class RadiusBuffSystem : EntitySystem
 {

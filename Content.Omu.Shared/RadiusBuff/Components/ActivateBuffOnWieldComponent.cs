@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._Omu.RadiusBuff.Components;
+namespace Content.Omu.Shared.RadiusBuff.Components;
 
 /// <summary>
 /// Activates a <see cref="RadiusBuffComponent"/> when this entity is wielded

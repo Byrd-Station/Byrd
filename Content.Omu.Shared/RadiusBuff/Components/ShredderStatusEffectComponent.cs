@@ -3,7 +3,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Shared._Omu.RadiusBuff.Components;
+namespace Content.Omu.Shared.RadiusBuff.Components;
 
 /// <summary>
 /// Component for the shredder buff status effect.

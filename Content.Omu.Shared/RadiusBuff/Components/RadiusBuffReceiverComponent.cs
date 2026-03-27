@@ -1,5 +1,5 @@
 using Robust.Shared.GameStates;
-namespace Content.Shared._Omu.RadiusBuff.Components;
+namespace Content.Omu.Shared.RadiusBuff.Components;
 
 /// <summary>
 /// Marks entities that should receive a buff from <see cref="RadiusBuffComponent"/>

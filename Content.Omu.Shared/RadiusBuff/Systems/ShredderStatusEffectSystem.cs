@@ -1,4 +1,4 @@
-using Content.Shared._Omu.RadiusBuff.Components;
+using Content.Omu.Shared.RadiusBuff.Components;
 using Content.Shared._Shitmed.Damage;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Damage;
@@ -7,7 +7,7 @@ using Content.Shared.StatusEffectNew.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
-namespace Content.Shared._Omu.RadiusBuff.Systems;
+namespace Content.Omu.Shared.RadiusBuff.Systems;
 
 public sealed class ShredderStatusEffectSystem : EntitySystem
 {

@@ -3,7 +3,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Shared._Omu.RadiusBuff.Components;
+namespace Content.Omu.Shared.RadiusBuff.Components;
 
 /// <summary>
 /// Defines a status effect that an entity should give in a radius under some condition.

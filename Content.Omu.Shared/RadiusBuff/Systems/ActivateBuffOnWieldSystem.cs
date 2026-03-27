@@ -1,8 +1,8 @@
-using Content.Shared._Omu.RadiusBuff.Components;
+using Content.Omu.Shared.RadiusBuff.Components;
 using Content.Shared.Wieldable;
 using Content.Shared.Wieldable.Components;
 
-namespace Content.Shared._Omu.RadiusBuff.Systems;
+namespace Content.Omu.Shared.RadiusBuff.Systems;
 
 public sealed class ActivateBuffOnWieldSystem : EntitySystem
 {
