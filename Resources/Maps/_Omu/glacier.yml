@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/27/2026 21:01:40
-  entityCount: 18697
+  time: 03/27/2026 21:08:21
+  entityCount: 18707
 maps:
 - 1
 grids:
@@ -14220,6 +14220,11 @@ entities:
     - type: Transform
       pos: 38.5,-30.5
       parent: 2
+  - uid: 18684
+    components:
+    - type: Transform
+      pos: 30.5,-37.5
+      parent: 2
 - proto: AirlockSecurityGlass
   entities:
   - uid: 268
@@ -16087,18 +16092,18 @@ entities:
     - type: Transform
       pos: 38.5,58.5
       parent: 2
-  - uid: 10768
+  - uid: 18691
     components:
     - type: Transform
       pos: -21.5,11.5
       parent: 2
-  - uid: 13435
+  - uid: 18692
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -24.5,15.5
       parent: 2
-  - uid: 18684
+  - uid: 18693
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -39933,6 +39938,14 @@ entities:
     - type: Transform
       pos: -5.5,48.5
       parent: 2
+- proto: CargoComputerComms
+  entities:
+  - uid: 10391
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 53.5,11.5
+      parent: 2
 - proto: CargoRequestComputerCircuitboard
   entities:
   - uid: 5221
@@ -49047,6 +49060,11 @@ entities:
     - type: Transform
       pos: 18.5,49.5
       parent: 2
+  - uid: 18687
+    components:
+    - type: Transform
+      pos: 10.5,43.5
+      parent: 2
 - proto: ComputerCargoOrdersMedical
   entities:
   - uid: 6851
@@ -49082,6 +49100,12 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 53.5,26.5
+      parent: 2
+  - uid: 18686
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 30.5,23.5
       parent: 2
 - proto: ComputerCloningConsole
   entities:
@@ -49198,12 +49222,6 @@ entities:
     - type: Transform
       pos: 35.5,50.5
       parent: 2
-  - uid: 6870
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -64.5,9.5
-      parent: 2
 - proto: ComputerMassMedia
   entities:
   - uid: 6871
@@ -49254,6 +49272,13 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 37.5,60.5
+      parent: 2
+- proto: ComputerRadar
+  entities:
+  - uid: 18707
+    components:
+    - type: Transform
+      pos: 37.5,48.5
       parent: 2
 - proto: ComputerResearchAndDevelopment
   entities:
@@ -49384,7 +49409,7 @@ entities:
       parent: 2
 - proto: ComputerVirology
   entities:
-  - uid: 18696
+  - uid: 18705
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -50375,7 +50400,7 @@ entities:
       pos: -2.5,48.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -10436.001
+      secondsUntilStateChange: -10834.341
       state: Closing
   - uid: 7046
     components:
@@ -59016,7 +59041,7 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#0077DDFF'
-  - uid: 18685
+  - uid: 18694
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -60913,12 +60938,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -15.5,6.5
       parent: 2
-  - uid: 18686
+  - uid: 18695
     components:
     - type: Transform
       pos: -24.5,23.5
       parent: 2
-  - uid: 18687
+  - uid: 18696
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -72972,14 +72997,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 10391
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,27.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
   - uid: 10392
     components:
     - type: Transform
@@ -74136,13 +74153,21 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 18689
+  - uid: 18690
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 4.5,27.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#0055CCFF'
+  - uid: 18698
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -22.5,22.5
       parent: 2
-  - uid: 18690
+  - uid: 18699
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -76121,7 +76146,7 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 18692
+  - uid: 18701
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -76288,7 +76313,7 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 18691
+  - uid: 18700
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -76376,7 +76401,7 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 18688
+  - uid: 18697
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -84839,6 +84864,14 @@ entities:
     - type: Transform
       pos: 13.5,-6.5
       parent: 2
+- proto: MedicalComputerComms
+  entities:
+  - uid: 18689
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 19.5,-12.5
+      parent: 2
 - proto: MedicalScanner
   entities:
   - uid: 11951
@@ -93082,7 +93115,7 @@ entities:
     - type: Transform
       pos: -5.5,47.5
       parent: 2
-  - uid: 18693
+  - uid: 18702
     components:
     - type: Transform
       pos: -19.5,22.5
@@ -94972,11 +95005,6 @@ entities:
       parent: 2
 - proto: PottedPlantRD
   entities:
-  - uid: 13857
-    components:
-    - type: Transform
-      pos: 24.5,-32.5
-      parent: 2
   - uid: 13858
     components:
     - type: MetaData
@@ -94984,6 +95012,11 @@ entities:
       name: dying potted plant
     - type: Transform
       pos: -53.560257,-9.608649
+      parent: 2
+  - uid: 18688
+    components:
+    - type: Transform
+      pos: 24.5,-30.5
       parent: 2
 - proto: PowerCellHyper
   entities:
@@ -102952,6 +102985,14 @@ entities:
     - type: Transform
       pos: 52.513466,41.507915
       parent: 2
+- proto: ScienceComputerComms
+  entities:
+  - uid: 13857
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 24.5,-32.5
+      parent: 2
 - proto: ScienceTechFab
   entities:
   - uid: 15281
@@ -103031,6 +103072,14 @@ entities:
       rot: 3.141592653589793 rad
       pos: 21.648647,-29.748669
       parent: 2
+- proto: SecurityComputerComms
+  entities:
+  - uid: 6870
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -12.5,36.5
+      parent: 2
 - proto: SecurityTechFab
   entities:
   - uid: 13554
@@ -103057,6 +103106,14 @@ entities:
     components:
     - type: Transform
       pos: -26.5,13.5
+      parent: 2
+- proto: ServiceComputerComms
+  entities:
+  - uid: 9429
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 28.5,21.5
       parent: 2
 - proto: ServiceTechFab
   entities:
@@ -105814,6 +105871,13 @@ entities:
     - type: Transform
       pos: -23.5,-10.5
       parent: 2
+- proto: SpawnPointCourier
+  entities:
+  - uid: 18685
+    components:
+    - type: Transform
+      pos: 41.5,15.5
+      parent: 2
 - proto: SpawnPointDetective
   entities:
   - uid: 15662
@@ -106636,12 +106700,12 @@ entities:
       parent: 2
 - proto: SpawnPointVirologist
   entities:
-  - uid: 18694
+  - uid: 18703
     components:
     - type: Transform
       pos: 6.5,-12.5
       parent: 2
-  - uid: 18695
+  - uid: 18704
     components:
     - type: Transform
       pos: 7.5,-12.5
@@ -111839,6 +111903,13 @@ entities:
     - type: Transform
       pos: -62.5,10.5
       parent: 2
+- proto: VendingMachineMailDrobe
+  entities:
+  - uid: 10768
+    components:
+    - type: Transform
+      pos: 42.5,16.5
+      parent: 2
 - proto: VendingMachineMedical
   entities:
   - uid: 16502
@@ -112068,7 +112139,7 @@ entities:
       parent: 2
 - proto: VirologyServer
   entities:
-  - uid: 9429
+  - uid: 13435
     components:
     - type: Transform
       pos: -5.5,-0.5
@@ -121420,7 +121491,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -12.5,71.5
       parent: 2
-  - uid: 18697
+  - uid: 18706
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
