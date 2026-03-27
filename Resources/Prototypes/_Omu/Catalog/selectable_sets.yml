@@ -124,7 +124,7 @@
     sprite: _Omu/Objects/Weapons/Guns/Snipers/ceremonial_rifle.rsi
     state: base
   content:
-  - WeaponSniperMosinSergeant
+  - WeaponSniperM1Garand
 
 - type: selectableSet
   id: WeaponTerminusSet

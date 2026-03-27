@@ -54,10 +54,11 @@ selectable-set-terminus-description =
     A weapon exclusively for oni, this greataxe
     can fire a burst of disabler bolts on command.
 
-selectable-set-ceremonial-rifle-name = Ceremonial rifle
+selectable-set-ceremonial-rifle-name = M1 Garand
 selectable-set-ceremonial-rifle-description =
-    A weapon exclusively for sergeants,
-    this relic of a rifle has been in service for over 670 years.
+    "Gory, gory, what a hell of a way to die!"
+    An weapon often given to Paratroopers mainly and Infantry in ancient Sol.
+    This one is a relic given to the Sergeant, shoots .30 Rifle.
 
 selectable-set-antiquelaser-name = Antique Laser Pistol
 selectable-set-antiquelaser-description =
