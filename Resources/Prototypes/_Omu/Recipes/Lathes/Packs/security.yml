@@ -11,6 +11,8 @@
   - MagazineCaselessRifleShort
   - MagazineMagnumLeverRifle
   - MagazineMagnumLeverRifleEmpty
+  - MagazineClipM1Garand
+  - MagazineClipM1GarandEmpty
 
 - type: latheRecipePack
   id: SecurityAmmoOmu
