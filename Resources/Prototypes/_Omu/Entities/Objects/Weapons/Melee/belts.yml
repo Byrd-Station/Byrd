@@ -23,10 +23,10 @@
   components:
   # sprites
   - type: Sprite
-    sprite: _Omu/Clothing/belt/centcomdisciplinary.rsi
+    sprite: _Omu/Clothing/Belt/centcomdisciplinary.rsi
     state: icon
   - type: Clothing
-    sprite: _Omu/Clothing/belt/centcomdisciplinary.rsi
+    sprite: _Omu/Clothing/Belt/centcomdisciplinary.rsi
   #Hurty hurts
   - type: MeleeWeapon
     wideAnimationRotation: -135
@@ -58,10 +58,10 @@
   components:
   # sprites
   - type: Sprite
-    sprite: _Omu/Clothing/belt/eggshelldisciplinary.rsi
+    sprite: _Omu/Clothing/Belt/eggshelldisciplinary.rsi
     state: icon
   - type: Clothing
-    sprite: _Omu/Clothing/belt/eggshelldisciplinary.rsi
+    sprite: _Omu/Clothing/Belt/eggshelldisciplinary.rsi
   #Hurty hurts
   - type: MeleeWeapon
     wideAnimationRotation: -135
@@ -93,10 +93,10 @@
   components:
   # sprites
   - type: Sprite
-    sprite: _Omu/Clothing/belt/sergeantdisciplinary.rsi
+    sprite: _Omu/Clothing/Belt/sergeantdisciplinary.rsi
     state: icon
   - type: Clothing
-    sprite: _Omu/Clothing/belt/sergeantdisciplinary.rsi
+    sprite: _Omu/Clothing/Belt/sergeantdisciplinary.rsi
   #Hurty hurts
   - type: MeleeWeapon
     wideAnimationRotation: -135
