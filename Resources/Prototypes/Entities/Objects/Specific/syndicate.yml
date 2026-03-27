@@ -178,7 +178,6 @@
   - type: Tag
     tags:
     - NukeOpsUplink
-    - NukeOpsCommanderUplink
 
 - type: entity
   parent: BaseUplinkRadio

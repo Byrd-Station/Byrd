@@ -1,4 +1,4 @@
-# Jumpsuits 
+# Jumpsuits
 
 - type: loadout
   id: PrisonerJumpsuit
@@ -38,6 +38,11 @@
   id: PrisonerWintercoatSyndie
   equipment:
     outerClothing: ClothingOuterWinterSyndie
+
+- type: loadout
+  id: ClothingOuterStraightjacket
+  equipment:
+    outerClothing: ClothingOuterBuckleJacket
 
 # Plasmaman stuff
 
