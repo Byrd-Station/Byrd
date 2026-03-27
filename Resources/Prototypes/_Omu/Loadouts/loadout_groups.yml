@@ -323,6 +323,16 @@
   - SergeantJumpskirt
 
 - type: loadoutGroup
+  id: SergeantBelt
+  name: loadout-group-security-belt
+  loadouts:
+  - SergeantBelt
+  - SecurityBelt
+  - SecurityWebbing
+  - SecuritySwordBelt # Omu
+  - SecurityJudoBelt # Goobstation - Martial Arts
+
+- type: loadoutGroup
   id: SergeantHead
   name: loadout-group-sergeant-head
   minLimit: 0
