@@ -58,6 +58,10 @@
   accessGroups:
   - AllAccess
   access:
+  - CentCommOffical
+  - NanotrasenSpectre
+  - Deathsquad
+  - EmergencyResponseTeam
   - CentralCommand
   - NanotrasenRepresentative
   - BlueshieldOfficer
@@ -68,7 +72,7 @@
 - type: startingGear
   id: CentcomDireggtorGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitCentcomOfficial
+    jumpsuit: ClothingUniformCentComCasualEgg
     head: ClothingHeadHatBeretCCBeregg
     mask: ClothingMaskSterile
     eyes: ClothingEyesGlassesCentComm

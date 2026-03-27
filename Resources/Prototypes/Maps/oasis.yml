@@ -144,6 +144,7 @@
             Scientist: [ 5, 5 ]
             ResearchAssistant: [ 6, 6 ]
             Borg: [ 2, 2 ]
+            Roboticist: [ 2, 2 ] #Omu
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
@@ -158,6 +159,7 @@
             SalvageSpecialist: [ 3, 3 ]
             ShaftMiner: [ 3, 3 ] # Omu
             CargoTechnician: [ 4, 4 ]
+            Courier: [ 2, 2 ] # Omu
             #civilian
             Passenger: [ -1, -1 ]
             Clown: [ 1, 1 ]

@@ -29,6 +29,7 @@
             # cargo
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 6, 8 ]
+            #Courier: [ 3, 4 ] # Omu - Courier role
             CargoTechnician: [ 5, 6 ]
             # engineering
             ChiefEngineer: [ 1, 1 ]
