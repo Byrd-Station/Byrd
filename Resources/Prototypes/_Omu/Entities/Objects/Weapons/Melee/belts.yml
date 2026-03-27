@@ -86,7 +86,7 @@
 
 
 - type: entity
-  id: SergeantBelt
+  id: WaitBeltSergeantBelt
   parent: [BaseSecurityContraband, DisciplinaryBeltBase]
   name: disciplinary belt
   description: "Look what you've done! Cadet, give me five NOW!"

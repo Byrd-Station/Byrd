@@ -324,7 +324,7 @@
 
 - type: loadoutGroup
   id: SergeantBelt
-  name: loadout-group-security-belt
+  name: loadout-group-sergeant-belt
   loadouts:
   - SergeantBelt
   - SecurityBelt

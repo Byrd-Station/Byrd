@@ -51,3 +51,10 @@
   id: SergeantCloak
   equipment:
     head: ClothingNeckCloakSergeant
+
+# Sergeant Belt
+
+- type: loadout
+  id: SergeantBelt
+  equipment:
+    belt: WaitBeltSergeantBelt
