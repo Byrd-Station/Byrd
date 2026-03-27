@@ -1,0 +1,117 @@
+- type: entity
+  id: DisciplinaryBeltBase
+  parent: ClothingBeltBase
+  abstract: true
+  components:
+  # overriding default equip and unequip sounds
+  - type: Clothing
+    equipSound:
+       path: /Audio/_Omu/Items/Belts/BeltBuckle.ogg
+       params:
+         volume: -3
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Omu/Items/Belts/BeltPickup.ogg
+      params:
+        volume: -3
+
+- type: entity
+  id: CentCommBelt
+  parent: [BaseCentcommContraband, DisciplinaryBeltBase]
+  name: central command belt
+  description: "Intern, you've been an unprofitable asset."
+  components:
+  # sprites
+  - type: Sprite
+    sprite: _Omu/Clothing/belt/centcomdisciplinary.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Omu/Clothing/belt/centcomdisciplinary.rsi
+  #Hurty hurts
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    bluntStaminaDamageFactor: 1.5
+    angle: 0
+    damage:
+      types:
+        Blunt: 12
+    soundHit:
+      path: /Audio/_Goobstation/Weapons/Baton/woodhit.ogg
+      params:
+        variation: 0.25
+  - type: KnockdownOnHit
+    duration: 3.0
+    dropItems: true
+  - type: StaminaDamageOnHit
+    damage: 120
+  - type: UseDelay
+    delays:
+      hit:
+        length: 1
+
+
+- type: entity
+  id: EggCentCommBelt
+  parent: [BaseCentcommContraband, DisciplinaryBeltBase]
+  name: eggsciplinary belt
+  description: "Commander, your work has been unsatisfactory. Consider yourself suspended for now."
+  components:
+  # sprites
+  - type: Sprite
+    sprite: _Omu/Clothing/belt/eggshelldisciplinary.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Omu/Clothing/belt/eggshelldisciplinary.rsi
+  #Hurty hurts
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    bluntStaminaDamageFactor: 1.5
+    angle: 0
+    damage:
+      types:
+        Blunt: 12
+    soundHit:
+      path: /Audio/_Goobstation/Weapons/Baton/woodhit.ogg
+      params:
+        variation: 0.25
+  - type: KnockdownOnHit
+    duration: 3.0
+    dropItems: true
+  - type: StaminaDamageOnHit
+    damage: 120
+  - type: UseDelay
+    delays:
+      hit:
+        length: 1
+
+
+- type: entity
+  id: SergeantBelt
+  parent: [BaseSecurityContraband, DisciplinaryBeltBase]
+  name: disciplinary belt
+  description: "Look what you've done! Cadet, give me five NOW!"
+  components:
+  # sprites
+  - type: Sprite
+    sprite: _Omu/Clothing/belt/sergeantdisciplinary.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Omu/Clothing/belt/sergeantdisciplinary.rsi
+  #Hurty hurts
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    bluntStaminaDamageFactor: 1.5
+    angle: 0
+    damage:
+      types:
+        Blunt: 12
+    attackRate: 0.4
+    soundHit:
+      path: /Audio/_Goobstation/Weapons/Baton/woodhit.ogg
+      params:
+        variation: 0.25
+  - type: KnockdownOnHit
+    duration: .2
+    dropItems: false
+  - type: StaminaDamageOnHit
+    damage: 20
