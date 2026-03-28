@@ -82,7 +82,7 @@
     neck: ClothingNeckMantleCCOMantle
     id: CentCommDireggtorPDA
     ears: ClothingHeadsetAltCentCom
-    belt: ClothingBeltHolsterFilledCentComm
+    belt: EggCentCommBelt
     pocket1: VulcanEightRevolver
     pocket2: VulcanEightRevolver
   storage:
