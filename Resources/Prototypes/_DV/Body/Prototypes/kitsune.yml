@@ -1,12 +1,12 @@
 - type: body
   id: Kitsune
   name: "kitsune"
-  root: torso
+  root: chest
   slots:
     head:
       part: HeadHuman
       connections:
-      - torso
+      - chest
       organs:
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
