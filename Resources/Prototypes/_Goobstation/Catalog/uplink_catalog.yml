@@ -452,6 +452,7 @@
 #    blacklist:
 #      tags:
 #      - ContractorUplink
+# Omu end
 
 - type: listing
   id: UplinkBowHardlight
@@ -562,6 +563,7 @@
 #    blacklist:
 #      tags:
 #      - ContractorUplink
+# Omu end
 
 # Wearables
 
@@ -1368,6 +1370,7 @@
 #    blacklist:
 #      tags:
 #      - ContractorUplink
+# Omu end
 
 # Omu start; removed because of balancing campaign
 #- type: listing
@@ -1385,6 +1388,7 @@
 #    blacklist:
 #      tags:
 #      - ContractorUplink
+# Omu end
 
 - type: listing
   id: UplinkM90Ammo
@@ -1476,6 +1480,7 @@
 #    blacklist:
 #      tags:
 #      - ContractorUplink
+# Omu end
 
 - type: listing
   id: UplinkMagazineM7S
@@ -1555,6 +1560,7 @@
 #    blacklist:
 #      tags:
 #      - ContractorUplink
+# Omu end
 
 # Omu start; removed because of balancing campaign
 #- type: listing
@@ -1572,6 +1578,7 @@
 #    blacklist:
 #      tags:
 #      - ContractorUplink
+# Omu end
 
 # Omu start; removed because of balancing campaign
 #- type: listing
@@ -1589,6 +1596,7 @@
 #    blacklist:
 #      tags:
 #      - ContractorUplink
+# Omu end
 
 # Mechs
 
