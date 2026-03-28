@@ -1523,21 +1523,23 @@
       tags:
       - ContractorUplink
 
-- type: listing
-  id: UplinkBox8Gauge
-  name: uplink-high-caliber-shotgun-box-name
-  description: uplink-high-caliber-shotgun-box-desc
-  icon: { sprite: Objects/Weapons/Guns/Ammunition/Boxes/shotgun.rsi, state: icon-lethal }
-  productEntity: MagazineBoxShotgunHighCaliber
-  cost:
-    Telecrystal: 10
-  categories:
-  - UplinkAmmo
-  conditions:
-  - !type:StoreWhitelistCondition
-    blacklist:
-      tags:
-      - ContractorUplink
+# Omu start; removed because of balancing campaign
+#- type: listing
+#  id: UplinkBox8Gauge
+#  name: uplink-high-caliber-shotgun-box-name
+#  description: uplink-high-caliber-shotgun-box-desc
+#  icon: { sprite: Objects/Weapons/Guns/Ammunition/Boxes/shotgun.rsi, state: icon-lethal }
+#  productEntity: MagazineBoxShotgunHighCaliber
+#  cost:
+#    Telecrystal: 10
+#  categories:
+#  - UplinkAmmo
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    blacklist:
+#      tags:
+#      - ContractorUplink
+#Omu End
 
 # Omu start; removed because of balancing campaign
 #- type: listing
