@@ -329,7 +329,7 @@
   icon: { sprite: /Textures/_Goobstation/Objects/Weapons/Melee/contractor_baton.rsi, state: uplink }
   productEntity: ContractorBaton
   cost:
-    Telecrystal: 35
+    Telecrystal: 50 #Omu Nerf
   categories:
   - UplinkWeaponry
   conditions:
