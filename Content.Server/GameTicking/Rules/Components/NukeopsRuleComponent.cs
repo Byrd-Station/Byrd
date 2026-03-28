@@ -98,7 +98,7 @@ public sealed partial class NukeopsRuleComponent : Component
     ///     This amount of TC will be given to each nukie
     /// </summary>
     [DataField]
-    public int WarTcAmountPerNukie = 200;
+    public int WarTcAmountPerNukie = 100;
 
     // Goobstation start
     /// <summary>
@@ -120,7 +120,7 @@ public sealed partial class NukeopsRuleComponent : Component
     /// Total bonus is divided by number of operatives.
     /// </summary>
     [DataField]
-    public int WarTcPerNukieMissing = 100;
+    public int WarTcPerNukieMissing = 50;
     // Goobstation end
 
     /// <summary>
