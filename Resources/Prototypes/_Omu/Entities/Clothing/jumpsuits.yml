@@ -181,6 +181,28 @@
     sprite: _Omu/Clothing/Uniforms/Jumpsuit/cybersunparamed.rsi
 
 - type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband]
+  id: ClothingUniformSergeantUniform
+  name: sergeant's uniform
+  description: The uniform of a highly skilled member of security. They're the guiding light for this station's safety.
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Uniforms/Jumpsuit/sergeant.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Uniforms/Jumpsuit/sergeant.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseSecurityContraband]
+  id: ClothingUniformSergeantSkirt
+  name: sergeant's jumpskirt
+  description: The skirted uniform of a highly skilled member of security. They're the guiding light for this station's safety.
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Uniforms/Jumpskirt/sergeantskirt.rsi
+  - type: Clothing
+    sprite: _Omu/Clothing/Uniforms/Jumpskirt/sergeantskirt.rsi
+
+- type: entity
   parent: ClothingUniformBase
   id: ClothingUniformCentComCasualEgg
   name: sector commander's eggsercise wear
