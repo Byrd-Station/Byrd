@@ -4,9 +4,9 @@
   name: Create Foxfire
   description: Form a cool, gently glowing wisp of flame
   components:
-  - type: LimitedCharges
-    maxCharges: 3
-    disableWhenEmpty: false
+  #- type: LimitedCharges # Omu start
+  #  maxCharges: 3
+  #  disableWhenEmpty: false # Omu end
   - type: Action
     icon: { sprite: _DV/Structures/Specific/Species/Kitsune/foxfire.rsi, state: icon }
   - type: InstantAction
