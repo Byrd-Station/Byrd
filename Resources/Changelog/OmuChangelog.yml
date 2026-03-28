@@ -2931,3 +2931,11 @@ Entries:
       message: Glacier no longer has the wrong suits in armory
   id: 374
   time: '2026-03-28T06:37:12.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Remove
+      message: Removed concussive gauntlet voucher.
+    - type: Tweak
+      message: Concussive gauntlet price increased to 4000
+  id: 375
+  time: '2026-03-28T17:45:09.0000000+00:00'
