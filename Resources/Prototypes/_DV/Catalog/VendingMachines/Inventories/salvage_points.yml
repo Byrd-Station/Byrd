@@ -113,8 +113,6 @@
     cost: 2000
   - id: ClothingShoesBootsMoon
     cost: 2000
-  - id: ClothingHandsConcussiveGauntlets # Omu 
-    cost: 2500 
   # TODO: super resonator for 2500
   # TODO: jump boots for 2500
   - id: ClothingOuterHardsuitSalvage
@@ -130,6 +128,8 @@
     cost: 3500
   - id: MiningDrillDiamond
     cost: 4000 #Mostly for flexing
+  - id: ClothingHandsConcussiveGauntlets # Omu 
+    cost: 4000
   - id: CrateCargoClarkeAssembly
     cost: 25000 #TODO: Make modules real # Omu, increase price from 12500
   # TODO: luxury elite bar capsule for 10k
