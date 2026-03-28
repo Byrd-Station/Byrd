@@ -2877,3 +2877,35 @@ Entries:
       message: Dedicated roundtype for tokens and admin events
   id: 367
   time: '2026-03-23T01:26:26.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Add
+      message: 'Jumpsuit for CC direggtor '
+  id: 368
+  time: '2026-03-24T23:03:36.0000000+00:00'
+- author: Toaster-Box
+  changes:
+    - type: Tweak
+      message: Command mantles now have admin hud
+  id: 369
+  time: '2026-03-26T19:06:27.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Add
+      message: Custom clothing for the sergeant role!
+  id: 370
+  time: '2026-03-26T19:07:24.0000000+00:00'
+- author: Redrover1760
+  changes:
+    - type: Tweak
+      message: >-
+        Dartboards have enough flat pierce armor to be no longer broken by dart
+        throws.
+  id: 371
+  time: '2026-03-27T22:10:37.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Add
+      message: Added (disciplinary) belts! Check the sergeant loadout :)
+  id: 372
+  time: '2026-03-27T22:40:32.0000000+00:00'
