@@ -2909,3 +2909,33 @@ Entries:
       message: Added (disciplinary) belts! Check the sergeant loadout :)
   id: 372
   time: '2026-03-27T22:40:32.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: 'Added: A new default module for medical cyborgs - the Virology Module!'
+  id: 373
+  time: '2026-03-28T06:14:45.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Glacier has been added to the map pool
+    - type: Add
+      message: 'Glacier now has job spawns for Roboticist and Sergeant   '
+    - type: Tweak
+      message: 'Glacier now has proper camera coverage for AI  '
+    - type: Fix
+      message: Fixed glacier having the wrong vents
+    - type: Fix
+      message: Glacier now has a secfab in armory
+    - type: Fix
+      message: Glacier no longer has the wrong suits in armory
+  id: 374
+  time: '2026-03-28T06:37:12.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Remove
+      message: Removed concussive gauntlet voucher.
+    - type: Tweak
+      message: Concussive gauntlet price increased to 4000
+  id: 375
+  time: '2026-03-28T17:45:09.0000000+00:00'
