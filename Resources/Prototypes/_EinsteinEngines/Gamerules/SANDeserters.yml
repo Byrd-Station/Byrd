@@ -95,6 +95,6 @@
     shoes: ClothingShoesBootsCombatFilled
     id: SANIdCard
     pocket2: MagazinePistol
-    belt: ClothingBeltMilitaryWebbing
+    belt: ClothingBeltSANMarineWebbing # Omu
     outerClothing: ClothingOuterVestWebSAN
-    ears: ClothingHeadsetAltSolarianNavy
+    ears: ClothingHeadsetAltSolarianNavy # Omu

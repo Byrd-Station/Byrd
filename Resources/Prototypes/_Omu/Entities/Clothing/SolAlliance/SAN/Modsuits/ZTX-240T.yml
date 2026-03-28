@@ -271,7 +271,7 @@
         - id: DoubleEmergencyOxygenTankFilled
         - id: ClothingUniformJumpsuitSolFatigueGreen
         - id: ClothingBeltSANMarineWebbing # Omu
-        - id: WeaponPistolViper #Omu, we don't have this, so use normal viper instead. WeaponPistolViperWood
+        - id: WeaponPistolQSZ08 #Omu, we don't have this, so use normal viper instead. WeaponPistolViperWood
         - id: MagazinePistol
         - id: ClothingMaskGasMerc
         - id: ClothingShoesBootsCombatFilled
@@ -292,7 +292,7 @@
         - id: DoubleEmergencyOxygenTankFilled
         - id: ClothingUniformJumpsuitSolArmyServiceOfficer
         - id: ClothingBeltSheathSANMarineFilled
-        - id: WeaponPistolViper #Omu, we don't have this, so use normal viper instead. WeaponPistolViperWood
+        - id: WeaponPistolQSZ08 #Omu, we don't have this, so use normal viper instead. WeaponPistolViperWood
         - id: MagazinePistol
         - id: ClothingMaskGasMerc
         - id: ClothingShoesBootsCombatFilled
