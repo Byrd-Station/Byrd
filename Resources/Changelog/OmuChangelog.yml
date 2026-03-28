@@ -2895,3 +2895,17 @@ Entries:
       message: Custom clothing for the sergeant role!
   id: 370
   time: '2026-03-26T19:07:24.0000000+00:00'
+- author: Redrover1760
+  changes:
+    - type: Tweak
+      message: >-
+        Dartboards have enough flat pierce armor to be no longer broken by dart
+        throws.
+  id: 371
+  time: '2026-03-27T22:10:37.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Add
+      message: Added (disciplinary) belts! Check the sergeant loadout :)
+  id: 372
+  time: '2026-03-27T22:40:32.0000000+00:00'
