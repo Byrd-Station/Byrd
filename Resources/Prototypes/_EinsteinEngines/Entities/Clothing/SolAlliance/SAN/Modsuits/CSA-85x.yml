@@ -314,7 +314,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingModsuitSANMarineFilledMarine
+      - id: ClothingModsuitSANZTX240TFilledMarine # Omu
 
 - type: entity
   id: CrateSANModsuitGroup
