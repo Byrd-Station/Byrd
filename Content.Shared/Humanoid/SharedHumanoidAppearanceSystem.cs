@@ -34,6 +34,7 @@
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using Content.Shared._DV.Humanoid; // DeltaV
 using Content.Shared.CCVar;
 using Content.Shared.Decals;
 using Content.Shared.Examine;
@@ -211,6 +212,9 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         if (TryComp<GrammarComponent>(target, out var grammar))
             _grammarSystem.SetGender((target, grammar), sourceHumanoid.Gender);
+
+        var appearanceEv = new AppearanceLoadedEvent(); // DeltaV
+        RaiseLocalEvent(target, ref appearanceEv);
 
         _identity.QueueIdentityUpdate(target);
         Dirty(target, targetHumanoid);
@@ -586,6 +590,9 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         _heightAdjust.SetScale(uid, new Vector2(humanoid.Width, humanoid.Height));
         // end Goobstation: port EE height/width sliders
+
+        var appearanceEv = new AppearanceLoadedEvent(); // DeltaV
+        RaiseLocalEvent(uid, ref appearanceEv);
 
         RaiseLocalEvent(uid, new ProfileLoadFinishedEvent()); // Shitmed Change
         Dirty(uid, humanoid);
