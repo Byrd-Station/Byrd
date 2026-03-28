@@ -911,7 +911,7 @@
   description: uplink-advanced-combat-medipen-desc
   productEntity: AdvancedCombatMedipen
   cost:
-    Telecrystal: 35 #Omu Nerf
+    Telecrystal: 24
   categories:
   - UplinkChemicals
 
