@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/22/2026 15:41:32
-  entityCount: 27675
+  time: 03/29/2026 12:58:19
+  entityCount: 27677
 maps:
 - 1
 grids:
@@ -11945,7 +11945,7 @@ entities:
       pos: 24.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -45926.23
+      secondsUntilStateChange: -46078.418
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12124,7 +12124,7 @@ entities:
       pos: -19.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3253.8743
+      secondsUntilStateChange: -3406.0598
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13286,7 +13286,7 @@ entities:
       pos: 75.5,-40.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4131.5063
+      secondsUntilStateChange: -4283.692
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -69562,6 +69562,14 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -29.5,-36.5
       parent: 2
+- proto: ComputerShuttleSalvage
+  entities:
+  - uid: 19841
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -41.5,-23.5
+      parent: 2
 - proto: ComputerSolarControl
   entities:
   - uid: 10864
@@ -83871,7 +83879,7 @@ entities:
       pos: -34.5,-14.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -40114.77
+      secondsUntilStateChange: -40266.957
       state: Closing
   - uid: 13101
     components:
@@ -84364,7 +84372,7 @@ entities:
       pos: -4.5,-71.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -31862.508
+      secondsUntilStateChange: -32014.693
       state: Closing
   - uid: 13199
     components:
@@ -145567,6 +145575,13 @@ entities:
     components:
     - type: Transform
       pos: 9.5,37.5
+      parent: 2
+- proto: SpawnPointSecuritySergeant
+  entities:
+  - uid: 20029
+    components:
+    - type: Transform
+      pos: 14.5,32.5
       parent: 2
 - proto: SpawnPointServiceWorker
   entities:

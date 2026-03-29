@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/27/2026 21:10:39
-  entityCount: 18707
+  time: 03/29/2026 13:16:30
+  entityCount: 18709
 maps:
 - 1
 grids:
@@ -10113,9 +10113,11 @@ entities:
           11,6:
             0: 61440
           11,7:
-            0: 45567
+            0: 12799
+            5: 32768
           11,8:
-            0: 2235
+            0: 2227
+            5: 8
           12,6:
             0: 63616
           12,7:
@@ -11508,6 +11510,25 @@ entities:
           moles:
           - 21.824879
           - 82.10312
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.14975
+          moles:
+          - 20.078888
+          - 75.53487
           - 0
           - 0
           - 0
@@ -13407,6 +13428,11 @@ entities:
     - type: Transform
       pos: 38.5,-8.5
       parent: 2
+  - uid: 198
+    components:
+    - type: Transform
+      pos: -65.5,11.5
+      parent: 2
 - proto: AirlockGlassShuttle
   entities:
   - uid: 171
@@ -13516,6 +13542,11 @@ entities:
     - type: Transform
       pos: -69.5,11.5
       parent: 2
+  - uid: 8007
+    components:
+    - type: Transform
+      pos: -61.5,11.5
+      parent: 2
 - proto: AirlockMaint
   entities:
   - uid: 186
@@ -13585,20 +13616,6 @@ entities:
       name: Clerk
     - type: Transform
       pos: -60.5,15.5
-      parent: 2
-  - uid: 197
-    components:
-    - type: MetaData
-      name: Chief Justice's Office
-    - type: Transform
-      pos: -65.5,11.5
-      parent: 2
-  - uid: 198
-    components:
-    - type: MetaData
-      name: Prosecutor's Office
-    - type: Transform
-      pos: -61.5,11.5
       parent: 2
   - uid: 199
     components:
@@ -48382,6 +48399,15 @@ entities:
     - type: Transform
       pos: -35.348938,15.513499
       parent: 2
+- proto: ClothingOuterWinterBlueshield
+  entities:
+  - uid: 18708
+    components:
+    - type: Transform
+      parent: 16460
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: ClothingOuterWinterCap
   entities:
   - uid: 6759
@@ -48401,8 +48427,10 @@ entities:
   - uid: 18683
     components:
     - type: Transform
-      pos: 50.349735,32.245823
-      parent: 2
+      parent: 16461
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: ClothingOuterWinterChef
   entities:
   - uid: 6761
@@ -49229,6 +49257,13 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 80.5,-2.5
+      parent: 2
+- proto: ComputerShuttleSalvage
+  entities:
+  - uid: 197
+    components:
+    - type: Transform
+      pos: 75.5,-0.5
       parent: 2
 - proto: ComputerSolarControl
   entities:
@@ -50315,22 +50350,22 @@ entities:
       pos: -2.5,48.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -10966.967
+      secondsUntilStateChange: -11192.663
       state: Closing
   - uid: 7046
     components:
     - type: Transform
       pos: -1.5,48.5
       parent: 2
-  - uid: 7047
-    components:
-    - type: Transform
-      pos: -61.5,11.5
-      parent: 2
   - uid: 7048
     components:
     - type: Transform
       pos: -60.5,11.5
+      parent: 2
+  - uid: 15761
+    components:
+    - type: Transform
+      pos: -61.5,11.5
       parent: 2
 - proto: CurtainsWhiteOpen
   entities:
@@ -56180,27 +56215,20 @@ entities:
     - type: Transform
       pos: 49.5,32.5
       parent: 2
-  - uid: 8007
-    components:
-    - type: Transform
-      pos: -64.5,8.5
-      parent: 2
-    - type: FaxMachine
-      name: Chief Justice
   - uid: 8008
     components:
     - type: Transform
       pos: -71.5,9.5
       parent: 2
     - type: FaxMachine
-      name: Attorney's Office
+      name: Lawyer office 1
   - uid: 8009
     components:
     - type: Transform
       pos: -60.5,10.5
       parent: 2
     - type: FaxMachine
-      name: Prosecutor's Office
+      name: Lawyer office 2
 - proto: FaxMachineCaptain
   entities:
   - uid: 8010
@@ -105885,25 +105913,15 @@ entities:
       parent: 2
 - proto: SpawnPointLawyer
   entities:
-  - uid: 15678
-    components:
-    - type: Transform
-      pos: -69.5,9.5
-      parent: 2
   - uid: 15679
     components:
     - type: Transform
       pos: -70.5,10.5
       parent: 2
-  - uid: 15680
-    components:
-    - type: Transform
-      pos: -70.5,9.5
-      parent: 2
   - uid: 15681
     components:
     - type: Transform
-      pos: -69.5,10.5
+      pos: -61.5,9.5
       parent: 2
 - proto: SpawnPointLibrarian
   entities:
@@ -106369,11 +106387,6 @@ entities:
     - type: Transform
       pos: 47.5,11.5
       parent: 2
-  - uid: 15761
-    components:
-    - type: Transform
-      pos: 47.5,10.5
-      parent: 2
 - proto: SpawnPointScientist
   entities:
   - uid: 15762
@@ -106517,6 +106530,11 @@ entities:
       parent: 2
 - proto: SpawnPointSecuritySergeant
   entities:
+  - uid: 7047
+    components:
+    - type: Transform
+      pos: -6.5,21.5
+      parent: 2
   - uid: 18681
     components:
     - type: Transform
@@ -106543,6 +106561,23 @@ entities:
     components:
     - type: Transform
       pos: 7.5,21.5
+      parent: 2
+- proto: SpawnPointShaftMiner
+  entities:
+  - uid: 15678
+    components:
+    - type: Transform
+      pos: 44.5,11.5
+      parent: 2
+  - uid: 15680
+    components:
+    - type: Transform
+      pos: 45.5,11.5
+      parent: 2
+  - uid: 18709
+    components:
+    - type: Transform
+      pos: 43.5,11.5
       parent: 2
 - proto: SpawnPointStationEngineer
   entities:
@@ -111553,6 +111588,39 @@ entities:
     - type: Transform
       pos: 47.5,31.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 18708
+        paper_label: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 - proto: UniqueLockerNanorepFilled
   entities:
   - uid: 16461
@@ -111560,6 +111628,39 @@ entities:
     - type: Transform
       pos: 47.5,32.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+    - type: ContainerContainer
+      containers:
+        entity_storage: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 18683
+        paper_label: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 - proto: Vaccinator
   entities:
   - uid: 16462
