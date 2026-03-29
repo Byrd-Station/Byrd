@@ -75,6 +75,15 @@
   - type: Tag # goob edit
     tags:
     - Mask
+  - type: Appearance # Gabystation start
+  - type: Stainable
+    clothingVisuals:
+      mask:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: maskblood
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: maskbloodicon # Gabystation end
 
 - type: entity
   abstract: true

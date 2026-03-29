@@ -131,6 +131,15 @@
     - ClothMade
     - WhitelistChameleon
     - DroneUsable # Goobstation
+  - type: Appearance # Gabystation start
+  - type: Stainable
+    clothingVisuals:
+      head:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: helmetblood
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: helmetbloodicon # Gabystation end
 
 - type: entity
   abstract: true
@@ -252,6 +261,8 @@
     - Snout
     - HeadTop
     - HeadSide
+  - type: StainBlocker # Gabystation
+    slots: [MASK]
 
 - type: entity
   abstract: true
@@ -315,6 +326,17 @@
     - HeadTop
     - HeadSide
   - type: FaceHuggerBlocker # Goobstation
+  - type: Appearance #Gabystation start
+  - type: Stainable
+    clothingVisuals:
+      head:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: helmetblood
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: helmetbloodicon
+  - type: StainBlocker
+    slots: [MASK] #Gabystation end
 
 - type: entity
   abstract: true
@@ -402,3 +424,12 @@
     - Hair
     - HeadTop
     - HeadSide
+  - type: Appearance # Gabystation start
+  - type: Stainable
+    clothingVisuals:
+      head:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: helmetblood
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: helmetbloodicon # Gabystation end

@@ -58,6 +58,7 @@
   - WeaponCapacitorRechargerCircuitboard
   - FreezerElectronics
   - CameraElectronics # goob
+  - WashingMachineCircuitboard # Gabystation change
 
 - type: latheRecipePack
   id: EngineeringBoardsStatic
