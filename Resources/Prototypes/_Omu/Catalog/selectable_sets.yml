@@ -272,7 +272,7 @@
   name: selectable-set-ntr-belt-name
   description: selectable-set-ntr-belt-desc
   sprite:
-    sprite: _Omu/Clothing/belt/centcomdisciplinary.rsi
+    sprite: _Omu/Clothing/Belt/centcomdisciplinary.rsi
     state: icon
   content:
   - NanoRepBelt
