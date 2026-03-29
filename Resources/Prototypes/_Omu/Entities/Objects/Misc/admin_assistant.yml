@@ -1,0 +1,223 @@
+- type: entity
+  parent: HandheldFax
+  id: ComplaintsBoxInput
+  name: complaints box
+  description: Dolorem isporem
+  components:
+  - type: ItemSlots
+    slots:
+      Paper:
+        name: paper
+        startingItem: Paper
+      Template:
+        name: template
+        startingItem: ComplaintsPaper
+  - type: DeviceNetwork
+    address: 0198-AF15
+    deviceNetId: Wireless
+    receiveFrequencyId: Complaints
+    receiveFrequency: 2641
+    transmitFrequencyId: Complaints
+    transmitFrequency: 2641
+  - type: FaxMachine
+    name: "Input"
+
+- type: entity
+  parent: HandheldFax
+  id: ComplaintsBoxOutput
+  name: complaints box output
+  description: Dolorem isporem output
+  components:
+  - type: ItemSlots
+    slots:
+      Paper:
+        name: paper
+        startingItem: Paper
+  - type: DeviceNetwork
+    address: 0198-AF16
+    deviceNetId: Wireless
+    receiveFrequencyId: Complaints
+    receiveFrequency: 2641
+    transmitFrequencyId: Complaints
+    transmitFrequency: 2641
+  - type: FaxMachine
+    name: "Output"
+
+- type: entity
+  parent: PaperOffice
+  id: ComplaintsPaper
+  name: complaint note
+  description: A complaints note
+  components:
+  - type: Paper
+  - type: ComplaintsPaper
+  - type: Item
+
+- type: entity
+  parent: BaseItem
+  id: AdminStressBall
+  name: admin assistant's stress ball
+  description: This soft ball that looks like a planet feels soothing to the touch.
+  components:
+  - type: Sprite
+    sprite: _Omu/Objects/Misc/adminstressball.rsi
+    state: icon
+  - type: Item
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 1
+        reagents:
+        - ReagentId: Destressium
+          Quantity: 1
+  - type: UseDelay
+    delay: 10
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 1
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: StaticPrice
+    price: 250
+  - type: RefillableSolution
+    solution: pen
+  - type: SolutionRegeneration
+    solution: pen
+    generated:
+      reagents:
+      - ReagentId: Destressium
+        Quantity: .1
+
+- type: entity
+  parent: BaseItem
+  id: BluespaceTap
+  name: bluespace tap
+  description: A lightweight tap-looking device with a nozzle for dispensing beverages.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/access_configurator.rsi
+    state: icon
+  - type: Item
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+    fitsInCharger: true
+  - type: ContainerContainer
+  - type: PowerCellDraw
+    drawRate: 1
+  - type: ToggleCellDraw
+  - type: ActivatableUI
+    key: enum.EnergyReagentDispenserUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.EnergyReagentDispenserUiKey.Key:
+        type: EnergyReagentDispenserBoundUserInterface
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: EnergyReagentDispenser
+    energyBeakerSlot:
+      whitelistFailPopup: reagent-dispenser-component-cannot-put-entity-message
+      whitelist:
+        components:
+        - FitsInDispenser
+    reagents:
+      Ale: 5.25
+      Beer: 6
+      Coffee: 5
+      CoffeeLiquer: 12
+      Cognac: 14.8
+      DrGibb: 5
+      Gin: 14.8
+      GreenTea: 5
+      Ice: 6
+      JuiceLime: 5
+      Mead: 11.25
+      JuiceOrange: 5
+      RedBool: 5
+      RootBeer: 5
+      Rum: 2
+      Smite: 5
+      SodaWater: 5
+      Cola: 5
+      SolarWind: 5
+      SpaceUp: 5
+      Sugar: 2
+      Tea: 5
+      Tequila: 2.5
+      TonicWater: 5
+      Vodka: 14.8
+      Water: 2
+      JuiceWatermelon: 5
+      Whiskey: 14.8
+      Wine: 9
+
+- type: entity
+  parent: BaseItem
+  id: CommandBell
+  name: command bell
+  description: The heaviest responsibility of the Admin Assistant, calling the meetings. You feel pressure just having it on you.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/desk_bell.rsi
+    state: "normal"
+  - type: Tag
+    tags:
+      - Payload
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessSound:
+      collection: DeskBell
+      params:
+        variation: 0.03
+        volume: 3
+    onActivate: true
+  - type: EmitSoundOnUse
+    sound:
+      collection: DeskBell
+      params:
+          variation: 0.03
+          volume: 3
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: DeskBell
+      params:
+          variation: 0.03
+          volume: 3
+  - type: EmitSoundOnLand
+    sound:
+      collection: DeskBell
+      params:
+          variation: 0.03
+          volume: 3
+  - type: UseDelay
+    delay: 0.5
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      collection: DeskBell
+      params:
+          variation: 0.03
+          volume: 3
+    damage:
+      types:
+        Blunt: 4
+
+- type: entity
+  parent: BaseItem
+  id: CommandMeetingsCartridge
+  name: command meetings
+  description: Manage command meetings
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/cartridge.rsi
+    state: cart-y
+  - type: Cartridge
+    programName: command-meetings-program-name
+    icon:
+      sprite:  Objects/Misc/books.rsi
+      state: book_icon
+  - type: CommandMeetings
+  - type: Item

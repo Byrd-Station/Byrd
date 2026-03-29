@@ -1,0 +1,25 @@
+# Administrative HUD & glasses
+- type: loadout
+  id: AdminAssistantGlasses
+  equipment:
+    eyewear: ClothingEyesGlassesCommand
+
+- type: loadout
+  id: AdminAssistantHud
+  equipment:
+    eyewear: ClothingEyesHudCommand
+
+- type: loadout
+  id: AdminAssistantClipboard
+  equipment:
+    belt: BoxFolderClipboard
+
+- type: loadout
+  id: AdminAssistantLacedShoes
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+
+- type: loadout
+  id: AdminAssistantLeatherShoes
+  equipment:
+    shoes: ClothingShoesLeather

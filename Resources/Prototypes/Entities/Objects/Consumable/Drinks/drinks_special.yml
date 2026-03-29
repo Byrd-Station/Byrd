@@ -132,6 +132,58 @@
     heldOnly: true
     examinableWhileClosed: false
 
+# Omu start
+
+- type: entity 
+  parent: BaseItem
+  id: BluespaceDrinkShaker 
+  name: bluespace shaker
+  description: A marvel of bartending, made for the Administrative Assistant.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 500
+  - type: MixableSolution
+    solution: drink
+  - type: Drink
+  - type: Shakeable
+  - type: FitsInDispenser
+    solution: drink
+  - type: DrawableSolution
+    solution: drink
+  - type: RefillableSolution
+    solution: drink
+  - type: DrainableSolution
+    solution: drink
+  - type: SolutionTransfer
+    canChangeTransferAmount: true
+  - type: Spillable
+    solution: drink
+  - type: Sprite
+    sprite: Objects/Consumable/Drinks/bluespace_shaker.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Consumable/Drinks/bluespace_shaker.rsi
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: PhysicalComposition #Goobstation - Recycle update
+    materialComposition:
+      Steel: 100
+  - type: DnaSubstanceTrace
+  - type: ReactionMixer
+    mixOnInteract: false
+    reactionTypes:
+    - Shake
+  - type: ExaminableSolution
+    solution: drink
+    heldOnly: true
+    examinableWhileClosed: false
+
+#Omu end
+
 - type: entity
   parent: DrinkGlassBase
   id: DrinkShotGlass

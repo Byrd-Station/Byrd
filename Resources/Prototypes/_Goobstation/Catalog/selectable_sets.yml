@@ -651,3 +651,40 @@
     state: control
   content:
   - ClothingModsuitResearchDirectorPowerCell
+
+# Administrative Assistant AA (Omu Start) 
+
+- type: selectableSet
+  id: AAHospitalityKit
+  name: selectable-set-aa-hospitality-name
+  description: selectable-set-aa-hospitality-desc
+  sprite:
+    sprite: Objects/Consumable/Drinks/bluespace_shaker.rsi
+    state: icon
+  content:
+  - BluespaceDrinkShaker
+  - DrinkMugAA
+  - BarSpoon
+
+- type: selectableSet
+  id: AABureaucracyKit
+  name: selectable-set-aa-bureaucracy-name
+  description: selectable-set-aa-bureaucracy-desc
+  sprite:
+    sprite: Objects/Consumable/Drinks/bluespace_shaker.rsi
+    state: icon
+  content:
+  - RubberStampApproved
+  - RubberStampDenied
+
+- type: selectableSet
+  id: AARecordsKit
+  name: selectable-set-aa-records-name
+  description: selectable-set-aa-records-desc
+  sprite:
+    sprite: Objects/Consumable/Drinks/bluespace_shaker.rsi
+    state: icon
+  content:
+  - HandheldStationMap
+
+  # OmuEnd

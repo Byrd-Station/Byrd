@@ -75,6 +75,8 @@ namespace Content.Goobstation.Server.Chemistry.EntitySystems
         [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
         [Dependency] private readonly BatterySystem _battery = default!;
+        [Dependency] private readonly Content.Server.PowerCell.PowerCellSystem _powerCellSystem = default!;
+        
 
         public override void Initialize()
         {
@@ -108,7 +110,12 @@ namespace Content.Goobstation.Server.Chemistry.EntitySystems
             var idleUse = 0f;
             var hasPower = false;
 
-            if (TryComp<BatteryComponent>(reagentDispenser, out var battery))
+            if (_powerCellSystem.TryGetBatteryFromSlot(reagentDispenser.Owner, out var slottedBatteryEnt, out var slottedBattery)) // Omu
+            {
+                batteryCharge = slottedBattery.CurrentCharge; // Omu
+                batteryMaxCharge = slottedBattery.MaxCharge;  // Also omu
+            }
+            else if (TryComp<BatteryComponent>(reagentDispenser, out var battery))
             {
                 batteryCharge = battery.CurrentCharge;
                 batteryMaxCharge = battery.MaxCharge;
@@ -193,16 +200,27 @@ namespace Content.Goobstation.Server.Chemistry.EntitySystems
                 || !_solutionContainerSystem.TryGetFitsInDispenser(outputContainer.Value, out var solution, out _))
                 return;
 
-            if (!TryComp<BatteryComponent>(reagentDispenser, out var battery))
-                return;
+            TryComp<BatteryComponent>(reagentDispenser, out var battery); // Omu
 
             var amount = (int) reagentDispenser.Comp.DispenseAmount;
             var powerRequired = GetPowerCostForReagent(message.ReagentId, amount, reagentDispenser.Comp);
 
-            if (battery.CurrentCharge < powerRequired)
+            // Omu start
+            if (HasComp<Content.Shared.PowerCell.Components.PowerCellSlotComponent>(reagentDispenser))
             {
-                _audioSystem.PlayPvs(reagentDispenser.Comp.PowerSound, reagentDispenser, AudioParams.Default.WithVolume(-2f));
-                return;
+                if (!_powerCellSystem.TryUseCharge(reagentDispenser.Owner, powerRequired))
+                {
+                    _audioSystem.PlayPvs(reagentDispenser.Comp.PowerSound, reagentDispenser, AudioParams.Default.WithVolume(-2f));
+                    return;
+                }
+            } // Omu end
+            else
+            {
+                if (battery == null || battery.CurrentCharge < powerRequired)
+                {
+                    _audioSystem.PlayPvs(reagentDispenser.Comp.PowerSound, reagentDispenser, AudioParams.Default.WithVolume(-2f));
+                    return;
+                }
             }
 
 
@@ -210,7 +228,11 @@ namespace Content.Goobstation.Server.Chemistry.EntitySystems
             if (!_solutionContainerSystem.TryAddSolution(solution.Value, sol))
                 return;
 
-            _battery.SetCharge(reagentDispenser.Owner, battery.CurrentCharge - powerRequired);
+            if (!_powerCellSystem.TryGetBatteryFromSlot(reagentDispenser.Owner, out _, out _)) // Omu
+            {
+                if (battery != null)
+                    _battery.SetCharge(reagentDispenser.Owner, battery.CurrentCharge - powerRequired);
+            } 
             ClickSound(reagentDispenser);
             UpdateUiState(reagentDispenser);
         }
@@ -224,7 +246,17 @@ namespace Content.Goobstation.Server.Chemistry.EntitySystems
 
             var refundedPower = soln.Sum(reagent => GetPowerCostForReagent(reagent.Reagent.Prototype, (int) reagent.Quantity, reagentDispenser));
             if (refundedPower > 0)
-                _battery.AddCharge(reagentDispenser, refundedPower);
+            {
+                // Omu start
+                if (_powerCellSystem.TryGetBatteryFromSlot(reagentDispenser.Owner, out var batteryEnt, out var batteryComp))
+                {
+                    _battery.AddCharge(batteryEnt.Value, refundedPower, batteryComp);
+                } // Omu end
+                else
+                {
+                    _battery.AddCharge(reagentDispenser, refundedPower);
+                }
+            }
 
             _solutionContainerSystem.RemoveAllSolution(solution.Value);
             UpdateUiState(reagentDispenser);

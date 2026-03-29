@@ -6,6 +6,10 @@
   loadouts:
   - AdminAssistantJumpsuit
   - AdminAssistantJumpskirt
+  - AdminAssistantSuit
+  - AdminAssistantRuinedSuit
+  - AdminAssistantTurtleneck
+  - AdminAssistantTurtleskirt
 
 - type: loadoutGroup
   id: AdminAssistantHead
@@ -13,6 +17,7 @@
   minLimit: 0
   loadouts:
   - AdminAssistanthat
+  - MimeFrenchBeret
 
 - type: loadoutGroup
   id: AdminAssistantShoes
@@ -21,18 +26,27 @@
   - BlackShoes
   - BrownShoes
   - WhiteShoes
+  - AdminAssistantLacedShoes # Omu
+  - AdminAssistantLeatherShoes # Also, infact, omu
   # - BrownLeatherShoes
   # - WhiteLeatherShoes
-  # - LaceupShoes
 
 - type: loadoutGroup
   id: AdminAssistantOuter
   name: loadout-group-admin-assistant-outerclothing
   loadouts:
   - BartenderVest
+  - AdminAssistantCoat # Omu
+  - AdminAssistantVetCoat # Omu
   # - WinterCoatBlack
   # - WinterCoatBrown
   # - CorporateJacket
+
+- type: loadoutGroup
+  id: AdminAssistantNeck
+  name: loadout-group-admin-assistant-neck
+  loadouts:
+  - AACloak
 
 - type: loadoutGroup
   id: AdminAssistantEar

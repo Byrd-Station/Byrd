@@ -11,6 +11,39 @@
 
 - type: entity
   parent: ClothingUniformBase
+  id: ClothingUniformSuitAdminAssistant
+  name: administrative assistant's formal suit
+  description: A suit and tie tailored for the Administrative Assistant. Looks posh.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/adminassistantsuit.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/adminassistantsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformSuitRuinedAdminAssistant
+  name: administrative assistant's disheveled suit
+  description: What once held the glory and fanciness of a brand new suit. Now it's full of scratches and coffee spills.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/adminassistantruinedsuit.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/adminassistantruinedsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformSuitAATurtleneck
+  name: administrative assistant's turtleneck
+  description: Has an earthy, coffee smell. This one is oddly comfortable to wear.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/aa_turtle.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/aa_turtle.rsi
+
+- type: entity
+  parent: ClothingUniformBase
   id: ClothingUniformJumpsuitAsakim
   name: combat jumpsuit
   description: A comfortable and flexible jumpsuit, designed to be worn under a hardsuit.

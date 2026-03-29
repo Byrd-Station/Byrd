@@ -185,3 +185,6 @@ reagent-desc-potassium-iodide = Will reduce the damaging effects of radiation by
 
 reagent-name-haloperidol = haloperidol
 reagent-desc-haloperidol = Removes most stimulating and hallucinogenic drugs. Reduces druggy effects and jitteriness. Causes drowsiness.
+
+reagent-name-destressium = destressium
+reagent-desc-destressium = Chemical provided by the AA's stress ball through bluespace technology to heal slight brute and burn damage, aswell as suppressing pain. Cannot be made in the lab.

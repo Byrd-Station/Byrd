@@ -268,6 +268,19 @@
   - BrigmedicHeadset
   - BrigmedicAltHeadset
 
+# Administrative Assistant
+- type: loadoutGroup
+  id: AdminAssistantEyewear
+  name: loadout-group-admin-assistant-eyewear
+  loadouts:
+  - AdminAssistantGlasses
+  - AdminAssistantHud
+
+- type: loadoutGroup
+  id: AdminAssistantBelt
+  name: loadout-group-admin-assistant-belt
+  loadouts:
+  - AdminAssistantClipboard
 # tide
 
 - type: loadoutGroup

@@ -460,6 +460,45 @@ public sealed class FaxSystem : EntitySystem
 
     private void OnCopyButtonPressed(EntityUid uid, FaxMachineComponent component, FaxCopyMessage args)
     {
+        // Omu start
+        if (TryComp<MetaDataComponent>(uid, out var meta) && meta.EntityPrototype?.ID == "ComplaintsBoxInput")
+        {
+            // Try to get the template slot
+            if (_itemSlotsSystem.TryGetSlot(uid, "Template", out var templateSlot) && templateSlot.Item.HasValue)
+            {
+                var templateEntity = templateSlot.Item.Value;
+
+                if (HasComp<MobStateComponent>(templateEntity))
+                    _faxecute.Faxecute(uid, component);
+                else if (TryComp<FaxableObjectComponent>(templateEntity, out var faxcomp) && !faxcomp.Copyable)
+                    _explosion.QueueExplosion(uid, "Default", 20, 65, 3.4f, 1f, 0, false, uid);
+                else
+                {
+                    // Build a printout from the template entity
+                    if (TryComp(templateEntity, out MetaDataComponent? metadata) && TryComp<PaperComponent>(templateEntity, out var paper))
+                    {
+                        TryComp<LabelComponent>(templateEntity, out var labelComponent);
+                        TryComp<NameModifierComponent>(templateEntity, out var nameMod);
+
+                        var printout = new FaxPrintout(paper.Content,
+                                                       nameMod?.BaseName ?? metadata.EntityName,
+                                                       labelComponent?.CurrentLabel,
+                                                       metadata.EntityPrototype?.ID ?? component.PrintPaperId,
+                                                       paper.StampState,
+                                                       paper.StampedBy,
+                                                       paper.EditingDisabled);
+
+                        component.PrintingQueue.Enqueue(printout);
+                        component.SendTimeoutRemaining += component.SendTimeout;
+                        UpdateUserInterface(uid, component);
+                    }
+                }
+
+                return;
+            }
+        }
+        // Omu end (needed for AA complaints box having more than one paper tray)
+
         if (HasComp<MobStateComponent>(component.PaperSlot.Item))
             _faxecute.Faxecute(uid, component); // when button pressed it will hurt the mob.
         else if (component.PaperSlot.Item != null && TryComp<FaxableObjectComponent>(component.PaperSlot.Item, out var faxcomp) && !faxcomp.Copyable) // goobstation

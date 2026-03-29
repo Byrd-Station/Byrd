@@ -2,7 +2,7 @@
   parent: BasePDA
   id: AdminAssistantPDA
   name: administrative assistant PDA
-  description: Theres pen scribbles all over the edges, and a few sticky notes stuck on it.
+  description: Theres pen scribbles all over the edges, and a few sticky notes stuck on it. Some bite marks too. Did Ian nibble on this PDA?
   components:
   - type: Sprite
     sprite: Objects/Devices/pda.rsi
@@ -30,13 +30,14 @@
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
         !type:String
-        pda-lawyer
+        pda-adminassistant
   - type: Icon
     sprite: Objects/Devices/pda.rsi
-    state: pda-lawyer
+    state: pda-adminassistant
   - type: CartridgeLoader
     preinstalled:
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
       - NanoChatCartridge
+      - NanoTaskCartridge

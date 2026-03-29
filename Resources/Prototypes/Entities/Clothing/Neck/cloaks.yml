@@ -193,6 +193,17 @@
     stealGroup: HeadCloak
 
 - type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
+  id: ClothingNeckCloakAA
+  name: administrative assistant's cloak
+  description: Contrary to popular belief, the gold part is in fact just cheap golden paint and not real gold.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Cloaks/aa.rsi
+  - type: StealTarget
+    stealGroup: HeadCloak
+
+- type: entity
   parent: ClothingNeckBase
   id: ClothingNeckCloakAdmin
   name: weh cloak

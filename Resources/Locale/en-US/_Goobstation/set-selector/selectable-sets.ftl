@@ -251,3 +251,24 @@ selectable-set-research-director-modsuit-desc =
     A modular hardsuit armored perfectly to turn you into a research tank,
     not even the most dangerous of experiments will harm you in this,
     and the worst of assistants will think twice before breaking in sci.
+
+selectable-set-aa-hospitality-name = Hospitality and Wellbeing kit
+selectable-set-aa-hospitality-desc = 
+    A kit made specifically for the AA to provide bartending, food and other
+    wellbeing services to command, including unique bluespace bartending tools,
+    a napkin box, a food tray and the famous, iconic AA Bluespace coffee mug.
+
+selectable-set-aa-bureaucracy-name = Bureaucracy and Paperwork kit
+selectable-set-aa-bureaucracy-desc = 
+    Packed for the most difficult of writing and paperwork, this set includes
+    approved and denied stamps, a confidential stamp, a briefcase of holding and
+    an executive stress ball, for when the shift is just too much.
+
+selectable-set-aa-records-name = Crew and Meeting set 
+selectable-set-aa-records-desc =
+    Includes a one-of-a-kind Command bell, which you can use to summon command
+    for a meeting, a complaint box for the crew to drop in opinions about departments
+    and their heads, which will totally not be ignored, a meeting loudspeaker, and a 
+    gavel you can use to demand order in meetings or court.
+
+

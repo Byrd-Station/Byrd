@@ -1,0 +1,15 @@
+- type: entity
+  id: AAKitSelector
+  name: administrative assistant kit pack
+  description: A small case that uses bluespace technology to teleport two command assistance loadouts for you.
+  parent: [ BaseItem, BaseSetSelector, BaseGrandTheftContraband ]
+  components:
+  - type: Sprite
+    sprite: _Omu/Objects/Misc/GunCases/aacase.rsi
+    state: icon
+  - type: SetSelector
+    possibleSets:
+    - AAHospitalityKit
+    - AABureaucracyKit
+    - AARecordsKit
+    maxSelectedSets: 2

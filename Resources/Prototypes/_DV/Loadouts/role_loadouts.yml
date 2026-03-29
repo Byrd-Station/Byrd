@@ -4,8 +4,11 @@
   groups:
   - AdminAssistantJumpsuit
   - AdminAssistantOuter
+  - AdminAssistantNeck
   - AdminAssistantShoes
+  - AdminAssistantBelt
   - AdminAssistantEar
+  - AdminAssistantEyewear
   - AdminAssistantHead
   - AdminAssistantGloves
   - CommonBackpack

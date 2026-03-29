@@ -1928,3 +1928,24 @@
       - !type:AdjustReagent
         reagent: MindbreakerToxin
         amount: -3.0
+
+# Omu
+
+- type: reagent
+  id: Destressium
+  name: reagent-name-destressium
+  desc: reagent-desc-destressium
+  physicalDesc: reagent-physical-desc-soothing
+  color: "#dec78a"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+          damage:
+            groups:
+              Brute: -.3
+            types:
+              Heat: -.3
+      - !type:SuppressPain
+          amount: 5
+          time: 30

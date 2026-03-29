@@ -10,6 +10,32 @@
     jumpsuit: ClothingUniformJumpskirtAdminAssistant
 
 - type: loadout
+  id: AdminAssistantSuit
+  equipment:
+    jumpsuit: ClothingUniformSuitAdminAssistant
+
+- type: loadout
+  id: AdminAssistantTurtleneck
+  equipment:
+    jumpsuit: ClothingUniformSuitAATurtleneck
+
+- type: loadout
+  id: AdminAssistantTurtleskirt
+  equipment:
+    jumpsuit: ClothingUniformSuitAATurtleskirt
+
+- type: loadout
+  id: AdminAssistantRuinedSuit
+  equipment:
+    jumpsuit: ClothingUniformSuitRuinedAdminAssistant
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobAdminAssistant
+      time: 54000 # 15hrs
+
+- type: loadout
   id: AdminAssistantHeadset
   equipment:
     ears: ClothingHeadsetAdminAssistant
@@ -18,6 +44,28 @@
   id: AdminAssistantAltHeadset
   equipment:
     ears: ClothingHeadsetAltAdminAssistant
+
+# Outer clothing
+- type: loadout
+  id: AdminAssistantCoat
+  equipment:
+    outerClothing: ClothingOuterCoatAA
+
+- type: loadout
+  id: AdminAssistantVetCoat
+  equipment:
+    outerClothing: ClothingOuterCoatAASeasoned
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobAdminAssistant
+      time: 54000 #15 hrs
+
+- type: loadout
+  id: AACloak
+  equipment:
+    neck: ClothingNeckCloakAA
 
 # Head
 - type: loadout
@@ -30,3 +78,4 @@
   #     !type:RoleTimeRequirement
   #     role: JobAdminAssistant
   #     time: 180000 #50 hrs
+
