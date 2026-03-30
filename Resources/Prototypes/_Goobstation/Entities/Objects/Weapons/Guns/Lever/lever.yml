@@ -45,7 +45,7 @@
         priority: 1
         whitelist:
           tags:
-          - ShellShotgunHeavy
+          - ShellShotgun  #Omu removed heavy
   - type: Gun
     fireRate: 0.65
     soundGunshot:

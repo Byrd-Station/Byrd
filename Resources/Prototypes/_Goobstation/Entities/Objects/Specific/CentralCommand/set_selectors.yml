@@ -65,7 +65,7 @@
     possibleSets:
     - ERTBallisticsSet
     - ERTPulseSet
-    - ERTShotgunSet # Omu - ERT Rework
+    #- ERTShotgunSet # Omu - remove 8 gauge
     - ERTLightEnergySet # Omu - ERT Hotfix
     - ERTSMGSet # Omu - ERT Rework
     maxSelectedSets: 1

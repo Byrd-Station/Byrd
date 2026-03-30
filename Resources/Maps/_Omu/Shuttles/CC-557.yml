@@ -10460,50 +10460,50 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: WeaponShotgunCombat
-  entities:
-  - uid: 263
-    components:
-    - type: Transform
-      parent: 258
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 264
-    components:
-    - type: Transform
-      parent: 258
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 265
-    components:
-    - type: Transform
-      parent: 258
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 268
-    components:
-    - type: Transform
-      parent: 258
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 269
-    components:
-    - type: Transform
-      parent: 258
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 270
-    components:
-    - type: Transform
-      parent: 258
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
+#- proto: WeaponShotgunCombat
+#  entities:
+#  - uid: 263
+#    components:
+#    - type: Transform
+#      parent: 258
+#    - type: Physics
+#      canCollide: False
+#    - type: InsideEntityStorage
+#  - uid: 264
+#    components:
+#    - type: Transform
+#      parent: 258
+#    - type: Physics
+#      canCollide: False
+#    - type: InsideEntityStorage
+#  - uid: 265
+#    components:
+#    - type: Transform
+#      parent: 258
+#    - type: Physics
+#      canCollide: False
+#    - type: InsideEntityStorage
+#  - uid: 268
+#    components:
+#    - type: Transform
+#      parent: 258
+#    - type: Physics
+#      canCollide: False
+#    - type: InsideEntityStorage
+#  - uid: 269
+#    components:
+#    - type: Transform
+#      parent: 258
+#    - type: Physics
+#      canCollide: False
+#    - type: InsideEntityStorage
+#  - uid: 270
+#    components:
+ #   - type: Transform
+ #     parent: 258
+#    - type: Physics
+#      canCollide: False
+#    - type: InsideEntityStorage
 - proto: WindoorSecureChemistryLocked
   entities:
   - uid: 77

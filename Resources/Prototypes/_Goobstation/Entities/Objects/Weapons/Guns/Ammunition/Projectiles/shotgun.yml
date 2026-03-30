@@ -25,8 +25,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 15
-        Structural: 20
+        Piercing: 10 # Omu was 15 - changed in case i fucked up elsewhere
+        #Structural: 20
 
 - type: entity
   id: HighCaliberPelletShotgunSpread
@@ -34,7 +34,7 @@
   parent: HighCaliberPelletShotgun
   components:
   - type: ProjectileSpread
-    proto: HighCaliberPelletShotgun
+    proto: PelletShotgun
     count: 6
     spread: 15
 
@@ -52,8 +52,8 @@
     - type: Projectile
       damage:
         types:
-          Blunt: 6
-          Heat: 6
+          Blunt: 3    # Omu changed from 6,6 in case i fucked up
+          Heat: 3
     - type: IgnitionSource
       ignited: true
 
@@ -63,7 +63,7 @@
   parent: HighCaliberPelletShotgunIncendiary
   components:
     - type: ProjectileSpread
-      proto: HighCaliberPelletShotgunIncendiary
+      proto: PelletShotgunIncendiary    # Omu changed to 12 gauge projectile
       count: 6
       spread: 15
 
@@ -89,8 +89,8 @@
   parent: HighCaliberPelletShotgunPractice
   components:
     - type: ProjectileSpread
-      proto: HighCaliberPelletShotgunPractice
-      count: 8
+      proto: PelletShotgunPractice    #Omu changed to 12 gauge
+      count: 6        # Omu changed to 6 from 8
       spread: 15
 
 # Depleted Uranium
@@ -107,8 +107,8 @@
     - type: Projectile
       damage:
         types:
-          Radiation: 8
-          Piercing: 8
+          Radiation: 5      # Omu changed from 8,8
+          Piercing: 5
 
 - type: entity
   id: HighCaliberPelletShotgunUraniumSpread
@@ -116,8 +116,8 @@
   parent: HighCaliberPelletShotgunUranium
   components:
     - type: ProjectileSpread
-      proto: HighCaliberPelletShotgunUranium
-      count: 6
+      proto: PelletShotgunUranium   #Omu changed to 12 gauge
+      count: 5        # Omu changed to 5 from 6
       spread: 6
 
 ## Slugs
@@ -134,7 +134,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 65
+        Piercing: 40    # omu was 65 with no struct
+        Structural: 15
 
 - type: entity
   id: BulletSlugEnsnaring
@@ -212,7 +213,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20
+        Piercing: 6 #Omu down from 20
 
 - type: entity
   id: BulletSlugBeanbagHighCaliber
@@ -226,9 +227,9 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 20 # ye-OUCH
+        Blunt: 6 # Omu down from 20
   - type: StaminaDamageOnCollide
-    damage: 80 # ye-OW
+    damage: 50 #  Omu down from 80
 
 - type: entity
   id: BulletShotgunHeavySlugSarin
@@ -250,7 +251,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 15
+        Piercing: 10    #Omu down from 15
 
 # Heavy shotgun
 

@@ -20677,50 +20677,50 @@ entities:
       - CentralCommand
       severity: Restricted
     - type: InsideEntityStorage
-- proto: WeaponShotgunCombat
-  entities:
-  - uid: 491
-    components:
-    - type: Transform
-      parent: 490
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 493
-    components:
-    - type: Transform
-      parent: 490
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 495
-    components:
-    - type: Transform
-      parent: 490
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 506
-    components:
-    - type: Transform
-      parent: 490
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 507
-    components:
-    - type: Transform
-      parent: 490
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 508
-    components:
-    - type: Transform
-      parent: 490
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
+#- proto: WeaponShotgunCombat
+#  entities:
+#  - uid: 491
+#    components:
+#    - type: Transform
+#      parent: 490
+#    - type: Physics
+#      canCollide: False
+#    - type: InsideEntityStorage
+#  - uid: 493
+#    components:
+#    - type: Transform
+#      parent: 490
+#    - type: Physics
+#      canCollide: False
+#    - type: InsideEntityStorage
+#  - uid: 495
+#    components:
+#    - type: Transform
+#      parent: 490
+#    - type: Physics
+#      canCollide: False
+#    - type: InsideEntityStorage
+#  - uid: 506
+#    components:
+#    - type: Transform
+#      parent: 490
+#    - type: Physics
+#      canCollide: False
+#    - type: InsideEntityStorage
+#  - uid: 507
+#    components:
+#    - type: Transform
+#      parent: 490
+#    - type: Physics
+#      canCollide: False
+#    - type: InsideEntityStorage
+#  - uid: 508
+#    components:
+#    - type: Transform
+#      parent: 490
+#    - type: Physics
+#      canCollide: False
+#    - type: InsideEntityStorage
 - proto: WindoorSecureCentralCommandLocked
   entities:
   - uid: 208

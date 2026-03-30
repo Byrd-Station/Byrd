@@ -229,5 +229,5 @@
     WeaponLaserCannon: 1
     WeaponSubMachineSmart: 1
     WeaponLeverChester: 0.25
-    WeaponShotgunCombat: 0.25
+#    WeaponShotgunCombat: 0.25
     WeaponSubMachineGunAtreides: 0.5
