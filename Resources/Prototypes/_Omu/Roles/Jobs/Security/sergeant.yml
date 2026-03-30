@@ -61,7 +61,7 @@
   job: SecuritySergeant
   hasMindShield: true
   equipment:
-    head: ClothingHeadHatBeretSecurity
+    head: ClothingHeadHatCapSergeant
     mask: ClothingMaskGasSecurity
-    neck: Dinkystar
+    neck: ClothingNeckCloakSergeant
     gloves: ClothingHandsGlovesColorBlack

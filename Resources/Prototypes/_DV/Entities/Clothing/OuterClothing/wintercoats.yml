@@ -91,9 +91,7 @@
     coverage:
     - Chest
     - Groin
-    - Tail
     - Arm
-    - Leg
     traumaDeductions:
       Dismemberment: 0.2
       OrganDamage: 0.2
@@ -104,19 +102,20 @@
       coefficients:
         Blunt: 0.65
         Slash: 0.65
-        Piercing: 0.6
+        Piercing: 0.65
         Heat: 0.6
-        Caustic: 0.65
   - type: TemperatureProtection
     heatingCoefficient: 0.1
     coolingCoefficient: 0.1
   - type: ExplosionResistance
-    damageCoefficient: 0.9
+    damageCoefficient: 0.95
   - type: ModifyDelayedKnockdown # Goobstation
     delayDelta: 2
     knockdownTimeDelta: -2
   - type: StaminaResistance # Goobstation
     damageCoefficient: 0.7
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.55
 
 - type: entity
   parent: [ ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatStasecSenior ]
@@ -127,13 +126,34 @@
 - type: entity
   parent: [ ClothingOuterCoatStasecSenior, BaseSecurityCommandContraband ]
   id: ClothingOuterCoatStasecHoS
-  name: head of security's coat
+  name: head of security's great coat
   description: A warm and comfortable winter coat, reinforced with durathread and compliant with Station Security uniform standards. This version is adorned with gold trim.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Wintercoats/hosgreatcoat.rsi
   - type: Clothing
     sprite: _DV/Clothing/OuterClothing/Wintercoats/hosgreatcoat.rsi
+  - type: Armor
+    coverage:
+    - Chest
+    - Groin
+    - Tail
+    - Arm
+    - Leg
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.55
+        Heat: 0.55
+        Caustic: 0.6 
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: ModifyDelayedKnockdown # Goobstation
+    delayDelta: 2
+    knockdownTimeDelta: -2
+  - type: StaminaResistance # Goobstation
+    damageCoefficient: 0.7
 
 - type: entity
   parent: [ ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatStasecHoS ]
@@ -151,6 +171,27 @@
     sprite: _DV/Clothing/OuterClothing/Wintercoats/armourergreatcoat.rsi
   - type: Clothing
     sprite: _DV/Clothing/OuterClothing/Wintercoats/armourergreatcoat.rsi
+  - type: Armor
+    coverage:
+    - Chest
+    - Groin
+    - Tail
+    - Arm
+    - Leg
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.6
+        Heat: 0.6
+        Caustic: 0.65
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: ModifyDelayedKnockdown # Goobstation
+    delayDelta: 2
+    knockdownTimeDelta: -2
+  - type: StaminaResistance # Goobstation
+    damageCoefficient: 0.7
 
 - type: entity
   parent: [ ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatStasecWarden ]
