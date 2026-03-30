@@ -189,6 +189,13 @@
   loadouts:
   - NanotrasenRepresentativerMaskLollypop
 
+- type: loadoutGroup
+  id: NanotrasenRepresentativeOuterClothing
+  name: loadout-group-ntr-outerclothing
+  minLimit: 0
+  loadouts:
+  - NanotrasenRepresentativeWintercoat
+
 #New Selectable PDAs
 
 - type: loadoutGroup
@@ -310,6 +317,45 @@
   name: loadout-group-security-id
   loadouts:
   - SecuritySergeantPDA
+
+- type: loadoutGroup
+  id: SergeantJumpsuit
+  name: loadout-group-sergeant-jumpsuit
+  loadouts:
+  - SecurityJumpsuit
+  - SecurityJumpskirt
+  - SeniorOfficerJumpsuit
+  - SeniorOfficerJumpskirt
+  - SergeantJumpsuit
+  - SergeantJumpskirt
+
+- type: loadoutGroup
+  id: SergeantBelt
+  name: loadout-group-sergeant-belt
+  loadouts:
+  - SergeantBelt
+  - SecurityBelt
+  - SecurityWebbing
+  - SecuritySwordBelt # Omu
+  - SecurityJudoBelt # Goobstation - Martial Arts
+
+- type: loadoutGroup
+  id: SergeantHead
+  name: loadout-group-sergeant-head
+  minLimit: 0
+  loadouts:
+  - SergeantHat
+  - SergeantBeret
+  - SecurityHelmet
+  - SecurityHelmetAlt
+  - SecurityBeret
+
+- type: loadoutGroup
+  id: SergeantNeck
+  name: loadout-group-sergeant-neck
+  loadouts:
+  - SergeantCloak
+  - ClothingNeckCWPSec
 
 # We have a separate one for detective cause holster
 - type: loadoutGroup
