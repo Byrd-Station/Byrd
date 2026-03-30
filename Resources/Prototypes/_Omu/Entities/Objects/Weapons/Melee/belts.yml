@@ -14,6 +14,10 @@
       path: /Audio/_Omu/Items/Belts/BeltPickup.ogg
       params:
         volume: -3
+  - type: EmoteOnMeleeHit
+    emoteChance: 1
+    emotes:
+    - Scream
 
 - type: entity
   id: CentCommBelt
