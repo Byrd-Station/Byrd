@@ -68,6 +68,7 @@
     sprite: _Omu/Clothing/Belt/eggshelldisciplinary.rsi
   #Hurty hurts
   - type: MeleeWeapon
+    attackRate: 5
     wideAnimationRotation: -135
     bluntStaminaDamageFactor: 1.5
     angle: 0
@@ -87,6 +88,11 @@
     delays:
       hit:
         length: 1
+  - type: EmoteOnMeleeHit
+    emoteChance: 1
+    emoteCooldown: 0.001
+    emotes:
+    - Scream
 
 
 - type: entity
