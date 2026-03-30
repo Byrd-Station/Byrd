@@ -56,20 +56,20 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Solutions;
-using Content.Shared.Chemistry.Components;
+//using Content.Shared.Chemistry.Components; // Gabystation
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.Chemistry.Reaction;
-using Content.Shared.Chemistry;
+//using Content.Shared.Chemistry.Reaction; // Gabystation
+//using Content.Shared.Chemistry; // Gabystation
 using Content.Shared.Database;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Fluids.Components;
-using Content.Shared.IdentityManagement;
-using Content.Shared.Nutrition.EntitySystems;
-using Content.Shared.Popups;
+//using Content.Shared.IdentityManagement; // Gabystation
+//using Content.Shared.Nutrition.EntitySystems; // Gabystation
+//using Content.Shared.Popups; // Gabystation
 using Content.Shared.Spillable;
 using Content.Shared.Throwing;
-using Content.Shared.Weapons.Melee.Events;
-using Robust.Shared.Player;
+//using Content.Shared.Weapons.Melee.Events; // Gabystation
+//using Robust.Shared.Player; // Gabystation
 
 namespace Content.Server.Fluids.EntitySystems;
 
@@ -81,7 +81,7 @@ public sealed partial class PuddleSystem
 
         SubscribeLocalEvent<SpillableComponent, LandEvent>(SpillOnLand);
         // Openable handles the event if it's closed
-        SubscribeLocalEvent<SpillableComponent, MeleeHitEvent>(SplashOnMeleeHit, after: [typeof(OpenableSystem)]);
+        /*SubscribeLocalEvent<SpillableComponent, MeleeHitEvent>(SplashOnMeleeHit, after: [typeof(OpenableSystem)]);*/ // Gabystation
         SubscribeLocalEvent<SpillableComponent, SolutionContainerOverflowEvent>(OnOverflow);
         SubscribeLocalEvent<SpillableComponent, SpillDoAfterEvent>(OnDoAfter);
     }
@@ -94,8 +94,8 @@ public sealed partial class PuddleSystem
         TrySpillAt(Transform(entity).Coordinates, args.Overflow, out _);
         args.Handled = true;
     }
-
-    private void SplashOnMeleeHit(Entity<SpillableComponent> entity, ref MeleeHitEvent args)
+// Gabystation start
+    /*private void SplashOnMeleeHit(Entity<SpillableComponent> entity, ref MeleeHitEvent args)
     {
         if (args.Handled)
             return;
@@ -160,7 +160,8 @@ public sealed partial class PuddleSystem
                     ("target", Identity.Entity(hit, EntityManager))),
                 hit, Filter.PvsExcept(args.User), true, PopupType.SmallCaution);
         }
-    }
+    }*/
+// Gabystation end
 
     private void SpillOnLand(Entity<SpillableComponent> entity, ref LandEvent args)
     {
@@ -175,7 +176,7 @@ public sealed partial class PuddleSystem
 
         if (args.User != null)
         {
-            _adminLogger.Add(LogType.Landed,
+            AdminLogger.Add(LogType.Landed,
                 $"{ToPrettyString(entity.Owner):entity} spilled a solution {SharedSolutionContainerSystem.ToPrettyString(solution):solution} on landing");
         }
 

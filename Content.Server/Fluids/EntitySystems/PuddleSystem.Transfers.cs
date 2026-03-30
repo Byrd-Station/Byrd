@@ -8,6 +8,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Server.Popups; // Gabystation
 using Content.Shared.Chemistry.Components;
 using Content.Shared.DragDrop;
 using Content.Goobstation.Maths.FixedPoint;
@@ -19,6 +20,7 @@ namespace Content.Server.Fluids.EntitySystems;
 public sealed partial class PuddleSystem
 {
     [Dependency] private readonly OpenableSystem _openable = default!;
+    [Dependency] private readonly PopupSystem _popups = default!; // Gabystation
 
     private void InitializeTransfers()
     {
@@ -35,7 +37,7 @@ public sealed partial class PuddleSystem
 
         if (!_solutionContainerSystem.TryGetSolution(entity.Owner, entity.Comp.Solution, out var soln, out var solution) || solution.Volume == FixedPoint2.Zero)
         {
-            _popups.PopupEntity(Loc.GetString("mopping-system-empty", ("used", entity.Owner)), entity, args.User);
+            Popups.PopupEntity(Loc.GetString("mopping-system-empty", ("used", entity.Owner)), entity, args.User); // Gabystation
             return;
         }
 
