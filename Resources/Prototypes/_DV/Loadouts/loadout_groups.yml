@@ -30,6 +30,7 @@
   name: loadout-group-admin-assistant-outerclothing
   loadouts:
   - BartenderVest
+  - CommandWintercoat #Omu
   # - WinterCoatBlack
   # - WinterCoatBrown
   # - CorporateJacket

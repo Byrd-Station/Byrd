@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/22/2026 15:40:47
-  entityCount: 25163
+  time: 03/29/2026 12:55:32
+  entityCount: 25162
 maps:
 - 1
 grids:
@@ -63117,6 +63117,14 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 54.5,1.5
       parent: 2
+- proto: ComputerShuttleSalvage
+  entities:
+  - uid: 20511
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 55.5,-8.5
+      parent: 2
 - proto: ComputerSolarControl
   entities:
   - uid: 9547
@@ -71450,18 +71458,6 @@ entities:
     components:
     - type: Transform
       pos: -30.5,13.5
-      parent: 2
-- proto: ExtendedEmergencyOxygenTankFilled
-  entities:
-  - uid: 24700
-    components:
-    - type: Transform
-      pos: 55.502186,-8.334174
-      parent: 2
-  - uid: 24701
-    components:
-    - type: Transform
-      pos: 55.842373,-8.386484
       parent: 2
 - proto: ExtinguisherCabinetFilled
   entities:
@@ -133946,6 +133942,13 @@ entities:
     - type: Transform
       pos: -33.5,-4.5
       parent: 2
+- proto: SpawnPointSecuritySergeant
+  entities:
+  - uid: 24700
+    components:
+    - type: Transform
+      pos: -33.5,-19.5
+      parent: 2
 - proto: SpawnPointServiceWorker
   entities:
   - uid: 20194
@@ -137003,11 +137006,6 @@ entities:
     components:
     - type: Transform
       pos: 56.5,-8.5
-      parent: 2
-  - uid: 20511
-    components:
-    - type: Transform
-      pos: 55.5,-8.5
       parent: 2
   - uid: 20513
     components:
