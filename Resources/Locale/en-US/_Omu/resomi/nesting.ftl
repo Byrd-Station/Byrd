@@ -1,2 +1,12 @@
 nesting-enter = You curl up into your nest. The warmth is comforting...
 nesting-exit = You get up from your nest.
+nesting-requires-partner = You need another Resomi within 1 tile to nest with!
+nesting-waiting-for-partner = Waiting for a partner to allow nesting... (right-click them to see the request)
+nesting-request-received = { $name } wants to nest with you! Right-click them to allow or deny.
+nesting-request-expired = No one allowed your nest request in time.
+nesting-partner-accepted = Your partner allowed you to nest. Curling up...
+nesting-partner-denied = Your nest request was denied.
+nesting-verb-allow = Allow nesting ({ $name })
+nesting-verb-deny = Deny nesting ({ $name })
+nesting-shared-enter = Your nestmate curled up with you. You settle in together...
+nesting-partner-left = Your nesting partner got up. You're forced to leave too.

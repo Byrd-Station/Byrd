@@ -113,4 +113,42 @@ public sealed partial class NestingComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public EntityUid? ContinuousEffectEntity;
+
+    /// <summary>
+    /// The other Resomi currently sharing this nest. When set, both must stay
+    /// together — if one exits, the other is also forced out.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public EntityUid? NestPartner;
+
+    /// <summary>
+    /// If true, nesting requires another player-controlled Resomi nearby to grant permission.
+    /// </summary>
+    [DataField]
+    public bool RequiresNestPartner = true;
+
+    /// <summary>
+    /// Range in tiles to search for a nest partner.
+    /// </summary>
+    [DataField]
+    public float NestPartnerRange = 1.5f;
+
+    /// <summary>
+    /// Whether this entity is currently waiting for a nest partner to accept.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool RequestingNest = false;
+
+    /// <summary>
+    /// Time at which the nest request expires.
+    /// </summary>
+    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
+    [AutoNetworkedField, AutoPausedField]
+    public TimeSpan NestRequestExpiry = TimeSpan.Zero;
+
+    /// <summary>
+    /// How long a nest request stays pending before it auto-cancels.
+    /// </summary>
+    [DataField]
+    public TimeSpan NestRequestTimeout = TimeSpan.FromSeconds(30);
 }

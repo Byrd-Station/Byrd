@@ -107,7 +107,7 @@
   - type: ResomiEnergy
     energy: 100
     maxEnergy: 100
-    drainRate: 0.1111  # ~15 minutes to empty
+    drainRate: 0.0416  # ~40 minutes to empty
     rechargeRate: 0.8333 # ~2 minutes to fill
     exhaustionSpeedMultiplier: 0.70
   - type: Tag
