@@ -598,6 +598,16 @@
     tags:
     - CorgiWearable
     - WhitelistChameleon
+  - type: Stainable
+    clothingVisuals:
+      outerClothing:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: armorblood
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: armorbloodicon
+  - type: StainBlocker
+    slots: [INNERCLOTHING]
 
 - type: entity # This is from upstream, so it goes in wizden code.
   parent: [ClothingOuterArmorCaptainCarapace, BaseCentcommContraband]
