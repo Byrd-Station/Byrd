@@ -49,5 +49,5 @@ public sealed partial class EmoteOnMeleeHitComponent : Component
     /// The cooldown between emotes.
     /// </summary>
     [DataField("emoteCooldown"), ViewVariables(VVAccess.ReadWrite)]
-    public TimeSpan EmoteCooldown = TimeSpan.FromSeconds(2);
+    public TimeSpan EmoteCooldown = TimeSpan.FromSeconds(0.5);
 }
