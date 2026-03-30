@@ -605,7 +605,7 @@
 - type: marking
   id: VulpPointsCrestLegs
   markingCategory: LeftLeg
-  bodyPart: LLeg
+  bodyPart: LLegs
   speciesRestriction: [Vulpkanin]
   sprites:
     - sprite: _DV/Mobs/Customization/Vulpkanin/body_markings.rsi

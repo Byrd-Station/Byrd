@@ -50,7 +50,7 @@
     speciesId: vulpkanin
   - type: Thirst
   - type: Icon
-    sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    sprite: _DV/Mobs/Species/Vulpkanin/parts_plantigrade.rsi # Omu - vulp furrification
     state: full
   - type: Body
     prototype: Vulpkanin

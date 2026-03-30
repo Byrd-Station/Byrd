@@ -1,0 +1,24 @@
+- type: humanoidBaseSprite
+  id: MobVulpkaninRLegDigi
+  basesprite:
+    sprite: _Omu/Mobs/Species/Vulpkanin/parts_digitigrade.rsi
+    state: r_leg_digi
+
+
+- type: humanoidBaseSprite
+  id: MobVulpkaninLLegDigi
+  basesprite:
+    sprite: _Omu/Mobs/Species/Vulpkanin/parts_digitigrade.rsi
+    state: l_leg_digi
+
+- type: humanoidBaseSprite
+  id: MobVulpkaninRFootDigi
+  basesprite:
+    sprite: _Omu/Mobs/Species/Vulpkanin/parts_digitigrade.rsi
+    state: r_foot_digi
+
+- type: humanoidBaseSprite
+  id: MobVulpkaninLFootDigi
+  basesprite:
+    sprite: _Omu/Mobs/Species/Vulpkanin/parts_digitigrade.rsi
+    state: l_foot_digi
