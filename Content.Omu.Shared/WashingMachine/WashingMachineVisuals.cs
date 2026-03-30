@@ -5,7 +5,7 @@
 
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.WashingMachine;
+namespace Content.Omu.Shared.WashingMachine;
 
 [Serializable, NetSerializable]
 public enum WashingMachineVisuals : byte

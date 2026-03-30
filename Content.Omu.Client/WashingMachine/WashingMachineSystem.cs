@@ -3,9 +3,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.WashingMachine;
+using Content.Omu.Shared.WashingMachine;
 
-namespace Content.Client.WashingMachine;
+namespace Content.Omu.Client.WashingMachine;
 
 public sealed partial class WashingMachineSystem : SharedWashingMachineSystem
 {

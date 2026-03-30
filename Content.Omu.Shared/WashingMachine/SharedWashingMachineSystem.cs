@@ -10,7 +10,7 @@ using Content.Shared.Power.EntitySystems;
 using Content.Shared.Storage.Components;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Verbs;
-using Content.Shared.WashingMachine.Events;
+using Content.Omu.Shared.WashingMachine.Events;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
@@ -18,7 +18,7 @@ using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Clothing.Components; // Gaby
 
-namespace Content.Shared.WashingMachine;
+namespace Content.Omu.Shared.WashingMachine;
 
 public abstract partial class SharedWashingMachineSystem : EntitySystem
 {

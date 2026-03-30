@@ -10,17 +10,18 @@ using Content.Shared.Fluids;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
 using Content.Shared.Slippery;
-using Content.Shared.WashingMachine.Events;
-using Robust.Shared.GameObjects; // Gaby
+using Content.Omu.Shared.WashingMachine.Events;
+//using Robust.Shared.GameObjects; // Gaby #no need
 using Content.Shared.Clothing.Components; // Gaby
 using Robust.Shared.Containers; // Gaby
 using Content.Shared.Stains.Components; // Gaby
 using Content.Shared.Verbs; // Gaby
 using Content.Shared.DoAfter; // Gaby
 using Content.Shared.Popups; // Gaby
-using Robust.Shared.Utility; // Gaby
+//using Robust.Shared.Utility; // Gaby #no need
+using Content.Shared._Gabystation.Stains;
 
-namespace Content.Shared.Stains;
+namespace Content.Omu.Shared.Stains;
 
 public abstract partial class SharedStainableSystem : EntitySystem
 {

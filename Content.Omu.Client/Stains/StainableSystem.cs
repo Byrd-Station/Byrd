@@ -9,13 +9,14 @@ using Content.Client.Items.Systems;
 using Content.Shared.Clothing;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Hands;
-using Content.Shared.Stains;
-using Content.Shared.Forensics;
+//using Content.Shared.Stains; #no need
+//using Content.Shared.Forensics; #no need
 using Robust.Client.GameObjects;
 using Robust.Shared.Reflection;
 using Robust.Shared.Prototypes;
+using Content.Omu.Shared.Stains;
 
-namespace Content.Client.Stains;
+namespace Content.Omu.Client.Stains;
 
 public sealed partial class StainableSystem : SharedStainableSystem
 {

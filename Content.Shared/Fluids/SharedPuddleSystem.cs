@@ -28,7 +28,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Administration.Logs; // Gabystation start
 using Content.Shared.Chemistry;
 using Content.Shared.Popups;
-using Content.Shared.Stains; // Gabystation end
+using Content.Shared._Gabystation.Stains; // Gabystation end
 
 namespace Content.Shared.Fluids;
 

@@ -3,7 +3,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-namespace Content.Shared.WashingMachine.Events;
+namespace Content.Omu.Shared.WashingMachine.Events;
 
 public sealed partial class WashingMachineFinishedWashingEvent : EntityEventArgs
 {
