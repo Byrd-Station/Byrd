@@ -2965,3 +2965,9 @@ Entries:
       message: Removes deep-meow from the game
   id: 379
   time: '2026-03-29T19:23:42.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Fix
+      message: As sergeant, the cloak no longer spawns on your head.
+  id: 380
+  time: '2026-03-30T05:29:05.0000000+00:00'
