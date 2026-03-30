@@ -1,5 +1,6 @@
 # Nanotrasen Representative
 loadout-group-ntr-mask = Nanotrasen Representative mask
+loadout-group-ntr-outerclothing = Nanotrasen Representative outer clothing
 
 # Blueshield Officer
 loadout-group-bso-belt = Blueshield Officer belt
