@@ -70,8 +70,8 @@
 
 - type: latheRecipe
   parent: BaseBorgModuleRecipeSyndicateAdvanced
-  id: BorgModuleSyndicateMedicalBeamGun
-  result: BorgModuleSyndicateMedicalBeamGun
+  id: BorgModuleSyndicateMedicalTools
+  result: BorgModuleSyndicateMedicalTools
 
 # Assault modules, the most expensive
 

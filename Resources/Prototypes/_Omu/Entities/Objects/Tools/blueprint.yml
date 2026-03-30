@@ -42,7 +42,7 @@
     providedRecipes:
     - BorgModuleMartyr
     - BorgModuleSyndicateWeaponAdvanced
-    - BorgModuleSyndicateMedicalBeamGun
+    - BorgModuleSyndicateMedicalTools
 
 - type: entity
   parent: [BaseBlueprintExoSuitFabricator, BaseSyndicateContraband]

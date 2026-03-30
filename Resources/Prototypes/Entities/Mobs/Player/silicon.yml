@@ -529,6 +529,7 @@
       borg_brain:
         - PositronicBrain
       borg_module:
+        - BorgModuleTool # Omu
         - BorgModuleL6C
         - BorgModuleOperative
         - BorgModuleEsword
