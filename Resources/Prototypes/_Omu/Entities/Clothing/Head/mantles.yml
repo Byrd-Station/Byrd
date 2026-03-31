@@ -336,7 +336,6 @@
     - type: NightVision
       isEquipment: true
       color: "#CCFFCC"
-    - type: HudChemistry
     - type: ShowHealthBars
     - type: ShowHealthIcons
     - type: ShowDiseaseIcons
