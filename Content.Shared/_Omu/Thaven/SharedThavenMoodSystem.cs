@@ -2,6 +2,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Mindshield.Components;
 using Content.Shared._Omu.Thaven.Components;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._Omu.Thaven;
 
