@@ -1,4 +1,6 @@
+using Content.Shared.DoAfter;
 using Content.Shared.Emag.Systems;
+using Content.Shared.Mindshield.Components;
 using Content.Shared._Omu.Thaven.Components;
 
 namespace Content.Shared._Omu.Thaven;
@@ -19,10 +21,24 @@ public abstract class SharedThavenMoodSystem : EntitySystem
         if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
             return;
 
-        // Only allow one wildcard mood from emagging
-        if (_emag.CheckFlag(ent, EmagType.Interaction))
+        // Mindshield blocks emag
+        if (HasComp<MindShieldComponent>(ent))
             return;
 
+        // Counter-based limit; MaxWildMoodEmags can be modified by traits
+        if (ent.Comp.WildMoodEmagCount >= ent.Comp.MaxWildMoodEmags)
+            return;
+
+        ent.Comp.WildMoodEmagCount++;
+        // Don't add EmaggedComponent so they can be re-emagged up to the counter limit
+        args.Repeatable = true;
         args.Handled = true;
     }
+}
+
+[Serializable, NetSerializable]
+public sealed partial class ThavenEmagDoAfterEvent : DoAfterEvent
+{
+    public ThavenEmagDoAfterEvent() { }
+    public override DoAfterEvent Clone() => this;
 }

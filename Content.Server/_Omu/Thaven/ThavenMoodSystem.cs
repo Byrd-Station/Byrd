@@ -1,17 +1,22 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Actions;
+using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
+using Content.Server.EUI;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Dataset;
+using Content.Shared.DoAfter;
 using Content.Shared.Emag.Systems;
 using Content.Shared.GameTicking;
 using Content.Shared._Omu.Thaven;
 using Content.Shared._Omu.Thaven.Components;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
+using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
+using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -30,6 +35,10 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
     [Dependency] private readonly UserInterfaceSystem _bui = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly EuiManager _euiManager = default!;
+    [Dependency] private readonly IAdminManager _adminManager = default!;
+    [Dependency] private readonly IServerPlayerManager _playerManager = default!;
 
     public IReadOnlyList<ThavenMood> SharedMoods => _sharedMoods.AsReadOnly();
     private readonly List<ThavenMood> _sharedMoods = new();
@@ -63,6 +72,8 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
         SubscribeLocalEvent<ThavenMoodsComponent, ComponentShutdown>(OnThavenMoodShutdown);
         SubscribeLocalEvent<ThavenMoodsComponent, ToggleMoodsScreenEvent>(OnToggleMoodsScreen);
         SubscribeLocalEvent<ThavenMoodsComponent, BoundUIOpenedEvent>(OnBoundUIOpened);
+        SubscribeLocalEvent<ThavenMoodsComponent, ThavenEmagDoAfterEvent>(OnEmagDoAfter);
+        SubscribeLocalEvent<ThavenMoodsComponent, GetVerbsEvent<Verb>>(AddThavenAdminVerb);
         SubscribeLocalEvent<RoundRestartCleanupEvent>((_) => NewSharedMoods());
     }
 
@@ -371,7 +382,43 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
         if (!args.Handled)
             return;
 
+        var doAfterArgs = new DoAfterArgs(EntityManager, args.UserUid, TimeSpan.FromSeconds(3), new ThavenEmagDoAfterEvent(), ent.Owner, target: ent.Owner, used: args.EmagUid)
+        {
+            BreakOnMove = true,
+            BreakOnDamage = false,
+            NeedHand = true,
+        };
+        _doAfter.TryStartDoAfter(doAfterArgs);
+    }
+
+    private void OnEmagDoAfter(Entity<ThavenMoodsComponent> ent, ref ThavenEmagDoAfterEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
         AddWildcardMood(ent);
+    }
+
+    private void AddThavenAdminVerb(Entity<ThavenMoodsComponent> ent, ref GetVerbsEvent<Verb> args)
+    {
+        if (!_adminManager.HasAdminFlag(args.User, AdminFlags.Moderator))
+            return;
+
+        if (!_playerManager.TryGetSessionByEntity(args.User, out var session))
+            return;
+
+        var comp = ent.Comp;
+        args.Verbs.Add(new Verb
+        {
+            Text = Loc.GetString("thaven-moods-admin-verb"),
+            Category = VerbCategory.Admin,
+            Act = () =>
+            {
+                var eui = new ThavenMoodsEui(this, EntityManager, _adminManager);
+                _euiManager.OpenEui(eui, session);
+                eui.UpdateMoods(comp, ent.Owner);
+            }
+        });
     }
 }
 

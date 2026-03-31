@@ -20,6 +20,19 @@ public sealed partial class ThavenMoodsComponent : Component
 
     [DataField(serverOnly: true), ViewVariables]
     public EntityUid? Action;
+
+    /// <summary>
+    /// Maximum number of times this entity can be emagged for wildcard moods.
+    /// Can be modified by traits.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public int MaxWildMoodEmags = 1;
+
+    /// <summary>
+    /// How many times this entity has been emagged for wildcard moods so far.
+    /// </summary>
+    [AutoNetworkedField]
+    public int WildMoodEmagCount = 0;
 }
 
 public sealed partial class ToggleMoodsScreenEvent : InstantActionEvent

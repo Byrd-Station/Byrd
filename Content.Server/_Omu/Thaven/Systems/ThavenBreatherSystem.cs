@@ -14,15 +14,8 @@ public sealed class ThavenBreatherSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<ThavenBreatherComponent, CheckNeedsAirEvent>(OnCheckNeedsAir);
         SubscribeLocalEvent<ThavenBreatherComponent, CanMetabolizeGasEvent>(OnCanMetabolizeGas);
         SubscribeLocalEvent<ThavenBreatherComponent, InhaledGasEvent>(OnInhaledGas);
-    }
-
-    private void OnCheckNeedsAir(Entity<ThavenBreatherComponent> ent, ref CheckNeedsAirEvent args)
-    {
-        // Thaven should not use the standard oxygen/air suffocation path.
-        args.Cancelled = true;
     }
 
     private void OnCanMetabolizeGas(Entity<ThavenBreatherComponent> ent, ref CanMetabolizeGasEvent args)

@@ -236,10 +236,8 @@ public sealed class RespiratorSystem : EntitySystem
                     return;
 
                 // Omu: Thavens breathe via pressure, not gas metabolism — never gasp.
-                if (HasComp<ThavenBreatherComponent>(uid))
-                    continue;
-
-                if (_gameTiming.CurTime >= respirator.LastGaspEmoteTime + respirator.GaspEmoteCooldown)
+                if (!HasComp<ThavenBreatherComponent>(uid) &&
+                    _gameTiming.CurTime >= respirator.LastGaspEmoteTime + respirator.GaspEmoteCooldown)
                 {
                     respirator.LastGaspEmoteTime = _gameTiming.CurTime;
                     _chat.TryEmoteWithChat(uid,
