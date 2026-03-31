@@ -103,9 +103,15 @@ public sealed class IdExaminableSystem : EntitySystem
 
     private bool CanAccessWantedMenu(EntityUid user, EntityUid target) // Goobstation-WantedMenu
     {
-        if (!_inventorySystem.TryGetSlotEntity(user, "eyes", out var eyes)
-            || !TryComp<ShowCriminalRecordIconsComponent>(eyes, out _))
-            return false;
+        bool TryGetItem(string slot, out EntityUid? item)
+            => _inventorySystem.TryGetSlotEntity(user, slot, out item);
+
+        // "if there isn't an item on either (eyes or head) that has ShowCriminalRecordIconsComponent,
+        //  then failfast and return false"
+        if (!(
+               (TryGetItem("eyes", out var eyes) && TryComp<ShowCriminalRecordIconsComponent>(eyes, out _))
+            || (TryGetItem("head", out var head) && TryComp<ShowCriminalRecordIconsComponent>(head, out _))
+        )) return false;
 
         if (TryComp<AccessReaderComponent>(target, out var accessReader))
         {
