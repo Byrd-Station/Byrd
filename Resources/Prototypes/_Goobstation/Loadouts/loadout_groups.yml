@@ -1636,7 +1636,11 @@
 - type: loadoutGroup
   id: SalvageSpecialistJumpsuit
   name: loadout-group-salvage-specialist-jumpsuit
+  minLimit: 1 # DV
+  maxLimit: 1 # DV
   loadouts:
+  - SalvageJumpsuit # DV
+  - SalvageJumpskirt # DV
   - SalvageSpecialistJumpsuit
   - SalvageSpecialistJumpskirt
   - SalvageSpecialistOveralls
