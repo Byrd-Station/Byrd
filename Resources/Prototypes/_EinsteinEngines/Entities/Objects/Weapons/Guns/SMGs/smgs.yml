@@ -35,6 +35,7 @@
     - SemiAuto
     - Burst
     - FullAuto
+    damageModifier: .75 #Omu, readding HP
 #    fireOnDropChance: 0.3 # Omu
   - type: ChamberMagazineAmmoProvider
     autoEject: true

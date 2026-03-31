@@ -1,0 +1,50 @@
+- type: entity
+  id: BulletCaselessTungsten
+  name: bullet (5x75 tungsten)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 35
+        Blunt: 5
+        Structural: 75
+    armorPenetration: .5
+  - type: StaminaDamageOnCollide
+    damage: 20
+
+- type: entity
+  id: BaseCartridgeCaselessTungsten
+  name: cartridge (5x75 tungsten)
+  parent: [ BaseCartridge ]
+  - type: Contraband
+    allowedDepartments: [ CentralCommand ]
+    severity: Restricted
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeCaselessTungsten
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+  - type: Sprite
+    noRot: false
+    sprite: _Omu/Objects/Weapons/Guns/Ammunition/Casings/tungsten.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 25
+
+- type: entity
+  id: CartridgeCaselessRifle
+  name: cartridge (5x75 tungsten)
+  parent: BaseCartridgeCaselessTungsten
+  description: A large, heavy tungsten round shot using fusion technology. May god have mercy on your arms if you try to shoot this without any exoskeleton assistance.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletCaselessTungsten
