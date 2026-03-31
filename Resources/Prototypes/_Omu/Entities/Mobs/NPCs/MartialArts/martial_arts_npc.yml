@@ -1,0 +1,158 @@
+# SPDX-FileCopyrightText: 2026 Eponymic-sys
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: BaseMobMartialArtist
+  abstract: true
+  parent: BaseMobHuman
+  components:
+    - type: RandomHumanoidAppearance
+    - type: HTN
+      rootTask:
+        task: MartialArtsHostileCompound
+    - type: NpcFactionMember
+      factions:
+        - SimpleHostile
+    - type: Loadout
+      prototypes:
+        - MartialArtistGear
+
+- type: entity
+  id: MobHostileCQC
+  name: CQC Expert
+  description: A hostile combatant trained in Close Quarters Combat.
+  parent: BaseMobMartialArtist
+  components:
+    - type: Loadout
+      prototypes:
+        - MartialArtistGearCQC
+    - type: MartialArtsKnowledge
+      martialArtsForm: CloseQuartersCombat
+      originalFistDamage: 5
+      originalFistDamageType: Blunt
+    - type: CanPerformCombo
+      roundstartCombos:
+        - CQCKick
+        - CQCSlam
+        - CQCRestrain
+        - CQCPressure
+        - CQCConsecutive
+
+- type: entity
+  id: MobHostileJudo
+  name: Judo Master
+  description: A hostile combatant trained in Corporate Judo.
+  parent: BaseMobMartialArtist
+  components:
+    - type: Loadout
+      prototypes:
+        - MartialArtistGearJudo
+    - type: MartialArtsKnowledge
+      martialArtsForm: CorporateJudo
+      originalFistDamage: 5
+      originalFistDamageType: Blunt
+    - type: CanPerformCombo
+      roundstartCombos:
+        - JudoDiscombobulate
+        - JudoEyePoke
+        - JudoThrow
+        - JudoArmbar
+        - JudoWheelThrow
+
+- type: entity
+  id: MobHostileSleepingCarp
+  name: Sleeping Carp Practitioner
+  description: A hostile combatant who follows the Way of the Sleeping Carp.
+  parent: BaseMobMartialArtist
+  components:
+    - type: Loadout
+      prototypes:
+        - MartialArtistGearSleepingCarp
+    - type: MartialArtsKnowledge
+      martialArtsForm: SleepingCarp
+      originalFistDamage: 5
+      originalFistDamageType: Blunt
+    - type: CanPerformCombo
+      roundstartCombos:
+        - SleepingCarpGnashingTeeth
+        - SleepingCarpKneeHaul
+        - SleepingCarpCrashingWaves
+
+- type: entity
+  id: MobHostileCapoeira
+  name: Capoeirista
+  description: A hostile combatant trained in Capoeira.
+  parent: BaseMobMartialArtist
+  components:
+    - type: Loadout
+      prototypes:
+        - MartialArtistGearCapoeira
+    - type: MartialArtsKnowledge
+      martialArtsForm: Capoeira
+      originalFistDamage: 5
+      originalFistDamageType: Blunt
+    - type: CanPerformCombo
+      roundstartCombos:
+        - PushKick
+        - SweepKick
+        - CircleKick
+        - SpinKick
+        - KickUp
+
+- type: entity
+  id: MobHostileDragonKungFu
+  name: Dragon Kung Fu Adept
+  description: A hostile combatant who channels the power of the dragon.
+  parent: BaseMobMartialArtist
+  components:
+    - type: Loadout
+      prototypes:
+        - MartialArtistGearDragonKungFu
+    - type: MartialArtsKnowledge
+      martialArtsForm: KungFuDragon
+      originalFistDamage: 5
+      originalFistDamageType: Blunt
+    - type: CanPerformCombo
+      roundstartCombos:
+        - DragonClaw
+        - DragonTail
+        - DragonStrike
+
+- type: entity
+  id: MobHostileNinjutsu
+  name: Ninjutsu Assassin
+  description: A hostile combatant trained in the deadly art of Ninjutsu.
+  parent: BaseMobMartialArtist
+  components:
+    - type: Loadout
+      prototypes:
+        - MartialArtistGearNinjutsu
+    - type: MartialArtsKnowledge
+      martialArtsForm: Ninjutsu
+      originalFistDamage: 5
+      originalFistDamageType: Blunt
+    - type: CanPerformCombo
+      roundstartCombos:
+        - BiteTheDust
+        - DirtyKill
+
+- type: entity
+  id: MobHostileHellRip
+  name: Hell Ripper
+  description: A terrifying combatant who channels infernal fury.
+  parent: BaseMobMartialArtist
+  components:
+    - type: Loadout
+      prototypes:
+        - MartialArtistGearHellRip
+    - type: MartialArtsKnowledge
+      martialArtsForm: HellRip
+      originalFistDamage: 5
+      originalFistDamageType: Blunt
+    - type: CanPerformCombo
+      roundstartCombos:
+        - DropKick
+        - HeadRip
+        - TearDown
+        - Slam
