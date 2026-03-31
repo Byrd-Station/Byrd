@@ -29,7 +29,7 @@ public sealed class ThavenMoodsEui : BaseEui
 
     public override EuiStateBase GetNewState()
     {
-        return new ThavenMoodsEuiState(_moods, _entityManager.GetNetEntity(_target));
+        return new ThavenMoodsEuiState(_moods, _sharedMoods, _entityManager.GetNetEntity(_target));
     }
 
     public void UpdateMoods(ThavenMoodsComponent? comp, EntityUid player)
@@ -56,6 +56,7 @@ public sealed class ThavenMoodsEui : BaseEui
 
         var player = _entityManager.GetEntity(message.Target);
 
+        _thavenMoodsSystem.SetSharedMoods(message.SharedMoods);
         _thavenMoodsSystem.SetMoods(player, message.Moods);
     }
 

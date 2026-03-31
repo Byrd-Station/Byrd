@@ -9,9 +9,10 @@ namespace Content.Client._Omu.Thaven.Eui;
 [GenerateTypedNameReferences]
 public sealed partial class MoodContainer : BoxContainer
 {
-    public MoodContainer(ThavenMood? mood = null)
+    public MoodContainer(ThavenMood? mood = null, bool isShared = false)
     {
         RobustXamlLoader.Load(this);
+        GlobalMoodLabel.Visible = isShared;
 
         if (mood != null)
         {

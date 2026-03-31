@@ -7,6 +7,13 @@
     >
     <customControls:HSeparator></customControls:HSeparator>
     <BoxContainer Orientation="Vertical">
+        <Label
+            Name="GlobalMoodLabel"
+            Access="Public"
+            Margin="5 4 0 0"
+            Modulate="#F5C66E"
+            Visible="False"
+            Text="{Loc thaven-moods-admin-ui-global-badge}" />
         <LineEdit Name="ThavenMoodTitle" Access="Public" Margin="5 0 0 0" />
         <PanelContainer
             Margin="20 10 0 0"

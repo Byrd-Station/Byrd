@@ -22,8 +22,9 @@ public sealed class ThavenMoodsEui : BaseEui
     private void SaveMoods()
     {
         var newMoods = _thavenMoodUi.GetMoods();
-        SendMessage(new ThavenMoodsSaveMessage(newMoods, _target));
-        _thavenMoodUi.SetMoods(newMoods);
+        var newSharedMoods = _thavenMoodUi.GetSharedMoods();
+        SendMessage(new ThavenMoodsSaveMessage(newMoods, newSharedMoods, _target));
+        _thavenMoodUi.SetState(newMoods, newSharedMoods);
     }
 
     public override void Opened()
@@ -37,7 +38,7 @@ public sealed class ThavenMoodsEui : BaseEui
             return;
 
         _target = s.Target;
-        _thavenMoodUi.SetMoods(s.Moods);
+        _thavenMoodUi.SetState(s.Moods, s.SharedMoods);
     }
 }
 

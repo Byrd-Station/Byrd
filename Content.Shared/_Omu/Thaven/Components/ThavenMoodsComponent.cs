@@ -1,4 +1,5 @@
 using Content.Shared.Actions;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
@@ -9,6 +10,9 @@ namespace Content.Shared._Omu.Thaven.Components;
 [Access(typeof(SharedThavenMoodSystem))]
 public sealed partial class ThavenMoodsComponent : Component
 {
+    [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
+    public ProtoId<ThavenMoodConfigPrototype> MoodConfig;
+
     [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
     public bool FollowsSharedMoods = true;
 
