@@ -35,7 +35,6 @@
     - SemiAuto
     - Burst
     - FullAuto
-    damageModifier: .75 #Omu, readding HP
 #    fireOnDropChance: 0.3 # Omu
   - type: ChamberMagazineAmmoProvider
     autoEject: true
@@ -50,7 +49,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineCaselessRifle
+        startingItem: MagazineCaselessRifleFMJ # Omu
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
@@ -59,7 +58,7 @@
             - MagazineCaselessRifle
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeCaselessRifle
+        startingItem: CartridgeCaselessRifleFMJ
         priority: 1
         whitelist:
           tags:
