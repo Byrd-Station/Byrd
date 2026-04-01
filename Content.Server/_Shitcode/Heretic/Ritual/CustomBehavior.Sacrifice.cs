@@ -24,7 +24,29 @@ using Content.Shared.Mind;
 using Content.Shared.Heretic;
 using Content.Server.Heretic.EntitySystems;
 using Content.Shared.Gibbing.Events;
+//impstation start
+using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
+using Content.Server.Humanoid;
+using Content.Shared.Forensics.Components;
+using Robust.Shared.Toolshed.TypeParsers;
+using Robust.Server.GameObjects;
+using System;
+using System.Linq;
+using Content.Server._Goobstation.Heretic.EntitySystems;
+using Content.Server.Heretic.Components;
+using Content.Server.Forensics;
+using Content.Server.Body.Systems;
+using Content.Server.Body.Components;
+using Content.Shared.Forensics;
+using Content.Shared.Chemistry.Reagent;
+using Robust.Shared.GameObjects;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Server._Imp.Heretic.Components;
+using Content.Shared.Body.Components;
+//impstation end
 using Content.Shared.Silicons.Borgs.Components;
+
 
 namespace Content.Server.Heretic.Ritual;
 
@@ -60,10 +82,22 @@ namespace Content.Server.Heretic.Ritual;
     public bool OnlyHumanoid = true;
 
     // this is awful but it works so i'm not complaining
+    // i'm complaining -kandiyaki //IMP
+    // i, too am in this episode -dooty //OMU
+    // hi guys -lord //OMU
     protected SharedMindSystem _mind = default!;
     protected HereticSystem _heretic = default!;
+    protected SharedTransformSystem _xform = default!; //imp
+    protected DamageableSystem _damage = default!; //imp
     protected BodySystem _body = default!;
     protected EntityLookupSystem _lookup = default!;
+    protected HumanoidAppearanceSystem _humanoid = default!; //imp
+    protected TransformSystem _transformSystem = default!; //imp
+    protected HellWorldSystem _hellworld = default!; //imp
+    protected BloodstreamSystem _bloodstream = default!; //imp
+    protected SharedSolutionContainerSystem _solutionContainerSystem = default!; //imp
+
+
     [Dependency] protected IPrototypeManager _proto = default!;
     [Dependency] protected ILogManager _log = default!;
 
@@ -73,10 +107,19 @@ namespace Content.Server.Heretic.Ritual;
 
     public override bool Execute(RitualData args, out string? outstr)
     {
+        //it was like this when i got here -kandiyaki //imp
         _mind = args.EntityManager.System<SharedMindSystem>();
         _heretic = args.EntityManager.System<HereticSystem>();
+        _xform = args.EntityManager.System<SharedTransformSystem>(); //imp
+        _damage = args.EntityManager.System<DamageableSystem>(); //imp
         _body = args.EntityManager.System<BodySystem>();
         _lookup = args.EntityManager.System<EntityLookupSystem>();
+        _humanoid = args.EntityManager.System<HumanoidAppearanceSystem>(); //imp
+        _transformSystem = args.EntityManager.System<TransformSystem>(); //imp
+        _hellworld = args.EntityManager.System<HellWorldSystem>(); //imp
+        _bloodstream = args.EntityManager.System<BloodstreamSystem>(); //imp
+        _solutionContainerSystem = args.EntityManager.System<SharedSolutionContainerSystem>(); //imp
+
         _proto = IoCManager.Resolve<IPrototypeManager>();
         _log = IoCManager.Resolve<ILogManager>();
 
@@ -101,6 +144,8 @@ namespace Content.Server.Heretic.Ritual;
             if (!args.EntityManager.TryGetComponent<MobStateComponent>(look, out var mobstate) // only mobs
             || OnlyHumanoid && !args.EntityManager.HasComponent<HumanoidAppearanceComponent>(look) // only humans
             || args.EntityManager.HasComponent<BorgChassisComponent>(look) // no borgs
+            || !args.EntityManager.HasComponent<HumanoidAppearanceComponent>(look) // only humans
+            || args.EntityManager.HasComponent<HellVictimComponent>(look) //no reusing corpses // imp
             || OnlyTargets
                 && hereticComp.SacrificeTargets.All(x => x.Entity != args.EntityManager.GetNetEntity(look)) // only targets
                 && !args.EntityManager.HasComponent<HereticComponent>(look)) // or other heretics
@@ -120,6 +165,7 @@ namespace Content.Server.Heretic.Ritual;
         return true;
     }
 
+    //this does way too much //IMP
     public override void Finalize(RitualData args)
     {
         if (!args.EntityManager.TryGetComponent(args.Performer, out HereticComponent? heretic))
@@ -145,19 +191,73 @@ namespace Content.Server.Heretic.Ritual;
                     ? isCommand || isSec || isHeretic ? 3f : 2f
                     : 0f;
 
+            // YES!!! GIB!!! // actually, scratch that - dooty //OMU
+            // _body.GibBody(uids[i], contents: GibContentsOption.Gib);
+
+            //impstation start
+            //get the humanoid appearance component
+             if (!args.EntityManager.TryGetComponent<HumanoidAppearanceComponent>(uids[i], out var humanoid))
+                 return;
+
+            //get the species prototype from that
+            if (!_proto.TryIndex(humanoid.Species, out var speciesPrototype))
+                return;
+
+            //spawn a clone of the victim
+            //this should really use the cloningsystem but i coded this before that existed
+            //and it works so i'm not changing it unless it causes issues
+            var sacrificialWhiteBoy = args.EntityManager.Spawn(speciesPrototype.Prototype, _transformSystem.GetMapCoordinates(uids[i]));
+            _humanoid.CloneAppearance(uids[i], sacrificialWhiteBoy);
+            //make sure it has the right DNA
+            if (args.EntityManager.TryGetComponent<DnaComponent>(uids[i], out var victimDna))
+            {
+                if (args.EntityManager.TryGetComponent<BloodstreamComponent>(sacrificialWhiteBoy, out var dummyBlood))
+                {
+                    //this is copied from BloodstreamSystem's OnDnaGenerated
+                    //i hate it
+                    if(_solutionContainerSystem.ResolveSolution(sacrificialWhiteBoy, dummyBlood.BloodSolutionName, ref dummyBlood.BloodSolution, out var bloodSolution))
+                    {
+                        foreach (var reagent in bloodSolution.Contents)
+                        {
+                            List<ReagentData> reagentData = reagent.Reagent.EnsureReagentData();
+                            reagentData.RemoveAll(x => x is DnaData);
+                            reagentData.AddRange(_bloodstream.GetEntityBloodData(uids[i]));
+                        }
+                    }
+                }
+            }
             try
             {
-                // YES!!! GIB!!!
-                _body.GibBody(uid);
+                _body.GibBody(sacrificialWhiteBoy, contents: GibContentsOption.Gib); // gib now - dooty
             }
             catch (Exception e)
             {
-                if (!args.EntityManager.IsQueuedForDeletion(uid) && !args.EntityManager.Deleted(uid))
-                    args.EntityManager.QueueDeleteEntity(uid);
+                if (!args.EntityManager.IsQueuedForDeletion(sacrificialWhiteBoy) && !args.EntityManager.Deleted(sacrificialWhiteBoy))
+                    args.EntityManager.QueueDeleteEntity(sacrificialWhiteBoy);
 
                 _sawmill ??= _log.GetSawmill("sacrifice");
                 _sawmill.Error(e.Message);
             }
+
+            //send the target to hell world
+            _hellworld.AddVictimComponent(uids[i]);
+
+            //teleport the body to a midround antag spawn spot so it's not just tossed into space
+            _hellworld.TeleportRandomly(args, uids[i]);
+
+            //make sure that my shitty AddVictimComponent thing actually worked before trying to use a mind that isn't there
+            if (args.EntityManager.TryGetComponent<HellVictimComponent>(uids[i], out var hellVictim))
+            {
+                //i'm so sorry to all of my computer science professors. i've failed you
+                if (hellVictim.HasMind)
+                {
+                    _hellworld.SendToHell(uids[i], args, speciesPrototype);
+                }
+
+            }
+            // Omu - Idk why this is done twice. Might've been my fault during merging. Commenting it out and hoping nothing breaks.
+            // _hellworld.SendToHell(uids[i], args, speciesPrototype);
+            //impstation end
 
             // update objectives
             if (_mind.TryGetMind(args.Performer, out var mindId, out var mind))
@@ -180,5 +280,11 @@ namespace Content.Server.Heretic.Ritual;
         // reset it because it refuses to work otherwise.
         uids = new();
         args.EntityManager.EventBus.RaiseLocalEvent(args.Performer, new EventHereticUpdateTargets());
+    }
+
+    protected (bool isCommand, bool isSec) IsCommandOrSec(EntityUid uid, IEntityManager entityManager)
+    {
+        return (entityManager.HasComponent<CommandStaffComponent>(uid),
+            entityManager.HasComponent<SecurityStaffComponent>(uid));
     }
 }

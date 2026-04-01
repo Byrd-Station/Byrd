@@ -29,6 +29,7 @@ using Robust.Shared.Random;
 using System.Text;
 using Content.Server.Station.Components;
 using Content.Server._Goobstation.Objectives.Components;
+using Content.Server._Goobstation.Heretic.EntitySystems; //imp
 using Content.Shared.Station.Components;
 
 namespace Content.Server.GameTicking.Rules;
@@ -41,6 +42,7 @@ public sealed class HereticRuleSystem : GameRuleSystem<HereticRuleComponent>
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
     [Dependency] private readonly ObjectivesSystem _objective = default!;
     [Dependency] private readonly IRobustRandom _rand = default!;
+    [Dependency] private readonly HellWorldSystem _hell = default!; //imp
 
     public static readonly SoundSpecifier BriefingSound =
         new SoundPathSpecifier("/Audio/_Goobstation/Heretic/Ambience/Antag/Heretic/heretic_gain.ogg");
@@ -81,6 +83,7 @@ public sealed class HereticRuleSystem : GameRuleSystem<HereticRuleComponent>
             if (TryFindTileOnGrid(grid.Value, out _, out var coords))
                 Spawn(ent.Comp.RealityShift, coords);
         }
+        _hell.MakeHell(); //imp
     }
 
     public bool TryMakeHeretic(EntityUid target, HereticRuleComponent rule)
