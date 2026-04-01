@@ -3,15 +3,15 @@
 
 using Robust.Shared.Prototypes;
 
-namespace Content.Omu.Server.GameTicking.EventDirector;
+namespace Content.Omu.Shared.GameTicking.EventDirector;
 
 // this prototype defines the full pacing schedule for a single director configuration.
 // everything here is data-driven so maintainers can tune timing and tables without touching c# code.
 //
 // loop structure:
 //   minor fires immediately at roundstart.
-//   then every MinorDelayMin–MaxMinutes: roll timer table, then immediately roll minor table.
-//   midround fires once independently at FirstMidroundRollMin–MaxMinutes.
+//   then every MinorDelayMin-MaxMinutes: roll timer table, then immediately roll minor table.
+//   midround fires once independently at FirstMidroundRollMin-MaxMinutes.
 [Prototype("eventDirectorConfig")]
 public sealed partial class EventDirectorConfigPrototype : IPrototype
 {

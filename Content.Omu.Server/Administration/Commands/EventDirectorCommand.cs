@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Server.Administration;
 using Content.Omu.Server.GameTicking.EventDirector;
+using Content.Omu.Shared.GameTicking.EventDirector;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
 using Robust.Shared.GameObjects;

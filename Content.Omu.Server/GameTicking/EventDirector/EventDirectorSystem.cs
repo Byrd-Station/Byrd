@@ -19,6 +19,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Omu.Shared.GameTicking.EventDirector;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
 using Content.Shared.CCVar;

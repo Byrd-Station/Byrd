@@ -1,10 +1,14 @@
+// SPDX-FileCopyrightText: 2026 Raze500
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Prototypes;
 
-namespace Content.Omu.Server.GameTicking.EventDirector;
+namespace Content.Omu.Shared.GameTicking.EventDirector;
 
 /// <summary>
 /// A single roll table used by the event director.
-/// Each entry points at an existing gamerule prototype so the director owns timing/selection while the rule keeps its own gameplay logic.
+/// Each entry points at an existing gamerule prototype so the director owns timing/selection
+/// while the rule keeps its own gameplay logic.
 /// </summary>
 [Prototype("eventDirectorTable")]
 public sealed partial class EventDirectorTablePrototype : IPrototype
@@ -18,9 +22,8 @@ public sealed partial class EventDirectorTablePrototype : IPrototype
 
 /// <summary>
 /// One weighted candidate inside a director table.
-/// The filters here are intentionally simple for the first version so staff can understand why an entry was or was not eligible.
+/// The filters here are intentionally simple so staff can understand why an entry was or was not eligible.
 /// </summary>
-// this type only lives on the server — no NetSerializable needed
 [DataDefinition]
 public sealed partial class EventDirectorTableEntry
 {
