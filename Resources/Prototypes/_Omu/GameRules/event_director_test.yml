@@ -71,12 +71,13 @@
     minimumPlayers: 0
     maximumOccurrences: 1
 
-  - id: chimera
-    name: Chimera
-    rule: Chimera
-    weight: 2
-    minimumPlayers: 0
-    maximumOccurrences: 1
+  # TODO: uncomment when chimera game rule entity is added
+  # - id: chimera
+  #   name: Chimera
+  #   rule: Chimera
+  #   weight: 2
+  #   minimumPlayers: 0
+  #   maximumOccurrences: 1
 
 
 # --- test table 2: minor antags ---

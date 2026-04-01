@@ -102,13 +102,13 @@
   #   minimumPlayers: 30
   #   maximumOccurrences: 1
 
-  # 2% — omu-exclusive antag, kept rare and high-impact
-  - id: chimera
-    name: Chimera
-    rule: Chimera
-    weight: 2
-    minimumPlayers: 30
-    maximumOccurrences: 1
+  # 2% — TODO: not in omustation yet, uncomment when chimera game rule entity is added
+  # - id: chimera
+  #   name: Chimera
+  #   rule: Chimera
+  #   weight: 2
+  #   minimumPlayers: 30
+  #   maximumOccurrences: 1
 
 
 # --- table 2: minor antags ---
