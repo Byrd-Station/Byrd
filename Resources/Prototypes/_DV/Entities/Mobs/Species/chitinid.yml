@@ -73,6 +73,7 @@
     noRot: true
     drawdepth: Mobs
     layers:
+      - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Omustation Floof/Pirate PR port custom layers
       - map: [ "enum.HumanoidVisualLayers.Groin" ]
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
@@ -100,6 +101,7 @@
       - map: [ "eyes" ]
       - map: [ "id" ]
       - map: [ "beltalt" ] # Omu
+      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Omustation Floof/Pirate PR port custom layers
       - map: [ "back" ]
       - map: [ "neck" ]
       - map: [ "enum.HumanoidVisualLayers.Tail" ] #in the utopian future we should probably have a wings enum inserted here so everyhting doesn't break

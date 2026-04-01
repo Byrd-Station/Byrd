@@ -80,6 +80,7 @@
   - type: Sprite
     # scale: 0.9, 0.9 # Goobstation: port EE height/width sliders
     layers:
+      - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Omustation Floof/Pirate PR port custom layers
       - map: [ "enum.HumanoidVisualLayers.Groin" ]
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
@@ -109,6 +110,7 @@
       - map: [ "belt" ] # Omu - Moved belt to render under OuterClothing to have it be similar with how the base drawdepth is.
       - map: [ "outerClothing" ]
       - map: [ "beltalt" ] # Omu
+      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Omustation Floof/Pirate PR port custom layers
       - map: [ "eyes" ]
       - map: [ "back" ] # Moved it to render under the neck stuff because it felt weird to see duffels be above cloaks? Dunno, this is a easy thing to change anyway.
       - map: [ "neck" ]

@@ -70,6 +70,7 @@
     noRot: true
     drawdepth: Mobs
     layers:
+      - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Omustation Floof/Pirate PR port custom layers
       - map: [ "enum.HumanoidVisualLayers.Groin" ]
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
@@ -107,6 +108,7 @@
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]
       - map: [ "beltalt" ] # Omu
+      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Omustation Floof/Pirate PR port custom layers
       - map: [ "back" ]
       - map: [ "neck" ] # Omu - Moved this to render above backpacks because it felt weird seeing duffels above the cloaks and mantles? Easy thing to revert anyway.
       - map: [ "enum.HumanoidVisualLayers.Face" ]

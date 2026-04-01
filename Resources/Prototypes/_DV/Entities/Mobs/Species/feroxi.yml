@@ -36,6 +36,7 @@
     noRot: true
     drawdepth: Mobs
     layers:
+      - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Omustation Floof/Pirate PR port custom layers
       - map: [ "enum.HumanoidVisualLayers.Groin" ]
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
@@ -71,6 +72,7 @@
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]
       - map: [ "beltalt" ] # Omu 120
+      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Omustation Floof/Pirate PR port custom layers
       - map: [ "neck" ]
       - map: [ "back" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]

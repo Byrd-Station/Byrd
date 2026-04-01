@@ -244,6 +244,7 @@
     - 7,1,7,0
   - type: Sprite # goob - in game visuals
     layers:
+    - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Omustation Floof/Pirate PR port custom layers
     - map: [ "enum.HumanoidVisualLayers.Groin" ]
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
     - map: [ "enum.HumanoidVisualLayers.Head" ]
@@ -270,6 +271,7 @@
     - map: [ "ears" ]
     - map: [ "outerClothing" ]
     - map: [ "beltalt" ] # Omu
+    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Omustation Floof/Pirate PR port custom layers
     - map: [ "eyes" ]
     - map: [ "id" ]
     - map: [ "back" ]
@@ -373,6 +375,7 @@
             state: belt
   - type: Sprite # goob - makes character setup look consistent with in-game visuals
     layers:
+    - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Omustation Floof/Pirate PR port custom layers
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
     - map: [ "enum.HumanoidVisualLayers.Groin" ]
     - map: [ "enum.HumanoidVisualLayers.Head" ]
@@ -402,6 +405,7 @@
     - map: [ "id" ]
     - map: [ "back" ]
     - map: [ "neck" ]
+    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Omustation Floof/Pirate PR port custom layers
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "maskalt" ]                          # gooblayer
