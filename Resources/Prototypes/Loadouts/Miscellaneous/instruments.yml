@@ -242,6 +242,78 @@
     - BagpipeInstrument
 
 - type: loadout #OMU
+  id: BirdToy
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMusician
+      time: 90000 # 25 hrs
+  storage:
+    back:
+    - BirdToyInstrument
+
+- type: loadout #OMU
+  id: Helicopter
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMusician
+      time: 90000 # 25 hrs
+  storage:
+    back:
+    - HelicopterInstrument
+
+- type: loadout #OMU
+  id: Gunpet
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMusician
+      time: 90000 # 25 hrs
+  storage:
+    back:
+    - GunpetInstrument
+
+- type: loadout #OMU
+  id: MusicalLung
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMusician
+      time: 90000 # 25 hrs
+  storage:
+    back:
+    - MusicalLungInstrument
+
+- type: loadout #OMU
+  id: ReverseCymbals
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMusician
+      time: 90000 # 25 hrs
+  storage:
+    back:
+    - ReverseCymbalsInstrument
+
+- type: loadout #OMU
+  id: Seashell
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMusician
+      time: 90000 # 25 hrs
+  storage:
+    back:
+    - SeashellInstrument
+
+- type: loadout #OMU
   id: Wehpet
   effects:
   - !type:JobRequirementLoadoutEffect
@@ -252,3 +324,15 @@
   storage:
     back:
     - WehpetInstrument
+
+- type: loadout #OMU
+  id: BikeHorn
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobClown
+      time: 360000 # 100 hrs
+  storage:
+    back:
+    - BikeHornInstrument
