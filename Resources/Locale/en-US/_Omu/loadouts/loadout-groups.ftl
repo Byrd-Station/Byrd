@@ -1,5 +1,6 @@
 # Nanotrasen Representative
 loadout-group-ntr-mask = Nanotrasen Representative mask
+loadout-group-ntr-outerclothing = Nanotrasen Representative outer clothing
 
 # Blueshield Officer
 loadout-group-bso-belt = Blueshield Officer belt
@@ -25,3 +26,6 @@ loadout-group-sergeant-jumpsuit = Sergeant jumpsuit
 loadout-group-sergeant-head = Sergeant head
 loadout-group-sergeant-neck = Sergeant neck
 loadout-group-sergeant-belt = Sergeant belt
+
+# Clown
+loadout-group-clown-belt = Clown belt
