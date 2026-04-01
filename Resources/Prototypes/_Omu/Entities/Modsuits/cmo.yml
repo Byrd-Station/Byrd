@@ -170,7 +170,7 @@
           Slash: 0.65
           Piercing: 0.6
           Heat: 0.85
-          Cellular: 0.8
+          Cellular: 0.8 # For chimeras
           Caustic: 0.5
     - type: SealableClothingVisuals
       spriteLayer: sealed
