@@ -1,19 +1,22 @@
+using Content.Server.Mobs;
 using Content.Shared._Omu.Traits;
+using Content.Shared.Humanoid;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Humanoid;
 
 namespace Content.Server._Omu.Traits;
 
 public sealed class NoCritSystem : EntitySystem
 {
     [Dependency] private readonly MobThresholdSystem _thresholds = default!;
+    [Dependency] private readonly DeathgaspSystem _deathgasp = default!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<NoCritComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<NoCritComponent, MobStateChangedEvent>(OnMobStateChanged);
     }
 
     private void OnStartup(EntityUid uid, NoCritComponent component, ComponentStartup args)
@@ -30,5 +33,13 @@ public sealed class NoCritSystem : EntitySystem
 
         _thresholds.SetMobStateThreshold(uid, maxHp, MobState.Critical, thresholds);
         _thresholds.SetMobStateThreshold(uid, maxHp, MobState.Dead, thresholds);
+    }
+
+    private void OnMobStateChanged(EntityUid uid, NoCritComponent component, MobStateChangedEvent args)
+    {
+        if (args.NewMobState == MobState.Dead)
+        {
+            _deathgasp.Deathgasp(uid);
+        }
     }
 }
