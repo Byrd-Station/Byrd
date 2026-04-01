@@ -245,3 +245,8 @@
   components:
   - type: NoCrit
   globalCost: -4
+  requirements:
+    - !type:SpeciesRequirement
+      inverted: true
+      species:
+        - IPC
