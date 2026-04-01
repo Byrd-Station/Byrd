@@ -240,3 +240,15 @@
   storage:
     back:
     - BagpipeInstrument
+
+- type: loadout #OMU
+  id: Wehpet
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMusician
+      time: 180000 # 50 hrs
+  storage:
+    back:
+    - WehpetInstrument
