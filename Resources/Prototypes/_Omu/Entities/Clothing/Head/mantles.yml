@@ -355,4 +355,13 @@
       - state: helmet-command
       - state: eyes-command
         shader: unshaded
-  - type: ShowJobIcons
+  - type: ComponentToggler # copied from the parent with some additions.
+    components:
+    - type: VisionCorrection
+      correctionPower: 16
+    - type: NightVision
+      isEquipment: true
+      color: "#CCFFCC"
+    - type: FlashImmunity
+    - type: FlashSoundSuppression
+    - type: ShowJobIcons
