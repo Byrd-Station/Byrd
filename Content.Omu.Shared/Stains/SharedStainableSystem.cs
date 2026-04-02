@@ -49,6 +49,17 @@ public abstract partial class SharedStainableSystem : EntitySystem
         SubscribeLocalEvent<ContainerManagerComponent, GetVerbsEvent<Verb>>(AddWringVerbContainer); // Gaby
         SubscribeLocalEvent<StainableComponent, WringStainDoAfterEvent>(OnWringDoAfter); // Gaby
     }
+    // Omu start - prevents water from causing stains
+    private bool ContainsOnlyWater(Solution solution)
+    {
+        foreach (var reagent in solution.Contents)
+        {
+            if (reagent.Reagent.Prototype != "Water")
+                return false;
+        }
+        return true;
+    }
+    // Omu end
 
     private void OnInit(Entity<StainableComponent> ent, ref ComponentInit args)
     {
@@ -73,6 +84,9 @@ public abstract partial class SharedStainableSystem : EntitySystem
         if (!ev.Handled || ev.Solution == null)
             return;
 
+        if (ContainsOnlyWater(ev.Solution)) // Omu
+            return;
+
         Solution.TryTransferSolution(target.Value, ev.Solution, ent.Comp.StainVolume);
 
         UpdateVisuals(ent);
@@ -87,6 +101,9 @@ public abstract partial class SharedStainableSystem : EntitySystem
             return;
 
         if (!Solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var target))
+            return;
+
+        if (ContainsOnlyWater(args.Args.Solution)) // Omu
             return;
 
         Solution.TryTransferSolution(target.Value, args.Args.Solution, ent.Comp.StainVolume);
