@@ -11,20 +11,20 @@ namespace Content.Omu.Shared.Thaven;
 [Serializable, NetSerializable]
 public partial class ThavenMood
 {
-    [DataField(readOnly: true), ViewVariables(VVAccess.ReadOnly)]
+    [DataField(readOnly: true)]
     public ProtoId<ThavenMoodPrototype> ProtoId = string.Empty;
 
     /// <summary>
     /// A locale string of the mood name.
     /// </summary>
-    [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
+    [DataField(required: true)]
     public string MoodName = string.Empty;
 
     /// <summary>
     /// A locale string of the mood description. Gets passed to
     /// <see cref="Loc.GetString"/> with <see cref="MoodVars"/>.
     /// </summary>
-    [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
+    [DataField(required: true)]
     public string MoodDesc = string.Empty;
 
     [DataField(serverOnly: true, customTypeSerializer: typeof(PrototypeIdHashSetSerializer<ThavenMoodPrototype>))]
@@ -35,7 +35,7 @@ public partial class ThavenMood
     /// Additional localized words for the <see cref="MoodDesc"/>, for things like random
     /// verbs and nouns.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public Dictionary<string, string> MoodVars = new();
 
     public (string, object)[] GetLocArgs()
