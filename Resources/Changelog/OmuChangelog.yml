@@ -2985,3 +2985,67 @@ Entries:
         Assistant.
   id: 382
   time: '2026-03-30T05:37:28.0000000+00:00'
+- author: ArtemisYK
+  changes:
+    - type: Remove
+      message: Commander hardsuit from loneop's uplink
+    - type: Remove
+      message: All mentions and Weaponry of both 8 gauge and 2 gauge shotguns
+    - type: Remove
+      message: SAP-HE rounds from the ammo category for the cobra
+    - type: Tweak
+      message: >-
+        Changed the Advanced Combat Medipen to reduce its maximum volume to 15
+        instead of 40
+    - type: Tweak
+      message: Changes the Contractor Baton in the uplink to be 50TC instead of 35TC
+  id: 383
+  time: '2026-03-30T07:29:33.0000000+00:00'
+- author: ArtemisYK
+  changes:
+    - type: Tweak
+      message: Tweaked the amount of TC Warops provides nukies
+  id: 384
+  time: '2026-03-30T07:30:39.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        Removed leg coverage from secoff greatcoat. Hos and ward greatcoat stats
+        match their other armors now
+    - type: Tweak
+      message: Hos and warden jackets have 45% infect resist now
+  id: 385
+  time: '2026-03-30T08:04:14.0000000+00:00'
+- author: Manni-Marco
+  changes:
+    - type: Add
+      message: Foam sabre added and given to mime and clown
+    - type: Add
+      message: Sharp foam sabre added and given to evil mimes and clowns
+  id: 386
+  time: '2026-03-30T08:05:19.0000000+00:00'
+- author: pinktanuki
+  changes:
+    - type: Fix
+      message: Contraband level from Foam sword sheath
+  id: 387
+  time: '2026-03-31T18:16:40.0000000+00:00'
+- author: pinktanuki
+  changes:
+    - type: Fix
+      message: Fixed Estoc caliber information in uplink.
+  id: 388
+  time: '2026-03-31T18:20:20.0000000+00:00'
+- author: Toaster-Box
+  changes:
+    - type: Fix
+      message: Command mantles are just admin glasses toggled by the trait
+  id: 389
+  time: '2026-04-01T02:56:59.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Upstream merge from goob, check goob changelog ingame for more details
+  id: 390
+  time: '2026-04-02T03:34:55.0000000+00:00'
