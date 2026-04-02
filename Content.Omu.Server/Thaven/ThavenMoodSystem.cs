@@ -280,7 +280,7 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
         if (!Resolve(uid, ref comp))
             return false;
 
-        var datasetProto = _proto.Index<WeightedRandomPrototype>(GetMoodConfig(comp).RandomMoodDataset).Pick();
+var datasetProto = _proto.Index(GetMoodConfig(comp).RandomMoodDataset).Pick();
 
         return TryAddRandomMood(uid, datasetProto, comp);
     }
