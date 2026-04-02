@@ -3025,3 +3025,27 @@ Entries:
       message: Sharp foam sabre added and given to evil mimes and clowns
   id: 386
   time: '2026-03-30T08:05:19.0000000+00:00'
+- author: pinktanuki
+  changes:
+    - type: Fix
+      message: Contraband level from Foam sword sheath
+  id: 387
+  time: '2026-03-31T18:16:40.0000000+00:00'
+- author: pinktanuki
+  changes:
+    - type: Fix
+      message: Fixed Estoc caliber information in uplink.
+  id: 388
+  time: '2026-03-31T18:20:20.0000000+00:00'
+- author: Toaster-Box
+  changes:
+    - type: Fix
+      message: Command mantles are just admin glasses toggled by the trait
+  id: 389
+  time: '2026-04-01T02:56:59.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Upstream merge from goob, check goob changelog ingame for more details
+  id: 390
+  time: '2026-04-02T03:34:55.0000000+00:00'
