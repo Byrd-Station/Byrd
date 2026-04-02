@@ -32,8 +32,6 @@
     damage:
       types:
         Slash: 12 # It's a sword, come on guys!
-      woundSeverityMultipliers:
-        Slash: 1.5
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
     angle: 60
@@ -57,8 +55,6 @@
           damage:
             types:
               Slash: 12 # Again, it's a sword!!
-            woundSeverityMultipliers:
-              Slash: 1.5
           soundHit:
             path: /Audio/Weapons/bladeslice.ogg
           angle: 60
