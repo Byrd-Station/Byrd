@@ -17,7 +17,7 @@ public sealed class NoContractionsAccentSystem : EntitySystem
     public string Accentuate(string message)
     {
         var accentedMessage = _replacement.ApplyReplacements(message, "nocontractions");
-        return accentedMessage.ToString();
+return accentedMessage
     }
 
     private void OnAccent(EntityUid uid, NoContractionsAccentComponent component, AccentGetEvent args)
