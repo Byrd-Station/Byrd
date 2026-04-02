@@ -40,6 +40,5 @@ public abstract class SharedThavenMoodSystem : EntitySystem
 [Serializable, NetSerializable]
 public sealed partial class ThavenEmagDoAfterEvent : DoAfterEvent
 {
-    public ThavenEmagDoAfterEvent() { }
     public override DoAfterEvent Clone() => this;
 }
