@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 04/01/2026 20:28:01
-  entityCount: 22348
+  time: 04/02/2026 16:44:28
+  entityCount: 22372
 maps:
 - 1
 grids:
@@ -574,6 +574,10 @@ entities:
             3238: -64,39
             3264: -64,52
             3275: -64,57
+            3418: 60,4
+            3434: 72,4
+            3445: 81,6
+            3446: 82,5
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkCornerNw
@@ -600,6 +604,11 @@ entities:
             3237: -67,39
             3263: -67,52
             3274: -67,57
+            3391: 56,4
+            3415: 70,4
+            3438: 74,4
+            3439: 75,5
+            3440: 76,6
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkCornerSe
@@ -631,6 +640,9 @@ entities:
             3311: -8,3
             3367: 33,2
             3388: 50,2
+            3409: 72,1
+            3441: 81,-1
+            3442: 82,0
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkCornerSw
@@ -663,6 +675,10 @@ entities:
             3322: -4,3
             3323: -3,2
             3384: 46,2
+            3393: 56,1
+            3437: 74,1
+            3443: 75,0
+            3444: 76,-1
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkEndE
@@ -700,6 +716,10 @@ entities:
             3222: -65,35
             3229: -65,39
             3265: -65,52
+            3417: 60,3
+            3433: 72,3
+            3447: 81,5
+            3483: 76,0
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkInnerNw
@@ -722,6 +742,10 @@ entities:
             3221: -66,35
             3230: -66,39
             3266: -66,52
+            3413: 74,3
+            3416: 70,3
+            3448: 76,5
+            3480: 81,0
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkInnerSe
@@ -751,6 +775,9 @@ entities:
             3304: -8,4
             3368: 33,3
             3389: 50,3
+            3411: 72,2
+            3449: 81,0
+            3481: 76,5
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkInnerSw
@@ -783,6 +810,9 @@ entities:
             3320: -4,4
             3321: -3,3
             3382: 46,3
+            3412: 74,2
+            3450: 76,0
+            3482: 81,5
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkLineE
@@ -861,6 +891,14 @@ entities:
             3267: -65,53
             3268: -64,55
             3269: -64,56
+            3459: 82,1
+            3460: 82,2
+            3461: 82,3
+            3462: 82,4
+            3463: 76,1
+            3464: 76,2
+            3465: 76,3
+            3466: 76,4
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkLineN
@@ -921,6 +959,28 @@ entities:
             3219: -67,35
             3270: -65,57
             3271: -66,57
+            3419: 58,4
+            3420: 57,4
+            3421: 59,4
+            3422: 61,3
+            3423: 62,3
+            3424: 63,3
+            3425: 64,3
+            3426: 65,3
+            3427: 66,3
+            3428: 67,3
+            3429: 68,3
+            3430: 69,3
+            3432: 71,4
+            3435: 73,3
+            3455: 77,6
+            3456: 78,6
+            3457: 79,6
+            3458: 80,6
+            3476: 77,0
+            3477: 78,0
+            3478: 79,0
+            3479: 80,0
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkLineS
@@ -1046,6 +1106,30 @@ entities:
             3385: 47,2
             3386: 48,2
             3387: 49,2
+            3394: 57,1
+            3395: 58,1
+            3396: 59,1
+            3397: 60,1
+            3398: 61,1
+            3399: 62,1
+            3400: 63,1
+            3401: 64,1
+            3402: 65,1
+            3403: 66,1
+            3404: 67,1
+            3405: 68,1
+            3406: 69,1
+            3407: 70,1
+            3408: 71,1
+            3436: 73,2
+            3451: 77,-1
+            3452: 78,-1
+            3453: 79,-1
+            3454: 80,-1
+            3467: 77,5
+            3468: 78,5
+            3469: 79,5
+            3470: 80,5
         - node:
             color: '#FFFFFFFF'
             id: BrickTileDarkLineW
@@ -1145,6 +1229,13 @@ entities:
             3272: -67,55
             3273: -67,56
             3280: -66,53
+            3390: 56,2
+            3392: 56,3
+            3471: 81,4
+            3472: 81,3
+            3473: 81,2
+            3474: 81,2
+            3475: 81,1
         - node:
             color: '#F98AFFFF'
             id: BrickTileSteelCornerNe
@@ -8656,7 +8747,7 @@ entities:
       pos: 32.5,-37.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -31879.86
+      secondsUntilStateChange: -32882.168
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9361,7 +9452,7 @@ entities:
       pos: -10.5,38.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -102585.77
+      secondsUntilStateChange: -103588.08
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10537,8 +10628,6 @@ entities:
       pos: -69.5,61.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 22215
 - proto: AltarSpawner
@@ -12857,6 +12946,11 @@ entities:
     - type: Transform
       pos: 39.5,52.5
       parent: 2
+  - uid: 8780
+    components:
+    - type: Transform
+      pos: -61.5,11.5
+      parent: 2
   - uid: 9302
     components:
     - type: Transform
@@ -13831,6 +13925,11 @@ entities:
     components:
     - type: Transform
       pos: 17.5,71.5
+      parent: 2
+  - uid: 13365
+    components:
+    - type: Transform
+      pos: -61.5,12.5
       parent: 2
   - uid: 13428
     components:
@@ -51302,14 +51401,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 19.5,11.5
       parent: 2
-- proto: ComputerShipyard
-  entities:
-  - uid: 21901
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -49.5,-15.5
-      parent: 2
 - proto: ComputerShuttleCargo
   entities:
   - uid: 19329
@@ -58363,7 +58454,7 @@ entities:
       pos: 18.5,-50.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -73429.15
+      secondsUntilStateChange: -74431.45
       state: Closing
     - type: Firelock
       emergencyCloseCooldown: 14435.5188998
@@ -58373,7 +58464,7 @@ entities:
       pos: 12.5,-50.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -73431.18
+      secondsUntilStateChange: -74433.484
       state: Closing
     - type: Firelock
       emergencyCloseCooldown: 14434.0522346
@@ -59217,7 +59308,7 @@ entities:
       pos: -39.5,4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -51868.773
+      secondsUntilStateChange: -52871.082
       state: Closing
     - type: Firelock
       emergencyCloseCooldown: 966.2990357
@@ -59579,7 +59670,7 @@ entities:
       pos: -67.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -55012.945
+      secondsUntilStateChange: -56015.254
       state: Closing
     - type: Firelock
       emergencyCloseCooldown: 12609.8873921
@@ -60323,8 +60414,6 @@ entities:
       pos: -11.5,25.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 19711
   - uid: 19044
@@ -60333,8 +60422,6 @@ entities:
       pos: -11.5,31.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 19711
   - uid: 19045
@@ -98213,8 +98300,6 @@ entities:
       pos: -68.5,61.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 22215
     - type: AtmosPipeLayers
@@ -99669,8 +99754,6 @@ entities:
       pos: -68.5,60.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 22215
 - proto: GasVolumePump
@@ -105295,7 +105378,7 @@ entities:
       pos: 22.5,56.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -50625.176
+      secondsUntilStateChange: -51627.484
       state: Closing
   - uid: 7794
     components:
@@ -107726,7 +107809,10 @@ entities:
     - type: Paper
       stampState: paper_stamp-centcom
       stampedBy:
-      - stampedColor: '#006600FF'
+      - hasIcon: True
+        stampFont: null
+        stampLargeIcon: null
+        stampedColor: '#006600FF'
         stampedName: stamp-component-stamped-name-centcom
       content: 'SM is still in transit just do teg or singularity '
   - uid: 22260
@@ -116132,6 +116218,16 @@ entities:
     - type: Transform
       pos: 24.5,-10.5
       parent: 2
+- proto: SignAi
+  entities:
+  - uid: 22358
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -32.5,70.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: SignAiUpload
   entities:
   - uid: 21226
@@ -116543,12 +116639,38 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: SignBar
+  entities:
+  - uid: 22363
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -67.5,47.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: SignBridge
   entities:
+  - uid: 9464
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -35.5,57.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
   - uid: 11008
     components:
     - type: Transform
       pos: -51.5,58.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 22364
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -62.5,54.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -116592,6 +116714,16 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: SignChem
+  entities:
+  - uid: 9463
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -0.5,58.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: SignConference
   entities:
   - uid: 10340
@@ -116618,6 +116750,78 @@ entities:
     components:
     - type: Transform
       pos: -4.5,45.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+- proto: SignDirectionaAI
+  entities:
+  - uid: 9466
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -32.406857,58.253914
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+- proto: SignDirectionalBar
+  entities:
+  - uid: 22359
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 9.473741,6.272924
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 22360
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -33.45568,2.7812066
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 22361
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -67.47713,11.223393
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+- proto: SignDirectionalDorms
+  entities:
+  - uid: 9465
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -58.5,7.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 10373
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -67.5,11.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 21901
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -67.5,17.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+- proto: SignDirectionalEng
+  entities:
+  - uid: 12947
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -33.5,2.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -116680,12 +116884,32 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: SignEngineering
+  entities:
+  - uid: 12948
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 13.5,3.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: SignEVA
   entities:
   - uid: 21470
     components:
     - type: Transform
       pos: -35.5,2.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+- proto: SignExamroom
+  entities:
+  - uid: 10374
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 18.5,49.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -116699,12 +116923,30 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: SignHead
+  entities:
+  - uid: 22362
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -42.5,64.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: SignHydro1
   entities:
   - uid: 14471
     components:
     - type: Transform
       pos: -67.5,28.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 22365
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -68.5,35.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -116722,6 +116964,26 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -42.5,67.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+- proto: SignKitchen
+  entities:
+  - uid: 8518
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -76.5,46.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+- proto: SignLawyer
+  entities:
+  - uid: 22366
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -14.5,49.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -116769,12 +117031,32 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: SignNews
+  entities:
+  - uid: 22367
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -49.5,2.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: SignPsychology
   entities:
   - uid: 7784
     components:
     - type: Transform
       pos: 3.5,53.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+- proto: SignRadiation
+  entities:
+  - uid: 22368
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 24.5,-14.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -116871,6 +117153,16 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: SignServer
+  entities:
+  - uid: 22370
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -31.5,94.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: SignShipDock
   entities:
   - uid: 20266
@@ -116889,6 +117181,26 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: SignTelecomms
+  entities:
+  - uid: 22369
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -34.5,95.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+- proto: SignTheater
+  entities:
+  - uid: 22371
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -26.5,48.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: SignToolStorage
   entities:
   - uid: 12384
@@ -116896,6 +117208,16 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -1.5,1.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+- proto: SignVault
+  entities:
+  - uid: 22372
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -32.5,2.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -117949,6 +118271,55 @@ entities:
     components:
     - type: Transform
       pos: -73.5,14.5
+      parent: 2
+- proto: SpawnPointMedicalDoctor
+  entities:
+  - uid: 22349
+    components:
+    - type: Transform
+      pos: 11.5,65.5
+      parent: 2
+  - uid: 22350
+    components:
+    - type: Transform
+      pos: 9.5,65.5
+      parent: 2
+  - uid: 22351
+    components:
+    - type: Transform
+      pos: 24.5,56.5
+      parent: 2
+  - uid: 22352
+    components:
+    - type: Transform
+      pos: 24.5,52.5
+      parent: 2
+  - uid: 22353
+    components:
+    - type: Transform
+      pos: 24.5,48.5
+      parent: 2
+- proto: SpawnPointMedicalIntern
+  entities:
+  - uid: 22354
+    components:
+    - type: Transform
+      pos: 24.5,51.5
+      parent: 2
+  - uid: 22355
+    components:
+    - type: Transform
+      pos: 24.5,54.5
+      parent: 2
+  - uid: 22356
+    components:
+    - type: Transform
+      pos: 10.5,65.5
+      parent: 2
+  - uid: 22357
+    components:
+    - type: Transform
+      pos: 24.5,62.5
       parent: 2
 - proto: SpawnPointMime
   entities:
@@ -132612,12 +132983,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -62.5,36.5
       parent: 2
-  - uid: 8780
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -62.5,35.5
-      parent: 2
   - uid: 8781
     components:
     - type: Transform
@@ -134954,6 +135319,12 @@ entities:
     components:
     - type: Transform
       pos: -82.5,28.5
+      parent: 2
+  - uid: 13364
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -62.5,35.5
       parent: 2
   - uid: 13412
     components:
@@ -138754,12 +139125,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -62.5,10.5
       parent: 2
-  - uid: 8518
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -61.5,11.5
-      parent: 2
   - uid: 8817
     components:
     - type: Transform
@@ -138825,29 +139190,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -30.5,57.5
-      parent: 2
-  - uid: 9463
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -32.5,57.5
-      parent: 2
-  - uid: 9464
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -34.5,57.5
-      parent: 2
-  - uid: 9465
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -34.5,54.5
-      parent: 2
-  - uid: 9466
-    components:
-    - type: Transform
-      pos: -32.5,54.5
       parent: 2
   - uid: 9467
     components:
@@ -139002,17 +139344,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -61.5,54.5
       parent: 2
-  - uid: 10373
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -63.5,57.5
-      parent: 2
-  - uid: 10374
-    components:
-    - type: Transform
-      pos: -63.5,54.5
-      parent: 2
   - uid: 10860
     components:
     - type: Transform
@@ -139120,18 +139451,6 @@ entities:
     - type: Transform
       pos: -54.5,47.5
       parent: 2
-  - uid: 12947
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -66.5,57.5
-      parent: 2
-  - uid: 12948
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -66.5,54.5
-      parent: 2
   - uid: 12949
     components:
     - type: Transform
@@ -139201,18 +139520,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -63.5,52.5
-      parent: 2
-  - uid: 13364
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -63.5,35.5
-      parent: 2
-  - uid: 13365
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -67.5,35.5
       parent: 2
   - uid: 13446
     components:
@@ -140758,8 +141065,6 @@ entities:
       pos: -29.5,90.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 21408
   - uid: 21248
@@ -140769,8 +141074,6 @@ entities:
       pos: -38.5,90.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 21408
   - uid: 21249
@@ -140780,8 +141083,6 @@ entities:
       pos: -32.5,93.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 21408
   - uid: 21250
@@ -140791,8 +141092,6 @@ entities:
       pos: -32.5,100.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 21408
   - uid: 21251
@@ -140802,8 +141101,6 @@ entities:
       pos: -35.5,100.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 21408
   - uid: 21252
@@ -140813,8 +141110,6 @@ entities:
       pos: -27.5,94.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 21408
 - proto: WeaponEnergyTurretAIControlPanel
