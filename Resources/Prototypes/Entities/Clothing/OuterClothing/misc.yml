@@ -51,7 +51,7 @@
     tags:
     - Apron
     - WhitelistChameleon
-  - type: Stainable
+  - type: Stainable # GabyStation
     clothingVisuals:
       outerClothing:
       - sprite: _Gabystation/Effects/blood.rsi
@@ -75,7 +75,7 @@
     tags:
     - Apron
     - WhitelistChameleon
-  - type: Stainable
+  - type: Stainable # GabyStation
     clothingVisuals:
       outerClothing:
       - sprite: _Gabystation/Effects/blood.rsi
@@ -99,7 +99,7 @@
     tags:
     - Apron
     - WhitelistChameleon
-  - type: Stainable
+  - type: Stainable #GabyStation
     clothingVisuals:
       outerClothing:
       - sprite: _Gabystation/Effects/blood.rsi
@@ -123,7 +123,7 @@
     tags:
     - Apron
     - WhitelistChameleon
-  - type: Stainable
+  - type: Stainable # GabyStation
     clothingVisuals:
       outerClothing:
       - sprite: _Gabystation/Effects/blood.rsi

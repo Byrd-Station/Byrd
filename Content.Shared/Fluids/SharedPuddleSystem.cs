@@ -25,10 +25,10 @@ using Content.Shared.StepTrigger.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
-using Content.Shared.Administration.Logs; // Gabystation start
-using Content.Shared.Chemistry;
-using Content.Shared.Popups;
-using Content.Shared._Gabystation.Stains; // Gabystation end
+using Content.Shared.Administration.Logs; // GabyStation
+using Content.Shared.Chemistry; // GabyStation
+using Content.Shared.Popups; // GabyStation
+using Content.Shared._Gabystation.Stains; // GabyStation
 
 namespace Content.Shared.Fluids;
 
@@ -38,9 +38,9 @@ public abstract partial class SharedPuddleSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-    [Dependency] protected readonly ISharedAdminLogManager AdminLogger = default!;
-    [Dependency] protected readonly SharedPopupSystem Popups = default!;
-    [Dependency] protected readonly ReactiveSystem Reactive = default!;
+    [Dependency] protected readonly ISharedAdminLogManager AdminLogger = default!; // GabyStation
+    [Dependency] protected readonly SharedPopupSystem Popups = default!; // GabyStation
+    [Dependency] protected readonly ReactiveSystem Reactive = default!; // GabyStation
 
     private static readonly ProtoId<ReagentPrototype> Blood = "Blood";
     private static readonly ProtoId<ReagentPrototype> Slime = "Slime";
@@ -68,7 +68,7 @@ public abstract partial class SharedPuddleSystem : EntitySystem
 
         SubscribeLocalEvent<PuddleComponent, SolutionContainerChangedEvent>(OnSolutionUpdate);
         SubscribeLocalEvent<PuddleComponent, GetFootstepSoundEvent>(OnGetFootstepSound);
-        SubscribeLocalEvent<PuddleComponent, GetStainableSolutionEvent>(OnGetStainableSolution);
+        SubscribeLocalEvent<PuddleComponent, GetStainableSolutionEvent>(OnGetStainableSolution); // GabyStation
         SubscribeLocalEvent<PuddleComponent, ExaminedEvent>(HandlePuddleExamined);
         SubscribeLocalEvent<PuddleComponent, EntRemovedFromContainerMessage>(OnEntRemoved);
 
@@ -134,6 +134,7 @@ public abstract partial class SharedPuddleSystem : EntitySystem
         }
     }
 
+    // GabyStation start
     private void OnGetStainableSolution(Entity<PuddleComponent> entity, ref GetStainableSolutionEvent args)
     {
         if (args.Handled)
@@ -145,6 +146,7 @@ public abstract partial class SharedPuddleSystem : EntitySystem
         args.Solution = solution;
         args.Handled = true;
     }
+    // GabyStation end
 
     private void HandlePuddleExamined(Entity<PuddleComponent> entity, ref ExaminedEvent args)
     {

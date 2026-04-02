@@ -503,7 +503,7 @@
     tags:
     - PetWearable
     - CorgiWearable
-  - type: Stainable
+  - type: Stainable # GabyStation
     clothingVisuals:
       head:
       - sprite: _Gabystation/Effects/blood.rsi
@@ -1314,7 +1314,7 @@
     - Recyclable
     - HamsterWearable
     - WhitelistChameleon
-  - type: Stainable
+  - type: Stainable # GabyStation
     clothingVisuals:
       head:
       - sprite: _Gabystation/Effects/blood.rsi

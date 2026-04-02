@@ -160,7 +160,7 @@ public sealed class SlipperySystem : EntitySystem
         var knockedDown = _knockedDownQuery.HasComp(other);
         if (knockedDown && !component.SlipData.SuperSlippery)
             return;
-        var attemptEv = new SlipAttemptEvent(component.SlipData.SuperSlippery)
+        var attemptEv = new SlipAttemptEvent(component.SlipData.SuperSlippery) // GabyStation change
         {
             SlipCausingEntity = uid
         };
@@ -176,10 +176,10 @@ public sealed class SlipperySystem : EntitySystem
         if (attemptCausingEv.Cancelled)
             return;
 
-        var slipEv = new SlipEvent(other);
+        var slipEv = new SlipEvent(other); // GabyStation change
         RaiseLocalEvent(uid, ref slipEv);
 
-        var slippedEv = new SlippedEvent(uid, component.SlipData.SuperSlippery);
+        var slippedEv = new SlippedEvent(uid, component.SlipData.SuperSlippery); // GabyStation
         RaiseLocalEvent(other, slippedEv);
 
         if (_physicsQuery.TryComp(other, out var physics) && !_slidingQuery.HasComp(other))
@@ -235,15 +235,15 @@ public sealed class SlipAttemptEvent : EntityEventArgs, IInventoryRelayEvent
     {
         SlipCausingEntity = slipCausingEntity;
     }
-
-    public bool SuperSlippery;
+    public bool SuperSlippery; // GabyStation Start
 
     public SlipAttemptEvent(bool superSlippery)
     {
         SuperSlippery = superSlippery;
-    }
+    } // GabyStation end
 }
 
+// GabyStation Start
 /// <summary>
 /// Raised on an entity that is causing the slip event (e.g, the banana peel), to determine if the slip attempt should be cancelled.
 /// </summary>
@@ -272,3 +272,4 @@ public sealed class SlippedEvent : EntityEventArgs, IInventoryRelayEvent
         SuperSlippery = superSlippery;
     }
 }
+// GabyStation end

@@ -11,8 +11,8 @@ using Content.Shared.DoAfter;
 using Content.Goobstation.Maths.FixedPoint;
 using Robust.Shared.Audio;
 using Robust.Shared.Serialization;
-using Content.Shared.Chemistry.Components; // Gabystation
-using Content.Shared.Inventory; // Gabystation
+using Content.Shared.Chemistry.Components; // GabyStation
+using Content.Shared.Inventory; // GabyStation
 
 namespace Content.Shared.Fluids;
 
@@ -57,7 +57,7 @@ public record struct SprayAttemptEvent(EntityUid User, bool Cancelled = false)
         Cancelled = true;
     }
 }
-
+// GabyStation start
 public sealed partial class SpilledOnEvent : EntityEventArgs, IInventoryRelayEvent
 {
     public SlotFlags TargetSlots { get; } = SlotFlags.WITHOUT_POCKET;
@@ -71,3 +71,4 @@ public sealed partial class SpilledOnEvent : EntityEventArgs, IInventoryRelayEve
         Solution = solution;
     }
 }
+// GabyStation end

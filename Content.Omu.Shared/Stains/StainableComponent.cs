@@ -7,8 +7,8 @@
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Hands.Components;
 using Robust.Shared.GameStates;
-using Robust.Shared.Serialization; // Gaby
-using Content.Shared.DoAfter; // Gaby
+using Robust.Shared.Serialization;
+using Content.Shared.DoAfter;
 
 namespace Content.Omu.Shared.Stains;
 

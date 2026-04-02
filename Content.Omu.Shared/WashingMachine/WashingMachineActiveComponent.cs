@@ -5,7 +5,7 @@
 
 namespace Content.Omu.Shared.WashingMachine;
 
-/// Componente adicionado a uma máquina de lavar enquanto ela está ativa.
+/// Component added to a washing machine while it is active
 [RegisterComponent]
 public sealed partial class WashingMachineActiveComponent : Component
 {

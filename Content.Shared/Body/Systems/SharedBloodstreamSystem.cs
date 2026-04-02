@@ -48,7 +48,7 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly SharedDrunkSystem _drunkSystem = default!;
     [Dependency] private readonly SharedStutteringSystem _stutteringSystem = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!; // Omu change
+    [Dependency] private readonly EntityLookupSystem _lookup = default!; // FunkyStation
 
     private float _bloodlossMultiplier = 4f; // Goobstation
 
@@ -490,7 +490,7 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
                 tempSolution.AddSolution(temp, _prototypeManager);
             }
 
-            // Funkystation start
+            // FunkyStation start
             // stain clothes on bleed
             var stainEv = new SpilledOnEvent(ent.Owner, tempSolution);
             RaiseLocalEvent(ent.Owner, stainEv);
@@ -514,7 +514,7 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
                 if (tempSolution.Volume <= 0)
                     break;
             }
-            // Funkystation end
+            // FunkyStation end
 
             // Goobstation start
             // Set the freshness when the spill is created instead of every time new blood is created

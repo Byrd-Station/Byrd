@@ -20,27 +20,26 @@ using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Spillable;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Melee;
-using Content.Shared.Weapons.Melee.Events;
-using Robust.Shared.Player;
-using Robust.Shared.Network; // Gaby
+using Content.Shared.Weapons.Melee.Events; // GabyStation start
+using Robust.Shared.Network;
 using Content.Shared.Popups;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reaction;
-using Content.Shared.Chemistry;
+using Content.Shared.Chemistry; // GabyStation end
 
 namespace Content.Shared.Fluids;
 
 public abstract partial class SharedPuddleSystem
 {
     [Dependency] protected readonly OpenableSystem Openable = default!;
-    [Dependency] private readonly INetManager _net = default!; // Gaby
+    [Dependency] private readonly INetManager _net = default!; // GabyStation
 
     protected virtual void InitializeSpillable()
     {
         SubscribeLocalEvent<SpillableComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<SpillableComponent, GetVerbsEvent<Verb>>(AddSpillVerb);
-        SubscribeLocalEvent<SpillableComponent, MeleeHitEvent>(SplashOnMeleeHit, after: [typeof(OpenableSystem)]);
+        SubscribeLocalEvent<SpillableComponent, MeleeHitEvent>(SplashOnMeleeHit, after: [typeof(OpenableSystem)]); // GabyStation
     }
 
     private void OnExamined(Entity<SpillableComponent> entity, ref ExaminedEvent args)
@@ -107,6 +106,7 @@ public abstract partial class SharedPuddleSystem
         args.Verbs.Add(verb);
     }
 
+    // GabyStation start
     private void SplashOnMeleeHit(Entity<SpillableComponent> entity, ref MeleeHitEvent args) // Gaby
     {
         if (args.Handled)
@@ -118,7 +118,7 @@ public abstract partial class SharedPuddleSystem
         // When attacking someone reactive with a spillable entity,
         // splash a little on them (touch react)
         // If this also has solution transfer, then assume the transfer amount is how much we want to spill.
-        // Otherwise let's say they want to spill a quarter of its max volume.
+        // Otherwise, let's say they want to spill a quarter of its max volume.
 
         if (!_solutionContainerSystem.TryGetDrainableSolution(entity.Owner, out var soln, out var solution))
             return;
@@ -129,7 +129,7 @@ public abstract partial class SharedPuddleSystem
             totalSplit = FixedPoint2.Min(transfer.TransferAmount, solution.Volume);
         }
 
-        // a little lame, but reagent quantity is not very balanced and we don't want people
+        // a little lame, but reagent quantity is not very balanced, and we don't want people
         // spilling like 100u of reagent on someone at once!
         totalSplit = FixedPoint2.Min(totalSplit, entity.Comp.MaxMeleeSpillAmount);
 
@@ -175,4 +175,5 @@ public abstract partial class SharedPuddleSystem
                 hit, args.User, PopupType.SmallCaution);
         }
     }
+    // GabyStation end
 }

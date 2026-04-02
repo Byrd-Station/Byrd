@@ -189,14 +189,14 @@
     knockdownTimeDelta: -2
   - type: StaminaResistance # Goobstation
     damageCoefficient: 0.7
-  - type: Stainable # Gabystation start
+  - type: Stainable # GabyStation
     clothingVisuals:
       outerClothing:
       - sprite: _Gabystation/Effects/blood.rsi
         state: armorblood
     iconVisuals:
     - sprite: _Gabystation/Effects/blood.rsi
-      state: armorbloodicon # Gabystation end
+      state: armorbloodicon
 
 #Standard armor vest, allowed for security and bartenders
 - type: entity
@@ -598,7 +598,7 @@
     tags:
     - CorgiWearable
     - WhitelistChameleon
-  - type: Stainable
+  - type: Stainable # GabyStation
     clothingVisuals:
       outerClothing:
       - sprite: _Gabystation/Effects/blood.rsi

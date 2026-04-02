@@ -196,7 +196,7 @@
   - type: Tag
     tags:
       - WhitelistChameleon
-  - type: Stainable # Gabystation start
+  - type: Stainable # GabyStation
     clothingVisuals:
       outerClothing:
       - sprite: _Gabystation/Effects/blood.rsi
@@ -205,7 +205,7 @@
     - sprite: _Gabystation/Effects/blood.rsi
       state: suitbloodicon
   - type: StainBlocker
-    slots: [INNERCLOTHING, FEET, GLOVES] #Gabystation end
+    slots: [INNERCLOTHING, FEET, GLOVES]
 
 - type: entity
   abstract: true
@@ -225,14 +225,14 @@
         type: StorageBoundUserInterface
   - type: StaticPrice
     price: 70
-  - type: Stainable # Gabystation start
+  - type: Stainable # GabyStation
     clothingVisuals:
       outerClothing:
       - sprite: _Gabystation/Effects/blood.rsi
         state: coatblood
     iconVisuals:
     - sprite: _Gabystation/Effects/blood.rsi
-      state: coatbloodicon #Gabystation end
+      state: coatbloodicon
 
 - type: entity
   abstract: true

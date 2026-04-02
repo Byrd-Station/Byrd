@@ -7,10 +7,9 @@
 using Content.Server.Forensics;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Forensics.Components;
-//using Content.Shared.Stains; #no need
 using Content.Omu.Shared.Stains;
 using Content.Shared.Tag;
-using Robust.Shared.Containers; // Gaby
+using Robust.Shared.Containers;
 
 namespace Content.Omu.Server.Stains;
 
@@ -18,9 +17,9 @@ public sealed partial class StainableSystem : SharedStainableSystem
 {
     [Dependency] private readonly ForensicsSystem _forensics = default!;
     [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!; // Gaby
+    [Dependency] private readonly SharedContainerSystem _container = default!;
 
-    protected override void DirtyOwnerAppearance(EntityUid item) // Gaby
+    protected override void DirtyOwnerAppearance(EntityUid item)
     {
         if (_container.TryGetContainingContainer(item, out var container) && TryComp<AppearanceComponent>(container.Owner, out var appearance))
         {

@@ -148,25 +148,25 @@ namespace Content.Server.Fluids.EntitySystems;
 public sealed partial class PuddleSystem : SharedPuddleSystem
 {
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
-    //[Dependency] private readonly IAdminLogManager _adminLogger = default!;
+    //[Dependency] private readonly IAdminLogManager _adminLogger = default!; GabyStation
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    //[Dependency] private readonly ReactiveSystem _reactive = default!;
+    //[Dependency] private readonly ReactiveSystem _reactive = default!; GabyStation
     [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
-    //[Dependency] private readonly SharedPopupSystem _popups = default!;
+    //[Dependency] private readonly SharedPopupSystem _popups = default!; GabyStation
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly StepTriggerSystem _stepTrigger = default!;
     [Dependency] private readonly SpeedModifierContactsSystem _speedModContacts = default!;
     [Dependency] private readonly TileFrictionController _tile = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
-    [Dependency] private readonly StandingStateSystem _standing = default!; // Gaby
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!; // Gaby
-    [Dependency] private readonly InventorySystem _inventory = default!; // Funkystation
+    [Dependency] private readonly StandingStateSystem _standing = default!; // GabyStation
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!; // GabyStation
+    [Dependency] private readonly InventorySystem _inventory = default!; // FunkyStation
 
 
     [ValidatePrototypeId<ReagentPrototype>]
@@ -212,8 +212,8 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
 
         SubscribeLocalEvent<EvaporationComponent, MapInitEvent>(OnEvaporationMapInit);
 
-        SubscribeLocalEvent<KnockedDownComponent, MoveEvent>(OnCrawlInPuddle); // Gaby
-        SubscribeLocalEvent<InventoryComponent, MoveEvent>(OnStepInPuddle); // Funkystation
+        SubscribeLocalEvent<KnockedDownComponent, MoveEvent>(OnCrawlInPuddle); // GabyStation
+        SubscribeLocalEvent<InventoryComponent, MoveEvent>(OnStepInPuddle); // FunkyStation
 
         InitializeTransfers();
     }
@@ -421,11 +421,11 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
             return;
 
         Popups.PopupEntity(Loc.GetString("puddle-component-slipped-touch-reaction", ("puddle", entity.Owner)),
-            args.Slipped, args.Slipped, PopupType.SmallCaution);
+            args.Slipped, args.Slipped, PopupType.SmallCaution); // GabyStation change
 
         // Take 15% of the puddle solution
         var splitSol = _solutionContainerSystem.SplitSolution(entity.Comp.Solution.Value, solution.Volume * 0.15f);
-        Reactive.DoEntityReaction(args.Slipped, splitSol, ReactionMethod.Touch);
+        Reactive.DoEntityReaction(args.Slipped, splitSol, ReactionMethod.Touch); // GabyStation change
 
         // <Goobstation>
         // after we've had the puddle interact with skin, add back reagents that aren't supposed to stick
@@ -729,19 +729,20 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
 
             if (user != null)
             {
-                AdminLogger.Add(LogType.Landed,
+                AdminLogger.Add(LogType.Landed, //GabyStation change
                     $"{ToPrettyString(user.Value):user} threw {ToPrettyString(uid):entity} which splashed a solution {SharedSolutionContainerSystem.ToPrettyString(solution):solution} onto {ToPrettyString(owner):target}");
             }
 
             targets.Add(owner);
-
-            var stainEv = new SpilledOnEvent(uid, splitSolution.Clone()); // Gaby
+            // GabyStation start
+            var stainEv = new SpilledOnEvent(uid, splitSolution.Clone());
             RaiseLocalEvent(owner, stainEv);
+            // GabyStation end
 
-            Reactive.DoEntityReaction(owner, splitSolution, ReactionMethod.Touch);
+            Reactive.DoEntityReaction(owner, splitSolution, ReactionMethod.Touch); // GabyStation change
             Popups.PopupEntity(
                 Loc.GetString("spill-land-spilled-on-other", ("spillable", uid),
-                    ("target", Identity.Entity(owner, EntityManager))), owner, PopupType.SmallCaution);
+                    ("target", Identity.Entity(owner, EntityManager))), owner, PopupType.SmallCaution); // GabyStation change
         }
 
         _color.RaiseEffect(solution.GetColor(_prototypeManager), targets,
@@ -898,7 +899,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
         return false;
     }
 
-    // Caso a entidade esteja deitado por cima de uma poça e se movimeta pra outro tile, suja a roupa e coloca o liquido nela.
+    // If an entity is laying on a puddle, apply stain when it moves to another tile
     private void OnCrawlInPuddle(Entity<KnockedDownComponent> ent, ref MoveEvent args) // Gaby
     {
         if (!_standing.IsDown(ent.Owner))
@@ -921,7 +922,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
         var slippedEv = new SlippedEvent(puddleUid, isSuperSlippery);
         RaiseLocalEvent(ent.Owner, slippedEv);
 
-        // Copia uma parte do OnPuddleSlip
+        // copies part of OnPuddleSlip
         if (HasComp<ReactiveComponent>(ent.Owner) && !HasComp<SlidingComponent>(ent.Owner))
         {
             if (!_solutionContainerSystem.ResolveSolution(puddleUid, puddleComp.SolutionName, ref puddleComp.Solution, out var solution))
@@ -944,7 +945,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
         }
     }
 
-    // Funkystation start
+    // FunkyStation start
     // Stain when stepping on puddles
     private void OnStepInPuddle(Entity<InventoryComponent> ent, ref MoveEvent args)
     {
@@ -984,5 +985,5 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
             RaiseLocalEvent(shoes.Value, relayedEvent);
         }
     }
-    // Funkystation end
+    // FunkyStation end
 }

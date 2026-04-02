@@ -11,14 +11,12 @@ using Content.Shared.Inventory;
 using Content.Shared.Item;
 using Content.Shared.Slippery;
 using Content.Omu.Shared.WashingMachine.Events;
-//using Robust.Shared.GameObjects; // Gaby #no need
-using Content.Shared.Clothing.Components; // Gaby
-using Robust.Shared.Containers; // Gaby
-using Content.Shared.Stains.Components; // Gaby
-using Content.Shared.Verbs; // Gaby
-using Content.Shared.DoAfter; // Gaby
-using Content.Shared.Popups; // Gaby
-//using Robust.Shared.Utility; // Gaby #no need
+using Content.Shared.Clothing.Components;
+using Robust.Shared.Containers;
+using Content.Shared.Stains.Components;
+using Content.Shared.Verbs;
+using Content.Shared.DoAfter;
+using Content.Shared.Popups;
 using Content.Shared._Gabystation.Stains;
 
 namespace Content.Omu.Shared.Stains;
@@ -28,11 +26,11 @@ public abstract partial class SharedStainableSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedItemSystem _item = default!;
     [Dependency] protected readonly SharedSolutionContainerSystem Solution = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!; // Gaby
-    [Dependency] private readonly SharedContainerSystem _container = default!; // Gaby
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!; // Gaby
-    [Dependency] private readonly SharedPuddleSystem _puddle = default!; // Gaby
-    [Dependency] private readonly SharedPopupSystem _popup = default!; // Gaby
+    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly SharedPuddleSystem _puddle = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -45,11 +43,11 @@ public abstract partial class SharedStainableSystem : EntitySystem
 
         SubscribeLocalEvent<StainableComponent, WashingMachineIsBeingWashed>(OnWashed);
 
-        SubscribeLocalEvent<StainableComponent, GetVerbsEvent<Verb>>(AddWringVerb); // Gaby
-        SubscribeLocalEvent<ContainerManagerComponent, GetVerbsEvent<Verb>>(AddWringVerbContainer); // Gaby
-        SubscribeLocalEvent<StainableComponent, WringStainDoAfterEvent>(OnWringDoAfter); // Gaby
+        SubscribeLocalEvent<StainableComponent, GetVerbsEvent<Verb>>(AddWringVerb);
+        SubscribeLocalEvent<ContainerManagerComponent, GetVerbsEvent<Verb>>(AddWringVerbContainer);
+        SubscribeLocalEvent<StainableComponent, WringStainDoAfterEvent>(OnWringDoAfter);
     }
-    // Omu start - prevents water from causing stains
+
     private bool ContainsOnlyWater(Solution solution)
     {
         foreach (var reagent in solution.Contents)
@@ -59,7 +57,6 @@ public abstract partial class SharedStainableSystem : EntitySystem
         }
         return true;
     }
-    // Omu end
 
     private void OnInit(Entity<StainableComponent> ent, ref ComponentInit args)
     {
@@ -72,7 +69,7 @@ public abstract partial class SharedStainableSystem : EntitySystem
 
     private void OnSlipped(Entity<StainableComponent> ent, ref InventoryRelayedEvent<SlippedEvent> args)
     {
-        if (IsStainBlocked(ent)) // Gaby
+        if (IsStainBlocked(ent))
             return;
 
         if (!Solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var target))
@@ -84,7 +81,7 @@ public abstract partial class SharedStainableSystem : EntitySystem
         if (!ev.Handled || ev.Solution == null)
             return;
 
-        if (ContainsOnlyWater(ev.Solution)) // Omu
+        if (ContainsOnlyWater(ev.Solution))
             return;
 
         Solution.TryTransferSolution(target.Value, ev.Solution, ent.Comp.StainVolume);
@@ -92,18 +89,18 @@ public abstract partial class SharedStainableSystem : EntitySystem
         UpdateVisuals(ent);
         StainForensics(ent, target.Value);
 
-        DirtyOwnerAppearance(ent.Owner); // Gaby
+        DirtyOwnerAppearance(ent.Owner);
     }
 
     private void OnSpilledOn(Entity<StainableComponent> ent, ref InventoryRelayedEvent<SpilledOnEvent> args)
     {
-        if (IsStainBlocked(ent)) // Gaby
+        if (IsStainBlocked(ent))
             return;
 
         if (!Solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var target))
             return;
 
-        if (ContainsOnlyWater(args.Args.Solution)) // Omu
+        if (ContainsOnlyWater(args.Args.Solution))
             return;
 
         Solution.TryTransferSolution(target.Value, args.Args.Solution, ent.Comp.StainVolume);
@@ -111,10 +108,10 @@ public abstract partial class SharedStainableSystem : EntitySystem
         UpdateVisuals(ent);
         StainForensics(ent, target.Value);
 
-        DirtyOwnerAppearance(ent.Owner); // Gaby
+        DirtyOwnerAppearance(ent.Owner);
     }
 
-    private bool IsStainBlocked(Entity<StainableComponent> item) // Gaby
+    private bool IsStainBlocked(Entity<StainableComponent> item)
     {
         if (!_container.TryGetContainingContainer(item.Owner, out var container))
             return false;
@@ -165,7 +162,7 @@ public abstract partial class SharedStainableSystem : EntitySystem
     {
         _item.VisualsChanged(ent.Owner);
 
-        // there isnt a value to parse as its calculated on every change
+        // there isn't a value to parse as it's calculated on every change
         // so just do a blanket update and calculate on the client
         if (TryComp<AppearanceComponent>(ent.Owner, out var appearance))
         {
@@ -176,7 +173,7 @@ public abstract partial class SharedStainableSystem : EntitySystem
         }
     }
 
-    protected virtual void DirtyOwnerAppearance(EntityUid owner) // Gaby
+    protected virtual void DirtyOwnerAppearance(EntityUid owner)
     {
     }
 

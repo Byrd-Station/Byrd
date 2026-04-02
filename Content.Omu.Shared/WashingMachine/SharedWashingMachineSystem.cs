@@ -21,8 +21,6 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Popups;
-using Content.Shared.StatusEffect;
-using Content.Shared.Traits.Assorted;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
@@ -151,7 +149,7 @@ public abstract partial class SharedWashingMachineSystem : EntitySystem
             RaiseLocalEvent(item, itemEv);
         }
 
-        // update again incase forensics changed
+        // update again in case forensics changed
         // such as dyeing
         UpdateForensics((uid, component), items);
 
@@ -287,7 +285,7 @@ public abstract partial class SharedWashingMachineSystem : EntitySystem
         {
             RaiseLocalEvent(item, itemEv);
 
-            if (TryComp<ToggleableClothingComponent>(item, out var toggleableComp)) // Gaby
+            if (TryComp<ToggleableClothingComponent>(item, out var toggleableComp))
             {
                 foreach (var attachedClothingUid in toggleableComp.ClothingUids.Keys)
                 {

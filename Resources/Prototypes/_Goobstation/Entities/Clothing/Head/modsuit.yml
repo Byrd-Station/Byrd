@@ -64,7 +64,7 @@
     - HeadTop
     - HeadSide
   - type: FaceHuggerBlocker
-  - type: Appearance
+  - type: Appearance # GabyStation start
   - type: Stainable
     clothingVisuals:
       head:
@@ -74,7 +74,7 @@
     - sprite: _Gabystation/Effects/blood.rsi
       state: helmetbloodicon
   - type: StainBlocker
-    slots: [MASK]
+    slots: [MASK] # GabyStation end
 
 - type: entity
   abstract: true
