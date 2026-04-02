@@ -62,10 +62,10 @@ public sealed partial class ThavenMoodPrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = default!;
 
-    [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
+    [DataField(required: true)]
     public string MoodName = string.Empty;
 
-    [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
+    [DataField(required: true)]
     public string MoodDesc = string.Empty;
 
     /// <summary>
