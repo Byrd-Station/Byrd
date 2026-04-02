@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": "CC0-1.0",
-  "copyright": "Advanced anomaly module icon made by Quanto (quantoo2) on discord",
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Virology by Richard Blonski, advanced anomaly module icon made by Quanto (quantoo2) on discord",
   "size": {
     "x": 32,
     "y": 32
@@ -9,6 +9,10 @@
   "states": [
 	{
       "name": "icon-adv-anomalies"
+    }
+  ]
+}
+      "name": "icon-virology"
     }
   ]
 }
