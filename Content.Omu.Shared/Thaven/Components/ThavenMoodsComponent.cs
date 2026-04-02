@@ -10,7 +10,7 @@ namespace Content.Omu.Shared.Thaven.Components;
 [Access(typeof(SharedThavenMoodSystem))]
 public sealed partial class ThavenMoodsComponent : Component
 {
-    [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
+[DataField(required: true)]
     public ProtoId<ThavenMoodConfigPrototype> MoodConfig;
 
     [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
