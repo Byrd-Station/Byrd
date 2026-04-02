@@ -64,6 +64,9 @@
     },
     {
         "name": "pda-courier-whiteblue"
+    },
+    {
+        "name": "insert_overlay"
     }
   ]
 }
