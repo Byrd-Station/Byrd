@@ -38,8 +38,14 @@ public sealed class ElectricityAnomalySystem : EntitySystem
     /// <inheritdoc/>
     public override void Initialize()
     {
+        SubscribeLocalEvent<ElectricityAnomalyComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<ElectricityAnomalyComponent, AnomalyPulseEvent>(OnPulse);
         SubscribeLocalEvent<ElectricityAnomalyComponent, AnomalySupercriticalEvent>(OnSupercritical);
+    }
+
+    private void OnMapInit(Entity<ElectricityAnomalyComponent> anomaly, ref MapInitEvent args)
+    {
+        anomaly.Comp.NextSecond = _timing.CurTime + TimeSpan.FromSeconds(1);
     }
 
     private void OnPulse(Entity<ElectricityAnomalyComponent> anomaly, ref AnomalyPulseEvent args)
