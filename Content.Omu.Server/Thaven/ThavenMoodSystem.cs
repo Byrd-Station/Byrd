@@ -9,7 +9,10 @@ using Content.Shared.Chat;
 using Content.Shared.Dataset;
 using Content.Shared.DoAfter;
 using Content.Shared.Damage;
+using Content.Shared.Emag.Components;
 using Content.Shared.Emag.Systems;
+using Content.Server.StationEvents.Components;
+using Content.Shared.GameTicking.Components;
 using Content.Shared.GameTicking;
 using Content.Omu.Shared.Thaven;
 using Content.Omu.Shared.Thaven.Components;
@@ -25,6 +28,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Omu.Server.CCVar;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Utility;
 
 namespace Content.Omu.Server.Thaven;
 
@@ -57,6 +61,7 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
         SubscribeLocalEvent<ThavenMoodsComponent, BoundUIOpenedEvent>(OnBoundUIOpened);
         SubscribeLocalEvent<ThavenMoodsComponent, ThavenEmagDoAfterEvent>(OnEmagDoAfter);
         SubscribeLocalEvent<ThavenMoodsComponent, GetVerbsEvent<Verb>>(AddThavenAdminVerb);
+        SubscribeLocalEvent<IonStormRuleComponent, GameRuleStartedEvent>(OnIonStormStarted);
         SubscribeLocalEvent<RoundRestartCleanupEvent>((_) => _sharedMoods.Clear());
     }
 
@@ -393,9 +398,20 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
 
     protected override void OnEmagged(Entity<ThavenMoodsComponent> ent, ref GotEmaggedEvent args)
     {
+        // Only the standard emag (screwdriver-style interaction) triggers wild moods.
+        // Access breakers and other emag types are ignored.
+        if (args.Type != EmagType.Interaction)
+            return;
+
+        // Cap how many times this Thaven can be wild-mood emagged.
+        if (ent.Comp.WildMoodEmagCount >= ent.Comp.MaxWildMoodEmags)
+            return;
+
         base.OnEmagged(ent, ref args);
         if (!args.Handled)
             return;
+
+        ent.Comp.WildMoodEmagCount++;
 
         var config = GetMoodConfig(ent.Comp);
         var doAfterArgs = new DoAfterArgs(EntityManager, args.UserUid, TimeSpan.FromSeconds(config.EmagDoAfterSeconds), new ThavenEmagDoAfterEvent(), ent.Owner, target: ent.Owner, used: args.EmagUid)
@@ -430,6 +446,7 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
         {
             Text = Loc.GetString("thaven-moods-admin-verb"),
             Category = VerbCategory.Admin,
+            Icon = new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/VerbIcons/settings.svg.192dpi.png")),
             Act = () =>
             {
                 var eui = new ThavenMoodsEui(this, EntityManager, _adminManager);
@@ -437,6 +454,19 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
                 eui.UpdateMoods(comp, ent.Owner);
             }
         });
+    }
+
+    /// <summary>
+    /// When an ion storm starts, trigger a wildcard mood on all Thavens present.
+    /// This replicates the noosphere storm mechanic from the original fork.
+    /// </summary>
+    private void OnIonStormStarted(Entity<IonStormRuleComponent> ent, ref GameRuleStartedEvent args)
+    {
+        var query = EntityQueryEnumerator<ThavenMoodsComponent>();
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            AddWildcardMood((uid, comp));
+        }
     }
 }
 

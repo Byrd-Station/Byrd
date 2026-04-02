@@ -142,6 +142,8 @@
       enum.WizardTeleportUiKey.Key: #
         type: WizardTeleportBoundUserInterface
         requireInputValidation: false
+      enum.RadarConsoleUiKey.Key: # goob - contractor hardsuit radar
+        type: RadarConsoleBoundUserInterface
       enum.InstrumentUiKey.Key: # gds -- end of missing uiKeys
         type: InstrumentBoundUserInterface
         requireInputValidation: false

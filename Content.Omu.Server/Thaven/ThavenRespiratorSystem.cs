@@ -1,6 +1,7 @@
 using Content.Goobstation.Shared.Body;
 using Content.Omu.Server.Thaven.Components;
 using Content.Server.Atmos.EntitySystems;
+using Content.Server.Body.Systems;
 
 namespace Content.Omu.Server.Thaven;
 
@@ -11,8 +12,8 @@ namespace Content.Omu.Server.Thaven;
 ///   1. A TryComp&lt;ThavenBreatherComponent&gt; block that bypassed saturation entirely and returned
 ///      based on atmospheric pressure alone. This is replicated here by subscribing to
 ///      <see cref="CheckNeedsAirEvent"/> and cancelling it (= "can always breathe") when pressure is adequate.
-///      When pressure is too low the event is not cancelled, saturation falls to zero (via
-///      <see cref="ThavenBreatherSystem.OnCanMetabolizeGas"/>), and normal suffocation follows.
+///      When pressure is too low or there is no atmosphere (vacuum/space), saturation is actively drained
+///      so normal suffocation applies.
 ///   2. A !HasComp&lt;ThavenBreatherComponent&gt; guard that suppressed the gasp emote while suffocating.
 ///      No upstream event exists at that call site, so this suppression is intentionally not reproduced
 ///      here — Thavens will gasp when suffocating in vacuum, which is acceptable behaviour.
@@ -20,6 +21,7 @@ namespace Content.Omu.Server.Thaven;
 public sealed class ThavenRespiratorSystem : EntitySystem
 {
     [Dependency] private readonly AtmosphereSystem _atmosSys = default!;
+    [Dependency] private readonly RespiratorSystem _respirator = default!;
 
     public override void Initialize()
     {
@@ -29,15 +31,21 @@ public sealed class ThavenRespiratorSystem : EntitySystem
 
     /// <summary>
     /// Thavens breathe from pressure and motion rather than a specific gas.
-    /// Cancel the CheckNeedsAirEvent when pressure is sufficient so CanBreathe returns true
-    /// without relying on the gas-metabolism saturation path.
-    /// When pressure is below MinPressure the event is not cancelled: saturation will fall to
-    /// zero (ThavenBreatherSystem sets it to 0 on OnCanMetabolizeGas) and normal suffocation applies.
+    /// Cancel the CheckNeedsAirEvent when pressure is sufficient so CanBreathe returns true.
+    /// When in vacuum or below MinPressure, saturation is drained directly so suffocation
+    /// applies even when there is no gas to metabolize (e.g. open space).
     /// </summary>
     private void OnCheckNeedsAir(Entity<ThavenBreatherComponent> ent, ref CheckNeedsAirEvent args)
     {
         var mixture = _atmosSys.GetContainingMixture(ent.Owner, excite: true);
         if (mixture != null && mixture.Pressure >= ent.Comp.MinPressure)
+        {
             args.Cancelled = true;
+            return;
+        }
+
+        // No adequate atmosphere — drain saturation so normal suffocation kicks in.
+        // Without this, saturation stays high in vacuum because no gas is ever metabolized.
+        _respirator.UpdateSaturation(ent.Owner, -ent.Comp.SaturationPerBreath);
     }
 }
