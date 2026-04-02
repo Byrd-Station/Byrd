@@ -440,7 +440,7 @@
 # NTR's very cool CC mantle, no thermals
 - type: entity
   parent: [ClothingCyberneticBeastMantle, BaseCentcommContraband]
-  id: ClothingCyberneticBeastMantleCentralCommand
+  id: ClothingCyberneticBeastMantleCentralCommandNoThermal
   name: beast's central command mantle
   description: A fancy gold plated mantle for CC officals, come equiped with NTR glasses
   components:
@@ -479,3 +479,77 @@
       - Biological
     - type: ShowHungerIcons
     - type: ShowThirstIcons
+
+#TRUE CC MANTLE
+- type: entity
+  parent: [ClothingCyberneticBeastMantle, BaseCentcommContraband]
+  id: ClothingCyberneticBeastMantleCentralCommand
+  name: beast's central command mantle
+  description: A fancy gold plated mantle for CC officals, come equiped with NTR glasses
+  suffix: DO NOT MAP
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-command
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-command
+      - state: eyes-command
+        shader: unshaded
+  - type: ComponentToggler # copied from the parent with some additions.
+    components:
+    - type: VisionCorrection
+      correctionPower: 16
+    - type: NightVision
+      isEquipment: true
+      color: "#CCFFCC"
+    - type: FlashImmunity
+    - type: FlashSoundSuppression
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+    - type: ShowContrabandDetails
+    - type: IdentityBlocker
+    - type: ShowHealthBars
+      damageContainers:
+      - Biological
+      - Inorganic
+      - Silicon
+      - SiliconRadiation # Goobstation - Make IPCs take radiation
+    - type: ShowHealthIcons
+      damageContainers:
+      - Biological
+    - type: ShowHungerIcons
+    - type: ShowThirstIcons
+    - type: ShowSyndicateIcons
+    - type: ThermalVision
+      isEquipment: true
+      color: "#2ebf40"
+      lightRadius: 15
+
+#Supply/fancy mantle for the QM and Foreman
+- type: entity
+  parent: [ClothingCyberneticBeastMantle, BaseCommandContraband] #contraband will have to be redone after roles are shifted about
+  id: ClothingCyberneticBeastMantleSupply
+  name: beast's supply mantle
+  description: A gaudy and expensive mantle, fit for individuals with a high net worth
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-command
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-command
+      - state: eyes-command
+        shader: unshaded
+  - type: ComponentToggler # copied from the parent with some additions.
+    components:
+    - type: VisionCorrection
+      correctionPower: 16
+    - type: NightVision
+      isEquipment: true
+      color: "#CCFFCC"
