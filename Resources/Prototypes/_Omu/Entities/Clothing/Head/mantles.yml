@@ -398,3 +398,84 @@
     - type: FlashImmunity
     - type: FlashSoundSuppression
     - type: ShowJobIcons
+
+#RD's mantle
+- type: entity
+  parent: [ClothingCyberneticBeastMantle, BaseCommandContraband]
+  id: ClothingCyberneticBeastMantleScienceCommand
+  name: beast's research director mantle
+  description: A state-of-the-art mantle containing all the functions of a silicon-interfacing hud.
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-command
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-command
+      - state: eyes-command
+        shader: unshaded
+  - type: ComponentToggler # copied from the parent with some additions.
+    components:
+    - type: VisionCorrection
+      correctionPower: 16
+    - type: NightVision
+      isEquipment: true
+      color: "#CCFFCC"
+    - type: FlashImmunity
+    - type: FlashSoundSuppression
+    - type: ClothingGrantCollectiveMind
+      minds:
+      - Binary
+      defaultChannel: Binary
+    - type: HandheldTranslator # Thanks, Goob Italian Moustache!
+      toggleOnInteract: false
+      showInfoOnExamine: false
+      spoken:
+      - RobotTalk
+      understood:
+      - RobotTalk
+
+# NTR's very cool CC mantle, no thermals
+- type: entity
+  parent: [ClothingCyberneticBeastMantle, BaseCentcommContraband]
+  id: ClothingCyberneticBeastMantleCentralCommand
+  name: beast's central command mantle
+  description: A fancy gold plated mantle for CC officals, come equiped with NTR glasses
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-command
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-command
+      - state: eyes-command
+        shader: unshaded
+  - type: ComponentToggler # copied from the parent with some additions.
+    components:
+    - type: VisionCorrection
+      correctionPower: 16
+    - type: NightVision
+      isEquipment: true
+      color: "#CCFFCC"
+    - type: FlashImmunity
+    - type: FlashSoundSuppression
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+    - type: ShowContrabandDetails
+    - type: IdentityBlocker
+    - type: ShowHealthBars
+      damageContainers:
+      - Biological
+      - Inorganic
+      - Silicon
+      - SiliconRadiation # Goobstation - Make IPCs take radiation
+    - type: ShowHealthIcons
+      damageContainers:
+      - Biological
+    - type: ShowHungerIcons
+    - type: ShowThirstIcons
