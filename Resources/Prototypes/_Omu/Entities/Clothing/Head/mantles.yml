@@ -132,6 +132,17 @@
   name: beast's atmospheric mantle
   description: A modified version of a cybernetic beast's mantle. This one has internals and extra thermal insulation.
   components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-ce
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-ce
+      - state: helmet-internals
+      - state: eyes-ce
+        shader: unshaded
   - type: ComponentToggler
     components: # copied from the parent with some additions
     - type: VisionCorrection
@@ -354,13 +365,13 @@
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
-    state: icon-medical
+    state: icon-cmo
   - type: Clothing
     sprite: _Omu/Clothing/Head/mantle.rsi
     clothingVisuals:
       head:
-      - state: helmet-medical
-      - state: eyes-medical
+      - state: helmet-cmo
+      - state: eyes-cmo
         shader: unshaded
   - type: ComponentToggler
     components:
@@ -385,13 +396,13 @@
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
-    state: icon-medical
+    state: icon-chem
   - type: Clothing
     sprite: _Omu/Clothing/Head/mantle.rsi
     clothingVisuals:
       head:
-      - state: helmet-medical
-      - state: eyes-medical
+      - state: helmet-chem
+      - state: eyes-chem
         shader: unshaded
   - type: ComponentToggler
     components:
