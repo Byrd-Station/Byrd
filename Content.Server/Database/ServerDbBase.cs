@@ -424,8 +424,8 @@ namespace Content.Server.Database
                 antags.ToHashSet(),
                 traits.ToHashSet(),
                 loadouts,
-                speciesLoadout, // Far Horizons
-                barkVoice // Goob Station - Barks
+                barkVoice, // Goob Station - Barks
+                speciesLoadout // Far Horizons
             );
         }
 

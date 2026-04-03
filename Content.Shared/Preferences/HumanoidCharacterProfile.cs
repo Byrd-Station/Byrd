@@ -809,13 +809,19 @@ namespace Content.Shared.Preferences
             }
 
             // Far Horizons-Start - Species loadout validation
-            if (speciesPrototype.Loadout == null)
-                SpeciesLoadout = null;
-            else
+            if (speciesPrototype != null){ // Omu fix CS8602
+                if (speciesPrototype.Loadout == null)
+                    SpeciesLoadout = null;
+                else
+                {
+                    SpeciesLoadout ??= new RoleLoadout(speciesPrototype.Loadout.Value);
+                    SpeciesLoadout.Role = speciesPrototype.Loadout.Value;
+                    SpeciesLoadout.SetDefault(this, session, prototypeManager);
+                }
+            }
+            else // Omu fix CS8602
             {
-                SpeciesLoadout ??= new RoleLoadout(speciesPrototype.Loadout.Value);
-                SpeciesLoadout.Role = speciesPrototype.Loadout.Value;
-                SpeciesLoadout.SetDefault(this, session, prototypeManager);
+                SpeciesLoadout = null;
             }
             // Far Horizons-End
         }
