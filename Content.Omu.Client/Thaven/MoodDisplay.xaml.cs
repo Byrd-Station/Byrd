@@ -21,10 +21,11 @@ public sealed partial class MoodDisplay : Control
         IoCManager.InjectDependencies(this);
 
         if (shared)
-            MoodNameLabel.SetMarkup($"{mood.GetLocName()} {GetSharedString()}");
+            MoodNameLabel.SetMessage(FormattedMessage.FromMarkupOrThrow($"{mood.GetLocName()} {GetSharedString()}"));
         else
-            MoodNameLabel.SetMarkup(mood.GetLocName());
-        MoodDescLabel.SetMarkup(mood.GetLocDesc());
+            MoodNameLabel.SetMessage(FormattedMessage.FromMarkupOrThrow(mood.GetLocName()));
+
+        MoodDescLabel.SetMessage(FormattedMessage.FromMarkupOrThrow(mood.GetLocDesc()));
     }
 }
 
