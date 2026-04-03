@@ -75,21 +75,25 @@
         SecurityCadet: ClothingCyberneticBeastMantleSecurity
         SecurityOfficer: ClothingCyberneticBeastMantleSecurity
         Warden: ClothingCyberneticBeastMantleSecurity
+        Sergeant: ClothingCyberneticBeastMantleSecurity
         # med mantle for doctors (and brigmedic, actually corpsman)
         Chemist: ClothingCyberneticBeastMantleMedical
         MedicalDoctor: ClothingCyberneticBeastMantleMedical
         MedicalIntern: ClothingCyberneticBeastMantleMedical
         Paramedic: ClothingCyberneticBeastMantleMedicalParamedic # paramedic mantle variant with internals
-        Brigmedic: ClothingCyberneticBeastMantleMedical
+        Brigmedic: ClothingCyberneticBeastMantleCorpsman
         # tossup of mantles for command.
-        BlueshieldOfficer: ClothingCyberneticBeastMantleBlueshieldOfficer
         Captain: ClothingCyberneticBeastMantleCommand
         ChiefEngineer: ClothingCyberneticBeastMantleWorkAtmospherics
         ChiefMedicalOfficer: ClothingCyberneticBeastMantleMedical
         HeadOfPersonnel: ClothingCyberneticBeastMantleCommand
         HeadOfSecurity: ClothingCyberneticBeastMantleSecurity
-        Quartermaster: ClothingCyberneticBeastMantleCommand
-        ResearchDirector: ClothingCyberneticBeastMantleCommand
+        Quartermaster: ClothingCyberneticBeastMantleSupply
+        ResearchDirector: ClothingCyberneticBeastMantleScienceCommand
+        AdministrativeAssistant: ClothingCyberneticBeastMantleCommand
+        #Mantles for Central Command
+        BlueshieldOfficer: ClothingCyberneticBeastMantleBlueshieldOfficer
+        NanotrasenRepresentative: ClothingCyberneticBeastMantleCentralCommandNoThermal
       # If they have none of the specified jobs:
       equipmentUnmet: ClothingCyberneticBeastMantle
   globalCost: 5
