@@ -442,7 +442,8 @@
   parent: [ClothingCyberneticBeastMantle, BaseCentcommContraband]
   id: ClothingCyberneticBeastMantleCentralCommandNoThermal
   name: beast's central command mantle
-  description: A fancy gold plated mantle for CC officals, come equiped with NTR glasses
+  description: A fancy gold plated mantle for CC officals, comes equiped with NTR glasses
+  suffix: No thermals, DO NOT MAP
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
@@ -468,6 +469,9 @@
     - type: ShowCriminalRecordIcons
     - type: ShowContrabandDetails
     - type: IdentityBlocker
+    - type: ShowHungerIcons
+    - type: ShowThirstIcons
+    - type: ShowDiseaseIcons
     - type: ShowHealthBars
       damageContainers:
       - Biological
@@ -485,7 +489,8 @@
   parent: [ClothingCyberneticBeastMantle, BaseCentcommContraband]
   id: ClothingCyberneticBeastMantleCentralCommand
   name: beast's central command mantle
-  description: A fancy gold plated mantle for CC officals, come equiped with NTR glasses
+  description: A fancy gold plated mantle for CC officals comes equiped with
+    everything the average hypercapitalist needs
   suffix: DO NOT MAP
   components:
   - type: Sprite
@@ -498,6 +503,25 @@
       - state: helmet-command
       - state: eyes-command
         shader: unshaded
+  - type: Armor
+    coverage:
+    - Head
+    traumaDeductions:
+      Dismemberment: 0.3
+      OrganDamage: 0.3
+      BoneDamage: 0.3
+      VeinsDamage: 0
+      NerveDamage: 0
+    modifiers:
+      coefficients:
+        Blunt: 0.3
+        Slash: 0.3
+        Piercing: 0.3
+        Heat: 0.3
+        Radiation: 0.75
+        Caustic: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
   - type: ComponentToggler # copied from the parent with some additions.
     components:
     - type: VisionCorrection
@@ -505,6 +529,11 @@
     - type: NightVision
       isEquipment: true
       color: "#CCFFCC"
+    - type: ThermalVision
+      isEquipment: true
+      color: "#2ebf40"
+      lightRadius: 15
+    - type: ShowSyndicateIcons
     - type: FlashImmunity
     - type: FlashSoundSuppression
     - type: ShowJobIcons
@@ -512,6 +541,9 @@
     - type: ShowCriminalRecordIcons
     - type: ShowContrabandDetails
     - type: IdentityBlocker
+    - type: ShowHungerIcons
+    - type: ShowThirstIcons
+    - type: ShowDiseaseIcons
     - type: ShowHealthBars
       damageContainers:
       - Biological
@@ -521,13 +553,6 @@
     - type: ShowHealthIcons
       damageContainers:
       - Biological
-    - type: ShowHungerIcons
-    - type: ShowThirstIcons
-    - type: ShowSyndicateIcons
-    - type: ThermalVision
-      isEquipment: true
-      color: "#2ebf40"
-      lightRadius: 15
 
 #Supply/fancy mantle for the QM and Foreman
 - type: entity
@@ -546,6 +571,8 @@
       - state: helmet-command
       - state: eyes-command
         shader: unshaded
+  - type: StaticPrice
+    price: 10000
   - type: ComponentToggler # copied from the parent with some additions.
     components:
     - type: VisionCorrection
