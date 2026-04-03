@@ -438,7 +438,7 @@
     lowPressureMultiplier: 1000
   - type: Armor # Gets the same level of protection as the BSO beret gives.
     coverage:
-    - Head
+      - Head
     traumaDeductions:
       Dismemberment: 0.3
       OrganDamage: 0.3
