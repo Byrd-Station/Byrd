@@ -58,10 +58,10 @@
     size: Large
     storedRotation: 45
 
-- type: entity
+- type: entity # Toy sniper
   name: Foam Force Sniper
   parent: [BaseWeaponShotgun, BaseGunWieldable]
-  id: WeaponSniperFoam
+  id: WeaponSniperFoam 
   description: A foam force weapon designed after a syndicate Hristov. Security is going to be so mad...
   components:
   - type: Sprite
