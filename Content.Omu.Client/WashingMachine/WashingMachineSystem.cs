@@ -7,10 +7,4 @@ using Content.Omu.Shared.WashingMachine;
 
 namespace Content.Omu.Client.WashingMachine;
 
-public sealed partial class WashingMachineSystem : SharedWashingMachineSystem
-{
-    public override void Initialize()
-    {
-        base.Initialize();
-    }
-}
+public sealed partial class WashingMachineSystem : SharedWashingMachineSystem;
