@@ -26,12 +26,13 @@ public sealed class ThavenBreatherSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<BodyComponent, CanMetabolizeGasEvent>(OnCanMetabolizeGas);
-        SubscribeLocalEvent<BodyComponent, InhaledGasEvent>(OnInhaledGas);
-        SubscribeLocalEvent<BodyComponent, CheckNeedsAirEvent>(OnCheckNeedsAir);
+        var beforeRespirator = new[] { typeof(RespiratorSystem) };
+        SubscribeLocalEvent<RespiratorComponent, CanMetabolizeGasEvent>(OnCanMetabolizeGas, before: beforeRespirator);
+        SubscribeLocalEvent<RespiratorComponent, InhaledGasEvent>(OnInhaledGas, before: beforeRespirator);
+        SubscribeLocalEvent<RespiratorComponent, CheckNeedsAirEvent>(OnCheckNeedsAir, before: beforeRespirator);
     }
 
-    private void OnCanMetabolizeGas(Entity<BodyComponent> ent, ref CanMetabolizeGasEvent args)
+    private void OnCanMetabolizeGas(Entity<RespiratorComponent> ent, ref CanMetabolizeGasEvent args)
     {
         if (!TryGetActiveThavenLung(ent, out var lung))
             return;
@@ -43,20 +44,20 @@ public sealed class ThavenBreatherSystem : EntitySystem
             : 0f;
     }
 
-    private void OnInhaledGas(Entity<BodyComponent> ent, ref InhaledGasEvent args)
+    private void OnInhaledGas(Entity<RespiratorComponent> ent, ref InhaledGasEvent args)
     {
         if (!TryGetActiveThavenLung(ent, out var lung))
             return;
 
-        if (!TryComp<RespiratorComponent>(ent, out var respirator))
+        if (!TryComp<BodyComponent>(ent, out var body))
             return;
 
         // Thaven respiration depends on pressure and breathing motion, not pulmonary gas storage.
         var discardedGas = new GasMixture(args.Gas.Volume);
-        _respirator.RemoveGasFromBody(ent, discardedGas);
+        _respirator.RemoveGasFromBody((ent.Owner, body), discardedGas);
 
         if (args.Gas.Pressure >= lung.Comp1.MinPressure)
-            _respirator.UpdateSaturation(ent.Owner, lung.Comp1.SaturationPerBreath, respirator);
+            _respirator.UpdateSaturation(ent.Owner, lung.Comp1.SaturationPerBreath, ent.Comp);
 
         var totalMoles = args.Gas.TotalMoles;
         if (totalMoles > 0f)
@@ -79,7 +80,7 @@ public sealed class ThavenBreatherSystem : EntitySystem
         args.Succeeded = true;
     }
 
-    private void OnCheckNeedsAir(Entity<BodyComponent> ent, ref CheckNeedsAirEvent args)
+    private void OnCheckNeedsAir(Entity<RespiratorComponent> ent, ref CheckNeedsAirEvent args)
     {
         if (!TryGetActiveThavenLung(ent, out var lung))
             return;
@@ -95,15 +96,18 @@ public sealed class ThavenBreatherSystem : EntitySystem
     }
 
     private bool TryGetActiveThavenLung(
-        Entity<BodyComponent> ent,
+        EntityUid uid,
         [NotNullWhen(true)] out Entity<ThavenBreatherComponent, OrganComponent> lung)
     {
         lung = default;
 
-        if (!TryComp<HumanoidAppearanceComponent>(ent, out var humanoid) || humanoid.Species != ThavenSpecies)
+        if (!TryComp<HumanoidAppearanceComponent>(uid, out var humanoid) || humanoid.Species != ThavenSpecies)
             return false;
 
-        if (!_body.TryGetBodyOrganEntityComps<ThavenBreatherComponent>((ent.Owner, ent.Comp), out var lungs))
+        if (!TryComp<BodyComponent>(uid, out var body))
+            return false;
+
+        if (!_body.TryGetBodyOrganEntityComps<ThavenBreatherComponent>((uid, body), out var lungs))
             return false;
 
         foreach (var organ in lungs)
