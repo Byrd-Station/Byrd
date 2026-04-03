@@ -86,7 +86,7 @@ public sealed partial class ThavenMoodPrototype : IPrototype
     /// mood variables for this mood. Does not prevent the same mood variable
     /// from being present in other moods.
     /// </summary>
-    [DataField("allowDuplicateMoodVars"), ViewVariables(VVAccess.ReadOnly)]
-    public bool AllowDuplicateMoodVars = false;
+    [DataField]
+    public bool AllowDuplicateMoodVars;
 }
 
