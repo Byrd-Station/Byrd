@@ -1,8 +1,10 @@
 using Content.Omu.Server.Thaven.Components;
+using Content.Omu.Shared.Thaven.Components;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Goobstation.Shared.Body;
 using Content.Shared.Body.Components;
+using Content.Shared.Body.Events;
 using Content.Shared.Atmos;
 using Content.Shared.Drunk;
 
@@ -18,6 +20,36 @@ public sealed class ThavenBreatherSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<ThavenBreatherComponent, CanMetabolizeGasEvent>(OnCanMetabolizeGas);
         SubscribeLocalEvent<ThavenBreatherComponent, InhaledGasEvent>(OnInhaledGas);
+        SubscribeLocalEvent<ThavenBreatherComponent, OrganAddedToBodyEvent>(OnOrganAdded);
+        SubscribeLocalEvent<ThavenBreatherComponent, OrganRemovedFromBodyEvent>(OnOrganRemoved);
+    }
+
+    /// <summary>
+    /// When Thaven lungs are installed in a body, propagate ThavenBreatherComponent to the body.
+    /// Only valid for actual Thavens — prevents non-Thavens from benefiting from stolen lungs.
+    /// </summary>
+    private void OnOrganAdded(Entity<ThavenBreatherComponent> organ, ref OrganAddedToBodyEvent args)
+    {
+        if (!HasComp<ThavenMoodsComponent>(args.Body))
+            return;
+
+        var comp = EnsureComp<ThavenBreatherComponent>(args.Body);
+        comp.MinPressure = organ.Comp.MinPressure;
+        comp.SaturationPerBreath = organ.Comp.SaturationPerBreath;
+        comp.IntoxicatingGas = organ.Comp.IntoxicatingGas;
+        comp.IntoxicatingGasMinRatio = organ.Comp.IntoxicatingGasMinRatio;
+        comp.IntoxicatingGasDurationScale = organ.Comp.IntoxicatingGasDurationScale;
+        comp.IntoxicatingGasMinDuration = organ.Comp.IntoxicatingGasMinDuration;
+        comp.IntoxicatingGasMaxDuration = organ.Comp.IntoxicatingGasMaxDuration;
+        comp.IntoxicatingGasApplySlur = organ.Comp.IntoxicatingGasApplySlur;
+    }
+
+    /// <summary>
+    /// When Thaven lungs are removed, remove ThavenBreatherComponent from the body.
+    /// </summary>
+    private void OnOrganRemoved(Entity<ThavenBreatherComponent> organ, ref OrganRemovedFromBodyEvent args)
+    {
+        RemComp<ThavenBreatherComponent>(args.OldBody);
     }
 
     private void OnCanMetabolizeGas(Entity<ThavenBreatherComponent> ent, ref CanMetabolizeGasEvent args)

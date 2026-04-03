@@ -128,23 +128,6 @@
     sprite: _Impstation/Mobs/Species/Thaven/parts.rsi
     state: head
 
-#- type: humanoidBaseSprite
-#  id: MobThavenTorso
-#  baseSprite:
-#    sprite: _DEN/Mobs/Species/Thaven/parts.rsi # TheDen
-#    state: torso_m
-
-#- type: humanoidBaseSprite
-#  id: MobThavenTorsoMale
-#  baseSprite:
-#    sprite: _DEN/Mobs/Species/Thaven/parts.rsi # TheDen
-#    state: torso_m
-
-#- type: humanoidBaseSprite
-#  id: MobThavenTorsoFemale
-#  baseSprite:
-#    sprite: _DEN/Mobs/Species/Thaven/parts.rsi # TheDen
-#    state: torso_f
 - type: humanoidBaseSprite
   id: MobThavenChest # gds - port imp and add woundmed capacity
   baseSprite:

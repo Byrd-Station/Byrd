@@ -11,19 +11,6 @@
     sprite: _Impstation/Mobs/Species/Thaven/parts.rsi
     state: full
   - type: Carriable
-  - type: ThavenBreather
-    # gas that makes them feel drunk when breathed
-    intoxicatingGas: Frezon
-    # minimum share of that gas in the breath mix before it does anything
-    intoxicatingGasMinRatio: 0.1
-    # how much drunk time the gas gives based on its ratio in the mix
-    intoxicatingGasDurationScale: 60
-    # minimum drunk time applied per breath when the gas is present
-    intoxicatingGasMinDuration: 15
-    # local cap per breath; 0 lets the normal drunk cap handle it
-    intoxicatingGasMaxDuration: 0
-    # whether this should also slur speech
-    intoxicatingGasApplySlur: false
   - type: ThavenMoods
     moodConfig: DefaultThavenMoodConfig
   - type: Sprite

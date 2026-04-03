@@ -13,16 +13,16 @@ public sealed partial class ThavenMoodsComponent : Component
 [DataField(required: true)]
     public ProtoId<ThavenMoodConfigPrototype> MoodConfig;
 
-    [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public bool FollowsSharedMoods = true;
 
-    [DataField, ViewVariables, AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public List<ThavenMood> Moods = new();
 
-    [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+    [DataField, AutoNetworkedField]
     public SoundSpecifier? MoodsChangedSound = new SoundPathSpecifier("/Audio/_Impstation/Thaven/moods_changed.ogg");
 
-    [DataField(serverOnly: true), ViewVariables]
+    [DataField(serverOnly: true)]
     public EntityUid? Action;
 
     /// <summary>

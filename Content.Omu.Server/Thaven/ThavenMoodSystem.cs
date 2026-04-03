@@ -61,7 +61,7 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
         SubscribeLocalEvent<ThavenMoodsComponent, BoundUIOpenedEvent>(OnBoundUIOpened);
         SubscribeLocalEvent<ThavenMoodsComponent, ThavenEmagDoAfterEvent>(OnEmagDoAfter);
         SubscribeLocalEvent<ThavenMoodsComponent, GetVerbsEvent<Verb>>(AddThavenAdminVerb);
-        SubscribeLocalEvent<IonStormRuleComponent, GameRuleStartedEvent>(OnIonStormStarted);
+        SubscribeLocalEvent<GameRuleStartedEvent>(OnGameRuleStarted);
         SubscribeLocalEvent<RoundRestartCleanupEvent>((_) => _sharedMoods.Clear());
     }
 
@@ -82,10 +82,10 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
     {
         _sharedMoods.Clear();
         for (int i = 0; i < _config.GetCVar(OmuCCVars.ThavenSharedMoodCount); i++)
-            TryAddSharedMood(config);
+            TryAddSharedMood(config, notify: false);
     }
 
-    public bool TryAddSharedMood(ThavenMoodConfigPrototype config, ThavenMood? mood = null, bool checkConflicts = true)
+    public bool TryAddSharedMood(ThavenMoodConfigPrototype config, ThavenMood? mood = null, bool checkConflicts = true, bool notify = true)
     {
         if (mood == null)
         {
@@ -104,13 +104,17 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
             return false;
 
         _sharedMoods.Add(mood);
-        var enumerator = EntityManager.EntityQueryEnumerator<ThavenMoodsComponent>();
-        while (enumerator.MoveNext(out var ent, out var comp))
-        {
-            if (!comp.FollowsSharedMoods)
-                continue;
 
-            NotifyMoodChange((ent, comp));
+        if (notify)
+        {
+            var enumerator = EntityManager.EntityQueryEnumerator<ThavenMoodsComponent>();
+            while (enumerator.MoveNext(out var ent, out var comp))
+            {
+                if (!comp.FollowsSharedMoods)
+                    continue;
+
+                NotifyMoodChange((ent, comp));
+            }
         }
 
         return true;
@@ -135,10 +139,8 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
         var dataset = _proto.Index<DatasetPrototype>(datasetProto);
         var choices = dataset.Values.ToList();
 
-        if (currentMoods == null)
-            currentMoods = new HashSet<ThavenMood>();
-        if (conflicts == null)
-            conflicts = GetConflicts(currentMoods);
+        currentMoods ??= new HashSet<ThavenMood>();
+        conflicts ??= GetConflicts(currentMoods);
 
         var currentMoodProtos = GetMoodProtoSet(currentMoods);
 
@@ -460,8 +462,11 @@ var datasetProto = _proto.Index(GetMoodConfig(comp).RandomMoodDataset).Pick();
     /// When an ion storm starts, trigger a wildcard mood on all Thavens present.
     /// This replicates the noosphere storm mechanic from the original fork.
     /// </summary>
-    private void OnIonStormStarted(Entity<IonStormRuleComponent> ent, ref GameRuleStartedEvent args)
+    private void OnGameRuleStarted(ref GameRuleStartedEvent args)
     {
+        if (!HasComp<IonStormRuleComponent>(args.RuleEntity))
+            return;
+
         var query = EntityQueryEnumerator<ThavenMoodsComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
