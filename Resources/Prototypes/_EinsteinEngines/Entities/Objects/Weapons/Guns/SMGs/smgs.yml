@@ -58,7 +58,7 @@
             - MagazineCaselessRifle
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeCaselessRifleFMJ
+        startingItem: CartridgeCaselessRifleFMJ # Omu
         priority: 1
         whitelist:
           tags:
