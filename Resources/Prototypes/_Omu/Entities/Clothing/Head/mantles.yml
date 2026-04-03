@@ -132,17 +132,6 @@
   name: beast's atmospheric mantle
   description: A modified version of a cybernetic beast's mantle. This one has internals and extra thermal insulation.
   components:
-  - type: Sprite
-    sprite: _Omu/Clothing/Head/mantle.rsi
-    state: icon-ce
-  - type: Clothing
-    sprite: _Omu/Clothing/Head/mantle.rsi
-    clothingVisuals:
-      head:
-      - state: helmet-ce
-      - state: helmet-internals
-      - state: eyes-ce
-        shader: unshaded
   - type: ComponentToggler
     components: # copied from the parent with some additions
     - type: VisionCorrection
@@ -165,6 +154,35 @@
   name: beast's chief engineer mantle
   description: A modified version of a cybernetic beast's mantle. This one has internals, lead plating, and extra thermal insulation.
   components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-ce
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-ce
+      - state: helmet-internals
+      - state: eyes-ce
+        shader: unshaded
+  - type: TemperatureProtection
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.2
+  - type: EyeProtection
+  - type: FireProtection
+    reduction: 0.2
+  - type: PressureProtection #Copied directly from the CE hardsuit helmet
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor #Copied directly from the CE hardsuit helmet
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.4
+        Radiation: 0.0
+        Caustic: 0.7
   - type: ComponentToggler
     components: # copied from the parent with some additions
     - type: VisionCorrection
@@ -173,24 +191,7 @@
       isEquipment: true
       color: "#CCFFCC"
     - type: BreathMask
-    - type: TemperatureProtection
-      heatingCoefficient: 0.01
-      coolingCoefficient: 0.2
-    - type: EyeProtection
-    - type: FireProtection
-      reduction: 0.2
-    - type: PressureProtection #Copied directly from the CE hardsuit helmet
-      highPressureMultiplier: 0.08
-      lowPressureMultiplier: 1000
-    - type: Armor #Copied directly from the CE hardsuit helmet
-      modifiers:
-        coefficients:
-          Blunt: 0.8
-          Slash: 0.8
-          Piercing: 0.8
-          Heat: 0.4
-          Radiation: 0.0
-          Caustic: 0.7
+
           
 # resprite of the work mantle for salvagers in particular.
 - type: entity
