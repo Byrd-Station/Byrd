@@ -36,7 +36,7 @@ public abstract partial class SharedStainableSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<StainableComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<StainableComponent, MapInitEvent>(OnMapInit);
 
         SubscribeLocalEvent<StainableComponent, InventoryRelayedEvent<SlippedEvent>>(OnSlipped);
         SubscribeLocalEvent<StainableComponent, InventoryRelayedEvent<SpilledOnEvent>>(OnSpilledOn);
@@ -58,12 +58,15 @@ public abstract partial class SharedStainableSystem : EntitySystem
         return true;
     }
 
-    private void OnInit(Entity<StainableComponent> ent, ref ComponentInit args)
+    private void OnMapInit(Entity<StainableComponent> ent, ref MapInitEvent args)
     {
-        if (!Solution.EnsureSolution(ent.Owner, ent.Comp.SolutionId, out var solution, ent.Comp.MaxVolume))
+        if (string.IsNullOrEmpty(ent.Comp.SolutionId))
             return;
 
-        solution.CanReact = false;
+        if (!Solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var solution))
+            return;
+
+        solution.Value.Comp.Solution.CanReact = false;
         UpdateVisuals(ent);
     }
 
