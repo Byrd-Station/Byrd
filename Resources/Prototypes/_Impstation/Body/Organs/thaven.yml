@@ -1,18 +1,9 @@
 #ported from imp with some changes from the den version of thavens
 - type: entity
   id: BaseThavenOrgan
-  parent: BaseItem
+  parent: BaseHumanOrgan
   abstract: true
   components:
-  - type: EmitSoundOnPickup
-    sound:
-      collection: OrganInteraction
-  - type: EmitSoundOnDrop
-    sound:
-      collection: OrganInteraction
-  - type: EmitSoundOnLand
-    sound:
-      collection: OrganInteraction
   - type: Sprite
     sprite: _Impstation/Mobs/Species/Thaven/organs.rsi
   - type: Organ # thaven guts is good
@@ -22,9 +13,6 @@
       Normal: 30
       Damaged: 10
       Destroyed: 0
-  - type: Food
-  - type: Extractable
-    grindableSolutionName: organ
   - type: SolutionContainerManager
     solutions:
       organ:
@@ -42,13 +30,6 @@
   - type: FlavorProfile
     flavors:
     - thavenflesh
-  - type: Tag # goob edit
-    tags:
-    - Meat
-    - Organ
-  - type: PhysicalComposition #Goobstation - Recycle update
-    materialComposition:
-      Biomass: 5
 
 - type: entity
   id: OrganThavenBrain

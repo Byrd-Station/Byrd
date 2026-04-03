@@ -28,7 +28,7 @@ public partial class ThavenMood
     public string MoodDesc = string.Empty;
 
     [DataField(serverOnly: true, customTypeSerializer: typeof(PrototypeIdHashSetSerializer<ThavenMoodPrototype>))]
-    [ViewVariables(VVAccess.ReadWrite)]
+    [ViewVariables(VVAccess.ReadOnly)]
     public HashSet<string> Conflicts = new();
 
     /// <summary>
@@ -86,7 +86,7 @@ public sealed partial class ThavenMoodPrototype : IPrototype
     /// mood variables for this mood. Does not prevent the same mood variable
     /// from being present in other moods.
     /// </summary>
-    [DataField("allowDuplicateMoodVars"), ViewVariables(VVAccess.ReadWrite)]
+    [DataField("allowDuplicateMoodVars"), ViewVariables(VVAccess.ReadOnly)]
     public bool AllowDuplicateMoodVars = false;
 }
 
