@@ -7,17 +7,12 @@ using Content.Server.Body.Systems;
 using Content.Shared.Atmos;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Organ;
-using Content.Shared.Humanoid;
-using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Drunk;
-using Robust.Shared.Prototypes;
 
 namespace Content.Omu.Server.Thaven.Systems;
 
 public sealed class ThavenBreatherSystem : EntitySystem
 {
-    private static readonly ProtoId<SpeciesPrototype> ThavenSpecies = "Thaven";
-
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly RespiratorSystem _respirator = default!;
@@ -100,9 +95,6 @@ public sealed class ThavenBreatherSystem : EntitySystem
         [NotNullWhen(true)] out Entity<ThavenBreatherComponent, OrganComponent> lung)
     {
         lung = default;
-
-        if (!TryComp<HumanoidAppearanceComponent>(uid, out var humanoid) || humanoid.Species != ThavenSpecies)
-            return false;
 
         if (!TryComp<BodyComponent>(uid, out var body))
             return false;
