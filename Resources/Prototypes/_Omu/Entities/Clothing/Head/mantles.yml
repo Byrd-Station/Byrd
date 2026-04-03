@@ -12,7 +12,7 @@
 # back for it later.
 #     Some concessions have been made for certain jobs. A salvager will need to go out into space, so they get internals and pressure resistance. Same with an
 # atmos technician. As well, a doctor probably needs a medhud for their job. The key is to give the player ONLY what is necessary to complete their job. A
-# doctor probably doesn't need to be spaceproofed to do their job, at least until the station goes belly up, at which point they __should__ have to play around the 
+# doctor probably doesn't need to be spaceproofed to do their job, at least until the station goes belly up, at which point they __should__ have to play around the
 # opportunity cost of having a mantle.
 #
 # (Extra, Extra reading) On Balance, holistically:
@@ -38,7 +38,7 @@
   - type: ComponentToggler
     components:
     - type: VisionCorrection
-      correctionPower: 16 # these ain't your granny's reading glasses 
+      correctionPower: 16 # these ain't your granny's reading glasses
     - type: NightVision
       isEquipment: true
       color: "#CCFFCC"
@@ -67,14 +67,14 @@
     containerOccluded: true # this makes the mantle illuminate itself.
   - type: ClothingTakesUpExtraSlots
     slots:
-    - mask 
+    - mask
     - eyes
   - type: StealTarget
     stealGroup: CyberneticMantles
   - type: Item
     size: Huge
   - type: Tag # Overwrite the TagComponent from the parent to get rid of ClothMade because it's funny when a mothroach eats this ultra specialized bit of equipment, but only the first time.
-    tags: 
+    tags:
     - WhitelistChameleon
 
 # This mantle is inteded for people doing jobs that require internals. In particular, this mantle is a breath mask with pressure protection and welding protection.
@@ -260,13 +260,13 @@
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
-    state: icon-security
+    state: icon-corpsman
   - type: Clothing
     sprite: _Omu/Clothing/Head/mantle.rsi
     clothingVisuals:
       eyes:
-      - state: helmet-security
-      - state: eyes-security
+      - state: helmet-corpsman
+      - state: eyes-corpsman
         shader: unshaded
   - type: ComponentToggler # copied from the parent with some additions.
     components:
@@ -464,7 +464,7 @@
     - type: BreathMask
 
 # Command members who need job specific mantles just get their job mantles.
-# Command members who don't get this. Suffer, because it now shows job icons
+# Command members who don't get this. Rejoice! You now have your own mantle, unless you're HOP, then weep.
 - type: entity
   parent: [ClothingCyberneticBeastMantle, BaseCommandContraband]
   id: ClothingCyberneticBeastMantleCommand
@@ -500,13 +500,13 @@
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
-    state: icon-command
+    state: icon-rd
   - type: Clothing
     sprite: _Omu/Clothing/Head/mantle.rsi
     clothingVisuals:
       head:
-      - state: helmet-command
-      - state: eyes-command
+      - state: helmet-rd
+      - state: eyes-rd
         shader: unshaded
   - type: ComponentToggler # copied from the parent with some additions.
     components:
@@ -539,13 +539,13 @@
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
-    state: icon-command
+    state: icon-centralcommand
   - type: Clothing
     sprite: _Omu/Clothing/Head/mantle.rsi
     clothingVisuals:
       head:
-      - state: helmet-command
-      - state: eyes-command
+      - state: helmet-centralcommand
+      - state: eyes-centralcommand
         shader: unshaded
   - type: ComponentToggler # copied from the parent with some additions.
     components:
@@ -573,8 +573,6 @@
     - type: ShowHealthIcons
       damageContainers:
       - Biological
-    - type: ShowHungerIcons
-    - type: ShowThirstIcons
 
 #TRUE CC MANTLE
 - type: entity
@@ -587,13 +585,13 @@
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
-    state: icon-command
+    state: icon-centralcommand
   - type: Clothing
     sprite: _Omu/Clothing/Head/mantle.rsi
     clothingVisuals:
       head:
-      - state: helmet-command
-      - state: eyes-command
+      - state: helmet-centralcommand
+      - state: eyes-centralcommand
         shader: unshaded
   - type: Armor
     coverage:
@@ -655,13 +653,13 @@
   components:
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
-    state: icon-command
+    state: icon-qm
   - type: Clothing
     sprite: _Omu/Clothing/Head/mantle.rsi
     clothingVisuals:
       head:
-      - state: helmet-command
-      - state: eyes-command
+      - state: helmet-qm
+      - state: eyes-qm
         shader: unshaded
   - type: StaticPrice
     price: 10000
