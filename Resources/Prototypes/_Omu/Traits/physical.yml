@@ -87,7 +87,7 @@
         ChiefEngineer: ClothingCyberneticBeastMantleWorkChiefEngineering
         ChiefMedicalOfficer: ClothingCyberneticBeastMantleMedicalCMO
         HeadOfPersonnel: ClothingCyberneticBeastMantleCommand
-        HeadOfSecurity: ClothingCyberneticBeastMantleSecurity
+        HeadOfSecurity: ClothingCyberneticBeastMantleHeadofSecurity
         Quartermaster: ClothingCyberneticBeastMantleSupply
         ResearchDirector: ClothingCyberneticBeastMantleScienceCommand
         AdministrativeAssistant: ClothingCyberneticBeastMantleCommand
