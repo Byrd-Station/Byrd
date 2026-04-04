@@ -3057,3 +3057,9 @@ Entries:
         wanted status" UI
   id: 391
   time: '2026-04-03T03:08:28.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Tweak
+      message: Grognard now deals 12 damage on OFF mode
+  id: 392
+  time: '2026-04-04T03:32:22.0000000+00:00'
