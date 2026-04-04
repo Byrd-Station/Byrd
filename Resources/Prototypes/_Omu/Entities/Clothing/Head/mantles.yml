@@ -172,10 +172,30 @@
 # resprite of the standard mantle with a sechud.
 - type: entity
   id: ClothingCyberneticBeastMantleSecurity
-  parent: [ClothingCyberneticBeastMantle, BaseSecurityContraband]
+  parent: [ClothingCyberneticBeastMantleWork, BaseSecurityContraband]
   name: beast's security mantle
   description: A modified version of a cybernetic beast's mantle. This one comes with an included sechud.
   components:
+  - type: UseDelay
+    delays:
+      gasTank:
+        length: 1.0
+#  - type: ActivatableUI
+#    key: enum.SharedGasTankUiKey.Key
+#  - type: UserInterface
+#    interfaces:
+#      enum.SharedGasTankUiKey.Key:
+#        type: GasTankBoundUserInterface
+  - type: GasTank
+    outputPressure: 21.3
+    air:
+      volume: 0.66
+      moles:
+        - 0.270782035 # oxygen
+      temperature: 293.15
+    tankLowPressure: 30.0
+  
+
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-security
@@ -208,12 +228,14 @@
     - type: NightVision
       isEquipment: true
       color: "#CCFFCC"
+    - type: BreathMask
     - type: FlashImmunity
     - type: FlashSoundSuppression
     - type: ShowJobIcons
     - type: ShowMindShieldIcons
     - type: ShowCriminalRecordIcons
     - type: ShowContrabandDetails
+  - type: ExclusiveGasTank
 
 # resprite of the standard mantle with a medhud.
 - type: entity

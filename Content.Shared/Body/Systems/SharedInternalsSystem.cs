@@ -9,6 +9,7 @@ using Content.Shared.Internals;
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
+using Content.Shared._Omu.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.Utility;
 
@@ -267,6 +268,29 @@ public abstract class SharedInternalsSystem : EntitySystem
         if (!Resolve(user, ref user.Comp2, ref user.Comp3))
             return null;
 
+        // Omu: exclusive tanks (e.g. a mantle that is both mask and tank) take absolute priority.
+        // If any breath tool has ExclusiveGasTankComponent, only that tool's tank may be used —
+        // never fall through to back/suit-storage/hand tanks.
+        if (TryComp<InternalsComponent>(user.Owner, out var internalsComp))
+        {
+            var hasExclusiveTool = false;
+            foreach (var breathTool in internalsComp.BreathTools)
+            {
+                if (!HasComp<ExclusiveGasTankComponent>(breathTool))
+                    continue;
+
+                hasExclusiveTool = true;
+                if (TryComp<GasTankComponent>(breathTool, out var exclusiveTank) &&
+                    _gasTank.CanConnectToInternals((breathTool, exclusiveTank)))
+                {
+                    return (breathTool, exclusiveTank);
+                }
+            }
+
+            if (hasExclusiveTool)
+                return null;
+        }
+
         if (_inventory.TryGetSlotEntity(user, "back", out var backEntity, user.Comp2, user.Comp3) &&
             TryComp<GasTankComponent>(backEntity, out var backGasTank) &&
             _gasTank.CanConnectToInternals((backEntity.Value, backGasTank)))
@@ -283,7 +307,8 @@ public abstract class SharedInternalsSystem : EntitySystem
 
         foreach (var item in _inventory.GetHandOrInventoryEntities((user.Owner, user.Comp1, user.Comp2)))
         {
-            if (TryComp(item, out gasTank) && _gasTank.CanConnectToInternals((item, gasTank)))
+            if (TryComp(item, out gasTank) &&
+                _gasTank.CanConnectToInternals((item, gasTank)))
                 return (item, gasTank);
         }
 
