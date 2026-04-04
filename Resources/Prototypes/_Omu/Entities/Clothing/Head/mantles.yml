@@ -218,7 +218,38 @@
     energy: 0.45 # lower energy, so that it's not too distracting outside of salvage operations.
     offset: 0,0.2
     color: "#CCFFCC"
-
+    
+# resprite of the Security mantle for the Head of Security
+- type: entity
+  id: ClothingCyberneticBeastMantleHeadofSecurity
+  parent: [ClothingCyberneticBeastMantleSecurity, BaseSecurityContraband]
+  name: beast's head of security mantle
+  description: A refined mantle that gives the bearer a notable air of authority.
+  components:
+  - type: Sprite
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    state: icon-hos
+  - type: Clothing
+    sprite: _Omu/Clothing/Head/mantle.rsi
+    clothingVisuals:
+      head:
+      - state: helmet-hos
+      - state: eyes-hos
+        shader: unshaded
+  - type: ComponentToggler # copied from the parent with some additions.
+    components:
+    - type: VisionCorrection
+      correctionPower: 16
+    - type: NightVision
+      isEquipment: true
+      color: "#CCFFCC"
+    - type: FlashImmunity
+    - type: FlashSoundSuppression
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+    - type: ShowContrabandDetails
+    
 # resprite of the standard mantle with a sechud.
 - type: entity
   id: ClothingCyberneticBeastMantleSecurity
