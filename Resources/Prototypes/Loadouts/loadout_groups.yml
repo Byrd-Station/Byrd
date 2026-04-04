@@ -838,6 +838,7 @@
   loadouts:
   - MimeSuspendersRed
   - MimeSuspendersBlack
+  - MimeFoamSabre # DeltaV - Add foam sabre to the mime's loadout.
 
 - type: loadoutGroup
   id: SurvivalMime
@@ -965,6 +966,7 @@
   loadouts:
   - CargoTechnicianJumpsuit
   - CargoTechnicianJumpskirt
+  - CargoTechnicianOveralls #Goob
   # OmuStation Start
   - CargoTechnicianSweater
   - CargoTechnicianSweaterSkirt
@@ -1215,7 +1217,9 @@
   name: loadout-group-research-director-jumpsuit
   loadouts:
   - ResearchDirectorJumpsuit
+  - ResearchDirectorJumpsuitAlt # goob
   - ResearchDirectorJumpskirt
+  - ResearchDirectorJumpskirtAlt # goob
   - ResearchDirectorMJ # goob
   - RDSummerShirt # goob
 
@@ -1419,6 +1423,7 @@
   - SeniorOfficerJumpsuit
   - SeniorOfficerJumpskirt
   - TrooperUniform
+  - VeteranOfficerBlackJumpsuit # Goobstation
   - BlackRedUniform # OmuStation Addon
   - SecurityJumpsuitBlueDV # Omu
   - SecurityJumpskirtBlueDV # Omu
@@ -1451,6 +1456,7 @@
   - ArmorVestSlim
   - SecurityOfficerWintercoat
   - WinterCoatSeniorSecArmored # Goobstation
+  - VeteranOfficerArmor # Goobstation
   - WinterCoatSecSweaterDV # Omu
   - WinterCoatSecCoatDV # Omu
   - WinterGreatCoatSecCoatDV # Omu
