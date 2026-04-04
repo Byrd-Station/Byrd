@@ -3049,3 +3049,17 @@ Entries:
       message: Upstream merge from goob, check goob changelog ingame for more details
   id: 390
   time: '2026-04-02T03:34:55.0000000+00:00'
+- author: ishkab
+  changes:
+    - type: Fix
+      message: >-
+        item "beast's security mantle" now properly allows access to the "set
+        wanted status" UI
+  id: 391
+  time: '2026-04-03T03:08:28.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Tweak
+      message: Grognard now deals 12 damage on OFF mode
+  id: 392
+  time: '2026-04-04T03:32:22.0000000+00:00'
