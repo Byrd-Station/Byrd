@@ -3101,3 +3101,9 @@ Entries:
       message: Fixed Diona being immune to the slowdown caused by being prone.
   id: 397
   time: '2026-04-04T21:43:46.0000000+00:00'
+- author: Anui-ElXx
+  changes:
+    - type: Tweak
+      message: Changed "breath-in-a-fart" emote name to "reverse fart"
+  id: 398
+  time: '2026-04-04T23:11:14.0000000+00:00'
