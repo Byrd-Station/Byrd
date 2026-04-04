@@ -2895,3 +2895,209 @@ Entries:
       message: Custom clothing for the sergeant role!
   id: 370
   time: '2026-03-26T19:07:24.0000000+00:00'
+- author: Redrover1760
+  changes:
+    - type: Tweak
+      message: >-
+        Dartboards have enough flat pierce armor to be no longer broken by dart
+        throws.
+  id: 371
+  time: '2026-03-27T22:10:37.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Add
+      message: Added (disciplinary) belts! Check the sergeant loadout :)
+  id: 372
+  time: '2026-03-27T22:40:32.0000000+00:00'
+- author: Richard Blonski
+  changes:
+    - type: Add
+      message: 'Added: A new default module for medical cyborgs - the Virology Module!'
+  id: 373
+  time: '2026-03-28T06:14:45.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Glacier has been added to the map pool
+    - type: Add
+      message: 'Glacier now has job spawns for Roboticist and Sergeant   '
+    - type: Tweak
+      message: 'Glacier now has proper camera coverage for AI  '
+    - type: Fix
+      message: Fixed glacier having the wrong vents
+    - type: Fix
+      message: Glacier now has a secfab in armory
+    - type: Fix
+      message: Glacier no longer has the wrong suits in armory
+  id: 374
+  time: '2026-03-28T06:37:12.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Remove
+      message: Removed concussive gauntlet voucher.
+    - type: Tweak
+      message: Concussive gauntlet price increased to 4000
+  id: 375
+  time: '2026-03-28T17:45:09.0000000+00:00'
+- author: Dishwasher0
+  changes:
+    - type: Add
+      message: Sergeant is now mapped go larp
+    - type: Tweak
+      message: Salv shuttle control is now mapped
+  id: 376
+  time: '2026-03-29T15:10:53.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: IPCs now take ion damage from EMPs
+  id: 377
+  time: '2026-03-29T19:20:16.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added Shipyard functionality, to be mapped at a later date.
+  id: 378
+  time: '2026-03-29T19:21:25.0000000+00:00'
+- author: Anui-ElXx
+  changes:
+    - type: Remove
+      message: Removes deep-meow from the game
+  id: 379
+  time: '2026-03-29T19:23:42.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Fix
+      message: As sergeant, the cloak no longer spawns on your head.
+  id: 380
+  time: '2026-03-30T05:29:05.0000000+00:00'
+- author: Manni-Marco
+  changes:
+    - type: Tweak
+      message: Changed T8 Consistency's sprites to be less gray and more silver.
+  id: 381
+  time: '2026-03-30T05:32:14.0000000+00:00'
+- author: ANorthAmerican
+  changes:
+    - type: Add
+      message: >-
+        Added winter coats for the Nanotrasen Representative and Administrative
+        Assistant.
+  id: 382
+  time: '2026-03-30T05:37:28.0000000+00:00'
+- author: ArtemisYK
+  changes:
+    - type: Remove
+      message: Commander hardsuit from loneop's uplink
+    - type: Remove
+      message: All mentions and Weaponry of both 8 gauge and 2 gauge shotguns
+    - type: Remove
+      message: SAP-HE rounds from the ammo category for the cobra
+    - type: Tweak
+      message: >-
+        Changed the Advanced Combat Medipen to reduce its maximum volume to 15
+        instead of 40
+    - type: Tweak
+      message: Changes the Contractor Baton in the uplink to be 50TC instead of 35TC
+  id: 383
+  time: '2026-03-30T07:29:33.0000000+00:00'
+- author: ArtemisYK
+  changes:
+    - type: Tweak
+      message: Tweaked the amount of TC Warops provides nukies
+  id: 384
+  time: '2026-03-30T07:30:39.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        Removed leg coverage from secoff greatcoat. Hos and ward greatcoat stats
+        match their other armors now
+    - type: Tweak
+      message: Hos and warden jackets have 45% infect resist now
+  id: 385
+  time: '2026-03-30T08:04:14.0000000+00:00'
+- author: Manni-Marco
+  changes:
+    - type: Add
+      message: Foam sabre added and given to mime and clown
+    - type: Add
+      message: Sharp foam sabre added and given to evil mimes and clowns
+  id: 386
+  time: '2026-03-30T08:05:19.0000000+00:00'
+- author: pinktanuki
+  changes:
+    - type: Fix
+      message: Contraband level from Foam sword sheath
+  id: 387
+  time: '2026-03-31T18:16:40.0000000+00:00'
+- author: pinktanuki
+  changes:
+    - type: Fix
+      message: Fixed Estoc caliber information in uplink.
+  id: 388
+  time: '2026-03-31T18:20:20.0000000+00:00'
+- author: Toaster-Box
+  changes:
+    - type: Fix
+      message: Command mantles are just admin glasses toggled by the trait
+  id: 389
+  time: '2026-04-01T02:56:59.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Upstream merge from goob, check goob changelog ingame for more details
+  id: 390
+  time: '2026-04-02T03:34:55.0000000+00:00'
+- author: ishkab
+  changes:
+    - type: Fix
+      message: >-
+        item "beast's security mantle" now properly allows access to the "set
+        wanted status" UI
+  id: 391
+  time: '2026-04-03T03:08:28.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Tweak
+      message: Grognard now deals 12 damage on OFF mode
+  id: 392
+  time: '2026-04-04T03:32:22.0000000+00:00'
+- author: pinktanuki
+  changes:
+    - type: Fix
+      message: 'Sergeant and Virologist Cyberbeast spawn with there respective mantles '
+  id: 393
+  time: '2026-04-04T06:14:00.0000000+00:00'
+- author: pinktanuki
+  changes:
+    - type: Fix
+      message: 'Sarin gas grenade is now syndicate level contraband '
+  id: 394
+  time: '2026-04-04T06:34:34.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added a new lifeline for events.
+  id: 395
+  time: '2026-04-04T06:56:14.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Add
+      message: 5x75mm Tungsten ammunition (Admeme)
+    - type: Add
+      message: Admeme SMG for the tungsten ammo..!
+    - type: Add
+      message: 9.5mm Hollow Point is back!
+    - type: Tweak
+      message: >-
+        9.5mm hollow point only available on emagged lathes and syndicate
+        uplinks
+  id: 396
+  time: '2026-04-04T19:58:28.0000000+00:00'
+- author: BramvanZijp
+  changes:
+    - type: Fix
+      message: Fixed Diona being immune to the slowdown caused by being prone.
+  id: 397
+  time: '2026-04-04T21:43:46.0000000+00:00'

@@ -75,12 +75,14 @@
         SecurityCadet: ClothingCyberneticBeastMantleSecurity
         SecurityOfficer: ClothingCyberneticBeastMantleSecurity
         Warden: ClothingCyberneticBeastMantleSecurity
+        SecuritySergeant: ClothingCyberneticBeastMantleSecurity
         # med mantle for doctors (and brigmedic, actually corpsman)
         Chemist: ClothingCyberneticBeastMantleMedical
         MedicalDoctor: ClothingCyberneticBeastMantleMedical
         MedicalIntern: ClothingCyberneticBeastMantleMedical
         Paramedic: ClothingCyberneticBeastMantleMedicalParamedic # paramedic mantle variant with internals
         Brigmedic: ClothingCyberneticBeastMantleMedical
+        Virologist: ClothingCyberneticBeastMantleMedical
         # tossup of mantles for command.
         BlueshieldOfficer: ClothingCyberneticBeastMantleBlueshieldOfficer
         Captain: ClothingCyberneticBeastMantleCommand

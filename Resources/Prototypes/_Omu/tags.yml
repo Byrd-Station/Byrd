@@ -24,3 +24,10 @@
 
 - type: Tag
   id: MagazineClipM1Garand
+
+- type: Tag
+  id: CartridgeCaselessTungsten
+
+- type: Tag
+  id: MagazineCaselessTungsten
+
