@@ -192,8 +192,8 @@ public sealed class ResourceSiphonSystem : EntitySystem
     {
         ent.Comp.Active = true;
 
-        if (TryComp<StationAnchorComponent>(ent, out var anchor))
-            _anchor.SetStatus((ent, anchor), true);
+        //if (TryComp<StationAnchorComponent>(ent, out var anchor)) // Omu, disable anchoring
+        //    _anchor.SetStatus((ent, anchor), true);
 
         var coords = _xform.GetWorldPosition(Transform(ent));
         _chat.TrySendInGameICMessage(ent, Loc.GetString("data-siphon-activated"), InGameICChatType.Speak, false);
@@ -207,8 +207,8 @@ public sealed class ResourceSiphonSystem : EntitySystem
             return;
 
         ent.Comp.Active = false;
-        if (TryComp<StationAnchorComponent>(ent, out var anchor))
-            _anchor.SetStatus((ent, anchor), false);
+        //if (TryComp<StationAnchorComponent>(ent, out var anchor)) // Omu, disable anchoring
+        //    _anchor.SetStatus((ent, anchor), false);
 
         _chat.TrySendInGameICMessage(ent, Loc.GetString($"data-siphon-deactivated-{reason}"), InGameICChatType.Speak, false);
 
