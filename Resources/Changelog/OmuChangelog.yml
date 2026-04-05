@@ -3121,3 +3121,11 @@ Entries:
       message: All beast mantles have new sprites! Made by Mariki.
   id: 400
   time: '2026-04-05T06:11:23.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        CBURN dispatch spear range increased to match other spears. Wideswing
+        removed from it for the same reason
+  id: 401
+  time: '2026-04-05T06:12:42.0000000+00:00'
