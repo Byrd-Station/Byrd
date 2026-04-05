@@ -3063,3 +3063,75 @@ Entries:
       message: Grognard now deals 12 damage on OFF mode
   id: 392
   time: '2026-04-04T03:32:22.0000000+00:00'
+- author: pinktanuki
+  changes:
+    - type: Fix
+      message: 'Sergeant and Virologist Cyberbeast spawn with there respective mantles '
+  id: 393
+  time: '2026-04-04T06:14:00.0000000+00:00'
+- author: pinktanuki
+  changes:
+    - type: Fix
+      message: 'Sarin gas grenade is now syndicate level contraband '
+  id: 394
+  time: '2026-04-04T06:34:34.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added a new lifeline for events.
+  id: 395
+  time: '2026-04-04T06:56:14.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Add
+      message: 5x75mm Tungsten ammunition (Admeme)
+    - type: Add
+      message: Admeme SMG for the tungsten ammo..!
+    - type: Add
+      message: 9.5mm Hollow Point is back!
+    - type: Tweak
+      message: >-
+        9.5mm hollow point only available on emagged lathes and syndicate
+        uplinks
+  id: 396
+  time: '2026-04-04T19:58:28.0000000+00:00'
+- author: BramvanZijp
+  changes:
+    - type: Fix
+      message: Fixed Diona being immune to the slowdown caused by being prone.
+  id: 397
+  time: '2026-04-04T21:43:46.0000000+00:00'
+- author: Anui-ElXx
+  changes:
+    - type: Tweak
+      message: Changed "breath-in-a-fart" emote name to "reverse fart"
+  id: 398
+  time: '2026-04-04T23:11:14.0000000+00:00'
+- author: pinktanuki
+  changes:
+    - type: Add
+      message: Redshirt Trait
+  id: 399
+  time: '2026-04-04T23:14:19.0000000+00:00'
+- author: Willzile1
+  changes:
+    - type: Add
+      message: Added CMO, Chemestry, Corpsman, RD, CE, and NTR beast mantles
+    - type: Tweak
+      message: All beast mantles have new sprites! Made by Mariki.
+  id: 400
+  time: '2026-04-05T06:11:23.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        CBURN dispatch spear range increased to match other spears. Wideswing
+        removed from it for the same reason
+  id: 401
+  time: '2026-04-05T06:12:42.0000000+00:00'
+- author: Marikiii
+  changes:
+    - type: Add
+      message: Foam Dart Sniper! Comes with the Foam Force crate!
+  id: 402
+  time: '2026-04-05T06:14:55.0000000+00:00'
