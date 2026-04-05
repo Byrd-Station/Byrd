@@ -43,7 +43,7 @@ public partial class SharedGunSystem
         SubscribeLocalEvent<RevolverAmmoProviderComponent, TakeAmmoEvent>(OnRevolverTakeAmmo);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, GetVerbsEvent<AlternativeVerb>>(OnRevolverVerbs);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, InteractUsingEvent>(OnRevolverInteractUsing);
-        SubscribeLocalEvent<RevolverAmmoProviderComponent, RevolverAmmoBoxFillDoAfterEvent>(OnRevolverAmmoBoxFillDoAfter);
+        SubscribeLocalEvent<RevolverAmmoProviderComponent, RevolverAmmoBoxFillDoAfterEvent>(OnRevolverAmmoBoxFillDoAfter); // Omustation
         SubscribeLocalEvent<RevolverAmmoProviderComponent, GetAmmoCountEvent>(OnRevolverGetAmmoCount);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, UseInHandEvent>(OnRevolverUse);
     }
