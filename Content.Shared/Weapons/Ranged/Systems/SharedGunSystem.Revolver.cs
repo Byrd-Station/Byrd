@@ -74,9 +74,8 @@ public partial class SharedGunSystem
         if (args.Handled)
             return;
 
-        // Start of Omustation change
         // Ammo boxes load one round at a time with a delay, like shotgun loading.
-        if (TryComp<BallisticAmmoProviderComponent>(args.Used, out var ballisticComp) && ballisticComp.MayTransfer)
+        if (TryComp<BallisticAmmoProviderComponent>(args.Used, out var ballisticComp) && ballisticComp.MayTransfer) // Start of Omustation change
         {
             if (!Timing.IsFirstTimePredicted)
                 return;
@@ -100,8 +99,8 @@ public partial class SharedGunSystem
         if (TryRevolverInsert(uid, component, args.Used, args.User))
             args.Handled = true;
     }
-    // Start of Omustation change
-    private void OnRevolverAmmoBoxFillDoAfter(EntityUid revolverUid, RevolverAmmoProviderComponent component, RevolverAmmoBoxFillDoAfterEvent args)
+
+    private void OnRevolverAmmoBoxFillDoAfter(EntityUid revolverUid, RevolverAmmoProviderComponent component, RevolverAmmoBoxFillDoAfterEvent args) // Start of Omustation change
     {
         if (args.Handled || args.Cancelled)
             return;
