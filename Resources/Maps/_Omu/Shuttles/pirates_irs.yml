@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 04/05/2026 16:12:48
-  entityCount: 1339
+  time: 04/05/2026 16:41:28
+  entityCount: 1345
 maps:
 - 1
 grids:
@@ -3600,6 +3600,57 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -3.5,-14.5
       parent: 2
+- proto: CannonBall
+  entities:
+  - uid: 1343
+    components:
+    - type: Transform
+      pos: 8.156659,-5.280769
+      parent: 2
+  - uid: 1344
+    components:
+    - type: Transform
+      pos: 8.437909,-5.301617
+      parent: 2
+  - uid: 1345
+    components:
+    - type: Transform
+      pos: 8.698325,-5.312041
+      parent: 2
+- proto: CannonBallGlassshot
+  entities:
+  - uid: 451
+    components:
+    - type: Transform
+      pos: 8.708742,-5.9478993
+      parent: 2
+  - uid: 452
+    components:
+    - type: Transform
+      pos: 8.437909,-5.895779
+      parent: 2
+  - uid: 458
+    components:
+    - type: Transform
+      pos: 8.125409,-5.9478993
+      parent: 2
+- proto: CannonBallGrapeshot
+  entities:
+  - uid: 1340
+    components:
+    - type: Transform
+      pos: 8.073325,-5.5622144
+      parent: 2
+  - uid: 1341
+    components:
+    - type: Transform
+      pos: 8.437909,-5.5309424
+      parent: 2
+  - uid: 1342
+    components:
+    - type: Transform
+      pos: 8.781659,-5.510094
+      parent: 2
 - proto: CardBoxNanotrasen
   entities:
   - uid: 1245
@@ -6243,20 +6294,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -0.5,7.5
       parent: 2
-- proto: IngotGold
-  entities:
-  - uid: 457
-    components:
-    - type: Transform
-      pos: 9.380279,-5.626394
-      parent: 2
-- proto: IngotSilver
-  entities:
-  - uid: 458
-    components:
-    - type: Transform
-      pos: 9.442779,-5.449311
-      parent: 2
 - proto: Jukebox
   entities:
   - uid: 608
@@ -7471,6 +7508,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 9.5,-5.5
       parent: 2
+  - uid: 500
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 8.5,-5.5
+      parent: 2
   - uid: 579
     components:
     - type: Transform
@@ -7689,23 +7732,6 @@ entities:
     components:
     - type: Transform
       pos: 7.509058,5.4916267
-      parent: 2
-- proto: TreasureDatadiskEncrypted
-  entities:
-  - uid: 500
-    components:
-    - type: Transform
-      pos: 8.485509,-5.499389
-      parent: 2
-  - uid: 501
-    components:
-    - type: Transform
-      pos: 8.370925,-5.738973
-      parent: 2
-  - uid: 502
-    components:
-    - type: Transform
-      pos: 8.662592,-5.770223
       parent: 2
 - proto: VendingMachineCigs
   entities:
@@ -8939,6 +8965,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -0.5,-0.5
       parent: 2
+- proto: WeaponLauncherPirateCannon
+  entities:
+  - uid: 457
+    components:
+    - type: Transform
+      pos: 9.427493,-5.489247
+      parent: 2
 - proto: WeaponPistolN1984
   entities:
   - uid: 503
@@ -9020,6 +9053,18 @@ entities:
       rot: 3.141592653589793 rad
       pos: 8.5,-5.5
       parent: 2
+  - uid: 501
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 7.5,-5.5
+      parent: 2
+  - uid: 502
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 9.5,-5.5
+      parent: 2
 - proto: WindowReinforcedDirectional
   entities:
   - uid: 431
@@ -9055,18 +9100,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 9.5,-2.5
-      parent: 2
-  - uid: 451
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 7.5,-5.5
-      parent: 2
-  - uid: 452
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 9.5,-5.5
       parent: 2
   - uid: 453
     components:
