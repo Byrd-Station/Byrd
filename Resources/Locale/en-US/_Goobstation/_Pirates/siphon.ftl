@@ -13,7 +13,7 @@ pirate-siphon-deactivated-announcement = Data theft signal source has been lost!
 
 pirate-siphon-examine = The siphon has [color=yellow]{$num}[/color] / [color=yellow]{$max_num} spesos[/color] stored.
 
-pirate-siphon-activate-1 = SHUTTLE WILL BE ANCHORED! Confirm action.
+pirate-siphon-activate-1 = Confirm action!
 pirate-siphon-activate-2 = THE ENTIRE SECTOR WILL BE ALERTED!! Confirm action.
 
 pirate-siphon-nosignal = No signals detected.

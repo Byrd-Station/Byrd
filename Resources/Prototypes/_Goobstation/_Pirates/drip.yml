@@ -44,16 +44,16 @@
     lowPressureMultiplier: 1000
 
 - type: entity
-  parent: [ClothingHeadHardsuitBase, ClothingHeadHardsuitWithLightBase] # Omu
+  parent: [ClothingHeadHardsuitBase] # Omu
   id: GoobClothingHeadHelmetHardsuitSpirate
   name: modified EVA helmet
   description: A modified helmet to allow space pirates to intimidate their customers whilst staying safe from the void. Comes with some additional protection.
   components:
   - type: Sprite
-    sprite: _Goobstation/_Pirates/spirate_suit.rsi
-    state: icon_head
+    sprite: _Goobstation/_Pirates/spirate_suit_helmet.rsi
+    state: icon
   - type: Clothing
-    sprite: _Goobstation/_Pirates/spirate_suit.rsi
+    sprite: _Goobstation/_Pirates/spirate_suit_helmet.rsi
   - type: HideLayerClothing
     slots:
     - Hair
@@ -77,10 +77,6 @@
   - type: PressureProtection # Omu
     highPressureMultiplier: 0.225
     lowPressureMultiplier: 1000
-  - type: PointLight # Omu
-    color: "#f3ea9c"
-    radius: 7
-    energy: 3
 
 - type: entity
   id: GoobSuitStorageSpirate

@@ -8998,7 +8998,7 @@ entities:
     - type: Transform
       pos: 7.5,-2.5
       parent: 2
-- proto: WeaponShuttleKineticTarnyx
+- proto: SpawnWeaponShuttleKineticTarnyx
   entities:
   - uid: 974
     components:
