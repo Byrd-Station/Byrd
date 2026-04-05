@@ -238,3 +238,17 @@
   - !type:WeightRequirement # too heavy for uppies
     minimumWeight: 53
     inverted: true
+
+- type: trait
+  id: Redshirt
+  name: trait-redshirt-name
+  description: trait-redshirt-desc
+  category: PhysicalTraits
+  components:
+  - type: NoCrit
+  globalCost: -4
+  requirements:
+    - !type:SpeciesRequirement
+      inverted: true
+      species:
+        - IPC

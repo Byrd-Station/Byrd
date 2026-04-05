@@ -3081,3 +3081,35 @@ Entries:
       message: Added a new lifeline for events.
   id: 395
   time: '2026-04-04T06:56:14.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Add
+      message: 5x75mm Tungsten ammunition (Admeme)
+    - type: Add
+      message: Admeme SMG for the tungsten ammo..!
+    - type: Add
+      message: 9.5mm Hollow Point is back!
+    - type: Tweak
+      message: >-
+        9.5mm hollow point only available on emagged lathes and syndicate
+        uplinks
+  id: 396
+  time: '2026-04-04T19:58:28.0000000+00:00'
+- author: BramvanZijp
+  changes:
+    - type: Fix
+      message: Fixed Diona being immune to the slowdown caused by being prone.
+  id: 397
+  time: '2026-04-04T21:43:46.0000000+00:00'
+- author: Anui-ElXx
+  changes:
+    - type: Tweak
+      message: Changed "breath-in-a-fart" emote name to "reverse fart"
+  id: 398
+  time: '2026-04-04T23:11:14.0000000+00:00'
+- author: pinktanuki
+  changes:
+    - type: Add
+      message: Redshirt Trait
+  id: 399
+  time: '2026-04-04T23:14:19.0000000+00:00'
