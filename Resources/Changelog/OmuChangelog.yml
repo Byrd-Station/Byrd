@@ -3177,3 +3177,13 @@ Entries:
       message: made the code a little more less hardcoded.
   id: 404
   time: '2026-04-06T19:11:22.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Add
+      message: >-
+        Custodii Vitellus - A deathsquad-level admeme bodyguard role for Central
+        Command events
+    - type: Add
+      message: Blackiron slug ammo, railgun and modsuit for the new role
+  id: 405
+  time: '2026-04-06T20:53:20.0000000+00:00'
