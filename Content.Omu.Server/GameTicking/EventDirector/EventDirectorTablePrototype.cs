@@ -3,7 +3,7 @@
 
 using Robust.Shared.Prototypes;
 
-namespace Content.Omu.Shared.GameTicking.EventDirector;
+namespace Content.Omu.Server.GameTicking.EventDirector;
 
 /// <summary>
 /// A single roll table used by the event director.

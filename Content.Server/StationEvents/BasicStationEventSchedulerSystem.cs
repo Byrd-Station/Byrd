@@ -61,7 +61,9 @@ namespace Content.Server.StationEvents
         {
             base.Update(frameTime);
 
-            if (_cfg.GetCVar(CCVars.EventDirectorEnabled))
+            var schedulerMode = _cfg.GetCVar(CCVars.EventSchedulerMode);
+            if (_cfg.GetCVar(CCVars.EventDirectorEnabled) ||
+                !string.Equals(schedulerMode, CCVars.EventSchedulerModes.Legacy, StringComparison.OrdinalIgnoreCase))
                 return;
 
             if (!_event.EventsEnabled)

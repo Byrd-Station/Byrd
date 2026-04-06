@@ -1,8 +1,9 @@
 using System.Linq;
 using Content.Server.Administration;
 using Content.Omu.Server.GameTicking.EventDirector;
-using Content.Omu.Shared.GameTicking.EventDirector;
+using Content.Shared.CCVar;
 using Content.Shared.Administration;
+using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
@@ -17,12 +18,13 @@ namespace Content.Omu.Server.Administration.Commands;
 public sealed class EventDirectorCommand : IConsoleCommand
 {
     [Dependency] private readonly IEntitySystemManager _entitySystems = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     private EventDirectorSystem Director => _entitySystems.GetEntitySystem<EventDirectorSystem>();
 
     public string Command => "eventdirector";
     public string Description => "Inspect and control Omu's event director.";
-    public string Help => "eventdirector status | history | list <roundstart|minor|midround|timer> | roll <roundstart|minor|midround|timer> | fire <ruleId> | setconfig <configId> | pause | resume";
+    public string Help => "eventdirector status | history | scheduler | setscheduler <legacy|secretplus|event-director> | list <roundstart|minor|midround|timer> | roll <roundstart|minor|midround|timer> | fire <ruleId> | setconfig <configId> | pause | resume";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)
     {
@@ -49,6 +51,30 @@ public sealed class EventDirectorCommand : IConsoleCommand
                 {
                     shell.WriteLine($"[{time:hh\\:mm\\:ss}] {rule} ({table})");
                 }
+                return;
+
+            case "scheduler":
+                shell.WriteLine($"active scheduler mode: {_cfg.GetCVar(CCVars.EventSchedulerMode)}");
+                shell.WriteLine("recommended: change scheduler in lobby / before the next round for a clean handoff.");
+                return;
+
+            case "setscheduler":
+                if (args.Length < 2)
+                {
+                    shell.WriteError("Usage: eventdirector setscheduler <legacy|secretplus|event-director>");
+                    return;
+                }
+
+                var schedulerMode = args[1].ToLowerInvariant();
+                if (schedulerMode is not (CCVars.EventSchedulerModes.Legacy or CCVars.EventSchedulerModes.SecretPlus or CCVars.EventSchedulerModes.EventDirector))
+                {
+                    shell.WriteError($"Unknown scheduler mode '{args[1]}'. Use: legacy, secretplus, event-director.");
+                    return;
+                }
+
+                _cfg.SetCVar(CCVars.EventSchedulerMode, schedulerMode);
+                shell.WriteLine($"Scheduler mode set to '{schedulerMode}'.");
+                shell.WriteLine("recommended: restart the round so the next scheduler takes over cleanly from round start.");
                 return;
 
             case "list":
@@ -123,6 +149,8 @@ public sealed class EventDirectorCommand : IConsoleCommand
                 {
                     new CompletionOption("status"),
                     new CompletionOption("history"),
+                    new CompletionOption("scheduler"),
+                    new CompletionOption("setscheduler"),
                     new CompletionOption("list"),
                     new CompletionOption("roll"),
                     new CompletionOption("fire"),
@@ -144,6 +172,18 @@ public sealed class EventDirectorCommand : IConsoleCommand
                     new CompletionOption("timer"),
                 },
                 "<table>");
+        }
+
+        if (args.Length == 2 && args[0].Equals("setscheduler", StringComparison.OrdinalIgnoreCase))
+        {
+            return CompletionResult.FromHintOptions(
+                new[]
+                {
+                    new CompletionOption(CCVars.EventSchedulerModes.Legacy),
+                    new CompletionOption(CCVars.EventSchedulerModes.SecretPlus),
+                    new CompletionOption(CCVars.EventSchedulerModes.EventDirector),
+                },
+                "<mode>");
         }
 
         if (args.Length == 2 && args[0].Equals("setconfig", StringComparison.OrdinalIgnoreCase))

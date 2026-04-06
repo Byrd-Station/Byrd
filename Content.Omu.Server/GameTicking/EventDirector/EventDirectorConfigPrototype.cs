@@ -3,7 +3,7 @@
 
 using Robust.Shared.Prototypes;
 
-namespace Content.Omu.Shared.GameTicking.EventDirector;
+namespace Content.Omu.Server.GameTicking.EventDirector;
 
 // this prototype defines the full pacing schedule for a single director configuration.
 // everything here is data-driven so maintainers can tune timing and tables without touching c# code.
@@ -32,7 +32,7 @@ public sealed partial class EventDirectorConfigPrototype : IPrototype
     public ProtoId<EventDirectorTablePrototype> MidroundTable;
 
     // rolled for environmental and world events (gas leaks, ion storms, solar flares, etc.)
-    // timer rolls and minor rolls share the same loop — see EventDirectorSystem for the sequence.
+    // timer rolls and minor rolls share the same loop - see EventDirectorSystem for the sequence.
     [DataField(required: true)]
     public ProtoId<EventDirectorTablePrototype> TimerTable;
 

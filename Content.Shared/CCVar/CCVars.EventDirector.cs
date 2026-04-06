@@ -7,6 +7,13 @@ namespace Content.Shared.CCVar;
 
 public sealed partial class CCVars
 {
+    public static class EventSchedulerModes
+    {
+        public const string Legacy = "legacy";
+        public const string SecretPlus = "secretplus";
+        public const string EventDirector = "event-director";
+    }
+
     /// <summary>
     ///     Enables Omu's event director. when true, BasicStationEventScheduler and
     ///     RampingStationEventScheduler yield so the director is the only active scheduler.
@@ -14,6 +21,14 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool>
         EventDirectorEnabled = CVarDef.Create("event_director.enabled", false, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Selects which scheduler owns structured event pacing for the round.
+    ///     legacy keeps existing behaviour, secretplus explicitly prefers SecretPlus,
+    ///     event-director explicitly prefers Omu Event Director.
+    /// </summary>
+    public static readonly CVarDef<string>
+        EventSchedulerMode = CVarDef.Create("event_scheduler.mode", EventSchedulerModes.Legacy, CVar.SERVERONLY);
 
     /// <summary>
     ///     Selects which eventDirectorConfig prototype drives the round.

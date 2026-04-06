@@ -19,7 +19,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Content.Omu.Shared.GameTicking.EventDirector;
+using Content.Omu.Server.GameTicking.EventDirector;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
 using Content.Shared.CCVar;
@@ -135,7 +135,9 @@ public sealed class EventDirectorSystem : EntitySystem
 
     // --- public api used by the admin console command ---
 
-    public bool Enabled => _cfg.GetCVar(CCVars.EventDirectorEnabled);
+    public bool Enabled =>
+        _cfg.GetCVar(CCVars.EventDirectorEnabled) ||
+        string.Equals(_cfg.GetCVar(CCVars.EventSchedulerMode), CCVars.EventSchedulerModes.EventDirector, StringComparison.OrdinalIgnoreCase);
     public new bool IsPaused => _paused;
     public bool StartedThisRound => _startedThisRound;
     public TimeSpan? NextLoopFireAt => _nextLoopFireAt;
