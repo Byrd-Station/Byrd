@@ -146,7 +146,7 @@
     - type: EyeProtection
     - type: FireProtection
       reduction: 0.2
-      
+
 # variant of the engineering mantle for chief engineer. Same stats as the hardsuit helmet, they are practically glued into the things anyway.
 - type: entity
   id: ClothingCyberneticBeastMantleWorkChiefEngineering
@@ -194,7 +194,7 @@
       color: "#CCFFCC"
     - type: BreathMask
 
-          
+
 # resprite of the work mantle for salvagers in particular.
 - type: entity
   id: ClothingCyberneticBeastMantleWorkSalvage
@@ -218,7 +218,7 @@
     energy: 0.45 # lower energy, so that it's not too distracting outside of salvage operations.
     offset: 0,0.2
     color: "#CCFFCC"
-    
+
 # resprite of the Security mantle for the Head of Security
 - type: entity
   id: ClothingCyberneticBeastMantleHeadofSecurity
@@ -249,7 +249,7 @@
     - type: ShowMindShieldIcons
     - type: ShowCriminalRecordIcons
     - type: ShowContrabandDetails
-    
+
 # resprite of the standard mantle with a sechud.
 - type: entity
   id: ClothingCyberneticBeastMantleSecurity
@@ -261,12 +261,12 @@
     delays:
       gasTank:
         length: 1.0
-#  - type: ActivatableUI
-#    key: enum.SharedGasTankUiKey.Key
-#  - type: UserInterface
-#    interfaces:
-#      enum.SharedGasTankUiKey.Key:
-#        type: GasTankBoundUserInterface
+  - type: ActivatableUI
+    key: enum.SharedGasTankUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.SharedGasTankUiKey.Key:
+        type: GasTankBoundUserInterface
   - type: GasTank
     outputPressure: 21.3
     air:
@@ -275,7 +275,7 @@
         - 0.270782035 # oxygen
       temperature: 293.15
     tankLowPressure: 30.0
-  
+
 
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
