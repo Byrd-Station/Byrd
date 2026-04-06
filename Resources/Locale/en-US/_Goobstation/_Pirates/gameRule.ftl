@@ -11,7 +11,7 @@ antag-pirate-briefing =
     Get as much loot as possible!
 
     By activating the Data Siphon you will start draining the cargo department from their credits.
-    Beware, this will alert and anger the entire crew, so get ready for a big fight!
+    Beware, this will anchor your ship, alert and anger the entire crew, so get ready for a big fight!
 
 antag-pirate-briefing-short =
     You are a pirate.
