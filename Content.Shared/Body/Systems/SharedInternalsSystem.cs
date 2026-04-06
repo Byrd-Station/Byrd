@@ -9,7 +9,7 @@ using Content.Shared.Internals;
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
-using Content.Shared._Omu.Components;
+using Content.Shared._Omu.Components; // Omustation
 using Robust.Shared.Containers;
 using Robust.Shared.Utility;
 
