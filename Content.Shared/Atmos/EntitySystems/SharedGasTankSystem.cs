@@ -128,7 +128,6 @@ public abstract class SharedGasTankSystem : EntitySystem
         // we can connect one of the multiple to internals
         // ...return true in either case
         catch(InvalidOperationException) { return true; }
-        catch(ArgumentNullException    ) { return true; }
         // End of Omustation change
     }
 

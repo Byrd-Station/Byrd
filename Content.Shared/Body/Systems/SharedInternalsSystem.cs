@@ -292,7 +292,6 @@ public abstract class SharedInternalsSystem : EntitySystem
             // then the method should continue searching for another gas tank to return
             // instead of failing out in some way
             catch(InvalidOperationException) {}
-            catch(ArgumentNullException) {}
         } // End of Omustation change
 
         if (_inventory.TryGetSlotEntity(user, "back", out var backEntity, user.Comp2, user.Comp3) &&
