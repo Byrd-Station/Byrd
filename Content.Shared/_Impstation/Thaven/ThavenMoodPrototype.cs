@@ -28,7 +28,6 @@ public partial class ThavenMood
     public string MoodDesc = string.Empty;
 
     [DataField(serverOnly: true, customTypeSerializer: typeof(PrototypeIdHashSetSerializer<ThavenMoodPrototype>))]
-    [ViewVariables(VVAccess.ReadOnly)]
     public HashSet<string> Conflicts = new();
 
     /// <summary>

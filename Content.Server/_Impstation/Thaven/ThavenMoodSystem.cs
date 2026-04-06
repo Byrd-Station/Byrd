@@ -413,8 +413,6 @@ var datasetProto = _proto.Index(GetMoodConfig(comp).RandomMoodDataset).Pick();
         if (!args.Handled)
             return;
 
-        ent.Comp.WildMoodEmagCount++;
-
         var config = GetMoodConfig(ent.Comp);
         var doAfterArgs = new DoAfterArgs(EntityManager, args.UserUid, TimeSpan.FromSeconds(config.EmagDoAfterSeconds), new ThavenEmagDoAfterEvent(), ent.Owner, target: ent.Owner, used: args.EmagUid)
         {

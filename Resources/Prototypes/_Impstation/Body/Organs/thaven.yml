@@ -150,7 +150,7 @@
     # gas that makes them feel drunk when breathed
     intoxicatingGas: Frezon
     # minimum share of that gas in the breath mix before it does anything
-    intoxicatingGasMinRatio: 0.1
+    intoxicatingGasMinRatio: 0.05
     # how much drunk time the gas gives based on its ratio in the mix
     intoxicatingGasDurationScale: 60
     # minimum drunk time applied per breath when the gas is present

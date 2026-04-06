@@ -23,6 +23,8 @@ public sealed class ThavenBreatherSystem : EntitySystem
     [Dependency] private readonly RespiratorSystem _respirator = default!;
     [Dependency] private readonly SharedDrunkSystem _drunk = default!;
 
+    private const float MinIntoxicatingGasMoles = 0.01f;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -59,17 +61,25 @@ public sealed class ThavenBreatherSystem : EntitySystem
         var discardedGas = new GasMixture(args.Gas.Volume);
         _respirator.RemoveGasFromBody((ent.Owner, body), discardedGas);
 
-        if (args.Gas.Pressure < lung.Comp1.MinPressure)
-            return; // Not enough pressure - breathing fails, suffocation applies normally.
+        var hasBreathPressure = args.Gas.Pressure >= lung.Comp1.MinPressure;
+        if (hasBreathPressure)
+        {
+            _respirator.UpdateSaturation(ent.Owner, lung.Comp1.SaturationPerBreath, ent.Comp);
+            args.Succeeded = true;
+        }
 
-        _respirator.UpdateSaturation(ent.Owner, lung.Comp1.SaturationPerBreath, ent.Comp);
-        args.Succeeded = true;
-
+        // Use the gas mixture that was actually inhaled so internals, masks, and
+        // other redirected breathing sources still apply Frezon intoxication.
         var totalMoles = args.Gas.TotalMoles;
         if (totalMoles <= 0f)
             return;
 
-        var intoxicatingGasRatio = args.Gas.GetMoles(lung.Comp1.IntoxicatingGas) / totalMoles;
+        var intoxicatingGasMoles = args.Gas.GetMoles(lung.Comp1.IntoxicatingGas);
+        var intoxicatingGasRatio = intoxicatingGasMoles / totalMoles;
+
+        if (intoxicatingGasMoles < MinIntoxicatingGasMoles)
+            return;
+
         if (intoxicatingGasRatio < lung.Comp1.IntoxicatingGasMinRatio)
             return;
 
