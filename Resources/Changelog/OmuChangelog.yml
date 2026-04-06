@@ -3113,3 +3113,33 @@ Entries:
       message: Redshirt Trait
   id: 399
   time: '2026-04-04T23:14:19.0000000+00:00'
+- author: Willzile1
+  changes:
+    - type: Add
+      message: Added CMO, Chemestry, Corpsman, RD, CE, and NTR beast mantles
+    - type: Tweak
+      message: All beast mantles have new sprites! Made by Mariki.
+  id: 400
+  time: '2026-04-05T06:11:23.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        CBURN dispatch spear range increased to match other spears. Wideswing
+        removed from it for the same reason
+  id: 401
+  time: '2026-04-05T06:12:42.0000000+00:00'
+- author: Marikiii
+  changes:
+    - type: Add
+      message: Foam Dart Sniper! Comes with the Foam Force crate!
+  id: 402
+  time: '2026-04-05T06:14:55.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Ported Solarian Navy Deserters as a new midround from EE
+    - type: Add
+      message: Ported Solarian modsuits for humans in the traitor uplink.
+  id: 403
+  time: '2026-04-05T22:41:36.0000000+00:00'
