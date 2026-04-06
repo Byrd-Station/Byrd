@@ -87,12 +87,12 @@ public partial class SharedGunSystem
                 return;
             }
 
-            args.Handled = true;
-            _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, ballisticComp.FillDelay, new RevolverAmmoBoxFillDoAfterEvent(), used: args.Used, target: uid, eventTarget: uid)
+            if (_doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, ballisticComp.FillDelay, new RevolverAmmoBoxFillDoAfterEvent(), used: args.Used, target: uid, eventTarget: uid)
             {
                 BreakOnDamage = false,
                 NeedHand = true,
-            });
+            }))
+                args.Handled = true;
             return;
         } // End of Omustation change
 
@@ -148,6 +148,8 @@ public partial class SharedGunSystem
             Popup(Loc.GetString("gun-ballistic-transfer-invalid",
                 ("ammoEntity", ent),
                 ("targetEntity", revolverUid)), revolverUid, args.User);
+            if (IsClientSide(ent))
+                Del(ent);
             return;
         }
 
@@ -160,7 +162,10 @@ public partial class SharedGunSystem
         Audio.PlayPredicted(component.SoundInsert, revolverUid, args.User);
         Popup(Loc.GetString("gun-revolver-insert"), revolverUid, args.User);
 
+        args.Handled = true;
         args.Repeat = GetRevolverCount(component) < component.Capacity && GetBallisticShots(ballisticComp) > 0;
+        if (IsClientSide(ent))
+            Del(ent);
     } // End of Omustation change
 
     private void OnRevolverGetState(EntityUid uid, RevolverAmmoProviderComponent component, ref ComponentGetState args)
