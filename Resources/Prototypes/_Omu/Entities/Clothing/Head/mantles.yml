@@ -275,8 +275,6 @@
         - 0.270782035 # oxygen
       temperature: 293.15
     tankLowPressure: 30.0
-
-
   - type: Sprite
     sprite: _Omu/Clothing/Head/mantle.rsi
     state: icon-security
