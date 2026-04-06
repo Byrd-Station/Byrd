@@ -1,3 +1,4 @@
+using System.Linq; // omu
 using Content.Shared.Actions;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Body.Systems;
@@ -119,13 +120,16 @@ public abstract class SharedGasTankSystem : EntitySystem
             return false;
 
         // Whitelist: if the wearer has any exclusive breath tool, only that same entity may connect as a tank.
-        foreach (var breathTool in internalsComp.BreathTools)
-        {
-            if (HasComp<ExclusiveGasTankComponent>(breathTool))
-                return ent.Owner == breathTool;
-        }
-
-        return true; // End of Omustation change
+        try { return internalsComp.BreathTools.Single(HasComp<ExclusiveGasTankComponent>) == ent.Owner; }
+        // if either of these exceptions get thrown it means that we couldn't find a *SINGLE* ExclusiveGasTank
+        // that means that there's either 0 or more than one of them
+        // in either case, we're already guarded against having *no* breathing tools
+        // and if there are more than one `ExclusiveGasTank`s -- WHICH THERE SHOULDN'T BE --
+        // we can connect one of the multiple to internals
+        // ...return true in either case
+        catch(InvalidOperationException) { return true; }
+        catch(ArgumentNullException    ) { return true; }
+        // End of Omustation change
     }
 
     public bool ConnectToInternals(Entity<GasTankComponent> ent, EntityUid? user = null)

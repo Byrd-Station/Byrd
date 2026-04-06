@@ -1,3 +1,4 @@
+using System.Linq; //omu
 using Content.Shared.Alert;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.EntitySystems;
@@ -273,22 +274,25 @@ public abstract class SharedInternalsSystem : EntitySystem
         // never fall through to back/suit-storage/hand tanks.
         if (TryComp<InternalsComponent>(user.Owner, out var internalsComp)) // Start of Omustation change
         {
-            bool hasExclusiveTool = false;
-            foreach (var breathTool in internalsComp.BreathTools)
-            {
-                if (!HasComp<ExclusiveGasTankComponent>(breathTool))
-                    continue;
+            // explicitly defining the type of comp *here*
+            // allows the compiler to infer the typing of the TryComp call on line 286
+            GasTankComponent? comp = null;
 
-                hasExclusiveTool = true;
-                if (TryComp<GasTankComponent>(breathTool, out var exclusiveTank) &&
-                    _gasTank.CanConnectToInternals((breathTool, exclusiveTank)))
-                {
-                    return (breathTool, exclusiveTank);
-                }
+            try {
+                // find the singular ExclusiveGasTank, throw exceptions if we don't find it
+                EntityUid ent = internalsComp.BreathTools.Single(HasComp<ExclusiveGasTankComponent>);
+
+                // if that gas tank can connect to internals via the GasTankComponent, return it
+                if (TryComp(ent, out comp) && _gasTank.CanConnectToInternals((ent, comp)))
+                    return (ent, comp!); // found an ExclusiveGasTank, it can connect to internals, we should use it
+                else
+                    return null; // found an ExclusiveGasTank but can't connect it to internals
             }
-
-            if (hasExclusiveTool)
-                return null;
+            // Catch these but don't handle them because if we don't find an ExclusiveGasTank
+            // then the method should continue searching for another gas tank to return
+            // instead of failing out in some way
+            catch(InvalidOperationException) {}
+            catch(ArgumentNullException) {}
         } // End of Omustation change
 
         if (_inventory.TryGetSlotEntity(user, "back", out var backEntity, user.Comp2, user.Comp3) &&
