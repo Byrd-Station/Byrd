@@ -6,7 +6,7 @@ using Content.Shared.Timing;
 using Content.Shared.Toggleable;
 using Content.Shared.UserInterface;
 using Content.Shared.Verbs;
-using Content.Shared._Omu.Components;
+using Content.Shared._Omu.Components; // Omustation
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using InternalsComponent = Content.Shared.Body.Components.InternalsComponent;
@@ -115,7 +115,7 @@ public abstract class SharedGasTankSystem : EntitySystem
     public bool CanConnectToInternals(Entity<GasTankComponent> ent)
     {
         TryGetInternalsComp(ent, out _, out var internalsComp, ent.Comp.User);
-        if (internalsComp == null || internalsComp.BreathTools.Count == 0 || ent.Comp.IsValveOpen)
+        if (internalsComp == null || internalsComp.BreathTools.Count == 0 || ent.Comp.IsValveOpen) // Start of Omustation change
             return false;
 
         // Whitelist: if the wearer has any exclusive breath tool, only that same entity may connect as a tank.
@@ -125,7 +125,7 @@ public abstract class SharedGasTankSystem : EntitySystem
                 return ent.Owner == breathTool;
         }
 
-        return true;
+        return true; // End of Omustation change
     }
 
     public bool ConnectToInternals(Entity<GasTankComponent> ent, EntityUid? user = null)

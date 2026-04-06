@@ -271,7 +271,7 @@ public abstract class SharedInternalsSystem : EntitySystem
         // Omu: exclusive tanks (e.g. a mantle that is both mask and tank) take absolute priority.
         // If any breath tool has ExclusiveGasTankComponent, only that tool's tank may be used —
         // never fall through to back/suit-storage/hand tanks.
-        if (TryComp<InternalsComponent>(user.Owner, out var internalsComp))
+        if (TryComp<InternalsComponent>(user.Owner, out var internalsComp)) // Start of Omustation change
         {
             var hasExclusiveTool = false;
             foreach (var breathTool in internalsComp.BreathTools)
@@ -289,7 +289,7 @@ public abstract class SharedInternalsSystem : EntitySystem
 
             if (hasExclusiveTool)
                 return null;
-        }
+        } // End of Omustation change
 
         if (_inventory.TryGetSlotEntity(user, "back", out var backEntity, user.Comp2, user.Comp3) &&
             TryComp<GasTankComponent>(backEntity, out var backGasTank) &&
@@ -307,8 +307,7 @@ public abstract class SharedInternalsSystem : EntitySystem
 
         foreach (var item in _inventory.GetHandOrInventoryEntities((user.Owner, user.Comp1, user.Comp2)))
         {
-            if (TryComp(item, out gasTank) &&
-                _gasTank.CanConnectToInternals((item, gasTank)))
+            if (TryComp(item, out gasTank) && _gasTank.CanConnectToInternals((item, gasTank)))
                 return (item, gasTank);
         }
 
