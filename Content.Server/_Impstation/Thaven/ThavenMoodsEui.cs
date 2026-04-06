@@ -63,7 +63,7 @@ public sealed class ThavenMoodsEui : BaseEui
     private bool IsAllowed()
     {
         var adminData = _adminManager.GetAdminData(Player);
-        if (adminData == null || !adminData.HasFlag(AdminFlags.Moderator))
+        if (adminData == null || !adminData.HasFlag(AdminFlags.Admin))
         {
             _sawmill.Warning($"Player {Player.UserId} tried to open / use thaven moods UI without permission.");
             return false;

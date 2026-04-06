@@ -435,7 +435,7 @@ var datasetProto = _proto.Index(GetMoodConfig(comp).RandomMoodDataset).Pick();
 
     private void AddThavenAdminVerb(Entity<ThavenMoodsComponent> ent, ref GetVerbsEvent<Verb> args)
     {
-        if (!_adminManager.HasAdminFlag(args.User, AdminFlags.Moderator))
+        if (!_adminManager.HasAdminFlag(args.User, AdminFlags.Admin))
             return;
 
         if (!_playerManager.TryGetSessionByEntity(args.User, out var session))
