@@ -236,19 +236,6 @@
       - state: helmet-hos
       - state: eyes-hos
         shader: unshaded
-  - type: ComponentToggler # copied from the parent with some additions.
-    components:
-    - type: VisionCorrection
-      correctionPower: 16
-    - type: NightVision
-      isEquipment: true
-      color: "#CCFFCC"
-    - type: FlashImmunity
-    - type: FlashSoundSuppression
-    - type: ShowJobIcons
-    - type: ShowMindShieldIcons
-    - type: ShowCriminalRecordIcons
-    - type: ShowContrabandDetails
 
 # resprite of the standard mantle with a sechud.
 - type: entity
