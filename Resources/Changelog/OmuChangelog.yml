@@ -3025,3 +3025,171 @@ Entries:
       message: Sharp foam sabre added and given to evil mimes and clowns
   id: 386
   time: '2026-03-30T08:05:19.0000000+00:00'
+- author: pinktanuki
+  changes:
+    - type: Fix
+      message: Contraband level from Foam sword sheath
+  id: 387
+  time: '2026-03-31T18:16:40.0000000+00:00'
+- author: pinktanuki
+  changes:
+    - type: Fix
+      message: Fixed Estoc caliber information in uplink.
+  id: 388
+  time: '2026-03-31T18:20:20.0000000+00:00'
+- author: Toaster-Box
+  changes:
+    - type: Fix
+      message: Command mantles are just admin glasses toggled by the trait
+  id: 389
+  time: '2026-04-01T02:56:59.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Upstream merge from goob, check goob changelog ingame for more details
+  id: 390
+  time: '2026-04-02T03:34:55.0000000+00:00'
+- author: ishkab
+  changes:
+    - type: Fix
+      message: >-
+        item "beast's security mantle" now properly allows access to the "set
+        wanted status" UI
+  id: 391
+  time: '2026-04-03T03:08:28.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Tweak
+      message: Grognard now deals 12 damage on OFF mode
+  id: 392
+  time: '2026-04-04T03:32:22.0000000+00:00'
+- author: pinktanuki
+  changes:
+    - type: Fix
+      message: 'Sergeant and Virologist Cyberbeast spawn with there respective mantles '
+  id: 393
+  time: '2026-04-04T06:14:00.0000000+00:00'
+- author: pinktanuki
+  changes:
+    - type: Fix
+      message: 'Sarin gas grenade is now syndicate level contraband '
+  id: 394
+  time: '2026-04-04T06:34:34.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Added a new lifeline for events.
+  id: 395
+  time: '2026-04-04T06:56:14.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Add
+      message: 5x75mm Tungsten ammunition (Admeme)
+    - type: Add
+      message: Admeme SMG for the tungsten ammo..!
+    - type: Add
+      message: 9.5mm Hollow Point is back!
+    - type: Tweak
+      message: >-
+        9.5mm hollow point only available on emagged lathes and syndicate
+        uplinks
+  id: 396
+  time: '2026-04-04T19:58:28.0000000+00:00'
+- author: BramvanZijp
+  changes:
+    - type: Fix
+      message: Fixed Diona being immune to the slowdown caused by being prone.
+  id: 397
+  time: '2026-04-04T21:43:46.0000000+00:00'
+- author: Anui-ElXx
+  changes:
+    - type: Tweak
+      message: Changed "breath-in-a-fart" emote name to "reverse fart"
+  id: 398
+  time: '2026-04-04T23:11:14.0000000+00:00'
+- author: pinktanuki
+  changes:
+    - type: Add
+      message: Redshirt Trait
+  id: 399
+  time: '2026-04-04T23:14:19.0000000+00:00'
+- author: Willzile1
+  changes:
+    - type: Add
+      message: Added CMO, Chemestry, Corpsman, RD, CE, and NTR beast mantles
+    - type: Tweak
+      message: All beast mantles have new sprites! Made by Mariki.
+  id: 400
+  time: '2026-04-05T06:11:23.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: >-
+        CBURN dispatch spear range increased to match other spears. Wideswing
+        removed from it for the same reason
+  id: 401
+  time: '2026-04-05T06:12:42.0000000+00:00'
+- author: Marikiii
+  changes:
+    - type: Add
+      message: Foam Dart Sniper! Comes with the Foam Force crate!
+  id: 402
+  time: '2026-04-05T06:14:55.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Ported Solarian Navy Deserters as a new midround from EE
+    - type: Add
+      message: Ported Solarian modsuits for humans in the traitor uplink.
+  id: 403
+  time: '2026-04-05T22:41:36.0000000+00:00'
+- author: NEVEC And Plasmamen Work
+  changes:
+    - type: Add
+      message: >-
+        Added the Thaven species port with moods, organs, language, and related
+        content.
+    - type: Add
+      message: Admins can now add/view thaven moods.
+    - type: Add
+      message: emag a thaven will take 1 sec.
+    - type: Add
+      message: Thavens now cant be emmaged if they have mindshield.
+    - type: Add
+      message: Little delay when you try to emmag a thaven
+    - type: Add
+      message: Thavens get drunks smelling freon.
+    - type: Fix
+      message: >-
+        Fixed Thaven breathing so they no longer take normal suffocation damage
+        from breathing.
+    - type: Fix
+      message: >-
+        Improved Thaven equipment rendering by replacing several slot
+        displacements with offsets.
+    - type: Fix
+      message: >-
+        Thavens use pressure-based breathing via ThavenBreatherComponent and
+        should never suffocate from lack of gas. 
+    - type: Fix
+      message: Thaven now not breath in space.
+    - type: Fix
+      message: made the code a little more less hardcoded.
+  id: 404
+  time: '2026-04-06T19:11:22.0000000+00:00'
+- author: Mariki
+  changes:
+    - type: Add
+      message: >-
+        Custodii Vitellus - A deathsquad-level admeme bodyguard role for Central
+        Command events
+    - type: Add
+      message: Blackiron slug ammo, railgun and modsuit for the new role
+  id: 405
+  time: '2026-04-06T20:53:20.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Fix
+      message: Thavens have survival kits now
+  id: 406
+  time: '2026-04-06T22:06:18.0000000+00:00'
