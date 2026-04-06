@@ -250,3 +250,7 @@
       - id: WelderExperimental
       - id: BlueShieldShieldEvilFilled # Goobstation
       - id: DeterrentCaseFilled
+      - id: MagazineCaselessBlackiron
+        amount: 2
+      - id: WeaponSubMachineGunCustodii
+      - id: BSOManual

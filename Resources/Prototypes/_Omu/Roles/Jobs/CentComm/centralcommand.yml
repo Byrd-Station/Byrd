@@ -135,3 +135,5 @@
     pocket2: WeaponRevolverMateba
     belt: ClothingBeltMilitaryWebbingCustodii
     mask: ClothingMaskBandGrey
+  inhand:
+  - WeaponSniperCustodian

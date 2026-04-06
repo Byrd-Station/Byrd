@@ -14,14 +14,15 @@
 - type: entity
   parent: ClothingBeltMilitaryWebbingAsakim
   id: ClothingBeltMilitaryWebbingCustodii
-  suffix: Filled
-  suffix: ADMEME
+  suffix: Filled, ADMEME
   components:
+  - type: Storage
+    grid:
+      - 0,0,6,2
   - type: StorageFill
     contents:
     - id: MedkitCombatFilled
     - id: PyraAutoInjector
-      amount: 2
     - id: PunctAutoInjector
       amount: 2
     - id: AdvancedCombatMedipen
@@ -29,4 +30,5 @@
     - id: CentcommStimpack
       amount: 2
     - id: OmnimedToolDebug
-    - id: SpeedLoaderMatebaAP
+    - id: MagazineCaselessTungsten
+      amount: 4
