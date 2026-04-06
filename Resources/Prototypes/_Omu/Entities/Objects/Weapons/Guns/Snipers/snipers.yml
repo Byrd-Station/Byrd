@@ -72,6 +72,9 @@
     sprite: _Omu/Objects/Fun/Toys/toy_hristov.rsi
   - type: Gun
     fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
     soundEmpty:
