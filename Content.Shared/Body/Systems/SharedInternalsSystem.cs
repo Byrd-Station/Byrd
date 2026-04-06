@@ -273,7 +273,7 @@ public abstract class SharedInternalsSystem : EntitySystem
         // never fall through to back/suit-storage/hand tanks.
         if (TryComp<InternalsComponent>(user.Owner, out var internalsComp)) // Start of Omustation change
         {
-            var hasExclusiveTool = false;
+            bool hasExclusiveTool = false;
             foreach (var breathTool in internalsComp.BreathTools)
             {
                 if (!HasComp<ExclusiveGasTankComponent>(breathTool))
