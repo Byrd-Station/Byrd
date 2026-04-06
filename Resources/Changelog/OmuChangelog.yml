@@ -3135,3 +3135,11 @@ Entries:
       message: Foam Dart Sniper! Comes with the Foam Force crate!
   id: 402
   time: '2026-04-05T06:14:55.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Ported Solarian Navy Deserters as a new midround from EE
+    - type: Add
+      message: Ported Solarian modsuits for humans in the traitor uplink.
+  id: 403
+  time: '2026-04-05T22:41:36.0000000+00:00'
