@@ -926,7 +926,7 @@
 
 #Pirate EVA Suit (Deep Space EVA Suit)
 - type: entity
-  parent: [ClothingHeadHardsuitBase, ClothingHeadHardsuitWithLightBase] # Omu
+  parent: ClothingHeadHardsuitBase
   id: ClothingHeadHelmetHardsuitPirateEVA
   name: deep space EVA helmet
   suffix: Pirate
@@ -947,10 +947,6 @@
         Piercing: 0.7 # Omu, was 0.9
         Heat: 0.4
         Caustic: 0.75
-  - type: PointLight # Omu
-    color: "#f3ea9c"
-    radius: 7
-    energy: 3
 
 #Pirate Captain Hardsuit
 - type: entity
