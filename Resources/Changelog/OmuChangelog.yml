@@ -3187,3 +3187,9 @@ Entries:
       message: Blackiron slug ammo, railgun and modsuit for the new role
   id: 405
   time: '2026-04-06T20:53:20.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Fix
+      message: Thavens have survival kits now
+  id: 406
+  time: '2026-04-06T22:06:18.0000000+00:00'
