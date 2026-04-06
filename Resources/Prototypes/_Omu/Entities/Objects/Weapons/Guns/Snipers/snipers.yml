@@ -57,3 +57,42 @@
   - type: Item  # Goob edit
     size: Large
     storedRotation: 45
+
+- type: entity # Toy sniper
+  name: Foam Force Sniper
+  parent: [BaseWeaponShotgun, BaseGunWieldable]
+  id: WeaponSniperFoam 
+  description: A foam force weapon designed after a syndicate Hristov. Security is going to be so mad...
+  components:
+  - type: Sprite
+    sprite: _Omu/Objects/Fun/Toys/toy_hristov.rsi
+  - type: Clothing
+    sprite: _Omu/Objects/Fun/Toys/toy_hristov.rsi
+  - type: Item
+    sprite: _Omu/Objects/Fun/Toys/toy_hristov.rsi
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+    clumsyProof: true
+  - type: PacifismAllowedGun
+  - type: GunRecoil
+    refreshKnockdown: false
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - BulletFoam
+    capacity: 5
+    proto: BulletFoam
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 2
+    pvsIncrease: 0.8
