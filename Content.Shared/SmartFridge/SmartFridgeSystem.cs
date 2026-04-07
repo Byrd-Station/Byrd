@@ -5,6 +5,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Storage.Components;
+using Content.Shared.UserInterface; // Omustation
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -22,16 +23,21 @@ public sealed class SmartFridgeSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!; // Omustation
 
     public override void Initialize()
     {
         base.Initialize();
 
+        SubscribeLocalEvent<SmartFridgeComponent, ComponentStartup>(OnStartup); // Omustation
         SubscribeLocalEvent<SmartFridgeComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<SmartFridgeComponent, EntRemovedFromContainerMessage>(OnItemRemoved);
 
         SubscribeLocalEvent<SmartFridgeComponent, GetDumpableVerbEvent>(OnGetDumpableVerb);
         SubscribeLocalEvent<SmartFridgeComponent, DumpEvent>(OnDump);
+
+        SubscribeLocalEvent<SmartFridgeComponent, ActivatableUIOpenAttemptEvent>(OnOpenAttempt); // Omustation
+        SubscribeLocalEvent<SmartFridgeComponent, OnAccessOverriderAccessUpdatedEvent>(OnAccessOverriderUpdated); // Omustation
 
         Subs.BuiEvents<SmartFridgeComponent>(SmartFridgeUiKey.Key,
             sub =>
@@ -39,6 +45,21 @@ public sealed class SmartFridgeSystem : EntitySystem
                 sub.Event<SmartFridgeDispenseItemMessage>(OnDispenseItem);
             });
     }
+
+    // Start of Omustation
+    private void OnStartup(Entity<SmartFridgeComponent> ent, ref ComponentStartup args)
+    {
+        if (ent.Comp.Access == null || ent.Comp.Access.Count == 0)
+            return;
+
+        ent.Comp.RequireAccess = true;
+
+        if (!TryComp<AccessReaderComponent>(ent, out var reader))
+            return;
+
+        _accessReader.SetAccesses((ent.Owner, reader), ent.Comp.Access);
+    }
+    // End of Omustation
 
     private bool DoInsert(Entity<SmartFridgeComponent> ent, EntityUid user, IEnumerable<EntityUid> usedItems, bool playSound)
     {
@@ -98,6 +119,9 @@ public sealed class SmartFridgeSystem : EntitySystem
 
     private bool Allowed(Entity<SmartFridgeComponent> machine, EntityUid user)
     {
+        if (!machine.Comp.RequireAccess) // Omustation
+            return true;
+
         if (_accessReader.IsAllowed(user, machine))
             return true;
 
@@ -105,6 +129,23 @@ public sealed class SmartFridgeSystem : EntitySystem
         _audio.PlayPredicted(machine.Comp.SoundDeny, machine, user);
         return false;
     }
+
+    // Start of Omustation
+    private void OnOpenAttempt(Entity<SmartFridgeComponent> ent, ref ActivatableUIOpenAttemptEvent args)
+    {
+        if (!Allowed(ent, args.User))
+            args.Cancel();
+    }
+
+    private void OnAccessOverriderUpdated(Entity<SmartFridgeComponent> ent, ref OnAccessOverriderAccessUpdatedEvent args)
+    {
+        if (!TryComp<AccessReaderComponent>(ent, out var reader))
+            return;
+
+        ent.Comp.RequireAccess = reader.AccessLists.Count > 0;
+        Dirty(ent);
+    }
+    // End of Omustation
 
     private void OnDispenseItem(Entity<SmartFridgeComponent> ent, ref SmartFridgeDispenseItemMessage args)
     {

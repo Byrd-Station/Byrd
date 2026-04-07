@@ -134,5 +134,6 @@
   components:
   - type: SmartFridge
     flavorText: smart-fridge-request-chemistry
+    requireAccess: true # Omustation
   - type: AccessReader
     access: [["Medical"]]
