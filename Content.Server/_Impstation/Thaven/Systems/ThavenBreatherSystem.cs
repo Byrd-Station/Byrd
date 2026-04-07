@@ -1,7 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Goobstation.Shared.Body;
 using Content.Server._Impstation.Thaven.Components;
-using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Shared.Atmos;
@@ -18,7 +17,6 @@ namespace Content.Server._Impstation.Thaven.Systems;
 /// </summary>
 public sealed class ThavenBreatherSystem : EntitySystem
 {
-    [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly RespiratorSystem _respirator = default!;
     [Dependency] private readonly SharedDrunkSystem _drunk = default!;
@@ -98,8 +96,7 @@ public sealed class ThavenBreatherSystem : EntitySystem
         if (!TryGetActiveThavenLung(ent, out var lung))
             return;
 
-        var mixture = _atmosphere.GetContainingMixture(ent.Owner, excite: true);
-        if (mixture != null && mixture.Pressure >= lung.Comp1.MinPressure)
+        if (_respirator.CanMetabolizeInhaledAir((ent.Owner, ent.Comp)))
         {
             args.Cancelled = true;
             return;
