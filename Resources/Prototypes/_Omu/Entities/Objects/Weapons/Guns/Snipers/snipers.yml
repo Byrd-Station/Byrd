@@ -61,7 +61,7 @@
 - type: entity # Toy sniper
   name: Foam Force Sniper
   parent: [BaseWeaponShotgun, BaseGunWieldable]
-  id: WeaponSniperFoam 
+  id: WeaponSniperFoam
   description: A foam force weapon designed after a syndicate Hristov. Security is going to be so mad...
   components:
   - type: Sprite
@@ -96,3 +96,93 @@
   - type: EyeCursorOffset
     maxOffset: 2
     pvsIncrease: 0.8
+
+- type: entity
+  id: WeaponSniperCustodian
+  parent: BaseItem
+  name: SKAMR-03 "Aloha"
+  suffix: DO NOT MAP EVER
+  description: A sin, an insult, taller than most, this railgun will erase you, the poor soul behind you, five walls, and whatever lies beyond hell. Bolting this monstrosity is difficult.
+  components:
+  - type: Contraband
+    allowedDepartments: [ CentralCommand ]
+  - type: ChamberMagazineAmmoProvider
+    autoCycle: false
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineCaselessBlackiron
+        insertSound: /Audio/Weapons/Guns/MagIn/rifle_load.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineCaselessBlackiron
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeCaselessBlackiron
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeCaselessBlackiron
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: Sprite
+    sprite: _Omu/Objects/Weapons/Guns/Snipers/custodianrifle.rsi
+    layers:
+    - state: sniper-folded
+      map: [ "base" ]
+  - type: Item
+    heldPrefix: folded
+    size: Normal
+  - type: Clothing
+    sprite: _Omu/Objects/Weapons/Guns/Snipers/custodianrifle.rsi
+    quickEquip: false
+    slots:
+      - Back
+      - suitStorage
+  - type: UseDelay
+    delay: 1
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: .4
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon2.ogg
+    soundEmpty: null
+  - type: UseDelayBlockShoot
+  - type: FoldingWeapon
+  - type: ItemToggle
+    wieldToggle: false
+    soundActivate:
+      path: /Audio/Weapons/telescopicon.ogg
+      params:
+        volume: -5
+    soundDeactivate:
+      path: /Audio/Weapons/telescopicoff.ogg
+      params:
+        volume: -5
+  - type: ItemToggleSize
+    activatedSize: Ginormous
+  - type: ComponentToggler
+    components:
+    - type: Wieldable
+      wieldSound:
+        path: /Audio/Items/bow_pull.ogg
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        base:
+          True: { state: sniper }
+          False: { state: sniper-folded }
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 4
+    pvsIncrease: 0.4
