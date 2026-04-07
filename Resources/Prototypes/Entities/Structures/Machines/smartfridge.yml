@@ -40,6 +40,13 @@
   - type: LitOnPowered
   - type: ApcPowerReceiver
     powerLoad: 200
+  - type: Battery # Omustation
+    maxCharge: 12000
+    startingCharge: 12000
+  - type: ApcPowerReceiverBattery # Omustation
+    idleLoad: 200
+    batteryRechargeRate: 100
+    batteryRechargeEfficiency: 1.0
   - type: ExtensionCableReceiver
   - type: SmartFridge
     whitelist:
