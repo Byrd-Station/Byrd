@@ -3193,3 +3193,27 @@ Entries:
       message: Thavens have survival kits now
   id: 406
   time: '2026-04-06T22:06:18.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Add
+      message: Replaced the old Pirate/IRS shuttle with a new larger one.
+    - type: Tweak
+      message: >-
+        Pirates now actually have lethals on their ship, and spawn with
+        headsets.
+    - type: Tweak
+      message: >-
+        Resource Siphon is now ten times as fast, and works at twice the range
+        (200m instead of 100m).
+    - type: Tweak
+      message: Space Pirates/IRS no longer have a IFF computer on their shuttle.
+    - type: Fix
+      message: 'Fixed pirate EVA suits not having space protection. '
+  id: 407
+  time: '2026-04-07T09:35:52.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Fix
+      message: Fixed salv borgs being able to carry mech PKAs.
+  id: 408
+  time: '2026-04-07T14:24:04.0000000+00:00'
