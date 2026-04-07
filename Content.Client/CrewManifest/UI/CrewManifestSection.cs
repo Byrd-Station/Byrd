@@ -179,8 +179,8 @@ public sealed class CrewManifestSection : BoxContainer
                 titleContainer.AddChild(title);
             }
 
-            namesContainer.AddChild(nameContainer);
-            titlesContainer.AddChild(titleContainer);
+            namesContainer.AddChild(nameContainer); // Funky
+            titlesContainer.AddChild(titleContainer); // Funky
         }
     }
 }
