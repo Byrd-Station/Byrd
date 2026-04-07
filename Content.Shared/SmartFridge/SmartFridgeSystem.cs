@@ -1,3 +1,5 @@
+// Taken from Monolith (https://github.com/monolith-station/monolith) with credit to tonotom1.
+// Any code block marked with "Monolith start" and "Monolith end" is taken from Monolith.
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Hands.EntitySystems;
@@ -43,6 +45,7 @@ public sealed class SmartFridgeSystem : EntitySystem
             sub =>
             {
                 sub.Event<SmartFridgeDispenseItemMessage>(OnDispenseItem);
+                sub.Event<SmartFridgeRemoveEntryMessage>(OnRemoveEntry); // Monolith
             });
     }
 
@@ -176,6 +179,23 @@ public sealed class SmartFridgeSystem : EntitySystem
         _audio.PlayPredicted(ent.Comp.SoundDeny, ent, args.Actor);
         _popup.PopupPredicted(Loc.GetString("smart-fridge-component-try-eject-out-of-stock"), ent, args.Actor);
     }
+
+    // Monolith start
+    private void OnRemoveEntry(Entity<SmartFridgeComponent> ent, ref SmartFridgeRemoveEntryMessage args)
+    {
+        if (!Allowed(ent, args.Actor))
+            return;
+
+        if (!ent.Comp.ContainedEntries.TryGetValue(args.Entry, out var contained)
+            || contained.Count > 0
+            || !ent.Comp.Entries.Contains(args.Entry))
+            return;
+
+        ent.Comp.Entries.Remove(args.Entry);
+        ent.Comp.ContainedEntries.Remove(args.Entry);
+        Dirty(ent);
+    }
+    // Monolith end
 
     private void OnGetDumpableVerb(Entity<SmartFridgeComponent> ent, ref GetDumpableVerbEvent args)
     {

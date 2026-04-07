@@ -1,3 +1,5 @@
+// Taken from Monolith (https://github.com/monolith-station/monolith) with credit to tonotom1.
+// Any code block marked with "Monolith start" and "Monolith end" is taken from Monolith.
 using Content.Client.UserInterface.Controls;
 using Content.Shared.SmartFridge;
 using Robust.Client.UserInterface;
@@ -19,6 +21,9 @@ public sealed class SmartFridgeBoundUserInterface : BoundUserInterface
 
         _menu = this.CreateWindow<SmartFridgeMenu>();
         _menu.OnItemSelected += OnItemSelected;
+        // Monolith start
+        _menu.OnRemoveButtonPressed += data => SendPredictedMessage(new SmartFridgeRemoveEntryMessage(data.Entry));
+        // Monolith end
         Refresh();
     }
 

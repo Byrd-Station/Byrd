@@ -1,3 +1,5 @@
+// Taken from Monolith (https://github.com/monolith-station/monolith) with credit to tonotom1.
+// Any code block marked with "Monolith start" and "Monolith end" is taken from Monolith.
 using Content.Shared.Access; // Omustation
 using Content.Shared.Whitelist;
 using Robust.Shared.Analyzers;
@@ -117,3 +119,14 @@ public sealed class SmartFridgeDispenseItemMessage(SmartFridgeEntry entry) : Bou
 {
     public SmartFridgeEntry Entry = entry;
 }
+
+// Monolith start
+/// <summary>
+/// Send by the client when trying to remove an empty smart fridge entry from the list of items in the UI.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class SmartFridgeRemoveEntryMessage(SmartFridgeEntry entry) : BoundUserInterfaceMessage
+{
+    public SmartFridgeEntry Entry = entry;
+}
+// Monolith end
