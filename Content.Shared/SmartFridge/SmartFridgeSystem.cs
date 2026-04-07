@@ -1,5 +1,4 @@
-// Taken from Monolith (https://github.com/monolith-station/monolith) with credit to tonotom1.
-// Any code block marked with "Monolith start" and "Monolith end" is taken from Monolith.
+// Portions taken from Monolith (https://github.com/monolith-station/monolith), credit tonotom1.
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Hands.EntitySystems;
