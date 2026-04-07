@@ -138,6 +138,7 @@
     - Chitinid # DeltaV
     - Shadowkin
     - Kitsune # DeltaV
+    - Thaven # Omu
 
 # Goobstation start
 - type: loadoutEffectGroup
@@ -217,6 +218,7 @@
     - Tajaran
     - Shadowkin
     - Kitsune # DeltaV
+    - Thaven # Omu
 
 - type: loadoutEffectGroup
   id: OxygenBreatherMimeMoth

@@ -189,6 +189,13 @@
   loadouts:
   - NanotrasenRepresentativerMaskLollypop
 
+- type: loadoutGroup
+  id: NanotrasenRepresentativeOuterClothing
+  name: loadout-group-ntr-outerclothing
+  minLimit: 0
+  loadouts:
+  - NanotrasenRepresentativeWintercoat
+
 #New Selectable PDAs
 
 - type: loadoutGroup
@@ -381,3 +388,10 @@
   - SecurityOfficerSecurityDutyRevolver
   - BrigmedTerminus
   - WeaponPistolMk58Gold
+
+# clown
+- type: loadoutGroup
+  id: ClownBelt
+  name: loadout-group-clown-belt
+  loadouts:
+  - ClownFoamSabre # Omu - Add foam sabre to the clown's loadout.
