@@ -154,6 +154,15 @@
   - sprite: _Goobstation/Mobs/Customization/Tajaran/head.rsi
     state: patch
 
+- type: marking # Omu
+  id: TajaranHeadTuxedo
+  bodyPart: Head
+  markingCategory: Head
+  speciesRestriction: [Tajaran]
+  sprites:
+  - sprite: _Omu/Mobs/Customization/Tajaran/head.rsi
+    state: tuxedo_face
+
 # Tajaran Torso
 
 - type: marking

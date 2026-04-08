@@ -26,6 +26,8 @@ marking-TajaranHeadTiger = Tiger
 marking-TajaranHeadTiger-tiger_face = Stripes
 marking-TajaranHeadTigerAlt = Tiger (Alternative)
 marking-TajaranHeadTigerAlt-tiger_head = Stripes
+marking-TajaranHeadTuxedo = Tuxedo cat
+marking-TajaranHeadTuxedo-tuxedo_face = Tuxedo cat
 
 marking-TajaranEarsRetro = Classic Ears
 marking-TajaranEarsRetro-ears = Ears
