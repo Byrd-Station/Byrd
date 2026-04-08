@@ -208,5 +208,6 @@
     - type: FaxMachine
       name: "Captain's Office"
       receiveNukeCodes: true
+      receiveStationGoal: true # EE
     - type: StealTarget
       stealGroup: FaxMachineCaptain
