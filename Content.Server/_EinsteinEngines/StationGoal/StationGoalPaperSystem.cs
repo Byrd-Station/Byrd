@@ -12,6 +12,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Shared.Dataset;
+using Content.Shared.Paper; // Omu
 
 namespace Content.Server._EinsteinEngines.StationGoal;
 
@@ -44,7 +45,7 @@ public sealed class StationGoalPaperSystem : EntitySystem
     private void OnRoundStarted(RoundStartedEvent ev)
     {
         if (_config.GetCVar(CCVars.StationGoalsEnabled)
-        	&& _random.Prob(_config.GetCVar(CCVars.StationGoalsChance)))
+            && _random.Prob(_config.GetCVar(CCVars.StationGoalsChance)))
             SendRandomGoal();
     }
 
@@ -108,7 +109,13 @@ public sealed class StationGoalPaperSystem : EntitySystem
                     ("name", _random.Pick(signerName.Values))
                 ),
                 Loc.GetString("station-goal-fax-paper-name"),
-                "StationGoalPaper"
+                null, // Omu start
+                "StationGoalPaper",
+                "paper_stamp-centcom",
+                new List<StampDisplayInfo>
+                    {
+                        new StampDisplayInfo { StampedName = Loc.GetString("stamp-component-stamped-name-centcom"), StampedColor = Color.FromHex("#006600") },
+                    } // Omu end
             );
 
             _fax.Receive(uid, printout, null, fax);
