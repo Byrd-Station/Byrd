@@ -9,7 +9,7 @@
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: _DV/Mobs/Customization/thaven/thaven.rsi
+  - sprite: _DV/Mobs/Customization/Thaven/thaven.rsi
     state: cheek_barbels
 
 - type: marking
@@ -23,5 +23,5 @@
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: _DV/Mobs/Customization/thaven/thaven.rsi
+  - sprite: _DV/Mobs/Customization/Thaven/thaven.rsi
     state: eyebrow_barbels
