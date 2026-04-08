@@ -3229,3 +3229,9 @@ Entries:
       message: Precussion for the built-in soundfont no longer sounds broken.
   id: 410
   time: '2026-04-08T00:26:40.0000000+00:00'
+- author: Fin55Fin
+  changes:
+    - type: Fix
+      message: Fixed bloodstream component text
+  id: 411
+  time: '2026-04-08T00:28:06.0000000+00:00'
