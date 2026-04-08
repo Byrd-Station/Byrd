@@ -12,3 +12,18 @@
     - BieselEckeckyik
     requires:
     - TauCetiBasic
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: EckeckyikTranslatorImplant
+  name: Eckeckyik translator implant
+  description: An implant that helps you speak and understand the humanized thaven dialect of Bieselized Eckeckyik. Doesn't make you any better at singing though...
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    understood:
+    - Eckeckyik
+    spoken:
+    - Eckeckyik
+    requires:
+    - TauCetiBasic
