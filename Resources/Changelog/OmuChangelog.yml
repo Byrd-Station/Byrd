@@ -3223,3 +3223,35 @@ Entries:
       message: Fixed Thavens suffocating in space while using valid internals.
   id: 409
   time: '2026-04-07T15:35:25.0000000+00:00'
+- author: dotwavfile
+  changes:
+    - type: Tweak
+      message: Precussion for the built-in soundfont no longer sounds broken.
+  id: 410
+  time: '2026-04-08T00:26:40.0000000+00:00'
+- author: Fin55Fin
+  changes:
+    - type: Fix
+      message: Fixed bloodstream component text
+  id: 411
+  time: '2026-04-08T00:28:06.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Add
+      message: Glow in the dark wave pulse markings for thaven
+  id: 412
+  time: '2026-04-08T00:39:05.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Add
+      message: >-
+        Added fonts to the thaven languages, also a trait for bieselized
+        eckeckyik
+  id: 413
+  time: '2026-04-08T00:40:30.0000000+00:00'
+- author: CliveOcelot
+  changes:
+    - type: Tweak
+      message: The Syndicate Evacuation pod now has reverse thrust.
+  id: 414
+  time: '2026-04-08T00:41:05.0000000+00:00'
