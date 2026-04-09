@@ -110,18 +110,18 @@
   categories:
   - NanolinkSurveillance
 
-- type: listing
-  id: NanolinkRecordsTablet
-  name: nanolink-tablet-name
-  description: nanolink-tablet-desc
-  productEntity: HandheldStationMapRecordsTablet
-  icon:
-    entity: HandheldStationMapRecordsTablet
-  categories:
-  - NanolinkSurveillance
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
+#- type: listing # Omu, disable this till we have character record consoles.
+#  id: NanolinkRecordsTablet
+#  name: nanolink-tablet-name
+#  description: nanolink-tablet-desc
+#  productEntity: HandheldStationMapRecordsTablet
+#  icon:
+#    entity: HandheldStationMapRecordsTablet
+#  categories:
+#  - NanolinkSurveillance
+#  conditions:
+#  - !type:ListingLimitedStockCondition
+#    stock: 1
 
 # framing
 - type: listing

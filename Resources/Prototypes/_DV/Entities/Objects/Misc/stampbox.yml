@@ -7,7 +7,7 @@
   - type: Item
     size: Large
     shape:
-    - 0,0,2,2
+    - 0,0,1,1 # Omu, shrink this.
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector
@@ -17,13 +17,14 @@
         - id: RubberStampHos
         - id: RubberStampCMO
         - id: RubberStampHop
-        - id: RubberStampChiefJustice
+        #- id: RubberStampChiefJustice # Omu, no CJ
         - id: RubberStampRd
         - id: RubberStampQm
+        - id: RubberStampAdminAssistant # Omu, but we have this instead.
   - type: Storage
     maxItemSize: Small
     grid:
-    - 0,0,2,2
+    - 0,0,3,3 # Omu, increase internal size.
     whitelist:
       components:
       - Stamp
