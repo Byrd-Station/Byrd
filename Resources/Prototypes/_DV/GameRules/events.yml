@@ -74,6 +74,7 @@
       - type: AutoImplant
         implants:
         - RadioImplantCentcomm
+        - NanolinkSubImplant # Omu, give them nanolink as well.
 
 # nt agent sleeper event
 - type: entity
