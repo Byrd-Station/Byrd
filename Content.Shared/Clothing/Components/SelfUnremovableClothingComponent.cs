@@ -5,7 +5,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Clothing.EntitySystems;
+using Content.Shared.DoAfter;
 using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.Clothing.Components;
 
@@ -32,6 +34,31 @@ public sealed partial class SelfUnremovableClothingComponent : Component
     /// </summary>
     [DataField]
     public float UnauthorizedStripShockTime = 3f;
+
+    /// <summary>
+    ///     How long (in seconds) it takes a third party to cut this item off with a sharp tool.
+    /// </summary>
+    [DataField]
+    public float OtherCutoffDelay = 10f;
+
+    /// <summary>
+    ///     How long (in seconds) it takes the wearer to tear this item off themselves.
+    /// </summary>
+    [DataField]
+    public float SelfCutoffDelay = 15f;
+
+    /// <summary>
+    ///     How much electric shock damage to deal to whoever cuts/tears this off if they
+    ///     aren't wearing insulated gloves. Set to 0 to disable the cutoff shock.
+    /// </summary>
+    [DataField]
+    public int CutoffShockDamage = 0;
+
+    /// <summary>
+    ///     How long (in seconds) to stun the person after the cutoff shock.
+    /// </summary>
+    [DataField]
+    public float CutoffShockTime = 1f;
 }
 
 /// <summary>
@@ -45,3 +72,10 @@ public sealed class SelfUnremovableClothingUnauthorizedStripEvent : EntityEventA
     /// <summary>The entity that attempted the strip and should be punished.</summary>
     public EntityUid Stripper;
 }
+
+/// <summary>
+///     Fired when the cut-off or tear-off doAfter completes.
+///     Raised on the item (SelfUnremovableClothingComponent entity).
+/// </summary>
+[Serializable, NetSerializable]
+public sealed partial class SelfUnremovableClothingCutoffDoAfterEvent : SimpleDoAfterEvent { }

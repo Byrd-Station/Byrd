@@ -12,3 +12,6 @@ electropack-verb-lock = Lock Electropack
 electropack-verb-unlock = Unlock Electropack
 electropack-locked = The electropack is now locked.
 electropack-unlocked = The electropack is now unlocked.
+
+electropack-verb-cut-off = Cut Off Electropack
+electropack-verb-tear-off = Tear Off Electropack

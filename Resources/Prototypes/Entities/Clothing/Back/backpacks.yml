@@ -435,6 +435,8 @@
   - type: SelfUnremovableClothing
     unauthorizedStripShockDamage: 10
     unauthorizedStripShockTime: 3
+    cutoffShockDamage: 5
+    cutoffShockTime: 1
   - type: AccessReader
     enabled: false
     access:
