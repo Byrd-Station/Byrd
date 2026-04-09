@@ -11,6 +11,8 @@ marking-TajaranTorsoCrest = Chest Fur (Crest)
 marking-TajaranTorsoCrest-crest = Fur
 marking-TajaranTorsoFullBelly = Chest Fur (Full)
 marking-TajaranTorsoFullBelly-fullbelly = Fur
+marking-TajaranTorsoTuxedo = Tuxedo Pattern
+marking-TajaranTorsoTuxedo-tuxedocat_back = Tuxedo Pattern
 
 marking-TajaranHeadMuzzle = Muzzle
 marking-TajaranHeadMuzzle-muzzle = Muzzle
@@ -26,8 +28,8 @@ marking-TajaranHeadTiger = Tiger
 marking-TajaranHeadTiger-tiger_face = Stripes
 marking-TajaranHeadTigerAlt = Tiger (Alternative)
 marking-TajaranHeadTigerAlt-tiger_head = Stripes
-marking-TajaranHeadTuxedo = Tuxedo cat
-marking-TajaranHeadTuxedo-tuxedo_face = Tuxedo cat
+marking-TajaranHeadTuxedo = Tuxedo Facial Pattern
+marking-TajaranHeadTuxedo-tuxedocat_face = Tuxedo Facial Pattern
 
 marking-TajaranEarsRetro = Classic Ears
 marking-TajaranEarsRetro-ears = Ears
