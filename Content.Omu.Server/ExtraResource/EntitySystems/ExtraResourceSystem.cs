@@ -24,13 +24,13 @@ public sealed class ExtraResourceSystem : EntitySystem
     private const float RestfulnessStaminaDrainThreshold = 10f;
 
     // how fast restfulness drains per second when stamina is low
-    private const float RestfulnessDrainRate = 100f / (15f * 60f); // empties in ~15 min
+    private const float RestfulnessDrainRate = 100f / (8f * 60f); // empties in ~8 min
 
     // how fast restfulness recharges per second when stamina is full
-    private const float RestfulnessRechargeRate = 100f / (10f * 60f); // fills in ~10 min
+    private const float RestfulnessRechargeRate = 100f / (20f * 60f); // fills in ~20 min
 
     // how fast restfulness recharges per second while nesting (much faster)
-    private const float RestfulnessNestRechargeRate = 100f / (2f * 60f); // fills in ~2 min
+    private const float RestfulnessNestRechargeRate = 100f / (4f * 60f); // fills in ~4 min
 
     // sprint speed boost when fully rested (above 80%)
     private const float RestfulSprintBoost = 1.15f;

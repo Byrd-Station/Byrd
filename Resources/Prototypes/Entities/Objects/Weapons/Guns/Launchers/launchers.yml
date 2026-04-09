@@ -155,7 +155,6 @@
       ballistic-ammo: !type:Container
         ents: []
   - type: GunExecutionBlacklist # Goobstation
-  - type: ResomiGunStaminaDrain # OmuStation - Resomi heavy weapon stamina drain
 
 - type: entity
   name: China Lake

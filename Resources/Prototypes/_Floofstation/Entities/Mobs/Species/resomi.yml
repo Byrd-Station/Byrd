@@ -70,11 +70,9 @@
       Unsexed: MaleResomiEmote
       Female: FemaleResomiEmote
 # Omu end
-  # Omu - Resomi Nesting ability
+  # Omu - Resomi Nesting ability (toggle, no partner required)
   - type: Nesting
-    enterNestAction: ActionResomiEnterNest
-    exitNestAction: ActionResomiExitNest
-    nestCooldown: 300
+    toggleNestAction: ActionResomiToggleNest
     updateInterval: 2
     bleedHealPerUpdate: 0.5
     critHealingModifier: 1.5
@@ -90,26 +88,23 @@
         Asphyxiation: 0.2
         Bloodloss: 0.2
         Caustic: 0.2
-  # Omu - Resomi combat debuffs: -15% melee damage, +8 deg spread, heavy weapon stamina drain
-  - type: ResomiCombatDebuff
-    meleeDamageMultiplier: 0.85
+  # Omu - Resomi melee debuff: smaller species, less raw strength (-15% melee damage)
+  - type: BonusMeleeDamage
+    damageModifierSet:
+      coefficients:
+        Slash: 0.85
+  # Omu - Resomi restfulness resource (drains from stamina use, recharges in nest or at rest)
+  - type: ExtraResource
+    resources:
+      restfulness:
+        current: 100
+        max: 100
+        alert: ResomiRestfulness
+        alertCategory: ResomiRestfulness
   # Omu - Resomi Call ability
   - type: ResomiCall
     callAction: ActionResomiCall
     callCooldown: 60
-  # Omu - Resomi Sprint/Impulse ability
-  - type: ResomiImpulse
-    sprintToggleAction: ActionResomiToggleSprint
-    sprintSpeedMultiplier: 1.5
-    exhaustionSpeedMultiplier: 0.4
-    exhaustionDuration: 20
-  # Omu - Resomi Energy bar (drains over time, recharges in nest)
-  - type: ResomiEnergy
-    energy: 100
-    maxEnergy: 100
-    drainRate: 0.0416  # ~40 minutes to empty
-    rechargeRate: 0.8333 # ~2 minutes to fill
-    exhaustionSpeedMultiplier: 0.70
   - type: Tag
     tags:         # Goob - What the fuck is FootstepSound and DoorBumpOpener for if they work without them - rest fixes anoms though.
     - CanPilot

@@ -4,6 +4,7 @@
 using Content.Shared.Alert;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 
 namespace Content.Omu.Shared.ExtraResource.Components;
 
@@ -24,7 +25,7 @@ public sealed partial class ExtraResourceComponent : Component
 /// <summary>
 ///     data for a single extra resource entry.
 /// </summary>
-[DataDefinition]
+[DataDefinition, Serializable, NetSerializable]
 public sealed partial class ExtraResourceEntry
 {
     /// <summary>current value, clamped between 0 and Max.</summary>

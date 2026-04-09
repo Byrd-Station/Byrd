@@ -126,7 +126,6 @@
     sound:
       collection: SnipersDrop
   # Goobstation edit end
-  - type: ResomiGunStaminaDrain # OmuStation - Resomi heavy weapon stamina drain
 
 - type: entity
   name: minigun

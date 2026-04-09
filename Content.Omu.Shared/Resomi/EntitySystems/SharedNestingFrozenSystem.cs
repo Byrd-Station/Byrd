@@ -49,8 +49,8 @@ public abstract class SharedNestingFrozenSystem : EntitySystem
             return;
         }
 
-        // Allow only the exit nest action
-        if (nestingComponent.ExitNestActionEntity != null && args.Used == nestingComponent.ExitNestActionEntity)
+        // allow the toggle nest action so they can exit the nest
+        if (nestingComponent.ToggleNestActionEntity != null && args.Used == nestingComponent.ToggleNestActionEntity)
             return;
 
         args.Cancel();

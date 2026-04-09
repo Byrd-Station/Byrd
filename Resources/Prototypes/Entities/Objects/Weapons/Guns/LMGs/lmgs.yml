@@ -135,7 +135,6 @@
     sound:
       collection: RiflesDrop
   # Goobstation edit end
-  - type: ResomiGunStaminaDrain # OmuStation - Resomi heavy weapon stamina drain
 
 - type: entity
   name: L6 SAW
