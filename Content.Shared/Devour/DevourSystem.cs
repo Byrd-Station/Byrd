@@ -124,10 +124,10 @@ public sealed class DevourSystem : EntitySystem
             _containerSystem.Insert(args.Args.Target.Value, ent.Comp.Stomach);
 
             // Goobstation start
-
-            if (HasComp<MobStateComponent>(args.Args.Target.Value)) // can be cases where objects are also whitelisted, which wont need this
-                EnsureComp<PreventSelfRevivalComponent>(args.Args.Target.Value);
-
+            // Omu start, If you eat a ling too bad for you.
+            //if (HasComp<MobStateComponent>(args.Args.Target.Value)) // can be cases where objects are also whitelisted, which wont need this
+            //    EnsureComp<PreventSelfRevivalComponent>(args.Args.Target.Value);
+            // Omu end.
             // Goobstation end
 
         }
@@ -148,10 +148,10 @@ public sealed class DevourSystem : EntitySystem
             return;
 
         // Goobstation start
-
-        foreach (var entity in ent.Comp.Stomach.ContainedEntities)
-            RemComp<PreventSelfRevivalComponent>(entity);
-
+        // Omu start, If you eat a ling too bad for you.
+        //foreach (var entity in ent.Comp.Stomach.ContainedEntities)
+        //    RemComp<PreventSelfRevivalComponent>(entity);
+        // Omu end.
         // Goobstation end
 
         // For some reason we have two different systems that should handle gibbing,

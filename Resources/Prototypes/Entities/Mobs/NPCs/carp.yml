@@ -312,6 +312,10 @@
     - type: HTN
       rootTask:
         task: DragonCarpCompound
+    - type: Flammable
+      damage:
+       types: {}
+    - type: Temperature
     - type: Tag
       tags:
         - Carp
