@@ -55,6 +55,7 @@
   id: NTAgentRule
   components:
   - type: GameRule
+    chaosScore: 200 # Omu
   - type: AntagObjectives
     objectives:
     - NTAgentObjective
