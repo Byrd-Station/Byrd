@@ -3,7 +3,7 @@
 - type: gameMap
   id: Nucleas
   mapName: 'Nucleas'
-  mapPath: /Maps/_Omu/Nucleas.yml
+  mapPath: /Maps/_Omu/nucleas.yml
   maxRandomOffset: 0
   randomRotation: false
   minPlayers: 30
@@ -62,7 +62,7 @@
             SecurityCadet: [ 3, 3 ]
             Lawyer: [ 1, 2 ]
             Brigmedic: [ 1, 1 ]
-            SeSecuritySergeant: [ 1, 1 ]
+            SecuritySergeant: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
