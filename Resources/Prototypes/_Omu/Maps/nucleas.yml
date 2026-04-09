@@ -1,86 +1,89 @@
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: gameMap
   id: Nucleas
   mapName: 'Nucleas'
-  mapPath: /Maps/_Omu/nucleas.yml 
-  minPlayers: 40 
-  maxPlayers: 85 
+  mapPath: /Maps/_Omu/Nucleas.yml
+  maxRandomOffset: 0
+  randomRotation: false
+  minPlayers: 30
+  maxPlayers: 60
   stations:
-    Nucleas:
+    Train:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Nucleas {1}'
+          mapNameTemplate: 'Nucleas'
           nameGenerator:
             !type:NanotrasenNameGenerator
-            prefixCreator: 'B'
+            prefixCreator: 'NU'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: _Omu/Maps/Shuttles/Evac_Nucleas.yml
+          emergencyShuttlePath: /Maps/_Omu/Shuttles/Evac_Nucleas.yml
         - type: StationCargoShuttle
-          path: /Maps/Shuttles/cargo.yml
+          path: /Maps/_Omu/Shuttles/Cargo_Nucleas.yml
         - type: StationJobs
           availableJobs:
-            #service
+            #command
             Captain: [ 1, 1 ]
             NanotrasenRepresentative: [ 1, 1 ]
             BlueshieldOfficer: [ 1, 1 ]
+            #service
             HeadOfPersonnel: [ 1, 1 ]
             AdministrativeAssistant: [ 1, 1 ] # Delta V
-            Bartender: [ 2, 2 ]
-            Botanist: [ 3, 3 ]
-            Chef: [ 2, 2 ]
-            Janitor: [ 3, 3 ]
+            Bartender: [ 1, 1 ]
+            Botanist: [ 2, 2 ]
+            Chef: [ 1, 1 ]
+            Janitor: [ 2, 2 ]
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
-            ServiceWorker: [ 2, 2 ]
-            RadioHost: [ 1, 1 ]
+            ServiceWorker: [ 2, 3 ]
+            Detective: [ 1, 1 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
-            AtmosphericTechnician: [ 3, 3 ]
-            StationEngineer: [ 5, 5 ]
-            TechnicalAssistant: [ 4, 4 ]
+            AtmosphericTechnician: [ 2, 2 ]
+            StationEngineer: [ 4, 4 ]
+            TechnicalAssistant: [ 3, 3 ]
             #medical
             ChiefMedicalOfficer: [ 1, 1 ]
-            Chemist: [ 3, 3 ]
-            MedicalDoctor: [ 6, 6 ]
-            Paramedic: [ 2, 2 ]
-            MedicalIntern: [ 4, 4 ]
-            Virologist: [ 1, 1 ]
+            Chemist: [ 2, 2 ]
+            MedicalDoctor: [ 2, 2 ]
+            MedicalIntern: [ 2, 2 ]
+            Paramedic: [ 1, 1 ]
+            Virologist: [ 1, 1 ] 
             #science
             ResearchDirector: [ 1, 1 ]
-            Scientist: [ 5, 5 ]
-            ResearchAssistant: [ 6, 6 ]
-            Roboticist: [ 2, 2 ] #Omu
+            Scientist: [ 4, 4 ]
+            ResearchAssistant: [ 2, 2 ]
+            Roboticist: [ 2, 2 ] 
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
-            SecurityOfficer: [ 8, 8 ]
-            Detective: [ 1, 1 ]
-            SecurityCadet: [ 4, 4 ]
-            Lawyer: [ 2, 2 ]
+            SecurityOfficer: [ 6, 6 ]
+            SecurityCadet: [ 3, 3 ]
+            Lawyer: [ 1, 2 ]
             Brigmedic: [ 1, 1 ]
-            SecuritySergeant: [ 1, 1 ] #Omu
+            SeSecuritySergeant: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
-            ShaftMiner: [ 3, 3 ] 
-            CargoTechnician: [ 4, 4 ]
-            Courier: [ 2, 2 ] #Omu
+            Courier: [ 2, 2 ] 
+            CargoTechnician: [ 3, 3 ]
             #civilian
             Passenger: [ -1, -1 ]
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
+            Reporter: [ 1, 1 ]
+            RadioHost: [ 1, 1 ] 
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
 
-            NanotrasenCareerTrainer: [ 2, 2] # Omu
+            NanotrasenCareerTrainer: [ 2, 2] 
+
         # Goobstation blob-config-start HUGE
         - type: StationBlobConfig
           stageBegin: 40
           stageCritical: 450
           stageTheEnd: 900
-        # backmen blob-config-end
+        # Goobstation blob-config-end
