@@ -2,10 +2,17 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Actions;
 using Robust.Shared.Serialization;
 using Robust.Shared.Map;
 
 namespace Content.Omu.Shared.Resomi.Events;
+
+/// <summary>
+///     fired when the player presses the toggle nest action.
+///     a single action replaces the old enter/exit pair.
+/// </summary>
+public sealed partial class ToggleNestActionEvent : InstantActionEvent { }
 
 [Serializable, NetSerializable]
 public enum NestingAnimationType
