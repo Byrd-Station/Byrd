@@ -192,7 +192,7 @@
   - sprite: _Goobstation/Mobs/Customization/Tajaran/torso.rsi
     state: fullbelly
 
-- type: marking
+- type: marking # Omu
   id: TajaranTorsoTuxedo
   bodyPart: Chest
   markingCategory: Chest
