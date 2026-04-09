@@ -227,6 +227,7 @@ namespace Content.IntegrationTests.Tests
             "Marathon",
             "Meta",
             "MeteorArena",    // Deathmatch
+            "Nucleas",
             "Oasis",
             "OasisHighPop",
             "Omega",
@@ -269,7 +270,8 @@ namespace Content.IntegrationTests.Tests
               "Loop",
               "Marathon",
               "Meta",
-            //"MeteorArena",    // Deathmatch
+            //"MeteorArena",    // Deathmatch 
+            //"Nucleas",        //Not in pool Omu
               "Oasis",
               "OasisHighPop",
               "Omega",
