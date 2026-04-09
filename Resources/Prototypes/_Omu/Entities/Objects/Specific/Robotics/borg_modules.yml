@@ -1,0 +1,25 @@
+- type: entity
+  id: BorgModuleAdvancedAnomaly
+  parent: [ BaseBorgModuleScience, BaseProviderBorgModule ]
+  name: advanced anomaly cyborg module
+  description: An advanced science module containing improved and prototypical tools required for work with anomalous entities.
+  components:
+  - type: Sprite
+    layers: 
+    - state: science
+    - state: icon-adv-anomalies
+      sprite: _Omu/Objects/Specific/Robotics/borgmodule.rsi
+  - type: ItemBorgModule
+    moduleId: AdvancedAnomaly
+    items:
+    - WeaponPistolCHIMPRecharging
+    - AnomalyScanner
+    - AnomalyScanner
+    - AnomalyLocatorUnpowered
+    - AnomalyLocatorWideUnpowered
+    - HandLabeler
+    - SheetRGlassLingering0
+    - SheetRPGlassLingering0
+    - SheetPlasteelLingering0
+  - type: BorgModuleIcon
+    icon: { sprite: _Omu/Interface/Actions/actions_borg.rsi, state: adv-anomaly-module }

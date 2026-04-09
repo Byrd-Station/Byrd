@@ -70,4 +70,7 @@ borg-type-service-name = Service
 borg-type-service-desc = Help out with a wide range of crew services, ranging from serving snacks and drinks to botany to entertainment.
 borg-type-service-transponder = service cyborg
 
-
+# Omustation - sciborg
+borg-type-science-name = Science
+borg-type-science-desc = Stare at rocks, floating orbs and other mysterious objects whilst trying to unravel the mysteries of the universe. Work with the station's research and development team to uncover anomalous phenomena... and potentially dissect an alien or two.
+borg-type-science-transponder = science cyborg

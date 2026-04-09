@@ -32,12 +32,12 @@
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
-    - BorgModuleScience #until sciborgs are added
+    # - BorgModuleScience #until sciborgs are added | Omustation - haha get fucked sciborgs are real 
 
   defaultModules:
   - BorgModuleTool
-  - BorgModuleArtifact
-  - BorgModuleAnomaly
+  # - BorgModuleArtifact # Omustation - haha get fucked sciborgs are real 
+  # - BorgModuleAnomaly # Omustation - haha get fucked sciborgs are real  
   radioChannels:
   - Science
 

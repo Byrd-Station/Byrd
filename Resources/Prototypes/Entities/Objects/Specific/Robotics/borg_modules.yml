@@ -966,6 +966,7 @@
     - BorgVial
     - GeigerCounter
     - HolofanProjector # Goobstation
+    - WeaponPistolXrayEmitterRecharging # Omustation
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: node-scanner-module }
 

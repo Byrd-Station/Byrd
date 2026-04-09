@@ -1,0 +1,26 @@
+- type: entity
+  parent: AnomalousParticleDelta
+  id: ParticleRadiation # yes I took most of this from anomalous particles, fight me.
+  name: radiation particles
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight # copied this from omega particles but made it bigger and stronger because yes :3
+    enabled: true
+    color: "#38c24f"
+    radius: 3.0
+    energy: 10.0
+  - type: AnomalousParticle
+    particleType: Delta
+    severityPerSeverityHit: 0
+    stabilityPerDestabilizingHit: 0
+    healthPerWeakeningeHit: 0
+    stabilityPerWeakeningeHit: 0
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: magicm_green # yeah I know omega particles use this but like. Rad particles, and also used for sci anyway
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Radiation: 8

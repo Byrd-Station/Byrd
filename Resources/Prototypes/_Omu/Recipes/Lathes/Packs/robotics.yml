@@ -1,0 +1,5 @@
+# Dynamic btw
+- type: latheRecipePack
+  id: BorgModulesOmu
+  recipes:
+  - BorgModuleAdvancedAnomaly

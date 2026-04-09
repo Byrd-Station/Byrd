@@ -1,0 +1,39 @@
+# Science borg
+- type: borgType
+  id: science
+
+  # Description
+  dummyPrototype: BorgChassisScience
+
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleScience
+
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleArtifact
+  - BorgModuleAnomaly 
+
+  lawset: Scientist # Omustation: Custom lawset
+
+  radioChannels:
+  - Science
+
+  # Visual
+  inventoryTemplateId: borgTall
+  spriteBodyState: science
+  spriteBodyMovementState: science_moving
+  spriteHasMindState: science_e
+  spriteNoMindState: science_e_r
+  spriteToggleLightState: science_l
+
+  # Pet
+  petSuccessString: petting-success-science-cyborg
+  petFailureString: petting-failure-science-cyborg
+
+  # Sounds
+  footstepCollection:
+    collection: FootstepHoverBorg
