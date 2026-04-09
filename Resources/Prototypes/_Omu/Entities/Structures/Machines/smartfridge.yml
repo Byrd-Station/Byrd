@@ -1,0 +1,10 @@
+- type: entity
+  parent: SmartFridge
+  id: SmartFridgeBotany
+  suffix: Botany
+  components:
+  - type: SmartFridge
+    flavorText: smart-fridge-request-botany
+    requireAccess: true
+  - type: AccessReader
+    access: [["Hydroponics"]]
