@@ -4,7 +4,6 @@
 using Content.Omu.Shared.ExtraResource.Components;
 using Content.Omu.Shared.Resomi.Components;
 using Content.Shared.Alert;
-using Content.Shared.Damage.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 
@@ -20,17 +19,17 @@ public sealed class ExtraResourceSystem : EntitySystem
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
 
-    // restfulness drains whenever stamina damage is above this threshold (10 = below 90% stamina)
-    private const float RestfulnessStaminaDrainThreshold = 10f;
+    // --- TESTING VALUES: drain fast so you can see it working ---
+    // TODO: revert to normal values after testing
+    // normal drain: 100f / (8f * 60f)   (~8 min)
+    // normal passive recharge: 100f / (20f * 60f)  (~20 min)
+    // normal nest recharge: 100f / (4f * 60f)  (~4 min)
 
-    // how fast restfulness drains per second when stamina is low
-    private const float RestfulnessDrainRate = 100f / (8f * 60f); // empties in ~8 min
+    // drains passively at all times when not nesting
+    private const float RestfulnessDrainRate = 100f / 30f; // empties in ~30 seconds (testing)
 
-    // how fast restfulness recharges per second when stamina is full
-    private const float RestfulnessRechargeRate = 100f / (20f * 60f); // fills in ~20 min
-
-    // how fast restfulness recharges per second while nesting (much faster)
-    private const float RestfulnessNestRechargeRate = 100f / (4f * 60f); // fills in ~4 min
+    // how fast restfulness recharges while nesting
+    private const float RestfulnessNestRechargeRate = 100f / 15f; // fills in ~15 seconds (testing)
 
     // sprint speed boost when fully rested (above 80%)
     private const float RestfulSprintBoost = 1.15f;
@@ -74,18 +73,13 @@ public sealed class ExtraResourceSystem : EntitySystem
         float delta;
         if (isNesting)
         {
-            // nesting recharges restfulness fast
+            // nesting recharges restfulness
             delta = RestfulnessNestRechargeRate * frameTime;
-        }
-        else if (TryComp<StaminaComponent>(uid, out var stamina) && stamina.StaminaDamage > RestfulnessStaminaDrainThreshold)
-        {
-            // stamina is low - drain restfulness
-            delta = -RestfulnessDrainRate * frameTime;
         }
         else
         {
-            // stamina is full - slowly recharge
-            delta = RestfulnessRechargeRate * frameTime;
+            // always drains when not nesting - restfulness is only recovered by resting
+            delta = -RestfulnessDrainRate * frameTime;
         }
 
         var previous = entry.Current;
@@ -127,13 +121,10 @@ public sealed class ExtraResourceSystem : EntitySystem
     }
 
     /// <summary>
-    ///     called by NestingSystem to instantly apply a restfulness burst on nest enter/exit.
-    ///     the half-second wind-up is handled by NestingSystem before calling this.
+    ///     called by NestingSystem when nesting state changes to trigger an immediate speed refresh.
     /// </summary>
     public void OnNestingStateChanged(EntityUid uid, ExtraResourceComponent comp, bool isNesting)
     {
-        // the actual recharge happens in Update via the NestingFrozenComponent check.
-        // this just triggers a speed refresh so the modifier applies immediately.
         _movementSpeed.RefreshMovementSpeedModifiers(uid);
     }
 }

@@ -3,22 +3,25 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
+using Content.Server.Administration.Logs;
 using Content.Shared.Actions;
-using Content.Shared.Audio;
-using Content.Shared.Popups;
 using Content.Omu.Shared.Resomi.Components;
 using Content.Omu.Shared.Resomi.Events;
+using Content.Shared.Database;
+using Content.Shared.Popups;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Omu.Server.Resomi.EntitySystems;
 
 /// <summary>
-/// Handles the Resomi Calling ability.
-/// When a Resomi calls, nearby Resomis (within CallRange tiles) receive a
-/// hivemind-style directional alert only visible to their species.
+///     handles the Resomi chirp ability.
+///     when a Resomi calls, nearby Resomis get a cursor popup (not logged to chat)
+///     with the direction, plus a sound after a short delay.
+///     the call is logged for admins.
 /// </summary>
 public sealed class ResomiCallSystem : EntitySystem
 {
@@ -27,6 +30,8 @@ public sealed class ResomiCallSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IAdminLogManager _adminLog = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     private static readonly SoundSpecifier CallSenderSound = new SoundPathSpecifier("/Audio/_Starlight/Voice/Resomi/resomi_call_1.ogg");
 
@@ -36,14 +41,45 @@ public sealed class ResomiCallSystem : EntitySystem
         new SoundPathSpecifier("/Audio/_Starlight/Voice/Resomi/resomi_call_2.ogg"),
     ];
 
-    /// <summary>Maximum range in tiles at which other Resomis can hear the call.</summary>
+    // maximum range in tiles at which other Resomis can hear the call
     private const float CallRange = 45f;
+
+    // delay before the receiver gets the sound - feels like the signal is traveling
+    private static readonly TimeSpan ReceiverDelay = TimeSpan.FromSeconds(1);
+
+    // pending sounds queued with a delivery time
+    private readonly List<PendingCallNotification> _pending = new();
 
     public override void Initialize()
     {
         SubscribeLocalEvent<ResomiCallComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<ResomiCallComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<ResomiCallComponent, ResomiCallActionEvent>(OnCall);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        if (_pending.Count == 0)
+            return;
+
+        var now = _timing.CurTime;
+        for (var i = _pending.Count - 1; i >= 0; i--)
+        {
+            var notification = _pending[i];
+            if (now < notification.DeliverAt)
+                continue;
+
+            if (!Deleted(notification.ReceiverUid))
+            {
+                // cursor popup does not get logged to chat regardless of the LogInChat setting
+                _popup.PopupCursor(notification.Message, notification.ReceiverUid, PopupType.Large);
+                _audio.PlayEntity(notification.Sound, Filter.Entities(notification.ReceiverUid), notification.ReceiverUid, true, AudioParams.Default.WithVolume(-4f));
+            }
+
+            _pending.RemoveAt(i);
+        }
     }
 
     private void OnMapInit(EntityUid uid, ResomiCallComponent comp, MapInitEvent args)
@@ -62,11 +98,16 @@ public sealed class ResomiCallSystem : EntitySystem
         var callerXform = Transform(uid);
         var callerPos = _transform.GetWorldPosition(callerXform);
 
-        // Confirm to the caller + play call sound at caller's position
-        _popup.PopupEntity(Loc.GetString("resomi-call-sent"), uid, PopupType.Small);
+        // cursor popup for the caller - not logged to chat
+        _popup.PopupCursor(Loc.GetString("resomi-call-sent"), uid, PopupType.Large);
         _audio.PlayEntity(CallSenderSound, Filter.Entities(uid), uid, true, AudioParams.Default.WithVolume(-2f));
 
-        // Notify nearby Resomis only
+        // log for admins so they can track species communication
+        _adminLog.Add(LogType.Chat, LogImpact.Low,
+            $"{ToPrettyString(uid):entity} used ResomiCall (chirp) at {callerPos}");
+
+        var deliverAt = _timing.CurTime + ReceiverDelay;
+
         var query = EntityQueryEnumerator<ResomiCallComponent>();
         while (query.MoveNext(out var receiverUid, out _))
         {
@@ -78,23 +119,18 @@ public sealed class ResomiCallSystem : EntitySystem
                 continue;
 
             var receiverPos = _transform.GetWorldPosition(receiverXform);
-            var dist = (callerPos - receiverPos).Length();
-
-            if (dist > CallRange)
+            if ((callerPos - receiverPos).Length() > CallRange)
                 continue;
 
             var direction = GetCompassDirection(receiverPos, callerPos);
+            var msg = Loc.GetString("resomi-call-received", ("name", callerName), ("direction", direction));
 
-            var msg = Loc.GetString("resomi-call-received",
-                ("name", callerName),
-                ("direction", direction));
-
-            // Send as a private server-side popup visible ONLY to this Resomi
-            _popup.PopupEntity(msg, receiverUid, Filter.Entities(receiverUid), true, PopupType.MediumCaution);
-
-            // Play a random call sound privately to the receiver only
-            var sound = _random.Pick(CallReceiverSounds);
-            _audio.PlayEntity(sound, Filter.Entities(receiverUid), receiverUid, true, AudioParams.Default.WithVolume(-4f));
+            _pending.Add(new PendingCallNotification(
+                receiverUid,
+                msg,
+                _random.Pick(CallReceiverSounds),
+                deliverAt
+            ));
         }
 
         _actions.SetCooldown(comp.CallActionEntity, comp.CallCooldown);
@@ -107,6 +143,7 @@ public sealed class ResomiCallSystem : EntitySystem
         if (diff.LengthSquared() < 0.5f)
             return Loc.GetString("resomi-call-direction-nearby");
 
+        // absolute world-space direction - north is always station north
         var angle = Math.Atan2(diff.Y, diff.X) * (180.0 / Math.PI);
         if (angle < 0) angle += 360.0;
 
@@ -122,4 +159,11 @@ public sealed class ResomiCallSystem : EntitySystem
             _                    => Loc.GetString("resomi-call-direction-southeast"),
         };
     }
+
+    private sealed record PendingCallNotification(
+        EntityUid ReceiverUid,
+        string Message,
+        SoundSpecifier Sound,
+        TimeSpan DeliverAt
+    );
 }

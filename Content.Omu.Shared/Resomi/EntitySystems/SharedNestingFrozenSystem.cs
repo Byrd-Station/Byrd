@@ -37,8 +37,8 @@ public abstract class SharedNestingFrozenSystem : EntitySystem
         SubscribeLocalEvent<NestingFrozenComponent, UpdateCanMoveEvent>(OnUpdateCanMove);
         SubscribeLocalEvent<NestingFrozenComponent, PullAttemptEvent>(OnPullAttempt);
         SubscribeLocalEvent<NestingFrozenComponent, AttackAttemptEvent>(OnCancellableAttempt);
-        // Note: ChangeDirectionAttemptEvent is NOT blocked — Resomi can rotate while nesting.
-        // Note: EmoteAttemptEvent and SpeakAttemptEvent are NOT blocked so Resomi can chirp from nest.
+        // ChangeDirectionAttemptEvent is not blocked - resomi can rotate while nesting
+        // EmoteAttemptEvent and SpeakAttemptEvent are not blocked so resomi can chirp from the nest
     }
 
     private void OnUseAttempt(EntityUid uid, NestingFrozenComponent component, UseAttemptEvent args)
