@@ -227,7 +227,7 @@ namespace Content.IntegrationTests.Tests
             "Marathon",
             "Meta",
             "MeteorArena",    // Deathmatch
-            "Nucleas",
+            "Nucleas",  //Omu
             "Oasis",
             "OasisHighPop",
             "Omega",
