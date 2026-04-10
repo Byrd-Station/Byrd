@@ -51,6 +51,10 @@ public sealed class SmartFridgeSystem : EntitySystem
     }
 
     // Start of Omustation
+    /// <summary>
+    /// Applies YAML-defined access configuration to the fridge's AccessReader on startup.
+    /// If no access is defined, the fridge remains open to all.
+    /// </summary>
     private void OnStartup(Entity<SmartFridgeComponent> ent, ref ComponentStartup args)
     {
         if (ent.Comp.Access == null || ent.Comp.Access.Count == 0)
@@ -135,12 +139,19 @@ public sealed class SmartFridgeSystem : EntitySystem
     }
 
     // Start of Omustation
+    /// <summary>
+    /// Cancels the UI open attempt if the user does not have the required access.
+    /// </summary>
     private void OnOpenAttempt(Entity<SmartFridgeComponent> ent, ref ActivatableUIOpenAttemptEvent args)
     {
         if (!Allowed(ent, args.User))
             args.Cancel();
     }
 
+    /// <summary>
+    /// Syncs <see cref="SmartFridgeComponent.RequireAccess"/> with the AccessReader when
+    /// an access overrider updates the fridge's access lists.
+    /// </summary>
     private void OnAccessOverriderUpdated(Entity<SmartFridgeComponent> ent, ref OnAccessOverriderAccessUpdatedEvent args)
     {
         if (!TryComp<AccessReaderComponent>(ent, out var reader))
@@ -150,7 +161,11 @@ public sealed class SmartFridgeSystem : EntitySystem
         Dirty(ent);
     }
 
-    // Start of Omustation
+    /// <summary>
+    /// When a configured SmartFridge machine board is inserted into the machine_board container,
+    /// copies its access lists to the fridge's AccessReader and enables access enforcement.
+    /// This allows access to be pre-configured on the board before installation.
+    /// </summary>
     private void OnBoardInserted(Entity<SmartFridgeComponent> ent, ref EntInsertedIntoContainerMessage args)
     {
         if (args.Container.ID != "machine_board")
