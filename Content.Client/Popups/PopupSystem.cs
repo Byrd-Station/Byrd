@@ -129,7 +129,8 @@ namespace Content.Client.Popups
                 ("count", existingLabel.Repeats));
         }
 
-        private void PopupMessage(string? message, PopupType type, EntityCoordinates coordinates, EntityUid? entity, bool recordReplay)
+        // OmuStation - skipChatLog param lets species communication popups appear above entity without going to chat
+        private void PopupMessage(string? message, PopupType type, EntityCoordinates coordinates, EntityUid? entity, bool recordReplay, bool skipChatLog = false)
         {
             if (message == null)
                 return;
@@ -158,7 +159,8 @@ namespace Content.Client.Popups
 
             _aliveWorldLabels.Add(popupData, label);
 
-            if (_shouldLogInChat &&
+            if (!skipChatLog &&
+                _shouldLogInChat &&
                 _playerManager.LocalEntity != null &&
                 _examine.InRangeUnOccluded(_playerManager.LocalEntity.Value, coordinates, 10))
             {
@@ -348,6 +350,14 @@ namespace Content.Client.Popups
 
             if (TryComp(entity, out TransformComponent? transform))
                 PopupMessage(ev.Message, ev.Type, transform.Coordinates, entity, false);
+        }
+
+        // OmuStation - shows popup above entity without logging to chat.
+        // called by OmuPopupSystem in Content.Omu.Client to handle PopupEntityNoChatEvent.
+        public void PopupEntityNoChat(string? message, EntityUid uid, PopupType type = PopupType.Small)
+        {
+            if (TryComp(uid, out TransformComponent? transform))
+                PopupMessage(message, type, transform.Coordinates, uid, false, skipChatLog: true);
         }
 
         private void OnRoundRestart(RoundRestartCleanupEvent ev)

@@ -5,10 +5,12 @@
 using System.Numerics;
 using Content.Server.Administration.Logs;
 using Content.Shared.Actions;
+using Content.Omu.Shared.Popups;
 using Content.Omu.Shared.Resomi.Components;
 using Content.Omu.Shared.Resomi.Events;
 using Content.Shared.Database;
 using Content.Shared.Popups;
+using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
@@ -19,7 +21,7 @@ namespace Content.Omu.Server.Resomi.EntitySystems;
 
 /// <summary>
 ///     handles the Resomi chirp ability.
-///     when a Resomi calls, nearby Resomis get a cursor popup (not logged to chat)
+///     when a Resomi calls, nearby Resomis get a popup above their character (not logged to chat)
 ///     with the direction, plus a sound after a short delay.
 ///     the call is logged for admins.
 /// </summary>
@@ -27,7 +29,6 @@ public sealed class ResomiCallSystem : EntitySystem
 {
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
@@ -73,8 +74,8 @@ public sealed class ResomiCallSystem : EntitySystem
 
             if (!Deleted(notification.ReceiverUid))
             {
-                // cursor popup does not get logged to chat regardless of the LogInChat setting
-                _popup.PopupCursor(notification.Message, notification.ReceiverUid, PopupType.Large);
+                // popup above the receiver, not logged to chat
+                SendNoChatPopup(notification.Message, notification.ReceiverUid, PopupType.Large);
                 _audio.PlayEntity(notification.Sound, Filter.Entities(notification.ReceiverUid), notification.ReceiverUid, true, AudioParams.Default.WithVolume(-4f));
             }
 
@@ -98,8 +99,8 @@ public sealed class ResomiCallSystem : EntitySystem
         var callerXform = Transform(uid);
         var callerPos = _transform.GetWorldPosition(callerXform);
 
-        // cursor popup for the caller - not logged to chat
-        _popup.PopupCursor(Loc.GetString("resomi-call-sent"), uid, PopupType.Large);
+        // popup above the caller - not logged to chat
+        SendNoChatPopup(Loc.GetString("resomi-call-sent"), uid, PopupType.Large);
         _audio.PlayEntity(CallSenderSound, Filter.Entities(uid), uid, true, AudioParams.Default.WithVolume(-2f));
 
         // log for admins so they can track species communication
@@ -134,6 +135,21 @@ public sealed class ResomiCallSystem : EntitySystem
         }
 
         _actions.SetCooldown(comp.CallActionEntity, comp.CallCooldown);
+    }
+
+    /// <summary>
+    ///     sends a PopupEntityNoChatEvent to the player controlling the given entity.
+    ///     the popup appears above the entity in world-space but is never logged to the chat panel.
+    /// </summary>
+    private void SendNoChatPopup(string message, EntityUid recipient, PopupType type)
+    {
+        if (!TryComp(recipient, out ActorComponent? actor))
+            return;
+
+        RaiseNetworkEvent(
+            new PopupEntityNoChatEvent(message, type, GetNetEntity(recipient)),
+            actor.PlayerSession
+        );
     }
 
     private string GetCompassDirection(Vector2 from, Vector2 to)
