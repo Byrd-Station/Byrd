@@ -15,3 +15,14 @@
     stackRequirements:
       Glass: 5
       Cable: 1
+  - type: DoorElectronics
+  - type: AccessReader
+  - type: ActivatableUI
+    key: enum.DoorElectronicsConfigurationUiKey.Key
+    requiredItems:
+      tags:
+      - DoorElectronicsConfigurator
+  - type: UserInterface
+    interfaces:
+      enum.DoorElectronicsConfigurationUiKey.Key:
+        type: DoorElectronicsBoundUserInterface

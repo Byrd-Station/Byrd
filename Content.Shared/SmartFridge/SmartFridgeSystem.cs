@@ -1,6 +1,7 @@
 // Portions taken from Monolith (https://github.com/monolith-station/monolith), credit tonotom1.
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
+using Content.Shared.Doors.Electronics;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
@@ -39,6 +40,7 @@ public sealed class SmartFridgeSystem : EntitySystem
 
         SubscribeLocalEvent<SmartFridgeComponent, ActivatableUIOpenAttemptEvent>(OnOpenAttempt); // Omustation
         SubscribeLocalEvent<SmartFridgeComponent, OnAccessOverriderAccessUpdatedEvent>(OnAccessOverriderUpdated); // Omustation
+        SubscribeLocalEvent<SmartFridgeComponent, EntInsertedIntoContainerMessage>(OnBoardInserted); // Omustation
 
         Subs.BuiEvents<SmartFridgeComponent>(SmartFridgeUiKey.Key,
             sub =>
@@ -145,6 +147,23 @@ public sealed class SmartFridgeSystem : EntitySystem
             return;
 
         ent.Comp.RequireAccess = reader.AccessLists.Count > 0;
+        Dirty(ent);
+    }
+
+    private void OnBoardInserted(Entity<SmartFridgeComponent> ent, ref EntInsertedIntoContainerMessage args)
+    {
+        if (args.Container.ID != "machine_board")
+            return;
+
+        if (!TryComp<DoorElectronicsComponent>(args.Entity, out _))
+            return;
+
+        if (!TryComp<AccessReaderComponent>(args.Entity, out var boardReader) || boardReader.AccessLists.Count == 0)
+            return;
+
+        var fridgeReader = EnsureComp<AccessReaderComponent>(ent);
+        _accessReader.SetAccesses((ent.Owner, fridgeReader), boardReader.AccessLists);
+        ent.Comp.RequireAccess = true;
         Dirty(ent);
     }
     // End of Omustation
