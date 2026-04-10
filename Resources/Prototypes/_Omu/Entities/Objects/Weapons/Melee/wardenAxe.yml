@@ -1,0 +1,46 @@
+- type: entity
+  name: Warden's Axe
+  id: WardenAxe
+  parent: [BaseWardenContraband,  FireAxe]
+  description:  A bloodstained weapon made for an executioner. The handle and blade are engraved with a Warden's sacred operating procedure.
+  components:
+  - type: Execution
+    doAfterDuration:  2.5
+    decapitation: true
+  - type: Blocking
+    passiveBlockModifier:
+      coefficients:
+        Blunt:  0.1
+        Slash:  0.05
+    activeBlockModifier:
+      coefficients:
+        Blunt:  0.7
+        Slash:  0.3
+        Piercing: 0.2
+      flatReductions:
+        Blunt:  8
+  - type: Sprite
+    sprite: _Omu/Objects/Weapons/Melee/wardenaxe.rsi
+    state:  icon
+  - type: Clothing
+    sprite: _Omu/Objects/Weapons/Melee/wardenaxe.rsi
+  - type: MeleeWeapon
+    heavyStaminaCost: 30
+    wideAnimationRotation:  135
+    swingLeft:  true
+    attackRate: 0.7
+    damage:
+      types:
+        Blunt:  7
+        Slash:  14
+      woundSeverityMultipliers:
+        Slash:  2
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Structural: 10
+  - type: MeleeRequiresWield
+  - type: HeldSpeedModifier
+  - type: ClothingSpeedModifier
+    walkModifier: 0.87
+    sprintModifier: 0.8

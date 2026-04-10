@@ -254,3 +254,13 @@
     state: icon
   content:
   - ClothingOuterHardsuitCorpsman
+
+- type: selectableSet
+  id: WardenAxeSet
+  name: selectable-set-warden-axe-name
+  description:  selectable-set-warden-axe-desc
+  sprite:
+    sprite: _Omu/Objects/Weapons/Melee/wardenaxe.rsi
+    state:  icon
+  content:
+  - WardenAxe
