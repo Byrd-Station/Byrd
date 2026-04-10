@@ -15,6 +15,7 @@
     stackRequirements:
       Glass: 5
       Cable: 1
+  # Start of Omustation
   - type: DoorElectronics
   - type: AccessReader
   - type: ActivatableUI
@@ -26,3 +27,4 @@
     interfaces:
       enum.DoorElectronicsConfigurationUiKey.Key:
         type: DoorElectronicsBoundUserInterface
+  # End of Omustation

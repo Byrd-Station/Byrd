@@ -1,7 +1,7 @@
 // Portions taken from Monolith (https://github.com/monolith-station/monolith), credit tonotom1.
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
-using Content.Shared.Doors.Electronics;
+using Content.Shared.Doors.Electronics; // Omustation
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
@@ -150,6 +150,7 @@ public sealed class SmartFridgeSystem : EntitySystem
         Dirty(ent);
     }
 
+    // Start of Omustation
     private void OnBoardInserted(Entity<SmartFridgeComponent> ent, ref EntInsertedIntoContainerMessage args)
     {
         if (args.Container.ID != "machine_board")
