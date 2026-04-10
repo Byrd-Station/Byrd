@@ -54,7 +54,7 @@ public sealed class EmoteOnMeleeHitSystem : EntitySystem
                 _chatSystem.TryEmoteWithoutChat(hit, emote, voluntary: false);
 
             emoteOnMeleeHit.LastEmoteTime = _gameTiming.CurTime;
-         }
+        }
     }
 
     /// <summary>
