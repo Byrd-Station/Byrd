@@ -1,0 +1,71 @@
+- type: entity
+  id: ChimeraGamerule
+  parent: BaseGameRule
+  components:
+  - type: GameRule
+    minPlayers: 40
+    delay:
+      min: 600
+      max: 900
+    chaosScore: 1200  #Omu same as zeds
+  - type: Tag
+    tags:
+    - LoneRunRule
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ InitialChimera ]
+      max: 4
+      playerRatio: 20
+      startingGear: ChimeraGear
+      jobBlacklist: [ Chaplain ] # Goobstation
+      blacklist:
+        components:
+        - CommandStaff # Goobstation
+        - ZombieImmune
+        - AntagImmune
+      briefing:
+        text: role-chimera-briefing
+        color: Plum
+        sound: "/Audio/Ambience/Antag/zombie_start.ogg"
+      mindRoles:
+      - MindRoleChimera
+
+- type: antag
+  id: InitialChimera
+  name: role-subtype-Chimera
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-initial-infected-objective
+  requirements:
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - IPC
+    - Plasmaman
+  guides: [ Letoferol ]
+
+- type: startingGear
+  id: ChimeraGear
+  storage:
+    back:
+    - PillLetoferol
+
+- type: entity
+  name: pill
+  suffix: Leto 30u
+  parent: Pill
+  id: PillLetoferol
+  components:
+  - type: Pill
+    pillType: 20
+  - type: Sprite
+    state: pill21
+  - type: Label
+    currentLabel: Letoferol 30u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Letoferol
+          Quantity: 30
