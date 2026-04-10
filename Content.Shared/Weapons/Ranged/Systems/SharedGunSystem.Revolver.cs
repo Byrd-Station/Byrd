@@ -16,6 +16,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.DoAfter; // Omustation
 using Content.Shared.Interaction;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
@@ -42,6 +43,7 @@ public partial class SharedGunSystem
         SubscribeLocalEvent<RevolverAmmoProviderComponent, TakeAmmoEvent>(OnRevolverTakeAmmo);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, GetVerbsEvent<AlternativeVerb>>(OnRevolverVerbs);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, InteractUsingEvent>(OnRevolverInteractUsing);
+        SubscribeLocalEvent<RevolverAmmoProviderComponent, RevolverAmmoBoxFillDoAfterEvent>(OnRevolverAmmoBoxFillDoAfter); // Omustation
         SubscribeLocalEvent<RevolverAmmoProviderComponent, GetAmmoCountEvent>(OnRevolverGetAmmoCount);
         SubscribeLocalEvent<RevolverAmmoProviderComponent, UseInHandEvent>(OnRevolverUse);
     }
@@ -72,9 +74,99 @@ public partial class SharedGunSystem
         if (args.Handled)
             return;
 
+        // Ammo boxes load one round at a time with a delay, like shotgun loading.
+        if (TryComp<BallisticAmmoProviderComponent>(args.Used, out var ballisticComp) && ballisticComp.MayTransfer) // Start of Omustation change
+        {
+            if (!Timing.IsFirstTimePredicted)
+                return;
+
+            if (GetRevolverCount(component) >= component.Capacity)
+            {
+                Popup(Loc.GetString("gun-revolver-full"), uid, args.User);
+                args.Handled = true;
+                return;
+            }
+
+            if (_doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, ballisticComp.FillDelay, new RevolverAmmoBoxFillDoAfterEvent(), used: args.Used, target: uid, eventTarget: uid)
+            {
+                BreakOnDamage = false,
+                NeedHand = true,
+            }))
+                args.Handled = true;
+            return;
+        } // End of Omustation change
+
         if (TryRevolverInsert(uid, component, args.Used, args.User))
             args.Handled = true;
     }
+
+    private void OnRevolverAmmoBoxFillDoAfter(EntityUid revolverUid, RevolverAmmoProviderComponent component, RevolverAmmoBoxFillDoAfterEvent args) // Start of Omustation change
+    {
+        if (args.Handled || args.Cancelled)
+            return;
+
+        if (args.Used == null || Deleted(args.Used) || !TryComp<BallisticAmmoProviderComponent>(args.Used, out var ballisticComp))
+            return;
+
+        // Find the next empty chamber starting from the current index.
+        var freeSlot = -1;
+        for (var i = 0; i < component.Capacity; i++)
+        {
+            var index = (component.CurrentIndex + i) % component.Capacity;
+            if (component.AmmoSlots[index] == null && component.Chambers[index] == null)
+            {
+                freeSlot = index;
+                break;
+            }
+        }
+
+        if (freeSlot == -1)
+        {
+            Popup(Loc.GetString("gun-revolver-full"), revolverUid, args.User);
+            return;
+        }
+
+        if (GetBallisticShots(ballisticComp) == 0)
+        {
+            Popup(Loc.GetString("gun-speedloader-empty"), revolverUid, args.User);
+            return;
+        }
+
+        var xform = Transform(args.Used.Value);
+        var ammo = new List<(EntityUid? Entity, IShootable Shootable)>(1);
+        var ev = new TakeAmmoEvent(1, ammo, xform.Coordinates, args.User);
+        RaiseLocalEvent(args.Used.Value, ev);
+
+        if (ev.Ammo.Count == 0 || ev.Ammo[0].Entity == null)
+            return;
+
+        var ent = ev.Ammo[0].Entity!.Value;
+
+        if (_whitelistSystem.IsWhitelistFail(component.Whitelist, ent))
+        {
+            _interaction.InteractUsing(args.User, ent, args.Used.Value, xform.Coordinates, checkCanInteract: false, checkCanUse: false);
+            Popup(Loc.GetString("gun-ballistic-transfer-invalid",
+                ("ammoEntity", ent),
+                ("targetEntity", revolverUid)), revolverUid, args.User);
+            if (IsClientSide(ent))
+                Del(ent);
+            return;
+        }
+
+        component.AmmoSlots[freeSlot] = ent;
+        Containers.Insert(ent, component.AmmoContainer);
+        SetChamber(freeSlot, component, ent);
+        UpdateRevolverAppearance(revolverUid, component);
+        UpdateAmmoCount(revolverUid);
+        Dirty(revolverUid, component);
+        Audio.PlayPredicted(component.SoundInsert, revolverUid, args.User);
+        Popup(Loc.GetString("gun-revolver-insert"), revolverUid, args.User);
+
+        args.Handled = true;
+        args.Repeat = GetRevolverCount(component) < component.Capacity && GetBallisticShots(ballisticComp) > 0;
+        if (IsClientSide(ent))
+            Del(ent);
+    } // End of Omustation change
 
     private void OnRevolverGetState(EntityUid uid, RevolverAmmoProviderComponent component, ref ComponentGetState args)
     {
@@ -487,3 +579,13 @@ public partial class SharedGunSystem
 
     }
 }
+
+// Start of Omustation change
+/// <summary>
+/// DoAfter event for loading a revolver one round at a time from an ammo box.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed partial class RevolverAmmoBoxFillDoAfterEvent : SimpleDoAfterEvent
+{
+}
+// End of Omustation change
