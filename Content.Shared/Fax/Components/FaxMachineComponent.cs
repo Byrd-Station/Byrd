@@ -142,6 +142,12 @@ public sealed partial class FaxMachineComponent : Component
     public bool ReceiveNukeCodes { get; set; } = false;
 
     /// <summary>
+    /// EE: Should this fax receive station goals
+    /// </summary>
+    [DataField]
+    public bool ReceiveStationGoal { get; set; } = false;
+
+    /// <summary>
     /// Sound to play when fax printing new message
     /// </summary>
     [DataField]

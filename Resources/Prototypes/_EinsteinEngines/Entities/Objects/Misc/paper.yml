@@ -1,0 +1,5 @@
+- type: entity
+  parent: Paper
+  id: StationGoalPaper
+  name: station goal
+  description: It looks like you have a lot of work to do.
