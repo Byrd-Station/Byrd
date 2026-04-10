@@ -90,10 +90,12 @@ using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-
+using Content.Omu.Common.Proficiencies;
 namespace Content.Shared.Weapons.Ranged.Components;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true), Access(typeof(SharedGunSystem))]
+//Omu edit, added proficiency modifiers to reload speed
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true), Access(typeof(SharedGunSystem), typeof(CommonProficiencySystem))]
+
 public sealed partial class BallisticAmmoProviderComponent : Component
 {
     [DataField]

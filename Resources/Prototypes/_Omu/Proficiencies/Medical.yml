@@ -1,0 +1,30 @@
+- type: Proficiency
+  id: MedicalDoctor
+  # specifying proficiency anyways to debuff tool use, go do your job and stop tiding
+  proficiencyMultiplier: 1.20
+  surgeryProficiency: 1.25
+
+- type: Proficiency
+  id: Chemist
+  # specifying proficiency anyways to debuff tool use, go do your job and stop tiding
+  proficiencyMultiplier: 1.20
+  surgeryProficiency: 1.25
+
+- type: Proficiency
+  id: Virologist
+  # specifying proficiency anyways to debuff tool use, go do your job and stop tiding
+  proficiencyMultiplier: 1.20
+
+- type: Proficiency
+  id: Paramedic
+  items:
+  # lets buff jaws for paramed, this could be huge and if it is feel free to come back and change it
+    - JawsOfLife
+  proficiencyMultiplier: 1.20
+  surgeryProficiency: 1.10
+
+- type: Proficiency
+  id: ChiefMedicalOfficer
+  # less tool speed malus because you may need them more than docs, more surgery buff
+  proficiencyMultiplier: 1.10
+  surgeryProficiency: 1.5
