@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingBackpackChameleonFill
+  parent: ClothingBackpackChameleon
   id: ClothingBackpackChameleonFillNT
   suffix: Fill, Chameleon, NT
   components:
