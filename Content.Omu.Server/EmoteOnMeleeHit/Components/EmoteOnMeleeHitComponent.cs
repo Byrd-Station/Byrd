@@ -22,7 +22,7 @@ public sealed partial class EmoteOnMeleeHitComponent : Component
     /// A set of emotes that will be randomly picked from.
     /// <see cref="EmotePrototype"/>
     /// </summary>
-    [DataField, customTypeSerializer: typeof(PrototypeIdHashSetSerializer<EmotePrototype>))]
+  [DataField("emotes", customTypeSerializer: typeof(PrototypeIdHashSetSerializer<EmotePrototype>))]
     public HashSet<string> Emotes = new();
 
     /// <summary>
