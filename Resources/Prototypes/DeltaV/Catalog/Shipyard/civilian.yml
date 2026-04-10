@@ -47,7 +47,7 @@
   id: Nomad
   name: NTCV Nomad
   description: A small shuttle for transporting up to 3 passengers with relative comfort.
-  price: 22000 # Omu
+  price: 22500 # Omu
   path: /Maps/_DV/Shuttles/ntcv-nomad.yml
   categories:
   - Civilian
