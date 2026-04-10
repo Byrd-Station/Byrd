@@ -5,3 +5,11 @@ uplink-hardsuit-cybersunsciencesuit-desc = A scientific reseach hardsuit meant t
 uplink-dislippler-name = Dislippler
 uplink-dislippler-desc = Standard-issue security disabler on Honk! Co. stations. Ultimate proof that God has abandoned us.
 
+uplink-shredder-name = Shredder
+uplink-shredder-desc = A razor-sharp rock guitar which delivers deadly shocks while providing you with increased speed and healing while wielded. Anyone wearing blood-red headphones nearby will also gain the same boost!
+
+uplink-shredder-bundle-name = Shredder Bundle
+uplink-shredder-bundle-desc = Contains a Shredder, and 6 blood-red headphones so everyone can enjoy the benefits of the music.
+
+uplink-bloodred-headphones-name = Blood-red Headphones
+uplink-bloodred-headphones-desc = Looks stylish, and synergizes with the Shredder.
