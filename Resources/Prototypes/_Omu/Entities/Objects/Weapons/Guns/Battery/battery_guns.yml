@@ -49,3 +49,27 @@
           tags:
             - EnergyMagAmmo
             - AdvancedEnergyMagAmmo
+
+- type: entity
+  name: CentComm Disabler SMG
+  parent: [ WeaponDisablerSMG, BaseCentcommContraband ]
+  id: WeaponAdvancedDisablerSMG
+  description:  An advanced disabler SMG meant for nonlethally disposing of threats to priority personnel.
+  components:
+  - type: Sprite
+    sprite: _Omu/Objects/Weapons/Guns/Battery/centcomm_disabler_smg.rsi
+    layers:
+    - state:  base
+      map:  ["enum.GunVisualLayers.Base"]
+    - state:  mag-unshaded-0
+      map:  ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: ProjectileBatteryAmmoProvider
+    proto:  BulletDisablerSmg
+    fireCost: 25
+  - type: PacifismAllowedGun
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 18
+    autoRechargePause:  true
+    autoRechargePauseTime:  4
