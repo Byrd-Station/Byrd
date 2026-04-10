@@ -81,7 +81,7 @@
   - type: Item
     sprite: Objects/Tools/spy_device.rsi
   - type: PowerCellDraw
-    useCharge: 10
+    #useCharge: 10 #Don't have this and it works without this.
   - type: StaticPrice
     price: 750
   - type: Tag # DeltaV - Let it be put in storage implants by removing HighRiskItem
