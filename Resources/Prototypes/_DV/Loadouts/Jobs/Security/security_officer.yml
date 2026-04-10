@@ -2,11 +2,25 @@
   id: WinterCoatSecSweaterDV
   equipment:
     outerClothing: ClothingOuterStasecSweater
+  groupBy: "security sweater"
+
+- type: loadout
+  id: WinterCoatBlueSecSweaterDV
+  equipment:
+    outerClothing: ClothingOuterStasecBlueSweater
+  groupBy: "security sweater"
 
 - type: loadout
   id: WinterCoatSecCoatDV
   equipment:
     outerClothing: ClothingOuterCoatStasec
+  groupBy: "security coat"
+
+- type: loadout
+  id: WinterCoatBlueSecCoatDV
+  equipment:
+    outerClothing: ClothingOuterBlueCoatStasec
+  groupBy: "security coat"
 
 - type: loadout
   id: WinterGreatCoatSecCoatDV
@@ -15,3 +29,13 @@
     proto: SeniorOfficer
   equipment:
     outerClothing: ClothingOuterCoatStasecSenior
+  groupBy: "security greatcoat"
+
+- type: loadout
+  id: WinterGreatCoatBlueSecCoatDV
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorOfficer
+  equipment:
+    outerClothing: ClothingOuterBlueCoatStasecSenior
+  groupBy: "security greatcoat"

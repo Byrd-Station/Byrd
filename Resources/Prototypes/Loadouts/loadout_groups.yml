@@ -1458,8 +1458,11 @@
   - WinterCoatSeniorSecArmored # Goobstation
   - VeteranOfficerArmor # Goobstation
   - WinterCoatSecSweaterDV # Omu
+  - WinterCoatBlueSecSweaterDV # Omu
   - WinterCoatSecCoatDV # Omu
+  - WinterCoatBlueSecCoatDV # Omu
   - WinterGreatCoatSecCoatDV # Omu
+  - WinterGreatCoatBlueSecCoatDV #Omu
 
 - type: loadoutGroup
   id: SecurityShoes
