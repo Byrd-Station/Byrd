@@ -10634,8 +10634,6 @@ entities:
       pos: -69.5,61.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 22215
 - proto: AltarSpawner
@@ -61074,8 +61072,6 @@ entities:
       pos: -11.5,25.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 19711
   - uid: 19044
@@ -61084,8 +61080,6 @@ entities:
       pos: -11.5,31.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 19711
   - uid: 19045
@@ -98964,8 +98958,6 @@ entities:
       pos: -68.5,61.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 22215
     - type: AtmosPipeLayers
@@ -100420,8 +100412,6 @@ entities:
       pos: -68.5,60.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 22215
 - proto: GasVolumePump
@@ -142476,8 +142466,6 @@ entities:
       pos: -29.5,90.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 21408
   - uid: 21248
@@ -142487,8 +142475,6 @@ entities:
       pos: -38.5,90.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 21408
   - uid: 21249
@@ -142498,8 +142484,6 @@ entities:
       pos: -32.5,93.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 21408
   - uid: 21250
@@ -142509,8 +142493,6 @@ entities:
       pos: -32.5,100.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 21408
   - uid: 21251
@@ -142520,8 +142502,6 @@ entities:
       pos: -35.5,100.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 21408
   - uid: 21252
@@ -142531,8 +142511,6 @@ entities:
       pos: -27.5,94.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 21408
 - proto: WeaponEnergyTurretAIControlPanel

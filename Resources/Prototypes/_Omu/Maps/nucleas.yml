@@ -30,9 +30,9 @@
             #service
             HeadOfPersonnel: [ 1, 1 ]
             AdministrativeAssistant: [ 1, 1 ] # Delta V
-            Bartender: [ 1, 1 ]
-            Botanist: [ 2, 2 ]
-            Chef: [ 1, 1 ]
+            Bartender: [ 2, 2 ]
+            Botanist: [ 2, 3 ]
+            Chef: [ 2, 2 ]
             Janitor: [ 2, 2 ]
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
@@ -40,15 +40,15 @@
             Detective: [ 1, 1 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
-            AtmosphericTechnician: [ 2, 2 ]
-            StationEngineer: [ 4, 4 ]
+            AtmosphericTechnician: [ 2, 3 ]
+            StationEngineer: [ 4, 5 ]
             TechnicalAssistant: [ 3, 3 ]
             #medical
             ChiefMedicalOfficer: [ 1, 1 ]
-            Chemist: [ 2, 2 ]
-            MedicalDoctor: [ 2, 2 ]
+            Chemist: [ 2, 3 ]
+            MedicalDoctor: [ 3, 4 ]
             MedicalIntern: [ 2, 2 ]
-            Paramedic: [ 1, 1 ]
+            Paramedic: [ 2, 3 ]
             Virologist: [ 1, 1 ] 
             #science
             ResearchDirector: [ 1, 1 ]
@@ -77,7 +77,7 @@
             RadioHost: [ 1, 1 ] 
             #silicon
             StationAi: [ 1, 1 ]
-            Borg: [ 2, 2 ]
+            Borg: [ 3, 3 ]
 
             NanotrasenCareerTrainer: [ 2, 2] 
 
