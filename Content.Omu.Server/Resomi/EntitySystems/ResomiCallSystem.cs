@@ -86,6 +86,10 @@ public sealed class ResomiCallSystem : EntitySystem
     private void OnMapInit(EntityUid uid, ResomiCallComponent comp, MapInitEvent args)
     {
         _actions.AddAction(uid, ref comp.CallActionEntity, comp.CallAction);
+
+        // mark the action entity so it can be used while nesting
+        if (comp.CallActionEntity.HasValue)
+            EnsureComp<AllowedWhileNestingComponent>(comp.CallActionEntity.Value);
     }
 
     private void OnShutdown(EntityUid uid, ResomiCallComponent comp, ComponentShutdown args)

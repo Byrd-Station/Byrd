@@ -53,6 +53,10 @@ public abstract class SharedNestingFrozenSystem : EntitySystem
         if (nestingComponent.ToggleNestActionEntity != null && args.Used == nestingComponent.ToggleNestActionEntity)
             return;
 
+        // allow any action explicitly marked as usable while nesting (e.g. resomi chirp)
+        if (HasComp<AllowedWhileNestingComponent>(args.Used))
+            return;
+
         args.Cancel();
     }
 

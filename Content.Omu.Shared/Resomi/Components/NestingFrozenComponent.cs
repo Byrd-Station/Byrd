@@ -14,3 +14,13 @@ namespace Content.Omu.Shared.Resomi.Components;
 public sealed partial class NestingFrozenComponent : Component
 {
 }
+
+/// <summary>
+/// Added to an action entity to mark it as usable while nesting.
+/// SharedNestingFrozenSystem will allow UseAttemptEvent through for any action
+/// that has this component, so the holder can activate it from the nest.
+/// </summary>
+[RegisterComponent]
+public sealed partial class AllowedWhileNestingComponent : Component
+{
+}
