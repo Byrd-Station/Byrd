@@ -49,16 +49,11 @@ public sealed class EmoteOnMeleeHitSystem : EntitySystem
 
             var emote = _random.Pick(emoteOnMeleeHit.Emotes);
             if (emoteOnMeleeHit.WithChat)
-            {
                 _chatSystem.TryEmoteWithChat(hit, emote, emoteOnMeleeHit.HiddenFromChatWindow ? ChatTransmitRange.HideChat : ChatTransmitRange.Normal);
-            }
             else
-            {
                 _chatSystem.TryEmoteWithoutChat(hit, emote, voluntary: false);
-            }
 
             emoteOnMeleeHit.LastEmoteTime = _gameTiming.CurTime;
-        }
     }
 
     /// <summary>
