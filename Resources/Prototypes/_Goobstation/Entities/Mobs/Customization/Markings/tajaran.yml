@@ -154,14 +154,6 @@
   - sprite: _Goobstation/Mobs/Customization/Tajaran/head.rsi
     state: patch
 
-- type: marking # Omu
-  id: TajaranHeadTuxedo
-  bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Tajaran]
-  sprites:
-  - sprite: _Omu/Mobs/Customization/Tajaran/head.rsi
-    state: tuxedocat_face
 
 # Tajaran Torso
 
@@ -191,15 +183,6 @@
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/torso.rsi
     state: fullbelly
-
-- type: marking # Omu
-  id: TajaranTorsoTuxedo
-  bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [Tajaran]
-  sprites:
-  - sprite: _Omu/Mobs/Customization/Tajaran/torso.rsi
-    state: tuxedocat_back
 
 # Overlays
 
