@@ -31,7 +31,11 @@ namespace Content.Server.Destructible.Thresholds.Behaviors
 
             foreach (var container in system.EntityManager.System<SharedContainerSystem>().GetAllContainers(owner, containerManager))
             {
-                system.ContainerSystem.EmptyContainer(container, true, system.EntityManager.GetComponent<TransformComponent>(owner).Coordinates);
+                // do not pass explicit coordinates - AttachParentToContainerOrGrid handles both
+                // grid and space cases correctly. passing owner.Coordinates as destination
+                // fails the assert in SharedContainerSystem.Remove when the entity is in space
+                // and SetCoordinates cannot place the item at the intended position.
+                system.ContainerSystem.EmptyContainer(container, force: true);
             }
         }
     }
