@@ -17,9 +17,9 @@
   id: PartVulpkaninBase
   components:
   - type: Sprite
-    sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    sprite: _DV/Mobs/Species/Vulpkanin/parts_plantigrade.rsi # Omu - vulp furrification
   - type: Icon
-    sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    sprite: _DV/Mobs/Species/Vulpkanin/parts_plantigrade.rsi # Omu - vulp furrification
   - type: BodyPart
     species: Vulpkanin
   - type: Damageable # Shitmed
@@ -31,10 +31,10 @@
   name: "vulpkanin chest"
   components:
   - type: Sprite
-    sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    sprite: _DV/Mobs/Species/Vulpkanin/parts_plantigrade.rsi # Omu - vulp furrification
     state: "chest_m"
   - type: Icon
-    sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    sprite: _DV/Mobs/Species/Vulpkanin/parts_plantigrade.rsi # Omu - vulp furrification
     state: "chest_m"
 
 - type: entity
@@ -43,10 +43,10 @@
   name: "vulpkanin groin"
   components:
   - type: Sprite
-    sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    sprite: _DV/Mobs/Species/Vulpkanin/parts_plantigrade.rsi # Omu - vulp furrification
     state: "groin_m"
   - type: Icon
-    sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    sprite: _DV/Mobs/Species/Vulpkanin/parts_plantigrade.rsi # Omu - vulp furrification
     state: "groin_m"
 
 - type: entity
