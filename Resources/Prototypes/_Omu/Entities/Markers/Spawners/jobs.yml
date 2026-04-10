@@ -5,6 +5,7 @@
   components:
   - type: SpawnPoint
     job_id: TransitPrisoner
+    forced: true
   - type: Sprite
     layers:
       - state: green
