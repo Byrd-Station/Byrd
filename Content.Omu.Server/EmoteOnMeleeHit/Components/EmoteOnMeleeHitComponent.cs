@@ -41,7 +41,7 @@ public sealed partial class EmoteOnMeleeHitComponent : Component
     /// <summary>
     /// The simulation time of the last emote preformed due to being hit by an entity with this component.
     /// </summary>
-    [DataField, customTypeSerializer: typeof(TimeOffsetSerializer))]
+    [DataField("lastEmoteTime", customTypeSerializer: typeof(TimeOffsetSerializer))]
     [AutoPausedField]
     public TimeSpan LastEmoteTime = TimeSpan.Zero;
 
