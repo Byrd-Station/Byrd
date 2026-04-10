@@ -137,6 +137,7 @@
     - Tajaran
     - Chitinid # DeltaV
     - Shadowkin
+    - Kitsune # DeltaV
     - Thaven # Omu
 
 # Goobstation start
@@ -216,6 +217,7 @@
     - Resomi
     - Tajaran
     - Shadowkin
+    - Kitsune # DeltaV
     - Thaven # Omu
 
 - type: loadoutEffectGroup
