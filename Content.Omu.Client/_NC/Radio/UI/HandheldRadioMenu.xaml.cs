@@ -5,7 +5,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._NC.Radio.UI;
+namespace Content.Omu.Client._NC.Radio.UI;
 // TODO: Fix silly ui update issues
 [GenerateTypedNameReferences]
 public sealed partial class HandheldRadioMenu : FancyWindow
