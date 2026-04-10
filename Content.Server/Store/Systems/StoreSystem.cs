@@ -37,6 +37,7 @@ using Content.Server._White.StoreDiscount;
 using Content.Shared.Mind;
 using Content.Shared.Polymorph;
 using Content.Server.Polymorph.Systems;
+using Content.Shared._DV.Store.Events; // DV
 
 namespace Content.Server.Store.Systems;
 
@@ -65,6 +66,7 @@ public sealed partial class StoreSystem : EntitySystem
         SubscribeLocalEvent<StoreComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<StoreComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<StoreComponent, OpenUplinkImplantEvent>(OnImplantActivate);
+        SubscribeLocalEvent<StoreComponent, IntrinsicStoreActionEvent>(OnIntrinsicStoreAction); // DV
 
         SubscribeLocalEvent<StoreComponent, PolymorphedEvent>(OnPolymorphed); // goob edit
 
@@ -226,6 +228,12 @@ public sealed partial class StoreSystem : EntitySystem
         UpdateUserInterface(null, uid, store);
         return true;
     }
+
+    private void OnIntrinsicStoreAction(Entity<StoreComponent> ent, ref IntrinsicStoreActionEvent args) // DV
+    {
+        ToggleUi(args.Performer, ent.Owner, ent.Comp);
+    }
+
 }
 
 public sealed class CurrencyInsertAttemptEvent : CancellableEntityEventArgs
