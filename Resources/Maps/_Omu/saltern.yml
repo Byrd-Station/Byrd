@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/22/2026 13:46:50
-  entityCount: 12558
+  time: 03/29/2026 13:36:47
+  entityCount: 12560
 maps:
 - 1
 grids:
@@ -5697,7 +5697,7 @@ entities:
       pos: -9.5,-35.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4302.5425
+      secondsUntilStateChange: -4353.675
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -29881,6 +29881,14 @@ entities:
     - type: Transform
       pos: 26.5,6.5
       parent: 2
+- proto: ComputerShuttleSalvage
+  entities:
+  - uid: 12559
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 16.5,19.5
+      parent: 2
 - proto: ComputerSolarControl
   entities:
   - uid: 4804
@@ -36136,7 +36144,7 @@ entities:
       pos: 40.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -13735.276
+      secondsUntilStateChange: -13786.409
       state: Closing
   - uid: 5823
     components:
@@ -64695,6 +64703,13 @@ entities:
     components:
     - type: Transform
       pos: -11.5,14.5
+      parent: 2
+- proto: SpawnPointSecuritySergeant
+  entities:
+  - uid: 12560
+    components:
+    - type: Transform
+      pos: -12.5,15.5
       parent: 2
 - proto: SpawnPointServiceWorker
   entities:
