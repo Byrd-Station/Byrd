@@ -4,16 +4,14 @@
   id: Nucleas
   mapName: 'Nucleas'
   mapPath: /Maps/_Omu/nucleas.yml
-  maxRandomOffset: 0
-  randomRotation: false
   minPlayers: 30
   maxPlayers: 60
   stations:
-    Train:
+    Nucleas:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Nucleas'
+          mapNameTemplate: '{0} Nucleas Station {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'NU'
