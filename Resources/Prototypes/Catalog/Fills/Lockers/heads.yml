@@ -433,7 +433,7 @@
   table: !type:AllSelector
     children:
     - id: ClothingMaskBreathMedical
-    - id: ClothingOuterHardsuitMedical
+    - id: UndeterminedVoidsuitCMO # Omu
     - id: OxygenTankFilled
     - id: NitrogenTankFilled
 

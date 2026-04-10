@@ -254,3 +254,24 @@
     state: icon
   content:
   - ClothingOuterHardsuitCorpsman
+
+#cmo
+- type: selectableSet
+  id: VoidsuitSelectorCMOHardsuit
+  name: selectable-set-cmo-hardsuit-name
+  description: selectable-set-cmo-hardsuit-desc
+  sprite:
+    sprite: Clothing/OuterClothing/Hardsuits/medical.rsi
+    state: icon
+  content:
+  - ClothingOuterHardsuitMedical
+
+- type: selectableSet
+  id: VoidsuitSelectorCMOModsuit
+  name: selectable-set-cmo-modsuit-name
+  description: selectable-set-cmo-modsuit-desc
+  sprite:
+    sprite: _Omu/Clothing/Modsuits/cmo.rsi
+    state: control
+  content:
+  - ClothingModsuitCMO

@@ -1,0 +1,220 @@
+# SPDX-FileCopyrightText: 2025 CliveOcelot <165305605+Orion-416@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Marty <martynashagriefer@gmail.com>
+# SPDX-FileCopyrightText: 2025 NotActuallyMarty <martynashagriefer@gmail.com>
+# SPDX-FileCopyrightText: 2025 Orion-416 <cliveocelot@gmail.com>
+# SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [ ClothingModsuitStandard, BaseCommandContraband ]
+  id: ClothingModsuitCMO
+  name: chief medical officer fumigator modsuit control unit
+  description: Controller for the CMO's modsuit. Perfection, Hubris, Purity - It's not a sin if you're clean.
+  components:
+    - type: Sprite
+      sprite: _Omu/Clothing/Modsuits/cmo.rsi
+    - type: ToggleableClothing
+      clothingPrototypes:
+        head: ClothingModsuitHelmetCMO
+        gloves: ClothingModsuitGauntletsCMO
+        outerClothing: ClothingModsuitChestplateCMO
+        shoes: ClothingModsuitBootsCMO
+    - type: ItemSlots
+      slots:
+        cell_slot:
+          name: power-cell-slot-component-slot-name-default
+          startingItem: PowerCellHigh
+          whitelist:
+            components:
+              - PowerCell
+    - type: Storage
+      grid:
+      - 0,0,1,3
+      - 3,0,6,3
+      - 8,0,9,3
+    - type: ExplosionResistance
+      damageCoefficient: 0.9
+    - type: SealableClothingVisuals
+      spriteLayer: sealed
+      clothingVisuals:
+        back:
+        - state: equipped-BACKPACK-sealed
+
+- type: entity
+  parent: ClothingHandModsuitBase
+  id: ClothingModsuitGauntletsCMO
+  name: fumigator modsuit gauntlets
+  description: A pair of nitrile-tipped gauntlets made for the fumigator modsuit.
+  categories: [HideSpawnMenu]
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Omu/Clothing/Modsuits/cmo.rsi
+    layers:
+    - state: gauntlets
+    - state: gauntlets-sealed
+      visible: false
+      map: [ "sealed" ]
+  - type: Clothing
+    equipSound: /Audio/Mecha/mechmove03.ogg
+    unequipSound: /Audio/Mecha/mechmove03.ogg
+    slots: [ gloves ]
+  - type: Fiber
+    fiberMaterial: fibers-nitrile
+  - type: FingerprintMask
+  - type: SealableClothing
+    sealUpPopup: sealable-clothing-seal-up-gauntlets
+    sealDownPopup: sealable-clothing-seal-down-gauntlets
+  - type: SealableClothingVisuals
+    spriteLayer: sealed
+    clothingVisuals:
+      gloves:
+      - state: equipped-HAND-sealed
+      gloves-vox:
+      - state: equipped-HAND-sealed-vox
+      gloves-resomi:
+      - state: equipped-HAND-sealed-resomi
+
+- type: entity
+  parent: [ClothingModsuitHelmetStandard, ShowMedicalIcons]
+  id: ClothingModsuitHelmetCMO
+  name: fumigator modsuit helmet
+  description: A protective helmet made for the Chief Medical Officer. Incorporates advanced biocontrol systems and a built-in medical HUD.
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: _Omu/Clothing/Modsuits/cmo.rsi
+    - type: PressureProtection
+      highPressureMultiplier: 0.08
+      lowPressureMultiplier: 1000
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.7
+          Slash: 0.7
+          Piercing: 0.7
+          Heat: 0.75
+          Cellular: 0.8
+          Radiation: 0.8
+          Caustic: 0.1
+    - type: PointLight
+      color: "#9ff5f2"
+      enabled: false
+      radius: 8
+      energy: 2
+      mask: /Textures/Effects/LightMasks/cone.png
+      autoRot: true
+      netsync: false
+    - type: Clothing
+      clothingVisuals:
+        head:
+        - state: equipped-HEAD
+        head-resomi:
+        - state: equipped-HEAD-resomi
+        head-vulpkanin:
+        - state: equipped-HEAD-vulpkanin
+        head-reptilian:
+        - state: equipped-HEAD-reptilian
+        head-vox:
+        - state: equipped-HEAD-vox
+    - type: SealableClothingVisuals
+      spriteLayer: sealed
+      clothingVisuals:
+        head:
+        - state: equipped-HEAD-sealed
+        head-resomi:
+        - state: equipped-HEAD-sealed-resomi
+        head-vulpkanin:
+        - state: equipped-HEAD-sealed-vulpkanin
+        head-reptilian:
+        - state: equipped-HEAD-sealed-reptilian
+        head-vox:
+        - state: equipped-HEAD-sealed-vox
+    - type: ShowHealthBars
+      damageContainers:
+      - Biological
+    - type: DiseaseProtection
+      incoming:
+        powerModifiers:
+          Aerial: -0.9
+        chanceMultipliers:
+          Aerial: 0.5
+      outgoing:
+        powerModifiers:
+          Aerial: -0.9
+        chanceMultipliers:
+          Aerial: 0.5
+
+
+- type: entity
+  parent: ClothingModsuitChestplateStandard
+  id: ClothingModsuitChestplateCMO
+  name: fumigator modsuit chestplate
+  description: State-of-the-art pristine modsuit chestplate for the Chief Medical Officer.
+  categories: [HideSpawnMenu]
+  components:
+    - type: Sprite
+      sprite: _Omu/Clothing/Modsuits/cmo.rsi
+    - type: ClothingSpeedModifier
+      walkModifier: .85
+      sprintModifier: .85
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.65
+          Slash: 0.65
+          Piercing: 0.6
+          Heat: 0.85
+          Cellular: 0.8 # For chimeras
+          Caustic: 0.5
+    - type: SealableClothingVisuals
+      spriteLayer: sealed
+      clothingVisuals:
+        outerClothing:
+        - state: equipped-OUTERCLOTHING-sealed
+        outerClothing-resomi:
+        - state: equipped-OUTERCLOTHING-sealed-resomi
+        outerClothing-vox:
+        - state: equipped-OUTERCLOTHING-sealed-vox
+    - type: PressureProtection
+      highPressureMultiplier: 0.02
+      lowPressureMultiplier: 1000
+    - type: ExplosionResistance
+      damageCoefficient: 0.9
+    - type: FireProtection
+      reduction: .5
+    - type: ZombificationResistance
+      zombificationResistanceCoefficient: 0.2
+    - type: DiseaseProtection
+      incoming:
+        powerModifiers:
+          Blood: -1 # immune to plague mice
+        chanceMultipliers:
+          Blood: 0.5
+
+- type: entity
+  parent: ClothingModsuitBootsStandard
+  id: ClothingModsuitBootsCMO
+  name: fumigator modsuit boots
+  description: A regular pair of modsuit boots for the Fumigator modsuit. They are somewhat plated to resist against falling scalpels.
+  categories: [HideSpawnMenu]
+  components:
+    - type: Appearance
+    - type: Sprite
+      sprite: _Omu/Clothing/Modsuits/cmo.rsi
+      layers:
+      - state: boots
+      - state: boots-sealed
+        map: [ "sealed" ]
+    - type: SealableClothingVisuals
+      spriteLayer: sealed
+      clothingVisuals:
+        shoes:
+        - state: equipped-FEET-sealed
+
+
