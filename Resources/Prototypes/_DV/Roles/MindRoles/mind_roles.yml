@@ -18,7 +18,7 @@
   name: Internals Affairs Agent
   components:
   - type: MindRole
-    roleType: FreeAgent
+    roleType: NanoTrasen # Omu, was FreeAgent
     subtype: role-subtype-ntagent
     antagPrototype: NTAgent
     exclusiveAntag: true
