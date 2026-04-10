@@ -78,9 +78,6 @@
       enum.SmartFridgeUiKey.Key:
         type: SmartFridgeBoundUserInterface
   - type: AccessReader
-  - type: Lock # Omustation
-    locked: false
-  - type: ActivatableUIRequiresLock # Omustation
   - type: UseDelay
     delay: 1
   - type: AntiRottingContainer

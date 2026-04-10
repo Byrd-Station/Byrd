@@ -6,7 +6,6 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Storage.Components;
-using Content.Shared.Lock; // Omustation
 using Content.Shared.UserInterface; // Omustation
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
@@ -25,7 +24,6 @@ public sealed class SmartFridgeSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly LockSystem _lock = default!; // Omustation
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!; // Omustation
 
     public override void Initialize()
@@ -104,9 +102,6 @@ public sealed class SmartFridgeSystem : EntitySystem
     private void OnInteractUsing(Entity<SmartFridgeComponent> ent, ref InteractUsingEvent args)
     {
         if (!_hands.CanDrop(args.User, args.Used))
-            return;
-
-        if (_lock.IsLocked(ent.Owner)) // Omustation
             return;
 
         args.Handled = DoInsert(ent, args.User, [args.Used], true);
