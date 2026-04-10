@@ -22,6 +22,7 @@
     tags:
     - ReptilianEmotes
     - HarpyEmotes
+    - VulpEmotes #OMU vulp yip
   blacklist:
     components:
       - BorgChassis

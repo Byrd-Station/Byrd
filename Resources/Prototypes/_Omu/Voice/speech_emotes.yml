@@ -1,0 +1,18 @@
+- type: emote
+  id: Gekker
+  name: Gekker
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/awoo.png
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-gekker"]
+  chatTriggers:
+    - Gekker
+    - Gekkers
+    - Gekkering
+    - Gekkered
