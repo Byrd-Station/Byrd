@@ -33,9 +33,9 @@
   description: A tough, utilitarian coat designed for the wardens of Central Command. Reinforced kevlar plating and high quality fur allow the user to look stylish while staying protected.
   components:
   - type: Sprite
-    sprite: _DV/Clothing/OuterClothing/WinterCoats/cc_warden_winter_coat.rsi
+    sprite: _DV/Clothing/OuterClothing/Wintercoats/cc_warden_winter_coat.rsi
   - type: Clothing
-    sprite: _DV/Clothing/OuterClothing/WinterCoats/cc_warden_winter_coat.rsi
+    sprite: _DV/Clothing/OuterClothing/Wintercoats/cc_warden_winter_coat.rsi
   - type: Armor
     modifiers:
       coefficients:
@@ -51,9 +51,9 @@
   description: A cozy jacket with the Nanotrasen logo printed on the back. Merchandise rewarded to stations with a safety factor of uhh... seven.
   components:
   - type: Sprite
-    sprite: _DV/Clothing/OuterClothing/WinterCoats/corpo_jacket.rsi
+    sprite: _DV/Clothing/OuterClothing/Wintercoats/corpo_jacket.rsi
   - type: Clothing
-    sprite: _DV/Clothing/OuterClothing/WinterCoats/corpo_jacket.rsi
+    sprite: _DV/Clothing/OuterClothing/Wintercoats/corpo_jacket.rsi
 
 - type: entity
   parent: [ ClothingOuterWinterCoat, BaseSecurityContraband ]
