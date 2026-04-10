@@ -1,4 +1,4 @@
-using Content.Shared._NC.Radio;
+using Content.Omu.Common._NC.Radio;
 using JetBrains.Annotations;
 
 namespace Content.Omu.Client._NC.Radio.UI;

@@ -69,10 +69,9 @@ using Content.Shared.Chat;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Radio.Components;
 using Content.Shared.UserInterface; // Nuclear-14 start
-using Content.Shared._NC.Radio;
+using Content.Omu.Common._NC.Radio;
 using Robust.Server.GameObjects;
-using Robust.Shared.Network;
-using Robust.Shared.Player; // Nuclear-14 end
+using Robust.Shared.Network; // Nuclear-14 end
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Radio.EntitySystems;
