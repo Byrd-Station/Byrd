@@ -154,7 +154,6 @@
   - sprite: _Goobstation/Mobs/Customization/Tajaran/head.rsi
     state: patch
 
-
 # Tajaran Torso
 
 - type: marking
