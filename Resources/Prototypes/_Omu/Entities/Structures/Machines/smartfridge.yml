@@ -7,4 +7,4 @@
     flavorText: smart-fridge-request-botany
     requireAccess: true
   - type: AccessReader
-    access: [["Hydroponics"]]
+    access: [["Hydroponics"], ["Kitchen"]]
