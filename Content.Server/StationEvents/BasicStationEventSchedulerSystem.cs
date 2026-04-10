@@ -18,10 +18,12 @@ using Content.Server.Administration;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.StationEvents.Components;
+using Content.Shared.CCVar;
 using Content.Shared.Administration;
 using Content.Shared.EntityTable;
 using Content.Shared.GameTicking.Components;
 using JetBrains.Annotations;
+using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Toolshed;
@@ -37,6 +39,7 @@ namespace Content.Server.StationEvents
     [UsedImplicitly]
     public sealed class BasicStationEventSchedulerSystem : GameRuleSystem<BasicStationEventSchedulerComponent>
     {
+        [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly EventManagerSystem _event = default!;
 
@@ -57,6 +60,11 @@ namespace Content.Server.StationEvents
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
+
+            var schedulerMode = _cfg.GetCVar(CCVars.EventSchedulerMode);
+            if (_cfg.GetCVar(CCVars.EventDirectorEnabled) ||
+                !string.Equals(schedulerMode, CCVars.EventSchedulerModes.Legacy, StringComparison.OrdinalIgnoreCase))
+                return;
 
             if (!_event.EventsEnabled)
                 return;

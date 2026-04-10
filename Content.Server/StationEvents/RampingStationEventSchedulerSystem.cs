@@ -12,13 +12,16 @@
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
 using Content.Server.StationEvents.Components;
+using Content.Shared.CCVar;
 using Content.Shared.GameTicking.Components;
+using Robust.Shared.Configuration;
 using Robust.Shared.Random;
 
 namespace Content.Server.StationEvents;
 
 public sealed class RampingStationEventSchedulerSystem : GameRuleSystem<RampingStationEventSchedulerComponent>
 {
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly EventManagerSystem _event = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!;
@@ -52,6 +55,11 @@ public sealed class RampingStationEventSchedulerSystem : GameRuleSystem<RampingS
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+
+        var schedulerMode = _cfg.GetCVar(CCVars.EventSchedulerMode);
+        if (_cfg.GetCVar(CCVars.EventDirectorEnabled) ||
+            !string.Equals(schedulerMode, CCVars.EventSchedulerModes.Legacy, StringComparison.OrdinalIgnoreCase))
+            return;
 
         if (!_event.EventsEnabled)
             return;
