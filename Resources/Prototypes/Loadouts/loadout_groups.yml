@@ -381,6 +381,7 @@
   - CaptainCloak
   - CaptainCloakFormal
   - CaptainMantle
+  - CaptainCloakLong # Ganimed14
   - VeteranCaptainCloak # goob
   - CaptainEnsemble # goob
 
@@ -428,6 +429,7 @@
   loadouts:
   - HoPCloak
   - HoPMantle
+  - HoPCloakLong # Ganimed14
   - HeadOfPersonnelEnsemble # goob
 
 - type: loadoutGroup
@@ -936,6 +938,7 @@
   loadouts:
   - QuartermasterCloak
   - QuartermasterMantle
+  - QuartermasterCloakLong #Ganimed14
   - QuartermasterEnsemble # goob
 
 - type: loadoutGroup
@@ -1056,6 +1059,7 @@
   loadouts:
   - ChiefEngineerCloak
   - ChiefEngineerMantle
+  - ChiefEngineerCloakLong #Ganimed14
   - ChiefEngineerEnsemble # goob
 
 - type: loadoutGroup
@@ -1210,6 +1214,7 @@
   - ResearchDirectorMantle
   - ResearchDirectorCloak
   - ResearchDirectorDecoratedCloak
+  - ResearchDirectorCloakLong #Ganimed14
   - ResearchDirectorEnsemble # goob
 
 - type: loadoutGroup
@@ -1360,6 +1365,7 @@
   - HeadofSecurityCloak
   - HeadofSecurityMantle
   - Bodycam # Goobstation - Body cameras
+  - HeadofSecurityCloakLong #Ganimed14
   - HeadOfSecurityEnsemble # goob
 
 - type: loadoutGroup
@@ -1580,6 +1586,7 @@
   - ChiefMedicalOfficerMantle
   - ChiefMedicalOfficerDecoratedCloak # Omu
   - ChiefMedicalOfficerModernMantle # Omu
+  - ChiefMedicalOfficerCloakLong #Ganimed14
   - ChiefMedicalOfficerEnsemble # goob
 
 - type: loadoutGroup
