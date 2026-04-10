@@ -3273,3 +3273,17 @@ Entries:
       message: Added new sounds for the "trill" emote.
   id: 417
   time: '2026-04-09T07:32:45.0000000+00:00'
+- author: raincall
+  changes:
+    - type: Tweak
+      message: Halved the ore you get from butchering most orefish, it had to be done..
+    - type: Fix
+      message: Fixed fishing up 30 goliath plates, u were only supposed to get 1
+  id: 418
+  time: '2026-04-09T22:43:59.0000000+00:00'
+- author: Fin55Fin
+  changes:
+    - type: Add
+      message: Made Departmental JamJar Glasses also work as Prescription Glasses.
+  id: 419
+  time: '2026-04-10T00:01:50.0000000+00:00'
