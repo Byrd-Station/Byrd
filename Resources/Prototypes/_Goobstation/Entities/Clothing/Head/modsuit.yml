@@ -40,7 +40,7 @@
       - state: equipped-HEAD-vox
       head-vulpkanin:
       - state: equipped-HEAD-vulpkanin
-    
+
   - type: Tag
     tags:
     - WhitelistChameleon
@@ -64,6 +64,17 @@
     - HeadTop
     - HeadSide
   - type: FaceHuggerBlocker
+  - type: Appearance # GabyStation start
+  - type: Stainable
+    clothingVisuals:
+      head:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: helmetblood
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: helmetbloodicon
+  - type: StainBlocker
+    slots: [MASK] # GabyStation end
 
 - type: entity
   abstract: true
@@ -142,7 +153,7 @@
       - HeadTop
       - HeadSide
   #THIS WILL BE REPLACED WITH MODULE ↓↓
-  # Omu start, Fix modsuit light 
+  # Omu start, Fix modsuit light
   - type: ToggleableVisuals
     spriteLayer: light
   - type: ItemTogglePointLight
@@ -263,7 +274,7 @@
       - HeadTop
       - HeadSide
   #THIS WILL BE REPLACED WITH MODULE ↓↓
-  # Omu start, Fix modsuit light 
+  # Omu start, Fix modsuit light
   - type: ToggleableVisuals
     spriteLayer: light
   - type: ItemTogglePointLight
@@ -370,7 +381,7 @@
       heatingCoefficient: 0.01
       coolingCoefficient: 0.01
   #THIS WILL BE REPLACED WITH MODULE ↓↓
-  # Omu start, Fix modsuit light 
+  # Omu start, Fix modsuit light
   - type: ToggleableVisuals
     spriteLayer: light
   - type: ItemTogglePointLight
@@ -458,7 +469,7 @@
       heatingCoefficient: 0.01
       coolingCoefficient: 0.01
   #THIS WILL BE REPLACED WITH MODULE ↓↓
-  # Omu start, Fix modsuit light 
+  # Omu start, Fix modsuit light
   - type: ToggleableVisuals
     spriteLayer: light
   - type: ItemTogglePointLight
@@ -550,7 +561,7 @@
       heatingCoefficient: 0.01
       coolingCoefficient: 0.01
   #THIS WILL BE REPLACED WITH MODULE ↓↓
-  # Omu start, Fix modsuit light 
+  # Omu start, Fix modsuit light
   - type: ToggleableVisuals
     spriteLayer: light
   - type: ItemTogglePointLight
@@ -659,7 +670,7 @@
       - HeadTop
       - HeadSide
   #THIS WILL BE REPLACED WITH MODULE ↓↓
-  # Omu start, Fix modsuit light 
+  # Omu start, Fix modsuit light
   - type: ToggleableVisuals
     spriteLayer: light
   - type: ItemTogglePointLight
@@ -759,7 +770,7 @@
       heatingCoefficient: 0.01
       coolingCoefficient: 0.01
   #THIS WILL BE REPLACED WITH MODULE ↓↓
-  # Omu start, Fix modsuit light 
+  # Omu start, Fix modsuit light
   - type: ToggleableVisuals
     spriteLayer: light
   - type: ItemTogglePointLight
@@ -872,7 +883,7 @@
       - HeadTop
       - HeadSide
   #THIS WILL BE REPLACED WITH MODULE ↓↓
-  # Omu start, Fix modsuit light 
+  # Omu start, Fix modsuit light
   - type: ToggleableVisuals
     spriteLayer: light
   - type: ItemTogglePointLight

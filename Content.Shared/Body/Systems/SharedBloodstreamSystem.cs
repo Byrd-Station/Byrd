@@ -31,6 +31,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Linq;
 using Content.Shared.EntityEffects.Effects;
+using Content.Shared.Inventory; // Omu
 
 namespace Content.Shared.Body.Systems;
 
@@ -47,6 +48,7 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly SharedDrunkSystem _drunkSystem = default!;
     [Dependency] private readonly SharedStutteringSystem _stutteringSystem = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!; // FunkyStation
 
     private float _bloodlossMultiplier = 4f; // Goobstation
 
@@ -487,6 +489,32 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
                 var temp = SolutionContainer.SplitSolution(ent.Comp.ChemicalSolution.Value, tempSolution.Volume / 10);
                 tempSolution.AddSolution(temp, _prototypeManager);
             }
+
+            // FunkyStation start
+            // stain clothes on bleed
+            var stainEv = new SpilledOnEvent(ent.Owner, tempSolution);
+            RaiseLocalEvent(ent.Owner, stainEv);
+
+            // stain neighbors
+            var xform = Transform(ent.Owner);
+            var lookup = _lookup.GetEntitiesInRange(xform.Coordinates, 1.5f);
+            foreach (var neighbor in lookup)
+            {
+                if (neighbor == ent.Owner)
+                    continue;
+
+                // only try staining things that have an inventory
+                // event is relayed by InventoryComponent
+                if (!HasComp<InventoryComponent>(neighbor))
+                    continue;
+
+                var neighborStainEv = new SpilledOnEvent(ent.Owner, tempSolution);
+                RaiseLocalEvent(neighbor, neighborStainEv);
+
+                if (tempSolution.Volume <= 0)
+                    break;
+            }
+            // FunkyStation end
 
             // Goobstation start
             // Set the freshness when the spill is created instead of every time new blood is created

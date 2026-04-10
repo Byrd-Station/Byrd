@@ -91,6 +91,7 @@
       - id: BoxCleanerGrenades
       - id: WireBrush
         amount: 2
+      - id: FlatpackWashingMachine # Gabystation
 
 - type: entity
   id: CrateServiceCleanerGrenades
@@ -443,7 +444,7 @@
         amount: 2
       - id: BoxCandleSmall
         amount: 2
-        
+
 
 - type: entity
   parent: CrateGenericSteel

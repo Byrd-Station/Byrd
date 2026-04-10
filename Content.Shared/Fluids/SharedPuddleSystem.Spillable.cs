@@ -20,17 +20,26 @@ using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Spillable;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Melee;
+using Content.Shared.Weapons.Melee.Events; // GabyStation start
+using Robust.Shared.Network;
+using Content.Shared.Popups;
+using Content.Shared.IdentityManagement;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Chemistry.Reaction;
+using Content.Shared.Chemistry; // GabyStation end
 
 namespace Content.Shared.Fluids;
 
 public abstract partial class SharedPuddleSystem
 {
     [Dependency] protected readonly OpenableSystem Openable = default!;
+    [Dependency] private readonly INetManager _net = default!; // GabyStation
 
     protected virtual void InitializeSpillable()
     {
         SubscribeLocalEvent<SpillableComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<SpillableComponent, GetVerbsEvent<Verb>>(AddSpillVerb);
+        SubscribeLocalEvent<SpillableComponent, MeleeHitEvent>(SplashOnMeleeHit, after: [typeof(OpenableSystem)]); // GabyStation
     }
 
     private void OnExamined(Entity<SpillableComponent> entity, ref ExaminedEvent args)
@@ -96,4 +105,75 @@ public abstract partial class SharedPuddleSystem
         verb.DoContactInteraction = true;
         args.Verbs.Add(verb);
     }
+
+    // GabyStation start
+    private void SplashOnMeleeHit(Entity<SpillableComponent> entity, ref MeleeHitEvent args) // Gaby
+    {
+        if (args.Handled)
+            return;
+
+        if (!_net.IsServer)
+            return;
+
+        // When attacking someone reactive with a spillable entity,
+        // splash a little on them (touch react)
+        // If this also has solution transfer, then assume the transfer amount is how much we want to spill.
+        // Otherwise, let's say they want to spill a quarter of its max volume.
+
+        if (!_solutionContainerSystem.TryGetDrainableSolution(entity.Owner, out var soln, out var solution))
+            return;
+
+        var totalSplit = FixedPoint2.Min(solution.MaxVolume * 0.25, solution.Volume);
+        if (TryComp<SolutionTransferComponent>(entity, out var transfer))
+        {
+            totalSplit = FixedPoint2.Min(transfer.TransferAmount, solution.Volume);
+        }
+
+        // a little lame, but reagent quantity is not very balanced, and we don't want people
+        // spilling like 100u of reagent on someone at once!
+        totalSplit = FixedPoint2.Min(totalSplit, entity.Comp.MaxMeleeSpillAmount);
+
+        if (totalSplit <= 0)
+            return;
+
+        if (_net.IsServer)
+        {
+            args.Handled = true;
+        }
+
+        var reactiveTargets = 0;
+        foreach (var hit in args.HitEntities)
+        {
+            if (HasComp<ReactiveComponent>(hit))
+                reactiveTargets++;
+        }
+
+        if (reactiveTargets == 0)
+            return;
+
+        var amountPerTarget = totalSplit / reactiveTargets;
+
+        foreach (var hit in args.HitEntities)
+        {
+            if (!HasComp<ReactiveComponent>(hit))
+                continue;
+
+            var splitSolution = _solutionContainerSystem.SplitSolution(soln.Value, amountPerTarget);
+            if (splitSolution.Volume <= 0)
+                continue;
+
+            var ev = new SpilledOnEvent(entity.Owner, splitSolution.Clone());
+            RaiseLocalEvent(hit, ev);
+
+            if (_net.IsServer)
+                AdminLogger.Add(LogType.MeleeHit, $"{ToPrettyString(args.User)} splashed {SharedSolutionContainerSystem.ToPrettyString(splitSolution):solution} from {ToPrettyString(entity.Owner):entity} onto {ToPrettyString(hit):target}");
+
+            Reactive.DoEntityReaction(hit, splitSolution, ReactionMethod.Touch);
+
+            Popups.PopupPredicted(Loc.GetString("spill-melee-hit-attacker", ("amount", amountPerTarget), ("spillable", entity.Owner), ("target", Identity.Entity(hit, EntityManager))),
+                Loc.GetString("spill-melee-hit-others", ("attacker", args.User), ("spillable", entity.Owner), ("target", Identity.Entity(hit, EntityManager))),
+                hit, args.User, PopupType.SmallCaution);
+        }
+    }
+    // GabyStation end
 }

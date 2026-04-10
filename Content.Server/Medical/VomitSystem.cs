@@ -110,6 +110,7 @@ using Content.Shared.Nutrition.EntitySystems;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
+using Content.Shared.Fluids; // Funkystation
 
 namespace Content.Server.Medical
 {
@@ -195,6 +196,10 @@ namespace Content.Server.Medical
                 // Makes a vomit solution the size of 90% of the chemicals removed from the chemstream
                 solution.AddReagent(new ReagentId("Vomit", _bloodstream.GetEntityBloodData(uid)), vomitAmount); // TODO: Dehardcode vomit prototype
             }
+
+            // Funkystation - stain clothes on vomit
+            var stainEv = new SpilledOnEvent(uid, solution.Clone());
+            RaiseLocalEvent(uid, stainEv);
 
             if (_puddle.TrySpillAt(uid, solution, out var puddle, false))
             {
