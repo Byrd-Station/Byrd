@@ -1,3 +1,5 @@
+// Portions taken from Monolith (https://github.com/monolith-station/monolith), credit tonotom1.
+using Content.Shared.Access; // Omustation
 using Content.Shared.Whitelist;
 using Robust.Shared.Analyzers;
 using Robust.Shared.Audio;
@@ -49,6 +51,25 @@ public sealed partial class SmartFridgeComponent : Component
     [Access(typeof(SmartFridgeSystem), Other = AccessPermissions.ReadExecute)]
     public Dictionary<SmartFridgeEntry, HashSet<NetEntity>> ContainedEntries = new();
 
+    // Start of Omustation
+    /// <summary>
+    /// Whether access checking is enforced. When false, anyone can insert and dispense items.
+    /// When true, the AccessReader component determines who is allowed.
+    /// Automatically set to true if <see cref="Access"/> is configured.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool RequireAccess = false;
+
+    /// <summary>
+    /// Access levels required to use this fridge. Setting this automatically enables access checking.
+    /// Supports the same format as AccessReader: each inner list is an access group where all tags must match,
+    /// and only one group needs to match overall.
+    /// Example: <c>access: [["Botany"]]</c> or <c>access: [["Medical"], ["Command"]]</c>
+    /// </summary>
+    [DataField]
+    public List<HashSet<ProtoId<AccessLevelPrototype>>>? Access;
+    // End of Omustation
+
     /// <summary>
     /// The flavour text displayed at the bottom of the SmartFridge's UI
     /// </summary>
@@ -97,3 +118,14 @@ public sealed class SmartFridgeDispenseItemMessage(SmartFridgeEntry entry) : Bou
 {
     public SmartFridgeEntry Entry = entry;
 }
+
+// Monolith start
+/// <summary>
+/// Send by the client when trying to remove an empty smart fridge entry from the list of items in the UI.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class SmartFridgeRemoveEntryMessage(SmartFridgeEntry entry) : BoundUserInterfaceMessage
+{
+    public SmartFridgeEntry Entry = entry;
+}
+// Monolith end

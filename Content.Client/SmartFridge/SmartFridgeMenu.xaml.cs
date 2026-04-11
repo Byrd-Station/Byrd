@@ -1,3 +1,4 @@
+// Portions taken from Monolith (https://github.com/monolith-station/monolith), credit tonotom1.
 using System.Linq;
 using System.Numerics;
 using Content.Client.UserInterface.Controls;
@@ -17,6 +18,9 @@ public sealed partial class SmartFridgeMenu : FancyWindow
     [Dependency] private readonly IEntityManager _entityManager = default!;
 
     public event Action<GUIBoundKeyEventArgs, ListData>? OnItemSelected;
+    // Monolith start
+    public event Action<SmartFridgeListData>? OnRemoveButtonPressed;
+    // Monolith end
 
     private readonly StyleBoxFlat _styleBox = new() { BackgroundColor = new Color(70, 73, 102) };
 
@@ -48,7 +52,11 @@ public sealed partial class SmartFridgeMenu : FancyWindow
             return;
 
         var label = Loc.GetString("smart-fridge-list-item", ("item", entry.Entry.Name), ("amount", entry.Amount));
-        button.AddChild(new SmartFridgeItem(entry.Representative, label));
+        var item = new SmartFridgeItem(entry.Representative, label);
+        // Monolith start
+        item.RemoveButtonPressed += () => OnRemoveButtonPressed?.Invoke(entry);
+        // Monolith end
+        button.AddChild(item);
 
         button.ToolTip = label;
         button.StyleBoxOverride = _styleBox;

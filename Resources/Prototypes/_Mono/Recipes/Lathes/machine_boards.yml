@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2025 bitcrushing <63355298+bitcrushing@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Adds the ability to make the smart fridge via a lathe
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: SmartfridgeCircuitboard
+  result: SmartfridgeCircuitboard
+
 - type: latheRecipe
   parent: [ BaseGoldCircuitboardRecipe, BaseSupplyMachineRecipeCategory ]
   id: MachineFTLDriveCircuitboard
