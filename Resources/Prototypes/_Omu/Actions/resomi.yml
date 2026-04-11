@@ -1,0 +1,27 @@
+# Resomi species actions
+
+- type: entity
+  id: ActionResomiToggleNest
+  name: Toggle nest
+  description: Curl up and rest, or get back up. while nesting you cannot move or interact, but you slowly heal and feel at ease. you can still chirp.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Omu/Interface/Actions/actions_resomi.rsi
+      state: nest
+  - type: InstantAction
+    event: !type:ToggleNestActionEvent
+
+- type: entity
+  id: ActionResomiCall
+  name: Call
+  description: Let out a piercing raptor call. Other Resomis on the station will hear it and know which direction it came from.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Omu/Interface/Actions/actions_resomi.rsi
+      state: bird_call
+  - type: InstantAction
+    event: !type:ResomiCallActionEvent

@@ -70,6 +70,41 @@
       Unsexed: MaleResomiEmote
       Female: FemaleResomiEmote
 # Omu end
+  # Omu - Resomi Nesting ability (toggle, no partner required)
+  - type: Nesting
+    toggleNestAction: ActionResomiToggleNest
+    updateInterval: 2
+    bleedHealPerUpdate: 0.5
+    critHealingModifier: 1.5
+    healingPerUpdate:
+      types:
+        Blunt: 0.2
+        Slash: 0.2
+        Piercing: 0.2
+        Heat: 0.2
+        Cold: 0.2
+        Shock: 0.2
+        Poison: 0.2
+        Asphyxiation: 0.2
+        Bloodloss: 0.2
+        Caustic: 0.2
+  # Omu - Resomi melee debuff: smaller species, less raw strength (-15% melee damage)
+  - type: BonusMeleeDamage
+    damageModifierSet:
+      coefficients:
+        Slash: 0.85
+  # Omu - Resomi restfulness resource (drains from stamina use, recharges in nest or at rest)
+  - type: ExtraResource
+    resources:
+      restfulness:
+        current: 100
+        max: 100
+        alert: ResomiRestfulness
+        alertCategory: ResomiRestfulness
+  # Omu - Resomi Call ability
+  - type: ResomiCall
+    callAction: ActionResomiCall
+    callCooldown: 60
   - type: Tag
     tags:         # Goob - What the fuck is FootstepSound and DoorBumpOpener for if they work without them - rest fixes anoms though.
     - CanPilot

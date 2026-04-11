@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Ported from Starlight SS14 (actions_avali.rsi)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    { "name": "nest" },
+    { "name": "unnest" },
+    { "name": "bird_call" },
+    { "name": "sprint" },
+    { "name": "sprint-stop" }
+  ]
+}

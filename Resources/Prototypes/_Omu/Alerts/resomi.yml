@@ -1,0 +1,29 @@
+- type: alertCategory
+  id: ResomiRestfulness
+
+# restfulness bar - drains from stamina use, recharges while nesting or at rest.
+# severity 0 = full/rested, 7 = empty/exhausted.
+- type: alert
+  id: ResomiRestfulness
+  category: ResomiRestfulness
+  name: alert-resomi-restfulness-name
+  description: alert-resomi-restfulness-desc
+  minSeverity: 0
+  maxSeverity: 7
+  icons:
+  - sprite: /Textures/_Omu/Interface/Alerts/resomi_energy.rsi
+    state: high
+  - sprite: /Textures/_Omu/Interface/Alerts/resomi_energy.rsi
+    state: high
+  - sprite: /Textures/_Omu/Interface/Alerts/resomi_energy.rsi
+    state: medium
+  - sprite: /Textures/_Omu/Interface/Alerts/resomi_energy.rsi
+    state: medium
+  - sprite: /Textures/_Omu/Interface/Alerts/resomi_energy.rsi
+    state: low
+  - sprite: /Textures/_Omu/Interface/Alerts/resomi_energy.rsi
+    state: low
+  - sprite: /Textures/_Omu/Interface/Alerts/resomi_energy.rsi
+    state: critical
+  - sprite: /Textures/_Omu/Interface/Alerts/resomi_energy.rsi
+    state: critical

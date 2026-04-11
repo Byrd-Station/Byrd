@@ -2,6 +2,7 @@
 SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 SPDX-FileCopyrightText: 2025 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
 SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+SPDX-FileCopyrightText: 2026 Raze500
 
 SPDX-License-Identifier: AGPL-3.0-or-later
 -->
@@ -13,17 +14,80 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="MobResomiDummy" Caption=""/>
   </Box>
 
-  Resomi are a small avian-like species that hail from an icy world.
+  Resomi are a small avian raptor species that hail from an icy world. Fast, social, and fragile - they are built for speed and communication, not for combat.
 
-  Like most other non-human species, Resomi are capable of digesting raw meat and other uncooked animal proteins.
+  ## Biology
 
-  As a result of the conditions of their home planet and ammonia-based blood, Resomi are immune to any cold damage and other effects.
-  Consequently, they find temperatures that most other species find comfortable to be unbearably hot, finding themselves suffering starting at just 30°C.
+  Resomi are immune to cold damage thanks to their ammonia-based blood and thick plumage.
+  However, they find temperatures above 30°C unbearably hot, taking [color=#ff4444]30% more heat damage[/color] than other species.
+  They also have weaker bones, resulting in [color=#ff4444]15% more brute damage[/color] taken overall.
 
-  Along with their temperature tolerances, they take 30% more heat damage and 15% more brute damage.
+  Like most non-human species, Resomi can digest raw meat and uncooked animal proteins without issue.
 
-  They also have weaker bones.
+  Due to their small size they can fit inside duffelbags, weigh less than most species, and deal Slash damage with unarmed attacks.
 
-  Due to their small size, they can fit in duffelbags. They also weigh less, making it harder for them to pull other species. Their unarmed attack deals Slash damage.
+  ## Combat Limitations
+
+  Resomi are not built for fighting. They deal [color=#ff4444]15% less melee damage[/color] than other species.
+  Play to your strengths - escape, communicate, and let others handle direct confrontation.
+
+  ## Nesting
+
+  Resomi can toggle a temporary nest using the [color=#aaddff]Nest[/color] action in their action bar.
+
+  While nesting:
+  - The Resomi becomes [color=#ffdd88]completely immobile[/color]
+  - Slowly [color=#00cc66]regenerates all damage types[/color] (except genetic and radiation)
+  - Receives [color=#00cc66]reduced incoming damage[/color]
+  - Rapidly [color=#00cc66]recharges their Restfulness bar[/color]
+
+  The action has a short wind-up before nesting begins. Press the action again to leave the nest at any time.
+  [color=#ff4444]You cannot nest while restrained.[/color]
+
+  ## Restfulness
+
+  <Box>
+  Resomi have a unique [color=#ffdd88]Restfulness bar[/color] visible in the HUD. It drains passively over time and can [color=#ff4444]only be recharged by nesting[/color] - not by eating or resting.
+  </Box>
+
+  <Box>
+  [color=#88ff88]● Above 80%[/color] - Sprint speed [color=#00cc66]+15%[/color]
+  [color=#ffdd88]● 30 - 80%[/color] - No effect
+  [color=#ff4444]● Below 30%[/color] - Sprint speed [color=#ff4444]-20%[/color]
+  </Box>
+
+  The bar empties in roughly [color=#ff4444]8 minutes[/color] and fully recharges in [color=#00cc66]4 minutes[/color] of uninterrupted nesting.
+  Plan ahead - find a safe corner to nest before your restfulness runs out.
+
+  ## Calling
+
+  Resomi can emit a [color=#aaddff]Call[/color] - a short chirp that acts as a directional signal for nearby Resomis.
+
+  - Only [color=#00cc66]other Resomis within range[/color] can hear it
+  - Non-Resomi species are completely unaware of the signal
+  - Recipients receive a [color=#ffdd88]floating notification[/color] above their character with the caller's name and compass direction (N, NE, E, SE, S, SW, W, NW)
+  - The notification does [color=#aaddff]not appear in the chat panel[/color]
+  - Can be used [color=#00cc66]while nesting or restrained[/color]
+
+  Use it to coordinate with fellow Resomis, call for help, or arrange a meeting point - without alerting the rest of the crew.
+
+  ## Summary
+
+  <Box>
+  [color=#00cc66]✦ Immune to cold damage[/color]
+  [color=#00cc66]✦ Can nest to heal and recharge Restfulness[/color]
+  [color=#00cc66]✦ Sprint speed boost when well-rested[/color]
+  [color=#00cc66]✦ Calling ability to signal nearby Resomis[/color]
+  [color=#00cc66]✦ Can digest raw meat[/color]
+  [color=#00cc66]✦ Fits in duffelbags[/color]
+  </Box>
+
+  <Box>
+  [color=#ff4444]✦ Suffers above 30°C - takes 30% more heat damage[/color]
+  [color=#ff4444]✦ Takes 15% more brute damage[/color]
+  [color=#ff4444]✦ 15% less melee damage[/color]
+  [color=#ff4444]✦ Restfulness drains every 8 minutes - must nest to recharge[/color]
+  [color=#ff4444]✦ Cannot nest while restrained[/color]
+  </Box>
 
 </Document>
