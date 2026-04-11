@@ -2,6 +2,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# Adds the ability to make the smart fridge via a lathe
 - type: latheRecipe
   parent: BaseCircuitboardRecipe
   id: SmartfridgeCircuitboard

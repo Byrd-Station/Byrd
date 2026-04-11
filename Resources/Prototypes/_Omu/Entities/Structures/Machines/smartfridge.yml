@@ -1,3 +1,4 @@
+# Adds the Botany specific fridge for mappers, Added under Omu not to conflict with upstream core
 - type: entity
   parent: SmartFridge
   id: SmartFridgeBotany

@@ -13,14 +13,16 @@
   name: SmartFridge
   description: A refrigerated storage unit for keeping items cold and fresh.
   components:
-  - type: Machine # Mono
+  # Monolith Start
+  - type: Machine
     board: SmartfridgeCircuitboard
-  - type: Construction # Mono
+  - type: Construction
     graph: Machine
     node: machine
     containers:
     - machine_parts
     - machine_board
+  # Monolith end
   - type: StationAiWhitelist
   - type: Vocalizer
     hideChat: true
@@ -44,19 +46,22 @@
     color: "#9dc5c9"
   - type: ContainerContainer
     containers:
-      machine_board: !type:Container # Mono
-      machine_parts: !type:Container # Mono
+      machine_board: !type:Container # Monolith
+      machine_parts: !type:Container # Monolith
       smart_fridge_inventory: !type:Container
   - type: LitOnPowered
   - type: ApcPowerReceiver
     powerLoad: 200
-  - type: Battery # Omustation
+  # Omustation Start
+  # Adds the internal battery to the smartfridge, Lasts for 2min when disconected from powersource
+  - type: Battery
     maxCharge: 12000
     startingCharge: 12000
-  - type: ApcPowerReceiverBattery # Omustation
+  - type: ApcPowerReceiverBattery
     idleLoad: 200
     batteryRechargeRate: 100
     batteryRechargeEfficiency: 1.0
+    # Omustation End
   - type: ExtensionCableReceiver
   - type: SmartFridge
     whitelist:
@@ -151,6 +156,6 @@
   components:
   - type: SmartFridge
     flavorText: smart-fridge-request-chemistry
-    requireAccess: true # Omustation
+    requireAccess: true # Omustation, Allows for the configurable permision system to work with the entity
   - type: AccessReader
     access: [["Medical"]]
