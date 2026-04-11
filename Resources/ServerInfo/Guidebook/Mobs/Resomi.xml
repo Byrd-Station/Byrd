@@ -2,6 +2,7 @@
 SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 SPDX-FileCopyrightText: 2025 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
 SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+SPDX-FileCopyrightText: 2026 Raze500
 
 SPDX-License-Identifier: AGPL-3.0-or-later
 -->
@@ -13,7 +14,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="MobResomiDummy" Caption=""/>
   </Box>
 
-  Resomi are a small avian raptor species that hail from an icy world. Fast, social, and fragile — they are built for speed and communication, not for combat.
+  Resomi are a small avian raptor species that hail from an icy world. Fast, social, and fragile - they are built for speed and communication, not for combat.
 
   ## Biology
 
@@ -27,72 +28,66 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
   ## Combat Limitations
 
-  Resomi are not built for fighting. They deal [color=#ff4444]15% less melee damage[/color] than other species and suffer from [color=#ff4444]increased weapon recoil[/color], making sustained gunfights unreliable.
-  Play to your strengths — escape, communicate, and let others handle direct confrontation.
+  Resomi are not built for fighting. They deal [color=#ff4444]15% less melee damage[/color] than other species.
+  Play to your strengths - escape, communicate, and let others handle direct confrontation.
 
   ## Nesting
 
-  Resomi can build a temporary nest using the [color=#aaddff]Nest[/color] action in their action bar.
+  Resomi can toggle a temporary nest using the [color=#aaddff]Nest[/color] action in their action bar.
 
   While nesting:
   - The Resomi becomes [color=#ffdd88]completely immobile[/color]
   - Slowly [color=#00cc66]regenerates all damage types[/color] (except genetic and radiation)
   - Receives [color=#00cc66]reduced incoming damage[/color]
-  - Rapidly [color=#00cc66]recharges their Energy bar[/color]
+  - Rapidly [color=#00cc66]recharges their Restfulness bar[/color]
 
-  Nesting has a cooldown after use. Use the [color=#aaddff]Unnest[/color] action to leave the nest early.
+  The action has a short wind-up before nesting begins. Press the action again to leave the nest at any time.
+  [color=#ff4444]You cannot nest while restrained.[/color]
 
-  ## Energy
+  ## Restfulness
 
   <Box>
-  Resomi have a unique [color=#ffdd88]Energy bar[/color] visible in the HUD. It drains passively over time and can [color=#ff4444]only be recharged by nesting[/color] — not by eating or resting.
+  Resomi have a unique [color=#ffdd88]Restfulness bar[/color] visible in the HUD. It drains passively over time and can [color=#ff4444]only be recharged by nesting[/color] - not by eating or resting.
   </Box>
 
   <Box>
-  [color=#88ff88]● Above 70%[/color] — No penalty
-  [color=#ffdd88]● 40 – 70%[/color] — Slightly slower movement
-  [color=#ff8844]● 10 – 40%[/color] — Noticeably slower movement
-  [color=#ff4444]● Below 10%[/color] — Heavily slowed movement
+  [color=#88ff88]● Above 80%[/color] - Sprint speed [color=#00cc66]+15%[/color]
+  [color=#ffdd88]● 30 - 80%[/color] - No effect
+  [color=#ff4444]● Below 30%[/color] - Sprint speed [color=#ff4444]-20%[/color]
   </Box>
 
-  The bar empties in roughly [color=#ff4444]20 minutes[/color] and fully recharges in [color=#00cc66]2 minutes[/color] of uninterrupted nesting.
-  Plan ahead — find a safe corner to nest before your energy runs out.
-
-  ## Sprint
-
-  Resomi can activate a short [color=#aaddff]Sprint[/color] using the action in their action bar.
-
-  Sprinting temporarily increases movement speed at the cost of [color=#ff4444]draining stamina[/color].
-  If stamina is fully depleted while sprinting, the Resomi will enter stamcrit and suffer a [color=#ff4444]massive speed debuff for 20 seconds[/color] after recovering.
-  Use sprint wisely — burning it at the wrong moment can leave you completely exposed.
+  The bar empties in roughly [color=#ff4444]8 minutes[/color] and fully recharges in [color=#00cc66]4 minutes[/color] of uninterrupted nesting.
+  Plan ahead - find a safe corner to nest before your restfulness runs out.
 
   ## Calling
 
-  Resomi can emit a [color=#aaddff]Call[/color] — a short chirp that acts as a directional signal for nearby Resomis.
+  Resomi can emit a [color=#aaddff]Call[/color] - a short chirp that acts as a directional signal for nearby Resomis.
 
   - Only [color=#00cc66]other Resomis within range[/color] can hear it
   - Non-Resomi species are completely unaware of the signal
-  - Recipients receive a private message with the [color=#ffdd88]caller's name[/color] and [color=#ffdd88]compass direction[/color] (N, NE, E, SE, S, SW, W, NW)
+  - Recipients receive a [color=#ffdd88]floating notification[/color] above their character with the caller's name and compass direction (N, NE, E, SE, S, SW, W, NW)
+  - The notification does [color=#aaddff]not appear in the chat panel[/color]
+  - Can be used [color=#00cc66]while nesting or restrained[/color]
 
-  Use it to coordinate with fellow Resomis, call for help, or arrange a meeting point — without alerting the rest of the crew.
+  Use it to coordinate with fellow Resomis, call for help, or arrange a meeting point - without alerting the rest of the crew.
 
   ## Summary
 
   <Box>
   [color=#00cc66]✦ Immune to cold damage[/color]
-  [color=#00cc66]✦ Can nest to heal and recharge Energy[/color]
-  [color=#00cc66]✦ Sprint ability for quick escapes[/color]
-  [color=#00cc66]✦ Hivemind-style Calling between Resomis[/color]
+  [color=#00cc66]✦ Can nest to heal and recharge Restfulness[/color]
+  [color=#00cc66]✦ Sprint speed boost when well-rested[/color]
+  [color=#00cc66]✦ Calling ability to signal nearby Resomis[/color]
   [color=#00cc66]✦ Can digest raw meat[/color]
   [color=#00cc66]✦ Fits in duffelbags[/color]
   </Box>
 
   <Box>
-  [color=#ff4444]✦ Suffers above 30°C — takes 30% more heat damage[/color]
+  [color=#ff4444]✦ Suffers above 30°C - takes 30% more heat damage[/color]
   [color=#ff4444]✦ Takes 15% more brute damage[/color]
-  [color=#ff4444]✦ 15% less melee damage and higher weapon recoil[/color]
-  [color=#ff4444]✦ Energy bar drains every 20 minutes — must nest to recharge[/color]
-  [color=#ff4444]✦ Oversprinting causes stamcrit and 20s speed debuff[/color]
+  [color=#ff4444]✦ 15% less melee damage[/color]
+  [color=#ff4444]✦ Restfulness drains every 8 minutes - must nest to recharge[/color]
+  [color=#ff4444]✦ Cannot nest while restrained[/color]
   </Box>
 
 </Document>
