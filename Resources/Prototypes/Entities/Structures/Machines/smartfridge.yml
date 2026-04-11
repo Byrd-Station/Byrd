@@ -131,9 +131,11 @@
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
+        # Omustation start
           SheetGlass1:
             min: 1
             max: 2
+        # Omustation end
           SheetSteel1:
             min: 1
             max: 1
