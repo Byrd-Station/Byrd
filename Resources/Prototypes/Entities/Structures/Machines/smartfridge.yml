@@ -49,6 +49,8 @@
       machine_board: !type:Container # Monolith
       machine_parts: !type:Container # Monolith
       smart_fridge_inventory: !type:Container
+  - type: StaticPrice # Omustation
+    price: 75 # Omustation
   - type: LitOnPowered
   - type: ApcPowerReceiver
     powerLoad: 200
@@ -129,6 +131,9 @@
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawn:
+          SheetGlass1:
+            min: 1
+            max: 2
           SheetSteel1:
             min: 1
             max: 1
