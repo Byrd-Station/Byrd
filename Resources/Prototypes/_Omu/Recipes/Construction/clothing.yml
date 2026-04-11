@@ -45,3 +45,11 @@
   targetNode: gogglesJamJarDiag
   category: construction-category-clothing
   objectType: Item
+
+- type: construction
+  id: DragonHardsuit
+  graph: DragonHardsuit
+  startNode: start
+  targetNode: dragonHardsuit
+  category: construction-category-clothing
+  objectType: Item
