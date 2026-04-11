@@ -19,17 +19,11 @@ public sealed class ExtraResourceSystem : EntitySystem
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
 
-    // --- TESTING VALUES: drain fast so you can see it working ---
-    // TODO: revert to normal values after testing
-    // normal drain: 100f / (8f * 60f)   (~8 min)
-    // normal passive recharge: 100f / (20f * 60f)  (~20 min)
-    // normal nest recharge: 100f / (4f * 60f)  (~4 min)
+    // drains passively at all times when not nesting (~8 min to empty)
+    private const float RestfulnessDrainRate = 100f / (8f * 60f);
 
-    // drains passively at all times when not nesting
-    private const float RestfulnessDrainRate = 100f / 30f; // empties in ~30 seconds (testing)
-
-    // how fast restfulness recharges while nesting
-    private const float RestfulnessNestRechargeRate = 100f / 15f; // fills in ~15 seconds (testing)
+    // recharges while nesting (~4 min to fill)
+    private const float RestfulnessNestRechargeRate = 100f / (4f * 60f);
 
     // sprint speed boost when fully rested (above 80%)
     private const float RestfulSprintBoost = 1.15f;
