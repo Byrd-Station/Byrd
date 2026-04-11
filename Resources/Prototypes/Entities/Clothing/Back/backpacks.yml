@@ -433,6 +433,18 @@
     stripDelay: 10
     equipDelay: 5 # to avoid accidentally falling into the trap associated with SelfUnremovableClothing
   - type: SelfUnremovableClothing
+    unauthorizedStripShockDamage: 10
+    unauthorizedStripShockTime: 3
+    cutoffShockDamage: 5
+    cutoffShockTime: 1
+  - type: AccessReader
+    enabled: false
+    access:
+    - - Armory
+    - - Captain
+    - - Corpsman
+    - - BlueshieldOfficer
+    - - NanotrasenRepresentative
   - type: ShockOnTrigger
     targetContainer: true
     damage: 5
