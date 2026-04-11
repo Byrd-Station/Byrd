@@ -1,0 +1,38 @@
+# SPDX-FileCopyrightText: 2023 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: constructionGraph
+  id: DragonHardsuit
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: dragonHardsuit
+          steps:
+            - material: Durathread
+              amount: 5
+              doAfter: 1
+            - tag: SuitEVA
+              name: construction-graph-tag-eva-suit
+              icon:
+                sprite: Clothing/OuterClothing/Suits/eva.rsi
+                state: icon
+              doAfter: 1
+            - tag: HelmetEVA
+              name: construction-graph-tag-eva-helmet
+              icon:
+                sprite: Clothing/Head/Helmets/eva.rsi
+                state: icon
+              doAfter: 1
+            - tag: DragonSuit
+              name: construction-graph-tag-dragon-suit
+              icon:
+                sprite: _ShitChap/Clothing/OuterClothing/Misc/dragonsuit.rsi
+                state: icon
+              doAfter: 1
+    - node: dragonHardsuit
+      entity: ClothingOuterHardsuitDragon

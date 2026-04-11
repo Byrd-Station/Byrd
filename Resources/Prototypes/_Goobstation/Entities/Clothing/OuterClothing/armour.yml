@@ -540,6 +540,9 @@
     damageCoefficient: 0.8
   - type: FireProtection
     reduction: 0.8
+  - type: Tag
+    tags:
+    - DragonSuit
 
 - type: entity
   parent: ClothingOuterArmorTemplar

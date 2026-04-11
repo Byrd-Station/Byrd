@@ -57,5 +57,26 @@
     sprintModifier: 0.9
   - type: HeldSpeedModifier
 
-
-
+- type: entity
+  parent: [ClothingOuterArmorDragon, ClothingOuterEVASuitBase, ClothingOuterBaseToggleable]
+  id: ClothingOuterHardsuitDragon
+  name: dragon hardsuit
+  description: The chaplain's dragon suit stretched over a modified EVA suit. You can now finally roam space like the true space dragon you've always wanted to be!
+  components:
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    walkModifier: 0.75
+    sprintModifier: 0.75
+  - type: HeldSpeedModifier
+  - type: TemperatureProtection
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.1
+  - type: GroupExamine
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: ClothingHeadHatSpaceHelmetDragon
+  - type: Construction
+    graph: DragonHardsuit
+    node: dragonHardsuit
