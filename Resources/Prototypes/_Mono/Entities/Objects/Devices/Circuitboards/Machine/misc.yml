@@ -10,8 +10,6 @@
   components:
   - type: MachineBoard
     prototype: SmartFridge
-    requirements:
-      Capacitor: 1
     stackRequirements:
       Glass: 5
       Cable: 1
