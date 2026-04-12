@@ -89,8 +89,8 @@ namespace Content.YAMLLinter
             return result;
         }
 
-        private static async Task<(Dictionary<string, HashSet<ErrorNode>>, List<string>)> ValidateInstance(
-            RobustIntegrationTest.IntegrationInstance instance)
+        private static async Task<(Dictionary<string, HashSet<ErrorNode>>, List<string>)>
+            ValidateInstance(RobustIntegrationTest.IntegrationInstance instance)
         {
             var protoMan = instance.ResolveDependency<IPrototypeManager>();
             Dictionary<string, HashSet<ErrorNode>> yamlErrors = default!;
