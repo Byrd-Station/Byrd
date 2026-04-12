@@ -13,7 +13,6 @@ using Content.Shared.Chat;
 using Content.Shared.Damage;
 using Content.Shared.Medical;
 using Content.Shared.Mind;
-using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -46,7 +45,6 @@ public abstract partial class SharedChangelingStasisSystem : EntitySystem
     private EntityQuery<BoneComponent> _boneQuery;
     private EntityQuery<BloodstreamComponent> _bloodQuery;
     private EntityQuery<DamageableComponent> _dmgQuery;
-    private EntityQuery<MindContainerComponent> _mindQuery;
     private EntityQuery<MobThresholdsComponent> _thresholdQuery;
     private EntityQuery<PullableComponent> _pullQuery;
     private EntityQuery<WoundableComponent> _woundQuery;
@@ -70,7 +68,6 @@ public abstract partial class SharedChangelingStasisSystem : EntitySystem
         _bodyQuery = GetEntityQuery<BodyComponent>();
         _boneQuery = GetEntityQuery<BoneComponent>();
         _dmgQuery = GetEntityQuery<DamageableComponent>();
-        _mindQuery = GetEntityQuery<MindContainerComponent>();
         _thresholdQuery = GetEntityQuery<MobThresholdsComponent>();
         _pullQuery = GetEntityQuery<PullableComponent>();
         _woundQuery = GetEntityQuery<WoundableComponent>();
@@ -183,7 +180,7 @@ public abstract partial class SharedChangelingStasisSystem : EntitySystem
     private void ExitStasis(Entity<ChangelingStasisComponent> ent, bool heal = true)
     {
         if (!ent.Comp.IsInStasis
-            || !_dmgQuery.TryComp(ent, out var dmgComp))
+            || !_dmgQuery.TryComp(ent, out _))
             return;
 
         if (_absorbQuery.HasComp(ent))
@@ -247,11 +244,7 @@ public abstract partial class SharedChangelingStasisSystem : EntitySystem
             return;
         }
 
-        var scaled = damage / (critT ?? deadT) * ent.Comp.CritStasisTime.TotalSeconds;
-
-        if (scaled == null)
-            return;
-
+        var scaled = damage / critT * ent.Comp.CritStasisTime.TotalSeconds;
         var time = MathF.Max((float) ent.Comp.DefaultStasisTime.TotalSeconds, (float) scaled);
         ent.Comp.StasisTime = TimeSpan.FromSeconds(time);
     }
@@ -274,8 +267,12 @@ public abstract partial class SharedChangelingStasisSystem : EntitySystem
         if (_bodyQuery.TryComp(ent, out var bodyComp))
         {
             if (_trauma.TryGetBodyTraumas(ent, out var traumas, bodyComp: bodyComp))
+            {
                 foreach (var trauma in traumas)
+                {
                     _trauma.RemoveTrauma(trauma);
+                }
+            }
 
             foreach (var bodyPart in _body.GetBodyChildren(ent, bodyComp))
             {
