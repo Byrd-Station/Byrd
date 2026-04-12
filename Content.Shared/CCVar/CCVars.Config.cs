@@ -10,7 +10,7 @@ namespace Content.Shared.CCVar;
 public sealed partial class CCVars
 {
     // These are server-only for now since I don't foresee a client use yet,
-    // and I don't wanna have to start coming up with like .client suffixes and stuff like that.
+    // and I don't want to have to start coming up with like .client suffixes and stuff like that.
 
     /// <summary>
     ///     Configuration presets to load during startup.
@@ -21,7 +21,7 @@ public sealed partial class CCVars
     ///     Only the file name (without extension) must be given for this variable.
     /// </remarks>
     public static readonly CVarDef<string> ConfigPresets =
-        CVarDef.Create("config.presets", "", CVar.SERVERONLY);
+        CVarDef.Create("config.presets", "ByrdConfig", CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether to load the preset development CVars.
