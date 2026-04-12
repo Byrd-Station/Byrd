@@ -66,8 +66,11 @@ namespace Content.MapRenderer.Painters
                 Fresh = true,
                 // Seriously whoever made MapPainter use GameMapPrototype I wish you step on a lego one time.
                 Map = _map is RenderMapPrototype prototype ? prototype.Prototype : PoolManager.TestMap,
+                Dirty = true,
             };
-            _pair = await PoolManager.GetServerClient(poolSettings, _testContextLike);
+            await using var pair = await PoolManager.GetServerClient(poolSettings, _testContextLike);
+            await pair.ReallyBeIdle(600); // Force slowdown for sync.
+            _pair = pair;
 
             Console.WriteLine($"Loaded client and server in {(int)stopwatch.Elapsed.TotalMilliseconds} ms");
 
