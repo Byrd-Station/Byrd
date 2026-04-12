@@ -8,7 +8,7 @@ If you want to host or create content for SS14, go to the [Space Station 14 repo
 
 ## Links
 
-[Omu Station Discord Server](https://discord.gg/omustation) | [Omu Station Wiki](https://wiki.projectomu.org/) | [Omu Station Forums](https://forums.projectomu.org) | [Omu Station Patreon](www.patreon.com/cw/OMUStation) | Omu Station Docs (Soon™)
+[Station Discord Server]() | [Omu Station Wiki](https://wiki.projectomu.org/) | Byrd Station Docs (See Wiki)
 
 ## Documentation/Wiki
 
@@ -16,8 +16,7 @@ The Goob Station [docs site](https://docs.goobstation.com/) has documentation on
 
 ## Contributing
 
-We are happy to accept contributions from anybody. Get in [Discord Server](https://discord.gg/J5uqYJsrAb) if you want to help. Feel free to check the [list of issues](https://github.com/ProjectOmu/OmuStation/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either!
-While following the [Space Station 14 contribution guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html) is not mandatory for Omu Station, we recommend reviewing them for best practices.
+We are happy to accept contributions from anybody. Get in the Discord Server if you want to help. Feel free to check the [list of issues](https://github.com/Byrd-Station/Byrd/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either! Whilst the [Space Station 14 contribution guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html) is not mandatory for Byrd Station, we recommend reviewing them for best practices.
 
 We are not currently accepting translations of the game on our main repository. If you would like to translate the game into another language consider creating a fork or contributing to a fork.
 
