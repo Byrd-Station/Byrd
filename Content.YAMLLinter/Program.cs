@@ -73,20 +73,14 @@ namespace Content.YAMLLinter
             ValidateClient()
         {
             await using var pair = await PoolManager.GetServerClient();
-            var client = pair.Client;
-            var result = await ValidateInstance(client);
-            await pair.CleanReturnAsync();
-            return result;
+            return await ValidateInstance(pair.Client);
         }
 
         private static async Task<(Dictionary<string, HashSet<ErrorNode>> YamlErrors, List<string> FieldErrors)>
             ValidateServer()
         {
             await using var pair = await PoolManager.GetServerClient();
-            var server = pair.Server;
-            var result = await ValidateInstance(server);
-            await pair.CleanReturnAsync();
-            return result;
+            return await ValidateInstance(pair.Server);
         }
 
         private static async Task<(Dictionary<string, HashSet<ErrorNode>>, List<string>)>
