@@ -249,12 +249,11 @@ public abstract partial class SharedChangelingStasisSystem : EntitySystem
 
         var scaled = damage / (critT ?? deadT) * ent.Comp.CritStasisTime.TotalSeconds;
 
-        if (scaled != null)
-        {
-            var time = MathF.Max((float) ent.Comp.DefaultStasisTime.TotalSeconds, (float) scaled);
+        if (scaled == null)
+            return;
 
-            ent.Comp.StasisTime = TimeSpan.FromSeconds(time);
-        }
+        var time = MathF.Max((float) ent.Comp.DefaultStasisTime.TotalSeconds, (float) scaled);
+        ent.Comp.StasisTime = TimeSpan.FromSeconds(time);
     }
 
     private void RestoreChangeling(Entity<ChangelingStasisComponent> ent)
