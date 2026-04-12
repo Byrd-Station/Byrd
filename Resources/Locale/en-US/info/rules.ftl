@@ -10,9 +10,9 @@
 
 # Rules
 
-ui-rules-header = OmuStation Official Server Rules
-ui-rules-header-rp = OmuStation Roleplay Official Server Rules
-ui-rules-accept = I have read and agree to follow the rules. (I also give up my soul to the mother of all omelettes and kira)
+ui-rules-header = Official Server Rules
+ui-rules-header-rp = Official Server Roleplay Rules
+ui-rules-accept = I have read and agree to follow the rules. (I also shall give all my eggs to the Great Byrd)
 ui-rules-wait = The accept button will be enabled after {$time} seconds.
 
 ui-rules-button-home = Home
