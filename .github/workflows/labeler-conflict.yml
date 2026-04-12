@@ -17,7 +17,12 @@ on:
       - synchronize
       - reopened
       - ready_for_review
-      
+
+permissions:
+  pull-requests: write
+  issues: write
+  contents: read
+
 jobs:
   Label:
     if: ( github.event.pull_request.draft == false )
@@ -29,3 +34,4 @@ jobs:
           dirtyLabel: "S: Merge Conflict"
           repoToken: "${{ secrets.BOT_TOKEN }}"
           commentOnDirty: "This pull request has conflicts, please resolve those before we can evaluate the pull request."
+          #continueOnMissingPermissions: true
