@@ -112,5 +112,5 @@ jobs:
           commit_author: ${{ vars.CHANGELOG_USER }} <${{ vars.CHANGELOG_EMAIL }}>
           skip_dirty_check: false
           skip_fetch: true
-
-    
+          #file_pattern: "."
+          #branch: ${{ github.head_ref || github.ref_name }}
