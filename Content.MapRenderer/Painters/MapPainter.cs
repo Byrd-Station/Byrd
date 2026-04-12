@@ -73,8 +73,7 @@ namespace Content.MapRenderer.Painters
 
             if (_map is RenderMapFile mapFile)
             {
-                using var stream = File.OpenRead(mapFile.FileName);
-
+                await using var stream = File.OpenRead(mapFile.FileName);
                 await _pair.Server.WaitPost(() =>
                 {
                     var loadOptions = new MapLoadOptions
