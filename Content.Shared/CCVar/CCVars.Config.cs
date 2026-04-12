@@ -21,7 +21,7 @@ public sealed partial class CCVars
     ///     Only the file name (without extension) must be given for this variable.
     /// </remarks>
     public static readonly CVarDef<string> ConfigPresets =
-        CVarDef.Create("config.presets", "ByrdConfig", CVar.SERVERONLY);
+        CVarDef.Create("config.presets", "_Byrd/ByrdConfig", CVar.SERVERONLY);
 
     /// <summary>
     ///     Whether to load the preset development CVars.
