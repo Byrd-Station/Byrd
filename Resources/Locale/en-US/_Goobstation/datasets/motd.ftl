@@ -1,7 +1,7 @@
 motd-1 = Can't fret over every egg.
-motd-2 = Woundmed doesn't suck, you do.
+motd-2 = Woundmed could be better.
 motd-3 = Final bastion of the rumored LOOC warriors!
-motd-4 = Bingle
+motd-4 = Bingles must die.
 motd-5 = Antag tokens were invented by Big Sec to sell more perma.
 motd-6 = Egg
 motd-7 = Chicken or the egg?
@@ -49,4 +49,4 @@ motd-48 = Is that an egg on your face, or part of your eye?
 motd-49 = The white weaves down as if you cry.
 motd-50 = The shell itself is the reason why.
 motd-51 = Well, there is a server here.
-motd-52 = Hottest MRP Slopfork in town!
+motd-52 = Ech~ai nah.
