@@ -31,7 +31,7 @@ hub_urls = "https://central.spacestation14.io/hub/, https://hub.fallback.spacest
 use_dynamic_hostname = true # File replacements found in `motd.ftl` in datasets under _Goobstation
 
 [game]
-desc = "Come join us on Omu Station! A roleplay-centric game focus with the added chaos of Goob antags and more!"
+desc = "Come join us on Byrd Station! A roleplay-centric game with Goob antag variations, races, and more!"
 
 # Lobby/Character Control
 lobbyduration = 300 # Default is 150, raised.
