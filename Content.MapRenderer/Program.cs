@@ -187,10 +187,7 @@ namespace Content.MapRenderer
             }
             else
             {
-                foreach (var map in arguments.Maps)
-                {
-                    maps.Add(new RenderMapPrototype { Prototype = map });
-                }
+                maps.AddRange(arguments.Maps.Select(map => new RenderMapPrototype { Prototype = map }));
             }
 
             await Run(arguments, maps, testContext);
