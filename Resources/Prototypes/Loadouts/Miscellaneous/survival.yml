@@ -138,6 +138,7 @@
     - Chitinid # DeltaV
     - Shadowkin
     - Thaven # Omu
+    - Goblin # Frontier
 
 # Goobstation start
 - type: loadoutEffectGroup
@@ -217,6 +218,7 @@
     - Tajaran
     - Shadowkin
     - Thaven # Omu
+    - Goblin # Frontier
 
 - type: loadoutEffectGroup
   id: OxygenBreatherMimeMoth
