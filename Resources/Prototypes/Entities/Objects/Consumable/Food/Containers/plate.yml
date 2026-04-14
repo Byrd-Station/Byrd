@@ -104,6 +104,7 @@
     shape:
     - 0,0,1,0
     storedOffset: 0,-6
+  - type: GoblinPreciousTrash # Frontier
   - type: Tag
     tags:
     - Trash
@@ -246,6 +247,7 @@
     shape:
     - 0,0,1,0
     storedOffset: 0,-3
+  - type: GoblinPreciousTrash # Frontier
   - type: Tag
     tags:
     - Trash

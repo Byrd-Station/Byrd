@@ -172,6 +172,7 @@
     - state: popsicle-base
     - state: popsicle
       color: orange
+  - type: GoblinPreciousTrash # Frontier
   - type: Food
     trash: 
     - FoodFrozenPopsicleTrash
@@ -377,6 +378,7 @@
       - enum.DamageStateVisualLayers.Base:
           stick: ""
           stick2: ""
+  - type: GoblinPreciousTrash # Frontier
   - type: Tag
     tags:
     - Trash

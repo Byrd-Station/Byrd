@@ -176,6 +176,7 @@
         transferForensics: true
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: GoblinPreciousTrash # Frontier
   - type: Tag
     tags:
     - Trash
@@ -249,6 +250,7 @@
       - !type:SpillBehavior { }
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: GoblinPreciousTrash # Frontier
   - type: Tag
     tags:
     - Trash

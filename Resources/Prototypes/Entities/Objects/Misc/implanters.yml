@@ -47,6 +47,7 @@
   parent: BaseItem
   abstract: true
   components:
+    - type: GoblinPreciousTrash # Frontier
     - type: ItemSlots
     - type: ContainerContainer
       containers:
@@ -160,6 +161,7 @@
   description: A disposable syringe exclusively designed for the injection of subdermal implants.
   abstract: true
   components:
+    - type: GoblinPreciousTrash # Frontier
     - type: Sprite
       sprite: Objects/Specific/Medical/implanter.rsi
       state: implanter0

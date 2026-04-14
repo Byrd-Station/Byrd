@@ -49,6 +49,8 @@
         - Cartridge
         - Trash
         - Organ # omu
+      components: # Frontier: GoblinMade
+        - GoblinMade
   - type: UseDelay
     delay: 0.5
   - type: Tag
@@ -68,6 +70,7 @@
   - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
       Plastic: 25
+  - type: GoblinPreciousTrashBag # Frontier
 
 - type: entity
   name: trash bag

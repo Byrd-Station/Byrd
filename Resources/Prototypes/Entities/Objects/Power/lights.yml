@@ -130,6 +130,7 @@
   id: BaseLightTube
   abstract: true
   components:
+  - type: GoblinPreciousTrash # Frontier
   - type: Sprite
     sprite:  Objects/Power/light_tube.rsi
   - type: LightBulb
@@ -259,6 +260,7 @@
   id: LightBulbBroken
   description: A light bulb.
   components:
+  - type: GoblinPreciousTrash # Frontier
   - type: LightBulb
     startingState: Broken
     bulb: Bulb
