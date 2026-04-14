@@ -49,6 +49,7 @@
     - Heretic # goob edit - heretics
     - Blob # Goobstation - Blob
     - Shadowling # Einstein Engines - Shadowlings
+    - Goblin # Frontier
   friendly: # Goobstation
     - Wizard
     - PirateFaction # goob - pirates
@@ -74,6 +75,7 @@
   - Wraith # Goobstation - Wraith
   - Lavafauna # Goob - Lavaland
 
+
 - type: npcFaction
   id: Mouse
   # Goobstation - not hostile to anything so they don't attack things
@@ -94,6 +96,7 @@
   - Dragon
   - Blob # Goobstation - Blob
   - Lavafauna # Goob - Lavaland
+  - Goblin # Frontier (Goblin conflict versus the household pets arises.)
 
 - type: npcFaction
   id: SimpleHostile
@@ -112,6 +115,7 @@
   - Blob # Goobstation - Blob
   - PirateFaction # goob - pirates
   - Lavafauna # Goob - Lavaland
+  - Goblin # Frontier
   friendly: # Goobstation
   - Wizard
   - Shadowling # Einstein Engines - Shadowlings
@@ -139,6 +143,7 @@
   - Shadowling # Einstein Engines - Shadowlings
   - Wraith # Goobstation - Wraith
   - Lavafauna # Goob - Lavaland
+  - Goblin # Frontier
 
 - type: npcFaction
   id: Xeno
@@ -158,6 +163,7 @@
   - PirateFaction # goob - pirates
   - Wraith # Goobstation - Wraith
   - Lavafauna # Goob - Lavaland
+  - Goblin # Frontier
   friendly: # Goobstation
     - Wizard
 
@@ -182,6 +188,7 @@
   - Xenoborg
   - Wraith # Goobstation - Wraith
   - Lavafauna # Goob - Lavaland
+  - Goblin # Frontier
 
 - type: npcFaction
   id: Revolutionary
@@ -220,6 +227,7 @@
   - PirateFaction # goob - pirates
   - Wraith # Goobstation - Wraith
   - Lavafauna # Goob - Lavaland
+  - Goblin # Frontier
 
 # Balloons Factions Edit:
 - type: npcFaction  
@@ -253,6 +261,9 @@
   - Shadowling # Einstein Engines - Shadowlings
 
 - type: npcFaction
+  id: Goblin
+
+- type: npcFaction
   id: Wraith # Goobstation
   hostile:
   - NanoTrasen
@@ -268,6 +279,7 @@
   - Heretic # goob edit - heretics
   - Blob # Goobstation - Blob
   - PirateFaction # goob - pirates
+  - Goblin # Frontier
   friendly: # Goobstation
   - Wraith # Goobstation
   - Lavafauna # Lavaland
@@ -292,5 +304,6 @@
   - Shadowling # Einstein Engines - Shadowlings
   - Wizard # goob edit - wizard
   - PirateFaction # goob - pirates
+  - Goblin # Frontier
   friendly:
   - Dragon
