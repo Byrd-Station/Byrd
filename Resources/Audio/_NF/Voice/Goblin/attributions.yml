@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - files: ["goblin-cackle-01.ogg, goblin-cackle-02.ogg, goblin-cackle-03.ogg"]
   license: "CC0-1.0"
   copyright: "Original file made by SnowFightStudios (https://freesound.org/people/SnowFightStudios/), edited (converted to mono, cropped, lowered amplitudes, exported as ogg) by erhardsteinhauer (discord/github)"
