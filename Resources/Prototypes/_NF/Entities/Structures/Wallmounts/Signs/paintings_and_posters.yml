@@ -1,0 +1,31 @@
+# Painting
+- type: entity
+  parent: PaintingBase
+  id: PaintingNightOfThePostGoblin
+  name: Night Of The Post Goblin
+  description: A rotund sprite, astride a sinuous feline steed, brandishing a gleaming blade while donning rubbery foot coverings.
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/paintings.rsi
+    state: painting0
+
+# Poster
+- type: entity
+  parent: PosterBase
+  id: NFPosterLegitGoblinTinkerer
+  name: "Tinkering!"
+  description: "This poster depicts a cheerful goblin engineer telling you that explosions are the spice of tinkering."
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/posters.rsi
+    state: nf_poster2_legit
+    
+- type: entity
+  parent: PosterBase
+  id: NFPosterContrabandGoblinFront
+  name: "Goblinkin, Unite!"
+  description: "A poster rallying goblins to unite and fight for their rights."
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/posters.rsi
+    state: nf_poster14_contraband
