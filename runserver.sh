@@ -5,4 +5,4 @@
 
 #!/bin/sh
 dotnet run --project Content.Omu.Server
-read -p "Press enter to continue"
+#read -p "Press enter to continue"

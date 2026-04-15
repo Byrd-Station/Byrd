@@ -2,6 +2,10 @@ using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Shared._DV.CCVars;
 using Content.Shared.Tag;
+
+using Content.Shared.Station;
+using Content.Server.Station.Systems;
+
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
@@ -20,6 +24,7 @@ public sealed class ShipyardSystem : EntitySystem
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly ShuttleSystem _shuttle = default!;
+    [Dependency] private readonly StationSystem _stationSystem = default!;
 
     public ProtoId<TagPrototype> DockTag = "DockShipyard";
 
@@ -58,6 +63,7 @@ public sealed class ShipyardSystem : EntitySystem
 
         _map.SetPaused(map, false);
         _mapDeleterShuttle.Enable(grid.Value);
+
         shuttle = (grid.Value, comp);
         return true;
     }
@@ -73,6 +79,10 @@ public sealed class ShipyardSystem : EntitySystem
             return false;
 
         Log.Info($"Shuttle {path} was spawned for {ToPrettyString(shuttleDestination):station}");
+
+        var _station = _stationSystem.GetOwningStation(shuttleDestination)!;
+        if(_station != null) _stationSystem.AddGridToStation((EntityUid) _station, shuttle.Value);
+
         _shuttle.FTLToDock(shuttle.Value, shuttle.Value.Comp, shuttleDestination, priorityTag: DockTag);
         return true;
     }

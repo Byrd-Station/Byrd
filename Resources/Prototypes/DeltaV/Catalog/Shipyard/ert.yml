@@ -2,11 +2,128 @@
 # The CentComm console won't charge for them so just put like a million spesos or something
 # in the case that the station does see it in their console (could be a random bug, idk!)
 
-#- type: vessel
-#  id: Ares
-#  name: NT-Ares
-#  description: A small ship, outfitted with some combat supplies for those extra dangerous ERT situations. Combat supplies include a Hristov, 4 hyperzine injectors, a handheld crew monitor, and an experimenal RCD.
-#  price: 1000000
-#  path: /Maps/Shuttles/AdminSpawn/ERT-Small-Deathsquad.yml
-#  categories:
-#  - ERT
+- type: vessel
+  id: Penance
+  name: NT-Penance (security, small)
+  description: A small Security emergency response shuttle.
+  price: 1000000000
+  path: /Maps/Shuttles/AdminSpawn/ERT-Small-Sec.yml
+  categories:
+  - ERT
+
+- type: vessel
+  id: Denobula
+  name: NT-Denobula (medical, small)
+  description: A small Medical emergency response shuttle.
+  price: 1000000000
+  path: /Maps/Shuttles/AdminSpawn/ERT-Small-Med.yml
+  categories:
+  - ERT
+
+- type: vessel
+  id: Hestia
+  name: NT-Hestia (janitorial, small)
+  description: A small Janitorial emergency response shuttle.
+  price: 1000000000
+  path: /Maps/Shuttles/AdminSpawn/ERT-Small-Jani.yml
+  categories:
+  - ERT
+
+- type: vessel
+  id: Demiurge
+  name: NT-Demiurge (engineering, small)
+  description: A small Engineering emergency response shuttle.
+  price: 1000000000
+  path: /Maps/Shuttles/AdminSpawn/ERT-Small-Eng.yml
+  categories:
+  - ERT
+
+- type: vessel
+  id: Ares
+  name: NT-Ares (deahtsquad, small)
+  description: A small Deathsquad emergency response shuttle.
+  price: 1000000000
+  path: /Maps/Shuttles/AdminSpawn/ERT-Small-Deathsquad.yml
+  categories:
+  - ERT
+
+- type: vessel
+  id: Achlys
+  name: NT-Achlys (CBURN, small)
+  description: A small CBURN emergency response shuttle.
+  price: 1000000000
+  path: /Maps/Shuttles/AdminSpawn/ERT-Small-CBURN.yml
+  categories:
+  - ERT
+
+- type: vessel
+  id: Ash
+  name: NT-Ash (base, small)
+  description: A small base emergency response shuttle.
+  price: 1000000000
+  path: /Maps/Shuttles/AdminSpawn/ERT-Small-Base.yml
+  categories:
+  - ERT
+
+- type: vessel
+  id: Salus
+  name: NT-Salus (security, medium)
+  description: A medium Security emergency response shuttle.
+  price: 1000000000
+  path: /Maps/Shuttles/AdminSpawn/ERT-Medium-Sec.yml
+  categories:
+  - ERT
+
+- type: vessel
+  id: Asclepius
+  name: NT-Asclepius (medical, medium)
+  description: A medium Medical emergency response shuttle.
+  price: 1000000000
+  path: /Maps/Shuttles/AdminSpawn/ERT-Medium-Med.yml
+  categories:
+  - ERT
+
+- type: vessel
+  id: Hephaestus
+  name: NT-Hephaestus (engi/jani, medium)
+  description: A medium Engineering/Janitorial emergency response shuttle.
+  price: 1000000000
+  path: /Maps/Shuttles/AdminSpawn/ERT-Medium-Eng-Jani.yml
+  categories:
+  - ERT
+
+- type: vessel
+  id: Phoenix
+  name: NT-Phoenix (medium, base)
+  description: A medium base emergency response shuttle.
+  price: 1000000000
+  path: /Maps/Shuttles/AdminSpawn/ERT-Medium-Base.yml
+  categories:
+  - ERT
+
+- type: vessel
+  id: Griffin
+  name: NT-Griffin (medium, base+)
+  description: A medium base+ emergency response shuttle.
+  price: 1000000000
+  path: /Maps/Shuttles/AdminSpawn/ERT-Medium-BasePlus.yml
+  categories:
+  - ERT
+
+- type: vessel
+  id: Hygieia
+  name: NT-Hygieia (med/sec, large)
+  description: A large Medical/Security emergency response shuttle.
+  price: 1000000000
+  path: /Maps/Shuttles/AdminSpawn/ERT-Large-Med-Sec.yml
+  categories:
+  - ERT
+
+- type: vessel
+  id: Chimaera
+  name: NT-Chimaera (base, large)
+  description: A large base emergency response shuttle.
+  price: 1000000000
+  path: /Maps/Shuttles/AdminSpawn/ERT-Large-Base.yml
+  categories:
+  - ERT
