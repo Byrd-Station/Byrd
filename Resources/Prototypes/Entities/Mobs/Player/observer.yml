@@ -209,6 +209,19 @@
         type: RevivalContractBoundUserInterface
         requireInputValidation: false
   - type: Sprinter # Goob Change
+  - type: ShowHealthBars # Start Byrd changes
+    damageContainers:
+    - Biological
+    - Inorganic
+    - Silicon
+    - SiliconRadiation
+  - type: ShowHealthIcons
+  - type: ShowJobIcons
+  - type: ShowMindShieldIcons
+  - type: ShowSyndicateIcons
+  - type: ShowRevolutionaryIcons
+  - type: ShowCriminalRecordIcons # End Byrd changes
+
 
 # proto for player ghosts specifically
 - type: entity
