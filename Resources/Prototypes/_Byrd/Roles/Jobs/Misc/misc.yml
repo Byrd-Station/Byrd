@@ -1,0 +1,24 @@
+- type: startingGear
+  id: MercenaryGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMercenary
+    back: ClothingBackpackMerc
+    head: ClothingHeadHelmetMerc
+    eyes: ClothingEyesGlassesMerc
+    ears: ClothingHeadsetAltFreelancer
+    gloves: ClothingHandsMercGlovesCombat
+    outerClothing: ClothingOuterVestWebMerc
+    shoes: ClothingShoesBootsMercFilled
+    id: SalvagePDA
+    mask: ClothingMaskNeckGaiterMerc
+    belt: ClothingBeltMercWebbing
+    pocket1: FlashlightSeclite
+  storage:
+    back:
+    - BoxMREMerc
+    - EncryptionKeyCargo
+
+    belt:
+    - ToolDebug
+    - WelderIndustrialAdvanced
+    - Multitool

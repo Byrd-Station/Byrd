@@ -606,6 +606,7 @@
     state: mre-brownie
   - type: Item
     heldPrefix: mre-brownie
+    size: Tiny
   - type: Tag
     tags:
       - FoodSnack
@@ -630,6 +631,7 @@
     state: mre-brownie-open
   - type: Item
     heldPrefix: mre-brownie-open
+    size: Tiny
   - type: Food
   - type: SolutionContainerManager
     solutions:

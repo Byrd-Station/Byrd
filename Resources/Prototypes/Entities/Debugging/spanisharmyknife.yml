@@ -72,17 +72,17 @@
   - type: ToolTileCompatible
   - type: Tool
   - type: Prying
-  - type: UseDelay # Goobstation - For insta prying
-    delay: 0.25 # Goobstation - Changed to 0.25, Shit was annoying
+  - type: UseDelay
+    delay: 0
   - type: MultipleTool
     statusShowBehavior: true
     entries:
       - behavior: Prying
         useSound: /Audio/Items/jaws_pry.ogg
-        changeSound: /Audio/Items/change_jaws.ogg
+        changeSound: /Audio/Items/change_drill.ogg
       - behavior: Cutting
         useSound: /Audio/Items/jaws_cut.ogg
-        changeSound: /Audio/Items/change_jaws.ogg
+        changeSound: /Audio/Items/change_drill.ogg
       - behavior: Screwing
         useSound: /Audio/Items/drill_use.ogg
         changeSound: /Audio/Items/change_drill.ogg
