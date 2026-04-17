@@ -47,7 +47,7 @@ panic_bunker.whitelisted_can_bypass = true # Anyone that is whitelisted should b
 # Admin Panic Bunker Interaction
 panic_bunker.count_deadminned_admins = false # We may change this later, but this is default.
 panic_bunker.disable_with_admins = true
-panic_bunker.enable_without_admins = false
+panic_bunker.enable_without_admins = true
 
 # IPIntel Information
 ipintel_enabled = true
