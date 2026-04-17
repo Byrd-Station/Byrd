@@ -2,6 +2,7 @@
   parent: BaseItem
   id: PortableVinylPlayer
   name: portable vinyl player
+  suffix: WIP
   description: Listen to your vinyls on the go!
   components:
   - type: Sprite
