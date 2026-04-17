@@ -4,9 +4,9 @@
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-# Omu, replace Goobcoin with Eggs
-server-currency-name-singular = Eggs
-server-currency-name-plural = Eggs
+# Omu, replace Goobcoin with Seeds
+server-currency-name-singular = Seed
+server-currency-name-plural = Seeds
 
 ## Commands
 
@@ -63,17 +63,17 @@ gs-balanceui-shop-footer = ⚠ Ahelp to use your token. Only 1 use per day.
 
 gs-balanceui-shop-token-label = Tokens
 gs-balanceui-shop-tittle-label = Titles
-# Omu, replace Goobcoin with Eggs
-gs-balanceui-shop-buy-token-antag = Buy an Antag Token - {$price} Eggs
-gs-balanceui-shop-buy-token-admin-abuse = Buy an Admin Abuse Token - {$price} Eggs
-gs-balanceui-shop-buy-token-hat = Buy a Hat Token - {$price} Eggs
+# Omu, replace Goobcoin with Seeds
+gs-balanceui-shop-buy-token-antag = Buy an Antag Token - {$price} Seeds
+gs-balanceui-shop-buy-token-admin-abuse = Buy an Meme-Round Token - {$price} Seeds
+gs-balanceui-shop-buy-token-hat = Buy a Hat Token - {$price} Seeds
 
 gs-balanceui-shop-token-antag = High Tier Antag Token
-gs-balanceui-shop-token-admin-abuse = Admin Abuse Token
+gs-balanceui-shop-token-admin-abuse = Meme-Round Token Token
 gs-balanceui-shop-token-hat = Hat Token
 
 gs-balanceui-shop-buy-token-antag-desc = Allows you become any antag. (Excluding Wizards)
-gs-balanceui-shop-buy-token-admin-abuse-desc = Allows you to request an admin to abuse their powers against you. Admins are encouraged to go wild.
+gs-balanceui-shop-buy-token-admin-abuse-desc = Allows you to request an admin to use their powers against you. They are encouraged to go wild.
 gs-balanceui-shop-buy-token-hat-desc = An admin will give you a random hat.
 
 gs-balanceui-admin-add-label = Add (or subtract) money:
@@ -81,7 +81,7 @@ gs-balanceui-admin-add-player = Player name
 gs-balanceui-admin-add-value = Value
 
 gs-balanceui-remark-token-antag = Bought an antag token.
-gs-balanceui-remark-token-admin-abuse = Bought an admin abuse token.
+gs-balanceui-remark-token-admin-abuse = Bought an meme-round token.
 gs-balanceui-remark-token-hat = Bought a hat token.
 gs-balanceui-shop-click-confirm = Click again to confirm
 gs-balanceui-shop-purchased = Purchased {$item}
