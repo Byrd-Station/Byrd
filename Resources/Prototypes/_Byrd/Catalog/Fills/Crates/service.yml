@@ -107,3 +107,27 @@
       weight: 1
     - id: VinylDiskWeAreNumberTwo
       weight: 1
+
+    # Byrd
+    - id: VinylVivaldiWinter
+      weight: 1
+    - id: VinylByrdShantyDrunkenSailor
+      weight: 1
+    - id: VinylByrdShantyWellerman
+      weight: 1
+    - id: VinylByrdShantyDeadHorse
+      weight: 1
+    - id: VinylByrdShantyHaulAwayJoe
+      weight: 1
+    - id: VinylByrdShantyJohnnyIhardlyknewya
+      weight: 1
+    - id: VinylByrdShantyDropofNelsonsBlood
+      weight: 1
+    - id: VinylByrdShantyPiquelabaleine
+      weight: 1
+    - id: VinylByrdShantyRandyDandy
+      weight: 1
+    - id: VinylByrdShantyfishinthesea
+      weight: 1
+    - id: VinylByrdShantyleaveherjohnny
+      weight: 1
