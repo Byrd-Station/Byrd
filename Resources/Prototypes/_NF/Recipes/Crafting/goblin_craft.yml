@@ -103,13 +103,9 @@
   startNode: start
   targetNode: GoblinMadeWrench
   category: construction-category-goblin
-
   entityWhitelist:
     components:
     - Goblin
-  icon:
-    sprite: _NF/Objects/Tools/goblin_tools/wrench.rsi
-    state: icon
   objectType: Item
 
 #region welder
@@ -122,9 +118,6 @@
   entityWhitelist:
     components:
     - Goblin
-  icon:
-    sprite: _NF/Objects/Tools/goblin_tools/welder.rsi
-    state: icon
   objectType: Item
 
 #region mini hoe
@@ -137,9 +130,6 @@
   entityWhitelist:
     components:
     - Goblin
-  icon:
-    sprite: _NF/Objects/Tools/goblin_tools/hoe.rsi
-    state: hoe-base
   objectType: Item
 
 #region minig drill
@@ -152,9 +142,6 @@
   entityWhitelist:
     components:
     - Goblin
-  icon:
-    sprite: _NF/Objects/Tools/goblin_tools/handdrill.rsi
-    state: icon
   objectType: Item
 
 #region tray scanner
@@ -167,9 +154,6 @@
   entityWhitelist:
     components:
     - Goblin
-  icon:
-    sprite: _NF/Objects/Tools/goblin_tools/tray.rsi
-    state: icon
   objectType: Item
 
 #region signaller
@@ -182,9 +166,6 @@
   entityWhitelist:
     components:
     - Goblin
-  icon:
-    sprite: _NF/Objects/Tools/goblin_tools/signaller.rsi
-    state: icon
   objectType: Item
 
 #region lantern
@@ -197,9 +178,6 @@
   entityWhitelist:
     components:
     - Goblin
-  icon:
-    sprite: _NF/Objects/Tools/goblin_tools/lantern.rsi
-    state: lantern
   objectType: Item
 
 #region power cell
@@ -212,9 +190,6 @@
   entityWhitelist:
     components:
     - Goblin
-  icon:
-    sprite: _NF/Objects/Tools/goblin_tools/power_cell.rsi
-    state: icon
   objectType: Item
 
 #region lv cable
@@ -227,9 +202,6 @@
   entityWhitelist:
     components:
     - Goblin
-  icon:
-    sprite: Objects/Tools/cable-coils.rsi
-    state: coillv-10
   objectType: Item
 
 # furniture
@@ -243,9 +215,6 @@
   startNode: start
   targetNode: BannerGoblin01
   category: construction-category-goblin
-  icon:
-    sprite: _NF/Structures/Decoration/banner.rsi
-    state: banner_goblin
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -263,9 +232,6 @@
   startNode: start
   targetNode: GoblinMadeVehicleDumpster
   category: construction-category-goblin
-  icon:
-    sprite: _NF/Objects/Vehicles/dumpster.rsi
-    state: dumpster
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
