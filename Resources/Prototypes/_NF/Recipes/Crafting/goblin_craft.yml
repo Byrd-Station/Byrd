@@ -82,9 +82,6 @@
   entityWhitelist:
     components:
     - Goblin
-  icon:
-    sprite: _NF/Objects/Tools/goblin_tools/screwdriver.rsi
-    state: screwdriver-base
   objectType: Item
 
 #region crowbar
@@ -97,9 +94,6 @@
   entityWhitelist:
     components:
     - Goblin
-  icon:
-    sprite: _NF/Objects/Tools/goblin_tools/crowbar.rsi
-    state: icon
   objectType: Item
 
 #region wrench
