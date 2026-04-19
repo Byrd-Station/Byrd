@@ -1,5 +1,3 @@
-# clothes
-#region robes
 - type: constructionGraph
   id: ClothingOuterCoatRobesGoblin
   start: start
