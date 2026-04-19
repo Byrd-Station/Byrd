@@ -1,4 +1,8 @@
-﻿using Content.Server.Administration;
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Popups;
 using Content.Shared.Database;

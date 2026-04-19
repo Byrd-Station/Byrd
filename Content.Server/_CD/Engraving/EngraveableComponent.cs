@@ -1,4 +1,8 @@
-﻿namespace Content.Server._CD.Engraving;
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+namespace Content.Server._CD.Engraving;
 
 /// <summary>
 ///     Allows an items' description to be modified with an engraving
