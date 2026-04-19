@@ -1,3 +1,19 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+#- type: vessel
+#  id: ReclaimerMK2
+#  name: Reclaimer MK. II
+#  description: A larger salvage vessel, good upgrade from the original Reclaimer.
+#  price: 2500
+#  path: /Maps/_DV/Shuttles/reclaimer_mk2.yml
+#  categories:
+#  - Civilian
+#  - Medium
+#  - Shipping
+
+
 - type: vessel
   id: PTS
   name: Private Transport Shuttle

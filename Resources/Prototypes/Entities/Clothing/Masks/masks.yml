@@ -969,6 +969,16 @@
     sprite: Clothing/Mask/neckgaiterred.rsi
 
 - type: entity
+  parent: ClothingMaskNeckGaiter
+  id: ClothingMaskNeckGaiterMerc
+  name: mercenary neck gaiter
+  components:
+  - type: Sprite
+    sprite: _Byrd/Clothing/Mask/neckgaitermerc.rsi
+  - type: Clothing
+    sprite: _Byrd/Clothing/Mask/neckgaitermerc.rsi
+
+- type: entity
   parent: ClothingMaskClownBase
   id: ClothingMaskSexyClown
   name: sexy clown mask

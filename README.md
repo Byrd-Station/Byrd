@@ -8,7 +8,7 @@ If you want to host or create content for SS14, go to the [Space Station 14 repo
 
 ## Links
 
-[Station Discord Server]() | [Omu Station Wiki](https://wiki.projectomu.org/) | Byrd Station Docs (See Wiki)
+[Station Discord Server]() | [Omu Station Wiki](https://wiki.projectomu.org/) | Byrd Station Docs (See Wiki) | IP `ss14s://byrd.arson.gg/`
 
 ## Documentation/Wiki
 

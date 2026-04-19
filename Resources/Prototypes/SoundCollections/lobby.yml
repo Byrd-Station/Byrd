@@ -140,9 +140,11 @@
     - /Audio/Lobby/thewizard.ogg
     - /Audio/Lobby/skubstub.ogg
     - /Audio/Lobby/space_radiation.ogg
-    - /Audio/Lobby/redsun.ogg
+    #- /Audio/Lobby/redsun.ogg
     - /Audio/Lobby/chollima.ogg
     - /Audio/Lobby/monument.ogg
     - /Audio/Lobby/marhaba.ogg
     - /Audio/Lobby/the_future_soon.ogg
     - /Audio/Lobby/horn.ogg
+    # Byrd - Custom lobby music
+    - /Audio/_Byrd/Lobby/vivaldiwinter.ogg

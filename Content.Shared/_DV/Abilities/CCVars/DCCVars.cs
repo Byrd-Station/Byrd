@@ -31,6 +31,14 @@ public sealed partial class DCCVars
     public static readonly CVarDef<bool> NoVisionFilters =
         CVarDef.Create("accessibility.no_vision_filters", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
+    /* OOC shuttle vote */
+
+    /// <summary>
+    /// How long players should have to vote on the round end shuttle being sent
+    /// </summary>
+    public static readonly CVarDef<TimeSpan> EmergencyShuttleVoteTime =
+        CVarDef.Create("shuttle.vote_time", TimeSpan.FromMinutes(1), CVar.SERVER);
+
     /*
      * Cosmic Cult
      */
