@@ -91,10 +91,10 @@
   name: species-name-felinid
   text: "/ServerInfo/Guidebook/Mobs/Felinid.xml"
 
-#- type: guideEntry
-#  id: Gingerbread
-#  name: species-name-gingerbread
-#  text: "/ServerInfo/Guidebook/Mobs/Gingerbread.xml"
+- type: guideEntry
+  id: Gingerbread
+  name: species-name-gingerbread
+  text: "/ServerInfo/Guidebook/Mobs/Gingerbread.xml"
 
 - type: guideEntry
   id: Harpy
