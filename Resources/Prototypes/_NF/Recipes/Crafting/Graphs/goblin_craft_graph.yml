@@ -24,13 +24,11 @@
         - to: ClothingOuterEVASuitGoblin
           steps:
             - component: GoblinClothingRobes
-              name: goblin traditional robes
               icon:
                 sprite: _NF/Clothing/OuterClothing/Coats/goblin_robes.rsi
                 state: icon
               doAfter: 10
             - tag: SuitEVA
-              name: EVA suit
               icon:
                 sprite: Clothing/OuterClothing/Suits/eva.rsi
                 state: icon
@@ -48,13 +46,11 @@
     - to: GoblinMadeClothingBackpackDuffelTrashBlue
       steps:
       - component: GoblinPreciousTrashBag
-        name: trash bag
         icon:
           sprite: Objects/Specific/Janitorial/trashbag.rsi
           state: blue-icon-0
         doAfter: 0.5
       - component: GoblinPreciousTrashBag
-        name: trash bag
         icon:
           sprite: Objects/Specific/Janitorial/trashbag.rsi
           state: blue-icon-0
@@ -75,7 +71,6 @@
     - to: GoblinMadeClothingBackpackTrashBlue
       steps:
       - component: GoblinPreciousTrashBag
-        name: trash bag
         icon:
           sprite: Objects/Specific/Janitorial/trashbag.rsi
           state: blue-icon-0
@@ -97,31 +92,26 @@
     - to: GoblinMadeMultitool
       steps:
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: boritos-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: chips-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: energybar-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
@@ -142,19 +132,16 @@
     - to: GoblinMadeWirecutter
       steps:
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: boritos-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: chips-trash
@@ -175,19 +162,16 @@
     - to: GoblinMadeScrewdriver
       steps:
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: boritos-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: chips-trash
@@ -208,31 +192,26 @@
     - to: GoblinMadeCrowbar
       steps:
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: boritos-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: chips-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: energybar-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
@@ -253,31 +232,26 @@
     - to: GoblinMadeWrench
       steps:
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: boritos-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: chips-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: energybar-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
@@ -298,31 +272,26 @@
     - to: GoblinMadeWelder
       steps:
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: boritos-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: chips-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: energybar-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
@@ -343,19 +312,16 @@
     - to: GoblinMadeMiniHoe
       steps:
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: boritos-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: chips-trash
@@ -376,31 +342,26 @@
     - to: GoblinMadeMiningDrill
       steps:
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: boritos-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: chips-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: energybar-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
@@ -421,31 +382,26 @@
     - to: GoblinMadeTrayScanner
       steps:
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: boritos-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: chips-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: energybar-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
@@ -466,19 +422,16 @@
     - to: GoblinMadeRemoteSignaller
       steps:
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: boritos-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: chips-trash
@@ -499,31 +452,26 @@
     - to: GoblinMadeLantern
       steps:
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: boritos-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: chips-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: energybar-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
@@ -544,19 +492,16 @@
     - to: GoblinMadePowerCellDepleted
       steps:
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: boritos-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: chips-trash
@@ -577,13 +522,11 @@
     - to: CableApcStack10
       steps:
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: cheesiehonkers-trash
         doAfter: 1
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: boritos-trash
@@ -635,25 +578,21 @@
     - to: GoblinMadeVehicleDumpster
       steps:
       - component: GoblinVehicle
-        name: dumpster
         icon:
           sprite: _NF/Structures/Storage/magnetbox.rsi
           state: rubbishbox
         doAfter: 1
       - component: NFChairFolding
-        name: folding chair
         icon:
           sprite: Structures/Furniture/folding_chair.rsi
           state: folding
         doAfter: 1
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: boritos-trash
         doAfter: 0.2
       - component: GoblinPreciousTrash
-        name: trash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi
           state: chips-trash
