@@ -121,7 +121,7 @@
     - type: Damageable
       damageContainer: Biological
       damageModifierSet: Avali
-#    - type: DamageVisuals # Omu, This sprite doesn't exist.
+#    - type: DamageVisuals # Not Mapped for Avali.
 #      damageOverlayGroups:
 #        Brute:
 #          sprite: Mobs/Effects/brute_damage.rsi
