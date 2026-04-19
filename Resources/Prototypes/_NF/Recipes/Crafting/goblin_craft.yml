@@ -6,7 +6,6 @@
   startNode: start
   targetNode: ClothingOuterCoatRobesGoblin
   category: construction-category-goblin
-  description: Traditional robes of goblinkind. Very regal.
   icon:
     sprite: _NF/Objects/Weapons/Melee/crassknuckles.rsi
     state: icon
@@ -22,7 +21,6 @@
   startNode: start
   targetNode: ClothingOuterEVASuitGoblin
   category: construction-category-goblin
-  description: Traditional robes of goblinkind made EVA-capable. Very regal.
   icon:
     sprite: _NF/Clothing/OuterClothing/Suits/goblin_eva_robes.rsi
     state: icon
@@ -38,7 +36,6 @@
   startNode: start
   targetNode: GoblinMadeClothingBackpackDuffelTrashBlue
   category: construction-category-goblin
-  description: A duffel made out of trash bag.
   entityWhitelist:
     components:
     - Goblin
@@ -54,7 +51,6 @@
   startNode: start
   targetNode: GoblinMadeClothingBackpackTrashBlue
   category: construction-category-goblin
-  description: A backpack made out of trash bag.
   entityWhitelist:
     components:
     - Goblin
@@ -71,7 +67,6 @@
   startNode: start
   targetNode: GoblinMadeMultitool
   category: construction-category-goblin
-  description: An improvised multitool.
   entityWhitelist:
     components:
     - Goblin
@@ -87,7 +82,6 @@
   startNode: start
   targetNode: GoblinMadeWirecutter
   category: construction-category-goblin
-  description: An improvised wirecutter.
   entityWhitelist:
     components:
     - Goblin
@@ -103,7 +97,6 @@
   startNode: start
   targetNode: GoblinMadeScrewdriver
   category: construction-category-goblin
-  description: An improvised electrical screwdriver.
   entityWhitelist:
     components:
     - Goblin
@@ -119,7 +112,6 @@
   startNode: start
   targetNode: GoblinMadeCrowbar
   category: construction-category-goblin
-  description: An improvised crowbar.
   entityWhitelist:
     components:
     - Goblin
@@ -135,7 +127,7 @@
   startNode: start
   targetNode: GoblinMadeWrench
   category: construction-category-goblin
-  description: An improvised electrical wrench.
+
   entityWhitelist:
     components:
     - Goblin
@@ -151,7 +143,6 @@
   startNode: start
   targetNode: GoblinMadeWelder
   category: construction-category-goblin
-  description: An improvised welding tool.
   entityWhitelist:
     components:
     - Goblin
@@ -167,7 +158,6 @@
   startNode: start
   targetNode: GoblinMadeMiniHoe
   category: construction-category-goblin
-  description: An improvised mini hoe.
   entityWhitelist:
     components:
     - Goblin
@@ -183,7 +173,6 @@
   startNode: start
   targetNode: GoblinMadeMiningDrill
   category: construction-category-goblin
-  description: An improvised mining drill.
   entityWhitelist:
     components:
     - Goblin
@@ -199,7 +188,6 @@
   startNode: start
   targetNode: GoblinMadeTrayScanner
   category: construction-category-goblin
-  description: An improvised T-Ray scanner.
   entityWhitelist:
     components:
     - Goblin
@@ -215,7 +203,6 @@
   startNode: start
   targetNode: GoblinMadeRemoteSignaller
   category: construction-category-goblin
-  description: An improvised remote signaller.
   entityWhitelist:
     components:
     - Goblin
@@ -231,7 +218,6 @@
   startNode: start
   targetNode: GoblinMadeLantern
   category: construction-category-goblin
-  description: An improvised lantern.
   entityWhitelist:
     components:
     - Goblin
@@ -247,7 +233,6 @@
   startNode: start
   targetNode: GoblinMadePowerCellDepleted
   category: construction-category-goblin
-  description: An improvised power cell.
   entityWhitelist:
     components:
     - Goblin
@@ -263,7 +248,6 @@
   startNode: start
   targetNode: CableApcStack10
   category: construction-category-goblin
-  description: Coil with 10 cables.
   entityWhitelist:
     components:
     - Goblin
@@ -276,7 +260,6 @@
 #region banner
 - type: construction
   id: BannerGoblin01
-  description: A banner displaying the ancient goblinkind logo.
   entityWhitelist:
     components:
     - Goblin
@@ -297,7 +280,6 @@
 #region dumpster-car
 - type: construction
   id: GoblinMadeVehicleDumpster
-  description: A dumpster turned into a vehicle.
   entityWhitelist:
     components:
     - Goblin
