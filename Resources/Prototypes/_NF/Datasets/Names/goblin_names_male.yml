@@ -1,5 +1,5 @@
 # used this tool: https://www.fantasynamegenerators.com/goblin-names.php
-- type: dataset
+- type: localizedDataset
   id: NamesGoblinMale
   values:
     prefix: names-goblin-male-
