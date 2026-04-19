@@ -42,7 +42,7 @@ permissions:
   pull-requests: write
 
 on:
-  pull_request_target:
+  pull_request:
     paths:
       - '**.rsi/**.png'
 
@@ -79,7 +79,7 @@ jobs:
         uses: peter-evans/find-comment@v1
         id: fc
         with:
-          issue-number: ${{ github.event.number }}
+          issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'github-actions[bot]'
           body-includes: RSI Diff Bot
 
