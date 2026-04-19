@@ -1,0 +1,69 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: jukebox
+  id: vivaldiwinter
+  name: The Four Seasons (Vivaldi) - Winter (Mvt 1)
+  path:
+    path: /Audio/_Byrd/Lobby/vivaldiwinter.ogg
+
+- type: jukebox
+  id: byrdshanty000drunkensailor
+  name: PGN Music - Drunken Sailor
+  path: 
+    path: /Audio/_Byrd/Lobby/drunkensailor.ogg
+
+- type: jukebox
+  id: byrdshanty001wellerman
+  name: PGN Music - Wellerman
+  path: 
+    path: /Audio/_Byrd/Lobby/wellerman.ogg
+
+- type: jukebox
+  id: byrdshanty002deadhorse
+  name: PGN Music - Dead Horse
+  path: 
+    path: /Audio/_Byrd/Lobby/deadhorse.ogg
+
+- type: jukebox
+  id: byrdshanty003haulawayjoe
+  name: PGN Music - Haul Away Joe
+  path: 
+    path: /Audio/_Byrd/Lobby/haulawayjoe.ogg
+
+- type: jukebox
+  id: byrdshanty004johnnyihardlyknewya
+  name: PGN Music - Johnny I hardly knew ya
+  path: 
+    path: /Audio/_Byrd/Lobby/johnnyihardlyknewya.ogg
+
+- type: jukebox
+  id: byrdshanty005dropofnelsonsblood
+  name: PGN Music - Drop of Nelson's Blood
+  path: 
+    path: /Audio/_Byrd/Lobby/dropofnelsonsblood.ogg
+
+- type: jukebox
+  id: byrdshanty006piquelabaleine
+  name: PGN Music - Pique la baleine
+  path: 
+    path: /Audio/_Byrd/Lobby/piquelabaleine.ogg
+
+- type: jukebox
+  id: byrdshanty007randydandy
+  name: PGN Music - Randy Dandy
+  path: 
+    path: /Audio/_Byrd/Lobby/randydandy.ogg
+
+- type: jukebox
+  id: byrdshanty008fishinthesea
+  name: PGN Music - Fish in the Sea
+  path: 
+    path: /Audio/_Byrd/Lobby/fishinthesea.ogg
+
+- type: jukebox
+  id: byrdshanty009leaveherjohnny
+  name: PGN Music - Leave her Johnny
+  path: 
+    path: /Audio/_Byrd/Lobby/leaveherjohnny.ogg

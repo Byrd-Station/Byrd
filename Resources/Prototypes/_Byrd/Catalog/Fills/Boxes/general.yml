@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: Mercenary M.R.E.
+  parent: BoxCardboard
+  id: BoxMREMerc
+  description: An extended M.R.E. with more emergency supplies.
+  components:
+  - type: StorageFill
+    contents:
+      - id: DrinkMREFlask
+      - id: FoodSnackNutribrick
+      - id: FoodSnackMREBrownie
+      - id: EmergencyMedipen
+      - id: SpaceMedipen
+      - id: GlowstickBase
+  - type: Sprite
+    layers:
+      - state: box_olive
+      - state: writing

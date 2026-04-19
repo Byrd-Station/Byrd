@@ -206,6 +206,26 @@
 
 - type: entity
   parent: ClothingEyesBase
+  id: ClothingEyesGlassesMerc
+  name: mercenary goggles
+  description: Advanced goggles that provide protection from eye damage of all types.
+  components:
+  - type: FlashImmunity
+  - type: Sprite
+    sprite: _Byrd/Clothing/Eyes/Glasses/meson_merc.rsi
+  - type: Clothing
+    sprite: _Byrd/Clothing/Eyes/Glasses/meson_merc.rsi
+  - type: EyeProtection
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: Tag
+    tags:
+    - PetWearable
+    - WhitelistChameleon
+    - GogglesMeson # Omu - for crafting recipe
+
+- type: entity
+  parent: ClothingEyesBase
   id: ClothingEyesGlasses
   name: glasses
   description: Upon closer inspection, you realize these lenses are infact made of plastic. # Goobstation

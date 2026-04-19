@@ -1,0 +1,28 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: startingGear
+  id: MercenaryGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMercenary
+    back: ClothingBackpackMerc
+    head: ClothingHeadHelmetMerc
+    eyes: ClothingEyesGlassesMerc
+    ears: ClothingHeadsetAltFreelancer
+    gloves: ClothingHandsMercGlovesCombat
+    outerClothing: ClothingOuterVestWebMerc
+    shoes: ClothingShoesBootsMercFilled
+    id: SalvagePDA
+    mask: ClothingMaskNeckGaiterMerc
+    belt: ClothingBeltMercWebbing
+    pocket1: FlashlightSeclite
+  storage:
+    back:
+    - BoxMREMerc
+    - EncryptionKeyCargo
+
+    belt:
+    - ToolDebug
+    - WelderIndustrialAdvanced
+    - Multitool

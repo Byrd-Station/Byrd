@@ -272,6 +272,9 @@
   components:
     - type: Sprite
       sprite: Clothing/Back/Backpacks/merc.rsi
+    - type: Storage
+      grid:
+      - 0,0,7,4
 
 #ERT
 - type: entity

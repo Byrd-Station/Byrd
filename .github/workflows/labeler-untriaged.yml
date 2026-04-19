@@ -68,6 +68,10 @@
 
 name: "Labels: Untriaged"
 
+permissions:
+  issues: write
+  pull-requests: write
+
 on:
   issues:
     types: [opened]

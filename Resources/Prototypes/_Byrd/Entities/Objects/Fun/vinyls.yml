@@ -1,0 +1,124 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: "vinyl disk: Winter (Mvt 1)"
+  id: VinylVivaldiWinter
+  parent: BaseVinylDisk
+  components:
+    - type: Sprite
+      state: orange-vinyl-disk
+    - type: Vinyl
+      song:
+        path: /Audio/_Byrd/Lobby/vivaldiwinter.ogg
+
+- type: entity
+  name: "vinyl disk: Drunken Sailor"
+  id: VinylByrdShantyDrunkenSailor
+  parent: BaseVinylDisk
+  components:
+    - type: Sprite
+      state: cyan-vinyl-disk
+    - type: Vinyl
+      song:
+        path: /Audio/_Byrd/Lobby/drunkensailor.ogg
+
+- type: entity
+  name: "vinyl disk: Wellerman"
+  id: VinylByrdShantyWellerman
+  parent: BaseVinylDisk
+  components:
+    - type: Sprite
+      state: white-vinyl-disk
+    - type: Vinyl
+      song:
+        path: /Audio/_Byrd/Lobby/wellerman.ogg
+
+- type: entity
+  name: "vinyl disk: Dead Horse"
+  id: VinylByrdShantyDeadHorse
+  parent: BaseVinylDisk
+  components:
+    - type: Sprite
+      state: white-vinyl-disk
+    - type: Vinyl
+      song:
+        path: /Audio/_Byrd/Lobby/deadhorse.ogg
+
+- type: entity
+  name: "vinyl disk: Haul Away Joe"
+  id: VinylByrdShantyHaulAwayJoe
+  parent: BaseVinylDisk
+  components:
+    - type: Sprite
+      state: white-vinyl-disk
+    - type: Vinyl
+      song:
+        path: /Audio/_Byrd/Lobby/haulawayjoe.ogg
+
+- type: entity
+  name: "vinyl disk: Johnny I hardly knew ya"
+  id: VinylByrdShantyJohnnyIhardlyknewya
+  parent: BaseVinylDisk
+  components:
+    - type: Sprite
+      state: white-vinyl-disk
+    - type: Vinyl
+      song:
+        path: /Audio/_Byrd/Lobby/johnnyihardlyknewya.ogg
+
+- type: entity
+  name: "vinyl disk: Drop of Nelson's Blood"
+  id: VinylByrdShantyDropofNelsonsBlood
+  parent: BaseVinylDisk
+  components:
+    - type: Sprite
+      state: white-vinyl-disk
+    - type: Vinyl
+      song:
+        path: /Audio/_Byrd/Lobby/dropofnelsonsblood.ogg
+
+- type: entity
+  name: "vinyl disk: Pique la baleine"
+  id: VinylByrdShantyPiquelabaleine
+  parent: BaseVinylDisk
+  components:
+    - type: Sprite
+      state: white-vinyl-disk
+    - type: Vinyl
+      song:
+        path: /Audio/_Byrd/Lobby/piquelabaleine.ogg
+
+- type: entity
+  name: "vinyl disk: Randy Dandy"
+  id: VinylByrdShantyRandyDandy
+  parent: BaseVinylDisk
+  components:
+    - type: Sprite
+      state: white-vinyl-disk
+    - type: Vinyl
+      song:
+        path: /Audio/_Byrd/Lobby/randydandy.ogg
+
+- type: entity
+  name: "vinyl disk: Fish in the Sea"
+  id: VinylByrdShantyfishinthesea
+  parent: BaseVinylDisk
+  components:
+    - type: Sprite
+      state: white-vinyl-disk
+    - type: Vinyl
+      song:
+        path: /Audio/_Byrd/Lobby/fishinthesea.ogg
+
+- type: entity
+  name: "vinyl disk: Leave her Johnny"
+  id: VinylByrdShantyleaveherjohnny
+  parent: BaseVinylDisk
+  components:
+    - type: Sprite
+      state: white-vinyl-disk
+    - type: Vinyl
+      song:
+        path: /Audio/_Byrd/Lobby/leaveherjohnny.ogg
