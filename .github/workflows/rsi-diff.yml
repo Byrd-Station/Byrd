@@ -37,6 +37,10 @@
 
 name: Diff RSIs
 
+permissions:
+  issues: write
+  pull-requests: write
+
 on:
   pull_request_target:
     paths:
