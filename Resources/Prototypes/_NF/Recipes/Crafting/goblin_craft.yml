@@ -8,12 +8,12 @@
   targetNode: ClothingOuterCoatRobesGoblin
   category: construction-category-goblin
   description: Traditional robes of goblinkind. Very regal.
+  icon:
+    sprite: _NF/Objects/Weapons/Melee/crassknuckles.rsi
+    state: icon
   entityWhitelist:
     components:
     - Goblin
-  icon:
-    sprite: _NF/Clothing/OuterClothing/Coats/goblin_robes.rsi
-    state: icon
   objectType: Item
 
 #region EVA
@@ -65,23 +65,6 @@
   icon:
     sprite: _NF/Clothing/Back/Backpacks/trashpack_blue.rsi
     state: icon
-  objectType: Item
-
-#region trash pouch
-- type: construction
-  name: trashuch
-  id: GoblinMadeTrashPouch
-  graph: GoblinMadeTrashPouch
-  startNode: start
-  targetNode: GoblinMadeTrashPouch
-  category: construction-category-goblin
-  description: A pouch made out of trash bag.
-  entityWhitelist:
-    components:
-    - Goblin
-  icon:
-    sprite: _NF/Objects/Storage/Pouches/trash_pouch.rsi
-    state: closed
   objectType: Item
 
 # tools

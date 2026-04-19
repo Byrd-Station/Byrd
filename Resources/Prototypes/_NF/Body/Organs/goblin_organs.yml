@@ -135,14 +135,13 @@
           Quantity: 5
   - type: Stomach
   - type: Metabolizer
-    maxReagents: 3
+    maxPoisonsProcessable: 3
     metabolizerTypes: [ Animal ] # [ Goblin ]
     removeEmpty: true
     groups:
     - id: Food
     - id: Drink
     - id: Medicine
-    - id: Cryogenic
     - id: Poison
     - id: Narcotic
     - id: Alcohol

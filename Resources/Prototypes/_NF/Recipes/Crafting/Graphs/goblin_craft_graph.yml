@@ -86,27 +86,6 @@
   - node: GoblinMadeClothingBackpackTrashBlue
     entity: GoblinMadeClothingBackpackTrashBlue
 
-#region trash pouch
-- type: constructionGraph
-  id: GoblinMadeTrashPouch
-  start: start
-  graph:
-  - node: start
-    edges:
-    - to: GoblinMadeTrashPouch
-      steps:
-      - component: GoblinPreciousTrashBag
-        name: trash bag
-        icon:
-          sprite: Objects/Specific/Janitorial/trashbag.rsi
-          state: blue-icon-0
-        doAfter: 0.5
-      - material: Cable
-        amount: 1
-        doAfter: 0.5
-  - node: GoblinMadeTrashPouch
-    entity: GoblinMadeTrashPouch
-
 # tools
 #region multitool
 - type: constructionGraph
