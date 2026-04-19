@@ -18,9 +18,6 @@
   startNode: start
   targetNode: ClothingOuterEVASuitGoblin
   category: construction-category-goblin
-  icon:
-    sprite: _NF/Clothing/OuterClothing/Suits/goblin_eva_robes.rsi
-    state: icon
   entityWhitelist:
     components:
     - Goblin
@@ -36,9 +33,6 @@
   entityWhitelist:
     components:
     - Goblin
-  icon:
-    sprite: _NF/Clothing/Back/Duffels/trashel_blue.rsi
-    state: icon
   objectType: Item
 
 #region trash backpack
@@ -51,9 +45,6 @@
   entityWhitelist:
     components:
     - Goblin
-  icon:
-    sprite: _NF/Clothing/Back/Backpacks/trashpack_blue.rsi
-    state: icon
   objectType: Item
 
 # tools
@@ -67,9 +58,6 @@
   entityWhitelist:
     components:
     - Goblin
-  icon:
-    sprite: _NF/Objects/Tools/goblin_tools/multitool.rsi
-    state: icon
   objectType: Item
 
 #region wirecutter
@@ -82,9 +70,6 @@
   entityWhitelist:
     components:
     - Goblin
-  icon:
-    sprite: _NF/Objects/Tools/goblin_tools/wirecutters.rsi
-    state: icon
   objectType: Item
 
 #region screwdriver
