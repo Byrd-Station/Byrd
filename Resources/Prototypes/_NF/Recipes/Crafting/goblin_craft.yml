@@ -6,9 +6,6 @@
   startNode: start
   targetNode: ClothingOuterCoatRobesGoblin
   category: construction-category-goblin
-  icon:
-    sprite: _NF/Objects/Weapons/Melee/crassknuckles.rsi
-    state: icon
   entityWhitelist:
     components:
     - Goblin
