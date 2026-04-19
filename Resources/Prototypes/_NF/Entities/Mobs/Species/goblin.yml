@@ -50,7 +50,6 @@
       - 1,1,1,4
       - 2,2,2,5
       - 3,3,3,6
-    storedRotation: -67.5 # Bug: must be half the angle.
   - type: Vocal
     wilhelm: "/Audio/_NF/Voice/Goblin/goblin-cackle-05.ogg"
     sounds:

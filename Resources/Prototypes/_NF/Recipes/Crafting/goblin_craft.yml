@@ -25,12 +25,12 @@
   targetNode: ClothingOuterEVASuitGoblin
   category: construction-category-goblin
   description: Traditional robes of goblinkind made EVA-capable. Very regal.
-  entityWhitelist:
-    components:
-    - Goblin
   icon:
     sprite: _NF/Clothing/OuterClothing/Suits/goblin_eva_robes.rsi
     state: icon
+  entityWhitelist:
+    components:
+    - Goblin
   objectType: Item
 
 #region trash duffel
