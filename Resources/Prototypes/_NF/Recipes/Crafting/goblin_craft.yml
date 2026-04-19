@@ -36,10 +36,10 @@
 #region trash duffel
 - type: construction
   name: trashel
-  id: NFGoblinMadeClothingBackpackDuffelTrashBlue
-  graph: NFGoblinMadeClothingBackpackDuffelTrashBlue
+  id: GoblinMadeClothingBackpackDuffelTrashBlue
+  graph: GoblinMadeClothingBackpackDuffelTrashBlue
   startNode: start
-  targetNode: NFGoblinMadeClothingBackpackDuffelTrashBlue
+  targetNode: GoblinMadeClothingBackpackDuffelTrashBlue
   category: construction-category-goblin
   description: A duffel made out of trash bag.
   entityWhitelist:
@@ -53,10 +53,10 @@
 #region trash backpack
 - type: construction
   name: trashpack
-  id: NFGoblinMadeClothingBackpackTrashBlue
-  graph: NFGoblinMadeClothingBackpackTrashBlue
+  id: GoblinMadeClothingBackpackTrashBlue
+  graph: GoblinMadeClothingBackpackTrashBlue
   startNode: start
-  targetNode: NFGoblinMadeClothingBackpackTrashBlue
+  targetNode: GoblinMadeClothingBackpackTrashBlue
   category: construction-category-goblin
   description: A backpack made out of trash bag.
   entityWhitelist:
@@ -70,10 +70,10 @@
 #region trash pouch
 - type: construction
   name: trashuch
-  id: NFGoblinMadeTrashPouch
-  graph: NFGoblinMadeTrashPouch
+  id: GoblinMadeTrashPouch
+  graph: GoblinMadeTrashPouch
   startNode: start
-  targetNode: NFGoblinMadeTrashPouch
+  targetNode: GoblinMadeTrashPouch
   category: construction-category-goblin
   description: A pouch made out of trash bag.
   entityWhitelist:
@@ -88,10 +88,10 @@
 #region multitool
 - type: construction
   name: hacking jig
-  id: NFGoblinMadeMultitool
-  graph: NFGoblinMadeMultitool
+  id: GoblinMadeMultitool
+  graph: GoblinMadeMultitool
   startNode: start
-  targetNode: NFGoblinMadeMultitool
+  targetNode: GoblinMadeMultitool
   category: construction-category-goblin
   description: An improvised multitool.
   entityWhitelist:
@@ -105,10 +105,10 @@
 #region wirecutter
 - type: construction
   name: wiresnipper
-  id: NFGoblinMadeWirecutter
-  graph: NFGoblinMadeWirecutter
+  id: GoblinMadeWirecutter
+  graph: GoblinMadeWirecutter
   startNode: start
-  targetNode: NFGoblinMadeWirecutter
+  targetNode: GoblinMadeWirecutter
   category: construction-category-goblin
   description: An improvised wirecutter.
   entityWhitelist:
@@ -122,10 +122,10 @@
 #region screwdriver
 - type: construction
   name: electro-driver
-  id: NFGoblinMadeScrewdriver
-  graph: NFGoblinMadeScrewdriver
+  id: GoblinMadeScrewdriver
+  graph: GoblinMadeScrewdriver
   startNode: start
-  targetNode: NFGoblinMadeScrewdriver
+  targetNode: GoblinMadeScrewdriver
   category: construction-category-goblin
   description: An improvised electrical screwdriver.
   entityWhitelist:
@@ -139,10 +139,10 @@
 #region crowbar
 - type: construction
   name: electro-jilt
-  id: NFGoblinMadeCrowbar
-  graph: NFGoblinMadeCrowbar
+  id: GoblinMadeCrowbar
+  graph: GoblinMadeCrowbar
   startNode: start
-  targetNode: NFGoblinMadeCrowbar
+  targetNode: GoblinMadeCrowbar
   category: construction-category-goblin
   description: An improvised crowbar.
   entityWhitelist:
@@ -156,10 +156,10 @@
 #region wrench
 - type: construction
   name: electro-spanner
-  id: NFGoblinMadeWrench
-  graph: NFGoblinMadeWrench
+  id: GoblinMadeWrench
+  graph: GoblinMadeWrench
   startNode: start
-  targetNode: NFGoblinMadeWrench
+  targetNode: GoblinMadeWrench
   category: construction-category-goblin
   description: An improvised electrical wrench.
   entityWhitelist:
@@ -173,10 +173,10 @@
 #region welder
 - type: construction
   name: burner torch
-  id: NFGoblinMadeWelder
-  graph: NFGoblinMadeWelder
+  id: GoblinMadeWelder
+  graph: GoblinMadeWelder
   startNode: start
-  targetNode: NFGoblinMadeWelder
+  targetNode: GoblinMadeWelder
   category: construction-category-goblin
   description: An improvised welding tool.
   entityWhitelist:
@@ -190,10 +190,10 @@
 #region mini hoe
 - type: construction
   name: electro-scratcher
-  id: NFGoblinMadeMiniHoe
-  graph: NFGoblinMadeMiniHoe
+  id: GoblinMadeMiniHoe
+  graph: GoblinMadeMiniHoe
   startNode: start
-  targetNode: NFGoblinMadeMiniHoe
+  targetNode: GoblinMadeMiniHoe
   category: construction-category-goblin
   description: An improvised mini hoe.
   entityWhitelist:
@@ -207,10 +207,10 @@
 #region minig drill
 - type: construction
   name: pneumatic hammer
-  id: NFGoblinMadeMiningDrill
-  graph: NFGoblinMadeMiningDrill
+  id: GoblinMadeMiningDrill
+  graph: GoblinMadeMiningDrill
   startNode: start
-  targetNode: NFGoblinMadeMiningDrill
+  targetNode: GoblinMadeMiningDrill
   category: construction-category-goblin
   description: An improvised mining drill.
   entityWhitelist:
@@ -224,10 +224,10 @@
 #region tray scanner
 - type: construction
   name: stash ogler
-  id: NFGoblinMadeTrayScanner
-  graph: NFGoblinMadeTrayScanner
+  id: GoblinMadeTrayScanner
+  graph: GoblinMadeTrayScanner
   startNode: start
-  targetNode: NFGoblinMadeTrayScanner
+  targetNode: GoblinMadeTrayScanner
   category: construction-category-goblin
   description: An improvised T-Ray scanner.
   entityWhitelist:
@@ -241,10 +241,10 @@
 #region signaller
 - type: construction
   name: remote winker
-  id: NFGoblinMadeRemoteSignaller
-  graph: NFGoblinMadeRemoteSignaller
+  id: GoblinMadeRemoteSignaller
+  graph: GoblinMadeRemoteSignaller
   startNode: start
-  targetNode: NFGoblinMadeRemoteSignaller
+  targetNode: GoblinMadeRemoteSignaller
   category: construction-category-goblin
   description: An improvised remote signaller.
   entityWhitelist:
@@ -258,10 +258,10 @@
 #region lantern
 - type: construction
   name: glimmer
-  id: NFGoblinMadeLantern
-  graph: NFGoblinMadeLantern
+  id: GoblinMadeLantern
+  graph: GoblinMadeLantern
   startNode: start
-  targetNode: NFGoblinMadeLantern
+  targetNode: GoblinMadeLantern
   category: construction-category-goblin
   description: An improvised lantern.
   entityWhitelist:
@@ -275,10 +275,10 @@
 #region power cell
 - type: construction
   name: power cell
-  id: NFGoblinMadePowerCellDepleted
-  graph: NFGoblinMadePowerCellDepleted
+  id: GoblinMadePowerCellDepleted
+  graph: GoblinMadePowerCellDepleted
   startNode: start
-  targetNode: NFGoblinMadePowerCellDepleted
+  targetNode: GoblinMadePowerCellDepleted
   category: construction-category-goblin
   description: An improvised power cell.
   entityWhitelist:
@@ -315,7 +315,7 @@
   entityWhitelist:
     components:
     - Goblin
-  graph: NFGoblinMadeBanner
+  graph: GoblinMadeBanner
   startNode: start
   targetNode: BannerGoblin01
   category: construction-category-goblin
@@ -331,15 +331,15 @@
 # vehicles
 #region dumpster-car
 - type: construction
-  id: NFGoblinMadeVehicleDumpster
+  id: GoblinMadeVehicleDumpster
   name: dumpster rattler
   description: A dumpster turned into a vehicle.
   entityWhitelist:
     components:
     - Goblin
-  graph: NFGoblinMadeVehicleDumpster
+  graph: GoblinMadeVehicleDumpster
   startNode: start
-  targetNode: NFGoblinMadeVehicleDumpster
+  targetNode: GoblinMadeVehicleDumpster
   category: construction-category-goblin
   icon:
     sprite: _NF/Objects/Vehicles/dumpster.rsi

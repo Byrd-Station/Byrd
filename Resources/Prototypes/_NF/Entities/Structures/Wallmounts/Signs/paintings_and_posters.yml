@@ -12,7 +12,7 @@
 # Poster
 - type: entity
   parent: PosterBase
-  id: NFPosterLegitGoblinTinkerer
+  id: PosterLegitGoblinTinkerer
   name: "Tinkering!"
   description: "This poster depicts a cheerful goblin engineer telling you that explosions are the spice of tinkering."
   components:
@@ -22,10 +22,21 @@
     
 - type: entity
   parent: PosterBase
-  id: NFPosterContrabandGoblinFront
+  id: PosterContrabandGoblinFront
   name: "Goblinkin, Unite!"
   description: "A poster rallying goblins to unite and fight for their rights."
   components:
   - type: Sprite
     sprite: _NF/Structures/Wallmounts/posters.rsi
     state: nf_poster14_contraband
+
+
+- type: entity
+  parent: PosterBase
+  id: PosterContrabandGoblinate
+  name: "Da Great Space Goblinate!"
+  description: "A poster calling to restore The Great Goblinate in all its former glory."
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/posters.rsi
+    state: nf_poster15_contraband

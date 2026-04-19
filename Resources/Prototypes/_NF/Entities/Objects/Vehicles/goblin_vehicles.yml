@@ -1,68 +1,78 @@
 - type: entity
-  id: NFGoblinMadeVehicleDumpster
+  id: GoblinMadeVehicleDumpster
   parent: [ BaseVehicle ]
   name: dumpster
   description: It only has one wheel!
   components:
-  - type: Timer
-  - type: TimedSpawner
-    prototypes:
-    - SpawnGoblinMadeToolMalfunction
-    chance: 0.05
-    intervalSeconds: 1200 # 20 min
-    minimumEntitiesSpawned: 1
-    maximumEntitiesSpawned: 1
-  - type: GoblinMade
-  - type: Vehicle
-    renderOver: None
-    northOffset: 0, -0.15
-    southOffset: 0, -0.15
-    eastOffset: 0, -0.15
-    westOffset: 0, -0.15
-    engineRunning: true
-    hornSound:
-      collection: CarBeeps
-      params:
-        variation: 0.125
-  - type: Sprite
-    sprite: _NF/Objects/Vehicles/dumpster.rsi
-    layers:
-    - state: dumpster
-      map: ["enum.VehicleVisualLayers.AutoAnimate"]
-    - sprite: _NF/Structures/Storage/magnetbox.rsi
-      state: controller
-    - sprite: _NF/Structures/Storage/magnetbox.rsi
-      state: controller-on
-      visible: False
-      map: [ "enum.ToggleVisuals.Layer" ]
-      shader: unshaded
-    - sprite: _NF/Objects/Tools/goblin_tools/overlay_sparks.rsi
-      state: overlay-icon
-      shader: unshaded
-  - type: MovementSpeedModifier
-    acceleration: 1
-    friction: 0.8
-    baseWalkSpeed: 3.5
-    baseSprintSpeed: 4.3
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 200
-      behaviors:
+    - type: Vehicle
+      renderOver: North, NorthEast, East, SouthEast, South, SouthWest, West, NorthWest
+#    renderOver: None
+#    northOffset: 0, -0.15
+#    southOffset: 0, -0.15
+#    eastOffset: 0, -0.15
+#    westOffset: 0, -0.15
+#    engineRunning: true
+#    hornSound:
+#      collection: CarBeeps
+#      params:
+#        variation: 0.125
+    - type: MovementSpeedModifier
+      acceleration: 1
+      friction: 0.8
+      baseWalkSpeed: 3.5
+      baseSprintSpeed: 4.3
+    - type: UnpoweredFlashlight
+    - type: PointLight
+      enabled: false
+      radius: 3.5
+      softness: 2
+      mask: /Textures/Effects/LightMasks/cone.png
+      autoRot: true
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+      - SpawnGoblinMadeToolMalfunction
+      chance: 0.05
+      intervalSeconds: 1200 # 20 min
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1
+    - type: GoblinMade
+    - type: Sprite
+      sprite: _NF/Objects/Vehicles/dumpster.rsi
+      layers:
+      - state: dumpster
+        #map: ["enum.VehicleVisualLayers.AutoAnimate"]
+      - sprite: _NF/Structures/Storage/magnetbox.rsi
+        state: controller
+      - sprite: _NF/Structures/Storage/magnetbox.rsi
+        state: controller-on
+        visible: true
+        #map: [ "enum.ToggleableVisuals.Layer" ]
+        #shader: unshaded
+      - sprite: _NF/Objects/Tools/goblin_tools/overlay_sparks.rsi
+        state: overlay-icon
+        shader: unshaded
+      #state: vehicle
+      #noRot: true
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 240
+        behaviors:
         - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 240
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-  - type: ItemSlots
-    slots: {} # no keys required
-  - type: Construction
-    graph: NFGoblinMadeVehicleDumpster
-    node: NFGoblinMadeVehicleDumpster
+          acts: ["Destruction"]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+    - type: ItemSlots
+      slots: {} # no keys required
+    - type: Construction
+      graph: GoblinMadeVehicleDumpster
+      node: GoblinMadeVehicleDumpster

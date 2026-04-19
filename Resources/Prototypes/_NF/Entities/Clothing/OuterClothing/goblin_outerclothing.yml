@@ -17,7 +17,7 @@
     node: ClothingOuterCoatRobesGoblin
 
 - type: entity
-  parent: NFClothingOuterEVASuitBase
+  parent: ClothingOuterHardsuitEVA
   id: ClothingOuterEVASuitGoblin
   name: goblin EVA suit
   description: Traditional robes of goblinkind made EVA-capable. Very regal.

@@ -1,6 +1,6 @@
 #region base
 - type: entity
-  id: NFBaseGoblinMadeTools
+  id: BaseGoblinMadeTools
   suffix: Goblin Made
   abstract: true
   components:
@@ -43,7 +43,7 @@
   - type: GoblinMade
 
 - type: entity
-  id: NFBaseGoblinMadeToolsMalfunction
+  id: BaseGoblinMadeToolsMalfunction
   abstract: true
   components:
   - type: TriggerOnSpawn
@@ -53,8 +53,8 @@
 
 #region malfunctions
 - type: entity
-  id: NFGoblinMadeToolMalfunctionEmp
-  parent: NFBaseGoblinMadeToolsMalfunction
+  id: GoblinMadeToolMalfunctionEmp
+  parent: BaseGoblinMadeToolsMalfunction
   categories: [ HideSpawnMenu ]
   components:
   - type: EmpOnTrigger
@@ -62,8 +62,8 @@
     energyConsumption: 5000
 
 - type: entity
-  id: NFGoblinMadeToolMalfunctionFlash
-  parent: NFBaseGoblinMadeToolsMalfunction
+  id: GoblinMadeToolMalfunctionFlash
+  parent: BaseGoblinMadeToolsMalfunction
   categories: [ HideSpawnMenu ]
   components:
   - type: FlashOnTrigger
@@ -72,22 +72,22 @@
     proto: GrenadeFlashEffect
 
 - type: entity
-  id: NFGoblinMadeToolMalfunctionSmoke
-  parent: NFBaseGoblinMadeToolsMalfunction
+  id: GoblinMadeToolMalfunctionSmoke
+  parent: BaseGoblinMadeToolsMalfunction
   categories: [ HideSpawnMenu ]
   components:
   - type: SmokeOnTrigger
     duration: 3
     spreadAmount: 1
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
     sound: /Audio/Effects/smoke.ogg
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/Effects/Smoke-grenade.ogg
 
 - type: entity
-  id: NFGoblinMadeToolMalfunctionFireBomb
-  parent: NFBaseGoblinMadeToolsMalfunction
+  id: GoblinMadeToolMalfunctionFireBomb
+  parent: BaseGoblinMadeToolsMalfunction
   categories: [ HideSpawnMenu ]
   components:
   - type: ExplodeOnTrigger
@@ -99,8 +99,8 @@
     canCreateVacuum: false
 
 - type: entity
-  id: NFGoblinMadeToolMalfunctionExplosion
-  parent: NFBaseGoblinMadeToolsMalfunction
+  id: GoblinMadeToolMalfunctionExplosion
+  parent: BaseGoblinMadeToolsMalfunction
   categories: [ HideSpawnMenu ]
   components:
   - type: ExplodeOnTrigger
@@ -112,8 +112,8 @@
     canCreateVacuum: false
 
 - type: entity
-  id: NFGoblinMadeToolMalfunctionCryo
-  parent: NFBaseGoblinMadeToolsMalfunction
+  id: GoblinMadeToolMalfunctionCryo
+  parent: BaseGoblinMadeToolsMalfunction
   categories: [ HideSpawnMenu ]
   components:
   - type: ExplodeOnTrigger
@@ -128,22 +128,22 @@
   id: TableGoblinMadeToolMalfunction
   table: !type:GroupSelector
     children:
-    - id: NFGoblinMadeToolMalfunctionEmp
+    - id: GoblinMadeToolMalfunctionEmp
       weight: 30
-    - id: NFGoblinMadeToolMalfunctionFlash
+    - id: GoblinMadeToolMalfunctionFlash
       weight: 20
-    - id: NFGoblinMadeToolMalfunctionSmoke
+    - id: GoblinMadeToolMalfunctionSmoke
       weight: 35
-    - id: NFGoblinMadeToolMalfunctionFireBomb
+    - id: GoblinMadeToolMalfunctionFireBomb
       weight: 5
-    - id: NFGoblinMadeToolMalfunctionExplosion
+    - id: GoblinMadeToolMalfunctionExplosion
       weight: 5
-    - id: NFGoblinMadeToolMalfunctionCryo
+    - id: GoblinMadeToolMalfunctionCryo
       weight: 5
 
 - type: entity
   id: SpawnGoblinMadeToolMalfunction
-  parent: MarkerBasePlaceFree
+  parent: MarkerBase
   name: goblin tool malfunction
   components:
   - type: Sprite
@@ -161,8 +161,8 @@
 # tools
 #region multitool
 - type: entity
-  id: NFGoblinMadeMultitool
-  parent: [ NFBaseGoblinMadeTools, Multitool ]
+  id: GoblinMadeMultitool
+  parent: [ BaseGoblinMadeTools, Multitool ]
   name: hacking jig
   description: "An improvised multitool pieced together from faulty circuit board, broken display, bent antennae and stuffed into a discarded wrapper for additional protection against elements."
   components:
@@ -211,14 +211,14 @@
           chinese3: ""
           chinese4: ""
   - type: Construction
-    graph: NFGoblinMadeMultitool
-    node: NFGoblinMadeMultitool
+    graph: GoblinMadeMultitool
+    node: GoblinMadeMultitool
 # endregion
 
 #region wirecutter
 - type: entity
-  id: NFGoblinMadeWirecutter
-  parent: [ NFBaseGoblinMadeTools, Wirecutter ]
+  id: GoblinMadeWirecutter
+  parent: [ BaseGoblinMadeTools, Wirecutter ]
   name: wiresnipper
   description: A wire cutter made out of glass shards, metal bits, cloth, and some wires. What's up with all the sparking, though?
   components:
@@ -254,14 +254,14 @@
       belt:
       - state: equipped-BELT
   - type: Construction
-    graph: NFGoblinMadeWirecutter
-    node: NFGoblinMadeWirecutter
+    graph: GoblinMadeWirecutter
+    node: GoblinMadeWirecutter
 # endregion
 
 #region screwdriver
 - type: entity
-  id: NFGoblinMadeScrewdriver
-  parent: [ NFBaseGoblinMadeTools, Screwdriver ]
+  id: GoblinMadeScrewdriver
+  parent: [ BaseGoblinMadeTools, Screwdriver ]
   name: electro-driver
   description: An improvised electrical screwdriver, not much in terms of torque, but your wrists will be less sore.
   components:
@@ -300,14 +300,14 @@
       - Screwing
     useSound: /Audio/Items/drill_use.ogg
   - type: Construction
-    graph: NFGoblinMadeScrewdriver
-    node: NFGoblinMadeScrewdriver
+    graph: GoblinMadeScrewdriver
+    node: GoblinMadeScrewdriver
 # endregion
 
 #region crowbar
 - type: entity
-  id: NFGoblinMadeCrowbar
-  parent: [ NFBaseGoblinMadeTools, Crowbar ]
+  id: GoblinMadeCrowbar
+  parent: [ BaseGoblinMadeTools, Crowbar ]
   name: electro-jilt
   description: The next step in crowbar evolution - jack. Enhanced with an improvised electrical winch.
   components:
@@ -343,14 +343,14 @@
       - Prying
     useSound: /Audio/Items/drill_use.ogg
   - type: Construction
-    graph: NFGoblinMadeCrowbar
-    node: NFGoblinMadeCrowbar
+    graph: GoblinMadeCrowbar
+    node: GoblinMadeCrowbar
 # endregion
 
 #region wrench
 - type: entity
-  id: NFGoblinMadeWrench
-  parent: [ NFBaseGoblinMadeTools, Wrench ]
+  id: GoblinMadeWrench
+  parent: [ BaseGoblinMadeTools, Wrench ]
   name: electro-spanner
   description: An improvised electrical wrench, not much in terms of torque, but your wrists will be less sore.
   components:
@@ -401,14 +401,14 @@
           can9: ""
           can10: ""
   - type: Construction
-    graph: NFGoblinMadeWrench
-    node: NFGoblinMadeWrench
+    graph: GoblinMadeWrench
+    node: GoblinMadeWrench
 # endregion
 
 #region welder
 - type: entity
-  id: NFGoblinMadeWelder
-  parent: [ NFBaseGoblinMadeTools, Welder ]
+  id: GoblinMadeWelder
+  parent: [ BaseGoblinMadeTools, Welder ]
   name: burner torch
   description: An improvised welding tool made out of a plastic bottle, an empty soda can, a spray nozzle, and a leaking battery.
   components:
@@ -423,14 +423,14 @@
     - state: welder_flame
       visible: false
       shader: unshaded
-      map: ["enum.ToggleVisuals.Layer"]
+      map: ["enum.ToggleableVisuals.Layer"]
     - sprite: _NF/Objects/Tools/goblin_tools/overlay_sparks.rsi
       state: overlay-icon
       shader: unshaded
   - type: GenericVisualizer
     visuals:
-      enum.ToggleVisuals.Toggled:
-        enum.ToggleVisuals.Layer:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
           True: { visible: true }
           False: { visible: false }
   - type: Item
@@ -464,8 +464,8 @@
 # endregion
 
 - type: entity
-  id: NFGoblinMadeWelderEmpty
-  parent: NFGoblinMadeWelder
+  id: GoblinMadeWelderEmpty
+  parent: GoblinMadeWelder
   suffix: Goblin Made, Empty
   components:
   - type: SolutionContainerManager
@@ -474,14 +474,14 @@
         reagents: []
         maxVol: 100
   - type: Construction
-    graph: NFGoblinMadeWelder
-    node: NFGoblinMadeWelder
+    graph: GoblinMadeWelder
+    node: GoblinMadeWelder
 # endregion
 
 #region mini hoe
 - type: entity
-  id: NFGoblinMadeMiniHoe
-  parent: [ NFBaseGoblinMadeTools, HydroponicsToolMiniHoe ]
+  id: GoblinMadeMiniHoe
+  parent: [ BaseGoblinMadeTools, HydroponicsToolMiniHoe ]
   name: electro-scratcher
   description: A small modification for the tried and true electrical screwdriver device. Weeds , your end is nigh.
   components:
@@ -520,14 +520,14 @@
     - iconHoeWires:
         hoe-wires: Rainbow
   - type: Construction
-    graph: NFGoblinMadeMiniHoe
-    node: NFGoblinMadeMiniHoe
+    graph: GoblinMadeMiniHoe
+    node: GoblinMadeMiniHoe
 # endregion
 
 #region minig drill
 - type: entity
-  id: NFGoblinMadeMiningDrill
-  parent: [ NFBaseGoblinMadeTools, MiningDrill ]
+  id: GoblinMadeMiningDrill
+  parent: [ BaseGoblinMadeTools, MiningDrill ]
   name: pneumatic hammer
   description: The pickaxe is dead; hail the new king of manual mining - the improvised pneumatic hammer.
   components:
@@ -566,14 +566,14 @@
       types:
         Structural: 5
   - type: Construction
-    graph: NFGoblinMadeMiningDrill
-    node: NFGoblinMadeMiningDrill
+    graph: GoblinMadeMiningDrill
+    node: GoblinMadeMiningDrill
 # endregion
 
 #region tray scanner
 - type: entity
-  id: NFGoblinMadeTrayScanner
-  parent: [ NFBaseGoblinMadeTools, trayScanner ]
+  id: GoblinMadeTrayScanner
+  parent: [ BaseGoblinMadeTools, trayScanner ]
   name: stash ogler
   description: With this tool you no longer have to memorise where you've hid you stash.
   components:
@@ -629,14 +629,14 @@
           chinese3: ""
           chinese4: ""
   - type: Construction
-    graph: NFGoblinMadeTrayScanner
-    node: NFGoblinMadeTrayScanner
+    graph: GoblinMadeTrayScanner
+    node: GoblinMadeTrayScanner
 # endregion
 
 #region signaller
 - type: entity
-  id: NFGoblinMadeRemoteSignaller
-  parent: [ NFBaseGoblinMadeTools, RemoteSignaller ]
+  id: GoblinMadeRemoteSignaller
+  parent: [ BaseGoblinMadeTools, RemoteSignaller ]
   name: remote winker
   description: An improvised remote signaller capable of sending signals to objects within a small radius of about 10 meters.
   components:
@@ -667,14 +667,14 @@
   - type: WirelessNetworkConnection
     range: 10
   - type: Construction
-    graph: NFGoblinMadeRemoteSignaller
-    node: NFGoblinMadeRemoteSignaller
+    graph: GoblinMadeRemoteSignaller
+    node: GoblinMadeRemoteSignaller
 # endregion
 
 #region lantern
 - type: entity
-  id: NFGoblinMadeLantern
-  parent: [ NFBaseGoblinMadeTools, FlashlightLantern ]
+  id: GoblinMadeLantern
+  parent: [ BaseGoblinMadeTools, FlashlightLantern ]
   name: glimmer
   description: An improvised lantern. How is it possible to put a power cell and a light bulb inside a glass bottle without breaking either of those items?
   components:
@@ -716,16 +716,16 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
-        startingItem: NFGoblinMadePowerCell
+        startingItem: GoblinMadePowerCell
   - type: Construction
-    graph: NFGoblinMadeRemoteSignaller
-    node: NFGoblinMadeRemoteSignaller
+    graph: GoblinMadeRemoteSignaller
+    node: GoblinMadeRemoteSignaller
 # endregion
 
 #region power cell
 - type: entity
-  id: NFGoblinMadePowerCell
-  parent: [ NFBaseGoblinMadeTools, PowerCellSmall ]
+  id: GoblinMadePowerCell
+  parent: [ BaseGoblinMadeTools, PowerCellSmall ]
   name: power cell
   description: An improvised power cell. How long will you be able to resist the temptation to drink the electrolyte?
   suffix: Goblin Made, Full
@@ -756,19 +756,16 @@
         shader: unshaded
   - type: Clothing
     sprite: _NF/Objects/Tools/goblin_tools/power_cell.rsi
-  - type: MachinePart
-    part: PowerCell
-    rating: 1 # Ideally 0
 
 - type: entity
-  id: NFGoblinMadePowerCellDepleted
-  parent: NFGoblinMadePowerCell
+  id: GoblinMadePowerCellDepleted
+  parent: GoblinMadePowerCell
   suffix: Goblin Made, Empty
   components:
   - type: Battery
     maxCharge: 360
     startingCharge: 0
   - type: Construction
-    graph: NFGoblinMadePowerCellDepleted
-    node: NFGoblinMadePowerCellDepleted
+    graph: GoblinMadePowerCellDepleted
+    node: GoblinMadePowerCellDepleted
 # endregion

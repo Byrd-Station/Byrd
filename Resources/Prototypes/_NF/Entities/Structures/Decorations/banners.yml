@@ -8,5 +8,5 @@
     sprite: _NF/Structures/Decoration/banner.rsi
     state: banner_goblin
   - type: Construction
-    graph: NFGoblinMadeBanner
+    graph: GoblinMadeBanner
     node: BannerGoblin01

@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ RecyclableItemPlasticSmall, ClothingBackpack ]
+  parent: [ ClothingBackpack ]
   id: GoblinMadeClothingBackpackTrashBlue
   name: trashpack
   description: This bad boy can fit so much trash!
@@ -21,12 +21,15 @@
         - Trash
       components:
         - GoblinMade
+  - type: Tag
+    tags:
+    - Recyclable
   - type: Construction
     graph: GoblinMadeClothingBackpackTrashBlue
     node: GoblinMadeClothingBackpackTrashBlue
 
 - type: entity
-  parent: [ RecyclableItemPlasticSmall, ClothingDuffel ]
+  parent: [ ClothingBackpackDuffel ]
   id: GoblinMadeClothingBackpackDuffelTrashBlue
   name: trashel
   description: This bad boy can fit so much trash!
@@ -35,6 +38,9 @@
     sprite: _NF/Clothing/Back/Duffels/trashel_blue.rsi
   - type: GoblinMade
   - type: Dumpable
+  - type: Tag
+    tags:
+    - Recyclable
   - type: Storage
     quickInsert: true
     areaInsert: true

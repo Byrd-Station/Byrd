@@ -40,12 +40,12 @@
 
 #region trash duffel
 - type: constructionGraph
-  id: NFGoblinMadeClothingBackpackDuffelTrashBlue
+  id: GoblinMadeClothingBackpackDuffelTrashBlue
   start: start
   graph:
   - node: start
     edges:
-    - to: NFGoblinMadeClothingBackpackDuffelTrashBlue
+    - to: GoblinMadeClothingBackpackDuffelTrashBlue
       steps:
       - component: GoblinPreciousTrashBag
         name: trash bag
@@ -62,17 +62,17 @@
       - material: Cable
         amount: 5
         doAfter: 0.5
-  - node: NFGoblinMadeClothingBackpackDuffelTrashBlue
-    entity: NFGoblinMadeClothingBackpackDuffelTrashBlue
+  - node: GoblinMadeClothingBackpackDuffelTrashBlue
+    entity: GoblinMadeClothingBackpackDuffelTrashBlue
 
 #region trash backpack
 - type: constructionGraph
-  id: NFGoblinMadeClothingBackpackTrashBlue
+  id: GoblinMadeClothingBackpackTrashBlue
   start: start
   graph:
   - node: start
     edges:
-    - to: NFGoblinMadeClothingBackpackTrashBlue
+    - to: GoblinMadeClothingBackpackTrashBlue
       steps:
       - component: GoblinPreciousTrashBag
         name: trash bag
@@ -83,17 +83,17 @@
       - material: Cable
         amount: 5
         doAfter: 0.5
-  - node: NFGoblinMadeClothingBackpackTrashBlue
-    entity: NFGoblinMadeClothingBackpackTrashBlue
+  - node: GoblinMadeClothingBackpackTrashBlue
+    entity: GoblinMadeClothingBackpackTrashBlue
 
 #region trash pouch
 - type: constructionGraph
-  id: NFGoblinMadeTrashPouch
+  id: GoblinMadeTrashPouch
   start: start
   graph:
   - node: start
     edges:
-    - to: NFGoblinMadeTrashPouch
+    - to: GoblinMadeTrashPouch
       steps:
       - component: GoblinPreciousTrashBag
         name: trash bag
@@ -104,18 +104,18 @@
       - material: Cable
         amount: 1
         doAfter: 0.5
-  - node: NFGoblinMadeTrashPouch
-    entity: NFGoblinMadeTrashPouch
+  - node: GoblinMadeTrashPouch
+    entity: GoblinMadeTrashPouch
 
 # tools
 #region multitool
 - type: constructionGraph
-  id: NFGoblinMadeMultitool
+  id: GoblinMadeMultitool
   start: start
   graph:
   - node: start
     edges:
-    - to: NFGoblinMadeMultitool
+    - to: GoblinMadeMultitool
       steps:
       - component: GoblinPreciousTrash
         name: trash
@@ -150,17 +150,17 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: NFGoblinMadeMultitool
-    entity: NFGoblinMadeMultitool
+  - node: GoblinMadeMultitool
+    entity: GoblinMadeMultitool
 
 #region wire cutter
 - type: constructionGraph
-  id: NFGoblinMadeWirecutter
+  id: GoblinMadeWirecutter
   start: start
   graph:
   - node: start
     edges:
-    - to: NFGoblinMadeWirecutter
+    - to: GoblinMadeWirecutter
       steps:
       - component: GoblinPreciousTrash
         name: trash
@@ -183,17 +183,17 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: NFGoblinMadeWirecutter
-    entity: NFGoblinMadeWirecutter
+  - node: GoblinMadeWirecutter
+    entity: GoblinMadeWirecutter
 
 #region screwdriver
 - type: constructionGraph
-  id: NFGoblinMadeScrewdriver
+  id: GoblinMadeScrewdriver
   start: start
   graph:
   - node: start
     edges:
-    - to: NFGoblinMadeScrewdriver
+    - to: GoblinMadeScrewdriver
       steps:
       - component: GoblinPreciousTrash
         name: trash
@@ -216,17 +216,17 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: NFGoblinMadeScrewdriver
-    entity: NFGoblinMadeScrewdriver
+  - node: GoblinMadeScrewdriver
+    entity: GoblinMadeScrewdriver
 
 #region crowbar
 - type: constructionGraph
-  id: NFGoblinMadeCrowbar
+  id: GoblinMadeCrowbar
   start: start
   graph:
   - node: start
     edges:
-    - to: NFGoblinMadeCrowbar
+    - to: GoblinMadeCrowbar
       steps:
       - component: GoblinPreciousTrash
         name: trash
@@ -261,17 +261,17 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: NFGoblinMadeCrowbar
-    entity: NFGoblinMadeCrowbar
+  - node: GoblinMadeCrowbar
+    entity: GoblinMadeCrowbar
 
 #region wrench
 - type: constructionGraph
-  id: NFGoblinMadeWrench
+  id: GoblinMadeWrench
   start: start
   graph:
   - node: start
     edges:
-    - to: NFGoblinMadeWrench
+    - to: GoblinMadeWrench
       steps:
       - component: GoblinPreciousTrash
         name: trash
@@ -306,17 +306,17 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: NFGoblinMadeWrench
-    entity: NFGoblinMadeWrench
+  - node: GoblinMadeWrench
+    entity: GoblinMadeWrench
 
 #region welder
 - type: constructionGraph
-  id: NFGoblinMadeWelder
+  id: GoblinMadeWelder
   start: start
   graph:
   - node: start
     edges:
-    - to: NFGoblinMadeWelder
+    - to: GoblinMadeWelder
       steps:
       - component: GoblinPreciousTrash
         name: trash
@@ -351,17 +351,17 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: NFGoblinMadeWelder
-    entity: NFGoblinMadeWelderEmpty
+  - node: GoblinMadeWelder
+    entity: GoblinMadeWelderEmpty
 
 #region mini hoe
 - type: constructionGraph
-  id: NFGoblinMadeMiniHoe
+  id: GoblinMadeMiniHoe
   start: start
   graph:
   - node: start
     edges:
-    - to: NFGoblinMadeMiniHoe
+    - to: GoblinMadeMiniHoe
       steps:
       - component: GoblinPreciousTrash
         name: trash
@@ -384,17 +384,17 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: NFGoblinMadeMiniHoe
-    entity: NFGoblinMadeMiniHoe
+  - node: GoblinMadeMiniHoe
+    entity: GoblinMadeMiniHoe
 
 #region minig drill
 - type: constructionGraph
-  id: NFGoblinMadeMiningDrill
+  id: GoblinMadeMiningDrill
   start: start
   graph:
   - node: start
     edges:
-    - to: NFGoblinMadeMiningDrill
+    - to: GoblinMadeMiningDrill
       steps:
       - component: GoblinPreciousTrash
         name: trash
@@ -429,17 +429,17 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: NFGoblinMadeMiningDrill
-    entity: NFGoblinMadeMiningDrill
+  - node: GoblinMadeMiningDrill
+    entity: GoblinMadeMiningDrill
 
 #region tray scanner
 - type: constructionGraph
-  id: NFGoblinMadeTrayScanner
+  id: GoblinMadeTrayScanner
   start: start
   graph:
   - node: start
     edges:
-    - to: NFGoblinMadeTrayScanner
+    - to: GoblinMadeTrayScanner
       steps:
       - component: GoblinPreciousTrash
         name: trash
@@ -474,17 +474,17 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: NFGoblinMadeTrayScanner
-    entity: NFGoblinMadeTrayScanner
+  - node: GoblinMadeTrayScanner
+    entity: GoblinMadeTrayScanner
 
 #region signaller
 - type: constructionGraph
-  id: NFGoblinMadeRemoteSignaller
+  id: GoblinMadeRemoteSignaller
   start: start
   graph:
   - node: start
     edges:
-    - to: NFGoblinMadeRemoteSignaller
+    - to: GoblinMadeRemoteSignaller
       steps:
       - component: GoblinPreciousTrash
         name: trash
@@ -507,17 +507,17 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: NFGoblinMadeRemoteSignaller
-    entity: NFGoblinMadeRemoteSignaller
+  - node: GoblinMadeRemoteSignaller
+    entity: GoblinMadeRemoteSignaller
 
 #region lantern
 - type: constructionGraph
-  id: NFGoblinMadeLantern
+  id: GoblinMadeLantern
   start: start
   graph:
   - node: start
     edges:
-    - to: NFGoblinMadeLantern
+    - to: GoblinMadeLantern
       steps:
       - component: GoblinPreciousTrash
         name: trash
@@ -552,17 +552,17 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: NFGoblinMadeLantern
-    entity: NFGoblinMadeLantern
+  - node: GoblinMadeLantern
+    entity: GoblinMadeLantern
 
 #region power cell
 - type: constructionGraph
-  id: NFGoblinMadePowerCellDepleted
+  id: GoblinMadePowerCellDepleted
   start: start
   graph:
   - node: start
     edges:
-    - to: NFGoblinMadePowerCellDepleted
+    - to: GoblinMadePowerCellDepleted
       steps:
       - component: GoblinPreciousTrash
         name: trash
@@ -585,8 +585,8 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: NFGoblinMadePowerCellDepleted
-    entity: NFGoblinMadePowerCellDepleted
+  - node: GoblinMadePowerCellDepleted
+    entity: GoblinMadePowerCellDepleted
 
 #region power cell
 - type: constructionGraph
@@ -614,7 +614,7 @@
 
 #region banner
 - type: constructionGraph
-  id: NFGoblinMadeBanner
+  id: GoblinMadeBanner
   start: start
   graph:
     - node: start
@@ -648,12 +648,12 @@
 
 #region dumpster-car
 - type: constructionGraph
-  id: NFGoblinMadeVehicleDumpster
+  id: GoblinMadeVehicleDumpster
   start: start
   graph:
   - node: start
     edges:
-    - to: NFGoblinMadeVehicleDumpster
+    - to: GoblinMadeVehicleDumpster
       steps:
       - component: GoblinVehicle
         name: dumpster
@@ -682,5 +682,5 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: NFGoblinMadeVehicleDumpster
-    entity: NFGoblinMadeVehicleDumpster
+  - node: GoblinMadeVehicleDumpster
+    entity: GoblinMadeVehicleDumpster
