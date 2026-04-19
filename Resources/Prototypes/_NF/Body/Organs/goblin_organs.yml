@@ -156,7 +156,7 @@
     sprite: _NF/Mobs/Species/Goblin/organs.rsi
     state: liver
   - type: Metabolizer # The liver metabolizes certain chemicals only, like alcohol.
-    maxReagents: 1
+    maxPoisonsProcessable: 1
     metabolizerTypes: [ Goblin ]
     groups:
     - id: Alcohol
@@ -175,6 +175,6 @@
       - state: kidney-r
   # The kidneys just remove anything that doesn't currently have any metabolisms, as a stopgap.
   - type: Metabolizer
-    maxReagents: 5
+    maxPoisonsProcessable: 5
     metabolizerTypes: [ Animal ]
     removeEmpty: true
