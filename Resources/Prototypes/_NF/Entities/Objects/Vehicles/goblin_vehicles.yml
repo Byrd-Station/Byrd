@@ -1,6 +1,6 @@
 - type: entity
   id: GoblinMadeVehicleDumpster
-  parent: [ BaseVehicle ]
+  parent: BaseVehicle
   name: dumpster
   description: It only has one wheel!
   components:
