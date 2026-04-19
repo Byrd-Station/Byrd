@@ -1,7 +1,6 @@
 # clothes
 #region robes
 - type: construction
-  name: traditional goblin robes
   id: ClothingOuterCoatRobesGoblin
   graph: ClothingOuterCoatRobesGoblin
   startNode: start
@@ -18,7 +17,6 @@
 
 #region EVA
 - type: construction
-  name: traditional goblin EVA robes
   id: ClothingOuterEVASuitGoblin
   graph: ClothingOuterEVASuitGoblin
   startNode: start
@@ -35,7 +33,6 @@
 
 #region trash duffel
 - type: construction
-  name: trashel
   id: GoblinMadeClothingBackpackDuffelTrashBlue
   graph: GoblinMadeClothingBackpackDuffelTrashBlue
   startNode: start
@@ -52,7 +49,6 @@
 
 #region trash backpack
 - type: construction
-  name: trashpack
   id: GoblinMadeClothingBackpackTrashBlue
   graph: GoblinMadeClothingBackpackTrashBlue
   startNode: start
@@ -70,7 +66,6 @@
 # tools
 #region multitool
 - type: construction
-  name: hacking jig
   id: GoblinMadeMultitool
   graph: GoblinMadeMultitool
   startNode: start
@@ -87,7 +82,6 @@
 
 #region wirecutter
 - type: construction
-  name: wiresnipper
   id: GoblinMadeWirecutter
   graph: GoblinMadeWirecutter
   startNode: start
@@ -104,7 +98,6 @@
 
 #region screwdriver
 - type: construction
-  name: electro-driver
   id: GoblinMadeScrewdriver
   graph: GoblinMadeScrewdriver
   startNode: start
@@ -121,7 +114,6 @@
 
 #region crowbar
 - type: construction
-  name: electro-jilt
   id: GoblinMadeCrowbar
   graph: GoblinMadeCrowbar
   startNode: start
@@ -138,7 +130,6 @@
 
 #region wrench
 - type: construction
-  name: electro-spanner
   id: GoblinMadeWrench
   graph: GoblinMadeWrench
   startNode: start
@@ -155,7 +146,6 @@
 
 #region welder
 - type: construction
-  name: burner torch
   id: GoblinMadeWelder
   graph: GoblinMadeWelder
   startNode: start
@@ -172,7 +162,6 @@
 
 #region mini hoe
 - type: construction
-  name: electro-scratcher
   id: GoblinMadeMiniHoe
   graph: GoblinMadeMiniHoe
   startNode: start
@@ -189,7 +178,6 @@
 
 #region minig drill
 - type: construction
-  name: pneumatic hammer
   id: GoblinMadeMiningDrill
   graph: GoblinMadeMiningDrill
   startNode: start
@@ -206,7 +194,6 @@
 
 #region tray scanner
 - type: construction
-  name: stash ogler
   id: GoblinMadeTrayScanner
   graph: GoblinMadeTrayScanner
   startNode: start
@@ -223,7 +210,6 @@
 
 #region signaller
 - type: construction
-  name: remote winker
   id: GoblinMadeRemoteSignaller
   graph: GoblinMadeRemoteSignaller
   startNode: start
@@ -240,7 +226,6 @@
 
 #region lantern
 - type: construction
-  name: glimmer
   id: GoblinMadeLantern
   graph: GoblinMadeLantern
   startNode: start
@@ -257,7 +242,6 @@
 
 #region power cell
 - type: construction
-  name: power cell
   id: GoblinMadePowerCellDepleted
   graph: GoblinMadePowerCellDepleted
   startNode: start
@@ -274,7 +258,6 @@
 
 #region lv cable
 - type: construction
-  name: lv cables
   id: CableApcStack10
   graph: CableApcStack10
   startNode: start
@@ -293,7 +276,6 @@
 #region banner
 - type: construction
   id: BannerGoblin01
-  name: goblin banner
   description: A banner displaying the ancient goblinkind logo.
   entityWhitelist:
     components:
@@ -315,7 +297,6 @@
 #region dumpster-car
 - type: construction
   id: GoblinMadeVehicleDumpster
-  name: dumpster rattler
   description: A dumpster turned into a vehicle.
   entityWhitelist:
     components:
