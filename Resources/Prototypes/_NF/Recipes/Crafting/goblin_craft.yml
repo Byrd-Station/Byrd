@@ -1,5 +1,4 @@
-# clothes
-#region robes
+# Clothes
 - type: construction
   id: ClothingOuterCoatRobesGoblin
   graph: ClothingOuterCoatRobesGoblin
@@ -11,7 +10,6 @@
     - Goblin
   objectType: Item
 
-#region EVA
 - type: construction
   id: ClothingOuterEVASuitGoblin
   graph: ClothingOuterEVASuitGoblin
@@ -23,7 +21,6 @@
     - Goblin
   objectType: Item
 
-#region trash duffel
 - type: construction
   id: GoblinMadeClothingBackpackDuffelTrashBlue
   graph: GoblinMadeClothingBackpackDuffelTrashBlue
@@ -35,7 +32,6 @@
     - Goblin
   objectType: Item
 
-#region trash backpack
 - type: construction
   id: GoblinMadeClothingBackpackTrashBlue
   graph: GoblinMadeClothingBackpackTrashBlue
@@ -47,8 +43,7 @@
     - Goblin
   objectType: Item
 
-# tools
-#region multitool
+# Tools
 - type: construction
   id: GoblinMadeMultitool
   graph: GoblinMadeMultitool
@@ -60,7 +55,6 @@
     - Goblin
   objectType: Item
 
-#region wirecutter
 - type: construction
   id: GoblinMadeWirecutter
   graph: GoblinMadeWirecutter
@@ -72,7 +66,6 @@
     - Goblin
   objectType: Item
 
-#region screwdriver
 - type: construction
   id: GoblinMadeScrewdriver
   graph: GoblinMadeScrewdriver
@@ -84,7 +77,6 @@
     - Goblin
   objectType: Item
 
-#region crowbar
 - type: construction
   id: GoblinMadeCrowbar
   graph: GoblinMadeCrowbar
@@ -96,7 +88,6 @@
     - Goblin
   objectType: Item
 
-#region wrench
 - type: construction
   id: GoblinMadeWrench
   graph: GoblinMadeWrench
@@ -108,7 +99,6 @@
     - Goblin
   objectType: Item
 
-#region welder
 - type: construction
   id: GoblinMadeWelder
   graph: GoblinMadeWelder
@@ -120,7 +110,6 @@
     - Goblin
   objectType: Item
 
-#region mini hoe
 - type: construction
   id: GoblinMadeMiniHoe
   graph: GoblinMadeMiniHoe
@@ -132,7 +121,6 @@
     - Goblin
   objectType: Item
 
-#region minig drill
 - type: construction
   id: GoblinMadeMiningDrill
   graph: GoblinMadeMiningDrill
@@ -144,7 +132,6 @@
     - Goblin
   objectType: Item
 
-#region tray scanner
 - type: construction
   id: GoblinMadeTrayScanner
   graph: GoblinMadeTrayScanner
@@ -156,7 +143,6 @@
     - Goblin
   objectType: Item
 
-#region signaller
 - type: construction
   id: GoblinMadeRemoteSignaller
   graph: GoblinMadeRemoteSignaller
@@ -168,7 +154,6 @@
     - Goblin
   objectType: Item
 
-#region lantern
 - type: construction
   id: GoblinMadeLantern
   graph: GoblinMadeLantern
@@ -180,7 +165,6 @@
     - Goblin
   objectType: Item
 
-#region power cell
 - type: construction
   id: GoblinMadePowerCellDepleted
   graph: GoblinMadePowerCellDepleted
@@ -192,7 +176,6 @@
     - Goblin
   objectType: Item
 
-#region lv cable
 - type: construction
   id: CableApcStack10
   graph: CableApcStack10
@@ -204,36 +187,34 @@
     - Goblin
   objectType: Item
 
-# furniture
-#region banner
+# Furniture / Structures
 - type: construction
   id: BannerGoblin01
-  entityWhitelist:
-    components:
-    - Goblin
   graph: GoblinMadeBanner
   startNode: start
   targetNode: BannerGoblin01
   category: construction-category-goblin
+  entityWhitelist:
+    components:
+    - Goblin
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
   conditions:
-    - !type:TileNotBlocked
+  - !type:TileNotBlocked
 
-# vehicles
-#region dumpster-car
+  # Vehicles
 - type: construction
   id: GoblinMadeVehicleDumpster
-  entityWhitelist:
-    components:
-    - Goblin
   graph: GoblinMadeVehicleDumpster
   startNode: start
   targetNode: GoblinMadeVehicleDumpster
   category: construction-category-goblin
+  entityWhitelist:
+    components:
+    - Goblin
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
   conditions:
-    - !type:TileNotBlocked
+  - !type:TileNotBlocked

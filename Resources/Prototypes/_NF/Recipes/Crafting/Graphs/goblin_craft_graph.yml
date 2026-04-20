@@ -12,29 +12,27 @@
   - node: ClothingOuterCoatRobesGoblin
     entity: ClothingOuterCoatRobesGoblin
 
-#region EVA
 - type: constructionGraph
   id: ClothingOuterEVASuitGoblin
   start: start
   graph:
-    - node: start
-      edges:
-        - to: ClothingOuterEVASuitGoblin
-          steps:
-            - component: GoblinClothingRobes
-              icon:
-                sprite: _NF/Clothing/OuterClothing/Coats/goblin_robes.rsi
-                state: icon
-              doAfter: 10
-            - tag: SuitEVA
-              icon:
-                sprite: Clothing/OuterClothing/Suits/eva.rsi
-                state: icon
-              doAfter: 10
-    - node: ClothingOuterEVASuitGoblin
-      entity: ClothingOuterEVASuitGoblin
+  - node: start
+    edges:
+    - to: ClothingOuterEVASuitGoblin
+      steps:
+      - component: GoblinClothingRobes
+        icon:
+          sprite: _NF/Clothing/OuterClothing/Coats/goblin_robes.rsi
+          state: icon
+        doAfter: 10
+      - tag: SuitEVA
+        icon:
+          sprite: Clothing/OuterClothing/Suits/eva.rsi
+          state: icon
+        doAfter: 10
+  - node: ClothingOuterEVASuitGoblin
+    entity: ClothingOuterEVASuitGoblin
 
-#region trash duffel
 - type: constructionGraph
   id: GoblinMadeClothingBackpackDuffelTrashBlue
   start: start
@@ -59,7 +57,6 @@
   - node: GoblinMadeClothingBackpackDuffelTrashBlue
     entity: GoblinMadeClothingBackpackDuffelTrashBlue
 
-#region trash backpack
 - type: constructionGraph
   id: GoblinMadeClothingBackpackTrashBlue
   start: start
@@ -79,8 +76,7 @@
   - node: GoblinMadeClothingBackpackTrashBlue
     entity: GoblinMadeClothingBackpackTrashBlue
 
-# tools
-#region multitool
+# Tools
 - type: constructionGraph
   id: GoblinMadeMultitool
   start: start
@@ -120,7 +116,6 @@
   - node: GoblinMadeMultitool
     entity: GoblinMadeMultitool
 
-#region wire cutter
 - type: constructionGraph
   id: GoblinMadeWirecutter
   start: start
@@ -150,7 +145,6 @@
   - node: GoblinMadeWirecutter
     entity: GoblinMadeWirecutter
 
-#region screwdriver
 - type: constructionGraph
   id: GoblinMadeScrewdriver
   start: start
@@ -180,7 +174,6 @@
   - node: GoblinMadeScrewdriver
     entity: GoblinMadeScrewdriver
 
-#region crowbar
 - type: constructionGraph
   id: GoblinMadeCrowbar
   start: start
@@ -220,7 +213,6 @@
   - node: GoblinMadeCrowbar
     entity: GoblinMadeCrowbar
 
-#region wrench
 - type: constructionGraph
   id: GoblinMadeWrench
   start: start
@@ -260,7 +252,6 @@
   - node: GoblinMadeWrench
     entity: GoblinMadeWrench
 
-#region welder
 - type: constructionGraph
   id: GoblinMadeWelder
   start: start
@@ -300,7 +291,6 @@
   - node: GoblinMadeWelder
     entity: GoblinMadeWelderEmpty
 
-#region mini hoe
 - type: constructionGraph
   id: GoblinMadeMiniHoe
   start: start
@@ -330,7 +320,6 @@
   - node: GoblinMadeMiniHoe
     entity: GoblinMadeMiniHoe
 
-#region minig drill
 - type: constructionGraph
   id: GoblinMadeMiningDrill
   start: start
@@ -370,7 +359,6 @@
   - node: GoblinMadeMiningDrill
     entity: GoblinMadeMiningDrill
 
-#region tray scanner
 - type: constructionGraph
   id: GoblinMadeTrayScanner
   start: start
@@ -410,7 +398,6 @@
   - node: GoblinMadeTrayScanner
     entity: GoblinMadeTrayScanner
 
-#region signaller
 - type: constructionGraph
   id: GoblinMadeRemoteSignaller
   start: start
@@ -440,7 +427,6 @@
   - node: GoblinMadeRemoteSignaller
     entity: GoblinMadeRemoteSignaller
 
-#region lantern
 - type: constructionGraph
   id: GoblinMadeLantern
   start: start
@@ -480,7 +466,6 @@
   - node: GoblinMadeLantern
     entity: GoblinMadeLantern
 
-#region power cell
 - type: constructionGraph
   id: GoblinMadePowerCellDepleted
   start: start
@@ -510,7 +495,6 @@
   - node: GoblinMadePowerCellDepleted
     entity: GoblinMadePowerCellDepleted
 
-#region power cell
 - type: constructionGraph
   id: CableApcStack10
   start: start
@@ -532,41 +516,41 @@
   - node: CableApcStack10
     entity: CableApcStack10
 
-#region banner
+# Furniture
 - type: constructionGraph
   id: GoblinMadeBanner
   start: start
   graph:
-    - node: start
-      actions:
-        - !type:DestroyEntity {}
-      edges:
-        - to: BannerGoblin01
-          completed:
-            - !type:SnapToGrid { }
-          steps:
-            - material: Steel
-              amount: 2
-              doAfter: 1
-            - material: Cloth
-              amount: 2
-              doAfter: 1
-    - node: BannerGoblin01
-      entity: BannerGoblin01
-      edges:
-        - to: start
-          completed:
-            - !type:SpawnPrototype
-              prototype: SheetSteel1
-              amount: 2
-            - !type:SpawnPrototype
-              prototype: MaterialCloth1
-              amount: 2
-          steps:
-            - tool: Screwing
-              doAfter: 1
+  - node: start
+    actions:
+    - !type:DestroyEntity {}
+    edges:
+    - to: BannerGoblin01
+      completed:
+      - !type:SnapToGrid { }
+      steps:
+      - material: Steel
+        amount: 2
+        doAfter: 1
+      - material: Cloth
+        amount: 2
+        doAfter: 1
+  - node: BannerGoblin01
+    entity: BannerGoblin01
+    edges:
+    - to: start
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 2
+      - !type:SpawnPrototype
+        prototype: MaterialCloth1
+        amount: 2
+      steps:
+      - tool: Screwing
+        doAfter: 1
 
-#region dumpster-car
+# Vehicles
 - type: constructionGraph
   id: GoblinMadeVehicleDumpster
   start: start
