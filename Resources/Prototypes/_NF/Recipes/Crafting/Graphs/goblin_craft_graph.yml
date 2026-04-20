@@ -565,11 +565,11 @@
           sprite: _NF/Structures/Storage/magnetbox.rsi
           state: rubbishbox
         doAfter: 1
-      - component: NFChairFolding
-        icon:
-          sprite: Structures/Furniture/folding_chair.rsi
-          state: folding
-        doAfter: 1
+      #- component: ChairFolding
+      #  icon:
+      #    sprite: Structures/Furniture/folding_chair.rsi
+      #    state: folding
+      #  doAfter: 1
       - component: GoblinPreciousTrash
         icon:
           sprite: Objects/Consumable/Food/snacks.rsi

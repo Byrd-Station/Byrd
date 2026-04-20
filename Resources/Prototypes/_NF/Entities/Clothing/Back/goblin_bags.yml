@@ -26,7 +26,7 @@
     - Recyclable
   - type: Construction
     graph: GoblinMadeClothingBackpackTrashBlue
-    node: GoblinMadeClothingBackpackTrashBlue
+    node: goblin_tool
 
 - type: entity
   parent: [ ClothingBackpackDuffel ]
@@ -56,4 +56,4 @@
         - GoblinMade
   - type: Construction
     graph: GoblinMadeClothingBackpackDuffelTrashBlue
-    node: GoblinMadeClothingBackpackDuffelTrashBlue
+    node: goblin_tool
