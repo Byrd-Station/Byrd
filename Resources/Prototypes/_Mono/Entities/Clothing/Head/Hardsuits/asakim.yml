@@ -43,6 +43,7 @@
         Slash: 0.35
         Piercing: 0.35
         Heat: 0.35
+        Radiation: 0
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 15
