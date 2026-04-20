@@ -1,15 +1,16 @@
+#file: noinspection SpellCheckingInspection
 - type: constructionGraph
   id: ClothingOuterCoatRobesGoblin
   start: start
   graph:
   - node: start
     edges:
-    - to: ClothingOuterCoatRobesGoblin
+    - to: goblin_tool
       steps:
       - material: Cloth
         amount: 10
         doAfter: 10
-  - node: ClothingOuterCoatRobesGoblin
+  - node: goblin_tool
     entity: ClothingOuterCoatRobesGoblin
 
 - type: constructionGraph
@@ -18,7 +19,7 @@
   graph:
   - node: start
     edges:
-    - to: ClothingOuterEVASuitGoblin
+    - to: goblin_tool
       steps:
       - component: GoblinClothingRobes
         icon:
@@ -30,7 +31,7 @@
           sprite: Clothing/OuterClothing/Suits/eva.rsi
           state: icon
         doAfter: 10
-  - node: ClothingOuterEVASuitGoblin
+  - node: goblin_tool
     entity: ClothingOuterEVASuitGoblin
 
 - type: constructionGraph
@@ -39,7 +40,7 @@
   graph:
   - node: start
     edges:
-    - to: GoblinMadeClothingBackpackDuffelTrashBlue
+    - to: goblin_tool
       steps:
       - component: GoblinPreciousTrashBag
         icon:
@@ -54,7 +55,7 @@
       - material: Cable
         amount: 5
         doAfter: 0.5
-  - node: GoblinMadeClothingBackpackDuffelTrashBlue
+  - node: goblin_tool
     entity: GoblinMadeClothingBackpackDuffelTrashBlue
 
 - type: constructionGraph
@@ -63,7 +64,7 @@
   graph:
   - node: start
     edges:
-    - to: GoblinMadeClothingBackpackTrashBlue
+    - to: goblin_tool
       steps:
       - component: GoblinPreciousTrashBag
         icon:
@@ -73,7 +74,7 @@
       - material: Cable
         amount: 5
         doAfter: 0.5
-  - node: GoblinMadeClothingBackpackTrashBlue
+  - node: goblin_tool
     entity: GoblinMadeClothingBackpackTrashBlue
 
 # Tools
@@ -83,7 +84,7 @@
   graph:
   - node: start
     edges:
-    - to: GoblinMadeMultitool
+    - to: goblin_tool
       steps:
       - component: GoblinPreciousTrash
         icon:
@@ -113,7 +114,7 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: GoblinMadeMultitool
+  - node: goblin_tool
     entity: GoblinMadeMultitool
 
 - type: constructionGraph
@@ -122,7 +123,7 @@
   graph:
   - node: start
     edges:
-    - to: GoblinMadeWirecutter
+    - to: goblin_tool
       steps:
       - component: GoblinPreciousTrash
         icon:
@@ -142,7 +143,7 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: GoblinMadeWirecutter
+  - node: goblin_tool
     entity: GoblinMadeWirecutter
 
 - type: constructionGraph
@@ -151,7 +152,7 @@
   graph:
   - node: start
     edges:
-    - to: GoblinMadeScrewdriver
+    - to: goblin_tool
       steps:
       - component: GoblinPreciousTrash
         icon:
@@ -171,7 +172,7 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: GoblinMadeScrewdriver
+  - node: goblin_tool
     entity: GoblinMadeScrewdriver
 
 - type: constructionGraph
@@ -180,7 +181,7 @@
   graph:
   - node: start
     edges:
-    - to: GoblinMadeCrowbar
+    - to: goblin_tool
       steps:
       - component: GoblinPreciousTrash
         icon:
@@ -210,7 +211,7 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: GoblinMadeCrowbar
+  - node: goblin_tool
     entity: GoblinMadeCrowbar
 
 - type: constructionGraph
@@ -219,7 +220,7 @@
   graph:
   - node: start
     edges:
-    - to: GoblinMadeWrench
+    - to: goblin_tool
       steps:
       - component: GoblinPreciousTrash
         icon:
@@ -249,7 +250,7 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: GoblinMadeWrench
+  - node: goblin_tool
     entity: GoblinMadeWrench
 
 - type: constructionGraph
@@ -258,7 +259,7 @@
   graph:
   - node: start
     edges:
-    - to: GoblinMadeWelder
+    - to: goblin_tool
       steps:
       - component: GoblinPreciousTrash
         icon:
@@ -288,7 +289,7 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: GoblinMadeWelder
+  - node: goblin_tool
     entity: GoblinMadeWelderEmpty
 
 - type: constructionGraph
@@ -297,7 +298,7 @@
   graph:
   - node: start
     edges:
-    - to: GoblinMadeMiniHoe
+    - to: goblin_tool
       steps:
       - component: GoblinPreciousTrash
         icon:
@@ -317,7 +318,7 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: GoblinMadeMiniHoe
+  - node: goblin_tool
     entity: GoblinMadeMiniHoe
 
 - type: constructionGraph
@@ -326,7 +327,7 @@
   graph:
   - node: start
     edges:
-    - to: GoblinMadeMiningDrill
+    - to: goblin_tool
       steps:
       - component: GoblinPreciousTrash
         icon:
@@ -356,7 +357,7 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: GoblinMadeMiningDrill
+  - node: goblin_tool
     entity: GoblinMadeMiningDrill
 
 - type: constructionGraph
@@ -365,7 +366,7 @@
   graph:
   - node: start
     edges:
-    - to: GoblinMadeTrayScanner
+    - to: goblin_tool
       steps:
       - component: GoblinPreciousTrash
         icon:
@@ -395,7 +396,7 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: GoblinMadeTrayScanner
+  - node: goblin_tool
     entity: GoblinMadeTrayScanner
 
 - type: constructionGraph
@@ -404,7 +405,7 @@
   graph:
   - node: start
     edges:
-    - to: GoblinMadeRemoteSignaller
+    - to: goblin_tool
       steps:
       - component: GoblinPreciousTrash
         icon:
@@ -424,7 +425,7 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: GoblinMadeRemoteSignaller
+  - node: goblin_tool
     entity: GoblinMadeRemoteSignaller
 
 - type: constructionGraph
@@ -433,7 +434,7 @@
   graph:
   - node: start
     edges:
-    - to: GoblinMadeLantern
+    - to: goblin_tool
       steps:
       - component: GoblinPreciousTrash
         icon:
@@ -463,7 +464,7 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: GoblinMadeLantern
+  - node: goblin_tool
     entity: GoblinMadeLantern
 
 - type: constructionGraph
@@ -472,7 +473,7 @@
   graph:
   - node: start
     edges:
-    - to: GoblinMadePowerCellDepleted
+    - to: goblin_tool
       steps:
       - component: GoblinPreciousTrash
         icon:
@@ -492,7 +493,7 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: GoblinMadePowerCellDepleted
+  - node: goblin_tool
     entity: GoblinMadePowerCellDepleted
 
 - type: constructionGraph
@@ -501,7 +502,7 @@
   graph:
   - node: start
     edges:
-    - to: CableApcStack10
+    - to: goblin_tool
       steps:
       - component: GoblinPreciousTrash
         icon:
@@ -513,7 +514,7 @@
           sprite: Objects/Consumable/Food/snacks.rsi
           state: boritos-trash
         doAfter: 1
-  - node: CableApcStack10
+  - node: goblin_tool
     entity: CableApcStack10
 
 # Furniture
@@ -525,7 +526,7 @@
     actions:
     - !type:DestroyEntity {}
     edges:
-    - to: BannerGoblin01
+    - to: goblin_tool
       completed:
       - !type:SnapToGrid { }
       steps:
@@ -535,7 +536,7 @@
       - material: Cloth
         amount: 2
         doAfter: 1
-  - node: BannerGoblin01
+  - node: goblin_tool
     entity: BannerGoblin01
     edges:
     - to: start
@@ -557,7 +558,7 @@
   graph:
   - node: start
     edges:
-    - to: GoblinMadeVehicleDumpster
+    - to: goblin_tool
       steps:
       - component: GoblinVehicle
         icon:
@@ -582,5 +583,5 @@
       - material: Cable
         amount: 2
         doAfter: 0.5
-  - node: GoblinMadeVehicleDumpster
+  - node: goblin_tool
     entity: GoblinMadeVehicleDumpster

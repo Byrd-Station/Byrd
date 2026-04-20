@@ -1,6 +1,7 @@
+#file: noinspection SpellCheckingInspection
 # Clothes
 - type: construction
-  id: ClothingOuterCoatRobesGoblin
+  id: clothingoutercoatrobesgoblin
   graph: ClothingOuterCoatRobesGoblin
   startNode: start
   targetNode: ClothingOuterCoatRobesGoblin
@@ -11,7 +12,7 @@
   objectType: Item
 
 - type: construction
-  id: ClothingOuterEVASuitGoblin
+  id: clothingouterevasuitgoblin
   graph: ClothingOuterEVASuitGoblin
   startNode: start
   targetNode: ClothingOuterEVASuitGoblin
@@ -22,7 +23,7 @@
   objectType: Item
 
 - type: construction
-  id: GoblinMadeClothingBackpackDuffelTrashBlue
+  id: goblinmadeclothingbackpackduffeltrashblue
   graph: GoblinMadeClothingBackpackDuffelTrashBlue
   startNode: start
   targetNode: GoblinMadeClothingBackpackDuffelTrashBlue
@@ -33,7 +34,7 @@
   objectType: Item
 
 - type: construction
-  id: GoblinMadeClothingBackpackTrashBlue
+  id: goblinmadeclothingbackpacktrashblue
   graph: GoblinMadeClothingBackpackTrashBlue
   startNode: start
   targetNode: GoblinMadeClothingBackpackTrashBlue
@@ -45,7 +46,7 @@
 
 # Tools
 - type: construction
-  id: GoblinMadeMultitool
+  id: goblinmademultitool
   graph: GoblinMadeMultitool
   startNode: start
   targetNode: GoblinMadeMultitool
@@ -56,7 +57,7 @@
   objectType: Item
 
 - type: construction
-  id: GoblinMadeWirecutter
+  id: goblinmadewirecutter
   graph: GoblinMadeWirecutter
   startNode: start
   targetNode: GoblinMadeWirecutter
@@ -67,7 +68,7 @@
   objectType: Item
 
 - type: construction
-  id: GoblinMadeScrewdriver
+  id: goblinmadescrewdriver
   graph: GoblinMadeScrewdriver
   startNode: start
   targetNode: GoblinMadeScrewdriver
@@ -78,7 +79,7 @@
   objectType: Item
 
 - type: construction
-  id: GoblinMadeCrowbar
+  id: goblinmadecrowbar
   graph: GoblinMadeCrowbar
   startNode: start
   targetNode: GoblinMadeCrowbar
@@ -89,7 +90,7 @@
   objectType: Item
 
 - type: construction
-  id: GoblinMadeWrench
+  id: goblinmadewrench
   graph: GoblinMadeWrench
   startNode: start
   targetNode: GoblinMadeWrench
@@ -100,7 +101,7 @@
   objectType: Item
 
 - type: construction
-  id: GoblinMadeWelder
+  id: goblinmadewelder
   graph: GoblinMadeWelder
   startNode: start
   targetNode: GoblinMadeWelder
@@ -111,7 +112,7 @@
   objectType: Item
 
 - type: construction
-  id: GoblinMadeMiniHoe
+  id: goblinmademinihoe
   graph: GoblinMadeMiniHoe
   startNode: start
   targetNode: GoblinMadeMiniHoe
@@ -122,7 +123,7 @@
   objectType: Item
 
 - type: construction
-  id: GoblinMadeMiningDrill
+  id: goblinmademiningdrill
   graph: GoblinMadeMiningDrill
   startNode: start
   targetNode: GoblinMadeMiningDrill
@@ -133,7 +134,7 @@
   objectType: Item
 
 - type: construction
-  id: GoblinMadeTrayScanner
+  id: goblinmadetrayscanner
   graph: GoblinMadeTrayScanner
   startNode: start
   targetNode: GoblinMadeTrayScanner
@@ -144,7 +145,7 @@
   objectType: Item
 
 - type: construction
-  id: GoblinMadeRemoteSignaller
+  id: goblinmaderemotesignaller
   graph: GoblinMadeRemoteSignaller
   startNode: start
   targetNode: GoblinMadeRemoteSignaller
@@ -155,7 +156,7 @@
   objectType: Item
 
 - type: construction
-  id: GoblinMadeLantern
+  id: goblinmadelantern
   graph: GoblinMadeLantern
   startNode: start
   targetNode: GoblinMadeLantern
@@ -166,7 +167,7 @@
   objectType: Item
 
 - type: construction
-  id: GoblinMadePowerCellDepleted
+  id: goblinmadepowercelldepleted
   graph: GoblinMadePowerCellDepleted
   startNode: start
   targetNode: GoblinMadePowerCellDepleted
@@ -177,7 +178,7 @@
   objectType: Item
 
 - type: construction
-  id: CableApcStack10
+  id: cableapcstack10
   graph: CableApcStack10
   startNode: start
   targetNode: CableApcStack10
@@ -189,7 +190,7 @@
 
 # Furniture / Structures
 - type: construction
-  id: BannerGoblin01
+  id: bannergoblin01
   graph: GoblinMadeBanner
   startNode: start
   targetNode: BannerGoblin01
@@ -205,7 +206,7 @@
 
   # Vehicles
 - type: construction
-  id: GoblinMadeVehicleDumpster
+  id: goblinmadevehicledumpster
   graph: GoblinMadeVehicleDumpster
   startNode: start
   targetNode: GoblinMadeVehicleDumpster
