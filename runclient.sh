@@ -4,5 +4,5 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 #!/bin/sh
-dotnet run --project Content.Omu.Client
+DRI_PRIME=1 dotnet run --project Content.Omu.Client
 read -p "Press enter to continue"
