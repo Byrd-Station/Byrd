@@ -37,26 +37,32 @@
 
 name: Diff RSIs
 
-permissions:
-  issues: write
-  pull-requests: write
-
 on:
   pull_request:
     paths:
       - '**.rsi/**.png'
 
+permissions:
+  issues: write
+  pull-requests: write
+
 jobs:
   diff:
     name: Diff
     runs-on: ubuntu-latest
+
+    permissions:
+      issues: write
+      pull-requests: write
+      contents: read
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v4
 
       - name: Get changed files
         id: files
-        uses: Ana06/get-changed-files@v2.3.0
+        uses: Ana06/get-changed-files@v2
         with:
           format: 'space-delimited'
           filter: |
@@ -65,7 +71,7 @@ jobs:
 
       - name: Diff changed RSIs
         id: diff
-        uses: space-wizards/RSIDiffBot@v1.1
+        uses: space-wizards/RSIDiffBot@v1
         with:
           modified: ${{ steps.files.outputs.modified }}
           removed: ${{ steps.files.outputs.removed }}
@@ -76,7 +82,7 @@ jobs:
           headsha: ${{ github.event.pull_request.head.sha }}
 
       - name: Potentially find comment
-        uses: peter-evans/find-comment@v1
+        uses: peter-evans/find-comment@v2   # updated to v2 (more stable)
         id: fc
         with:
           issue-number: ${{ github.event.pull_request.number }}
@@ -85,24 +91,24 @@ jobs:
 
       - name: Create comment if it doesn't exist
         if: steps.fc.outputs.comment-id == ''
-        uses: peter-evans/create-or-update-comment@v1
+        uses: peter-evans/create-or-update-comment@v4   # updated to latest v4
         with:
-          issue-number: ${{ github.event.number }}
+          issue-number: ${{ github.event.pull_request.number }}
           body: |
             ${{ steps.diff.outputs.summary-details }}
 
       - name: Update comment if it exists
         if: steps.fc.outputs.comment-id != ''
-        uses: peter-evans/create-or-update-comment@v1
+        uses: peter-evans/create-or-update-comment@v4
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           edit-mode: replace
           body: |
             ${{ steps.diff.outputs.summary-details }}
 
-      - name: Update comment to read that it has been edited
+      - name: Append edit note
         if: steps.fc.outputs.comment-id != ''
-        uses: peter-evans/create-or-update-comment@v1
+        uses: peter-evans/create-or-update-comment@v4
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           edit-mode: append
