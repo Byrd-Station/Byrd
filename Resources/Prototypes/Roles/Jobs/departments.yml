@@ -165,7 +165,6 @@
   - CentralCommandDireggtor # Omu Start
   - CustodiiVitellus
   - CentCommIntern # Omu End
-  editorHidden: true
   weight: 120
 
 - type: department
@@ -181,9 +180,6 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
-  - BlueshieldOfficer # Goobstation
-  - NanotrasenRepresentative # Goobstation
-  - NanotrasenCareerTrainer # Goobstation
   - AdministrativeAssistant # Delta V
   - CentralCommandOfficial
   - CBURN

@@ -6,7 +6,7 @@
 - type: gameMap
   id: Serpentcrest
   mapName: 'Serpentcrest'
-  mapPath: /Maps/_Omu/serpentcrest.yml # Omu - Prisoner role mapping
+  mapPath: /Maps/_Byrd/serpentcrest.yml # Byrd - Several changes
   minPlayers: 40
   stations:
     Serpentcrest:

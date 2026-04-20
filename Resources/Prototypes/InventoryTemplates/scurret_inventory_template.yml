@@ -1,4 +1,8 @@
-﻿- type: inventoryTemplate
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: inventoryTemplate
   id: scurret
   slots:
   - name: ears
@@ -56,8 +60,6 @@
     uiWindowPos: 2,0
     strippingWindowPos: 2,5
     dependsOn: jumpsuit
-    dependsOnComponents:
-    - type: AllowSuitStorage
     displayName: Suit Storage
   - name: outerClothing
     slotTexture: suit
