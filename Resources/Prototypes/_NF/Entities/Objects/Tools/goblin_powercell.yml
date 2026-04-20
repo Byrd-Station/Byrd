@@ -1,0 +1,45 @@
+- type: entity
+  id: GoblinMadePowerCell
+  parent: [ BaseGoblinMadeTools, PowerCellSmall ]
+  name: power cell
+  description: An improvised power cell. How long will you be able to resist the temptation to drink the electrolyte?
+  suffix: Goblin Made, Full
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/goblin_tools/power_cell.rsi
+    layers:
+    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
+      state: o2
+      color: "#0084ff"
+    - map: [ "enum.PowerCellVisualLayers.Base" ]
+      state: icon
+    - sprite: _NF/Objects/Tools/goblin_tools/overlay_sparks.rsi
+      state: overlay-icon
+      shader: unshaded
+  - type: Item
+    sprite: _NF/Objects/Tools/goblin_tools/power_cell.rsi
+#    inhandVisuals:
+#      left:
+#      - state: inhand-left
+#      - sprite: _NF/Objects/Tools/goblin_tools/overlay_sparks.rsi
+#        state: overlay-inhand-left
+#        shader: unshaded
+#      right:
+#      - state: inhand-right
+#      - sprite: _NF/Objects/Tools/goblin_tools/overlay_sparks.rsi
+#        state: overlay-inhand-right
+#        shader: unshaded
+#  - type: Clothing
+#    sprite: _NF/Objects/Tools/goblin_tools/power_cell.rsi
+
+- type: entity
+  id: GoblinMadePowerCellDepleted
+  parent: GoblinMadePowerCell
+  suffix: Goblin Made, Empty
+  components:
+  - type: Battery
+    maxCharge: 360
+    startingCharge: 0
+  - type: Construction
+    graph: GoblinMadePowerCellDepleted
+    node: goblin_tool
