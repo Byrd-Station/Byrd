@@ -4,7 +4,7 @@
   id: clothingoutercoatrobesgoblin
   graph: ClothingOuterCoatRobesGoblin
   startNode: start
-  targetNode: ClothingOuterCoatRobesGoblin
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -15,7 +15,7 @@
   id: clothingouterevasuitgoblin
   graph: ClothingOuterEVASuitGoblin
   startNode: start
-  targetNode: ClothingOuterEVASuitGoblin
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -26,7 +26,7 @@
   id: goblinmadeclothingbackpackduffeltrashblue
   graph: GoblinMadeClothingBackpackDuffelTrashBlue
   startNode: start
-  targetNode: GoblinMadeClothingBackpackDuffelTrashBlue
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -37,7 +37,7 @@
   id: goblinmadeclothingbackpacktrashblue
   graph: GoblinMadeClothingBackpackTrashBlue
   startNode: start
-  targetNode: GoblinMadeClothingBackpackTrashBlue
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -49,7 +49,7 @@
   id: goblinmademultitool
   graph: GoblinMadeMultitool
   startNode: start
-  targetNode: GoblinMadeMultitool
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -60,7 +60,7 @@
   id: goblinmadewirecutter
   graph: GoblinMadeWirecutter
   startNode: start
-  targetNode: GoblinMadeWirecutter
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -71,7 +71,7 @@
   id: goblinmadescrewdriver
   graph: GoblinMadeScrewdriver
   startNode: start
-  targetNode: GoblinMadeScrewdriver
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -82,7 +82,7 @@
   id: goblinmadecrowbar
   graph: GoblinMadeCrowbar
   startNode: start
-  targetNode: GoblinMadeCrowbar
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -93,7 +93,7 @@
   id: goblinmadewrench
   graph: GoblinMadeWrench
   startNode: start
-  targetNode: GoblinMadeWrench
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -104,7 +104,7 @@
   id: goblinmadewelder
   graph: GoblinMadeWelder
   startNode: start
-  targetNode: GoblinMadeWelder
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -115,7 +115,7 @@
   id: goblinmademinihoe
   graph: GoblinMadeMiniHoe
   startNode: start
-  targetNode: GoblinMadeMiniHoe
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -126,7 +126,7 @@
   id: goblinmademiningdrill
   graph: GoblinMadeMiningDrill
   startNode: start
-  targetNode: GoblinMadeMiningDrill
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -137,7 +137,7 @@
   id: goblinmadetrayscanner
   graph: GoblinMadeTrayScanner
   startNode: start
-  targetNode: GoblinMadeTrayScanner
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -148,7 +148,7 @@
   id: goblinmaderemotesignaller
   graph: GoblinMadeRemoteSignaller
   startNode: start
-  targetNode: GoblinMadeRemoteSignaller
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -159,7 +159,7 @@
   id: goblinmadelantern
   graph: GoblinMadeLantern
   startNode: start
-  targetNode: GoblinMadeLantern
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -170,7 +170,7 @@
   id: goblinmadepowercelldepleted
   graph: GoblinMadePowerCellDepleted
   startNode: start
-  targetNode: GoblinMadePowerCellDepleted
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -181,7 +181,7 @@
   id: cableapcstack10
   graph: CableApcStack10
   startNode: start
-  targetNode: CableApcStack10
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -193,7 +193,7 @@
   id: bannergoblin01
   graph: GoblinMadeBanner
   startNode: start
-  targetNode: BannerGoblin01
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:
@@ -209,7 +209,7 @@
   id: goblinmadevehicledumpster
   graph: GoblinMadeVehicleDumpster
   startNode: start
-  targetNode: GoblinMadeVehicleDumpster
+  targetNode: goblin_tool
   category: construction-category-goblin
   entityWhitelist:
     components:

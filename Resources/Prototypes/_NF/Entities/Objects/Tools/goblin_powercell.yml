@@ -18,19 +18,19 @@
       shader: unshaded
   - type: Item
     sprite: _NF/Objects/Tools/goblin_tools/power_cell.rsi
-#    inhandVisuals:
-#      left:
-#      - state: inhand-left
-#      - sprite: _NF/Objects/Tools/goblin_tools/overlay_sparks.rsi
-#        state: overlay-inhand-left
-#        shader: unshaded
-#      right:
-#      - state: inhand-right
-#      - sprite: _NF/Objects/Tools/goblin_tools/overlay_sparks.rsi
-#        state: overlay-inhand-right
-#        shader: unshaded
-#  - type: Clothing
-#    sprite: _NF/Objects/Tools/goblin_tools/power_cell.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      - sprite: _NF/Objects/Tools/goblin_tools/overlay_sparks.rsi
+        state: overlay-inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+      - sprite: _NF/Objects/Tools/goblin_tools/overlay_sparks.rsi
+        state: overlay-inhand-right
+        shader: unshaded
+  - type: Clothing
+    sprite: _NF/Objects/Tools/goblin_tools/power_cell.rsi
 
 - type: entity
   id: GoblinMadePowerCellDepleted

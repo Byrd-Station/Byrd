@@ -10,11 +10,11 @@
   - type: Clothing
     sprite: _NF/Clothing/OuterClothing/Coats/goblin_robes.rsi
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodGoblin
-    slot: head
+    clothingPrototypes:
+      head: ClothingHeadHatHoodGoblin
   - type: Construction
     graph: ClothingOuterCoatRobesGoblin
-    node: ClothingOuterCoatRobesGoblin
+    node: goblin_tool
 
 - type: entity
   parent: ClothingOuterHardsuitEVA
@@ -31,14 +31,13 @@
   - type: Clothing
     sprite: _NF/Clothing/OuterClothing/Suits/goblin_eva_robes.rsi
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadEVAHelmetGoblin
-    slot: head
+    clothingPrototypes:
+      head: ClothingHeadEVAHelmetGoblin
   - type: ContainerContainer
     containers:
-      toggleable-clothing: !type:ContainerSlot
-      storagebase: !type:Container
+      toggleable-clothing: !type:Container {}
   - type: StaticPrice
     price: 65
   - type: Construction
     graph: ClothingOuterEVASuitGoblin
-    node: ClothingOuterEVASuitGoblin
+    node: goblin_tool

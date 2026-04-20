@@ -1,3 +1,4 @@
+#file: noinspection SpellCheckingInspection
 - type: entity
   id: BaseGoblinMadeTools
   suffix: Goblin Made
@@ -40,122 +41,6 @@
   - type: StaticPrice
     price: 0 # Can't get rich :(
   - type: GoblinMade
-
-- type: entity
-  id: BaseGoblinMadeToolsMalfunction
-  abstract: true
-  components:
-  - type: TriggerOnSpawn
-  - type: TimedDespawn
-    lifetime: 5
-# endregion
-
-#region malfunctions
-- type: entity
-  id: GoblinMadeToolMalfunctionEmp
-  parent: BaseGoblinMadeToolsMalfunction
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: EmpOnTrigger
-    range: 4
-    energyConsumption: 5000
-
-- type: entity
-  id: GoblinMadeToolMalfunctionFlash
-  parent: BaseGoblinMadeToolsMalfunction
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: FlashOnTrigger
-    range: 4
-  - type: SpawnOnTrigger
-    proto: GrenadeFlashEffect
-
-- type: entity
-  id: GoblinMadeToolMalfunctionSmoke
-  parent: BaseGoblinMadeToolsMalfunction
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: SmokeOnTrigger
-    duration: 3
-    spreadAmount: 1
-  - type: EmitSoundOnTrigger
-    sound: /Audio/Effects/smoke.ogg
-  - type: TimerTriggerVisuals
-    primingSound:
-      path: /Audio/Effects/Smoke-grenade.ogg
-
-- type: entity
-  id: GoblinMadeToolMalfunctionFireBomb
-  parent: BaseGoblinMadeToolsMalfunction
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: FireBomb
-    totalIntensity: 5
-    intensitySlope: 2.5
-    maxIntensity: 1
-    canCreateVacuum: false
-
-- type: entity
-  id: GoblinMadeToolMalfunctionExplosion
-  parent: BaseGoblinMadeToolsMalfunction
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: Default
-    totalIntensity: 5
-    intensitySlope: 2.5
-    maxIntensity: 1
-    canCreateVacuum: false
-
-- type: entity
-  id: GoblinMadeToolMalfunctionCryo
-  parent: BaseGoblinMadeToolsMalfunction
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: ExplodeOnTrigger
-  - type: Explosive
-    explosionType: Cryo
-    totalIntensity: 5
-    intensitySlope: 2.5
-    maxIntensity: 1
-    canCreateVacuum: false
-
-- type: entityTable
-  id: TableGoblinMadeToolMalfunction
-  table: !type:GroupSelector
-    children:
-    - id: GoblinMadeToolMalfunctionEmp
-      weight: 30
-    - id: GoblinMadeToolMalfunctionFlash
-      weight: 20
-    - id: GoblinMadeToolMalfunctionSmoke
-      weight: 35
-    - id: GoblinMadeToolMalfunctionFireBomb
-      weight: 5
-    - id: GoblinMadeToolMalfunctionExplosion
-      weight: 5
-    - id: GoblinMadeToolMalfunctionCryo
-      weight: 5
-
-- type: entity
-  id: SpawnGoblinMadeToolMalfunction
-  parent: MarkerBase
-  name: goblin tool malfunction
-  components:
-  - type: Sprite
-    layers:
-      - sprite: _NF/Markers/general.rsi
-        state: questionmark
-        color: red
-  - type: EntityTableSpawner
-    offset: 0.0
-    table: !type:NestedSelector
-      tableId: TableGoblinMadeToolMalfunction
-      prob: 1.00
-# endregion
 
 # tools
 #region multitool
@@ -404,79 +289,6 @@
     node: goblin_tool
 # endregion
 
-#region welder
-- type: entity
-  id: GoblinMadeWelder
-  parent: [ BaseGoblinMadeTools, Welder ]
-  name: burner torch
-  description: An improvised welding tool made out of a plastic bottle, an empty soda can, a spray nozzle, and a leaking battery.
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/goblin_tools/welder.rsi
-    layers:
-    - state: icon
-    - state: icon-unshaded
-      shader: unshaded
-    - state: can1
-      map: ["randomWelderCan"]
-    - state: welder_flame
-      visible: false
-      shader: unshaded
-      map: ["enum.ToggleableVisuals.Layer"]
-    - sprite: _NF/Objects/Tools/goblin_tools/overlay_sparks.rsi
-      state: overlay-icon
-      shader: unshaded
-  - type: GenericVisualizer
-    visuals:
-      enum.ToggleableVisuals.Enabled:
-        enum.ToggleableVisuals.Layer:
-          True: { visible: true }
-          False: { visible: false }
-  - type: Item
-    sprite: _NF/Objects/Tools/goblin_tools/welder.rsi
-    inhandVisuals:
-      left:
-      - state: inhand-left
-      - sprite: _NF/Objects/Tools/goblin_tools/overlay_sparks.rsi
-        state: overlay-inhand-left
-        shader: unshaded
-      right:
-      - state: inhand-right
-      - sprite: _NF/Objects/Tools/goblin_tools/overlay_sparks.rsi
-        state: overlay-inhand-right
-        shader: unshaded
-  - type: Clothing
-    sprite: _NF/Objects/Tools/goblin_tools/welder.rsi
-  - type: RandomSprite
-    available:
-      - randomWelderCan:
-          can1: ""
-          can2: ""
-          can3: ""
-          can4: ""
-          can5: ""
-          can6: ""
-          can7: ""
-          can8: ""
-          can9: ""
-          can10: ""
-# endregion
-
-- type: entity
-  id: GoblinMadeWelderEmpty
-  parent: GoblinMadeWelder
-  suffix: Goblin Made, Empty
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      Welder:
-        reagents: []
-        maxVol: 100
-  - type: Construction
-    graph: GoblinMadeWelder
-    node: goblin_tool
-# endregion
-
 #region mini hoe
 - type: entity
   id: GoblinMadeMiniHoe
@@ -523,7 +335,7 @@
     node: goblin_tool
 # endregion
 
-#region minig drill
+#region mining drill
 - type: entity
   id: GoblinMadeMiningDrill
   parent: [ BaseGoblinMadeTools, MiningDrill ]
@@ -715,56 +527,9 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
-        startingItem: GoblinMadePowerCell
+        #startingItem: GoblinMadePowerCell
   - type: Construction
-    graph: GoblinMadeRemoteSignaller
+    graph: GoblinMadeLantern
     node: goblin_tool
 # endregion
 
-#region power cell
-- type: entity
-  id: GoblinMadePowerCell
-  parent: [ BaseGoblinMadeTools, PowerCellSmall ]
-  name: power cell
-  description: An improvised power cell. How long will you be able to resist the temptation to drink the electrolyte?
-  suffix: Goblin Made, Full
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/goblin_tools/power_cell.rsi
-    layers:
-    - map: [ "enum.PowerCellVisualLayers.Unshaded" ]
-      state: o2
-      color: "#0084ff"
-    - map: [ "enum.PowerCellVisualLayers.Base" ]
-      state: icon
-    - sprite: _NF/Objects/Tools/goblin_tools/overlay_sparks.rsi
-      state: overlay-icon
-      shader: unshaded
-  - type: Item
-    sprite: _NF/Objects/Tools/goblin_tools/power_cell.rsi
-    inhandVisuals:
-      left:
-      - state: inhand-left
-      - sprite: _NF/Objects/Tools/goblin_tools/overlay_sparks.rsi
-        state: overlay-inhand-left
-        shader: unshaded
-      right:
-      - state: inhand-right
-      - sprite: _NF/Objects/Tools/goblin_tools/overlay_sparks.rsi
-        state: overlay-inhand-right
-        shader: unshaded
-  - type: Clothing
-    sprite: _NF/Objects/Tools/goblin_tools/power_cell.rsi
-
-- type: entity
-  id: GoblinMadePowerCellDepleted
-  parent: GoblinMadePowerCell
-  suffix: Goblin Made, Empty
-  components:
-  - type: Battery
-    maxCharge: 360
-    startingCharge: 0
-  - type: Construction
-    graph: GoblinMadePowerCellDepleted
-    node: goblin_tool
-# endregion
