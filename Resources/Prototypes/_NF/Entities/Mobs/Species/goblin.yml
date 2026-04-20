@@ -75,7 +75,7 @@
         sprite: _Shitmed/Mobs/Effects/brute_damage.rsi
         color: "#5c7500"
       Burn:
-        sprite: Mobs/Effects/burn_damage.rsi
+        sprite: _Shitmed/Mobs/Effects/burn_damage.rsi
   - type: Bloodstream
     bloodReagent: GoblinBlood
   - type: Butcherable
