@@ -62,7 +62,7 @@ jobs:
 
       - name: Get changed files
         id: files
-        uses: Ana06/get-changed-files@v2
+        uses: Ana06/get-changed-files@v2.3.0
         with:
           format: 'space-delimited'
           filter: |
@@ -71,7 +71,7 @@ jobs:
 
       - name: Diff changed RSIs
         id: diff
-        uses: space-wizards/RSIDiffBot@v1
+        uses: space-wizards/RSIDiffBot@v1.1
         with:
           modified: ${{ steps.files.outputs.modified }}
           removed: ${{ steps.files.outputs.removed }}
@@ -82,7 +82,7 @@ jobs:
           headsha: ${{ github.event.pull_request.head.sha }}
 
       - name: Potentially find comment
-        uses: peter-evans/find-comment@v2   # updated to v2 (more stable)
+        uses: peter-evans/find-comment@v1
         id: fc
         with:
           issue-number: ${{ github.event.pull_request.number }}
@@ -91,7 +91,7 @@ jobs:
 
       - name: Create comment if it doesn't exist
         if: steps.fc.outputs.comment-id == ''
-        uses: peter-evans/create-or-update-comment@v4   # updated to latest v4
+        uses: peter-evans/create-or-update-comment@v1
         with:
           issue-number: ${{ github.event.pull_request.number }}
           body: |
@@ -108,7 +108,7 @@ jobs:
 
       - name: Append edit note
         if: steps.fc.outputs.comment-id != ''
-        uses: peter-evans/create-or-update-comment@v4
+        uses: peter-evans/create-or-update-comment@v1
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           edit-mode: append
