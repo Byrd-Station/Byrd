@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Goob Station Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: BlackSlimeExtract
   parent: BaseSlimeExtract
@@ -30,7 +34,8 @@
       - !type:PlaySoundEffect
         sound: /Audio/Effects/Chemistry/bubbles.ogg
       - !type:AdjustReagent
-        reagent: AdvancedMutationToxin
+        # Byrd - AdvancedMutationToxin is currently a broken piece of shit. Just give fent for now.
+        reagent: Fentanyl
         amount: 10
     - reagents: [ Blood ]
       methods: [ Touch, Injection ]
