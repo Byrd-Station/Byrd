@@ -443,6 +443,7 @@
   - type: Stripping
   - type: AccessReader # Goobstation-WantedMenu
     access: [["Security"]]
+    hideExaminationText: true
   - type: UserInterface
     interfaces:
       enum.HumanoidMarkingModifierKey.Key:

@@ -181,6 +181,12 @@ public sealed partial class AccessReaderComponent : Component
     /// </remarks>
     [DataField]
     public LocId ExaminationText = "access-reader-examination";
+
+    /// <summary>
+    /// Should the examination text be hidden?
+    /// </summary>
+    [DataField]
+    public bool HideExaminationText = false;
 }
 
 [DataDefinition, Serializable, NetSerializable]
