@@ -566,7 +566,7 @@ namespace Content.Server.Mail
                 ("recipient", recipient.Name)));
 
             var accessReader = EnsureComp<AccessReaderComponent>(uid);
-            _accessReader.AddAccess((uid, accessReader), recipient.AccessTags);
+            _accessReader.TryAddAccess((uid, accessReader), recipient.AccessTags);
         }
 
         /// <summary>
