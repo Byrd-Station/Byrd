@@ -8,6 +8,7 @@ using Content.Goobstation.Shared.Humanoid;
 using Content.Shared.Humanoid;
 using Content.Shared.EntityEffects;
 using JetBrains.Annotations;
+using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Shared.EntityEffects;
@@ -20,6 +21,11 @@ public sealed partial class SexChange : EntityEffect
     /// </summary>
     [DataField] public Sex? NewSex;
 
+    /// <summary>
+    ///     What gender is the consumer changed to? If not set then keep current.
+    /// </summary>
+    [DataField] public Gender? NewGender;
+
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
         => Loc.GetString("reagent-effect-guidebook-sex-change", ("chance", Probability));
 
@@ -30,8 +36,14 @@ public sealed partial class SexChange : EntityEffect
 
         var uid = args.TargetEntity;
         var newSex = NewSex;
+        var newGender = NewGender;
         var goobHumanoidAppearanceSystem = args.EntityManager.System<SharedGoobHumanoidAppearanceSystem>();
         var humanoidAppearanceSystem = args.EntityManager.System<SharedHumanoidAppearanceSystem>();
+
+        if (newGender.HasValue)
+        {
+            humanoidAppearanceSystem.SetGender(uid, newGender.Value);
+        }
 
         if (newSex.HasValue)
         {

@@ -168,114 +168,170 @@
           min: 1
         chanceModifier: 0.25
 
-# - type: reagent
-#   parent: BaseXenobioReagent
-#   id: XenobioJellyGreen
-#   name: xenobio-reagent-jelly-green-name
-#   desc: xenobio-reagent-jelly-green-desc
-#   color: "#4DFF4D"
-#   metabolisms:
-#     Poison:
-#       metabolismRate: 5 # hello hypospray users!
-#       effects:
-#       - !type:SpeciesChange
-#         conditions:
-#         - !type:ReagentThreshold
-#           min: 10
-#         newSpecies: SlimePerson
-#       - !type:AdjustReagent
-#         reagent: XenobioJellyGreen
-#         amount: -50.0
-#         conditions:
-#         - !type:ReagentThreshold
-#           min: 10
+- type: reagent
+  parent: BaseXenobioReagent
+  id: BaseXenobioSpeciesToxin
+  metabolisms:
+    Poison:
+      metabolismRate: 5 # hello hypospray users!
+      effects:
+      - !type:SpeciesChange
+        allowedSpecies:
+        - Human
+        - Reptilian
+        - SlimePerson
+        - Diona
+        - Vulpkanin
+        - Felinid
+        - Harpy
+        - Rodentia
+        - Oni
+        - Yowie
+        - Arachnid
+        - Moth
+        - Gingerbread
+        - Vox
+        - Dwarf
+        - Resomi
+        - IPC
+        - BananaMen
+        - Kobold
+        - Monkey
+        - Tajaran
+        - Shadowkin
+        - Chitinid
+        - Feroxi
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
 
-# - type: reagent
-#   parent: BaseXenobioReagent
-#   id: XenobioHumanToxin
-#   name: xenobio-reagent-toxin-human-name
-#   desc: xenobio-reagent-toxin-human-desc
-#   color: "#000000"
-#   metabolisms:
-#     Poison:
-#       metabolismRate: 5 # hello hypospray users!
-#       effects:
-#       - !type:SpeciesChange
-#         conditions:
-#         - !type:ReagentThreshold
-#           min: 10
-#         newSpecies: Human
-#       - !type:AdjustReagent
-#         reagent: XenobioHumanToxin
-#         amount: -50.0
-#         conditions:
-#         - !type:ReagentThreshold
-#           min: 10
+- type: reagent
+  parent: BaseXenobioSpeciesToxin
+  id: XenobioJellyGreen
+  name: xenobio-reagent-jelly-green-name
+  desc: xenobio-reagent-jelly-green-desc
+  color: "#4DFF4D"
+  metabolisms:
+    Poison:
+      metabolismRate: 5 # hello hypospray users!
+      effects:
+      - !type:SpeciesChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
+        newSpecies: SlimePerson
+      - !type:AdjustReagent
+        reagent: XenobioJellyGreen
+        amount: -50.0
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
 
-# - type: reagent
-#   parent: BaseXenobioReagent
-#   id: XenobioJellyPink
-#   name: xenobio-reagent-jelly-pink-name
-#   desc: xenobio-reagent-jelly-pink-desc
-#   color: "#FF4DD2"
-#   metabolisms:
-#     Poison:
-#       metabolismRate: 1
-#       effects:
-#       - !type:ChangeFactionEntityEffect
-#         conditions:
-#         - !type:ReagentThreshold
-#           min: 5
-#         newFaction: Passive
-# 
-# - type: reagent
-#   parent: BaseXenobioReagent
-#   id: AdvancedMutationToxin
-#   name: xenobio-reagent-toxin-advanced-name
-#   desc: xenobio-reagent-toxin-advanced-desc
-#   color: "#000000"
-#   metabolisms:
-#     Poison:
-#       metabolismRate: 5 # hello hypospray users!
-#       effects:
-#       - !type:RandomSpeciesChange
-#         speciesBlacklist:
-#         - Skeleton # if he's dead it's GG
-#         - IPC # do i have to explain this one
-#         - Cyborg # why the fuck is this a thing?
-#         - Shadowling # yeah.
-#         # add more here
-#         conditions:
-#         - !type:ReagentThreshold
-#           min: 10
-#       - !type:AdjustReagent
-#         reagent: AdvancedMutationToxin
-#         amount: -50.0
-#         conditions:
-#         - !type:ReagentThreshold
-#           min: 10
+- type: reagent
+  parent: BaseXenobioSpeciesToxin
+  id: XenobioHumanToxin
+  name: xenobio-reagent-toxin-human-name
+  desc: xenobio-reagent-toxin-human-desc
+  color: "#000000"
+  metabolisms:
+    Poison:
+      metabolismRate: 5 # hello hypospray users!
+      effects:
+      - !type:SpeciesChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
+        newSpecies: Human
+      - !type:AdjustReagent
+        reagent: XenobioHumanToxin
+        amount: -50.0
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
 
-# - type: reagent
-#   parent: BaseXenobioReagent
-#   id: XenobioFelinidToxin
-#   name: xenobio-reagent-toxin-felinid-name
-#   desc: xenobio-reagent-toxin-felinid-desc
-#   color: "#000000"
-#   metabolisms:
-#     Poison:
-#       metabolismRate: 5 # hello hypospray users!
-#       effects:
-#       - !type:SpeciesChange
-#         conditions:
-#         - !type:ReagentThreshold
-#           min: 10
-#         newSpecies: Felinid
-#       - !type:AdjustReagent
-#         reagent: XenobioFelinidToxin
-#         amount: -50.0
-#         conditions:
-#         - !type:ReagentThreshold
-#           min: 10
+- type: reagent
+  parent: BaseXenobioSpeciesToxin
+  id: XenobioJellyPink
+  name: xenobio-reagent-jelly-pink-name
+  desc: xenobio-reagent-jelly-pink-desc
+  color: "#FF4DD2"
+  metabolisms:
+    Poison:
+      metabolismRate: 1
+      effects:
+      - !type:ChangeFactionEntityEffect
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
+        newFaction: Passive
+
+- type: reagent
+  parent: BaseXenobioSpeciesToxin
+  id: XenobioFelinidToxin
+  name: xenobio-reagent-toxin-felinid-name
+  desc: xenobio-reagent-toxin-felinid-desc
+  color: "#000000"
+  metabolisms:
+    Poison:
+      metabolismRate: 5 # hello hypospray users!
+      effects:
+      - !type:SpeciesChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
+        newSpecies: Felinid
+      - !type:AdjustReagent
+        reagent: XenobioFelinidToxin
+        amount: -50.0
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
+
+- type: reagent
+  parent: BaseXenobioReagent
+  id: AdvancedMutationToxin
+  name: xenobio-reagent-toxin-advanced-name
+  desc: xenobio-reagent-toxin-advanced-desc
+  color: "#000000"
+  metabolisms:
+    Poison:
+      metabolismRate: 5 # hello hypospray users!
+      effects:
+      - !type:RandomSpeciesChange
+        allowedSpecies:
+        - Human
+        - Reptilian
+        - SlimePerson
+        - Diona
+        - Vulpkanin
+        - Felinid
+        - Harpy
+        - Rodentia
+        - Oni
+        - Yowie
+        - Arachnid
+        - Moth
+        - Gingerbread
+        - Vox
+        - Dwarf
+        - Resomi
+        - IPC
+        - BananaMen
+        - Kobold
+        - Monkey
+        - Tajaran
+        - Shadowkin
+        - Chitinid
+        - Feroxi
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
+      - !type:AdjustReagent
+        reagent: AdvancedMutationToxin
+        amount: -50.0
+        conditions:
+        - !type:ReagentThreshold
+          min: 10
 
 - type: reagent
   parent: BaseXenobioReagent
@@ -293,6 +349,76 @@
           min: 5
       - !type:AdjustReagent
         reagent: XenobioGenderFluid
+        amount: -50.0
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
+
+
+- type: reagent
+  parent: BaseXenobioReagent
+  id: XenobioTestosterone
+  name: xenobio-reagent-testosterone-name
+  desc: xenobio-reagent-testosterone-desc
+  color: "#74B9FF"
+  metabolisms:
+    Narcotic:
+      metabolismRate: 1
+      effects:
+      - !type:SexChange
+        newSex: Male
+        newGender: Male
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
+      - !type:AdjustReagent
+        reagent: XenobioTestosterone
+        amount: -50.0
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
+
+- type: reagent
+  parent: BaseXenobioReagent
+  id: XenobioEstrogen
+  name: xenobio-reagent-estrogen-name
+  desc: xenobio-reagent-estrogen-desc
+  color: "#FD79A8"
+  metabolisms:
+    Narcotic:
+      metabolismRate: 1
+      effects:
+      - !type:SexChange
+        newSex: Female
+        newGender: Female
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
+      - !type:AdjustReagent
+        reagent: XenobioEstrogen
+        amount: -50.0
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
+
+- type: reagent
+  parent: BaseXenobioReagent
+  id: XenobioAndrogynizium
+  name: xenobio-reagent-androgynizium-name
+  desc: xenobio-reagent-androgynizium-desc
+  color: "#9B59B6"
+  metabolisms:
+    Narcotic:
+      metabolismRate: 1
+      effects:
+      - !type:SexChange
+        newSex: Unsexed
+        newGender: Epicene
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
+      - !type:AdjustReagent
+        reagent: XenobioAndrogynizium
         amount: -50.0
         conditions:
         - !type:ReagentThreshold

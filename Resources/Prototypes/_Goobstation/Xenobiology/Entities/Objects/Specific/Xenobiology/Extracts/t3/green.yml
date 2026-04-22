@@ -25,8 +25,7 @@
       - !type:PlaySoundEffect
         sound: /Audio/Effects/Chemistry/bubbles.ogg
       - !type:AdjustReagent
-        # XenobioFelinidToxin # Byrd - Species change toxins are fucked up, re-add when they are not
-        reagent: Toxin
+        reagent: XenobioFelinidToxin
         amount: 10
     - reagents: [ Plasma ]
       methods: [ Touch, Injection ]
@@ -38,8 +37,7 @@
       - !type:PlaySoundEffect
         sound: /Audio/Effects/Chemistry/bubbles.ogg
       - !type:AdjustReagent
-        # XenobioJellyGreen # Byrd - Species change toxins are fucked up, re-add when they are not
-        reagent: Toxin
+        reagent: XenobioJellyGreen
         amount: 10
     - reagents: [ Blood ]
       methods: [ Touch, Injection ]
@@ -51,8 +49,7 @@
       - !type:PlaySoundEffect
         sound: /Audio/Effects/Chemistry/bubbles.ogg
       - !type:AdjustReagent
-        # XenobioHumanToxin # Byrd - Species change toxins are fucked up, re-add when they are not
-        reagent: Toxin
+        reagent: XenobioHumanToxin
         amount: 10
   - type: Tag
     tags:
