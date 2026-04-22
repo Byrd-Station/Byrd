@@ -87,6 +87,7 @@
 
 - type: reagent
   parent: BaseXenobioReagent
+  abstract: true
   id: XenobioJellyPurple
   name: xenobio-reagent-jelly-purple-name
   desc: xenobio-reagent-jelly-purple-desc
