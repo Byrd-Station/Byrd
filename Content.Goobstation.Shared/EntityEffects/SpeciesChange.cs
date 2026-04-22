@@ -32,15 +32,10 @@ public sealed partial class SpeciesChange : EventEntityEffect<SpeciesChange>
 
     public override void Effect(EntityEffectBaseArgs args)
     {
-        var _sawmill = Logger.GetSawmill("species-change");
-
         var humanoidQuery = args.EntityManager.GetEntityQuery<HumanoidAppearanceComponent>();
 
         if (!humanoidQuery.TryComp(args.TargetEntity, out var targetHumanoid))
-        {
-            _sawmill.Log(LogLevel.Debug, $"Target has no HumanoidAppearance component?");
             return;
-        }
 
         if (AllowedSpecies != null)
         {
