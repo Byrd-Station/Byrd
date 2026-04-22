@@ -172,6 +172,7 @@
 - type: reagent
   parent: BaseXenobioReagent
   id: BaseXenobioSpeciesToxin
+  abstract: true
   metabolisms:
     Poison:
       metabolismRate: 5 # hello hypospray users!
@@ -214,7 +215,6 @@
   color: "#4DFF4D"
   metabolisms:
     Poison:
-      metabolismRate: 5 # hello hypospray users!
       effects:
       - !type:SpeciesChange
         conditions:
@@ -236,7 +236,6 @@
   color: "#000000"
   metabolisms:
     Poison:
-      metabolismRate: 5 # hello hypospray users!
       effects:
       - !type:SpeciesChange
         conditions:
@@ -274,7 +273,6 @@
   color: "#000000"
   metabolisms:
     Poison:
-      metabolismRate: 5 # hello hypospray users!
       effects:
       - !type:SpeciesChange
         conditions:
@@ -296,7 +294,6 @@
   color: "#000000"
   metabolisms:
     Poison:
-      metabolismRate: 5 # hello hypospray users!
       effects:
       - !type:RandomSpeciesChange
         allowedSpecies:
@@ -333,6 +330,8 @@
         conditions:
         - !type:ReagentThreshold
           min: 10
+
+# Space Station HRT real
 
 - type: reagent
   parent: BaseXenobioReagent
