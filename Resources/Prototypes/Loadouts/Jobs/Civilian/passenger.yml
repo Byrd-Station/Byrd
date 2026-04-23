@@ -91,12 +91,19 @@
       !type:RoleTimeRequirement
       role: JobPassenger
       time: 36000 #10 hrs, silly reward for people who play passenger a lot
+      
 - type: loadout
   id: MercenaryJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitMercenary
-    time: 9000 # milions must larp
-  
+  group: Jumpsuit
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Security
+      time: 9000 # to larp or not to larp
+      
 # Head of Greytide (for grey mantle)
 - type: loadoutEffectGroup
   id: MasterGrey
