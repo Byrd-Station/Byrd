@@ -137,6 +137,7 @@ namespace Content.Server.Connection
         void Initialize();
         void PostInit();
         Task<bool> HasPrivilegedJoin(NetUserId userId); // Goobstation - Queue
+
         /// <summary>
         /// Temporarily allow a user to bypass regular connection requirements.
         /// </summary>
@@ -183,7 +184,12 @@ namespace Content.Server.Connection
         {
             _sawmill = _logManager.GetSawmill("connections");
 
-            _ipintel = new IPIntel.IPIntel(new IPIntelApi(_http, _cfg), _db, _cfg, _logManager, _chatManager, _gameTiming);
+            _ipintel = new IPIntel.IPIntel(new IPIntelApi(_http, _cfg),
+                _db,
+                _cfg,
+                _logManager,
+                _chatManager,
+                _gameTiming);
 
             _netMgr.Connecting += NetMgrOnConnecting;
             _netMgr.AssignUserIdCallback = AssignUserIdCallback;
@@ -327,7 +333,8 @@ namespace Content.Server.Connection
 
             var modernHwid = e.UserData.ModernHWIds;
 
-            if (modernHwid.Length == 0 && e.AuthType == LoginType.LoggedIn && _cfg.GetCVar(CCVars.RequireModernHardwareId))
+            if (modernHwid.Length == 0 && e.AuthType == LoginType.LoggedIn &&
+                _cfg.GetCVar(CCVars.RequireModernHardwareId))
             {
                 return (ConnectionDenyReason.NoHwid, Loc.GetString("hwid-required"), null);
             }
@@ -355,41 +362,51 @@ namespace Content.Server.Connection
 
                 var minMinutesAge = _cfg.GetCVar(CCVars.PanicBunkerMinAccountAge);
                 var record = await _db.GetPlayerRecordByUserId(userId);
-                var validAccountAge = record != null &&
-                                      record.FirstSeenTime.CompareTo(DateTimeOffset.UtcNow - TimeSpan.FromMinutes(minMinutesAge)) <= 0;
-                var bypassAllowed = _cfg.GetCVar(CCVars.BypassBunkerWhitelist) && await _db.GetWhitelistStatusAsync(userId);
+                var invalidAccountAge =
+                    !(record != null &&
+                      record.FirstSeenTime.CompareTo(DateTimeOffset.UtcNow - TimeSpan.FromMinutes(minMinutesAge))
+                      <= 0);
+
+                // If not whitelisted w. a bunker bypass.
+                var bypassDenied = !(_cfg.GetCVar(CCVars.BypassBunkerWhitelist) &&
+                                     await _db.GetWhitelistStatusAsync(userId));
 
                 // Use the custom reason if it exists & they don't have the minimum account age
-                if (customReason != string.Empty && !validAccountAge && !bypassAllowed)
-                {
+                if (customReason != string.Empty && invalidAccountAge && bypassDenied)
                     return (ConnectionDenyReason.Panic, customReason, null);
-                }
 
-                if (showReason && !validAccountAge && !bypassAllowed)
+                // Reason shows, account not valid, and account cannot bypass.
+                if (showReason && invalidAccountAge && bypassDenied)
                 {
                     return (ConnectionDenyReason.Panic,
                         Loc.GetString("panic-bunker-account-denied-reason",
-                            ("reason", Loc.GetString("panic-bunker-account-reason-account", ("minutes", minMinutesAge)))), null);
+                            ("reason",
+                                Loc.GetString("panic-bunker-account-reason-account", ("minutes", minMinutesAge)))),
+                        null);
                 }
 
                 var minOverallMinutes = _cfg.GetCVar(CCVars.PanicBunkerMinOverallMinutes);
-                var overallTime = ( await _db.GetPlayTimes(e.UserId)).Find(p => p.Tracker == PlayTimeTrackingShared.TrackerOverall);
+                var overallTime =
+                    (await _db.GetPlayTimes(e.UserId)).Find(p => p.Tracker == PlayTimeTrackingShared.TrackerOverall);
                 var haveMinOverallTime = overallTime != null && overallTime.TimeSpent.TotalMinutes > minOverallMinutes;
 
-                // Use the custom reason if it exists & they don't have the minimum time
-                if (customReason != string.Empty && !haveMinOverallTime && !bypassAllowed)
+                // Use the custom reason if it exists & they don't have the minimum time and cannot bypass.
+                if (customReason != string.Empty && !haveMinOverallTime && bypassDenied)
                 {
                     return (ConnectionDenyReason.Panic, customReason, null);
                 }
 
-                if (showReason && !haveMinOverallTime && !bypassAllowed)
+                // There is a reason, they don't have the minimum overall time, and bypass not allowed.
+                if (showReason && !haveMinOverallTime && bypassDenied)
                 {
-                    return (ConnectionDenyReason.Panic,
-                        Loc.GetString("panic-bunker-account-denied-reason",
-                            ("reason", Loc.GetString("panic-bunker-account-reason-overall", ("minutes", minOverallMinutes)))), null);
+                    var denialReason = Loc.GetString("panic-bunker-account-denied-reason",
+                        ("reason", Loc.GetString("panic-bunker-account-reason-overall",
+                            ("minutes", minOverallMinutes))));
+                    return (ConnectionDenyReason.Panic, denialReason, null);
                 }
 
-                if (!validAccountAge || !haveMinOverallTime && !bypassAllowed)
+                // (Account not valid or doesn't have minimal time) and bypass not permitted
+                if ((invalidAccountAge || !haveMinOverallTime) && bypassDenied)
                 {
                     return (ConnectionDenyReason.Panic, Loc.GetString("panic-bunker-account-denied"), null);
                 }
@@ -404,7 +421,8 @@ namespace Content.Server.Connection
                 softPlayerCount -= _adminManager.ActiveAdmins.Count();
             }
 
-            if (softPlayerCount >= _cfg.GetCVar(CCVars.SoftMaxPlayers) && !isPrivileged && !isQueueEnabled) // Goobstation - Queue
+            // Goobstation - Queue
+            if (softPlayerCount >= _cfg.GetCVar(CCVars.SoftMaxPlayers) && !isPrivileged && !isQueueEnabled)
             {
                 return (ConnectionDenyReason.Full, Loc.GetString("soft-player-cap-full"), null);
             }
@@ -422,19 +440,17 @@ namespace Content.Server.Connection
                 foreach (var whitelist in _whitelists)
                 {
                     if (!IsValid(whitelist, softPlayerCount))
-                    {
-                        // Not valid for current player count.
-                        continue;
-                    }
+                        continue; // Not valid for current player count.
 
                     var whitelistStatus = await IsWhitelisted(whitelist, e.UserData, _sawmill);
                     if (!whitelistStatus.isWhitelisted)
                     {
                         // Not whitelisted.
-                        return (ConnectionDenyReason.Whitelist, Loc.GetString("whitelist-fail-prefix", ("msg", whitelistStatus.denyMessage!)), null);
+                        return (ConnectionDenyReason.Whitelist,
+                            Loc.GetString("whitelist-fail-prefix", ("msg", whitelistStatus.denyMessage!)), null);
                     }
 
-                    // Whitelisted, don't check any more.
+                    // Whitelisted, don't check anymore.
                     break;
                 }
             }
@@ -443,7 +459,6 @@ namespace Content.Server.Connection
             if (_cfg.GetCVar(CCVars.GameIPIntelEnabled) && adminData == null)
             {
                 var result = await _ipintel.IsVpnOrProxy(e);
-
                 if (result.IsBad)
                     return (ConnectionDenyReason.IPChecks, result.Reason, null);
             }
