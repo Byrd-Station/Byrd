@@ -39,7 +39,7 @@
 - type: gameMap
   id: Atlas
   mapName: Atlas
-  mapPath: /Maps/_Omu/atlas.yml # Omu - Prisoner role mapping
+  mapPath: /Maps/_Byrd/atlas.yml # Byrd
   minPlayers: 5
   maxPlayers: 20
   stations:
