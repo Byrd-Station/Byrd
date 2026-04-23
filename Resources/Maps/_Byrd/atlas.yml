@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 04/23/2026 06:27:33
-  entityCount: 9582
+  time: 04/23/2026 06:29:32
+  entityCount: 9578
 maps:
 - 1
 grids:
@@ -4623,7 +4623,7 @@ entities:
       pos: 4.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -10848.012
+      secondsUntilStateChange: -10965.179
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -4937,7 +4937,7 @@ entities:
       pos: -22.5,-27.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -8391.08
+      secondsUntilStateChange: -8508.247
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13442,11 +13442,6 @@ entities:
     - type: Transform
       pos: 33.5,3.5
       parent: 2
-  - uid: 1765
-    components:
-    - type: Transform
-      pos: -35.5,-6.5
-      parent: 2
   - uid: 1766
     components:
     - type: Transform
@@ -15502,11 +15497,6 @@ entities:
     - type: Transform
       pos: -30.5,2.5
       parent: 2
-  - uid: 2178
-    components:
-    - type: Transform
-      pos: -34.5,-6.5
-      parent: 2
   - uid: 2179
     components:
     - type: Transform
@@ -15516,11 +15506,6 @@ entities:
     components:
     - type: Transform
       pos: -58.5,2.5
-      parent: 2
-  - uid: 2181
-    components:
-    - type: Transform
-      pos: -33.5,-6.5
       parent: 2
   - uid: 2182
     components:
@@ -21087,13 +21072,6 @@ entities:
       parent: 2
     - type: Physics
       canCollide: False
-- proto: ClothingHandsGlovesConducting
-  entities:
-  - uid: 3270
-    components:
-    - type: Transform
-      pos: -9.445096,16.515123
-      parent: 2
 - proto: ClothingHandsGlovesNitrile
   entities:
   - uid: 3272
@@ -51571,7 +51549,7 @@ entities:
       parent: 2
 - proto: SpawnMobCatSpace
   entities:
-  - uid: 9582
+  - uid: 2181
     components:
     - type: Transform
       pos: -51.5,-4.5
@@ -55466,6 +55444,16 @@ entities:
     - type: Transform
       pos: -47.5,-10.5
       parent: 2
+  - uid: 1765
+    components:
+    - type: Transform
+      pos: -34.5,-6.5
+      parent: 2
+  - uid: 2178
+    components:
+    - type: Transform
+      pos: -33.5,-6.5
+      parent: 2
   - uid: 3146
     components:
     - type: Transform
@@ -57950,16 +57938,6 @@ entities:
     components:
     - type: Transform
       pos: 10.5,7.5
-      parent: 2
-  - uid: 8380
-    components:
-    - type: Transform
-      pos: -34.5,-6.5
-      parent: 2
-  - uid: 8381
-    components:
-    - type: Transform
-      pos: -33.5,-6.5
       parent: 2
   - uid: 8382
     components:
