@@ -129,11 +129,11 @@
             - type: ProtectedGrid
             - type: TradeStation
           paths:
-            - /Maps/_Goobstation/Shuttles/trading_outpost.yml #Goobstation
+            - /Maps/_Byrd/Shuttles/trading_outpost.yml # Byrd
           nameDataset: TradeStationNames
-          # Omu  start
-          minimumDistance: 750 # - Commented out cause i'm not actually using this. Change these if you want to change ATS spawn distance (and then remove this comment)
-          maximumDistance: 1000
+          # Byrd - Move ATS closer
+          minimumDistance: 250
+          maximumDistance: 500
 
         mining: !type:GridSpawnGroup
           paths:
