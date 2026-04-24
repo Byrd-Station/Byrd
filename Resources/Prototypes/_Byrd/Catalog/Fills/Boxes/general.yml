@@ -9,7 +9,7 @@
   description: An extended M.R.E. with more emergency supplies.
   components:
   - type: Item
-    size: small
+    size: Small
     shape:
     - 0,0,1,1
   - type: StorageFill
