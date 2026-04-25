@@ -108,7 +108,7 @@
     price: 22.5
 
 - type: entity
-  parent: ReinforcedWindow
+  parent: UltraReinforcedWindow
   id: UltraReinforcedWindowDiagonal
   suffix: diagonal
   placement:
