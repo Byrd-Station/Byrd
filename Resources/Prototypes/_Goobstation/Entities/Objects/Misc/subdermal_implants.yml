@@ -36,7 +36,7 @@
     - Dead
   - type: TriggerOnActivateImplant
   - type: WarpParentOnTrigger
-    warpLocation: "CentComm"
+    warpLocation: "CentCom"
   - type: SpawnOnTrigger
     proto: BluespaceLifelineSpawnCore
   - type: Tag
