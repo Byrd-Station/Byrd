@@ -3,28 +3,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  id: SpeedLoaderMagnumRubber
-  name: "speed loader (.45 magnum rubber)"
-  parent: BaseSpeedLoaderMagnum
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeMagnumRubber
-  - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/magnum_speed_loader.rsi
-    layers:
-      - state: base
-        map: [ "enum.GunVisualLayers.Base" ]
-      - state: rubber-6
-        sprite: _DV/Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/magnum_speed_loader.rsi
-        map: [ "enum.GunVisualLayers.Mag" ]
-  - type: MagazineVisuals
-    magState: rubber
-    steps: 7
-    zeroVisible: false
-  - type: Appearance
-
-
-- type: entity
   id: SpeedLoaderMagnumImprovised
   name: "speed loader (.45 magnum)"
   parent: BaseSpeedLoaderMagnum
