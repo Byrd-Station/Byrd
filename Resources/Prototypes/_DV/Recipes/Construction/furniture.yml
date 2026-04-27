@@ -183,7 +183,7 @@
 
 # Park Bench Bamboo
 - type: construction
-  id: BenchParkBambooMiddle
+  id: BenchParkBambooMiddleDV
   graph: Bench
   startNode: start
   targetNode: BenchParkBambooMiddle
@@ -220,7 +220,7 @@
 
 # Pew
 - type: construction
-  id: BenchPewMiddle
+  id: BenchPewMiddleDV
   graph: Bench
   startNode: start
   targetNode: BenchPewMiddle
@@ -257,7 +257,7 @@
 
 # Steel bench
 - type: construction
-  id: BenchSteelMiddle
+  id: BenchSteelMiddleDV
   graph: Bench
   startNode: start
   targetNode: BenchSteelMiddle
@@ -294,7 +294,7 @@
 
 # Steel Bench White
 - type: construction
-  id: BenchSteelWhiteMiddle
+  id: BenchSteelWhiteMiddleDV
   graph: Bench
   startNode: start
   targetNode: BenchSteelWhiteMiddle
@@ -380,7 +380,7 @@
 
 # Sofa Corp
 - type: construction
-  id: BenchSofaCorpMiddle
+  id: BenchSofaCorpMiddleDV
   graph: Bench
   startNode: start
   targetNode: BenchSofaCorpMiddle
