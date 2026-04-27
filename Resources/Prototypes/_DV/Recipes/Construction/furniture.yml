@@ -146,7 +146,7 @@
 
 # Park Bench Wood
 - type: construction
-  id: BenchParkMiddle
+  id: BenchParkMiddleDV
   graph: Bench
   startNode: start
   targetNode: BenchParkMiddle
