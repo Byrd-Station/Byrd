@@ -120,6 +120,7 @@
   - Wizard
   - Shadowling # Einstein Engines - Shadowlings
   - Wraith # Goobstation - Wraith
+  - AnimalFriend # DeltaV
 
 - type: npcFaction
   id: SimpleNeutral
