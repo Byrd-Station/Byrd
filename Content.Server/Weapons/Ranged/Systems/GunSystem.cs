@@ -409,6 +409,7 @@ public sealed partial class GunSystem : SharedGunSystem
         RaiseLocalEvent(gunUid, new AmmoShotEvent()
         {
             FiredProjectiles = shotProjectiles,
+            Shooter = user
         });
 
         // Goobstation start

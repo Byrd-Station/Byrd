@@ -1,5 +1,10 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Safes
 - type: entity
-  parent: N14ClosetBaseW
+  parent: ClosetSteelBase
   id: N14ClosetSafe
   name: safe
   description: Might be filled with valuables.
@@ -8,6 +13,9 @@
     sprite: _Nuclear14/Structures/Storage/Furniture/safe.rsi
 
 - type: entity
-  parent: [ N14ClosetSafe ]
-  id: N14LootClosetSafe
-  suffix: Loot, Random Military
+  parent: N14ClosetSafe
+  id: N14ClosetSafeSpinner
+  suffix: spinner
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Furniture/safespinner.rsi
