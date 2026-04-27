@@ -112,6 +112,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Goobstation.Shared.Mind.Components;
+using Content.Server._CD.Traits;
 
 namespace Content.Server.GameTicking
 {
@@ -643,8 +644,12 @@ namespace Content.Server.GameTicking
                 else if (mind.CurrentEntity != null && TryName(mind.CurrentEntity.Value, out var icName))
                     playerIcName = icName;
 
+                var playerOOCName = contentPlayerData?.Name ?? "(IMPOSSIBLE: REGISTERED MIND WITH NO OWNER)"; // CD: Round End Redacting
                 if (TryGetEntity(mind.OriginalOwnedEntity, out var entity) && pvsOverride)
                 {
+                    // CD: Round End Redacting
+                    if (HasComp<HideFromRoundEndScreenComponent>(entity))
+                        playerOOCName = Loc.GetString("cd-name-redacted-text");
                     _pvsOverride.AddGlobalOverride(entity.Value);
                 }
 
@@ -681,7 +686,7 @@ namespace Content.Server.GameTicking
                 {
                     // Note that contentPlayerData?.Name sticks around after the player is disconnected.
                     // This is as opposed to ply?.Name which doesn't.
-                    PlayerOOCName = contentPlayerData?.Name ?? "(IMPOSSIBLE: REGISTERED MIND WITH NO OWNER)",
+                    PlayerOOCName = playerOOCName, // CD: Round End Redacting
                     // Character name takes precedence over current entity name
                     PlayerICName = playerIcName,
                     PlayerGuid = userId,
