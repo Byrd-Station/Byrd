@@ -71,17 +71,6 @@
   globalCost: -6 # Omustation - Remake EE Traits system - global trait points cost
 
 - type: trait
-  id: Unrevivable
-  name: trait-unrevivable-name
-  description: trait-unrevivable-desc
-  # category: Disabilities
-  category: PhysicalTraits # Omustation - Remake EE Traits system - EE traits categories
-  components:
-    - type: Unrevivable
-      cloneable: true
-  globalCost: -2 # Omustation - Remake EE Traits system - global trait points cost
-
-- type: trait
   id: Monochromacy
   name: trait-monochromacy-name
   description: trait-monochromacy-desc
