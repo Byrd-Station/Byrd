@@ -166,7 +166,7 @@
   - type: DeadStartupButton
     sound:
       path: /Audio/_EinsteinEngines/Effects/Silicon/startup.ogg
-  # Erro de linter
+  # Error in linter
   #   - type: Wires
   #     layoutId: IPC
   - type: EmitBuzzWhileDamaged
@@ -195,7 +195,7 @@
     - DoorBumpOpener
     - AnomalyHost
     - IPCDrinkBlacklist # Goobstation - Energycrit: Don't let self antagging IPCs steal power from other ipcs.
-  - type: IPCEmpVulnerable # Omu
+  - type: EmpVulnerable # Omu
 
 - type: entity
   save: false

@@ -6,7 +6,7 @@ namespace Content._Omu.Shared.Cybernetics;
 /// Component for IPCs to make them take ION when emped
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-public sealed partial class IPCEmpVulnerableComponent : Component
+public sealed partial class EmpVulnerableComponent : Component
 {
     /// <summary>
     ///     Is the IPC allready EMPed?

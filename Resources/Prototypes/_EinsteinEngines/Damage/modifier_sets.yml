@@ -17,8 +17,8 @@
     Blunt: 0.8
     Slash: 0.8
     Piercing: 0.8
-    Heat: 1.7
-    Shock: 2
+    Heat: 1.2
+    Shock: 1.5
   # Goobstation
     Radiation: 0.4
     Ion: 0.8
@@ -61,7 +61,7 @@
     Poison: 0.4
     Radiation: 0
     Cellular: 0.1
-    
+
 - type: damageModifierSet
   id: Xelthia
   coefficients:
