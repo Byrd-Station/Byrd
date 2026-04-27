@@ -331,7 +331,7 @@
 
 # Normal Sofa
 - type: construction
-  id: BenchSofaMiddle
+  id: BenchSofaMiddleDV
   graph: Bench
   startNode: start
   targetNode: BenchSofaMiddle
