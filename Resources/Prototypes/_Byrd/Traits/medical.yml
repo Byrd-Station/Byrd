@@ -1,0 +1,28 @@
+- type: trait
+  id: Unrevivable
+  name: trait-unrevivable-name
+  description: trait-unrevivable-desc
+  category: MedicalTraits
+  components:
+    - type: Unrevivable
+      cloneable: true
+  globalCost: -2
+
+- type: trait
+  id: Uncloneable
+  name: trait-uncloneable-name
+  description: trait-uncloneable-desc
+  category: MedicalTraits
+  components:
+    - type: Uncloneable
+  globalCost: -2
+
+
+- type: trait
+  id: Unborgable
+  name: trait-unborgable-name
+  description: trait-unborgable-desc
+  category: MedicalTraits
+  components:
+    - type: Unborgable
+  globalCost: -2
