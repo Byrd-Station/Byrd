@@ -500,27 +500,6 @@
   - node: goblin_tool
     entity: GoblinMadePowerCellDepleted
 
-- type: constructionGraph
-  id: CableApcStack10
-  start: start
-  graph:
-  - node: start
-    edges:
-    - to: goblin_tool
-      steps:
-      - component: GoblinPreciousTrash
-        icon:
-          sprite: Objects/Consumable/Food/snacks.rsi
-          state: cheesiehonkers-trash
-        doAfter: 1
-      - component: GoblinPreciousTrash
-        icon:
-          sprite: Objects/Consumable/Food/snacks.rsi
-          state: boritos-trash
-        doAfter: 1
-  - node: goblin_tool
-    entity: CableApcStack10
-
 # Furniture
 - type: constructionGraph
   id: GoblinMadeBanner

@@ -177,17 +177,6 @@
     - Goblin
   objectType: Item
 
-- type: construction
-  id: cableapcstack10
-  graph: CableApcStack10
-  startNode: start
-  targetNode: goblin_tool
-  category: construction-category-goblin
-  entityWhitelist:
-    components:
-    - Goblin
-  objectType: Item
-
 # Furniture / Structures
 - type: construction
   id: bannergoblin01
