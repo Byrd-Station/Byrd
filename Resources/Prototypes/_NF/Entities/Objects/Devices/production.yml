@@ -1,0 +1,11 @@
+- type: entity
+  id: ThrusterRogueMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: Rogue thruster machine board
+  components:
+  - type: MachineBoard
+    prototype: ThrusterRogue
+    requirements:
+      Manipulator: 1
+    stackRequirements:
+      Steel: 5

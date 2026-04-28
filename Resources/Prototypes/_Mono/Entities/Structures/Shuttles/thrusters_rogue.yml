@@ -1,0 +1,27 @@
+- type: entity
+  id: ThrusterRogue
+  parent: Thruster
+  suffix: Syndicate
+  components:
+  - type: Sprite
+    sprite: _Mono/Structures/Shuttles/thrusterrogue.rsi
+  - type: Machine
+    board: ThrusterRogueMachineCircuitboard
+
+- type: entity
+  id: DebugThrusterRogue
+  parent: DebugThruster
+  suffix: DEBUG, Syndicate
+  components:
+  - type: Sprite
+    sprite: _Mono/Structures/Shuttles/thrusterrogue.rsi
+  - type: Machine
+    board: ThrusterRogueMachineCircuitboard
+
+- type: entity
+  id: ThrusterLargeRogue
+  parent: ThrusterLarge
+  suffix: Syndicate
+  components:
+  - type: Sprite
+    sprite: _Mono/Structures/Shuttles/thrusterrogue_large.rsi

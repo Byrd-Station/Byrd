@@ -57,3 +57,16 @@
       Glass: 10
       Steel: 10
       Manipulator: 4
+
+- type: entity
+  id: LargeThrusterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: large thruster machine board
+  description: A large circuitboard for a 2x2 machine frame.
+  components:
+  - type: MachineBoard
+    prototype: ThrusterLarge
+    requirements:
+      Manipulator. 4
+    stackRequirements:
+      Steel: 20
