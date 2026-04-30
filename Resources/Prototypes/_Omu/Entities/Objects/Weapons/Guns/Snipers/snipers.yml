@@ -33,7 +33,6 @@
     - SemiAuto
   - type: ChamberMagazineAmmoProvider
     autoCycle: true
-    autoEject: true
     soundAutoEject:
       path: /Audio/_Goobstation/Weapons/Guns/MagOut/garand_eject.ogg
     soundRack:

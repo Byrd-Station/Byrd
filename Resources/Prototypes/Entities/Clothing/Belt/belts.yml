@@ -746,6 +746,8 @@
   name: shoulder holster
   description: 'A holster to carry a handgun and ammo. WARNING: Badasses only.'
   components:
+  - type: CMHolster
+  - type: CMItemSlots
   - type: Sprite
     sprite: Clothing/Belt/holster.rsi
   - type: Clothing
@@ -785,16 +787,6 @@
     sprite: Clothing/Belt/syndieholster.rsi
   - type: Item
     size: Ginormous
-  # Goobstation
-  #- type: Storage
-  #  maxItemSize: Huge
-  #  grid:
-  #  - 0,0,3,3
-  #  whitelist:
-  #    components:
-  #    - Gun
-  #    - BallisticAmmoProvider
-  #    - CartridgeAmmo
   - type: ItemSlots
     slots:
       item:

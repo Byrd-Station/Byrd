@@ -21,6 +21,7 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
+using Content.Shared.Weapons.Ranged.Components;
 
 namespace Content.Shared.Interaction;
 
@@ -44,6 +45,7 @@ public sealed class SmartEquipSystem : EntitySystem
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.SmartEquipBackpack, InputCmdHandler.FromDelegate(HandleSmartEquipBackpack, handle: false, outsidePrediction: false))
             .Bind(ContentKeyFunctions.SmartEquipBelt, InputCmdHandler.FromDelegate(HandleSmartEquipBelt, handle: false, outsidePrediction: false))
+            .Bind(ContentKeyFunctions.SmartEquipBack, InputCmdHandler.FromDelegate(HandleSmartEquipBack, handle: false, outsidePrediction: false))
             .Register<SmartEquipSystem>();
     }
 
@@ -52,6 +54,11 @@ public sealed class SmartEquipSystem : EntitySystem
         base.Shutdown();
 
         CommandBinds.Unregister<SmartEquipSystem>();
+    }
+
+    private void HandleSmartEquipBack(ICommonSession? session)
+    {
+        HandleSmartEquip(session, "suitstorage");
     }
 
     private void HandleSmartEquipBackpack(ICommonSession? session)
@@ -112,8 +119,13 @@ public sealed class SmartEquipSystem : EntitySystem
         //    - with hand item: fail
         //    - without hand item: try to put the item into your hand
 
+
         _inventory.TryGetSlotEntity(uid, equipmentSlot, out var slotEntity);
         var emptyEquipmentSlotString = Loc.GetString("smart-equip-empty-equipment-slot", ("slotName", equipmentSlot));
+
+        // case 0 (is gun)
+        if (TryComp<GunComponent>(slotEntity, out var _))
+            return;
 
         // case 1 (no slot item):
         if (slotEntity is not { } slotItem)
@@ -131,7 +143,7 @@ public sealed class SmartEquipSystem : EntitySystem
             }
 
             _hands.TryDrop((uid, hands), hands.ActiveHandId!);
-            _inventory.TryEquip(uid, handItem.Value, equipmentSlot, predicted: true, checkDoafter:true);
+            _inventory.TryEquip(uid, handItem.Value, equipmentSlot, predicted: true, checkDoafter: true);
             return;
         }
 

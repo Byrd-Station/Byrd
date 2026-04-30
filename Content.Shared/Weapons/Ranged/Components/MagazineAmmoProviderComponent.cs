@@ -98,5 +98,5 @@ public partial class MagazineAmmoProviderComponent : AmmoProviderComponent
     /// Should the magazine automatically eject when empty.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("autoEject")]
-    public bool AutoEject = false;
+    public bool AutoEject = true;
 }

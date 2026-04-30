@@ -46,7 +46,6 @@
     - SemiAuto
     - FullAuto
   - type: ChamberMagazineAmmoProvider
-    autoEject: true
   - type: MagazineVisuals
     magState: mag
     steps: 1

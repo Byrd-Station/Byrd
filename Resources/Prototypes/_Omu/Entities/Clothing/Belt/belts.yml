@@ -114,38 +114,12 @@
     sprite: _Omu/Clothing/Belt/corpsman.rsi
 
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: ClothingBeltSyndieHolster
   id: ClothingBeltChameleonHolster
   name: syndicate shoulder holster
   suffix: Chameleon
   description: A deep shoulder holster capable of holding many types of ballistics.
   components:
-  - type: Sprite
-    sprite: Clothing/Belt/syndieholster.rsi
-  - type: Clothing
-    sprite: Clothing/Belt/syndieholster.rsi
-  - type: Storage
-    grid:
-    - 0,0,3,1
-  # Goobstation
-    whitelist:
-      components:
-        - BallisticAmmoProvider
-        - CartridgeAmmo
-      tags:
-        - EnergySpeedloader # Goobstation
-  - type: ContainerContainer
-    containers:
-      item: !type:ContainerSlot
-      storagebase: !type:Container
-        ents: []
-  - type: ItemSlots
-    slots:
-      item:
-        name: Gun
-        whitelist:
-          components:
-          - Gun
   - type: ChameleonClothing
     slot: [BELT]
     default: ClothingBeltSyndieHolster

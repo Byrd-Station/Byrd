@@ -25,12 +25,12 @@ public sealed class BackEquipSystem : EntitySystem
 
     public override void Initialize()
     {
-        CommandBinds.Builder
+        /*CommandBinds.Builder
             .Bind(ContentKeyFunctions.SmartEquipBack,
                 InputCmdHandler.FromDelegate(HandleEquipToBack,
                     handle: false,
                     outsidePrediction: false)) // Goobstation - Smart equip to back
-            .Register<BackEquipSystem>();
+            .Register<BackEquipSystem>();*/
     }
 
     public override void Shutdown()

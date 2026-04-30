@@ -75,6 +75,7 @@ using Robust.Shared.Input;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
+using Content.Shared._RMC14.Input;
 
 namespace Content.Client.Options.UI.Tabs
 {
@@ -260,7 +261,7 @@ namespace Content.Client.Options.UI.Tabs
             AddHeader("ui-options-header-interaction-adv");
             AddButton(ContentKeyFunctions.SmartEquipBackpack);
             AddButton(ContentKeyFunctions.SmartEquipBelt);
-            AddButton(ContentKeyFunctions.SmartEquipBack); // Goobstation - Equip To Back
+            //AddButton(ContentKeyFunctions.SmartEquipBack);
             AddButton(ContentKeyFunctions.OpenBackpack);
             AddButton(ContentKeyFunctions.OpenBelt);
             AddButton(ContentKeyFunctions.ThrowItemInHand);
@@ -271,6 +272,22 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.RotateObjectClockwise);
             AddButton(ContentKeyFunctions.RotateObjectCounterclockwise);
             AddButton(ContentKeyFunctions.FlipObject);
+
+            AddHeader("ui-options-header-rmc");
+            //AddButton(CMKeyFunctions.RMCActivateAttachableBarrel);
+            //AddButton(CMKeyFunctions.RMCActivateAttachableRail);
+            //AddButton(CMKeyFunctions.RMCActivateAttachableStock);
+            //AddButton(CMKeyFunctions.RMCActivateAttachableUnderbarrel);
+            //AddButton(CMKeyFunctions.RMCFieldStripHeldItem);
+            //AddButton(CMKeyFunctions.RMCCycleFireMode);
+            //AddButton(CMKeyFunctions.CMUniqueAction);
+            AddButton(CMKeyFunctions.CMHolsterPrimary);
+            AddButton(CMKeyFunctions.CMHolsterSecondary);
+            AddButton(CMKeyFunctions.CMHolsterTertiary);
+            AddButton(CMKeyFunctions.CMHolsterQuaternary);
+            //AddButton(CMKeyFunctions.RMCPickUpDroppedItems);
+            AddButton(CMKeyFunctions.RMCInteractWithOtherHand);
+            //AddButton(CMKeyFunctions.RMCRest);
 
             AddHeader("ui-options-header-ui");
             AddButton(ContentKeyFunctions.FocusChat);

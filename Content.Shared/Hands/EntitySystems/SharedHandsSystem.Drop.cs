@@ -22,6 +22,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
+using Content.Shared._RMC14.Inventory;
 using Content.Shared.Database;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
@@ -90,7 +91,7 @@ public abstract partial class SharedHandsSystem
         if (!ContainerSystem.TryGetContainer(uid, handId, out var container))
             return false;
 
-        if (container.ContainedEntities.FirstOrNull() is not {} held)
+        if (container.ContainedEntities.FirstOrNull() is not { } held)
             return false;
 
         if (!ContainerSystem.CanRemove(held, container))
@@ -162,6 +163,8 @@ public abstract partial class SharedHandsSystem
         if (isInContainer)
         {
             TransformSystem.DropNextTo((entity.Value, itemXform), (ent, userXform));
+            var ev = new RMCDroppedEvent(ent);
+            RaiseLocalEvent(entity.Value, ref ev, true);
             return true;
         }
 

@@ -103,6 +103,8 @@
   parent: [ClothingShoesBase, ClothingSlotBase]
   id: ClothingShoesMilitaryBase
   components:
+  - type: CMHolster
+  - type: CMItemSlots
   - type: Matchbox
   - type: ItemSlots
     slots:

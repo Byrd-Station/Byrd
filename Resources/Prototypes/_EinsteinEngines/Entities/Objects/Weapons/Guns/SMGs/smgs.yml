@@ -37,7 +37,6 @@
     - FullAuto
 #    fireOnDropChance: 0.3 # Omu
   - type: ChamberMagazineAmmoProvider
-    autoEject: true
   - type: MagazineVisuals
     magState: mag
     steps: 1
