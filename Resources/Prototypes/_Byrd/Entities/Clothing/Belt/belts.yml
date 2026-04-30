@@ -1,0 +1,142 @@
+- type: entity
+  parent: [ ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseSyndicateContraband ]
+  id: ClothingBeltMilitaryRigHybrid
+  name: hybrid tactical rig
+  description: A hybrid rig that can store medical supplies and has slots for a sidearm, magazines.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Belt/grenaderig.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Belt/grenaderig.rsi
+  - type: Storage
+    grid:
+      - 0,0,1,1
+      - 3,0,6,1
+      - 0,3,1,4
+      - 3,3,6,4
+    whitelist:
+      tags:
+        - MedicalPatch
+        - Brutepack
+        - Bloodpack
+        - Gauze
+        - Ointment
+      components:
+        - Pill
+        - Hypospray
+        - SurgeryTool
+        - Defibrillator
+        - SolutionTransfer
+  - type: ContainerContainer
+    containers:
+      pistol: !type:ContainerSlot
+      mag1: !type:ContainerSlot
+      mag2: !type:ContainerSlot
+      mag3: !type:ContainerSlot
+      mag4: !type:ContainerSlot
+      mag5: !type:ContainerSlot
+      mag6: !type:ContainerSlot
+      storagebase: !type:Container
+        ents: []
+  - type: ItemSlots
+    slots:
+      pistol:
+        name: Handgun
+        whitelist:
+          tags:
+          - Sidearm
+      mag1:
+        name: Magazine 1
+        whitelist:
+          tags:
+          - MagazinePistol
+          - MagazinePistolHighCapacity
+          - MagazineMagnum
+          - SpeedLoaderMagnum
+          - MagazinePistolCaselessRifle
+      mag2:
+        name: Magazine 2
+        whitelist:
+          tags:
+          - MagazinePistol
+          - MagazinePistolHighCapacity
+          - MagazineMagnum
+          - SpeedLoaderMagnum
+          - MagazinePistolCaselessRifle
+      mag3:
+        name: Magazine 3
+        whitelist:
+          tags:
+          - MagazinePistol
+          - MagazinePistolHighCapacity
+          - MagazineMagnum
+          - SpeedLoaderMagnum
+          - MagazinePistolCaselessRifle
+      mag4:
+        name: Magazine 4
+        whitelist:
+          tags:
+          - MagazinePistol
+          - MagazinePistolHighCapacity
+          - MagazineMagnum
+          - SpeedLoaderMagnum
+          - MagazinePistolCaselessRifle
+      mag5:
+        name: Magazine 5
+        whitelist:
+          tags:
+          - MagazinePistol
+          - MagazinePistolHighCapacity
+          - MagazineMagnum
+          - SpeedLoaderMagnum
+          - MagazinePistolCaselessRifle
+      mag6:
+        name: Magazine 6
+        whitelist:
+          tags:
+          - MagazinePistol
+          - MagazinePistolHighCapacity
+          - MagazineMagnum
+          - SpeedLoaderMagnum
+          - MagazinePistolCaselessRifle
+
+- type: entity
+  parent: ClothingBeltMilitaryRigHybrid
+  id: ClothingBeltMilitaryRigHybridFilled
+  suffix: Filled
+  components:
+  - type: StorageFill # Yes.
+    contents:         # If seriously this is like 100 TC worth of explosives.
+    - id: MedicatedSuture
+      amount: 2
+    - id: RegenerativeMesh
+      amount: 2
+    - id: OmnimedToolSyndie
+    - id: SyndiHypo
+    - id: DefibrillatorSyndicate
+
+    - id: ChemistryBottleEphedrine
+    - id: ChemistryBottleEpinephrine
+    - id: ChemistryBottleTramadol
+    - id: ChemistryBottleOmnizine
+
+    - id: ChemistryBottleBicaridine
+    - id: ChemistryBottleDermaline
+    - id: ChemistryBottleArithrazine
+    - id: ChemistryBottleOmnizine
+  - type: ContainerFill
+    containers:
+      pistol:
+      - WeaponPistolCobra
+      mag1:
+      - MagazinePistolCaselessRifle
+      mag2:
+      - MagazinePistolCaselessRifle
+      mag3:
+      - MagazinePistolCaselessRifle
+      mag4:
+      - MagazinePistolCaselessRifle
+      mag5:
+      - MagazinePistolCaselessRifle
+      mag6:
+      - MagazinePistolCaselessRifle
